@@ -99,7 +99,7 @@ function addModalDialogEntry(filename, text) {
         mainBox.append(bottomText)
         bottomText.innerText = "Note: your data does not get uploaded during this process.\n All data for the webapp is processed locally on your computer.\n"
         let githubLink = document.createElement("a")
-        githubLink.href = "https://github.com/MagmaGuy/magmaguy.com"
+        githubLink.href = "https://github.com/MagmaGuy/magmaguy.com/tree/master/webapp"
         githubLink.innerText = "Source code is available on github."
         githubLink.target = "_target"
         bottomText.append(githubLink)
