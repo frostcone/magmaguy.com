@@ -1,0 +1,259 @@
+@charset "utf-8";
+html {
+    height: 100%;
+    scroll-snap-type: y mandatory;
+}
+
+.h1 {
+    -webkit-text-stroke: 1px black;
+    font-size: 60px;
+}
+
+section {
+    /*
+    this seems useless and messes wit hthe default
+    height: 100vh;
+    width: 100vw;
+     */
+    scroll-snap-align: start;
+    border-bottom: solid black 2px;
+}
+
+body {
+    background-color: lightgray;
+    background-image: url("../img/2022-05-16_04.03.04.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+    height: 100%;
+    font-family: "Open Sans";
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-family: "Open Sans SemiBold";
+}
+
+a:hover {
+    transition: all 0.3s linear;
+    color: dodgerblue;
+}
+
+.navigation-bar {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 40px;
+    display: inline;
+}
+
+li {
+    display: inline;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#navbar-right {
+    display: inline;
+    text-align: right;
+    padding: 5px;
+}
+
+#navbar-left {
+    display: inline;
+}
+
+.container {
+    /*
+    background-color: rgba(30, 30, 30, 0.5);
+     */
+    max-width: 1800px;
+}
+
+#plugin-grid-container-container {
+    display: flex;
+    justify-content: center;
+}
+
+#plugin-grid-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+#plugin-grid {
+    width: 80%;
+    flex-basis: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 33%;
+    justify-content: center;
+}
+
+
+.banner-image {
+    margin: 10px;
+    box-shadow: 8px 9px 11px 0px rgba(38, 38, 38, 0.5);
+    transition: all 0.3s linear;
+}
+
+.banner-image:hover {
+    box-shadow: 15px 17px 22px 0px rgba(38, 38, 38, 0.5);
+}
+
+.parallax {
+    /* The image used */
+
+
+    /* Set a specific height */
+    min-height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-long {
+    padding-top: 300px;
+    padding-bottom: 1000px;
+}
+
+#elitemobs-paralax {
+    background-image: url("../img/2022-04-14_18.27.10.png");
+}
+
+.showcase-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.showcase-title{
+    justify-content: center;
+}
+
+#betterstructures-paralax {
+    background-image: url("../img/2022-06-22_16.29.20.png");
+}
+
+#resurrectionchest-paralax {
+    background-image: url("../img/2022-07-01_14.10.08.png");
+}
+
+#betterfood-paralax {
+    background-image: url("../img/2022-04-14_18.27.10.png");
+}
+
+#flyhook-paralax {
+    background-image: url("../img/2022-06-22_16.29.20.png");
+}
+
+#worldcannon-paralax {
+    background-image: url("../img/2022-07-01_14.10.08.png");
+}
+
+#supersmashmates-paralax {
+    background-image: url("../img/2022-06-22_16.29.20.png");
+}
+
+#first-container {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section-banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+iframe {
+    padding: 10px;
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.text-box {
+    background-color: rgba(30, 30, 30, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.video-box {
+    min-height: 290px;
+}
+
+.video {
+    float: left;
+    padding: 20px;
+}
+
+.video-text {
+    padding: 20px;
+}
+
+p {
+    font-size: 24px;
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.spigot-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    background-color: rgba(64, 145, 56, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.spigot-download-link{
+    display: flex;
+    flex-direction: column;
+}
+
+.image-preview{
+    max-width: 100%;
+    height: auto;
+}
+
+

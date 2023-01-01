@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" type="text/css" href="css/webapp.css">
+<script src="js/download.js"></script>
+<script src="js/webapp.js"></script>
+<script src="js/custom-items.js"></script>
+<script src="js/custom-bosses.js"></script>
+<script src="js/treasure-chest.js"></script>
+<script src="js/npcs.js"></script>
+<script src="js/dungeons.js"></script>
+<script src="js/arenas.js"></script>
+<script src="js/custom-events.js"></script>
+<script src="js/custom-spawn.js"></script>
+<script src="js/custom-quests.js"></script>
+<script src="js/elitescripts/elite-scripts.js"></script>
+<script src="js/elitescripts/script-actions.js"></script>
+<script src="js/elitescripts/script-conditions.js"></script>
+<script src="js/elitescripts/script-cooldowns.js"></script>
+<script src="js/elitescripts/script-targets.js"></script>
+<script src="js/elitescripts/script-zones.js"></script>
+<script src="js/elitescripts/script-events.js"></script>
+<script src="js/config-generation.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>EliteMobs Webapp</title>
+</head>
+
+<body ondragover="dragEnterHandler(event)" ondrop="dropHandler(event)" ondragenter="dragEnterHandler(event)" ondragleave="dragLeaveHandler(event)">
+<!-- Add entry button, there should only be one, and it should always be at the bottom. Clicking it adds an entry of any kind! -->
+<div class="row">
+    <button id="add-entry" class="invisible-button" onclick="generateGenericCard(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus primary-action"
+             width="100"
+             height="100" viewBox="0 0 24 24" stroke-width="2" stroke="#B689C0" fill="none" stroke-linecap="round"
+             stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <circle cx="12" cy="12" r="9"/>
+            <line x1="9" y1="12" x2="15" y2="12"/>
+            <line x1="12" y1="9" x2="12" y2="15"/>
+        </svg>
+    </button>
+</div>
+
+<!-- Generate button-->
+<div class="row">
+    <button id="generate" class="btn-primary btn primary-action" onclick="generate()">Generate files!</button>
+</div>
+
+</body>
+
+
+<!-- Main selection for what kind of file will be built -->
+<template id="template-main-container">
+    <div class="container col-5">
+        <div class="delete-button d-flex">
+            <div class="card-title">
+                <!-- This gets filled as the filename form gets written -->
+            </div>
+            <div class="ml-auto">
+                <button class="invisible-button" onclick="expandEntry(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow" width="25"
+                         height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M15 19v-2a2 2 0 0 1 2 -2h2"/>
+                        <path d="M15 5v2a2 2 0 0 0 2 2h2"/>
+                        <path d="M5 15h2a2 2 0 0 1 2 2v2"/>
+                        <path d="M5 9h2a2 2 0 0 0 2 -2v-2"/>
+                    </svg>
+                </button>
+                <button class="invisible-button" onclick="arrowDown(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow" width="25"
+                         height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="16" y1="15" x2="12" y2="19"/>
+                        <line x1="8" y1="15" x2="12" y2="19"/>
+                    </svg>
+                </button>
+                <button class="invisible-button" onclick="arrowUp(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow" width="25"
+                         height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="16" y1="9" x2="12" y2="5"/>
+                        <line x1="8" y1="9" x2="12" y2="5"/>
+                    </svg>
+                </button>
+                <button class="invisible-button" onclick="deleteCardWithAnimation(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-x" width="25"
+                         height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="4" y="4" width="16" height="16" rx="2"/>
+                        <path d="M10 10l4 4m0 -4l-4 4"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Coloring and formatting for the card -->
+        <div class="form-group card border-primary mb-3 main-container">
+            <div>
+                <!-- Discardable contents -->
+                <h4>Pick your creation!</h4>
+                <div class="text-center">
+                    <button class="btn btn-primary col-sm-4 template-button" onclick="createCustomItemButton(this)">
+                        Custom
+                        Item
+                    </button>
+                    <button class="btn btn-primary col-sm-4 template-button" onclick="createCustomBossButton(this)">
+                        Custom Boss
+                    </button>
+                    <button class="btn btn-primary col-sm-4 template-button" onclick="createTreasureChestButton(this)">
+                        Treasure Chest
+                    </button>
+                    <button class="btn btn-primary col-sm-4 template-button" onclick="createNpcsButton(this)">NPC
+                    </button>
+                    <button class="btn btn-primary col-sm-4 template-button" onclick="createDungeonsButton(this)">
+                        Dungeon
+                    </button>
+                    <button class="btn btn-primary col-sm-4 template-button" onclick="createArenasButton(this)">Arena
+                    </button>
+                    <button class="btn btn-primary col-sm-4 template-button" onclick="createCustomEventsButton(this)">
+                        Custom Event
+                    </button>
+                    <button class="btn btn-primary col-sm-4 template-button" onclick="createCustomSpawnsButton(this)">
+                        Custom Spawn
+                    </button>
+                    <button class="btn btn-primary col-sm-4 template-button" onclick="createCustomQuestsButton(this)">
+                        Custom Quest
+                    </button>
+                    <button class="btn btn-primary col-sm-4 template-button"
+                            onclick="createEliteScriptsTemplateCard(this)">
+                        Custom Power
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<!-- SVG plus button for string lists, gets bound to fields via code -->
+<template id="template-plus-button">
+    <!-- Plus button -->
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="text-center col-10">
+            <button class="invisible-button" onclick="addNewField(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus "
+                     width="40"
+                     height="40" viewBox="0 0 24 24" stroke-width="2.5" stroke="#4700D8" fill="none"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</template>
+
+<!-- Plus icon -->
+<template id="template-plus-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus "
+         width="40"
+         height="40" viewBox="0 0 24 24" stroke-width="2.5" stroke="#4700D8" fill="none"
+         stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <line x1="5" y1="12" x2="19" y2="12"/>
+    </svg>
+</template>
+
+<!-- Trash icon -->
+<template id="template-trash-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x"
+         width="25" height="25"
+         viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round"
+         stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 7h16"/>
+        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"/>
+        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"/>
+        <path d="M10 12l4 4m0 -4l-4 4"/>
+    </svg>
+</template>
+
+<!-- Scripts trash icon -->
+<template id="template-script-trash-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x"
+         width="25" height="25"
+         viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round"
+         stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 7h16"/>
+        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"/>
+        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"/>
+        <path d="M10 12l4 4m0 -4l-4 4"/>
+    </svg>
+</template>
+
+<!-- SVG trash button, gets bound to fields via code -->
+<template id="template-trash-button">
+    <button class="invisible-button col-sm-3 col-form-label text-right" onclick="removeField(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x"
+             width="25" height="25"
+             viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round"
+             stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 7h16"/>
+            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"/>
+            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"/>
+            <path d="M10 12l4 4m0 -4l-4 4"/>
+        </svg>
+    </button>
+</template>
+
+<!-- SVG trash button, gets bound to fields via code -->
+<template id="template-script-trash-button">
+    <button class="invisible-button" onclick="deleteScript(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x"
+             width="25" height="25"
+             viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round"
+             stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 7h16"/>
+            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"/>
+            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"/>
+            <path d="M10 12l4 4m0 -4l-4 4"/>
+        </svg>
+    </button>
+</template>
+
+<template id="template-up-arrow-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow" width="25"
+         height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <line x1="16" y1="9" x2="12" y2="5"/>
+        <line x1="8" y1="9" x2="12" y2="5"/>
+    </svg>
+</template>
+
+<template id="template-down-arrow-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow" width="25"
+         height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none"
+         stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <line x1="16" y1="15" x2="12" y2="19"/>
+        <line x1="8" y1="15" x2="12" y2="19"/>
+    </svg>
+</template>
+
+<template id="template-expand-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow" width="25"
+         height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none"
+         stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M15 19v-2a2 2 0 0 1 2 -2h2"/>
+        <path d="M15 5v2a2 2 0 0 0 2 2h2"/>
+        <path d="M5 15h2a2 2 0 0 1 2 2v2"/>
+        <path d="M5 9h2a2 2 0 0 0 2 -2v-2"/>
+    </svg>
+</template>
+
+<template id="template-zoom-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-question" width="28" height="28"
+         viewBox="0 0 24 24" stroke-width="2" stroke="#00abfb" fill="none" stroke-linecap="round"
+         stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="10" cy="10" r="7"/>
+        <path d="M21 21l-6 -6"/>
+        <line x1="10" y1="13" x2="10" y2="13.01"/>
+        <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474"/>
+    </svg>
+</template>
+
+<template id="template-duplicate-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="28" height="28"
+         viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+         stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="8" y="8" width="12" height="12" rx="2"/>
+        <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"/>
+    </svg>
+</template>
+
+<!-- Specific selector for single item or item sets -->
+<template id="template-custom-items-amount">
+    <div class="amount-container">
+        <h4>Pick amount!</h4>
+        <div class="text-center">
+            <button class="btn btn-primary col-sm-4 template-button" onclick="simpleItemButton(this)">Simple
+                item
+            </button>
+            <button class="btn btn-primary col-sm-4 template-button" onclick="fullSetButton(this)">Full set
+            </button>
+        </div>
+    </div>
+</template>
+
+<!-- All input types. Copy-paste from here to create new entries! -->
+<template>
+    <!--Filename-->
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">
+            <a href="#" data-toggle="tooltip" data-placement="left"
+               title="Sets the name of the file. Must follow valid file name formatting and be unique!">
+                Filename:
+            </a>
+        </label>
+
+        <!-- Input -->
+        <div class="col-sm-9 config-entry config-filename" data-config-key="filename">
+            <input type="text"
+                   class="form-control required-field" placeholder="ique_file_name"
+                   required
+                   data-toggle="tooltip" data-placement="right" title="Required field!"
+                   onkeyup="updateCardTitle(this)">
+        </div>
+    </div>
+
+    <!--Boolean-->
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">
+            <a href="#" data-toggle="tooltip"
+               data-placement="left"
+               title="Boolean tooltip.">Boolean:</a></label>
+
+        <!-- Input -->
+        <div class="col-sm-9 config-entry config-boolean" data-config-key="key">
+            <select class="form-control">
+                <option></option>
+                <option>true</option>
+                <option>false</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- String -->
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">
+            <a href="#" data-toggle="tooltip"
+               data-placement="left"
+               title="String tooltip.">String</a></label>
+
+        <!-- Input -->
+        <div class="col-sm-9 config-entry config-string" data-config-key="key">
+            <input type="text" class="form-control required-field" placeholder="&cCool name!"
+                   required
+                   data-toggle="tooltip" data-placement="right" title="Required field!">
+        </div>
+    </div>
+
+    <!-- Number -->
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">
+            <a href="#" data-toggle="tooltip"
+               data-placement="left"
+               title="Number tooltip">Number:</a></label>
+
+        <!-- Input -->
+        <div class="col-sm-9 config-entry config-number" data-config-key="key">
+            <input type="number" class="form-control" placeholder="default-number-goes-here">
+        </div>
+    </div>
+
+    <!-- Enum with autosuggest -->
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">
+            <a href="#" data-toggle="tooltip" data-placement="left"
+               title="Enum tooltip.">Enum::</a>
+            <img src="img/link_white.png" alt="link" style="width:15px;height:15px;" data-toggle="tooltip"
+                 data-placement="right"
+                 title="Click for valid values!"></label>
+
+        <!-- Input -->
+        <div class="col-sm-9 config-entry config-enum" data-config-key="">
+            <input type="text"
+                   class="form-control" placeholder="default value" list="">
+        </div>
+    </div>
+
+    <!-- String list -->
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">
+            <a href="#" data-toggle="tooltip"
+               data-placement="left"
+               title="String tooltip.">String list:</a>
+        </label>
+
+        <!-- Input -->
+        <div class="col-sm-9 config-entry config-list" data-config-key="key">
+            <input type="text" class="form-control lore" placeholder="Default value">
+        </div>
+    </div>
+</template>
+
+
+</html>

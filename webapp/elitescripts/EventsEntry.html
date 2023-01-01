@@ -1,0 +1,63 @@
+<div class="script-section">
+    <div class="row">
+        <button class="invisible-button col-form-label text-right" onclick="removeScriptEvents(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x"
+                 width="25" height="25"
+                 viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 7h16"/>
+                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"/>
+                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"/>
+                <path d="M10 12l4 4m0 -4l-4 4"/>
+            </svg>
+        </button>
+        <h3>Events:</h3>
+        <a href="https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Events" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-question" width="28"
+                 height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#00abfb" fill="none" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="10" cy="10" r="7"/>
+                <path d="M21 21l-6 -6"/>
+                <line x1="10" y1="13" x2="10" y2="13.01"/>
+                <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474"/>
+            </svg>
+        </a>
+    </div>
+    <div class="duplicate-container">
+        <div class="form-group row">
+            <!-- Input -->
+            <div class="config-entry config-filename col-sm-11" data-config-key="filename">
+                <input type="text"
+                       class="form-control" placeholder="EliteMobEnterCombatEvent"
+                       required>
+            </div>
+            <button class="invisible-button col-form-label text-center col-sm-1" onclick="listElementRemover(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x"
+                     width="25" height="25"
+                     viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 7h16"/>
+                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"/>
+                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"/>
+                    <path d="M10 12l4 4m0 -4l-4 4"/>
+                </svg>
+            </button>
+        </div>
+        <div class="text-center col-12">
+            <button class="invisible-button" onclick="listDuplicator(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus "
+                     width="40"
+                     height="40" viewBox="0 0 24 24" stroke-width="2.5" stroke="#4700D8" fill="none"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+</div>
