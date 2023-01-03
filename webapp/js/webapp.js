@@ -591,6 +591,7 @@ function createLocationField(container, configKey, keyText, keyLink, required) {
     let entryDiv = createGenericEntry(container, keyText, keyLink)
     setAsSplitByCommas(entryDiv)
     entryDiv.dataset.configKey = configKey
+    entryDiv.classList.add("config-location-string")
 
     let worldLabel = generateComplexLabel("World name:")
     let xLabel = generateComplexLabel("x:")
@@ -610,8 +611,6 @@ function createLocationField(container, configKey, keyText, keyLink, required) {
         tagRequired(xField)
         tagRequired(yField)
         tagRequired(zField)
-        tagRequired(pitchField)
-        tagRequired(yawField)
     }
 
     entryDiv.append(worldLabel, worldField, xLabel, xField, yLabel, yField, zLabel, zField, pitchLabel, pitchField, yawLabel, yawField)
