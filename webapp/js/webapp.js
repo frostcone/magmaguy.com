@@ -24,7 +24,7 @@ const biomeAPINames = ["BADLANDS", "BAMBOO_JUNGLE", "BASALT_DELTAS", "BEACH", "B
 
 const environmentAPINames = ["CUSTOM", "NETHER", "NORMAL", "THE_END"]
 
-const moonPhaseAPINames = ["","FULL_MOON", "WANING_GIBBOUS", "WANING_CRESCENT", "NEW_MOON", "WAXING_CRESCENT", "FIRST_QUARTER", "WAXING_GIBBOUS"]
+const moonPhaseAPINames = ["", "FULL_MOON", "WANING_GIBBOUS", "WANING_CRESCENT", "NEW_MOON", "WAXING_CRESCENT", "FIRST_QUARTER", "WAXING_GIBBOUS"]
 
 //Util
 function dragEnterHandler(event) {
@@ -323,12 +323,14 @@ function generateContentSelector(cardContents) {
     }, cardContents, true)
     generateContentButton("Treasure Chest", null, cardContents, false)
     generateContentButton("NPC", null, cardContents, false)
-    generateContentButton("Dungeon", null, cardContents, false)
+    generateContentButton("Dungeon", function () {
+        createDungeonTemplateCard(cardContents)
+    }, cardContents, true)
     generateContentButton("Arena", null, cardContents, false)
     generateContentButton("Custom Event", function () {
         createCustomEventsTemplateCard(cardContents)
     }, cardContents, true)
-    generateContentButton("Custom Spawn", function (){
+    generateContentButton("Custom Spawn", function () {
         createCustomSpawnsTemplateCard(cardContents)
     }, cardContents, true)
     generateContentButton("Custom Quest", null, cardContents, false)

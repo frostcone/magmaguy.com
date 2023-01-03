@@ -165,7 +165,8 @@ function whitespaceGenerator(amount) {
     return whitespace
 }
 
-//This assumes everything in the singleEntryContainer is meant to be stitched in one line
+//This assumes everything in the singleEntryContainer
+// is meant to be stitched in one line
 function getComplexEntry(singleEntryContainer, separator, listElement, firstMapListElement) {
     let elements = singleEntryContainer.getElementsByClassName("form-control")
     let finalResult = "";
