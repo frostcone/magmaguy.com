@@ -598,12 +598,12 @@ function createLocationField(container, configKey, keyText, keyLink, required) {
     let zLabel = generateComplexLabel("z:")
     let pitchLabel = generateComplexLabel("Pitch:")
     let yawLabel = generateComplexLabel("Yaw:")
-    let worldField = generateComplexInput("myWorld", "col-sm-1")
-    let xField = generateComplexInput("1", "col-sm-1")
-    let yField = generateComplexInput("1", "col-sm-1")
-    let zField = generateComplexInput("1", "col-sm-1")
-    let pitchField = generateComplexInput("0", "col-sm-1")
-    let yawField = generateComplexInput("0", "col-sm-1")
+    let worldField = generateComplexInput("myWorld", "col-sm-3")
+    let xField = generateComplexInput("1", "col-sm-0")
+    let yField = generateComplexInput("1", "col-sm-0")
+    let zField = generateComplexInput("1", "col-sm-0")
+    let pitchField = generateComplexInput("0", "col-sm-0")
+    let yawField = generateComplexInput("0", "col-sm-0")
 
     if (required === true) {
         tagRequired(worldField)

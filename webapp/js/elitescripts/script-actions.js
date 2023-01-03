@@ -131,6 +131,7 @@ function redrawActionFields(select, container) {
             break
         case "RUN_SCRIPT":
             //No fields!
+            hasTarget = false;
             break
         case "SET_MOB_AI":
             setMobAIAction(container)
