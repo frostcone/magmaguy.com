@@ -110,7 +110,7 @@ function generateNewScript(innerCard) {
     generateInactiveScriptSectionContainer("Actions", function () {
         generateAction(this)
     }, scriptContainer, "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions",true).classList.add("elite-script-action-button")
-    generateInactiveScriptSectionContainer("Cooldown", function () {
+    generateInactiveScriptSectionContainer("Cooldowns", function () {
         generateCooldown(this)
     }, scriptContainer, "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Cooldowns",false).classList.add("elite-script-cooldown-button")
     innerCard.append(innerCard.getElementsByClassName("new-script-container")[0])
