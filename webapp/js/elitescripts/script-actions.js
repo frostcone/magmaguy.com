@@ -264,7 +264,6 @@ function setMobAwareAction(container) {
 }
 
 function setOnFireAction(container) {
-    createBooleanField(container, "bValue", "Set on fire (bValue)", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#set_mob_aware", true)
     createIntegerField(container, "duration", "Duration", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#set_mob_aware", false)
 }
 
