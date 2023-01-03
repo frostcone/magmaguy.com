@@ -22,6 +22,10 @@ const interactionTypeAPINames = ["NONE", "GUILD_GREETER", "CHAT", "CUSTOM_SHOP",
 
 const biomeAPINames = ["BADLANDS", "BAMBOO_JUNGLE", "BASALT_DELTAS", "BEACH", "BIRCH_FOREST", "COLD_OCEAN", "CRIMSON_FOREST", "CUSTOM", "DARK_FOREST", "DEEP_COLD_OCEAN", "DEEP_FROZEN_OCEAN", "DEEP_LUKEWARM_OCEAN", "DEEP_OCEAN", "DESERT", "DRIPSTONE_CAVES", "END_BARRENS", "END_HIGHLANDS", "END_MIDLANDS", "ERODED_BADLANDS", "FLOWER_FOREST", "FOREST", "FROZEN_OCEAN", "FROZEN_PEAKS", "FROZEN_RIVER", "GROVE", "ICE_SPIKES", "JAGGED_PEAKS", "JUNGLE", "LUKEWARM_OCEAN", "LUSH_CAVES", "MEADOW", "MUSHROOM_FIELDS", "NETHER_WASTES", "OCEAN", "OLD_GROWTH_BIRCH_FOREST", "OLD_GROWTH_PINE_TAIGA", "OLD_GROWTH_SPRUCE_TAIGA", "PLAINS", "RIVER", "SAVANNA", "SAVANNA_PLATEAU", "SMALL_END_ISLANDS", "SNOWY_BEACH", "SNOWY_PLAINS", "SNOWY_SLOPES", "SNOWY_TAIGA", "SOUL_SAND_VALLEY", "SPARSE_JUNGLE", "STONY_PEAKS", "STONY_SHORE", "SUNFLOWER_PLAINS", "SWAMP", "TAIGA", "THE_END", "THE_VOID", "WARM_OCEAN", "WARPED_FOREST", "WINDSWEPT_FOREST", "WINDSWEPT_GRAVELLY_HILLS", "WINDSWEPT_HILLS", "WINDSWEPT_SAVANNA", "WOODED_BADLANDS"]
 
+const environmentAPINames = ["CUSTOM", "NETHER", "NORMAL", "THE_END"]
+
+const moonPhaseAPINames = ["","FULL_MOON", "WANING_GIBBOUS", "WANING_CRESCENT", "NEW_MOON", "WAXING_CRESCENT", "FIRST_QUARTER", "WAXING_GIBBOUS"]
+
 //Util
 function dragEnterHandler(event) {
     document.body.style.borderStyle = "dotted"
@@ -324,7 +328,9 @@ function generateContentSelector(cardContents) {
     generateContentButton("Custom Event", function () {
         createCustomEventsTemplateCard(cardContents)
     }, cardContents, true)
-    generateContentButton("Custom Spawn", null, cardContents, false)
+    generateContentButton("Custom Spawn", function (){
+        createCustomSpawnsTemplateCard(cardContents)
+    }, cardContents, true)
     generateContentButton("Custom Quest", null, cardContents, false)
     generateContentButton("Wormhole", null, cardContents, false)
     generateContentButton("Custom Power", function () {
