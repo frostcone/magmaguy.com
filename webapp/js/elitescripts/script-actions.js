@@ -364,7 +364,7 @@ function tagAction(container) {
 }
 
 function teleportAction(container) {
-    generateTarget(container, "FinalTarget (destination)")
+    generateTarget(container, "FinalTarget")
 }
 
 function titleMessageAction(container) {

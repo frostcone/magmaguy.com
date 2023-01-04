@@ -507,15 +507,20 @@ function createMultiSelectListField(container, configKey, keyText, keyLink, opti
     setAsConfigList(entryDiv, configKey)
 
     let allSelectionsContainer = document.createElement("div")
+    allSelectionsContainer.classList.add("col-sm-8")
+    allSelectionsContainer.style.textAlign = "center"
     entryDiv.append(allSelectionsContainer)
 
     createSingleSelectForMultiSelectField(allSelectionsContainer, options, required)
 
     let addButton = createInvisibleButton(function () {
         createSingleSelectForMultiSelectField(allSelectionsContainer, options, required)
+        allSelectionsContainer.append(this)
     })
     addButton.append(getPlusIcon())
     allSelectionsContainer.append(addButton)
+    container.append(entryDiv)
+
 }
 
 function createSingleSelectForMultiSelectField(allSelectionsContainer, options, required) {
@@ -525,7 +530,7 @@ function createSingleSelectForMultiSelectField(allSelectionsContainer, options, 
     setGenericConfigEntry(singleSelectionContainer)
 
     let selection = document.createElement("select")
-    selection.classList.add("form-control", "col-sm-7")
+    selection.classList.add("form-control", "col-sm-11")
     singleSelectionContainer.append(selection)
 
     let deleteButton = createInvisibleButton(function () {
