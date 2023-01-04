@@ -45,6 +45,7 @@ function redrawTarget(select) {
 
 function commonTargetElements(container) {
     createVectorField(container, "offset", "Offset", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#shared-attributes", false)
+createBooleanField(container, "track", "Track", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#zone-track", false )
 }
 
 function generateNearbyPlayers(container) {

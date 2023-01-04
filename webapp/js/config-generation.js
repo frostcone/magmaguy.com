@@ -172,15 +172,17 @@ function getComplexEntry(singleEntryContainer, separator, listElement, firstMapL
     let finalResult = "";
     let startedFilling = false;
     for (let i = 0; i < elements.length; i++) {
-        if (elements[i].value === "") {
+        if (elements[i].value === "" || elements[i] === undefined) {
             //pitch and yaw can almost always be assumed to be 0
             if (singleEntryContainer.classList.contains("config-location-string") && (i === 4 || i === 5)) {
                 elements[i].value = 0
             } else if (startedFilling) {
+                console.log("element: " + elements[i] + " i value ")
                 alert("You have an incomplete configuration entry!")
                 elements[i].focus()
                 return
             }
+            if (i === 0) return
         }
         startedFilling = true
         finalResult += elements[i].value
