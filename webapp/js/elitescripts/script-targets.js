@@ -45,17 +45,18 @@ function redrawTarget(select) {
 
 function commonTargetElements(container) {
     createVectorField(container, "offset", "Offset", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#shared-attributes", false)
-createBooleanField(container, "track", "Track", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#zone-track", false )
+    createBooleanField(container, "track", "Track", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#zone-track", false)
+    createIntegerField(container, "coverage", "Coverage", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#coverage", false)
 }
 
 function generateNearbyPlayers(container) {
-    createIntegerField(container, "range","Range", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#range", true)
+    createIntegerField(container, "range", "Range", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#range", true)
 }
 
 function generateLocation(container) {
-    createLocationField(container, "location","Location", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#location", true)
+    createLocationField(container, "location", "Location", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#location", true)
 }
 
 function generateLocations(container) {
-    createTextFields(container, "locations","Locations", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#locations", true)
+    createTextFields(container, "locations", "Locations", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#locations", true)
 }
