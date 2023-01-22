@@ -5,6 +5,7 @@ function generateConditions(button) {
     let container = button.closest(".script-section").getElementsByClassName("script-value-section")[0]
     setGenericConfigEntry(container)
     generateTarget(container, null)
+    createListField(container, "conditionType", "Condition Type", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Conditions#condition-type", ["BLOCKING", "FILTERING"], false)
     createBooleanField(container, "locationIsAir", "Location is air", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Conditions#location-based-conditions", false)
     createBooleanField(container, "isOnFloor", "Is on floor", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Conditions#isonfloor", false)
     createBooleanField(container, "isAlive", "Is alive", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Conditions#isalive", false)

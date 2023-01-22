@@ -92,7 +92,7 @@ function rotatingRayZone(container) {
 }
 
 function translatingRayZone(container) {
-    generateTarget(container, "FinalTarget1")
+    generateTarget(container, "FinalTarget")
     generateTarget(container, "Target2")
     generateTarget(container, "FinalTarget2")
     createIntegerField(container, "animationDuration","Animation duration", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#translating_ray", true)
