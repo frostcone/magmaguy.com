@@ -284,6 +284,7 @@ function spawnFireworksAction(container) {
     createIntegerField(container, "power", "Fireworks Power", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#spawn_fireworks", false)
     createMultiSelectListField(container, "fireworkEffects", "Firework Effects", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#spawn_fireworks", fireworksEffects, true)
     createListField(container, "fireworkEffectType", "Firework Effect Type", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#spawn_fireworks", fireworksEffecType, true)
+    createListField(container, "fireworkEffectTypes", "Firework Effect Types", "")
 }
 
 function spawnFallingBlockAction(container) {
