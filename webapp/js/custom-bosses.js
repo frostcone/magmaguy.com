@@ -60,7 +60,7 @@ function createGeneralCustomBossesContents(templateContainer) {
     createLocationField(innerCard, "phaseSpawnLocation", "Phase Spawn Location", "https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-Custom-Bosses#boss-phases", false)
     createBooleanField(innerCard, "isRegionalBoss", "Is Regional Boss", "https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-Custom-Bosses#regional-bosses", false)
     //todo: should be a list of spawn locations
-    createTextFields(innerCard, "spawnLocation", "Spawn Locations", "https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-Custom-Bosses#regional-bosses", false)
+    createTextFields(innerCard, "spawnLocations", "Spawn Locations", "https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-Custom-Bosses#regional-bosses", false)
     createIntegerField(innerCard, "spawnCooldown", "Spawn Cooldown", "https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-Custom-Bosses#regional-bosses", false)
     createIntegerField(innerCard, "leashRadius", "Leash Radius", "https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-Custom-Bosses#regional-bosses", false)
     createBooleanField(innerCard, "instanced", "Instanced", "https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-Custom-Bosses#instanced-bosses", false)
