@@ -12,6 +12,7 @@ function createCustomItemsTemplateCard(cardContents) {
 
 function createGeneralCustomItemsContents(templateContainer) {
     let innerCard = createGlobalTemplate(templateContainer)
+    createTextField(innerCard, "name", "Name", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#name", false)
     createListField(innerCard, "material", "Material", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#material", materialAPINames, true)
     createIntegerField(innerCard, "level", "Level", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#level", false)
     createTextFields(innerCard, "lore", "Lore", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#lore", false)
