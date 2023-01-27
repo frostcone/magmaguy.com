@@ -2,6 +2,7 @@ const scalabilityAPINames = ["scalable", "fixed", "limited"]
 const itemTypeAPINames = ["custom", "unique"]
 const potionEffectTargets = ["self", "target"]
 const potionEffectApplicationType = ["onHit", "continuous"]
+const amplifierLevels = ["0","1","2","3","4","5","6","7","8","9","10"]
 
 function createCustomItemsTemplateCard(cardContents) {
     let templateContainer = generateTemplatesCard(cardContents, "Custom Item", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items")
@@ -82,12 +83,14 @@ function createSingleFieldForPotionEffects(allFieldsContainer, addButton) {
 
     let effectTypeLabel = generateComplexLabel("Potion type:")
     let effectTypeInput = generateComplexInput("DAMAGE_ALL", "col-sm-2", potionEffectsAPINames)
+    let effectAmplifierLabel = generateComplexLabel("Level:")
+    let effectAmplifierInput = generateComplexInput("0", "col-sm-2", amplifierLevels)
     let affectedEntityLabel = generateComplexLabel("Affected entity:")
     let affectedEntityField = generateComplexInput("SELF", "col-sm-1", potionEffectTargets)
     let applicationMethodLabel = generateComplexLabel("Application method:")
     let applicationMethodInput = generateComplexInput("ON_HIT", "col-sm-2", potionEffectApplicationType)
 
-    entryDiv.append(effectTypeLabel, effectTypeInput, affectedEntityLabel, affectedEntityField, applicationMethodLabel, applicationMethodInput)
+    entryDiv.append(effectTypeLabel, effectTypeInput,effectAmplifierLabel,effectAmplifierInput, affectedEntityLabel, affectedEntityField, applicationMethodLabel, applicationMethodInput)
 
     return entryDiv
 }
