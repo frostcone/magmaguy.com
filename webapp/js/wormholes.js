@@ -13,7 +13,7 @@ function createGeneralWormholeContents(templateContainer) {
     createTextField(innerCard, "location2Text", "Location 2 Text", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Wormholes#creating-a-wormhole", false)
     createTextField(innerCard, "permission", "Permission", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Wormholes#creating-a-wormhole", false)
     createIntegerField(innerCard, "coinCost", "Coin Cost", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Wormholes#creating-a-wormhole", false)
-    createListField(innerCard, "style", "Style", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Wormholes#creating-a-wormhole", ["NONE", "CRYSTAL", "ISOCAHEDRON", "CUBE"], true)
+    createListField(innerCard, "style", "Style", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Wormholes#creating-a-wormhole", ["NONE", "CRYSTAL", "ICOSAHEDRON", "CUBE"], true)
     createTextField(innerCard, "particleColor", "Particle Color", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Wormholes#creating-a-wormhole", false)
     createBooleanField(innerCard, "blindPlayer", "Blind Player", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Wormholes#creating-a-wormhole", false)
     createIntegerField(innerCard, "sizeMultiplier", "Size Multiplier", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Wormholes#creating-a-wormhole", false)

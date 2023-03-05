@@ -211,8 +211,7 @@ function generateSingleEntry(container, listElement, firstMapListElement) {
             return getConfigKey(input) + ": " + value
     } else {
         if (container.getElementsByTagName("select")[0] === undefined) {
-            alert("something's wrong I can feel it")
-            return ""
+            return undefined
         }
         let select = container.getElementsByTagName("select")[0]
         if (select.value === "") return
