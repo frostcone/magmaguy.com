@@ -255,7 +255,7 @@ function runCommandAsPlayerAction(container) {
 }
 
 function setMobAIAction(container) {
-    createBooleanField(container, "bValue", "Boss has AI (bValue)", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#set_mob_ai", true)
+    createBooleanField(container, "bValue", "Boss has AI (bValue)", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#set_mob_ai", false)
     createIntegerField(container, "duration", "Duration", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#set_mob_ai", true)
 }
 
