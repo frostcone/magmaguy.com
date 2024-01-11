@@ -70,6 +70,7 @@ html{
 body{
     color: white;
     height: 100%;
+    width: 100%;
 }
 
 #page-container {
@@ -83,10 +84,12 @@ body{
     height: 100%;
     padding: 10px;
     border-right: solid var(--bs-secondary) 3px;
+
 }
 
 #article-container{
     flex-grow: 1;
     background-color: var(--bs-light);
     padding: 10px;
+    width: 100%;
 }
