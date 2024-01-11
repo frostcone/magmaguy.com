@@ -1,0 +1,26 @@
+html{
+    height: 100%;
+}
+
+body{
+    color: whitesmoke;
+    height: 100%;
+}
+
+#page-container {
+    display: flex;
+    height: 100%;
+}
+
+#sidebar{
+    width: 200px;
+    background-color: red;
+    height: 100%;
+    padding: 10px;
+}
+
+#article-container{
+    flex-grow: 1;
+    background-color: green;
+    padding: 10px;
+}

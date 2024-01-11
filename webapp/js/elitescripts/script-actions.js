@@ -1,7 +1,7 @@
 const actions = ["ACTION_BAR_MESSAGE", "BOSS_BAR_MESSAGE", "DAMAGE", "MAKE_INVULNERABLE", "MODIFY_DAMAGE", "MESSAGE", "PLACE_BLOCK", "PLAY_ANIMATION", "PLAY_SOUND", "POTION_EFFECT", "PUSH", "RUN_COMMAND_AS_CONSOLE", "RUN_COMMAND_AS_PLAYER", "RUN_SCRIPT", "SET_MOB_AI", "SET_MOB_AWARE", "SET_ON_FIRE", "SET_TIME", "SPAWN_FIREWORKS", "STRIKE_LIGHTNING", "SPAWN_FALLING_BLOCK", "SPAWN_PARTICLE", "SUMMON_REINFORCEMENT", "TAG", "TELEPORT", "TITLE_MESSAGE", "UNTAG", "VISUAL_FREEZE"]
 const weather = ["CLEAR", "PRECIPITATION", "THUNDER"]
 const fireworksEffects = ["WHITE", "SILVER", "GRAY", "BLACK", "RED", "MAROON", "YELLOW", "OLIVE", "LIME", "GREEN", "AQUA", "TEAL", "BLUE", "NAVY", "FUCHSIA", "PURPLE", "ORANGE"]
-const fireworksEffecType = ["BALL","BALL_LARGE","BURST","CREEPER","STAR"]
+const fireworksEffecType = ["BALL", "BALL_LARGE", "BURST", "CREEPER", "STAR"]
 
 function generateAction(button) {
     genericScriptButtonSetter(button, function () {
@@ -79,7 +79,7 @@ function actionTrashBehavior(button) {
 }
 
 function actionDuplicateBehavior(button, actionsContainer) {
-alert("Duplicate feature coming soon!")
+    alert("Duplicate feature coming soon!")
 }
 
 
@@ -289,6 +289,7 @@ function spawnFireworksAction(container) {
 function spawnFallingBlockAction(container) {
     createListField(container, "material", "Material", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#spawn_falling_block", materialAPINames, true)
     createTextFields(container, "landingScripts", "Landing scripts", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#spawn_falling_block", false)
+    generateRelativeVector(container)
 }
 
 function spawnParticleAction(container) {
