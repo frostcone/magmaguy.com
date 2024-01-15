@@ -91,11 +91,66 @@ function GlobalArticleChange(articleURL) {
                 window.location.hash += "%" + pageSection;
                 ScrollIntoPageSection(pageSection)
             }
-            console.log(pageSection)
+
+            GenerateIndexOnClick()
         })
         .catch(error => {
             console.error('Error:', error)
         });
+}
+
+function GenerateIndexOnClick(pageSection){
+    if (document.getElementById("generated-index") !== null)
+        document.getElementById("generated-index").remove()
+    let newContainer = document.createElement("div")
+    newContainer.id = "generated-index"
+    let sidebarElement
+    for (let elementsByTagNameElement of document.getElementsByTagName("a")) {
+        if (elementsByTagNameElement.onclick === undefined || elementsByTagNameElement.onclick === null) continue
+        if (!elementsByTagNameElement.onclick.toString().includes("$language$")) continue
+        let url = elementsByTagNameElement.onclick.toString().split("'")[1].split("$")[2]
+        let currentURL = window.location.hash.split("%")[0].replaceAll("+","/")
+        if (!currentURL.includes(url)) continue
+        sidebarElement = elementsByTagNameElement
+        break
+    }
+
+    if (sidebarElement === undefined) {
+        console.log("couldn't find it")
+        return
+    }
+
+    sidebarElement.appendChild(newContainer)
+
+    let listOfHeaders = []
+    ScanForHeader(document.getElementById('article-container'), listOfHeaders)
+
+    for (let elementsByTagNameElement of listOfHeaders) {
+        let newElement = elementsByTagNameElement.cloneNode(true)
+        newElement.classList.add("generated-index-element")
+        newElement.innerHTML = "→ " + newElement.innerHTML
+        newContainer.appendChild(newElement)
+    }
+
+    //newContainer.innerHTML = "test"
+}
+
+function ScanForHeader(element, list) {
+    console.log(element.tagName)
+
+    if (element.tagName === "H1" ||
+        element.tagName === "H2" ||
+        element.tagName === "H3" ||
+        element.tagName === "H4" ||
+        element.tagName === "H5") {
+        console.log("adding")
+        list.push(element)
+    }
+
+    // Now process all of its child elements
+    for (let i = 0; i < element.children.length; i++) {
+        ScanForHeader(element.children[i], list);
+    }
 }
 
 function ScrollEventIntoPageSection(event, link) {
