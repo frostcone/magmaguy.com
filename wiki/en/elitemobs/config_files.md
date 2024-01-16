@@ -1,12 +1,12 @@
 # Getting started
 
-This page helps you understand how to correctly edit a yml page. All of my plugins use yml configuration files, which will reset themselves or stop working if you edit them incorrectly.
+This page helps you understand how to correctly edit a .yml file. All of my plugins use .yml configuration files, which will reset themselves or stop working if you edit them incorrectly.
 
 Below, you will find every configuration entry type and how they should be formatted if you are modifying any values!
 
-# `Program to edit yml files`
+# `How to edit .yml files`
 
-Files are stored in the `.yml` file format and [Notepad++](https://notepad-plus-plus.org/) is the recommended file editing software for configuration work.
+Files are stored in the `.yml` file format and [Notepad++](https://notepad-plus-plus.org/) is the recommended file editing software for configuration work. Of course you can use any other text editor of your choice.
 
 # `Boolean`
 
@@ -43,7 +43,7 @@ Configuration strings can accept special characters such as `&`. If these specia
 location: world,1.0,2.0,3.0,4.0,5.0
 ```
 
-These are used to store and configure locations. It follows this format: `worldName,X,Y,Z,PITCH,YAW`. Pitch and yaw just determine the direction that the player is looking at, and is implemented the same way Minecraft locations are.
+These are used to store and configure locations. It follows this format: `worldName,X,Y,Z,PITCH,YAW`. Pitch and yaw just determine the direction that the player/mob is looking at, and is implemented the same way Minecraft locations are.
 
 # `Multiplier`
 
