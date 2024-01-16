@@ -156,31 +156,36 @@ body {
 .sidebar h3,
 .sidebar h4,
 .sidebar h5 {
-    font-size: 13px;
+    font-size: 17px;
     margin: 0;
+    cursor: pointer;
+}
+
+.generated-index-element:hover {
+    color: dodgerblue;
 }
 
 .sidebar h1 {
-    margin-left: 0;
-}
-
-.sidebar h2 {
-    margin-left: 10px;
-}
-
-.sidebar h3 {
-    margin-left: 20px;
-}
-
-.sidebar h4 {
     margin-left: 30px;
 }
 
-.sidebar h5 {
+.sidebar h2 {
     margin-left: 40px;
 }
 
-#article-container-container{
+.sidebar h3 {
+    margin-left: 50px;
+}
+
+.sidebar h4 {
+    margin-left: 60px;
+}
+
+.sidebar h5 {
+    margin-left: 70px;
+}
+
+#article-container-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -191,18 +196,15 @@ body {
     flex-grow: 1;
     background-color: var(--bs-light);
     padding: 10px;
-    min-width: 50%;
-    max-width: 2000px;
+    min-width: 70vmin;
+    max-width: 70%;
 }
 
 #article-container li {
     display: block;
 }
 
-#article-container table, th, td {
-    border: 2px solid black;
-}
-
+/* todo: this sucks*/
 #article-container p,
 #article-container li,
 #article-container td,
@@ -212,11 +214,168 @@ body {
     font-size: 22px;
 }
 
+#article-container h1,
+#article-container h2,
+#article-container h3,
+#article-container h4,
+#article-container h5{
+    cursor: pointer;
+}
+
+.code-header {
+    display: flex; /* Use flexbox for layout */
+    background-color: #1b1e21;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.code-header-left, .code-header-right {
+    flex: 1; /* Each takes up 50% of the space */
+    display: flex; /* Enable flexbox within each div */
+    align-items: center; /* Center content vertically */
+    padding: 5px; /* Optional: for some padding inside the divs */
+}
+
+.code-header-left {
+    justify-content: flex-start;
+}
+
+.code-header-right {
+    justify-content: flex-end;
+}
+
 #article-container pre {
+    /*display: block;*/
+    width: 100%;
+    font-size: 20px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+
+#article-container pre code {
+    /*display: flex;*/
     background-color: #002e64;
-    border: 3px solid #011b3a;
     padding: 10px;
     font-family: "Source Code Pro", serif;
+    border-radius: 0 0 5px 5px;
+    overflow: auto;
+    max-width: inherit;
+}
+
+#article-container code:not(.language-yml):not(.language-yaml){
+    background-color: #1b1e21;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+#article-container table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+#article-container tr:nth-child(odd) {
+    background-color: #434343; /* Light gray for odd rows */
+}
+
+#article-container tr:nth-child(even) {
+    background-color: #373737; /* White for even rows */
+}
+
+#article-container th {
+    background-color: #1c3894; /* White for even rows */
+}
+
+#article-container table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+#article-container h1,
+#article-container h1 code{
+    font-size: 40px;
+}
+
+#article-container h2,
+#article-container h2 code {
+    font-size: 35px ;
+}
+
+#article-container h3,
+#article-container h3 code{
+    font-size: 30px;
+}
+
+#article-container h4,
+#article-container h4 code{
+    font-size: 25px;
+}
+
+#article-container h5,
+#article-container h5 code{
+    font-size: 20px;
+}
+
+#article-container a{
+    color: #90d1ff;
+}
+
+#article-container a:hover{
+    color: dodgerblue;
+}
+
+#article-container summary:hover{
+    color: dodgerblue;
+}
+
+#article-container summary {
+    font-size: 40px;
+    color: transparent; /* Make the original text color transparent */
+    background: linear-gradient(90deg, rgb(0, 248, 255) 0%, #0072ff 80%, rgb(0, 248, 255) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    animation: shimmer 3s linear infinite;
+    list-style: none;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.details-content {
+    position: relative;
+    border-radius: 10px;
+    /*border: 2px dashed transparent; !* Dashed border *!*/
+    font-size: 25px;
+    padding: 10px;
+    background: #074182;
+    animation: shimmer2 4s linear infinite;
+}
+
+@keyframes shimmer2 {
+    0% {
+        box-shadow: 0 0 4px 1px rgb(0, 248, 255);
+        border-color: #0072ff;
+    }
+    50% {
+        box-shadow: 0 0 4px 1px #0072ff;
+        border-color: rgb(0, 248, 255);
+    }
+    100% {
+        box-shadow: 0 0 4px 1px rgb(0, 248, 255);
+        border-color: #0072ff;
+    }
 }
 
 .sidebar a {

@@ -11,13 +11,13 @@ Boss files go into the configuration folder `~/plugins/EliteMobs/custombosses`.
 
 It is possible to create subfolders, such as `~/plugins/EliteMobs/custombosses/mybosses`. This is recommended to keep things organized.
 
-Files are stored in the `.yml` file format and [Notepad++](https://notepad-plus-plus.org/) is the recommended file editing software for configuration work. One file defines one boss, though it is possible to spawn the same boss several times and even set several spawn locations for the same boss file.
+One file defines one boss, though it is possible to spawn the same boss several times and even set several spawn locations for the same boss file.
 
 It is possible to use the [webapp](https://magmaguy.com/webapp/webapp.html) to quickly and easily create custom bosses and more.
 
 ## Smallest possible configuration
 
-**Please note that the smallest possible configuration file for a Custom Boss is:**
+**The smallest possible configuration file for a Custom Boss is:**
 ```yml
 ```
 
@@ -651,7 +651,59 @@ Death messages use the following placeholders:
 
 ***
 
+### slimeSize
+
+<div align="center">
+
+Sets the size of the boss, but only works for slimes.
+
 </div>
+
+| Key | Values | Default |
+|-|:-:|-|
+| `slimeSize` | [Integer](#integer) | `4` |
+
+<details>
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+slimeSize: 5
+```
+
+</div>
+
+</details>
+
+***
+
+### neutral
+
+<div align="center">
+
+Sets if the boss will spawn as neutral or not. This only applies to entity types that can be neutral such as wolves or iron golems.
+
+</div>
+
+| Key | Values | Default |
+|-|:-:|-|
+| `neutral` | [Boolean](#boolean) | `false` |
+
+<details>
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+neutral: true
+```
+
+</div>
+
+</details>
 
 ## Advanced settings
 
@@ -1552,6 +1604,62 @@ This is necessary to open the door when the boss dies, allowing players to leave
 </details>
 
 </div>
+
+***
+
+### alert
+
+<div align="center">
+
+Sets whether the boss is alert. By default, Regional Bosses are slowed and have a shorter aggro distance when they are out of combat. This setting prevents Regional Bosses from being slowed and having a shorter aggro distance while outside of combat, so they will always behave the same way in or out of combat.
+
+</div>
+
+| Key | Values | Default |
+|-|:-:|-|
+| `alert` | [Boolean](#boolean) | `true` |
+
+<details>
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+alert: true
+```
+
+</div>
+
+</details>
+
+***
+
+### removeAfterDeath
+
+<div align="center">
+
+Sets whether the Regional Boss will be permanently deleted after being killed. This is what BetterStructures uses for Shrines, where the Regional Boss is only designed to be fought against once and then never again at that location. 
+
+</div>
+
+| Key | Values | Default |
+|-|:-:|-|
+| `removeAfterDeath` | [Boolean](#boolean) | `false` |
+
+<details>
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+removeAfterDeath: true
+```
+
+</div>
+
+</details>
 
 ***
 

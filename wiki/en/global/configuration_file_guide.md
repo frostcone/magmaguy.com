@@ -4,7 +4,7 @@ This page helps you understand how to correctly edit a yml page. All of my plugi
 
 Below, you will find every configuration entry type and how they should be formatted if you are modifying any values!
 
-# `Program to edit yml files`
+# Program to edit yml files
 
 Files are stored in the `.yml` file format and [Notepad++](https://notepad-plus-plus.org/) is the recommended file editing software for configuration work.
 
@@ -55,7 +55,7 @@ damageMultiplier: 1.0
 
 In this case, the damage multiplier would be multiplied by 1, meaning that there is no change from the default value. If the `Multiplier` was `2.0`, the value would be multiplied by `2.0`. If it was `0.5`, it would be multiplied by `0.5`. For those not good with fractions, multiplying by `0.5` is the same as dividing by 2. `Multiplier` values should always be larger than 0 (`0.0001` is valid) and don't tend to have a higher ceiling.
 
-### `Integer`
+# `Integer`
 
 `Integer` values are just whole numbers. Example:
 
@@ -87,7 +87,7 @@ valuesList:
 
 Like with `String`s, it is recommended to keep the values between quotes. Each `String List` has its own format, so you'll have to find the specific format the one you're editing requires; however, globally, that is what the overall format should look like.
 
-# Map List
+# `Map List`
 
 'Map List' are lists of 'Map' value. These are only used in elite scripting, and require this configuration format:
 

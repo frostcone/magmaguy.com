@@ -55,7 +55,7 @@ function ChangeFlag(languageChildNode) {
 
 function ArticleClick(identifier, element) {
     if (document.getElementById("active-selection") !== null) document.getElementById("active-selection").id = ""
-    element.id = "active-selection"
+    if (element !== undefined) element.id = "active-selection"
     identifier = identifier.replace("$language$", "#" + window.location.hash.split("#")[1].split("+")[0])
     GlobalArticleChange(identifier)
 }
@@ -70,6 +70,7 @@ function GlobalArticleChange(articleURL) {
     return fetch(identifier)
         .then(response => {
             if (!response.ok) {
+                if (window.location.hash.includes("#en")) return
                 window.location.hash = identifier.replace("wiki/", "").replaceAll("/", "+")
                 let currentLanguage = window.location.hash.split("+")[0]
                 let newHash = window.location.hash.replace(currentLanguage, "#en")
@@ -80,13 +81,7 @@ function GlobalArticleChange(articleURL) {
         .then(data => {
             document.getElementById('article-container').innerHTML = marked.parse(data);
             window.location.hash = identifier.replace("wiki/", "").replaceAll("/", "+")
-            for (let elementsByTagNameElement of document.getElementById('article-container').getElementsByTagName("a")) {
-                if (elementsByTagNameElement.href.includes("#") && elementsByTagNameElement.href.split("#")[0] === window.location.href.split("#")[0] && !elementsByTagNameElement.href.includes("+")) {
-                    elementsByTagNameElement.addEventListener('click', function (event) {
-                        ScrollEventIntoPageSection(event, elementsByTagNameElement)
-                    })
-                }
-            }
+            CustomMarkdownPostProcessor()
             if (pageSection !== undefined) {
                 window.location.hash += "%" + pageSection;
                 ScrollIntoPageSection(pageSection)
@@ -99,9 +94,132 @@ function GlobalArticleChange(articleURL) {
         });
 }
 
-function GenerateIndexOnClick(pageSection){
-    if (document.getElementById("generated-index") !== null)
-        document.getElementById("generated-index").remove()
+function CustomMarkdownPostProcessor() {
+    //This allows the page to scroll to a specific element when clicking on a button that refers to that section
+    for (let elementsByTagNameElement of document.getElementById('article-container').getElementsByTagName("a")) {
+        if (elementsByTagNameElement.href.includes("#") && elementsByTagNameElement.href.split("#")[0] === window.location.href.split("#")[0] && !elementsByTagNameElement.href.includes("+")) {
+            elementsByTagNameElement.addEventListener('click', function (event) {
+                ScrollEventIntoPageSection(event, elementsByTagNameElement)
+            })
+        }
+    }
+
+    //This applies custom arrows to the summary tag
+    for (let elementsByTagNameElement of document.getElementById('article-container').getElementsByTagName("summary")) {
+        let summaryTextElement
+        if (elementsByTagNameElement.getElementsByTagName("b").length > 0) {
+            summaryTextElement = elementsByTagNameElement.getElementsByTagName("b")[0]
+        } else {
+            summaryTextElement = elementsByTagNameElement
+        }
+        summaryTextElement.innerHTML = "↪" + summaryTextElement.innerHTML
+        elementsByTagNameElement.parentElement.onclick = function () {
+            if (summaryTextElement.innerHTML.includes("↪")) {
+                summaryTextElement.innerHTML = summaryTextElement.innerHTML.replace("↪", "🞃")
+            } else {
+                summaryTextElement.innerHTML = summaryTextElement.innerHTML.replace("🞃", "↪")
+            }
+        }
+    }
+
+    //This encapsulates the contents of <details> into a new div that has the details-content class for easy css styling
+    for (let elementsByTagNameElement of document.getElementById('article-container').getElementsByTagName("details")) {
+        let htmlContents = elementsByTagNameElement.innerHTML.split("</summary>")[1]
+        let detailsContent = document.createElement("div")
+        detailsContent.classList.add("details-content")
+        detailsContent.innerHTML = htmlContents;
+        htmlContents = elementsByTagNameElement.innerHTML.split("</summary>")[0] + "</summary>"
+        elementsByTagNameElement.innerHTML = htmlContents
+        elementsByTagNameElement.appendChild(detailsContent)
+    }
+
+    //This inserts the pre->code header that allows easy copying
+    for (let elementsByTagNameElement of document.getElementById('article-container').getElementsByTagName("pre")) {
+        for (let codeElement of elementsByTagNameElement.getElementsByTagName("code")) {
+            let newHeader = document.createElement("div")
+            newHeader.classList.add("code-header")
+            let leftDiv = document.createElement("div")
+            let rightDiv = document.createElement("a")
+            rightDiv.onclick = function () {
+                CopyClipboard(this)
+            }
+            leftDiv.classList.add("code-header-left")
+            rightDiv.classList.add("code-header-right")
+            let leftDivText;
+            codeElement.classList.forEach(function (iteratedClass) {
+                if (iteratedClass.includes("language-")) leftDivText = iteratedClass.split("language-")[1]
+            })
+            leftDiv.innerText = leftDivText
+            rightDiv.innerText = "📋 Copy"
+            newHeader.appendChild(leftDiv)
+            newHeader.appendChild(rightDiv)
+            elementsByTagNameElement.insertBefore(newHeader, codeElement)
+        }
+    }
+
+    //Inserts the raw data from the code blocks into the container as a data property because the highlighter will destroy the ability to easily get this data
+    for (let elementsByTagNameElement of document.getElementById('article-container').getElementsByTagName("pre")) {
+        for (let codeElement of elementsByTagNameElement.getElementsByTagName("code")) {
+            codeElement.setAttribute("data-rawyaml", codeElement.textContent)
+        }
+    }
+
+    //Apply highlighting on the whole page
+    hljs.highlightAll()
+
+    //Add click to link for headers in article
+    AddLinkToHeader()
+
+}
+
+function AddLinkToHeader() {
+    let headers = [];
+    let container = document.getElementById('article-container');
+
+    headers = headers.concat(Array.from(container.getElementsByTagName("h1")));
+    headers = headers.concat(Array.from(container.getElementsByTagName("h2")));
+    headers = headers.concat(Array.from(container.getElementsByTagName("h3")));
+    headers = headers.concat(Array.from(container.getElementsByTagName("h4")));
+    headers = headers.concat(Array.from(container.getElementsByTagName("h5")));
+
+    for (let header of headers) {
+        let originalText = header.innerText;
+        header.innerText = "🔗 " + header.innerText;
+        header.onclick = function (){
+            if (window.location.hash.includes("%")) {
+                window.location.hash = window.location.hash.split("%")[0] + "%" + TurnHeaderIntoLink(originalText)
+            }
+            else {
+                window.location.hash = window.location.hash + "%" + TurnHeaderIntoLink(originalText)
+            }
+            header.scrollIntoView({
+                behavior: 'smooth', block: 'start'
+            })
+        }
+    }
+    console.log("size " + headers.length);
+}
+
+
+function CopyClipboard(copyButton) {
+    let textToCopy = copyButton.parentElement.parentElement.getElementsByTagName("code")[0].getAttribute("data-rawyaml")
+    let tempTextArea = document.createElement("textarea")
+    tempTextArea.textContent = textToCopy
+    tempTextArea.select()
+    tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+    navigator.clipboard.writeText(tempTextArea.innerHTML).then(rsp => {
+        tempTextArea.remove()
+        let originalText = copyButton.innerHTML
+        copyButton.innerHTML = "✔ Copied!"
+        setTimeout(function () {
+            copyButton.innerHTML = originalText
+        }, 1000)
+    })
+
+}
+
+function GenerateIndexOnClick() {
+    if (document.getElementById("generated-index") !== null) document.getElementById("generated-index").remove()
     let newContainer = document.createElement("div")
     newContainer.id = "generated-index"
     let sidebarElement
@@ -109,18 +227,17 @@ function GenerateIndexOnClick(pageSection){
         if (elementsByTagNameElement.onclick === undefined || elementsByTagNameElement.onclick === null) continue
         if (!elementsByTagNameElement.onclick.toString().includes("$language$")) continue
         let url = elementsByTagNameElement.onclick.toString().split("'")[1].split("$")[2]
-        let currentURL = window.location.hash.split("%")[0].replaceAll("+","/")
+        let currentURL = window.location.hash.split("%")[0].replaceAll("+", "/")
         if (!currentURL.includes(url)) continue
         sidebarElement = elementsByTagNameElement
         break
     }
 
     if (sidebarElement === undefined) {
-        console.log("couldn't find it")
         return
     }
 
-    sidebarElement.appendChild(newContainer)
+    sidebarElement.parentElement.appendChild(newContainer)
 
     let listOfHeaders = []
     ScanForHeader(document.getElementById('article-container'), listOfHeaders)
@@ -128,22 +245,23 @@ function GenerateIndexOnClick(pageSection){
     for (let elementsByTagNameElement of listOfHeaders) {
         let newElement = elementsByTagNameElement.cloneNode(true)
         newElement.classList.add("generated-index-element")
-        newElement.innerHTML = "→ " + newElement.innerHTML
+        newElement.innerHTML = "→ " + newElement.innerHTML.replaceAll("🔗 ", "")
         newContainer.appendChild(newElement)
+        newElement.onclick = function () {
+            IndexClick(this)
+        }
     }
+}
 
-    //newContainer.innerHTML = "test"
+function IndexClick(clickedElement) {
+    if (clickedElement === undefined || clickedElement.innerHTML === undefined) return
+    if (window.location.hash.includes("%")) window.location.hash = window.location.hash.split("%")[0]
+    window.location.hash += "%" + TurnHeaderIntoLink(clickedElement.innerHTML.replace("→ ", "").replaceAll("🔗 ", ""))
+    GlobalArticleChange(window.location.hash)
 }
 
 function ScanForHeader(element, list) {
-    console.log(element.tagName)
-
-    if (element.tagName === "H1" ||
-        element.tagName === "H2" ||
-        element.tagName === "H3" ||
-        element.tagName === "H4" ||
-        element.tagName === "H5") {
-        console.log("adding")
+    if (element.tagName === "H1" || element.tagName === "H2" || element.tagName === "H3" || element.tagName === "H4" || element.tagName === "H5") {
         list.push(element)
     }
 
@@ -172,8 +290,7 @@ function ScrollIntoPageSection(headerName) {
         })
         if (window.location.hash.includes("%")) {
             window.location.hash.replace(window.location.hash.split("%")[1], headerName)
-        }
-        else {
+        } else {
             window.location.hash += "%" + headerName;
         }
     } else console.log("Failed to find header for " + headerName)
@@ -181,10 +298,8 @@ function ScrollIntoPageSection(headerName) {
 
 function CrawlThroughHeaders(headerTagName, targetHeader) {
     for (let elementsByTagNameElement of document.getElementById('article-container').getElementsByTagName(headerTagName)) {
-        {
-            console.log("searching for " + targetHeader + " found " + TurnHeaderIntoLink(elementsByTagNameElement.innerText))
-            if (TurnHeaderIntoLink(elementsByTagNameElement.innerText) === targetHeader) return elementsByTagNameElement
-        }
+        let cleanLink = elementsByTagNameElement.innerHTML.replace("🔗 ", "")
+        if (TurnHeaderIntoLink(cleanLink) === targetHeader) return elementsByTagNameElement
     }
     return undefined
 }
@@ -200,4 +315,5 @@ function TurnHeaderIntoLink(headerText) {
         .replaceAll(" ", "-")
         .replaceAll("/", "-")
         .replaceAll("!", "-")
+        .replaceAll("🔗 ","")
 }
