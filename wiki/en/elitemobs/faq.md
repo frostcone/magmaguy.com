@@ -1,35 +1,44 @@
 If you have a question that isn't listed here, ***take a look at the sidebar*** to see if it has a page dedicated to it in the wiki!
 
-# Run command on EliteMobs death / give loot/rewards from other plugins on Elite Mob death?
+# Run a command on Elite Mob death or give loot/rewards from other plugins on Elite Mob death?
 
-[Information available here.](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Run-command-on-Elite-Mob-death)
+[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+creating_bosses.md%ondeathcommands)
 
 ***
 
 # Vault support?
 
-[Information available here.](https://github.com/MagmaGuy/EliteMobs/wiki/%5BThird-party-support%5D-Vault)
+[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+vault.md)
 
 ***
 
 # PlaceholderAPI placeholders?
 
-[Information available here.](https://github.com/MagmaGuy/EliteMobs/wiki/%5BPlaceholderAPI%5D-EliteMobs-placeholders)
+[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+placeholders.md)
 
 ***
 
-# WorldGuard flags / EliteMobs in some places and not others?
+# Use WorldGuard flags to allow EliteMobs in some places but not others?
 
-[Information available here.](https://github.com/MagmaGuy/EliteMobs/wiki/%5BThird-party-support%5D-Worldguard-flags)
+[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+worldguard_flags.md)
 
 ***
 
-# Can I make 100% of mobs that spawn Elite Mobs?
+# Can I make 100% of mobs that spawn be Elite Mobs?
 
 It's a really bad idea. You can access the `MobCombatSettings.yml` configuration file and change `eliteMobsSpawnPercentage: 1` to accomplish this.
 
 ***
 
-# Can I create custom powers / custom enchantments / custom potion effects?
+
+# Can I create custom powers?
+
+[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md)
+
+# Can I create custom enchantments?
+
+This is on our to do list and should be coming soon, but it is currently not possible.
+
+# Can I create custom potion effects?
 
 The only way to do this is to learn Java and writing them yourselves. At that point, you might as well modify the EliteMobs source code.
