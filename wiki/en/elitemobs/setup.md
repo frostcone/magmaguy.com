@@ -107,7 +107,7 @@ Run the command `/em reload` after setting a dungeon up to make sure all of the 
 
 ## Bosses aren't spawning
 
-### But it was here earlier!
+### The boss was spawning earlier!
 
 <details><summary>Answer</summary
 
@@ -124,7 +124,7 @@ In this case the numbers you're looking for are `1643259941451`. You can use [th
 
 </details>
 
-### It was never there!
+### The boss was never spawning!
 
 <details><summary>Answer</summary>
 
