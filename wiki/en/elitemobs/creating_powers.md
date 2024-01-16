@@ -38,7 +38,7 @@ eliteScript:
     - action: PUSH
       Target:
         targetType: SELF
-      vValue: 0,.3,0
+      vValue: 0,.5,0
     Cooldowns:
       local: 60
       global: 20
