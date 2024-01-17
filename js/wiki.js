@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 10)
         })
     }
+
 })
+
 
 /**
  * Switches the active language of the website.
@@ -85,7 +87,12 @@ function ArticleClick(identifier, element) {
  * @returns {Promise} A promise that resolves after the fetch operation and the post-fetch activities are done.
  */
 function GlobalArticleChange(articleURL) {
-    let identifier = "wiki/" + articleURL.replaceAll("+", "/").replaceAll("#", "")
+    let identifier
+    if (!articleURL.includes("wiki/")) {
+        identifier = "wiki/" + articleURL.replaceAll("+", "/").replaceAll("#", "")
+    } else {
+        identifier = articleURL.replaceAll("+", "/").replaceAll("#", "")
+    }
     let pageSection = undefined
     if (identifier.includes("%")) {
         pageSection = identifier.split("%")[1]
@@ -227,7 +234,6 @@ function AddLinkToHeader() {
             })
         }
     }
-    console.log("size " + headers.length);
 }
 
 /**
@@ -394,20 +400,13 @@ document.addEventListener('click', function (event) {
     // If the clicked element is not a button, ignore it
     if (event.target.tagName.toLowerCase() !== 'a') return;
     if (event.target.href === null) return;
-    if (event.target.href.toLowerCase().split("#")[1] === "string")
-        ClickOnConfigFileGuideElement("string")
-    if (event.target.href.toLowerCase().split("#")[1] === "double")
-        ClickOnConfigFileGuideElement("double")
-    if (event.target.href.toLowerCase().split("#")[1] === "integer")
-        ClickOnConfigFileGuideElement("integer")
-    if (event.target.href.toLowerCase().split("#")[1] === "map_list")
-        ClickOnConfigFileGuideElement("map_list")
-    if (event.target.href.toLowerCase().split("#")[1] === "string_list")
-        ClickOnConfigFileGuideElement("string_list")
-    if (event.target.href.toLowerCase().split("#")[1] === "serialized_location")
-        ClickOnConfigFileGuideElement("serialized_location")
-    if (event.target.href.toLowerCase().split("#")[1] === "boolean")
-        ClickOnConfigFileGuideElement("boolean")
+    if (event.target.href.toLowerCase().split("#")[1] === "string") ClickOnConfigFileGuideElement("string")
+    if (event.target.href.toLowerCase().split("#")[1] === "double") ClickOnConfigFileGuideElement("double")
+    if (event.target.href.toLowerCase().split("#")[1] === "integer") ClickOnConfigFileGuideElement("integer")
+    if (event.target.href.toLowerCase().split("#")[1] === "map_list") ClickOnConfigFileGuideElement("map_list")
+    if (event.target.href.toLowerCase().split("#")[1] === "string_list") ClickOnConfigFileGuideElement("string_list")
+    if (event.target.href.toLowerCase().split("#")[1] === "serialized_location") ClickOnConfigFileGuideElement("serialized_location")
+    if (event.target.href.toLowerCase().split("#")[1] === "boolean") ClickOnConfigFileGuideElement("boolean")
     if (event.target.href.toLowerCase().split("#")[1] === "color_codes")
         ClickOnConfigFileGuideElement("color_codes")
 });
@@ -474,7 +473,6 @@ function DisplayConfigTooltip(hoveredElement, elementName) {
         .then(data => {
             let tooltipContents = document.createElement("div");
             tooltipContents.innerHTML = marked.parse(data)
-            console.log(tooltipContents.innerHTML)
             let specificSection = tooltipContents.querySelector('#config_' + elementName).innerHTML
 
 
@@ -534,3 +532,105 @@ function ClickOnConfigFileGuideElement(elementName) {
         })
     })
 }
+
+function fetchDirectoryListing(directory) {
+    return new Promise((resolve, reject) => {
+        //console.log('Called fetchDirectoryListing, directory:', directory);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    //console.log('Response from server: ', xhr.responseText);
+                    resolve(xhr.responseText); // Resolve the promise with the response text
+                } else {
+                    //console.error('Error fetching directory listing');
+                    reject('Error fetching directory listing'); // Reject the promise if there was an error
+                }
+            }
+        };
+        xhr.open('GET', 'http://localhost:3000/list-directory?dir=' + encodeURIComponent(directory), true);
+        xhr.send();
+    });
+}
+
+let AllFilesCache = [];
+
+async function FetchAllMarkdownFiles() {
+    try {
+        let languages = await fetchDirectoryListing("../wiki/");
+        languages = JSON.parse(languages);
+
+        for (let language of languages) {
+            let result = await fetchDirectoryListing("../wiki/" + language + "/");
+            result = JSON.parse(result);
+
+            for (let individualEntry of result) {
+                if (individualEntry.includes(".md")) {
+                    AllFilesCache.push("wiki/" + language + "/" + individualEntry);
+                } else {
+                    let lastResult = await fetchDirectoryListing("../wiki/" + language + "/" + individualEntry + "/");
+                    lastResult = JSON.parse(lastResult);
+                    lastResult.forEach(entry => {
+                        AllFilesCache.push("wiki/" + language + "/" + individualEntry + "/" + entry)
+                    });
+                }
+            }
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+    InitializeAllPagesForSearch()
+}
+
+async function InitializeAllPagesForSearch() {
+    let data = [];
+
+    const promises = AllFilesCache.map(async file => {
+        try {
+            const fileData = await FetchPageDataForSearch(file);
+
+            data.push({
+                url: file, data: fileData
+            });
+        } catch (error) {
+            console.error(`Failed to fetch data for ${file}:`, error);
+        }
+    });
+
+    await Promise.all(promises);
+    fuse = new Fuse(data, {
+        keys: ['url', 'data'], tokenize: true, matchAllTokens: true, includeMatches: true
+    })
+}
+
+let fuse;
+
+function FetchPageDataForSearch(url) {
+    return fetch(url)
+        .then(response => {
+            return response.text()
+        })
+        .then(data => {
+            return marked.parse(data).replace(/<[^>]+>/g, '');
+        })
+        .catch(error => {
+            console.error('Error:', error)
+        });
+}
+
+function StartSearch(input_box) {
+    let results = fuse.search(input_box.value);
+
+    let searchResults = document.getElementById("searchResults");
+    searchResults.innerHTML = ""; // Clear any previous results
+    searchResults.style.display = results.length ? "block" : "none"; // Hide the dropdown if there are no results
+
+    for (let result of results) {
+        let a = document.createElement("a");
+        a.onclick = function (){GlobalArticleChange(result.item.url)}
+        a.textContent = result.item.url;
+        searchResults.appendChild(a);
+    }
+}
+
+FetchAllMarkdownFiles();

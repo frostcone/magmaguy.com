@@ -5,6 +5,50 @@
     <link href="css/constants.css" rel="stylesheet" type="text/css">
     <link href="css/wiki.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css" rel="stylesheet">
+
+
+    <style>
+        .search-bar {
+            width: 200px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png'); /* You should replace with your own icon */
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px; /* Size of the search box */
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        .search-bar:focus {
+            width: 100%; /* The width will grow when the search box clicked */
+        }
+    </style>
+
+    <style>
+        .dropdown {
+            display: none; /* Hidden by default */
+            position: absolute; /* Position the dropdown to the right of its parent */
+            background-color: #f6f6f6;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1; /* Placed on top of the webpage */
+        }
+
+        .dropdown a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #f1f1f1
+        }
+    </style>
 </head>
 
 <body>
@@ -361,6 +405,9 @@
                 </div>
             </div>
         </details>
+        <input class="search-bar" name="search" oninput="StartSearch(this)" placeholder="Search..." type="text">
+        <div class="dropdown" id="searchResults">
+        </div>
     </div>
     <div id="article-container-container">
         <div id="article-container">
@@ -373,6 +420,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/yaml.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!--Search bar-->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
 <script src="js/wiki.js"></script>
 <script src="js/header.js"></script>
 </body>
