@@ -408,6 +408,8 @@ document.addEventListener('click', function (event) {
         ClickOnConfigFileGuideElement("serialized_location")
     if (event.target.href.toLowerCase().split("#")[1] === "boolean")
         ClickOnConfigFileGuideElement("boolean")
+    if (event.target.href.toLowerCase().split("#")[1] === "color_codes")
+        ClickOnConfigFileGuideElement("color_codes")
 });
 
 document.addEventListener('mouseover', function (event) {
@@ -440,6 +442,9 @@ document.addEventListener('mouseover', function (event) {
             break;
         case "multiplier":
             elementName = 'multiplier'
+            break;
+        case "color_codes":
+            elementName = 'color_codes'
             break;
         default:
             return;

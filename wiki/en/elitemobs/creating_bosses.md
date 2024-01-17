@@ -27,7 +27,7 @@ Note how this is just an empty file. This will still spawn a zombie custom boss 
 
 <div align="center">
 
-Let's take a look at an example of what a bossfile looks like.
+Let's take a look at an example of what a boss file looks like.
 
 <details> 
 <summary><b>Example</b></summary>
@@ -133,7 +133,7 @@ Sets the name of the boss.
 
 | Key | Values | Default |
 |-|:-:|-|
-| `name` | [String](#string), accepts [color codes](#color-codes) and the placeholders listed below | "Default Name" |
+| `name` | [String](#string), accepts [color codes](#color_codes) and the placeholders listed below | "Default Name" |
 
 | Placeholder | Description | Example |Output (for a level 10 boss) |
 |-|:-:|:-:|-|
@@ -538,7 +538,7 @@ Sets the message to send when the boss spawns. Requires setting up the [announce
 
 | Key | Values | Default |
 |-|:-:|-|
-| `spawnMessage` | [Strings](#string) and [color codes](#color-codes) | none |
+| `spawnMessage` | [Strings](#string) and [color codes](#color_codes) | none |
 
 <details> 
 
@@ -563,7 +563,7 @@ Sets the list of messages to send when the boss dies. Requires setting up the [a
 
 | Key | Values | Default |
 |-|:-:|-|
-| `deathMessages` | [Strings](#string), [color codes](#color-codes) and the placeholders below | none |
+| `deathMessages` | [Strings](#string), [color codes](#color_codes) and the placeholders below | none |
 
 <details> 
 
@@ -802,7 +802,7 @@ Sets the message show in the boss bar. This is used to track both Custom Boss he
 
 | Key | Values | Default |
 |-|:-:|-|
-| `locationMessage` | [String](#string), [Color codes](color-codes) and the placeholders listed below | none |
+| `locationMessage` | [String](#string), [Color codes](color_codes) and the placeholders listed below | none |
 
 Placeholders:
 

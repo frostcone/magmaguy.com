@@ -247,6 +247,7 @@ code:not(.language-yml):not(.language-yaml) {
     }
 }
 
+
 .details-content {
     position: relative;
     border-radius: 10px;
@@ -271,6 +272,19 @@ code:not(.language-yml):not(.language-yaml) {
         box-shadow: 0 0 4px 1px var(--summary-text-color-start);
         border-color: var(--summary-text-color-end);
     }
+}
+
+@keyframes magicEffect {
+    0% { content: ";vZO}Q$%"; }
+    25% { content: "BB?§zW$S"; }
+    50% { content: ":zfW%ceF"; }
+    75% { content: "vV}i!Kn-"; }
+    100% { content: "/(iaBiFn"; }
+}
+
+.magic-text::before {
+    content: "";
+    animation: magicEffect 1s infinite;
 }
 
 .sidebar a {
