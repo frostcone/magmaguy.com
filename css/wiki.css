@@ -1,20 +1,4 @@
 :root {
-    --bs-blue: #007bff;
-    --bs-indigo: #6610f2;
-    --bs-purple: #7367f0;
-    --bs-pink: #e83e8c;
-    --bs-red: #ea5455;
-    --bs-orange: #fd7e14;
-    --bs-yellow: #ff9f43;
-    --bs-green: #28c76f;
-    --bs-teal: #20c997;
-    --bs-cyan: #00cfe8;
-    --bs-black: #000;
-    --bs-white: #fff;
-    --bs-gray: rgba(0, 0, 0, 0.1);
-    --bs-gray-dark: rgba(0, 0, 0, 0.45);
-    --bs-gray-25: rgba(255, 255, 255, 0.015);
-    --bs-gray-50: rgba(255, 255, 255, 0.03);
     --bs-primary: #7367f0;
     --bs-secondary: #a8aaae;
     --bs-success: #28c76f;
@@ -23,21 +7,7 @@
     --bs-danger: #ea5455;
     --bs-light: #44475b;
     --bs-dark: #d7d8de;
-    --bs-gray: rgba(255, 255, 255, 0.8);
-    --bs-primary-rgb: 115, 103, 240;
-    --bs-secondary-rgb: 168, 170, 174;
-    --bs-success-rgb: 40, 199, 111;
-    --bs-info-rgb: 0, 207, 232;
-    --bs-warning-rgb: 255, 159, 67;
-    --bs-danger-rgb: 234, 84, 85;
-    --bs-light-rgb: 68, 71, 91;
-    --bs-dark-rgb: 215, 216, 222;
-    --bs-gray-rgb: 255, 255, 255;
-    --bs-white-rgb: 255, 255, 255;
-    --bs-black-rgb: 0, 0, 0;
-    --bs-body-color-rgb: 182, 190, 227;
-    --bs-body-bg-rgb: 37, 41, 60;
-    --bs-font-sans-serif: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --bs-font-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     --bs-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
     --bs-root-font-size: 16px;
@@ -47,85 +17,17 @@
     --bs-body-line-height: 1.47;
     --bs-body-color: #b6bee3;
     --bs-body-bg: #25293c;
-    --bs-border-width: 1px;
-    --bs-border-style: solid;
-    --bs-border-color: #434968;
-    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
-    --bs-border-radius: 0.375rem;
-    --bs-border-radius-sm: 0.25rem;
-    --bs-border-radius-lg: 0.5rem;
-    --bs-border-radius-xl: 0.625rem;
-    --bs-border-radius-2xl: 2rem;
-    --bs-border-radius-pill: 50rem;
-    --bs-link-color: #7367f0;
-    --bs-link-hover-color: #685dd8;
-    --bs-code-color: #e83e8c;
-    --bs-highlight-bg: #ffecd9;
-}
-
-:root {
-    --bs-blue: #007bff;
-    --bs-indigo: #6610f2;
-    --bs-purple: #7367f0;
-    --bs-pink: #e83e8c;
-    --bs-red: #ea5455;
-    --bs-orange: #fd7e14;
-    --bs-yellow: #ff9f43;
-    --bs-green: #28c76f;
-    --bs-teal: #20c997;
-    --bs-cyan: #00cfe8;
-    --bs-black: #000;
-    --bs-white: #fff;
-    --bs-gray: rgba(0, 0, 0, 0.1);
-    --bs-gray-dark: rgba(0, 0, 0, 0.45);
-    --bs-gray-25: rgba(255, 255, 255, 0.015);
-    --bs-gray-50: rgba(255, 255, 255, 0.03);
-    --bs-primary: #7367f0;
-    --bs-secondary: #a8aaae;
-    --bs-success: #28c76f;
-    --bs-info: #00cfe8;
-    --bs-warning: #ff9f43;
-    --bs-danger: #ea5455;
-    --bs-light: #44475b;
-    --bs-dark: #d7d8de;
-    --bs-gray: rgba(255, 255, 255, 0.8);
-    --bs-primary-rgb: 115, 103, 240;
-    --bs-secondary-rgb: 168, 170, 174;
-    --bs-success-rgb: 40, 199, 111;
-    --bs-info-rgb: 0, 207, 232;
-    --bs-warning-rgb: 255, 159, 67;
-    --bs-danger-rgb: 234, 84, 85;
-    --bs-light-rgb: 68, 71, 91;
-    --bs-dark-rgb: 215, 216, 222;
-    --bs-gray-rgb: 255, 255, 255;
-    --bs-white-rgb: 255, 255, 255;
-    --bs-black-rgb: 0, 0, 0;
-    --bs-body-color-rgb: 182, 190, 227;
-    --bs-body-bg-rgb: 37, 41, 60;
-    --bs-font-sans-serif: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    --bs-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --bs-root-font-size: 16px;
-    --bs-body-font-family: var(--bs-font-sans-serif);
-    --bs-body-font-size: 0.9375rem;
-    --bs-body-font-weight: 400;
-    --bs-body-line-height: 1.47;
-    --bs-body-color: #b6bee3;
-    --bs-body-bg: #25293c;
-    --bs-border-width: 1px;
-    --bs-border-style: solid;
-    --bs-border-color: #434968;
-    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
-    --bs-border-radius: 0.375rem;
-    --bs-border-radius-sm: 0.25rem;
-    --bs-border-radius-lg: 0.5rem;
-    --bs-border-radius-xl: 0.625rem;
-    --bs-border-radius-2xl: 2rem;
-    --bs-border-radius-pill: 50rem;
-    --bs-link-color: #7367f0;
-    --bs-link-hover-color: #685dd8;
-    --bs-code-color: #e83e8c;
-    --bs-highlight-bg: #ffecd9;
+    /*new*/
+    --table-bg-lightgray: #434343;
+    --table-bg-darkgray: #373737;
+    --table-header-bg-blue: #1c3894;
+    --link-color-normal: #90d1ff;
+    --link-color-hover: dodgerblue;
+    --summary-text-color-start: rgb(0, 248, 255);
+    --summary-text-color-end: #0072ff;
+    --details-content-bg-color: #074182;
+    --wiki-category-header-bg: rgba(25, 25, 25, 0.17);
+    --wiki-category-header-border-color: #616161;
 }
 
 html {
@@ -151,18 +53,16 @@ body {
     border-right: solid var(--bs-secondary) 3px;
 }
 
-.sidebar h1,
-.sidebar h2,
-.sidebar h3,
-.sidebar h4,
-.sidebar h5 {
+.sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5 {
     font-size: 17px;
     margin: 0;
-    cursor: pointer;
 }
 
-.generated-index-element:hover {
-    color: dodgerblue;
+.generated-index-element:hover,
+#article-container a:hover,
+#article-container summary:hover,
+#active-selection {
+    color: var(--link-color-hover);
 }
 
 .sidebar h1 {
@@ -205,25 +105,23 @@ body {
 }
 
 /* todo: this sucks*/
-#article-container p,
-#article-container li,
-#article-container td,
-#article-container code,
-#article-container b,
-#article-container th {
+#article-container b, #article-container code, #article-container li, #article-container p, #article-container td, #article-container th {
     font-size: 22px;
 }
 
-#article-container h1,
-#article-container h2,
-#article-container h3,
-#article-container h4,
-#article-container h5{
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+summary {
     cursor: pointer;
 }
 
 .code-header {
-    display: flex; /* Use flexbox for layout */
+    display: flex;
+    /* Use flexbox for layout */
     background-color: #1b1e21;
     border-radius: 5px 5px 0 0;
     padding: 10px;
@@ -231,10 +129,14 @@ body {
 }
 
 .code-header-left, .code-header-right {
-    flex: 1; /* Each takes up 50% of the space */
-    display: flex; /* Enable flexbox within each div */
-    align-items: center; /* Center content vertically */
-    padding: 5px; /* Optional: for some padding inside the divs */
+    flex: 1;
+    /* Each takes up 50% of the space */
+    display: flex;
+    /* Enable flexbox within each div */
+    align-items: center;
+    /* Center content vertically */
+    padding: 5px;
+    /* Optional: for some padding inside the divs */
 }
 
 .code-header-left {
@@ -245,32 +147,33 @@ body {
     justify-content: flex-end;
 }
 
-#article-container pre {
-    /*display: block;*/
-    width: 100%;
-    font-size: 20px;
-    border: 2px solid #000000;
-    border-radius: 5px;
+pre {
+    width: 100%!important;
+    font-size: 20px!important;
+    border: 2px solid #000000!important;
+    border-radius: 5px!important;
 }
 
-#article-container pre code {
-    /*display: flex;*/
-    background-color: #002e64;
-    padding: 10px;
-    font-family: "Source Code Pro", serif;
-    border-radius: 0 0 5px 5px;
-    overflow: auto;
-    max-width: inherit;
+pre code {
+    /*display: flex;
+    */
+    background-color: #002e64 !important;
+    padding: 10px!important;
+    font-family: "Source Code Pro", serif!important;
+    border-radius: 0 0 5px 5px!important;
+    overflow: auto!important;
+    max-width: inherit!important;
+    display: flex;
 }
 
-#article-container code:not(.language-yml):not(.language-yaml){
-    background-color: #1b1e21;
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 2px;
+code:not(.language-yml):not(.language-yaml) {
+    background-color: #1b1e21!important;
+    font-weight: bold!important;
+    border-radius: 5px!important;
+    padding: 2px!important;
 }
 
-#article-container table{
+#article-container table {
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
@@ -281,63 +184,54 @@ body {
 }
 
 #article-container tr:nth-child(odd) {
-    background-color: #434343; /* Light gray for odd rows */
+    background-color: var(--table-bg-lightgray);
+    /* Light gray for odd rows */
 }
 
 #article-container tr:nth-child(even) {
-    background-color: #373737; /* White for even rows */
+    background-color: var(--table-bg-darkgray);
+    /* White for even rows */
 }
 
 #article-container th {
-    background-color: #1c3894; /* White for even rows */
+    background-color: var(--table-header-bg-blue);
+    /* White for even rows */
 }
 
-#article-container table, th, td {
+#article-container table, td, th {
     border: 1px solid black;
     padding: 8px;
 }
 
-#article-container h1,
-#article-container h1 code{
+#article-container h1, #article-container h1 code {
     font-size: 40px;
 }
 
-#article-container h2,
-#article-container h2 code {
-    font-size: 35px ;
+#article-container h2, #article-container h2 code {
+    font-size: 35px;
 }
 
-#article-container h3,
-#article-container h3 code{
+#article-container h3, #article-container h3 code {
     font-size: 30px;
 }
 
-#article-container h4,
-#article-container h4 code{
+#article-container h4, #article-container h4 code {
     font-size: 25px;
 }
 
-#article-container h5,
-#article-container h5 code{
+#article-container h5, #article-container h5 code {
     font-size: 20px;
 }
 
-#article-container a{
-    color: #90d1ff;
-}
-
-#article-container a:hover{
-    color: dodgerblue;
-}
-
-#article-container summary:hover{
-    color: dodgerblue;
+#article-container a {
+    color: var(--link-color-normal);
 }
 
 #article-container summary {
     font-size: 40px;
-    color: transparent; /* Make the original text color transparent */
-    background: linear-gradient(90deg, rgb(0, 248, 255) 0%, #0072ff 80%, rgb(0, 248, 255) 100%);
+    color: transparent;
+    /* Make the original text color transparent */
+    background: linear-gradient(90deg, var(--summary-text-color-start) 0%, var(--summary-text-color-end) 80%, var(--summary-text-color-start) 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     animation: shimmer 3s linear infinite;
@@ -356,25 +250,26 @@ body {
 .details-content {
     position: relative;
     border-radius: 10px;
-    /*border: 2px dashed transparent; !* Dashed border *!*/
+    /*border: 2px dashed transparent;
+    !* Dashed border *!*/
     font-size: 25px;
     padding: 10px;
-    background: #074182;
+    background: var(--details-content-bg-color);
     animation: shimmer2 4s linear infinite;
 }
 
 @keyframes shimmer2 {
     0% {
-        box-shadow: 0 0 4px 1px rgb(0, 248, 255);
-        border-color: #0072ff;
+        box-shadow: 0 0 4px 1px var(--summary-text-color-start);
+        border-color: var(--summary-text-color-end);
     }
     50% {
-        box-shadow: 0 0 4px 1px #0072ff;
-        border-color: rgb(0, 248, 255);
+        box-shadow: 0 0 4px 1px var(--summary-text-color-end);
+        border-color: var(--summary-text-color-start);
     }
     100% {
-        box-shadow: 0 0 4px 1px rgb(0, 248, 255);
-        border-color: #0072ff;
+        box-shadow: 0 0 4px 1px var(--summary-text-color-start);
+        border-color: var(--summary-text-color-end);
     }
 }
 
@@ -384,30 +279,22 @@ body {
     padding-left: 15px;
 }
 
-#active-selection {
-    color: dodgerblue;
-}
-
-a, summary {
-    cursor: pointer;
-}
-
-img, iframe {
+iframe, img {
     max-width: 100%;
 }
 
-p img, p iframe {
+p iframe, p img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 .wiki-category-header {
-    background-color: rgba(25, 25, 25, 0.17);
+    background-color: var(--wiki-category-header-bg);
     border-style: solid;
-    border-width: 2px 2px 0px 2px;
-    border-radius: 5px 5px 0px 0px;
-    border-color: #616161;
+    border-width: 2px 2px 0 2px;
+    border-radius: 5px 5px 0 0;
+    border-color: var(--wiki-category-header-border-color);
     max-width: 50%;
     padding-left: 10px;
 }
@@ -420,7 +307,7 @@ p img, p iframe {
 .wiki-category-contents {
     border-style: solid;
     border-width: 2px;
-    border-color: #616161;
-    border-radius: 0px 5px 5px 5px;
+    border-color: var(--wiki-category-header-border-color);
+    border-radius: 0 5px 5px 5px;
     background-color: rgba(134, 134, 134, 0.17);
 }

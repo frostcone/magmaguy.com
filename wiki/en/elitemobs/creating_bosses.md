@@ -74,50 +74,6 @@ onDamagedMessages:
 
 </div>
 
-## Breakdown of commonly used values
-
-The following value types are frequently used in the plugin:
-
-### String
-
-Strings are words or sentences, and should be placed between single quotes (`'example 1'`) or double quotes (`"example 2"`).
-
-#### Color codes
-
-String values can frequently have color codes. This uses the traditional color code system, which you can find [here](https://minecraftitemids.com/color-codes).
-
-Example:
-
-```yml
-name: "&cRed Boss"
-```
-
-### Integer
-
-Integers are whole numbers, such as `-100`, `0`, `123` and so on.
-
-Example:
-```yml
-level: 10
-```
-
-### Double
-
-Doubles are non-whole numbers, such as `-11.12391` and `2391.1234`.
-
-Example:
-```yml
-healthMultiplier: 1.2
-```
-
-#### Multiplier
-
-Multipliers are just a specific application of [doubles](#double). Taking health multipliers as an example, numbers between `0.0` and `1.0` lower the boss health, and numbers between `1.0` and infinity increase the boss health. `0.5` will result in halving an amount, and `2.0` will double an amount.
-
-Example:
-```yml
-healthMultiplier: 0.5
-```
 
 ## Basic settings
 
@@ -880,9 +836,9 @@ This would show something like `Cool boss: 10 blocks away!`
 
 Sets the [Custom Items](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-custom-loot) that drop from the boss.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `uniqueLootList` | [List](#list) | none |
+| Key |        Values        | Default |
+|-|:--------------------:|-|
+| `uniqueLootList` | [List](#string_list) | none |
 
 Loot entries in the Custom Loot follow the Loot Table format. [Info about that here!](https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Loot-Table)
 
@@ -1010,9 +966,9 @@ trails:
 
 Sets the message that the Boss Mob displays when they hit a player. This is a list, and the one used is randomized from the list.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `onDamageMessages` | [List](#list) | none |
+| Key |        Values        | Default |
+|-|:--------------------:|-|
+| `onDamageMessages` | [List](#string_list) | none |
 
 <details> 
 
@@ -1036,9 +992,9 @@ onDamageMessages:
 
 Sets the message that the Boss Mob displays when damaged by a player. This is a list, and the one used is randomized from the list.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `onDamagedMessages` | [List](#list) | none |
+| Key |        Values        | Default |
+|-|:--------------------:|-|
+| `onDamagedMessages` | [List](#string_list) | none |
 
 <details> 
 
@@ -1156,9 +1112,9 @@ Sets a range of 30 blocks where if a player gets within that distance near the b
 
 Sets the list of commands to run on custom boss death.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `onDeathCommands` | [List](#list) | none |
+| Key |        Values        | Default |
+|-|:--------------------:|-|
+| `onDeathCommands` | [List](#string_list) | none |
 
 The list supports the following placeholders:
 
@@ -1221,9 +1177,9 @@ broadcast What a kill!
 
 Sets the list of commands that will run on boss spawn.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `onSpawnCommands` | [List](#list) | none |
+| Key |        Values        | Default |
+|-|:--------------------:|-|
+| `onSpawnCommands` | [List](#string_list) | none |
 
 **This uses the same placeholders as [onDeathCommands](#onDeathCommands)!** Damager placeholders won't apply as there won't be any damagers at this time.
 
@@ -1250,7 +1206,7 @@ Sets the list of commands that will run when the boss enters combat.
 
 | Key | Values | Default |
 |-|:-:|-|
-| `onCombatEnterCommands` | [List](#list) | none |
+| `onCombatEnterCommands` | [List](#string_list) | none |
 
 **This uses the same placeholders as [onDeathCommands](#onDeathCommands)!** Damager placeholders won't apply as there won't be any damagers at this time.
 
@@ -1277,7 +1233,7 @@ Sets teh list of commands to run when the boss leaves combat.
 
 | Key | Values | Default |
 |-|:-:|-|
-| `onCombatLeaveCommands` | [List](#list) | none |
+| `onCombatLeaveCommands` | [List](#string_list) | none |
 
 **This uses the same placeholders as [onDeathCommands](#onDeathCommands)!**
 
@@ -1471,7 +1427,7 @@ Bosses can have phases that change when the boss reaches a certain percentage of
 
 | Key | Description | Values | Default |
 |-|:-:|-|-|
-| `phases` | Sets the phases that the boss will have. Mandatory | [List](#list) | none |
+| `phases` | Sets the phases that the boss will have. Mandatory | [List](#string_list) | none |
 | `phaseSpawnLocation` | Sets where the phase boss spawns. Optional | [String](#string) | none |
 
 
