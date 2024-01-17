@@ -1,12 +1,12 @@
 # Getting started
 
-This page helps you understand how to correctly edit a yml page. All of my plugins use yml configuration files, which will reset themselves or stop working if you edit them incorrectly.
+This page helps you understand how to correctly edit a .yml file. All of my plugins use .yml configuration files, which will reset themselves or stop working if you edit them incorrectly.
 
 Below, you will find every configuration entry type and how they should be formatted if you are modifying any values!
 
-# Program to edit yml files
+# How to edit .yml files
 
-Files are stored in the `.yml` file format and [Notepad++](https://notepad-plus-plus.org/) is the recommended file editing software for configuration work.
+Files are stored in the `.yml` file format and [Notepad++](https://notepad-plus-plus.org/) is the recommended file editing software for configuration work. Of course you can use any other text editor of your choice.
 
 <div id="config_boolean">
 
@@ -33,7 +33,7 @@ value2: false
 value: "String"
 ```
 
-While this is not always mandatory, it is mandatory for any string that contains color codes, especially if the first character starts with a color code. ***Color codes follow the in-game color code format*** meaning that `"&aTest`" would result in green text. The availability of colored text varies depending on the configuration setting. Check [this page](https://minecraft.gamepedia.com/Formatting_codes) for color codes.
+While this is not always mandatory, it is mandatory for any string that contains color codes, especially if the first character starts with a [color code](#color_codes). ***Color codes follow the in-game color code format*** meaning that `"&aTest`" would result in green text. The availability of colored text varies depending on the configuration setting. Check [this page](https://minecraft.gamepedia.com/Formatting_codes) for color codes.
 
 </div>
 
@@ -136,7 +136,7 @@ As you can see, Map Lists can contain any kind of format inside them, but if you
 
 # `Color Codes`
 
-'Map List' are lists of 'Map' value. These are only used in elite scripting, and require this configuration format:
+You can also assign colors or make text bold using the following modifiers:
 
 | Color                                                  | Code                                                       | Table                                                    |
 |--------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------|
@@ -157,7 +157,18 @@ As you can see, Map Lists can contain any kind of format inside them, but if you
 |                                                        | **&k** for random text.                                    |                                                          |
 |                                                        | &k<div class="magic-text"></div> example.                  |                                                          |
 
-<div style="color: pink;">&eYellow example.</div>
-As you can see, colors exploding.
+As you can see in the examples, the modifiers follow the regular minecraft syntax except that the § is replaced with a & when used with EliteMobs. You can use this to modify most EliteMobs text such as, mob names, quest text, dungeon names etc.
+
+Take note that when working properly the modifiers themselves will not show in your text. They are only shown here for demonstration purposes.
+
+It is also possible to combine colors and other text modifiers. For example, you can do:
+
+*<div style="color: green;">&a&oTo get green text that is italic.</div>*
+
+If we wanted our custom mob to have a nice fancy colorful name we would do the following:
+
+```yml
+name: $normalBossLevel &aScary &dDragon
+```
 
 </div>
