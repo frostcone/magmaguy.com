@@ -131,3 +131,33 @@ parentMap:
 As you can see, Map Lists can contain any kind of format inside them, but if you are using them in scripting you will need to refer to the documentation to see which are the valid keys and values for the different maps.
 
 </div>
+
+<div id="config_color_codes">
+
+# `Color Codes`
+
+'Map List' are lists of 'Map' value. These are only used in elite scripting, and require this configuration format:
+
+| Color                                                  | Code                                                       | Table                                                    |
+|--------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------|
+| **&4** for dark red text.                              | **&c** for red text.                                       | **&6** for orange text.                                  |
+| <div style="color: darkred;">&4Dark red example.</div> | <div style="color: red;">&cRed example.</div>              | <div style="color: orange;">&6Orange example.</div>      |
+| **&e** for yellow text.                                | **&2** for dark green text.                                | **&a** for green text.                                   |
+| <div style="color: yellow;">&eYellow example.</div>    | <div style="color: darkgreen;">&2Dark green example.</div> | <div style="color: green;">&aGreen example.</div>        |
+| **&b** for aqua text.                                  | **&3** for dark aqua text.                                 | **&1** for dark blue text.                               |
+| <div style="color: aqua;">&bAqua example.</div>        | <div style="color: cadetblue;">&3Dark aqua example.</div>  | <div style="color: darkblue;">&1Dark aqua example.</div> |
+| **&9** for blue text.                                  | **&d** for light purple text.                              | **&5** for dark purple text.                             |
+| <div style="color: blue;">&9Blue example.</div>        | <div style="color: hotpink;">&dLight purple example.</div> | <div style="color: purple;">&5Dark purple example.</div> |
+| **&f** for white text.                                 | **&7** for gray text.                                      | **&8** for dark gray text.                               |
+| <div style="color: white;">&fWhite example.</div>      | <div style="color: gray;">&7Gray example.</div>            | <div style="color: darkgray;">&8Dark gray example.</div> |
+| **&0** for black text.                                 | **&r** to reset color to default.                          | **&i** for bold text.                                    |
+| <div style="color: black;">&0Black example.</div>      | &rReset example.                                           | **&iBold example.**                                      |
+| **&o** for italic text.                                | **&n** for underline text.                                 | **&m** for strikethrough text.                           |
+| _&oItalic example._                                    | <u> &nUnderline example. </u>                              | ~~&mStrikethrough example.~~                             |
+|                                                        | **&k** for random text.                                    |                                                          |
+|                                                        | &k<div class="magic-text"></div> example.                  |                                                          |
+
+<div style="color: pink;">&eYellow example.</div>
+As you can see, colors exploding.
+
+</div>
