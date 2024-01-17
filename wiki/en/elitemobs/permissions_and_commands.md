@@ -8,7 +8,7 @@ Main command, condenses all player info in the plugin in an easy to access menu.
 
 - `/adventurersguild` / `/ag`
 
-In a recommended setup, teleports the player to the adventurer's guild world where they interact with the various EliteMobs NPCS.
+In a recommended setup, teleports the player to the adventurer's guild world where they interact with the various EliteMobs NPCs.
 
 - `/shareitem`
 
@@ -34,7 +34,7 @@ Updates the lore of an item in case it desynced. This command is meant for debug
 
 - `/em spawntp`
 
-Teleports a playter to a server spawn
+Teleports a player to a server spawn
 
 ## NPC commands
 
@@ -56,17 +56,9 @@ Accesses the custom shop or teleports players to the Adventurer's Guild hub
 
 Accesses the repair menu or teleports players to the Adventurer's Guild hub
 
-- `/em enhance`
+- `/em enchant`
 
-Accesses the enhance menu or teleports players to the Adventurer's Guild hub
-
-- `/em refine`
-
-Accesses the refine menu or teleports players to the Adventurer's Guild hub
-
-- `/em smelt`
-
-Accesses the smelt menu or teleports players to the Adventurer's Guild hub
+Accesses the enchant menu or teleports players to the Adventurer's Guild hub
 
 - `/em scrap`
 
@@ -84,7 +76,7 @@ Accesses the unbind menu or teleports players to the Adventurer's Guild hub
 
 - `/em dungeontp <dungeonid>`
 
-Teleports a player to a dungeon. Note: this is meant to be run from the `/em` menu, as it is impossible for players to guess dungeon IDs. The IDs of the dungeons are the same as the filenames in `~/plugins/EliteMobs/dungeonpackages/`. You can see the IDs on console when using the `/em` command and pick a teleport from the Teleports page.
+Teleports a player to a dungeon. Note: this is meant to be run from the `/em` menu, as it is impossible for players to guess dungeon IDs. The IDs of the dungeons are the same as the .yml filenames in `~/plugins/EliteMobs/dungeonpackages/`. You can see the IDs on console when using the `/em` command and pick a teleport from the Teleports page.
 
 
 ### Unidentifiable
@@ -175,7 +167,7 @@ Adds a spawn location to a Regional Boss.
 
 - `/em remove`
 
-Permanently removes an Elite Mob entity. Elite/Regional/Super/NPCs all work.
+Permanently removes an Elite Mob entity. Elite/Regional/Super/NPCs all work. Run again to exit remove mode.
 
 - `/em debug <name>`
 
@@ -199,11 +191,11 @@ Opens a menu where you can get any Custom Loot
 
 - `/em getloot <filename>`
 
-Gets a specific custom item
+Get specific custom loot
 
 - `/em giveloot <filename> <player>`
 
-Gives a specific custom item to a player.
+Give specific custom loot to a player.
 
 - `/em simloot <level>`
 

@@ -70,7 +70,7 @@ That's it! **You can find teleports to the installed dungeons & adventurers guil
 - [WorldGuard](https://dev.bukkit.org/projects/worldguard): Used to setup and protect areas. [EliteMobs flags list](https://github.com/MagmaGuy/EliteMobs/wiki/%5BThird-party-support%5D-Worldguard-flags).
 - [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/): Used for the anti-fly flag, useful to have.
 - [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/): Used to displaying EliteMobs info on other plugins, like for chat. [More info](https://github.com/MagmaGuy/EliteMobs/wiki/%5BPlaceholderAPI%5D-EliteMobs-placeholders).
-- [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/): Used to disguise Custom Bosses as anything else. [More info](https://github.com/MagmaGuy/EliteMobs/wiki/LibsDisguises-&-Disguising-Custom-Bosses).
+- [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/): Used to disguise Custom Bosses as anything else. Disguises are heavily used in our official dungeons so it is highly recommended you install this plugin. [More info](https://github.com/MagmaGuy/EliteMobs/wiki/LibsDisguises-&-Disguising-Custom-Bosses).
 - [DiscordSRV](https://www.spigotmc.org/resources/discordsrv.18494/): Used to link EliteMobs announcements to Discord chat. [More info](https://github.com/MagmaGuy/EliteMobs/wiki/DiscordSRV---Discord-broadcasts)
 
 # Updating dungeon content
@@ -107,7 +107,7 @@ Run the command `/em reload` after setting a dungeon up to make sure all of the 
 
 ## Bosses aren't spawning
 
-### But it was here earlier!
+### The boss was spawning earlier!
 
 <details><summary>Answer</summary
 
@@ -124,7 +124,7 @@ In this case the numbers you're looking for are `1643259941451`. You can use [th
 
 </details>
 
-### It was never there!
+### The boss was never spawning!
 
 <details><summary>Answer</summary>
 
