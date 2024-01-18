@@ -864,7 +864,7 @@ Sets the [Custom Items](https://magmaguy.com/wiki.html#en+elitemobs+creating_ite
 |-|:--------------------:|-|
 | `uniqueLootList` | [List](#string_list) | none |
 
-Loot entries in the Custom Loot follow the Loot Table format. [Info about that here!](!!!transfer this over to new wiki from github!!!) Take note that some older files might be using outdated loot tables that look different than the example.
+Loot entries in the Custom Loot follow the Loot Table format. [Info about that here!](https://magmaguy.com/wiki.html#en+elitemobs+loot_tables.md%custom-loot-table) Take note that some older files might be using outdated loot tables that look different than the example.
 
 <details> 
 

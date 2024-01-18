@@ -172,3 +172,30 @@ name: $normalBossLevel &aScary &dDragon
 ```
 
 </div>
+
+<div id="config_material">
+
+# `Material`
+
+`Material` values are just Materials that you can find in MineCraft, such as `IRON_CHESTPLATE`. For a list of valid `Material`s see this [page](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html).
+
+```yml
+helmet: IRON_HELMET
+```
+
+`Material`s are used as values in several settings such as equipment for mobs, loot drops, quest rewards etc.
+
+</div>
+
+<div id="config_filename">
+
+# `Filename`
+
+`Filename` values are just .yml config files that are formatted to be used with EliteMobs. These could be anything from items to quests.
+
+```yml
+uniqueLootList:
+  - filename: magmaguys_toothpick.yml
+```
+
+</div>

@@ -409,6 +409,8 @@ document.addEventListener('click', function (event) {
     if (event.target.href.toLowerCase().split("#")[1] === "boolean") ClickOnConfigFileGuideElement("boolean")
     if (event.target.href.toLowerCase().split("#")[1] === "color_codes")
         ClickOnConfigFileGuideElement("color_codes")
+    if (event.target.href.toLowerCase().split("#")[1] === "material") ClickOnConfigFileGuideElement("material")
+    if (event.target.href.toLowerCase().split("#")[1] === "filename") ClickOnConfigFileGuideElement("filename")
 });
 
 document.addEventListener('mouseover', function (event) {
@@ -444,6 +446,15 @@ document.addEventListener('mouseover', function (event) {
             break;
         case "color_codes":
             elementName = 'color_codes'
+            break;
+        case "double":
+            elementName = 'double'
+            break;
+        case "filename":
+            elementName = 'filename'
+            break;
+        case "material":
+            elementName = 'material'
             break;
         default:
             return;
