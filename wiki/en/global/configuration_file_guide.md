@@ -191,7 +191,7 @@ helmet: IRON_HELMET
 
 # `Filename`
 
-`Filename` values are just .yml config files that are formatted to be used with EliteMobs. These could be anything from items to quests.
+`Filename` values are just .yml config files that are formatted to be used with MagmaGuy's plugins. These could be anything from items to quests.
 
 ```yml
 uniqueLootList:
