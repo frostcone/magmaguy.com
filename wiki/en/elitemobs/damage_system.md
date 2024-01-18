@@ -147,7 +147,7 @@ damageMultiplier: 2.0
 
 ## Creating World Bosses
 
-World bosses are dangerous, but most of all they have a lot of health and summon a lot of reinforcements  / have a lot of area of effect attacks. These are meant to be fought by large groups of players over the longest amount of time an elite encounter should last. They aren't very deadly, but have a lot of mechanics that can overwhelm underprepared players.
+World bosses are dangerous, but most of all they have a lot of health and summon a lot of reinforcements / have a lot of area of effect attacks. These are meant to be fought by large groups of players over the longest amount of time an elite encounter should last. They aren't very deadly, but have a lot of mechanics that can overwhelm underprepared players.
 
 ```yaml
 normalizedCombat: true

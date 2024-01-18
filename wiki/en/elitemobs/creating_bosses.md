@@ -278,14 +278,14 @@ isBaby: true
 
 Sets the armor of the boss. Not all minecraft models are able to show armor. Boss armor is purely cosmetic and does not affect gameplay.
 
-| Key |                                                                          Values                                                                          | Default |
-|-|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
-| `helmet` | [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html), [UUID](https://minecraftuuid.com/) | none |
-| `chestplate` |                                      [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)                                       | none |
-| `leggings` |                                      [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)                                       | none |
-| `boots` |                                      [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)                                       | none |
-| `mainHand` |                                      [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)                                       | none |
-| `offHand` |                                      [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)                                       | none |
+| Key |                                    Values                                     | Default |
+|-|:-----------------------------------------------------------------------------:|-|
+| `helmet` |           [Material](#material), [UUID](https://minecraftuuid.com/)           | none |
+| `chestplate` | [Material](#material) | none |
+| `leggings` | [Material](#material) | none |
+| `boots` | [Material](#material) | none |
+| `mainHand` | [Material](#material) | none |
+| `offHand` | [Material](#material) | none |
 
 **Note:** This field also lets you set custom models for items. To set the custom model ID, add the ID after the material type following this format: `ITEM_MATERIAL:ID`. Example: `DIAMOND_SWORD:1` sets the boss to wear a diamond sword with the custom model #1 in your texture pack.
 
@@ -462,7 +462,7 @@ Reinforcements also go into the powers category, using the following settings:
 | `inheritAggro` | Makes the reinforcement inherit the aggro from the boss. Optional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
 | `spawnNearby` | Makes the reinforcements spawn in a 30 block radius from the boss. Optional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
 | `inheritLevel` | Makes the reinforcement inherit the level of the boss. Optional |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `customSpawn` | Makes the reinforcement spawn using the [custom spawn system](https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Spawns). Only used for `summonType: GLOBAL`
+| `customSpawn` | Makes the reinforcement spawn using the [custom spawn system](https://magmaguy.com/wiki.html#en+elitemobs+creating_spawns.md). Only used for `summonType: GLOBAL`
 | `location` | Spawn location. Optional. | `world_name,x,y,z` or `x,y,z` for a location relative to the boss. The offset is relative to the spawn location for regional bosses. You can also use `same_as_boss` to make reinforcements spawn in the same world as the boss. | none |
 | `lightningRod` | Special setting for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Makes end crystals spawn lightning around them. Optional. |                                                                                                        `true` / `false`                                                                                                        | none |
 
@@ -479,12 +479,12 @@ Summon types set the conditions for the reinforcements spawning. The following i
 | `ONCE` | Only spawns the reinforcements once, the first time the boss is damaged. |
 | `ON_HIT`  | Spawns the reinforcements on hit. |
 | `ON_COMBAT_ENTER` | Spawns the reinforcements when the boss enters combat. |
-| `GLOBAL` | Spawns a reinforcement for every online player. Requires the `customSpawn` key to have a valid [custom spawn](https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Spawns) set. |
+| `GLOBAL` | Spawns a reinforcement for every online player. Requires the `customSpawn` key to have a valid [custom spawn](https://magmaguy.com/wiki.html#en+elitemobs+creating_spawns.md) set. |
 | `ON_COMBAT_ENTER_PLACE_CRYSTAL` | Places end crystal reinforcements on combat enter, only for use with custom dragon fights. |
 
 </details>
 
-Note that it is possible to spawn reinforcements through [Elite Scripts](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Scripts), so there are more customizable ways of spawning reinforcements.
+Note that it is possible to spawn reinforcements through [Elite Scripts](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md), so there are more customizable ways of spawning reinforcements.
 
 <details> 
 
@@ -744,9 +744,9 @@ isPersistent: true
 
 Sets weapons that bosses can be strong or weak against.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `damageModifiers` | [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | none |
+| Key |        Values         | Default |
+|-|:---------------------:|-|
+| `damageModifiers` | [Material](#material) | none |
 
 <details> 
 
@@ -1082,7 +1082,7 @@ Here is a list of what the priorities do:
 | `0` | The boss will be fully silent, with no announcement messages. |
 | `1` | This is the default. Bosses can send chat messages, on spawn message, on death and escape messages. |
 | `2` | On top of the things in `1`, the boss will be set to be trackable by players through the `/em` menu. |
-| `3` | On top of the things in `2`, broadcast messages will be mirrored on Discord if configured. [Discord configuration info here.](https://github.com/MagmaGuy/EliteMobs/wiki/DiscordSRV---Discord-broadcasts) |
+| `3` | On top of the things in `2`, broadcast messages will be mirrored on Discord if configured. [Discord configuration info here.](https://magmaguy.com/wiki.html#en+elitemobs+discordsrv.md) |
 
 Here's an example of a boss that is trackable, is able to send spawn/death/escape messages on chat and on Discord:
 
@@ -1282,7 +1282,7 @@ onCombatLeaveCommands:
 
 ### disguise
 
-Sets the LibsDisguises disguise if that plugin is enabled. [More info here.](https://github.com/MagmaGuy/EliteMobs/wiki/LibsDisguises-&-Disguising-Custom-Bosses)
+Sets the LibsDisguises disguise if that plugin is enabled. [More info here.](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md)
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1302,7 +1302,7 @@ customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8
 
 </div>
 
-Sets a custom disguise from skindex. [Check this page](https://github.com/MagmaGuy/EliteMobs/wiki/LibsDisguises-&-Disguising-Custom-Bosses) to learn how to correctly format this data.
+Sets a custom disguise from skindex. [Check this page](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md) to learn how to correctly format this data.
 
 </details>
 
@@ -1310,7 +1310,7 @@ Sets a custom disguise from skindex. [Check this page](https://github.com/MagmaG
 
 ### customModel
 
-Sets the custom model to use, if you have a custom model and ModelEngine. [More info here.](https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Models)
+Sets the custom model to use, if you have a custom model and ModelEngine. [More info here.](https://magmaguy.com/wiki.html#en+elitemobs+custom_models.md)
 
 | Key | Values | Default |
 |-|:-:|-|

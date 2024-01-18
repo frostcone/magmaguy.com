@@ -27,11 +27,11 @@ _**EliteMobs is provided to all users with the recommended default settings. If 
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#getting-started)Getting started
+## Getting started
 
 EliteMobs currently has a very large amount of configuration options as a result of the high demand for customizability. To make this wiki page as short as possible, I will explain the default values configuration files can have here so I don't have to reexplain it on every entry.
 
-### [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#boolean)`Boolean`
+### `Boolean`
 
 `Boolean` values are `true` or `false`. This is what they look like:
 
@@ -42,7 +42,7 @@ value2: false
 
 `Boolean`s only ever accept either `true` or `false` values. They are usually used to turn specific features on or off.
 
-### [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#string)`String`
+### `String`
 
 `String` values are usually just normal text. It is highly recommended that you create `String` values between quotes, following this format:
 
@@ -50,11 +50,11 @@ value2: false
 value: "String"
 ```
 
-While this is not always mandatory, it is mandatory for any string that contains color codes, especially if the first character starts with a color code. _**Color codes follow the in-game color code format**_ meaning that `"&aTest`" would result in green text. The availability of colored text varies depending on the configuration setting. Check [this page](https://minecraft.gamepedia.com/Formatting_codes) for color codes.
+While this is not always mandatory, it is mandatory for any string that contains color codes, especially if the first character starts with a color code. _**Color codes follow the in-game color code format**_ meaning that `"&aTest`" would result in green text. The availability of colored text varies depending on the configuration setting. Check [this page](#color_codes) for color codes.
 
 Why? Configuration strings can accept special characters such as \`&\`. If these special characters occupy the first character, such as in \`value: "&aString"\`, if the \`String\` is not between quotes the value will be wiped and the config option will be reset to its defaults. This is a limitation of the configuration system that Spigot uses.
 
-### [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#serialized-location)`Serialized Location`
+### `Serialized Location`
 
 `Serialized Location` is a specific type of String which looks like this:
 
@@ -64,7 +64,7 @@ location: world,1.0,2.0,3.0,4.0,5.0
 
 These are used to store and configure locations. It follows this format: `worldName,X,Y,Z,PITCH,YAW`. Pitch and yaw just determine the direction that the player is looking at, and is implemented the same way Minecraft locations are.
 
-### [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#multiplier)`Multiplier`
+### `Multiplier`
 
 `Multiplier` values multiply plugin values by that number. These values should _**never**_ be between quotes. Here's an example:
 
@@ -74,7 +74,7 @@ damageMultiplier: 1.0
 
 In this case, the damage multiplier would be multiplied by 1, meaning that there is no change from the default value. If the `Multiplier` was `2.0`, the value would be multiplied by `2.0`. If it was `0.5`, it would be multiplied by `0.5`. For those not good with fractions, multiplying by `0.5` is the same as dividing by 2. `Multiplier` values should always be larger than 0 (`0.0001` is valid) and don't tend to have a higher ceiling.
 
-### [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#integer)`Integer`
+### `Integer`
 
 `Integer` values are just whole numbers. Example:
 
@@ -84,7 +84,7 @@ value: 10
 
 The main thing about `Integer` values they must be whole numbers. This means that `10.1` is not valid.
 
-### [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#double)`Double`
+### `Double`
 
 `Double`s are irrational numbers. Example:
 
@@ -94,7 +94,7 @@ value: 10.01
 
 `Double`s can also happen to be whole numbers like integers, like `10.0` or even represented as `10`.
 
-### [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#string-list)`String List`
+### `String List`
 
 `String List`s are lists of `String` values. These tend to be the hardest values to configure, as they require a very specific config format:
 
@@ -109,7 +109,7 @@ Like with `String`s, it is recommended to keep the values between quotes. Each `
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#configyml)config.yml
+## config.yml
 
 `config.yml` contains mostly random settings that couldn't comfortably fit elsewhere at the time of creating them. It is the config file most likely to see changes between versions.
 
@@ -187,7 +187,7 @@ Sets the multiplier for the spawn bonus in nightmare worlds. Nightmare worlds ar
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#adventurersguildyml)AdventurersGuild.yml
+## AdventurersGuild.yml
 
 `AdventurersGuild.yml` contains config settings relevant to both the Adventurer's Guild Hub (the world), as well as settings relevant to the Adventurer's Guild rankup system.
 
@@ -316,7 +316,7 @@ Sets the amount of mobs, on average, that is added to the base amount to unlock 
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#antiexploityml)AntiExploit.yml
+## AntiExploit.yml
 
 `AntiExploit.yml` allows admins to customize different aspects of the AntiExploit system. The AntiExploit system exists to prevent players from using things such as mob grinders to easily farm for coins and loot, and pushes them to do real fights and minidungeons instead of afk clicking their way to the top of the plugin.
 
@@ -362,7 +362,7 @@ What does this actually do? The AntiExploit works on a point-based system, where
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#combattagyml)CombatTag.yml
+## CombatTag.yml
 
 `CombatTag.yml` contains the config settings for the Combat Tag system. This system is still very far from being complete, but it attempts to manage player behavior once they enter combat.
 
@@ -388,13 +388,13 @@ Why? This feature is used to avoid having people instantly teleport out of dange
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#discordsrvyml)DiscordSRV.yml
+## DiscordSRV.yml
 
-`DiscordSRV.yml` contains the configuration settings for DiscordSRV. If you want to see how to configure this feature, [click here!](https://github.com/MagmaGuy/EliteMobs/wiki/DiscordSRV---Discord-broadcasts)
+`DiscordSRV.yml` contains the configuration settings for DiscordSRV. If you want to see how to configure this feature, [click here!](https://magmaguy.com/wiki.html#en+elitemobs+discordsrv.md)
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#economysettingsyml)EconomySettings.yml
+## EconomySettings.yml
 
 `EconomySettings.yml` contains the configuration settings for the EliteMobs economy.
 
@@ -420,7 +420,7 @@ Sets the name of the currency that players see wherever the currency shows up.
 useVault - not recommended: BOOLEAN
 ```
 
-Sets whether EliteMobs will use Vault to link its currency to the server's Vault currency. This is not recommended, [read here as to why.](https://github.com/MagmaGuy/EliteMobs/wiki/%5BThird-party-support%5D-Vault)
+Sets whether EliteMobs will use Vault to link its currency to the server's Vault currency. This is not recommended, [read here as to why.](https://magmaguy.com/wiki.html#en+elitemobs+vault.md)
 
 ```yaml
 enableCurrencyShower: BOOLEAN
@@ -472,7 +472,7 @@ materialWorth: STRING LIST
 
 Sets the base worth of different material types. This will directly affect items sold by and to elite shops. NOTE: You can add your own values here, assuming you use the [correct API names.](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) Additionally, the `defaultMaterialWorth` sets the default worth of materials, which will be used for materials that are not explicitly listed in this `String List`.
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#eventsyml)events.yml
+## events.yml
 
 `events.yml` contains the configuration options for events. _**Note: these are just the very basic global settings.**_ You can further modify specific events in the `events` folder.
 
@@ -516,7 +516,7 @@ Sets whether the message about the event triggered will only be broadcasted to t
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#itemsettingsyml)ItemSettings.yml
+## ItemSettings.yml
 
 `ItemSettings.yml` contains the global settings for Elite items.
 
@@ -616,7 +616,7 @@ limitedItemDropWeight: DOUBLE
 scalableItemDropWeight: DOUBLE
 ```
 
-This is a complicated feature which uses the concept of weighed probability in order to decide which type of item will be dropped by an Elite assuming that they are going to drop an Elite item. `Weighed items`, `fixed items`, `limited items`and `scalable items` are all different types of Custom Items which can be read about [here](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-custom-loot#scalability). `Procedural items` are the items that EliteMobs randomizes.
+This is a complicated feature which uses the concept of weighed probability in order to decide which type of item will be dropped by an Elite assuming that they are going to drop an Elite item. `Weighed items`, `fixed items`, `limited items`and `scalable items` are all different types of Custom Items which can be read about [here](https://magmaguy.com/wiki.html#en+elitemobs+creating_items.md%scalability). `Procedural items` are the items that EliteMobs randomizes.
 
 It would take too long to explain how weighed probability works, so I will keep it very simple: the higher the number, the higher the chance that that item will drop. Be careful about setting any custom items high, as this means that unless you have hundreds or thousands of custom items you will probably be seeing the same custom item getting dropped constantly.
 
@@ -696,7 +696,7 @@ Prevents Elite items from getting used in anvils and other locations where they 
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#mobcombatsettingsyml)MobCombatSettings.yml
+## MobCombatSettings.yml
 
 `MobCombatSettings.yml` contains all config options related to the custom combat system and most config options generally related to how Elite Mobs work.
 
@@ -877,7 +877,7 @@ bossKillParticipationMessage: STRING
 
 Sets the message that is sent to a player when they kill a Custom Boss configured to send this message. Tells the player how much damage they dealt throughout the battle. Uses the placeholder `$playerDamage` which is replaced with the damage dealt to the Elite.
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#proceduralitemgenerationsettingsyml)ProceduralItemGenerationSettings.yml
+## ProceduralItemGenerationSettings.yml
 
 `ProceduralItemGenerationSettings.yml` contains all the configuration options for configuring procedurally generated items.
 
@@ -914,13 +914,13 @@ Sets the formatting for the names of procedurally generated items. The placehold
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#translationyml)translation.yml
+## translation.yml
 
 `translation.yml` contains a collection of values which can be modified to customize and translate the plugin. These are self-explanatory.
 
 ---
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Config-files#validworldsyml)ValidWorlds.yml
+## ValidWorlds.yml
 
 `ValidWorlds.yml` contains the list of worlds that EliteMobs has detected, as well as options to customize EliteMobs features on them.
 
@@ -934,10 +934,10 @@ Sets whether Elites will spawn in these worlds.
 Zone-based elitemob spawning worlds: STRING LIST
 ```
 
-Sets whether these worlds will use the [Region Leveling mode](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGame-Mode%5D-Region-leveling-mode).
+Sets whether these worlds will use the [Region Leveling mode](https://magmaguy.com/wiki.html#en+elitemobs+region_leveling_mode.md).
 
 ```yaml
 Nightmare mode worlds: STRING LIST
 ```
 
-Sets whether these worlds will use the [Nightmare Mode](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGame-Mode%5D-Nightmare-mode).
+Sets whether these worlds will use the [Nightmare Mode](https://magmaguy.com/wiki.html#en+elitemobs+nightmare_mode.md).

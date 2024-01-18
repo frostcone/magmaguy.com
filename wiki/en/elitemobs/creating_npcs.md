@@ -14,8 +14,8 @@
 | `interactionType` | Sets the type of interaction the NPC will do | Special [2] | `NONE` |
 | `timeout` | Sets the amount of time, in minutes, before an NPC vanishes permanently | INTEGER | `0` (never) |
 | `questFileName` | Sets the quests the NPC gives | STRING LIST | none |
-| `disguise` | Sets the LibsDisguises disguise the NPC has | [LibsDisguises format](https://github.com/MagmaGuy/EliteMobs/wiki/LibsDisguises-&-Disguising-Custom-Bosses) | none |
-| `customDisguiseData` | Sets the data for a custom LibsDisguises diguise | [LibsDisguises format](https://github.com/MagmaGuy/EliteMobs/wiki/LibsDisguises-&-Disguising-Custom-Bosses#2-generating-the-disguise-data) | none |
+| `disguise` | Sets the LibsDisguises disguise the NPC has | [LibsDisguises format](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md) | none |
+| `customDisguiseData` | Sets the data for a custom LibsDisguises diguise | [LibsDisguises format](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md%2.-generating-the-disguise-data) | none |
 | `customModel` | Sets the ModelEngine custom model the NPC will use | STRING | none |
 | `arena` | Sets the filename of the arena the NPC will open a menu for (requires the `ARENA_MASTER` interaction) | STRING | none |
 | `command` | Sets the command the NPC will run (requires `COMMAND` interaction) | STRING | none |

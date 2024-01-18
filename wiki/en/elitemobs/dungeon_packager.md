@@ -2,7 +2,7 @@
 
 # What are dungeons?
 
-You can find info about dungeons, including info about premade dungeons [here](https://github.com/MagmaGuy/EliteMobs/wiki/Dungeons).
+You can find info about dungeons, including info about premade dungeons [here](https://magmaguy.com/wiki.html#en+elitemobs+dungeons.md).
 
 ***
 
@@ -151,7 +151,7 @@ The following values only apply to schematic-based dungeons
 
 Finally, you will probably want to package your dungeon either for storage or for distribution.
 
-EliteMobs has an import system which allows admins to quickly import, install and uninstall content. [You can see how it works here.](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Quick-Setup)
+EliteMobs has an import system which allows admins to quickly import, install and uninstall content. [You can see how it works here.](https://magmaguy.com/wiki.html#en+elitemobs+setup.md)
 
 ## Running the package command
 

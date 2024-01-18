@@ -430,10 +430,10 @@ document.addEventListener('mouseover', function (event) {
             elementName = 'integer';
             break;
         case "map_list":
-            elementName = 'map-list';
+            elementName = 'map_list';
             break;
         case "string_list":
-            elementName = 'string-list';
+            elementName = 'string_list';
             break;
         case "serialized_location":
             elementName = 'serialized_location';

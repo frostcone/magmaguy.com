@@ -97,6 +97,10 @@ value: 10.01
 
 `Double`s can also happen to be whole numbers like integers, like `10.0` or even represented as `10`.
 
+</div>
+
+<div id="config_string_list">
+
 # `String List`
 `String List`s are lists of `String` values. These tend to be the hardest values to configure, as they require a very specific config format:
 
@@ -196,6 +200,42 @@ helmet: IRON_HELMET
 ```yml
 uniqueLootList:
   - filename: magmaguys_toothpick.yml
+```
+
+</div>
+
+<div id="config_trimming_worlds">
+
+# `Trimming Worlds` WORK IN PROGRESS
+
+Upcoming section that will describe how to trim worlds for distribution.
+
+**Trimming the world folder**
+
+There are several files and folders located in your world folder that we can discard since EternalTD does not use all of them. This will cut down the size of your world and make it easier to dsitribute.
+
+For NORMAL Environment:
+
+To prepare your world, keep the following files and folders:
+
+1. **region** folder
+2. **raids.dat** from within the **data** folder (ensure it's placed inside the **data** folder when copying)
+3. **level.dat** file
+
+You can safely delete all other files and folders located in the world folder. This will set up your world correctly for the NORMAL environment.
+
+For NETHER and THE\_END Environment:
+
+To prepare your world, keep the following files and folders:
+
+1. **region** folder inside the **DIM-1** folder (ensure it's placed inside the **DIM-1** folder when copying)
+2. **raids.dat** from within the **data** folder (ensure it's placed inside the **data** folder when copying)
+3. **level.dat** file
+
+You can safely delete all other files and folders located in the world folder. This will set up your world correctly for the NETHER and THE\_END environments.
+
+```yml
+Coming soon
 ```
 
 </div>

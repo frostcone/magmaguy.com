@@ -105,4 +105,4 @@ The Unbind enchantment is used in the Unbind scroll as the required enchantment 
 
 # Soulbind
 
-Soulbind is a very special enchantment and [can be checked on this page](https://github.com/MagmaGuy/EliteMobs/wiki/%5BCustom-Enchantments%5D-Soulbind).
+Soulbind is a very special enchantment and [can be checked on this page](https://magmaguy.com/wiki.html#en+elitemobs+soulbind.md).

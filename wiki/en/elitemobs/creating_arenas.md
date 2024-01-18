@@ -14,7 +14,7 @@
 | `delayBetweenWaves` | Sets the delay, in seconds, between waves | INTEGER | `0` |
 | `spawnPoints` | Sets the spawn points | STRING LIST [1] | none |
 | `bossList` | Sets the list of bosses that spawn on waves | STRING LIST [2] | none |
-| `rawArenaReward` | Sets the rewards given at the end of waves | [Universal EliteMobs loot table](https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Loot-Table) [3] | none |
+| `rawArenaReward` | Sets the rewards given at the end of waves | [Universal EliteMobs loot table](https://magmaguy.com/wiki.html#en+elitemobs+loot_tables.md) [3] | none |
 | `minimumPlayerCount` | Sets the minimum amount of players an arena must have before starting | INTEGER | `1` |
 | `maximumPlayerCount` | Sets the maximum amount of players an arena can have | INTEGER | `100` |
 | `arenaMessages` | Sets the messages that run between waves | Special format [4] | none |
