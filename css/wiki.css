@@ -101,7 +101,7 @@ body {
 }
 
 #article-container li {
-    display: block;
+    display: list-item;
 }
 
 /* todo: this sucks*/

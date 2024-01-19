@@ -222,6 +222,9 @@ function AddLinkToHeader() {
 
     for (let header of headers) {
         let originalText = header.innerText;
+        if (header.querySelector("a")){
+            continue
+        }
         header.innerText = "🔗 " + header.innerText;
         header.onclick = function () {
             if (window.location.hash.includes("%")) {
@@ -644,4 +647,5 @@ function StartSearch(input_box) {
     }
 }
 
+//TODO: make this a single request to node with a single massive reply instead of a million requests that get blocked by the client anyhow
 FetchAllMarkdownFiles();
