@@ -347,9 +347,9 @@ itemType: "unique"
 
 Sets the loot table the item will fit into.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `dropWeight` | `dynamic` or an [double](#double) value. | `dynamic` |
+| Key |                  Values                  | Default |
+|-|:----------------------------------------:|-|
+| `dropWeight` | `dynamic` or an [Double](#double) value. | `dynamic` |
 
 EliteMobs has 5 different loot tables for custom items, excluding the ones configured directly like the `uniqueLootList` on Custom Bosses.
 

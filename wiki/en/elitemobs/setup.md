@@ -1,28 +1,3 @@
-<details><summary>Index</summary>
-
-- [Setup video](#setup-video)
-- [First boot](#first-boot)
-- [Permissions](#permissions)
-- [Adventurer's Guild Hub world & Lairs / Minidungeons](#adventurer-s-guild-hub-world---lairs---minidungeons)
-- [Recommended plugins](#recommended-plugins)
-- [Updating dungeon content](#updating-dungeon-content)
-- [Frequently Asked Questions (FAQ)](#frequently-asked-questions--faq-)
-    * [EliteMobs says WorldGuard / WorldEdit is not installed when it is](#elitemobs-says-worldguard---worldedit-is-not-installed-when-it-is)
-    * [The world-based minidungeon is just flat terrain](#the-world-based-minidungeon-is-just-flat-terrain)
-    * [NPC chat looks weird / wormholes aren't working / other weird behavior after installing](#npc-chat-looks-weird---wormholes-aren-t-working---other-weird-behavior-after-installing)
-    * [Bosses aren't spawning](#bosses-aren-t-spawning)
-        + [But it was here earlier!](#but-it-was-here-earlier-)
-        + [It was never there!](#it-was-never-there-)
-    * [Something's messed up and I just can't fix it](#something-s-messed-up-and-i-just-can-t-fix-it)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
-</details>
-
-
-***
-
 # Setup video
 
 <div align="center"><a href="https://youtu.be/boRg2X4qhw4"><img src="https://i.ytimg.com/vi/boRg2X4qhw4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBKCzqqxUu0AB95hcrBAg0VwzJ5XA" alt="video thumbnail"></a></div>
