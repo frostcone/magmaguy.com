@@ -107,9 +107,9 @@ isEnabled: true
 
 Sets the entity type of the boss.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `entityType` | [Pick from here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html). <br> Value must also be present in `~plugins/EliteMobs/mobproperties`. | `ZOMBIE`|
+| Key |                                                                                   Values                                                                                    | Default |
+|-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
+| `entityType` | [Pick from here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html). <br> Value must also be present in folder `~plugins/EliteMobs/mobproperties`. | `ZOMBIE`|
 
 <details> 
 
@@ -134,6 +134,20 @@ Sets the name of the boss.
 | Key | Values | Default |
 |-|:-:|-|
 | `name` | [String](#string), accepts [color codes](#color_codes) and the placeholders listed below | "Default Name" |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+name: "&cCool boss!"
+```
+
+</div>
+
+</details>
 
 | Placeholder | Description | Example |Output (for a level 10 boss) |
 |-|:-:|:-:|-|
@@ -264,18 +278,20 @@ isBaby: true
 
 Sets the armor of the boss. Not all minecraft models are able to show armor. Boss armor is purely cosmetic and does not affect gameplay.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `helmet` | [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | none |
-| `chestplate` | [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | none |
-| `leggings` | [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | none |
-| `boots` | [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | none |
-| `mainHand` | [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | none |
-| `offHand` | [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | none |
+| Key |                                    Values                                     | Default |
+|-|:-----------------------------------------------------------------------------:|-|
+| `helmet` |           [Material](#material), [UUID](https://minecraftuuid.com/)           | none |
+| `chestplate` | [Material](#material) | none |
+| `leggings` | [Material](#material) | none |
+| `boots` | [Material](#material) | none |
+| `mainHand` | [Material](#material) | none |
+| `offHand` | [Material](#material) | none |
 
 **Note:** This field also lets you set custom models for items. To set the custom model ID, add the ID after the material type following this format: `ITEM_MATERIAL:ID`. Example: `DIAMOND_SWORD:1` sets the boss to wear a diamond sword with the custom model #1 in your texture pack.
 
-**Note 2:** This field also lets you set custom leather colors with the format `ITEM_MATERIAL:CODE` where the code is the hexadecimal representation of the color. Example: `LEATHER_LEGGINGS:ffa500` would create orange leggings. You can use hex codes, just remove the `#` when you get them from [here](https://www.w3schools.com/colors/colors_hexadecimal.asp).
+**Note 2:** This field also lets you set custom leather colors with the format `ITEM_MATERIAL:CODE` where the code is the hexadecimal representation of the color. Example: `LEATHER_LEGGINGS:ffa500` would create orange leggings. You can use hex codes, just remove the `#` from the hex code. You can get hex codes from [here](https://www.w3schools.com/colors/colors_hexadecimal.asp).
+
+**Note 3:** The helmet field also lets you set mob helmets to be player heads. Simply get the UUID of the player head you would like to use and type it into the helmet field. *The player needs to be online for this to work or the head will default to a generic MineCraft head.* You can get player UUID's from [here](https://minecraftuuid.com/).
 
 <details> 
 
@@ -315,6 +331,7 @@ Sets the powers the boss has.
 ```yml
 powers:
 - hyper_loot.yml
+- attack_arrow.yml
 ```
 
 </div>
@@ -323,87 +340,87 @@ powers:
 
 ### Easy configuration - premade powers
 
-A full list of powers can be found in the `~/plugins/EliteMobs/powers` folder. The following list is not necessarily complete [since you can make custom powers](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Scripts) and some dungeons come with their own powers.
+A boss can have one or several powers. We recommend you keep the amount under 5. A full list of powers can be found in the `~/plugins/EliteMobs/powers` folder. The following list is not necessarily complete [since you can make custom powers](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md) and some dungeons come with their own powers.
 
 <details> 
 
 <summary><b>List of premade elite powers</b></summary>
 
-| Power filename | Description |
-|-|:-:|
-| `arrow_fireworks.yml` | Boss shoots fireworks when hit. |
-| `arrow_rain.yml` | Makes arrows rain from the sky. |
-| `attack_arrow.yml` | Makes the boss shoot arrows. |
-| `attack_blinding.yml` | Gives the blindness potion effect on attack. |
-| `attack_confusing.yml` | Gives the nausea potion effect on attack. |
-| `attack_fire.yml` | Sets players on fire on attack. |
-| `attack_fireball.yml` | Makes the boss shoot fireballs. |
-| `attack_freeze.yml` | Makes the boss freeze players on hit. |
-| `attack_gravity.yml` | Gives the levitation potion effect on attack.  |
-| `attack_lightning.yml` | Strikes lightning at nearby players. |
-| `attack_poison.yml` | Applies poison on attacks. |
-| `attack_push.yml` | Increases knockback of attacks. |
-| `attack_vacuum.yml` | Pulls players towards the boss on attack. |
-| `attack_weakness.yml` | Applies the weakness potion effect on attack. |
-| `attack_web.yml` | Spawns a web at the player location on player damage. |
-| `attack_wither.yml` | Applies the wither potion effect on attack. |
-| `bonus_coins.yml` | Drops extra coins. |
-| `bonus_loot.yml` | Drops extra loot. |
-| `bullet_hell.yml` | Makes the boss levitate and shoot several tracking arrows. |
-| `channel_healing.yml` | Makes the boss heal other nearby bosses. |
-| `corpse.yml` | Spawns a bone block on boss death. |
-| `death_slice.yml` | Creates a damage zone around the boss. |
-| `ender_dragon_aimed_fireball.yml` | Makes the dragon shoot fireballs. |
-| `ender_dragon_arrow_bombardment.yml` | Makes the dragon shoot arrows. |
-| `ender_dragon_disco_fireballs.yml` | Makes the dragon rotate fireballs around itself and then shoot them. |
-| `ender_dragon_empowered_lightning.yml` | Makes lightning strike with a custom block animation for destruction. |
-| `ender_dragon_ender_fireball_bombardment.yml` | Makes the dragon shoot ender fireballs. |
-| `ender_dragon_endermite_bombardment.yml` | Makes the dragon spawn endermite reinforcements. |
-| `ender_dragon_fireball_bombardment.yml` | Makes the dragon shoot fireballs. |
-| `ender_dragon_potion_bombardment.yml` | Makes the dragon shoot potions. |
-| `ender_dragon_shockwave.yml` | Makes the dragon destroy the combat arena. |
-| `ender_dragon_tornado.yml` | Makes the dragon spawn a tornado. |
-| `firestorm.yml` | Spawns several damaging flame pillars. |
-| `fireworks_barrage.yml` | Makes the boss shoot several fireworks rockets. |
-| `flame_pyre.yml` | Makes a flame pillar appear on the boss. |
-| `flamethrower.yml` | Makes the boss shoot a flamethrower. |
-| `frost_cone.yml` | Makes the boss shoot snowballs in a direction. |
-| `frost_walker.yml` | Gives the boss frost walking boots to walk on water. |
-| `gold_explosion.yml` | Spawns damaging gold nuggets on the boss that can be blocked. |
-| `gold_shotgun.yml` | Spawns damaging gold nuggets in a direction that can be blocked. |
-| `ground_pound.yml` | Makes the boss jump and drop to the floor with knockback. |
-| `hyper_loot.yml` | Drops 10x the normal loot. |
-| `implosion.yml` | Pulls all nearby entities towards the boss on death. |
-| `invisibility.yml` | Makes the boss invisible. |
-| `invulnerability_arrow.yml` | Makes the boss immune to projectiles. |
-| `invulnerability_fall_damage.yml` | Makes the boss immune to fall damage. |
-| `invulnerability_fire.yml` | Makes the boss immune to fire damage. |
-| `invulnerability_fireworks.yml` | Makes the boss immune to fireworks. |
-| `invulnerability_knockback.yml` | Makes the boss immune to damage knockback. |
-| `lightning_bolts.yml` | Spawns lightning bolts. |
-| `meteor_shower.yml` | Spawns several fireballs from the sky. |
-| `moonwalk.yml` | Makes the boss jump extra high. |
-| `movement_speed.yml` | Makes the boss extra fast. |
-| `photon_ray.yml` | Spawns a damaging ray that will bounce off of walls. |
-| `plasma_blaster.yml` | Spawns a slow moving green projectile. |
-| `shield_wall.yml` | Spawns shields that will protect the boss from a specific direction until destroyed. |
-| `skeleton_pillar.yml` | Spawns two pillars of particles that damage players in the zone. |
-| `skeleton_tracking_arrow.yml` | Spawns a tracking arrow. |
-| `spirit_walk.yml` | Makes the boss teleport to a nearby safe location if it keeps getting hit without being able to damage a player. |
-| `summon_embers.yml` | Summons the embers reinforcement. |
-| `summon_the_returned.yml` | Summons the returned reinforcement. |
-| `taunt.yml` | Taunts the player with messages. |
-| `taze.yml` | Tazes the player, shocking it and applying knockback. |
-| `thunderstorm.yml` | Spawns several lightning bolts. |
-| `tracking_fireball.yml` | Spawns a fireball that follows a player. |
-| `zombie_bloat.yml` | Knocks players away from the boss. |
-| `zombie_friends.yml` | Spawns the zombie friends reinforcement. |
-| `zombie_necronomicon.yml` | Makes the boss channel summoning reinforcements. |
-| `zombie_parents.yml` | Spawns the zombie parents reinforcement. |
+| Power filename                               |                                                   Description                                                    |
+|----------------------------------------------|:----------------------------------------------------------------------------------------------------------------:|
+| `arrow_fireworks.yml`                        |                                         Boss shoots fireworks when hit.                                          |
+| `arrow_rain.yml`                             |                                         Makes arrows rain from the sky.                                          |
+| `attack_arrow.yml`                           |                                           Makes the boss shoot arrows.                                           |
+| `attack_blinding.yml`                        |                                   Gives the blindness potion effect on attack.                                   |
+| `attack_confusing.yml`                       |                                    Gives the nausea potion effect on attack.                                     |
+| `attack_fire.yml`                            |                                         Sets players on fire on attack.                                          |
+| `attack_fireball.yml`                        |                                         Makes the boss shoot fireballs.                                          |
+| `attack_freeze.yml`                          |                                      Makes the boss freeze players on hit.                                       |
+| `attack_gravity.yml`                         |                                  Gives the levitation potion effect on attack.                                   |
+| `attack_lightning.yml`                       |                                       Strikes lightning at nearby players.                                       |
+| `attack_poison.yml`                          |                                            Applies poison on attacks.                                            |
+| `attack_push.yml`                            |                                         Increases knockback of attacks.                                          |
+| `attack_vacuum.yml`                          |                                    Pulls players towards the boss on attack.                                     |
+| `attack_weakness.yml`                        |                                  Applies the weakness potion effect on attack.                                   |
+| `attack_web.yml`                             |                              Spawns a web at the player location on player damage.                               |
+| `attack_wither.yml`                          |                                   Applies the wither potion effect on attack.                                    |
+| `bonus_coins.yml`                            |                                                Drops extra coins.                                                |
+| `bonus_loot.yml`                             |                                                Drops extra loot.                                                 |
+| `bullet_hell.yml`                            |                            Makes the boss levitate and shoot several tracking arrows.                            |
+| `channel_healing.yml`                        |                                     Makes the boss heal other nearby bosses.                                     |
+| `corpse.yml`                                 |                                        Spawns a bone block on boss death.                                        |
+| `death_slice.yml`                            |                                      Creates a damage zone around the boss.                                      |
+| `ender_dragon_aimed_fireball.yml`            |                                        Makes the dragon shoot fireballs.                                         |
+| `ender_dragon_arrow_bombardment.yml`         |                                          Makes the dragon shoot arrows.                                          |
+| `ender_dragon_disco_fireballs.yml`           |                       Makes the dragon rotate fireballs around itself and then shoot them.                       |
+| `ender_dragon_empowered_lightning.yml`       |                      Makes lightning strike with a custom block animation for destruction.                       |
+| `ender_dragon_ender_fireball_bombardment.yml` |                                     Makes the dragon shoot ender fireballs.                                      |
+| `ender_dragon_endermite_bombardment.yml`     |                                 Makes the dragon spawn endermite reinforcements.                                 |
+| `ender_dragon_fireball_bombardment.yml`      |                                        Makes the dragon shoot fireballs.                                         |
+| `ender_dragon_potion_bombardment.yml`        |                                         Makes the dragon shoot potions.                                          |
+| `ender_dragon_shockwave.yml`                 |                                    Makes the dragon destroy the combat arena.                                    |
+| `ender_dragon_tornado.yml`                   |                                        Makes the dragon spawn a tornado.                                         |
+| `firestorm.yml`                              |                                      Spawns several damaging flame pillars.                                      |
+| `fireworks_barrage.yml`                      |                                 Makes the boss shoot several fireworks rockets.                                  |
+| `flame_pyre.yml`                             |                                     Makes a flame pillar appear on the boss.                                     |
+| `flamethrower.yml`                           |                                       Makes the boss shoot a flamethrower.                                       |
+| `frost_cone.yml`                             |                                  Makes the boss shoot snowballs in a direction.                                  |
+| `frost_walker.yml`                           |                               Gives the boss frost walking boots to walk on water.                               |
+| `gold_explosion.yml`                         |                          Spawns damaging gold nuggets on the boss that can be blocked.                           |
+| `gold_shotgun.yml`                           |                         Spawns damaging gold nuggets in a direction that can be blocked.                         |
+| `ground_pound.yml`                           |                            Makes the boss jump and drop to the floor with knockback.                             |
+| `hyper_loot.yml`                             |                                            Drops 10x the normal loot.                                            |
+| `implosion.yml`                              |                               Pulls all nearby entities towards the boss on death.                               |
+| `invisibility.yml`                           |                                            Makes the boss invisible.                                             |
+| `invulnerability_arrow.yml`                  |                                      Makes the boss immune to projectiles.                                       |
+| `invulnerability_fall_damage.yml`            |                                      Makes the boss immune to fall damage.                                       |
+| `invulnerability_fire.yml`                   |                                      Makes the boss immune to fire damage.                                       |
+| `invulnerability_fireworks.yml`              |                                       Makes the boss immune to fireworks.                                        |
+| `invulnerability_knockback.yml`              |                                    Makes the boss immune to damage knockback.                                    |
+| `lightning_bolts.yml`                        |                                             Spawns lightning bolts.                                              |
+| `meteor_shower.yml`                          |                                      Spawns several fireballs from the sky.                                      |
+| `moonwalk.yml`                               |                                         Makes the boss jump extra high.                                          |
+| `movement_speed.yml`                         |                                            Makes the boss extra fast.                                            |
+| `photon_ray.yml`                             |                               Spawns a damaging ray that will bounce off of walls.                               |
+| `plasma_blaster.yml`                         |                                      Spawns a slow moving green projectile.                                      |
+| `shield_wall.yml`                            |               Spawns shields that will protect the boss from a specific direction until destroyed.               |
+| `skeleton_pillar.yml`                        |                         Spawns two pillars of particles that damage players in the zone.                         |
+| `skeleton_tracking_arrow.yml`                |                                             Spawns a tracking arrow.                                             |
+| `spirit_walk.yml`                            | Makes the boss teleport to a nearby safe location if it keeps getting hit without being able to damage a player. |
+| `summon_embers.yml`                          |                                        Summons the embers reinforcement.                                         |
+| `summon_the_returned.yml`                    |                                       Summons the returned reinforcement.                                        |
+| `taunt.yml`                                  |                                         Taunts the player with messages.                                         |
+| `taze.yml`                                   |                              Tazes the player, shocking it and applying knockback.                               |
+| `thunderstorm.yml`                           |                                         Spawns several lightning bolts.                                          |
+| `tracking_fireball.yml`                      |                                     Spawns a fireball that follows a player.                                     |
+| `zombie_bloat.yml`                           |                                        Knocks players away from the boss.                                        |
+| `zombie_friends.yml`                         |                                     Spawns the zombie friends reinforcement.                                     |
+| `zombie_necronomicon.yml`                    |                                 Makes the boss channel summoning reinforcements.                                 |
+| `zombie_parents.yml`                         |                                     Spawns the zombie parents reinforcement.                                     |
 
 </details>
 
-Note that some of the powers are in the [Elite Script](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Scripts) format, and can be customized.
+Note that some of the powers are in the [Elite Script](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md) format, and can be customized.
 
 <details> 
 
@@ -436,18 +453,18 @@ Reinforcements also go into the powers category, using the following settings:
 
 <summary><b>Reinforcement settings</b></summary>
 
-| Key | Description | Values | Default |
-|-|:-:|:-:|-|
-| `summonType` | What triggers the reinforcement spawn. Mandatory. | Refer to the list below | none |
-| `filename` | Filename of the boss to spawn as a reinforcement. Mandatory. | [String](#string) | none |
-| `chance` | Chance of the reinforcement spawning. Optional. | [Double](#double) | `1.0` |
-| `amount` | Sets the amount of reinforcements to spawn. Optional. | [Integer](#integer) | `1` |
-| `inheritAggro` | Makes the reinforcement inherit the aggro from the boss. Optional. | `true` / `false` | `false` |
-| `spawnNearby` | Makes the reinforcements spawn in a 30 block radius from the boss. Optional. | `true` / `false` | `false` |
-| `inheritLevel` | Makes the reinforcement inherit the level of the boss. Optional | `true` / `false` | `false` |
-| `customSpawn` | Makes the reinforcement spawn using the [custom spawn system](https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Spawns). Only used for `summonType: GLOBAL`
-| `location` | Spawn location. Optional. | `world_name,x,y,z` or `x,y,z` for a location relative to the boss. The offset is relative to the spawn location for regional bosses. | none |
-| `lightningRod` | Special setting for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Makes end crystals spawn lightning around them. Optional. | `true` / `false` | none |
+| Key | Description |                                                                                                             Values                                                                                                             | Default |
+|-|:-:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
+| `summonType` | What triggers the reinforcement spawn. Mandatory. |                                                                                                    Refer to the list below                                                                                                     | none |
+| `filename` | Filename of the boss to spawn as a reinforcement. Mandatory. |                                                                                                       [String](#string)                                                                                                        | none |
+| `chance` | Chance of the reinforcement spawning. Optional. |                                                                                                       [Double](#double)                                                                                                        | `1.0` |
+| `amount` | Sets the amount of reinforcements to spawn. Optional. |                                                                                                      [Integer](#integer)                                                                                                       | `1` |
+| `inheritAggro` | Makes the reinforcement inherit the aggro from the boss. Optional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
+| `spawnNearby` | Makes the reinforcements spawn in a 30 block radius from the boss. Optional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
+| `inheritLevel` | Makes the reinforcement inherit the level of the boss. Optional |                                                                                                        `true` / `false`                                                                                                        | `false` |
+| `customSpawn` | Makes the reinforcement spawn using the [custom spawn system](https://magmaguy.com/wiki.html#en+elitemobs+creating_spawns.md). Only used for `summonType: GLOBAL`
+| `location` | Spawn location. Optional. | `world_name,x,y,z` or `x,y,z` for a location relative to the boss. The offset is relative to the spawn location for regional bosses. You can also use `same_as_boss` to make reinforcements spawn in the same world as the boss. | none |
+| `lightningRod` | Special setting for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Makes end crystals spawn lightning around them. Optional. |                                                                                                        `true` / `false`                                                                                                        | none |
 
 </details>
 
@@ -462,12 +479,12 @@ Summon types set the conditions for the reinforcements spawning. The following i
 | `ONCE` | Only spawns the reinforcements once, the first time the boss is damaged. |
 | `ON_HIT`  | Spawns the reinforcements on hit. |
 | `ON_COMBAT_ENTER` | Spawns the reinforcements when the boss enters combat. |
-| `GLOBAL` | Spawns a reinforcement for every online player. Requires the `customSpawn` key to have a valid [custom spawn](https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Spawns) set. |
+| `GLOBAL` | Spawns a reinforcement for every online player. Requires the `customSpawn` key to have a valid [custom spawn](https://magmaguy.com/wiki.html#en+elitemobs+creating_spawns.md) set. |
 | `ON_COMBAT_ENTER_PLACE_CRYSTAL` | Places end crystal reinforcements on combat enter, only for use with custom dragon fights. |
 
 </details>
 
-Note that it is possible to spawn reinforcements through [Elite Scripts](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Scripts), so there are more customizable ways of spawning reinforcements.
+Note that it is possible to spawn reinforcements through [Elite Scripts](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md), so there are more customizable ways of spawning reinforcements.
 
 <details> 
 
@@ -479,9 +496,14 @@ Note that it is possible to spawn reinforcements through [Elite Scripts](https:/
 powers:
 - summonType: ON_COMBAT_ENTER
   filename: test_boss.yml
-  spawnNearby: true
+  chance: 0.5
+  amount: 5
   inheritAggro: true
+  spawnNearby: true
   inheritLevel: true
+  customSpawn: false
+  location: same_as_boss,10,20,30
+  lightningRod: false
 ```
 
 </div>
@@ -490,11 +512,11 @@ powers:
 
 ### Expert configuration - Creating your own powers
 
-It is possible to create your own powers, either on the boss file itself or as a new configuration file in the powers folder. You can learn more about that [here](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Scripts).
+It is possible to create your own powers, either on the boss file itself or as a new configuration file in the powers folder. You can learn more about that [here](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md).
 
 ### Limiting powers based on instanced dungeon difficulty
 
-Instanced dungeons can have difficulty settings, and it is possible to make it so a specific power is only enabled for specific difficulties.
+[Instanced dungeons](https://magmaguy.com/wiki.html#en+elitemobs+dungeons.md%instanced-dungeons) can have difficulty settings, and it is possible to make it so a specific power is only enabled for specific difficulties.
 
 <details> 
 
@@ -523,7 +545,9 @@ This will only apply to instanced dungeons.
 powers:
 - filename: movement_speed.yml
   difficultyID:
-  - myDifficultyName
+  - myDifficultyName1
+  - myDifficultyName2
+  - myDifficultyName3
 ```
 
 </div>
@@ -611,7 +635,7 @@ Death messages use the following placeholders:
 
 <div align="center">
 
-Sets the size of the boss, but only works for slimes.
+Sets the size of the slime boss, but only works for slimes.
 
 </div>
 
@@ -639,7 +663,7 @@ slimeSize: 5
 
 <div align="center">
 
-Sets if the boss will spawn as neutral or not. This only applies to entity types that can be neutral such as wolves or iron golems.
+Sets if the boss will spawn as neutral or not. This only applies to entity types that can be neutral such as Wolves or Iron Golems.
 
 </div>
 
@@ -720,9 +744,9 @@ isPersistent: true
 
 Sets weapons that bosses can be strong or weak against.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `damageModifiers` | [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | none |
+| Key |        Values         | Default |
+|-|:---------------------:|-|
+| `damageModifiers` | [Material](#material) | none |
 
 <details> 
 
@@ -800,9 +824,9 @@ escapeMessage: "Sayonara!"
 
 Sets the message show in the boss bar. This is used to track both Custom Boss health and its location in the server. Requires the [annoucementPriority](#annoucementPriority) to be configured.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `locationMessage` | [String](#string), [Color codes](color_codes) and the placeholders listed below | none |
+| Key |                                      Values                                      | Default |
+|-|:--------------------------------------------------------------------------------:|-|
+| `locationMessage` | [String](#string), [Color codes](#color_codes) and the placeholders listed below | none |
 
 Placeholders:
 
@@ -821,12 +845,12 @@ Placeholders:
 
 ```yml
 announcementPriority: 3
-locationMessage: "&4Cool boss: $distance blocks away!"
+locationMessage: "&4Cool boss: At $location only $distance blocks away!"
 ```
 
 </div>
 
-This would show something like `Cool boss: 10 blocks away!`
+This would show something like `Cool boss: At 414,55,347 only 10 blocks away!`
 
 </details>
 
@@ -834,13 +858,13 @@ This would show something like `Cool boss: 10 blocks away!`
 
 ### uniqueLootList
 
-Sets the [Custom Items](https://github.com/MagmaGuy/EliteMobs/wiki/%5BGuide%5D-Creating-custom-loot) that drop from the boss.
+Sets the [Custom Items](https://magmaguy.com/wiki.html#en+elitemobs+creating_items.md) that drop from the boss.
 
 | Key |        Values        | Default |
 |-|:--------------------:|-|
 | `uniqueLootList` | [List](#string_list) | none |
 
-Loot entries in the Custom Loot follow the Loot Table format. [Info about that here!](https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Loot-Table)
+Loot entries in the Custom Loot follow the Loot Table format. [Info about that here!](https://magmaguy.com/wiki.html#en+elitemobs+loot_tables.md%custom-loot-table) Take note that some older files might be using outdated loot tables that look different than the example.
 
 <details> 
 
@@ -849,11 +873,13 @@ Loot entries in the Custom Loot follow the Loot Table format. [Info about that h
 <div align="left">
 
 ```yml
-- magmaguys_toothpick.yml:1
-- minecraft:type=DIAMOND:amount=1:chance=0.9
-- SCRAP:level=5-10:amount=10-20:ignorePlayerLevel=false:chance=0.5
-- UPGRADE_ITEM:level=5-10:amount=1-2:ignorePlayerLevel=false:chance=0.1
-- magmaguys_toothpick.yml:0.5:elitemobs.*
+uniqueLootList:
+  - filename: magmaguys_toothpick.yml
+    chance: 0.02
+  - minecraft:type=DIAMOND:amount=1:chance=0.9
+  - SCRAP:level=5-10:amount=10-20:ignorePlayerLevel=false:chance=0.5
+  - UPGRADE_ITEM:level=5-10:amount=1-2:ignorePlayerLevel=false:chance=0.1
+  - magmaguys_toothpick.yml:0.5:elitemobs.*
 ```
 
 </div>
@@ -1056,7 +1082,7 @@ Here is a list of what the priorities do:
 | `0` | The boss will be fully silent, with no announcement messages. |
 | `1` | This is the default. Bosses can send chat messages, on spawn message, on death and escape messages. |
 | `2` | On top of the things in `1`, the boss will be set to be trackable by players through the `/em` menu. |
-| `3` | On top of the things in `2`, broadcast messages will be mirrored on Discord if configured. [Discord configuration info here.](https://github.com/MagmaGuy/EliteMobs/wiki/DiscordSRV---Discord-broadcasts) |
+| `3` | On top of the things in `2`, broadcast messages will be mirrored on Discord if configured. [Discord configuration info here.](https://magmaguy.com/wiki.html#en+elitemobs+discordsrv.md) |
 
 Here's an example of a boss that is trackable, is able to send spawn/death/escape messages on chat and on Discord:
 
@@ -1256,7 +1282,7 @@ onCombatLeaveCommands:
 
 ### disguise
 
-Sets the LibsDisguises disguise if that plugin is enabled. [More info here.](https://github.com/MagmaGuy/EliteMobs/wiki/LibsDisguises-&-Disguising-Custom-Bosses)
+Sets the LibsDisguises disguise if that plugin is enabled. [More info here.](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md)
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1276,7 +1302,7 @@ customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8
 
 </div>
 
-Sets a custom disguise from skindex. [Check this page](https://github.com/MagmaGuy/EliteMobs/wiki/LibsDisguises-&-Disguising-Custom-Bosses) to learn how to correctly format this data.
+Sets a custom disguise from skindex. [Check this page](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md) to learn how to correctly format this data.
 
 </details>
 
@@ -1284,7 +1310,7 @@ Sets a custom disguise from skindex. [Check this page](https://github.com/MagmaG
 
 ### customModel
 
-Sets the custom model to use, if you have a custom model and ModelEngine. [More info here.](https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Models)
+Sets the custom model to use, if you have a custom model and ModelEngine. [More info here.](https://magmaguy.com/wiki.html#en+elitemobs+custom_models.md)
 
 | Key | Values | Default |
 |-|:-:|-|

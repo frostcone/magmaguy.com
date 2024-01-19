@@ -33,7 +33,7 @@ From an EliteMobs perspective, the Custom Model system is very simple, as the on
 
 This guide will go into detail insofar as interfacing with Model Engine and Minecraft goes. It will not tell you how to use Blockbench to create custom bosses, nor will it go into detail about how Model Engine works. There are already plenty of guides on how to do that elsewhere, and if you want to learn more about those systems you are better served by looking directly at their documentation.
 
-# Minimum requirements 
+# Minimum requirements
 
 EliteMobs 7.3.12 or later, Model Engine R2.2.0\* or later, Blockbench\*\*, a using Minecraft Resource Packs.
 
@@ -48,13 +48,13 @@ EliteMobs is able to use Custom Models for NPCs and Custom Bosses. The process t
 
 ## Step 1. Setting the EliteMobs config
 
-Go to the configuration file of the Custom Boss or NPC you want to modify and add the following line:
+Go to the configuration file of the Custom Boss or NPC you want to modify and add the following line:
 
 ```yaml
 customModel: modelname
 ```
 
-Replace `modelname` with the name of your model.  The name is the name of the Custom Model file you are using. As an example, the Test Boss' Custom Model file is `showcase_boss.bbmodel`. As such, the configuration option should be
+Replace `modelname` with the name of your model. The name is the name of the Custom Model file you are using. As an example, the Test Boss' Custom Model file is `showcase_boss.bbmodel`. As such, the configuration option should be
 
 ```yaml
 customModel: showcase_boss
@@ -71,7 +71,7 @@ And that's it for EliteMobs! Now it gets a bit trickier.
 
 ## Step 3. Generating the Resource Pack
 
-[**Note: there is now an alternative, simpler way to do this step on this link.**](https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Models#step-2-generating-the-resource-pack) However, it is a little bit less flexible than what is listed here.
+[**Note: there is now an alternative, simpler way to do this step on this link.**](https://magmaguy.com/wiki.html#en+elitemobs+custom_models.md%step-2.-generating-the-resource-pack) However, it is a little bit less flexible than what is listed here.
 
 This is possibly the trickiest part if you are looking to make your server manage the downloads. **Try checking if the system works when you have the resource pack on your client before looking into distributing it automatically!**
 

@@ -50,27 +50,27 @@ Now that you know the general format of how scripts are structured, it's time to
 
 ----
 
-# [Events](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Events)
+# [Events](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_events.md)
 
 Click on the link above to learn how to use events!
 
-# [Targets](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets)
+# [Targets](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md)
 
 Click on the link above to learn how to use targets!
 
-# [Actions](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions)
+# [Actions](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_actions.md)
 
 Click on the link above to learn how to use actions!
 
-# [Zones](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones)
+# [Zones](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md)
 
 Click on the link above to learn how to use zones!
 
-# [Conditions](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Conditions)
+# [Conditions](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_conditions.md)
 
 Click on the link above to learn how to use conditions!
 
-# [Cooldowns](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Cooldowns)
+# [Cooldowns](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_cooldowns.md)
 
 Click on the link above to learn how to use cooldowns!
 

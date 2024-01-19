@@ -1,12 +1,12 @@
 # Getting started
 
-This page helps you understand how to correctly edit a yml page. All of my plugins use yml configuration files, which will reset themselves or stop working if you edit them incorrectly.
+This page helps you understand how to correctly edit a .yml file. All of my plugins use .yml configuration files, which will reset themselves or stop working if you edit them incorrectly.
 
 Below, you will find every configuration entry type and how they should be formatted if you are modifying any values!
 
-# Program to edit yml files
+# How to edit .yml files
 
-Files are stored in the `.yml` file format and [Notepad++](https://notepad-plus-plus.org/) is the recommended file editing software for configuration work.
+Files are stored in the `.yml` file format and [Notepad++](https://notepad-plus-plus.org/) is the recommended file editing software for configuration work. Of course you can use any other text editor of your choice.
 
 <div id="config_boolean">
 
@@ -33,7 +33,7 @@ value2: false
 value: "String"
 ```
 
-While this is not always mandatory, it is mandatory for any string that contains color codes, especially if the first character starts with a color code. ***Color codes follow the in-game color code format*** meaning that `"&aTest`" would result in green text. The availability of colored text varies depending on the configuration setting. Check [this page](https://minecraft.gamepedia.com/Formatting_codes) for color codes.
+While this is not always mandatory, it is mandatory for any string that contains color codes, especially if the first character starts with a [color code](#color_codes). ***Color codes follow the in-game color code format*** meaning that `"&aTest`" would result in green text. The availability of colored text varies depending on the configuration setting. Check [this page](https://minecraft.gamepedia.com/Formatting_codes) for color codes.
 
 </div>
 
@@ -97,6 +97,10 @@ value: 10.01
 
 `Double`s can also happen to be whole numbers like integers, like `10.0` or even represented as `10`.
 
+</div>
+
+<div id="config_string_list">
+
 # `String List`
 `String List`s are lists of `String` values. These tend to be the hardest values to configure, as they require a very specific config format:
 
@@ -136,7 +140,7 @@ As you can see, Map Lists can contain any kind of format inside them, but if you
 
 # `Color Codes`
 
-'Map List' are lists of 'Map' value. These are only used in elite scripting, and require this configuration format:
+You can also assign colors or make text bold using the following modifiers:
 
 | Color                                                  | Code                                                       | Table                                                    |
 |--------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------|
@@ -157,7 +161,81 @@ As you can see, Map Lists can contain any kind of format inside them, but if you
 |                                                        | **&k** for random text.                                    |                                                          |
 |                                                        | &k<div class="magic-text"></div> example.                  |                                                          |
 
-<div style="color: pink;">&eYellow example.</div>
-As you can see, colors exploding.
+As you can see in the examples, the modifiers follow the regular minecraft syntax except that the § is replaced with a & when used with EliteMobs. You can use this to modify most EliteMobs text such as, mob names, quest text, dungeon names etc.
+
+Take note that when working properly the modifiers themselves will not show in your text. They are only shown here for demonstration purposes.
+
+It is also possible to combine colors and other text modifiers. For example, you can do:
+
+*<div style="color: green;">&a&oTo get green text that is italic.</div>*
+
+If we wanted our custom mob to have a nice fancy colorful name we would do the following:
+
+```yml
+name: $normalBossLevel &aScary &dDragon
+```
+
+</div>
+
+<div id="config_material">
+
+# `Material`
+
+`Material` values are just Materials that you can find in MineCraft, such as `IRON_CHESTPLATE`. For a list of valid `Material`s see this [page](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html).
+
+```yml
+helmet: IRON_HELMET
+```
+
+`Material`s are used as values in several settings such as equipment for mobs, loot drops, quest rewards etc.
+
+</div>
+
+<div id="config_filename">
+
+# `Filename`
+
+`Filename` values are just .yml config files that are formatted to be used with MagmaGuy's plugins. These could be anything from items to quests.
+
+```yml
+uniqueLootList:
+  - filename: magmaguys_toothpick.yml
+```
+
+</div>
+
+<div id="config_trimming_worlds">
+
+# `Trimming Worlds` WORK IN PROGRESS
+
+Upcoming section that will describe how to trim worlds for distribution.
+
+**Trimming the world folder**
+
+There are several files and folders located in your world folder that we can discard since EternalTD does not use all of them. This will cut down the size of your world and make it easier to dsitribute.
+
+For NORMAL Environment:
+
+To prepare your world, keep the following files and folders:
+
+1. **region** folder
+2. **raids.dat** from within the **data** folder (ensure it's placed inside the **data** folder when copying)
+3. **level.dat** file
+
+You can safely delete all other files and folders located in the world folder. This will set up your world correctly for the NORMAL environment.
+
+For NETHER and THE\_END Environment:
+
+To prepare your world, keep the following files and folders:
+
+1. **region** folder inside the **DIM-1** folder (ensure it's placed inside the **DIM-1** folder when copying)
+2. **raids.dat** from within the **data** folder (ensure it's placed inside the **data** folder when copying)
+3. **level.dat** file
+
+You can safely delete all other files and folders located in the world folder. This will set up your world correctly for the NETHER and THE\_END environments.
+
+```yml
+Coming soon
+```
 
 </div>

@@ -23,7 +23,7 @@ questLore: '&cEnd the test boss'' reign of terror!'
 | Key | Description | Values | Default |
 |-|:-:|:-:|:-:|
 | `customObjectives `| Sets the quest objectives | Check below [1] | none |
-| `customRewards`| Sets the quest rewards | [Universal EliteMobs loot format](https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Loot-Table) | none |
+| `customRewards`| Sets the quest rewards | [Universal EliteMobs loot format](https://magmaguy.com/wiki.html#en+elitemobs+elitemobs+loot_tables.md) | none |
 | `questAcceptPermissions` | Sets the permissions the player must have in order to accept the quest | STRING LIST | none |
 | `questLockoutPermission` | Sets the permission that the player will get upon completing the quest which will lock them out from doing the quest again. | String | none |
 | `questLockoutMinutes` | Sets how long, in minutes, the player will have to wait before being able to do the quest again (works by removing the quest lockout permission)| INTEGER | `-1`(will never repeat) |

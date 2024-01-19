@@ -8,7 +8,7 @@ These Elite Mobs (when their level is high enough and the antiexploit system isn
 * Custom loot (somewhat rare)
 * Elite Coins
 
-(Note: You can read more about Elite Mob spawning and rewards [here](https://github.com/MagmaGuy/EliteMobs/wiki/%5BMechanic%5D-Spawning,-Tiers,-Loot))
+(Note: You can read more about Elite Mob spawning and rewards [here](https://magmaguy.com/wiki.html#en+elitemobs+spawning_tiers_loot.md))
 
 Upon looting, the player will be informed by the plugin that the coins can be used and the items sold at the store in the Adventurer's Guild.
 
@@ -33,7 +33,7 @@ Here are the main selling points of the minidungeons:
 * In the case of adventures, these are full-on massive adventure maps with vast questlines, sidequests and sometimes even arenas and dungeons inside of dungeons!
 * It looks great and players love spending days in them
 
-[More about minidungeons!](https://github.com/MagmaGuy/EliteMobs/wiki/Dungeons)
+[More about minidungeons!](https://magmaguy.com/wiki.html#en+elitemobs+dungeons.md)
 
 # Dungeoneering
 Dungeons are instanced challenges. This means that a world is created when a group joins the dungeon, and once the group starts the dungeon players will be unable to join other than to spectate it. There is a dedicated system for respawning which gives players 3 deaths each before being struck out.
@@ -42,7 +42,7 @@ Dungeons are the most balanced and developed content in EliteMobs, as they are s
 
 Dungeons have difficulties to pick from, and the highest difficulties are the hardest challenges in EliteMobs but also the most rewarding!
 
-[More about dungeons!](https://github.com/MagmaGuy/EliteMobs/wiki/Dungeons)
+[More about dungeons!](https://magmaguy.com/wiki.html#en+elitemobs+dungeons.md)
 
 # Arenas
 EliteMobs also has arenas which players can challenge. These are wave-based challenges which players must overcome for a preset amount of waves. They reward players for reaching specific arena waves. This content is also instanced, and the join and respawn limitations from the Dungeoneering section also applies here.
