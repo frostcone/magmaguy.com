@@ -257,7 +257,6 @@ function CopyClipboard(copyButton) {
             copyButton.innerHTML = originalText
         }, 1000)
     })
-
 }
 
 /**
