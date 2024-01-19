@@ -6,21 +6,21 @@ Only one zone can be set per script.
 
 To target zones, the target type `ZONE_FULL` or `ZONE_BORDER` can be used.
 
-Zones themselves also use [Script Targets](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) to define were the zone will appear.
+Zones themselves also use [Script Targets](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) to define were the zone will appear.
 
 ## shape
 
 Sets the shape of the zone. Valid shapes:
 
-| Shape Type | Details | Animatable | Border |
-| --- | :-: | :-: | :-: |
-| [`CYLINDER`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#CYLINDER) | Cylindrical shape | ❌ | ✅ |
-| [`SPHERE`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#SPHERE) | Spherical shape | ❌ | ✅ |
-| [`DOME`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#DOME) | Dome shape (half sphere) | ❌ | ✅ |
-| [`CUBOID`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#CUBOID) | Cuboid shape (cube-like) | ❌ | ✅ |
-| [`STATIC_RAY`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#STATIC_RAY) | A fixed line between two points | ❌ | ❌ |
-| [`ROTATING_RAY`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#ROTATING_RAY) | A rotating line between two points | ✅ | ❌ |
-| [`TRANSLATING_RAY`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#TRANSLATING_RAY) | A line that moves between two initial points to two final points | ✅ | ❌ |
+| Shape Type                                                                                            | Details | Animatable | Border |
+|-------------------------------------------------------------------------------------------------------| :-: | :-: | :-: |
+| [`CYLINDER`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%cylinder)               | Cylindrical shape | ❌ | ✅ |
+| [`SPHERE`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%sphere)                   | Spherical shape | ❌ | ✅ |
+| [`DOME`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%dome)                       | Dome shape (half sphere) | ❌ | ✅ |
+| [`CUBOID`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%cuboid)                   | Cuboid shape (cube-like) | ❌ | ✅ |
+| [`STATIC_RAY`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%static_ray)           | A fixed line between two points | ❌ | ❌ |
+| [`ROTATING_RAY`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%rotating_ray)       | A rotating line between two points | ✅ | ❌ |
+| [`TRANSLATING_RAY`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%translating_ray) | A line that moves between two initial points to two final points | ✅ | ❌ |
 
 ---
 
@@ -51,8 +51,8 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | Key | Details | Mandatory |
 | --- | :-: | :-: |
 | `shape` | Sets the shape of the zone. Should be `SPHERE` | ✅ |
-| [`target`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the center of the sphere | ✅ |
-| [`filter`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#filter) | Sets which types of entities get targeted | ❌ |
+| [`target`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the center of the sphere | ✅ |
+| [`filter`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%filter) | Sets which types of entities get targeted | ❌ |
 | `radius` | Radius of the sphere | ✅ |
 | `borderRadius` | Radius of the inner sphere | ❌ |
 
@@ -63,8 +63,8 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | Key | Details | Mandatory |
 | --- | :-: | :-: |
 | `shape` | Sets the shape of the zone. Should be `DOME` | ✅ |
-| [`target`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the center of the dome | ✅ |
-| [`filter`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#filter) | Sets which types of entities get targeted | ❌ |
+| [`target`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the center of the dome | ✅ |
+| [`filter`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%filter) | Sets which types of entities get targeted | ❌ |
 | `radius` | Radius of the dome | ✅ |
 | `borderRadius` | Radius of the inner dome | ❌ |
 
@@ -75,8 +75,8 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | Key | Details | Mandatory |
 | --- | :-: | :-: |
 | `shape` | Sets the shape of the zone. Should be `CYLINDER` | ✅ |
-| [`target`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the center of the cylinder | ✅ |
-| [`filter`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#filter) | Sets which types of entities get targeted | ❌ |
+| [`target`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the center of the cylinder | ✅ |
+| [`filter`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%filter) | Sets which types of entities get targeted | ❌ |
 | `radius` | Radius of the cylinder | ✅ |
 | `borderRadius` | Radius of the inner cylinder | ❌ |
 | `height` | Height of the cylinder | ❌ |
@@ -88,8 +88,8 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | Key | Details | Mandatory |
 | --- | :-: | :-: |
 | `shape` | Sets the shape of the zone. Should be `CUBOID` | ✅ |
-| [`target`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the center of the cuboid | ✅ |
-| [`filter`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#filter) | Sets which types of entities get targeted | ❌ |
+| [`target`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the center of the cuboid | ✅ |
+| [`filter`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%filter) | Sets which types of entities get targeted | ❌ |
 | `x` | Sets the length of the cuboid | ✅ |
 | `y` | Sets the height of the cuboid | ✅ |
 | `z` | Sets the width of the cuboid, defaults to `x` | ❌ |
@@ -104,9 +104,9 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | Key | Details | Mandatory |
 | --- | :-: | :-: |
 | `shape` | Sets the shape of the zone. Should be `STATIC_RAY` | ✅ |
-| [`target`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the first point of the line | ✅ |
-| [`target2`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the last point of the line | ✅ |
-| [`filter`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#filter) | Sets which types of entities get targeted | ❌ |
+| [`target`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the first point of the line | ✅ |
+| [`target2`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the last point of the line | ✅ |
+| [`filter`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%filter) | Sets which types of entities get targeted | ❌ |
 | `ignoresSolidBlocks` | Sets if the ray will pass through solid blocks | ❌ |
 | `pointRadius` | Sets the thickness of the ray. Default is 0.5 blocks. | ❌ |
 
@@ -117,9 +117,9 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | Key | Details | Mandatory |
 | --- | :-: | :-: |
 | `shape` | Sets the shape of the zone. Should be `ROTATING_RAY` | ✅ |
-| [`filter`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#filter) | Sets which types of entities get targeted | ❌ |
-| [`target`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the first point of the line | ✅ |
-| [`target2`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the last point of the line | ✅ |
+| [`filter`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%filter) | Sets which types of entities get targeted | ❌ |
+| [`target`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the first point of the line | ✅ |
+| [`target2`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the last point of the line | ✅ |
 | `animationDuration` | Sets, in ticks, the amount of time for the rotation | ✅ |
 | `pitchPreRotation` | Applies an initial rotation to the pitch before the animation | ❌ |
 | `yawPreRotation` | Applies an initial rotation to the yaw before the animation | ❌ |
@@ -135,12 +135,12 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | Key | Details | Mandatory |
 | --- | :-: | :-: |
 | `shape` | Sets the shape of the zone. Should be `TRANSLATING_RAY` | ✅ |
-| [`filter`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones#filter) | Sets which types of entities get targeted | ❌ |
+| [`filter`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%filter) | Sets which types of entities get targeted | ❌ |
 | `animationDuration` | Sets, in ticks, the amount of time for the translation | ✅ |
-| [`target`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the first point of the line | ✅ |
-| [`finalTarget`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location of the destination for the first point of the line | ✅ |
-| [`target2`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location for the second point of the line | ✅ |
-| [`finalTarget2`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets) | Sets the location of the destination for the second point of the line | ✅ |
+| [`target`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the first point of the line | ✅ |
+| [`finalTarget`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location of the destination for the first point of the line | ✅ |
+| [`target2`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location for the second point of the line | ✅ |
+| [`finalTarget2`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | Sets the location of the destination for the second point of the line | ✅ |
 | `ignoresSolidBlocks` | Sets if the ray will pass through solid blocks | ❌ |
 | `pointRadius` | Sets the thickness of the ray. Default is 0.5 blocks. | ❌ |
 

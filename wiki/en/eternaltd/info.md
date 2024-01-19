@@ -109,7 +109,7 @@ To map out the play area of your build for use with EternalTD, follow these step
    ````
    This will now save the play area to your level file and your level file should now be ready for use.
 ## Trimming the world folder
-There are several files and folders located in your world folder that we can discard since EternalTD does not use all of them. This will cut down the size of your world and make it easier to dsitribute.
+There are several files and folders located in your world folder that we can discard since EternalTD does not use all of them. This will cut down the size of your world and make it easier to distribute.
 
 For NORMAL Environment:
 
