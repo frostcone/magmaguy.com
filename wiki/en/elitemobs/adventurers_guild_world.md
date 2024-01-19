@@ -6,17 +6,26 @@ The Adventurer's Guild World is the name of a premade world made for EliteMobs b
 
 ### What is the Adventurer's Guild World for?
 
-The Adventurer's Guild World acts as a hub for EliteMobs. By hosting the hub, players no longer have to memorize any commands (other than /em) in order to interact with EliteMobs.
+The Adventurer's Guild World acts as a hub for EliteMobs. By hosting the hub, players no longer have to memorize any commands (other than /em) in order to interact with EliteMobs features.
 
 In the world, the following NPCs are placed ahead of time:
 
-- Guild Attendant (for upgrading guild ranks)
+- Transporter (for going back to your previous location)
+- Guide (introductory quest to meet all NPC's)
+- Guild Attendant (for upgrading [Guild Ranks](https://magmaguy.com/wiki.html#en+elitemobs+understanding_the_basics_of_elitemobs.md%step-2:-discovering-the-economy))
+- Dungeon Teleporters (special NPC's that will teleport players to any installed [Dungeons](https://magmaguy.com/wiki.html#en+elitemobs+dungeons.md))
+- Barkeep (currently unimplemented)
+- Quest Giver (for browsing and accepting randomly generated quests)
 - Blacksmith (for buying procedurally generated items and selling drops from elite mobs)
 - Special Blacksmith (for buying custom items and selling drops from elite mobs)
-- Quest Giver (for browsing and accepting quests)
 - Combat Instructor (for giving tips about EliteMobs combat)
-- Barkeep (currently unimplemented)
-- Transporter (for going back to your previous location)
+- Wormholes (portals that will teleport players to [Dungeons](https://magmaguy.com/wiki.html#en+elitemobs+dungeons.md) and any other installed content)
+- Arena Master (this NPC will let players participate in the [Wood League Arena](https://magmaguy.com/wiki.html#en+elitemobs+understanding_the_basics_of_elitemobs.md%arenas))
+- Story Mode Quests (let's players take quests for the [Story Mode Dungeons](www.magmaguy.com))
+- Unbinder (let's players [Unbind](https://magmaguy.com/wiki.html#en+elitemobs+item_upgrade_system.md%unbinding-items) their EliteMobs loot for a price)
+- Scrapper (let's players convert any unwanted loot to [Scrap](https://magmaguy.com/wiki.html#en+elitemobs+item_upgrade_system.md%scrapping-items))
+- Repairman (players can interact with this NPC to [Repair](https://magmaguy.com/wiki.html#en+elitemobs+item_upgrade_system.md%repairing-elite-items) their items using scrap)
+- Enchanter (let's players [Enchant](https://magmaguy.com/wiki.html#en+elitemobs+item_upgrade_system.md%enchanting-elite-items) their items)
 
 Additionally, features an adventurer's guild building for the NPCs, as well as an EliteMobs Arena (currently unimplemented, coming soon!).
 
