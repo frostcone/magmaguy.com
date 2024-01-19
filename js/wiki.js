@@ -26,6 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 })
 
+window.addEventListener('popstate', function (event) {
+
+    // read the new hash and prepare it into identifier format
+    let newHash = window.location.hash;
+    // if hash doesn't exist, use default
+    if (newHash === "") {
+        newHash = "#en+main_info.md"
+    }
+    let identifier = newHash.replaceAll("+", "/").replaceAll("#", "");
+    // pass it into your global article change function
+    GlobalArticleChange(identifier);
+
+});
+
 
 /**
  * Switches the active language of the website.
