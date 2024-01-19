@@ -252,6 +252,13 @@ damageMultiplier: 1.5
 ### isBaby
 
 Sets if the boss uses the baby variant of the mob. Can only be applied to mobs with baby variants.
+If you would like to [disguise](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md) the boss but would like it to also remain a baby while in disguise (make sure the disguise entity also supports the baby variant) you can use this setting:
+<div align="left">
+
+```yaml
+disguise: HOGLIN:baby
+```
+</div>
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -484,7 +491,7 @@ Summon types set the conditions for the reinforcements spawning. The following i
 
 </details>
 
-Note that it is possible to spawn reinforcements through [Elite Scripts](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md), so there are more customizable ways of spawning reinforcements.
+Note that it is also possible to spawn reinforcements through [Elite Scripts](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md), so there are more customizable ways of spawning reinforcements.
 
 <details> 
 
@@ -635,7 +642,7 @@ Death messages use the following placeholders:
 
 <div align="center">
 
-Sets the size of the slime boss, but only works for slimes.
+Sets the size of the slime boss, but only works for Slimes and Magmacubes.
 
 </div>
 
@@ -1041,13 +1048,13 @@ onDamageMessages:
 
 ### mountedEntity
 
-Sets the entity that the boss will mount.
+Sets the entity that the boss will mount and ride.
 
 | Key | Values | Default |
 |-|:-:|-|
 | `onDamagedMessages` | [Filename of the boss to mount](#filename) or [entity type](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) | none |
 
-Don't try to make the boss try to mount itself.
+Don't try to make the boss mount itself.
 
 <details> 
 
@@ -1114,7 +1121,7 @@ Set the distance at which bosses aggro and enter combat.
 
 Note 1: Regional bosses have half the `followDistance` when out of combat. This is so they don't aggro from too far away, which can cause annoying combat issues due to leash constraints.
 
-Note 2: The higher the `followDistance`, the more intensive on the CPU the boss becomes. Use carefully and responsibly!
+Note 2: The higher the `followDistance`, the more intensive on the server CPU the boss becomes. Use carefully and responsibly!
 
 <details> 
 
@@ -1255,7 +1262,7 @@ onCombatEnterCommands:
 
 ### onCombatLeaveCommands:
 
-Sets teh list of commands to run when the boss leaves combat.
+Sets the list of commands to run when the boss leaves combat.
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1287,7 +1294,7 @@ Sets the LibsDisguises disguise if that plugin is enabled. [More info here.](htt
 | Key | Values | Default |
 |-|:-:|-|
 | `disguise` | [String](#string) | none |
-| `customDisguiseData` | String | none |
+| `customDisguiseData` | [String](#string) | none |
 
 <details> 
 
@@ -1335,6 +1342,7 @@ customModel: your_model
 ### frozen
 
 Sets if the boss can move. Frozen bosses can still attack.
+</br>*Note: this might not work on some entities.*
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1358,7 +1366,7 @@ frozen: true
 
 ### song
 
-Sets the music a boss will play, starting when it spawns. Require the ogg file for the song to be in the resource pack
+Sets the music a boss will play, starting when it spawns. Requires the .ogg file for the song to be in the resource pack.
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1424,7 +1432,8 @@ cullReinforcements: true
 
 ### movementSpeedAttribute
 
-Sets the movement speed of the boss
+Sets the movement speed of the boss.
+</br>*Note: anything beyond 0.36 might be too fast.*
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1449,6 +1458,7 @@ movementSpeedAttribute: 0.3
 <div align="center">
 
 Bosses can have phases that change when the boss reaches a certain percentage of health. When this happens, the boss starts using a different configuration file, meaning that everything about the boss can change, including things like the entity type.
+</br>To learn more about boss phases click [here](https://magmaguy.com/wiki.html#en+elitemobs+creating_boss_phases.md).
 
 
 | Key | Description | Values | Default |
@@ -1504,8 +1514,6 @@ The following things are important to know when designing a phase boss:
 
 <div align="left">
 
-//todo: this will need more info
-
 - The configuration file for the first phase sets all phases of the boss.
 - Threat / damage counted is kept between phases for players.
 - Switching phases is based on the percentage of health lost, which is preserved when switching to a different phase. This means increasing or decreasing the healthMultiplier between phases will not heal or damage the boss, it will still switch with the same percentage, but will have more or less health for that phase.
@@ -1529,7 +1537,7 @@ The following things are important to know when designing a phase boss:
 
 Regional bosses are a specific type of Custom Bosses that spawn at a specific configured location and are able to respawn at that location after a delay. Additionally, they can have leashes that make sure they stay in a specific zone, among other features.
 
-These are used for all of the dungeon content.
+These are used for all of the dungeon content. To learn more about regional bosses click [here](https://magmaguy.com/wiki.html#en+elitemobs+creating_world_bosses.md).
 
 | Key | Description | Values | Default |
 |-|:-:|:-:|-|
@@ -1656,7 +1664,7 @@ Instanced bosses are a subtype of Regional Bosses used in Instanced Dungeons.
 | `instanced` | Makes the custom boss instanced. Mandatory. | `true` / `false` | `false` |
 
 
-Setting bosses to instanced is mandatory for instanced dungeons to work correctly.
+Setting bosses to instanced is mandatory for instanced dungeons to work correctly. We also recommend removing leashes for any instanced bosses.
 
 <details> 
 

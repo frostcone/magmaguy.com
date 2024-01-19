@@ -60,7 +60,7 @@ powers:
 - arrow_rain
 ```
 
-This constitutes a valid Phase Boss. If you spawn phase_1_boss.yml, it will spawn a Stray with the attributes listed above. After being damaged down to _60%_ of its health, it will immediately be replaced in the same location by the Custom Boss as formed in phase\_2\_boss.yml, since the configuration file states `- phase_2_boss.yml:0.60` (_phase\_2\_boss.yml is the file name for that custom boss, 0.60 is 60% health_). _Note that the phase 2 boss will spawn with 60% of its health, since that's when it changes to that phase._ The boss will have the powers listed on the phase\_2\_boss.yml file. Once the phase 2 boss is damaged down to 30% of its health, it spawns the boss set for phase 3. Note that the powers for phase 3 are unrelated to the ones from before - you can completely change powers between phases, just like nearly all other attributes.
+This constitutes a valid Phase Boss. If you spawn phase_1_boss.yml, it will spawn a Stray with the attributes listed above. After being damaged down to _60%_ of its health, it will immediately be replaced in the same location by the Custom Boss as formed in phase_2_boss.yml, since the configuration file states `- phase_2_boss.yml:0.60` (_phase_2_boss.yml is the file name for that custom boss, 0.60 is 60% health_). _Note that the phase 2 boss will spawn with 60% of its health, since that's when it changes to that phase._ The boss will have the powers listed on the phase_2_boss.yml file. Once the phase 2 boss is damaged down to 30% of its health, it spawns the boss set for phase 3. Note that the powers for phase 3 are unrelated to the ones from before - you can completely change powers between phases, just like nearly all other attributes.
 
 ## Advanced
 
