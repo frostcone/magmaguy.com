@@ -45,15 +45,23 @@ li {
     height: 18px;
 }
 
-.language-options-container {
+.language-options-container,
+.plugins-options-container{
     background-color: #23282a;
     display: none;
     border-color: black;
     border-width: 2px;
     border-style: solid;
     padding: 5px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 1000;
 }
 
+.nav-right-li:hover .plugins-options-container,
 #active-language:hover .language-options-container {
     display: block;
 }
@@ -72,4 +80,33 @@ li {
 
 .language-option:hover {
     background-color: green;
+}
+
+#navbar-right, .nav-right-li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.language-option#active-language {
+    display: inline;
+    position: relative;
+}
+
+.nav-right-li {
+    display: flex;
+}
+
+.navbar-right div {
+    display: inline;
+}
+
+.plugins-options-container a,
+.language-options-container .language-option {
+    display: block;
+}
+
+.plugin_icon{
+    max-width: 2rem;
 }

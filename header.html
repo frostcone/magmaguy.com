@@ -1,47 +1,48 @@
 <!-- Navigation bar -->
 <ul class="navigation-bar">
     <div id="navbar-left">
-        <a href="#home"> <img src="img/magmaguy%20gif.gif" height="40" width="40"></a>
+        <a href="index.html"> <img height="40" src="img/magmaguy%20gif.gif" width="40"></a>
     </div>
     <div id="navbar-right">
-        <li><a href="#EliteMobs">Home</a></li>
-        <li><a href="#EliteMobs">Minecraft plugins</a>
-            <ul class="hover-list" style="display: none;">
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-            </ul>
+        <li class="nav-right-li plugins-option-container">
+            <a>Minecraft plugins</a>
+            <div class="plugins-options-container">
+                <a href="EliteMobs.html"><img class="plugin_icon" src="img/custom_icons/elitemobs_icon.png">EliteMobs</a>
+                <a href="BetterStructures.html"><img class="plugin_icon" src="img/custom_icons/betterstructures_icon.png">BetterStructures</a>
+                <a href="FreeMinecraftModels.html"><img class="plugin_icon" src="img/custom_icons/freeminecraftmodels_icon.png">FreeMinecraftModels</a>
+                <a href="EternalTD.html"><img class="plugin_icon" src="img/custom_icons/eternaltd_icon.jpg">EternalTD</a>
+                <a href="ResurrectionChest.html"><img class="plugin_icon" src="img/custom_icons/resurrectionchest_icon.png">ResurrectionChest</a>
+                <a href="BetterFood.html"><img class="plugin_icon" src="img/custom_icons/betterfood_icon.jpg">BetterFood</a>
+            </div>
         </li>
-        <li><a href="#EliteMobs">Wiki</a></li>
-        <li><a href="#EliteMobs">Support</a></li>
-        <li><a href="#EliteMobs">Patreon</a></li>
-        <li style="text-align: right !important;">
+        <li><a href="wiki.html">Wiki</a></li>
+        <li><a href="https://discord.gg/fHnKPwkRNu">Support</a></li>
+        <li><a href="https://www.patreon.com/magmaguy">Patreon</a></li>
+        <li class="nav-right-li">
             <a>Language:</a>
-            <div style="display: inline">
-                <div style="display: inline; position: relative" class="language-option" id="active-language">
-                    <img class="flag-icon" src="img/flags/en.svg"> English
-                    <div class="language-options-container" style="position: absolute; top: 100%; left: 0; white-space: nowrap; min-width: 100%;">
-                        <div  class="language-option" onclick="LanguageSwitch('en', this)">
-                            <img class="flag-icon" src="img/flags/en.svg" alt="en"> English
-                        </div>
-                        <div  class="language-option" onclick="LanguageSwitch('fr', this)">
-                            <img class="flag-icon" src="img/flags/fr.svg" alt="fr"> Français
-                        </div>
-                        <div class="language-option" onclick="LanguageSwitch('es', this)">
-                            <img class="flag-icon" src="img/flags/es.svg" alt="es"> Español
-                        </div>
-                        <div class="language-option" onclick="LanguageSwitch('pt', this)">
-                            <img class="flag-icon" src="img/flags/pt.svg" alt="pt"> Português
-                        </div>
-                        <div class="language-option" onclick="LanguageSwitch('ru', this)">
-                            <img class="flag-icon" src="img/flags/ru.svg" alt="ru"> Русский
-                        </div>
-                        <div class="language-option" onclick="LanguageSwitch('cn', this)">
-                            <img class="flag-icon" src="img/flags/cn.svg" alt="cn"> 中文
-                        </div>
-                        <div class="language-option" onclick="LanguageSwitch('jp', this)">
-                            <img class="flag-icon" src="img/flags/jp.svg" alt="jp"> 日本語
-                        </div>
+            <div class="language-option" id="active-language">
+                <img class="flag-icon" src="img/flags/en.svg"> English
+                <div class="language-options-container">
+                    <div class="language-option" onclick="LanguageSwitch('en', this)">
+                        <img alt="en" class="flag-icon" src="img/flags/en.svg"> English
+                    </div>
+                    <div class="language-option" onclick="LanguageSwitch('fr', this)">
+                        <img alt="fr" class="flag-icon" src="img/flags/fr.svg"> Français
+                    </div>
+                    <div class="language-option" onclick="LanguageSwitch('es', this)">
+                        <img alt="es" class="flag-icon" src="img/flags/es.svg"> Español
+                    </div>
+                    <div class="language-option" onclick="LanguageSwitch('pt', this)">
+                        <img alt="pt" class="flag-icon" src="img/flags/pt.svg"> Português
+                    </div>
+                    <div class="language-option" onclick="LanguageSwitch('ru', this)">
+                        <img alt="ru" class="flag-icon" src="img/flags/ru.svg"> Русский
+                    </div>
+                    <div class="language-option" onclick="LanguageSwitch('cn', this)">
+                        <img alt="cn" class="flag-icon" src="img/flags/cn.svg"> 中文
+                    </div>
+                    <div class="language-option" onclick="LanguageSwitch('jp', this)">
+                        <img alt="jp" class="flag-icon" src="img/flags/jp.svg"> 日本語
                     </div>
                 </div>
             </div>

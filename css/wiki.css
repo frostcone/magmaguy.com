@@ -355,6 +355,7 @@ p iframe, p img {
     background-color: rgba(134, 134, 134, 0.17);
 }
 
+/*Adjustable sidebar*/
 #view-bar{
     text-align: center;
 }
@@ -377,6 +378,7 @@ p iframe, p img {
     -webkit-text-stroke: 1px black;
 }
 
+/*Scrollbar components*/
 /* For Chrome, Safari, and Opera */
 ::-webkit-scrollbar {
     width: .5rem;
