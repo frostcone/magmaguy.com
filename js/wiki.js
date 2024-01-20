@@ -3,7 +3,7 @@
  */
 document.addEventListener('DOMContentLoaded', function () {
     if (window.location.hash === "") {
-        window.location.hash = "#en+main_info.md"
+        ModifyHash("en+main_info.md")
         LanguageSwitch("en")
         ArticleClick('$language$/main_info.md')
     } else {
@@ -23,8 +23,29 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 10)
         })
     }
-
+    SwitchSidebar()
 })
+
+function ModifyHash(newHash){
+    history.replaceState(null,null, "wiki.html#" + newHash)
+}
+
+function SwitchSidebar(){
+    let url = "wiki-sidebar.html"
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error " + response.status);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById("sidebar").innerHTML = data;
+        })
+        .catch(function() {
+            console.log("Failed to find url " + url);
+        });
+}
 
 window.addEventListener('popstate', function (event) {
 
@@ -102,7 +123,7 @@ function ArticleClick(identifier, element) {
  */
 function GlobalArticleChange(articleURL) {
     let identifier
-    if (!articleURL.includes("wiki/")) {
+    if (!articleURL.includes("wiki/") && !articleURL.includes("wiki\\")) {
         identifier = "wiki/" + articleURL.replaceAll("+", "/").replaceAll("#", "")
     } else {
         identifier = articleURL.replaceAll("+", "/").replaceAll("#", "")
@@ -116,23 +137,33 @@ function GlobalArticleChange(articleURL) {
         .then(response => {
             if (!response.ok) {
                 if (window.location.hash.includes("#en")) return
-                window.location.hash = identifier.replace("wiki/", "").replaceAll("/", "+")
+                let newHash = identifier.replace("wiki/", "").replaceAll("/", "+")
                 let currentLanguage = window.location.hash.split("+")[0]
-                let newHash = window.location.hash.replace(currentLanguage, "#en")
+                newHash = newHash.replace(currentLanguage, "#en")
                 GlobalArticleChange(newHash)
             }
             return response.text()
         })
         .then(data => {
-            document.getElementById('article-container').innerHTML = marked.parse(data);
-            window.location.hash = identifier.replace("wiki/", "").replaceAll("/", "+")
-            CustomMarkdownPostProcessor(document.getElementById('article-container'))
+            document.getElementById('article-container-contents').innerHTML = marked.parse(data);
+            let newHash = identifier.replace("wiki/", "").replaceAll("/", "+")
+            ModifyHash( newHash);
+            CustomMarkdownPostProcessor(document.getElementById('article-container-contents'))
             if (pageSection !== undefined) {
-                window.location.hash += "%" + pageSection;
+                newHash = newHash + "%" + pageSection;
+                ModifyHash(newHash);
                 ScrollIntoPageSection(pageSection)
             }
 
             GenerateIndexOnClick()
+
+            fetch('https://magmaguy.com:40000/increment-page-view-counter')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("view-counter").innerText = data.count
+                    console.log(`Updated page view count: ${data.count}`)
+                })
+                .catch(err => console.error('Failed to update page view count:', err));
         })
         .catch(error => {
             console.error('Error:', error)
@@ -212,7 +243,7 @@ function CustomMarkdownPostProcessor(container) {
         }
     }
 
-    if (container.id !== undefined && container.id === "article-container") {//Apply highlighting on the whole page
+    if (container.id !== undefined && container.id === "article-container-contents") {//Apply highlighting on the whole page
         hljs.highlightAll()
 
         //Add click to link for headers in article
@@ -226,7 +257,7 @@ function CustomMarkdownPostProcessor(container) {
  */
 function AddLinkToHeader() {
     let headers = [];
-    let container = document.getElementById('article-container');
+    let container = document.getElementById('article-container-contents');
 
     headers = headers.concat(Array.from(container.getElementsByTagName("h1")));
     headers = headers.concat(Array.from(container.getElementsByTagName("h2")));
@@ -236,15 +267,15 @@ function AddLinkToHeader() {
 
     for (let header of headers) {
         let originalText = header.innerText;
-        if (header.querySelector("a")){
+        if (header.querySelector("a")) {
             continue
         }
         header.innerText = "🔗 " + header.innerText;
         header.onclick = function () {
             if (window.location.hash.includes("%")) {
-                window.location.hash = window.location.hash.split("%")[0] + "%" + TurnHeaderIntoLink(originalText)
+                ModifyHash(window.location.hash.split("%")[0] + "%" + TurnHeaderIntoLink(originalText));
             } else {
-                window.location.hash = window.location.hash + "%" + TurnHeaderIntoLink(originalText)
+                ModifyHash(window.location.hash + "%" + TurnHeaderIntoLink(originalText));
             }
             header.scrollIntoView({
                 behavior: 'smooth', block: 'start'
@@ -298,7 +329,7 @@ function GenerateIndexOnClick() {
     sidebarElement.parentElement.appendChild(newContainer)
 
     let listOfHeaders = []
-    ScanForHeader(document.getElementById('article-container'), listOfHeaders)
+    ScanForHeader(document.getElementById('article-container-contents'), listOfHeaders)
 
     for (let elementsByTagNameElement of listOfHeaders) {
         let newElement = elementsByTagNameElement.cloneNode(true)
@@ -317,9 +348,13 @@ function GenerateIndexOnClick() {
  */
 function IndexClick(clickedElement) {
     if (clickedElement === undefined || clickedElement.innerHTML === undefined) return
-    if (window.location.hash.includes("%")) window.location.hash = window.location.hash.split("%")[0]
-    window.location.hash += "%" + TurnHeaderIntoLink(clickedElement.innerHTML.replace("→ ", "").replaceAll("🔗 ", ""))
-    GlobalArticleChange(window.location.hash)
+    let newHash;
+    if (window.location.hash.includes("%")) newHash = window.location.hash.split("%")[0]
+    else newHash = window.location.hash
+    newHash = newHash + "%" + TurnHeaderIntoLink(clickedElement.innerHTML.replace("→ ", "").replaceAll("🔗 ", ""))
+    // Update the URL without triggering a hashchange event
+    ModifyHash(newHash);
+    GlobalArticleChange(newHash)
 }
 
 /**
@@ -378,7 +413,7 @@ function ScrollIntoPageSection(headerName) {
  * @param {HTMLAnchorElement} link - The link that was clicked.
  */
 function CrawlThroughHeaders(headerTagName, targetHeader) {
-    for (let elementsByTagNameElement of document.getElementById('article-container').getElementsByTagName(headerTagName)) {
+    for (let elementsByTagNameElement of document.getElementById('article-container-contents').getElementsByTagName(headerTagName)) {
         let cleanLink = elementsByTagNameElement.innerHTML.replace("🔗 ", "")
         if (TurnHeaderIntoLink(cleanLink) === targetHeader) return elementsByTagNameElement
     }
@@ -423,8 +458,7 @@ document.addEventListener('click', function (event) {
     if (event.target.href.toLowerCase().split("#")[1] === "string_list") ClickOnConfigFileGuideElement("string_list")
     if (event.target.href.toLowerCase().split("#")[1] === "serialized_location") ClickOnConfigFileGuideElement("serialized_location")
     if (event.target.href.toLowerCase().split("#")[1] === "boolean") ClickOnConfigFileGuideElement("boolean")
-    if (event.target.href.toLowerCase().split("#")[1] === "color_codes")
-        ClickOnConfigFileGuideElement("color_codes")
+    if (event.target.href.toLowerCase().split("#")[1] === "color_codes") ClickOnConfigFileGuideElement("color_codes")
     if (event.target.href.toLowerCase().split("#")[1] === "material") ClickOnConfigFileGuideElement("material")
     if (event.target.href.toLowerCase().split("#")[1] === "filename") ClickOnConfigFileGuideElement("filename")
 });
@@ -581,55 +615,6 @@ function fetchDirectoryListing(directory) {
 }
 
 let AllFilesCache = [];
-
-async function FetchAllMarkdownFiles() {
-    try {
-        let languages = await fetchDirectoryListing("../wiki/");
-        languages = JSON.parse(languages);
-
-        for (let language of languages) {
-            let result = await fetchDirectoryListing("../wiki/" + language + "/");
-            result = JSON.parse(result);
-
-            for (let individualEntry of result) {
-                if (individualEntry.includes(".md")) {
-                    AllFilesCache.push("wiki/" + language + "/" + individualEntry);
-                } else {
-                    let lastResult = await fetchDirectoryListing("../wiki/" + language + "/" + individualEntry + "/");
-                    lastResult = JSON.parse(lastResult);
-                    lastResult.forEach(entry => {
-                        AllFilesCache.push("wiki/" + language + "/" + individualEntry + "/" + entry)
-                    });
-                }
-            }
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-    InitializeAllPagesForSearch()
-}
-
-async function InitializeAllPagesForSearch() {
-    let data = [];
-
-    const promises = AllFilesCache.map(async file => {
-        try {
-            const fileData = await FetchPageDataForSearch(file);
-
-            data.push({
-                url: file, data: fileData
-            });
-        } catch (error) {
-            console.error(`Failed to fetch data for ${file}:`, error);
-        }
-    });
-
-    await Promise.all(promises);
-    fuse = new Fuse(data, {
-        keys: ['url', 'data'], tokenize: true, matchAllTokens: true, includeMatches: true
-    })
-}
-
 let fuse;
 
 function FetchPageDataForSearch(url) {
@@ -654,11 +639,69 @@ function StartSearch(input_box) {
 
     for (let result of results) {
         let a = document.createElement("a");
-        a.onclick = function (){GlobalArticleChange(result.item.url)}
+        a.onclick = function () {
+            GlobalArticleChange(result.item.url)
+        }
         a.textContent = result.item.url;
         searchResults.appendChild(a);
     }
 }
 
+async function FetchAllMarkdownFiles() {
+    try {
+        let response = await fetch('https://magmaguy.com:40000/all-markdown-files')
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        AllFilesCache = await response.json();
+    } catch (error) {
+        console.error(`Failed to fetch all markdown files: ${error.message}`);
+    }
+    InitializeAllPagesForSearch()
+}
+
+async function InitializeAllPagesForSearch() {
+    let data = [];
+
+    const promises = AllFilesCache.map(async file => {
+        try {
+            const fileData = await FetchPageDataForSearch(file);
+            data.push({
+                url: file, data: fileData
+            });
+        } catch (error) {
+            console.error(`Failed to fetch data for ${file}:`, error);
+        }
+    });
+
+    await Promise.all(promises);
+    fuse = new Fuse(data, {
+        keys: ['url', 'data'], tokenize: true, matchAllTokens: true, includeMatches: true
+    })
+}
+
 //TODO: make this a single request to node with a single massive reply instead of a million requests that get blocked by the client anyhow
 FetchAllMarkdownFiles();
+
+let resizer = document.getElementById('resizer');
+let leftSide = document.getElementById('sidebar');
+let rightSide = document.getElementById('article-container-container');
+
+resizer.addEventListener('mousedown', function(e) {
+    e.preventDefault();
+    document.addEventListener('mousemove', mousemove);
+    document.addEventListener('mouseup', mouseup);
+});
+
+function mousemove(e) {
+    let width = (e.clientX / window.innerWidth) * 100;
+    if (width > 5 && width < 85) {
+        leftSide.style.width = width + 'vw';
+        rightSide.style.width = (100 - width) + 'vw';
+    }
+}
+
+function mouseup() {
+    document.removeEventListener('mousemove', mousemove);
+    document.removeEventListener('mouseup', mouseup);
+}

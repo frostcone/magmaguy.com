@@ -4,3 +4,5 @@ This requires the following npm packages:
 
 - express
 - cors
+
+Running on port 40000

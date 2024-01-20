@@ -1,15 +1,35 @@
-As of writing this, there is no maven repository for BetterStructures, so it has to be imported manually.
+# Public Repository
 
-# Gradle repository
-```
+## Maven
+```xml
+<repositories>
+    <repository>
+        <id>oss-sonatype</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </repository>
+</repositories>
+
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version><checkThisOne>-SNAPSHOT</version>
+  <version>versionNumber-SNAPSHOT</version>
 </dependency>
 ```
 
-Note: replace <checkThisOne> with the current version of the plugin.
+# Gradle
+```kt
+repositories {
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+}
+
+dependencies {
+    implementation 'com.magmaguy:BetterStructures:versionNumber-SNAPSHOT'
+}
+```
+
+Note: replace `versionNumber` with the current version of the plugin.
 
 # Events
 
@@ -30,3 +50,13 @@ Called when a chest is filled. Uses the container snapshot inventory to safely s
 Modifications to the loot should be done to the snapshot inventory through the add or remove item Spigot method.
 
 This is cancellable.
+
+# Key classes
+
+## FitAnything
+
+The FitAnything class is the class that gets instantiated when a build gets pasted in and handles every aspect of the paste, including filling chests and spawning mobs.
+
+## WorldGuard
+
+The WorldGuard class handles the WorldGuard region protections. The utility method `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` is made available for developers to easily hook in a custom region protection scheme on top of BetterStructures.

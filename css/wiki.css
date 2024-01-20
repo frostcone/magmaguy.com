@@ -30,31 +30,41 @@
     --wiki-category-header-border-color: #616161;
 }
 
-html {
-    font-family: "Open Sans";
-}
-
-body {
+html, body {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+}
+
+body{
+    font-family: "Open Sans";
+    font-size: 1.2rem;
     color: white;
-    min-height: 100vh;
+}
+
+#header{
+    min-height: 50px;
+    max-height: 2vh;
 }
 
 #page-container {
     display: flex;
-    flex-direction: row;
+    flex: 1 1 auto; /* changed from 1 0 auto */
+    overflow: auto; /* allow scroll */
 }
 
 .sidebar {
-    min-width: 300px;
     background-color: var(--bs-body-bg);
     padding: 10px;
-    border-right: solid var(--bs-secondary) 3px;
+    overflow-y: auto; /* allow vertical scroll */
+    flex: 0 0 auto; /* prevent growing and shrinking */
 }
 
 .sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5 {
-    font-size: 17px;
+    font-size: .85rem;
+    font-weight: lighter;
+    padding-left: 1rem;
     margin: 0;
 }
 
@@ -86,18 +96,27 @@ body {
 }
 
 #article-container-container {
-    width: 100%;
+    width: 85%;
     display: flex;
     justify-content: center;
     background-color: #51546b;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    /* remove the height 100% */
 }
 
 #article-container {
-    flex-grow: 1;
-    background-color: var(--bs-light);
-    padding: 10px;
+    display: flex; /* set display to flex */
+    flex-direction: column; /* set flex direction to column  */
+    flex-grow: 1; /* let it take the remaining space */
     min-width: 70vmin;
     max-width: 70%;
+    /* remove min-height here too. */
+}
+#article-container-contents{
+    /* min-height: 100%; remove this */
+    padding: 2rem;
+    background-color: var(--bs-light);
 }
 
 #article-container li{
@@ -105,8 +124,8 @@ body {
 }
 
 /* todo: this sucks*/
-#article-container b, #article-container code, #article-container li, #article-container p, #article-container td, #article-container th {
-    font-size: 22px;
+#article-container, #article-container li {
+    font-size: 1.15rem;
 }
 
 h1,
@@ -125,7 +144,7 @@ summary {
     background-color: #1b1e21;
     border-radius: 5px 5px 0 0;
     padding: 10px;
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 .code-header-left, .code-header-right {
@@ -149,7 +168,7 @@ summary {
 
 pre {
     width: 100%!important;
-    font-size: 20px!important;
+    font-size: 1rem;
     border: 2px solid #000000!important;
     border-radius: 5px!important;
 }
@@ -185,42 +204,40 @@ code:not(.language-yml):not(.language-yaml) {
 
 #article-container tr:nth-child(odd) {
     background-color: var(--table-bg-lightgray);
-    /* Light gray for odd rows */
 }
 
 #article-container tr:nth-child(even) {
     background-color: var(--table-bg-darkgray);
-    /* White for even rows */
 }
 
 #article-container th {
     background-color: var(--table-header-bg-blue);
-    /* White for even rows */
 }
 
 #article-container table, td, th {
     border: 1px solid black;
     padding: 8px;
+    font-size: 1rem;
 }
 
 #article-container h1, #article-container h1 code {
-    font-size: 40px;
+    font-size: 1.75rem;
 }
 
 #article-container h2, #article-container h2 code {
-    font-size: 35px;
+    font-size: 1.55rem;
 }
 
 #article-container h3, #article-container h3 code {
-    font-size: 30px;
+    font-size: 1.45rem;
 }
 
 #article-container h4, #article-container h4 code {
-    font-size: 25px;
+    font-size: 1.35rem;
 }
 
 #article-container h5, #article-container h5 code {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 #article-container a {
@@ -228,7 +245,7 @@ code:not(.language-yml):not(.language-yaml) {
 }
 
 #article-container summary {
-    font-size: 40px;
+    font-size: 1.25rem;
     color: transparent;
     /* Make the original text color transparent */
     background: linear-gradient(90deg, var(--summary-text-color-start) 0%, var(--summary-text-color-end) 80%, var(--summary-text-color-start) 100%);
@@ -276,21 +293,27 @@ code:not(.language-yml):not(.language-yaml) {
 
 @keyframes magicEffect {
     0% { content: ";vZO}Q$%"; }
-    25% { content: "BB?§zW$S"; }
-    50% { content: ":zfW%ceF"; }
-    75% { content: "vV}i!Kn-"; }
-    100% { content: "/(iaBiFn"; }
+    10% { content: "BB?§zW$S"; }
+    20% { content: ":zfW%ceF"; }
+    30% { content: "vV}i!Kn-"; }
+    40% { content: "/(iaBiFn"; }
+    50% { content: "pH^2l@c1"; }
+    60% { content: "&87G/q*Z"; }
+    70% { content: "$z6KaP*r"; }
+    80% { content: "#Hd!Zu3o"; }
+    90% { content: "!20Ds7fu"; }
+    100% { content: "b&44UnLk"; }
 }
-
 .magic-text::before {
     content: "";
     animation: magicEffect 1s infinite;
 }
 
 .sidebar a {
-    font-size: 18px;
+    font-size: 1rem;
     display: block;
-    padding-left: 15px;
+    padding-left: 1.5rem;
+    margin-bottom: .2rem;
 }
 
 iframe, img {
@@ -310,7 +333,8 @@ p iframe, p img {
     border-radius: 5px 5px 0 0;
     border-color: var(--wiki-category-header-border-color);
     max-width: 50%;
-    padding-left: 10px;
+    padding: .5rem;
+    font-weight: bolder;
 }
 
 .wiki-category {
@@ -324,4 +348,51 @@ p iframe, p img {
     border-color: var(--wiki-category-header-border-color);
     border-radius: 0 5px 5px 5px;
     background-color: rgba(134, 134, 134, 0.17);
+}
+
+#view-bar{
+    text-align: center;
+}
+
+#resizer {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: ew-resize;
+    width: .3rem;
+    height: 100%; /* This might need to be adjusted to fit your layout */
+    background-color: #5f5f5f;
+    border-style: none solid none solid;
+    border-color: #2e2e2e;
+    border-width: .2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    -webkit-text-stroke: 1px black;
+}
+
+/* For Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b5b5b5;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ececec;
+}
+
+/* For Internet Explorer and Edge */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
 }

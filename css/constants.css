@@ -5,9 +5,8 @@ section {
     border-bottom: solid black 2px;
 }
 
-body{
+body {
     margin: 0;
-    background-color: #1b1e21;
 }
 
 a {
@@ -24,15 +23,15 @@ a:hover {
 .navigation-bar {
     list-style-type: none;
     background-color: #333;
-    <!--position: fixed;-->
     top: 0;
     left: 0;
     z-index: 1;
-    <!--height: 40px;-->
-    display: inline;
+    min-height: inherit;
+    max-height: inherit;
+    display: flex; /* or use 'display: block;' */
+    flex-shrink: 0;
     margin: 0;
-    padding-bottom: 15px;
-    padding-top: 8px;;
+    padding: .1rem;
 }
 
 li {
@@ -42,20 +41,11 @@ li {
     padding-right: 30px;
 }
 
-#navbar-right {
-    display: inline;
-    min-width: 100vh;
-}
-
-#navbar-left {
-    display: inline;
-}
-
-.flag-icon{
+.flag-icon {
     height: 18px;
 }
 
-.language-options-container{
+.language-options-container {
     background-color: #23282a;
     display: none;
     border-color: black;
@@ -68,17 +58,18 @@ li {
     display: block;
 }
 
-#active-language{
+#active-language {
     background-color: royalblue;
     border-radius: 5px;
 }
 
-.language-option{
+.language-option {
     padding: 5px;
     text-align: left;
     cursor: pointer;
     border-radius: 5px;
 }
-.language-option:hover{
+
+.language-option:hover {
     background-color: green;
 }
