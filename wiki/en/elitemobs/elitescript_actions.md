@@ -6,14 +6,14 @@ Actions always start with the type of action you are going to do. Different acti
 
 ## Shared attributes
 
-| Values | Details | Special |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ❌ |
+| Values |                            Details                             | Special |
+| --- |:--------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md)  | ❌ |
 | `wait` | Sets the amount of time to wait (ticks) before running actions | ❌ |
-| `repeatEvery` | Sets the actions to repeat every set amount of ticks | ❌ |
-| `times` | Sets the amount of times an action will happen for | Requires `repeatEvery` |
-| `scripts` | Sets the scripts that will run at the end of the action | ❌ |
-| `onlyRunOneScript` | Picks one of the `scripts` at random and only runs that one. | ❌ |
+| `repeatEvery` |      Sets the actions to repeat every set amount of ticks      | ❌ |
+| `times` |       Sets the amount of times an action will happen for       | Requires `repeatEvery` |
+| `scripts` |    Sets the scripts that will run at the end of the action     | ❌ |
+| `onlyRunOneScript` |  Picks one of the `scripts` at random and only runs that one.  | ❌ |
 
 ## Action types
 
@@ -21,10 +21,10 @@ Actions always start with the type of action you are going to do. Different acti
 
 Sets the action bar message for the targets.
 
-| Values | Details | Mandatory | Special |
-| --- | :-: | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ | ❌ |
-| `sValue` | Message | ✅ | Can use color codes with `&` |
+| Values |                            Details                            | Mandatory | Special |
+| --- |:-------------------------------------------------------------:| :-: | :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
+| `sValue` |                            Message                            | ✅ | Can use color codes with `&` |
 
 **Example**
 
@@ -49,11 +49,11 @@ Will set the action bar to say Hello World to a direct target.
 
 Adds a bossbar to the target(s).
 
-| Values | Details | Mandatory | Special |
-| --- | :-: | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ | ❌ |
-| `sValue` | Message | ✅ | Can use color codes with `&` |
-| `duration` | Duration of the boss bar in ticks | ✅ | ❌ |
+| Values |                            Details                            | Mandatory | Special |
+| --- |:-------------------------------------------------------------:| :-: | :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
+| `sValue` |                            Message                            | ✅ | Can use color codes with `&` |
+| `duration` |               Duration of the boss bar in ticks               | ✅ | ❌ |
 
 **Example**
 
@@ -81,10 +81,10 @@ This is how you can damage entities as other entities.
 
 _Note: this natively uses the EliteMobs damage system! This means that you will see the normal elite armor reduction from strikes. More on this in the multipliers section._
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `multiplier` | Damage multiplier | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `multiplier` |                       Damage multiplier                       | ✅ |
 
 **Example**
 
@@ -117,11 +117,11 @@ This means that a multiplier of 1.0 is the same as a normal hit from the boss. 2
 
 Makes a target invulnerable.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `invulnerable` | Sets if the boss is invulnerable | ✅ |
-| `duration` | Sets the duration of the invulnerability (ticks) | ❌ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `invulnerable` |               Sets if the boss is invulnerable                | ✅ |
+| `duration` |       Sets the duration of the invulnerability (ticks)        | ❌ |
 
 **Example**
 
@@ -178,10 +178,10 @@ Increases the damage dealt to the boss by the players by 2x, but only if the pla
 
 Sends a message to the target(s).
 
-| Values | Details | Mandatory | Special |
-| --- | :-: | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ | ❌ |
-| `sValue` | Message | ✅ | Can use color codes with `&` |
+| Values |                            Details                            | Mandatory | Special |
+| --- |:-------------------------------------------------------------:| :-: | :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
+| `sValue` |                            Message                            | ✅ | Can use color codes with `&` |
 
 **Example**
 
@@ -206,11 +206,11 @@ Will send a message to all online players.
 
 Places a block at the target location(s) for the duration.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
+| Values |                                                  Details                                                   | Mandatory |
+| --- |:----------------------------------------------------------------------------------------------------------:| :-: |
+| `Target` |                       [More info here]($language$/elitemobs/elitescript_targets.md)                        | ✅ |
 | `material` | Material of the block, [full list here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | ✅ |
-| `duration` | Duration of effect, in ticks | ❌ |
+| `duration` |                                        Duration of effect, in ticks                                        | ❌ |
 
 **Example**
 
@@ -242,10 +242,10 @@ _Note: If no duration is defined, the block placement is permanent._
 
 Plays the specified animation for a Custom Model using Model Engine. Requires Model Engine and a valid Custom Model to be on the target that runs the animation.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `sValue` | Sets the name of the animation | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `sValue` |                Sets the name of the animation                 | ✅ |
 
 **Example**
 
@@ -267,10 +267,10 @@ Sets the boss to play the fortnite\_dance animation. Requires the server to have
 
 Plays an in-game sound.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `sValue` | Sets the name of the sound to be played | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `sValue` |            Sets the name of the sound to be played            | ✅ |
 
 [Here's a handy list of all Minecraft sounds!](https://www.digminecraft.com/lists/sound_list_pc.php) Remember that this can also play custom sounds from resource packs.
 
@@ -296,12 +296,12 @@ Plays the resonate sound from Minecraft bells at the boss location
 
 Applies a specific potion effect to the target(s).
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
+| Values |                                                       Details                                                       | Mandatory |
+| --- |:-------------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target` |                            [More info here]($language$/elitemobs/elitescript_targets.md)                            | ✅ |
 | `potionEffectType` | Effect type, [valid list is here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html) | ✅ |
-| `amplifier` | Potion effect level (starts at 0) | ✅ |
-| `duration` | Duration of the effect (ticks) | ✅ |
+| `amplifier` |                                          Potion effect level (starts at 0)                                          | ✅ |
+| `duration` |                                           Duration of the effect (ticks)                                            | ✅ |
 
 **Example**
 
@@ -328,10 +328,10 @@ This adds a level 1 slowness potion effect to a direct entity for 1 second (20 t
 
 Pushes a target by a set vector.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `vValue` | Sets vector of the velocity that will be applied | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `vValue` |       Sets vector of the velocity that will be applied        | ✅ |
 
 **Example**
 
@@ -359,14 +359,14 @@ Vectors are defined by `vValue: x,y,z`. As an example, if you want the target to
 
 ---
 
-### [](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#run_command_as_console)RUN\_COMMAND\_AS\_CONSOLE
+### RUN\_COMMAND\_AS\_CONSOLE
 
 Runs a command as console.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `sValue` | Command that will be run | ✅ |
+| Values |                             Details                             | Mandatory |
+| --- |:---------------------------------------------------------------:| :-: |
+| `Target` |  [More info here]($language$/elitemobs/elitescript_targets.md)  | ✅ |
+| `sValue` |                    Command that will be run                     | ✅ |
 
 **Note: there are placeholders available! Check RUN\_COMMAND\_AS\_PLAYER, they're the same**
 
@@ -389,14 +389,14 @@ Makes console broadcast the message "Hello world!"
 
 ---
 
-### [](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#run_command_as_player)RUN\_COMMAND\_AS\_PLAYER
+### RUN\_COMMAND\_AS\_PLAYER
+`
+Runs a command as a `player. Requires the target to be players.
 
-Runs a command as a player. Requires the target to be players.
-
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `sValue` | Command that will be run | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `sValue` |                   Command that will be run                    | ✅ |
 
 **Note: RUN\_COMMAND\_AS\_PLAYER and RUN\_COMMAND\_AS\_CONSOLE use the following placeholders:**
 
@@ -435,10 +435,10 @@ Makes the player run the say command with Hello world!, meaning they just say "H
 
 This simply runs the scripts defined in `scripts`. Any action can do this, this action only exists as a convenience action for when you just want to do that.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `scripts` | Scripts that will be run | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `scripts` |                   Scripts that will be run                    | ✅ |
 
 **Example**
 
@@ -475,11 +475,11 @@ When an elite gets damaged, runs ScriptRunner, which runs Example1 and Example2.
 
 Sets if the mob has AI. In Minecraft, mobs with no AI will not move and will not attack. They can still get damaged, but damaging them will not result in them getting knocked back.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `bValue` | Sets whether the boss has AI | ✅ |
-| `duration` | Sets the of the value set (ticks) | ❌ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `bValue` |                 Sets whether the boss has AI                  | ✅ |
+| `duration` |               Sets the of the value set (ticks)               | ❌ |
 
 **Example**
 
@@ -508,11 +508,11 @@ As a note, if the mob was already moving to a location when it lose awareness, i
 
 This means you can use unaware mobs to move to defined locations, unlike mobs with no AI.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `bValue` | Sets whether the is aware | ✅ |
-| `duration` | Sets the of the value set (ticks) | ❌ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `bValue` |                   Sets whether the is aware                   | ✅ |
+| `duration` |               Sets the of the value set (ticks)               | ❌ |
 
 **Example**
 
@@ -537,10 +537,10 @@ Sets the boss to not have awareness for 2 seconds.
 
 Sets an entity on fire for the duration.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `duration` | Duration of effect, in ticks | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `duration` |                 Duration of effect, in ticks                  | ✅ |
 
 **Example**
 
@@ -565,10 +565,10 @@ Sets a direct target on fire for 1 second.
 
 Sets the in-game time of the world the target is in.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `time` | Sets the time | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `time` |                         Sets the time                         | ✅ |
 
 **Example**
 
@@ -592,11 +592,11 @@ Sets the time of the world the boss is in to be 0 ticks.
 
 Sets the weather of the world the target is in for a set amount of time.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `weather` | Sets the weather type | ✅ |
-| `duration` | Sets the duration of the weather pattern | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `weather` |                     Sets the weather type                     | ✅ |
+| `duration` |           Sets the duration of the weather pattern            | ✅ |
 
 **Example**
 
@@ -629,15 +629,15 @@ The following are valid weather patterns:
 
 Spawns fireworks.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `vValue` | Sets the velocity of the fireworks rocket | ✅ |
-| `flicker` | Sets if the firework particles will flicker | ❌ |
-| `withTrail` | Sets if the firework rocket will leave a trail | ❌ |
-| `power` | Sets the power of the fireworks | ❌ |
-| `fireworkEffects` | Sets the effects of the fireworks, relating to how long it will take before exploding | ✅ |
-| `fireworkEffectType` | Sets the shape of the firework [from this list](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html) | ❌ |
+| Values |                                                                                                             Details                                                                                                             | Mandatory |
+| --- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target` |                                                                                  [More info here]($language$/elitemobs/elitescript_targets.md)                                                                                  | ✅ |
+| `vValue` |                                                                                            Sets the velocity of the fireworks rocket                                                                                            | ✅ |
+| `flicker` |                                                                                           Sets if the firework particles will flicker                                                                                           | ❌ |
+| `withTrail` |                                                                                         Sets if the firework rocket will leave a trail                                                                                          | ❌ |
+| `power` |                                                                                                 Sets the power of the fireworks                                                                                                 | ❌ |
+| `fireworkEffects` |                                                                      Sets the effects of the fireworks, relating to how long it will take before exploding                                                                      | ✅ |
+| `fireworkEffectType` |                                                  Sets the shape of the firework [from this list](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html)                                                  | ❌ |
 | `fireworkEffectTypes` | Sets the shapes of the firework [from this list](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html) . This is a list of shapes - if you want a list of shapes, don't use `fireworkEffectType`! \[1\] | ❌ |
 
 \[1\] When using multiple shapes for the fireworks, each shape will use the colors from the list of colors at the same position. Check example below.
@@ -680,9 +680,9 @@ These are the effects the fireworks rocket will show. At least one effect is req
 
 Strikes lightning. This is a visual effect, if you want damage you should add a damage action.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 
 **Example**
 
@@ -706,13 +706,13 @@ Strikes lightning at every player in the same world as the boss.
 
 Spawns a falling block at the target. Visual only, does not place the block.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
+| Values |                                                                                      Details                                                                                       | Mandatory |
+| --- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target` |                                                           [More info here]($language$/elitemobs/elitescript_targets.md)                                                            | ✅ |
 | `material` | Sets the material of the falling block. [Check valid types here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) and make sure they are a valid block material. | ✅ |
-| `landingScripts` | Sets the list of scripts that will run when the block falls | ✅ |
+| `landingScripts` |                                                            Sets the list of scripts that will run when the block falls                                                             | ✅ |
 
-`landingScripts` works the same way as [`RUN_SCRIPT`](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions#run_script) but can accept the special target type `LANDING_LOCATION`.
+`landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md%run_script) but can accept the special target type `LANDING_LOCATION`.
 
 **Example**
 
@@ -745,10 +745,10 @@ On entering combat, this script will spawn a falling stone block 10 blocks above
 
 Spawns particles at the target.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `particles` | Lists the particles that will be spawned | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `particles` |           Lists the particles that will be spawned            | ✅ |
 
 #### particles
 
@@ -859,11 +859,11 @@ This will spawn a flame particle at the boss location that will go up.
 
 Summons reinforcements from EliteMobs Custom Bosses.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `sValue` | Sets the filename of the Custom Boss reinforcement | ✅ |
-| `duration` | Sets the duration of the reinforcement (ticks) | ❌ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `sValue` |      Sets the filename of the Custom Boss reinforcement       | ✅ |
+| `duration` |        Sets the duration of the reinforcement (ticks)         | ❌ |
 
 **Example**
 
@@ -887,11 +887,11 @@ Spawns the reinforcement with the filename "my\_boss.yml" at the boss location.
 
 Adds tags to the boss. Tags are just Strings, or words, that scripters can define. These are only used to run condition checks and have no direct gameplay effect outside of what they are used for in scripts.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `tags` | Sets the tags | ✅ |
-| `duration` | Sets the duration of the tags (ticks) | ❌ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `tags` |                         Sets the tags                         | ✅ |
+| `duration` |             Sets the duration of the tags (ticks)             | ❌ |
 
 **Example**
 
@@ -933,11 +933,11 @@ Tags the boss with the string "very\_sus", which can later be checked through sc
 
 Teleports the target(s) to the defined location.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | Sets _who_ will get teleported. [General target info here!](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `FinalTarget` | Sets _where_ they will be teleported. [General target info here!](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `location` | Teleport location | ✅ |
+| Values |                                                    Details                                                     | Mandatory |
+| --- |:--------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target` |    Sets _who_ will get teleported. [General target info here!]($language$/elitemobs/elitescript_targets.md)    | ✅ |
+| `FinalTarget` | Sets _where_ they will be teleported. [General target info here!]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `location` |                                               Teleport location                                                | ✅ |
 
 **Example**
 
@@ -984,14 +984,14 @@ location: same_as_boss,0,64,0,0,0
 
 Sets the action bar message for the targets.
 
-| Values | Details | Mandatory | Special | Default |
-| --- | :-: | :-: | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ | ❌ | ❌ |
-| `title` | Sets the title message | ✅ | Can use color codes with `&` | ❌ |
-| `subtitle` | Sets the subtitle message | ✅ | Can use color codes with `&` | ❌ |
-| `duration` | Sets the duration of the message (ticks) | ✅ | ❌ | `0` |
-| `fadeIn` | Sets fade in time (ticks) | ❌ | ❌ | `0` |
-| `fadeOut` | Sets fade out time (ticks) | ❌ | ❌ | `0` |
+| Values |                            Details                            | Mandatory | Special | Default |
+| --- |:-------------------------------------------------------------:| :-: | :-: | :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ | ❌ |
+| `title` |                    Sets the title message                     | ✅ | Can use color codes with `&` | ❌ |
+| `subtitle` |                   Sets the subtitle message                   | ✅ | Can use color codes with `&` | ❌ |
+| `duration` |           Sets the duration of the message (ticks)            | ✅ | ❌ | `0` |
+| `fadeIn` |                   Sets fade in time (ticks)                   | ❌ | ❌ | `0` |
+| `fadeOut` |                  Sets fade out time (ticks)                   | ❌ | ❌ | `0` |
 
 **Example**
 
@@ -1020,11 +1020,11 @@ Will set the action bar to say Hello World to a direct target.
 
 Removes tags from the boss. Check `TAG` to see how tags work.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `tags` | Sets the tags | ✅ |
-| `duration` | Sets the duration of the remove of the tags (ticks) | ❌ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `tags` |                         Sets the tags                         | ✅ |
+| `duration` |      Sets the duration of the remove of the tags (ticks)      | ❌ |
 
 **Example**
 
@@ -1073,10 +1073,10 @@ Removes the tag "very\_sus" from the boss, which can later be checked through sc
 
 Gives the frozen visual effect to the player & does its associated damage. This should be combined with a repeating script if you don't want the effect to immediately fade.
 
-| Values | Details | Mandatory |
-| --- | :-: | :-: |
-| `Target` | [More info here](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) | ✅ |
-| `duration` | Duration of effect, in ticks | ✅ |
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `duration` |                 Duration of effect, in ticks                  | ✅ |
 
 **Example**
 

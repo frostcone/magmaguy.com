@@ -31,7 +31,7 @@ eliteScript:
 
 In this example, the `Example` script will only run if the elite is still alive, and will only place a dirt block 3 blocks above the elite location if that block is an air block. Individual actions can have individual conditions.
 
-## [](https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Conditions#target)Target
+## Target
 
 Conditions use the [Targets](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) system to target which entity or location is subjected to the conditions. This means that you can associate conditions to the boss or to players or to anything else you can target.
 

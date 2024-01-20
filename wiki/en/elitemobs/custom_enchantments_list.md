@@ -1,22 +1,3 @@
-- [Critical Strikes](#critical-strikes)
-- [Drilling](#drilling)
-- [Elite Protection/Sharpness/Power/Bane of Arthropods/Smite/...](#elite-protection-sharpness-power-bane-of-arthropods-smite-)
-- [Flamethrower](#flamethrower)
-- [Hunter](#hunter)
-- [Ice Breaker](#ice-breaker)
-- [Earthquake](#earthquake)
-- [Grappling Hook](#grappling-hook)
-- [Lightning](#lightning)
-- [Loud Strikes](#loud-strikes)
-- [Plasma Boots](#plasma-boots)
-- [Summon Merchant](#summon-merchant)
-- [Summon Wolf](#summon-wolf)
-- [Unbind](#unbind)
-- [Soulbind](#soulbind)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 # Critical Strikes
 
 Critical Strikes give a chance to double the damage dealt to an Elite Mob.

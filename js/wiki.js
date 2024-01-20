@@ -2,37 +2,80 @@
  * This function is called when the DOM is fully loaded. It determines which language and article to load based on the URL hash.
  */
 document.addEventListener('DOMContentLoaded', function () {
-    if (window.location.hash === "") {
-        ModifyHash("en+main_info.md")
-        LanguageSwitch("en")
-        ArticleClick('$language$/main_info.md')
-    } else {
-        let hash = window.location.hash
-        let identifier = hash.replaceAll("+", "/").replaceAll("#", "/").replace("/", "")
-        GlobalArticleChange(identifier).then(response => {
-            setTimeout(function () {
-                for (let elementsByClassNameKey in document.getElementsByClassName("language-option")) {
-                    let flagSrc = document.getElementsByClassName("flag-icon")[elementsByClassNameKey].src
-                    if (flagSrc === undefined) continue
-                    let flagLanguage = flagSrc.split("/")[flagSrc.split("/").length - 1].split(".")[0]
-                    if (flagLanguage === window.location.hash.split("+")[0].replace("#", '')) {
-                        ChangeFlag(document.getElementsByClassName("flag-icon")[elementsByClassNameKey].parentElement)
-                        return
-                    }
-                }
-            }, 10)
-        })
-    }
+    if (window.location.hash === "") SetPageHash()
+    LoadPageHash()
     SwitchSidebar()
 })
 
-function ModifyHash(newHash) {
-    if (!newHash.startsWith("#")) {
-        history.replaceState(null, null, "wiki.html#" + newHash)
-    }else {
-        history.replaceState(null, null, "wiki.html" + newHash)
-    }
+function GetPageLanguage() {
+    let language = GetWindowElement("lang");
+    if (language === undefined) return "en";
+    if (language === "$language$") return "en";
+    return language;
+}
 
+function GetPageArticle() {
+    let article = GetWindowElement("article");
+    if (article === undefined) return "main_info.md"
+    return article;
+}
+
+function GetPageSection() {
+    return GetWindowElement("section")
+}
+
+function GetWindowElement(key) {
+    let value = undefined;
+    window.location.hash.split("&").forEach(segment => {
+        if (segment.includes(key + "=")) value = segment.split(key + "=")[1];
+    })
+    return value
+}
+
+function SetPageHash(language, article, section, update) {
+    if (language === undefined) language = GetPageLanguage();
+    if (article === undefined) article = GetPageArticle();
+    if (section === undefined) {
+        history.pushState(null, null, "wiki.html#lang=" + language + "&article=" + article.replaceAll("/", "+"));
+    } else {
+        history.pushState(null, null, "wiki.html#lang=" + language + "&article=" + article.replaceAll("/", "+") + "&section=" + section);
+    }
+    if (update) LoadPageHash()
+}
+
+function LoadPageHash() {
+    let lang = GetPageLanguage();
+    let article = GetPageArticle().replaceAll("+", "/");
+    let section = GetPageSection();
+    let directory = "wiki/" + lang + "/" + article;
+    return fetch(directory)
+        .then(response => {
+            if (!response.ok) {
+                SetPageHash("en", "main_info.md", undefined)
+                return reportError
+            }
+            return response.text()
+        })
+        .then(data => {
+            document.getElementById('article-container-contents').innerHTML = marked.parse(data);
+            CustomMarkdownPostProcessor(document.getElementById('article-container-contents'))
+            if (section != null) ScrollIntoPageSection(section)
+            GenerateIndexOnClick()
+            IncrementViewCounter()
+        })
+        .catch(error => {
+            console.error('Error:', error)
+        });
+}
+
+function IncrementViewCounter() {
+    fetch('https://magmaguy.com:40000/increment-page-view-counter')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("view-counter").innerText = data.count
+            console.log(`Updated page view count: ${data.count}`)
+        })
+        .catch(err => console.error('Failed to update page view count:', err));
 }
 
 function SwitchSidebar() {
@@ -53,45 +96,14 @@ function SwitchSidebar() {
 }
 
 window.addEventListener('popstate', function (event) {
-
-    // read the new hash and prepare it into identifier format
-    let newHash = window.location.hash;
-    // if hash doesn't exist, use default
-    if (newHash === "") {
-        newHash = "#en+main_info.md"
-    }
-    let identifier = newHash.replaceAll("+", "/").replaceAll("#", "");
-    // pass it into your global article change function
-    GlobalArticleChange(identifier);
-
+    LoadPageHash()
 });
 
-
-/**
- * Switches the active language of the website.
- * @param {string} language - The language to switch to.
- * @param {HTMLElement} element - The clicked language indicator element, if any.
- */
 function LanguageSwitch(language, element) {
-    let hash = window.location.hash
-    let identifier
-    if (hash.split("+").length > 2) {
-        identifier = "#" + language
-        for (let i = 0; i < hash.split("+").length; i++) if (i > 0) identifier += "+" + hash.split("+")[i]
-    } else {
-        identifier = "#" + language + "+main_info.md"
-    }
-    GlobalArticleChange(identifier)
-
-    if (element !== undefined) {
-        ChangeFlag(element);
-    }
+    SetPageHash(language, undefined, undefined, true)
+    if (element !== undefined) ChangeFlag(element);
 }
 
-/**
- * Updates the visual indicator of the active language.
- * @param {Node} languageChildNode - The flag icon HTML element of the active language.
- */
 function ChangeFlag(languageChildNode) {
     let currentLanguageDisplay = document.getElementById("active-language");
     let currentChildren = Array.from(currentLanguageDisplay.children).map(child => {
@@ -107,86 +119,34 @@ function ChangeFlag(languageChildNode) {
     });
 }
 
-/**
- * Handles when an article is clicked. It sets the active article and fetches the text of the article.
- * @param {string} identifier - The language and file name of the article to be fetched.
- * @param {Element} element - The clicked sidebar link, if any.
- */
-function ArticleClick(identifier, element) {
-    if (document.getElementById("active-selection") !== null) document.getElementById("active-selection").id = ""
-    if (element !== undefined) element.id = "active-selection"
-    identifier = identifier.replace("$language$", "#" + window.location.hash.split("#")[1].split("+")[0])
-    GlobalArticleChange(identifier)
+function ArticleClick(article, element) {
+    if (document.getElementById("active-selection") !== null) {
+        document.getElementById("active-selection").id = "";
+    }
+    if (element !== undefined) {
+        element.id = "active-selection";
+    }
+    article = article.replace("$language$/", "")
+    SetPageHash(undefined, article, undefined, true)
 }
 
-
-/**
- * Fetches the article text corresponding to a given URL and updates the page content.
- * Also handles post-fetch activities like scrolling to a page section and generating index.
- * @param {string} articleURL - The language and file name of the article to be fetched.
- * @returns {Promise} A promise that resolves after the fetch operation and the post-fetch activities are done.
- */
-function GlobalArticleChange(articleURL) {
-    let identifier
-    if (!articleURL.includes("wiki/") && !articleURL.includes("wiki\\")) {
-        identifier = "wiki/" + articleURL.replaceAll("+", "/").replaceAll("#", "")
-    } else {
-        identifier = articleURL.replaceAll("+", "/").replaceAll("#", "")
-    }
-    let pageSection = undefined
-    if (identifier.includes("%")) {
-        pageSection = identifier.split("%")[1]
-        identifier = identifier.split("%")[0]
-    }
-    return fetch(identifier)
-        .then(response => {
-            if (!response.ok) {
-                if (window.location.hash.includes("#en")) return
-                let newHash = identifier.replace("wiki/", "").replaceAll("/", "+")
-                let currentLanguage = window.location.hash.split("+")[0]
-                newHash = newHash.replace(currentLanguage, "#en")
-                GlobalArticleChange(newHash)
-            }
-            return response.text()
-        })
-        .then(data => {
-            document.getElementById('article-container-contents').innerHTML = marked.parse(data);
-            let newHash = identifier.replace("wiki/", "").replaceAll("/", "+")
-            ModifyHash(newHash);
-            CustomMarkdownPostProcessor(document.getElementById('article-container-contents'))
-            if (pageSection !== undefined) {
-                newHash = newHash + "%" + pageSection;
-                ModifyHash(newHash);
-                ScrollIntoPageSection(pageSection)
-            }
-
-            GenerateIndexOnClick()
-
-            fetch('https://magmaguy.com:40000/increment-page-view-counter')
-                .then(res => res.json())
-                .then(data => {
-                    document.getElementById("view-counter").innerText = data.count
-                    console.log(`Updated page view count: ${data.count}`)
-                })
-                .catch(err => console.error('Failed to update page view count:', err));
-        })
-        .catch(error => {
-            console.error('Error:', error)
-        });
-}
-
-/**
- * Adds custom interactions and styles to various DOM elements in the post article.
- */
 function CustomMarkdownPostProcessor(container) {
     //This allows the page to scroll to a specific element when clicking on a button that refers to that section
-    for (let elementsByTagNameElement of container.getElementsByTagName("a")) {
+    container.querySelectorAll('a').forEach(function (elementsByTagNameElement) {  // selecting all 'a' elements
+        if (elementsByTagNameElement.href === undefined) return;
         if (elementsByTagNameElement.href.includes("#") && elementsByTagNameElement.href.split("#")[0] === window.location.href.split("#")[0] && !elementsByTagNameElement.href.includes("+")) {
             elementsByTagNameElement.addEventListener('click', function (event) {
-                ScrollEventIntoPageSection(event, elementsByTagNameElement)
-            })
+                event.preventDefault();  // prevent the default browser action
+                ScrollEventIntoPageSection(event, elementsByTagNameElement);  // call your custom function
+            });
         }
-    }
+        if (elementsByTagNameElement.href.includes("$language$")) {
+            elementsByTagNameElement.addEventListener('click', function (event) {  // adding event listener on click
+                event.preventDefault();  // stop the actual linking to happen
+                GlobalArticleChange(elementsByTagNameElement.href.split("magmaguy.com/")[1]);  // call your function
+            });
+        }
+    });
 
     //This applies custom arrows to the summary tag
     for (let elementsByTagNameElement of container.getElementsByTagName("summary")) {
@@ -248,9 +208,10 @@ function CustomMarkdownPostProcessor(container) {
         }
     }
 
-    if (container.id !== undefined && container.id === "article-container-contents") {//Apply highlighting on the whole page
-        hljs.highlightAll()
+    //Highlights things in code boxes
+    hljs.highlightAll()
 
+    if (container.id !== undefined && container.id === "article-container-contents") {
         //Add click to link for headers in article
         AddLinkToHeader()
     }
@@ -277,11 +238,7 @@ function AddLinkToHeader() {
         }
         header.innerText = "🔗 " + header.innerText;
         header.onclick = function () {
-            if (window.location.hash.includes("%")) {
-                ModifyHash(window.location.hash.split("%")[0] + "%" + TurnHeaderIntoLink(originalText));
-            } else {
-                ModifyHash(window.location.hash + "%" + TurnHeaderIntoLink(originalText));
-            }
+            SetPageHash(undefined, undefined, TurnHeaderIntoLink(originalText), false);
             header.scrollIntoView({
                 behavior: 'smooth', block: 'start'
             })
@@ -313,15 +270,18 @@ function CopyClipboard(copyButton) {
  * Generates an index of the headers in the article and appends it to the sidebar.
  */
 function GenerateIndexOnClick() {
-    if (document.getElementById("generated-index") !== null) document.getElementById("generated-index").remove()
+    if (document.getElementById("generated-index") !== null) {
+        document.getElementById("generated-index").remove();
+    }
     let newContainer = document.createElement("div")
     newContainer.id = "generated-index"
+
     let sidebarElement
     for (let elementsByTagNameElement of document.getElementsByTagName("a")) {
         if (elementsByTagNameElement.onclick === undefined || elementsByTagNameElement.onclick === null) continue
         if (!elementsByTagNameElement.onclick.toString().includes("$language$")) continue
-        let url = elementsByTagNameElement.onclick.toString().split("'")[1].split("$")[2]
-        let currentURL = window.location.hash.split("%")[0].replaceAll("+", "/")
+        let url = elementsByTagNameElement.onclick.toString().split("'")[1].split("$")[2].replace("/","")
+        let currentURL = GetPageArticle().replaceAll("+", "/");
         if (!currentURL.includes(url)) continue
         sidebarElement = elementsByTagNameElement
         break
@@ -347,22 +307,9 @@ function GenerateIndexOnClick() {
     }
 }
 
-/**
- * Handles when an index link is clicked.
- * @param {HTMLElement} clickedElement - The index link that was clicked.
- */
 function IndexClick(clickedElement) {
     if (clickedElement === undefined || clickedElement.innerHTML === undefined) return
-    let newHash;
-    if (window.location.hash.includes("%")) {
-        newHash = window.location.hash.split("%")[0]
-    } else {
-        newHash = window.location.hash
-    }
-    newHash = newHash + "%" + TurnHeaderIntoLink(clickedElement.innerHTML.replace("→ ", "").replaceAll("🔗 ", ""))
-    // Update the URL without triggering a hashchange event
-    ModifyHash(newHash);
-    GlobalArticleChange(newHash)
+    SetPageHash(undefined, undefined, TurnHeaderIntoLink(clickedElement.innerHTML.replace("→ ", "").replaceAll("🔗 ", "")), true);
 }
 
 /**
@@ -460,15 +407,16 @@ document.addEventListener('click', function (event) {
     if (event.target.tagName.toLowerCase() !== 'a') return;
     if (event.target.href === null) return;
     if (event.target.href.toLowerCase().split("#")[1] === "string") ClickOnConfigFileGuideElement("string")
-    if (event.target.href.toLowerCase().split("#")[1] === "double") ClickOnConfigFileGuideElement("double")
     if (event.target.href.toLowerCase().split("#")[1] === "integer") ClickOnConfigFileGuideElement("integer")
     if (event.target.href.toLowerCase().split("#")[1] === "map_list") ClickOnConfigFileGuideElement("map_list")
     if (event.target.href.toLowerCase().split("#")[1] === "string_list") ClickOnConfigFileGuideElement("string_list")
     if (event.target.href.toLowerCase().split("#")[1] === "serialized_location") ClickOnConfigFileGuideElement("serialized_location")
     if (event.target.href.toLowerCase().split("#")[1] === "boolean") ClickOnConfigFileGuideElement("boolean")
+    if (event.target.href.toLowerCase().split("#")[1] === "multiplier") ClickOnConfigFileGuideElement("multiplier")
     if (event.target.href.toLowerCase().split("#")[1] === "color_codes") ClickOnConfigFileGuideElement("color_codes")
-    if (event.target.href.toLowerCase().split("#")[1] === "material") ClickOnConfigFileGuideElement("material")
+    if (event.target.href.toLowerCase().split("#")[1] === "double") ClickOnConfigFileGuideElement("double")
     if (event.target.href.toLowerCase().split("#")[1] === "filename") ClickOnConfigFileGuideElement("filename")
+    if (event.target.href.toLowerCase().split("#")[1] === "material") ClickOnConfigFileGuideElement("material")
 });
 
 document.addEventListener('mouseover', function (event) {
@@ -534,7 +482,7 @@ document.addEventListener('mouseover', function (event) {
 });
 
 function DisplayConfigTooltip(hoveredElement, elementName) {
-    let guideURL = "/wiki/" + GetLanguage() + "/global/configuration_file_guide.md";
+    let guideURL = "/wiki/" + GetPageLanguage() + "/global/configuration_file_guide.md";
     fetch(guideURL)
         .then(response => {
             return response.text();
@@ -588,38 +536,12 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-
-function GetLanguage() {
-    if (!window.location.href.includes("#")) return "en"
-    return window.location.href.split("#")[1].split("+")[0];
-}
-
 function ClickOnConfigFileGuideElement(elementName) {
     GlobalArticleChange(GetLanguage() + "/global/configuration_file_guide.md").then(rsp => {
         document.getElementById("config_" + elementName).scrollIntoView({
             behavior: 'smooth', block: 'start'
         })
     })
-}
-
-function fetchDirectoryListing(directory) {
-    return new Promise((resolve, reject) => {
-        //console.log('Called fetchDirectoryListing, directory:', directory);
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    //console.log('Response from server: ', xhr.responseText);
-                    resolve(xhr.responseText); // Resolve the promise with the response text
-                } else {
-                    //console.error('Error fetching directory listing');
-                    reject('Error fetching directory listing'); // Reject the promise if there was an error
-                }
-            }
-        };
-        xhr.open('GET', 'http://localhost:3000/list-directory?dir=' + encodeURIComponent(directory), true);
-        xhr.send();
-    });
 }
 
 let AllFilesCache = [];
