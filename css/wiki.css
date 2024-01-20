@@ -54,6 +54,11 @@ body{
     overflow: auto; /* allow scroll */
 }
 
+.sidebar-home{
+    font-size: 1.25rem !important;
+    padding-left: 0 !important;
+}
+
 .sidebar {
     background-color: var(--bs-body-bg);
     padding: 10px;

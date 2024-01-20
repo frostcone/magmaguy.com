@@ -26,11 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
     SwitchSidebar()
 })
 
-function ModifyHash(newHash){
-    history.replaceState(null,null, "wiki.html#" + newHash)
+function ModifyHash(newHash) {
+    if (!newHash.startsWith("#")) {
+        history.replaceState(null, null, "wiki.html#" + newHash)
+    }else {
+        history.replaceState(null, null, "wiki.html" + newHash)
+    }
+
 }
 
-function SwitchSidebar(){
+function SwitchSidebar() {
     let url = "wiki-sidebar.html"
     fetch(url)
         .then(response => {
@@ -42,7 +47,7 @@ function SwitchSidebar(){
         .then(data => {
             document.getElementById("sidebar").innerHTML = data;
         })
-        .catch(function() {
+        .catch(function () {
             console.log("Failed to find url " + url);
         });
 }
@@ -147,7 +152,7 @@ function GlobalArticleChange(articleURL) {
         .then(data => {
             document.getElementById('article-container-contents').innerHTML = marked.parse(data);
             let newHash = identifier.replace("wiki/", "").replaceAll("/", "+")
-            ModifyHash( newHash);
+            ModifyHash(newHash);
             CustomMarkdownPostProcessor(document.getElementById('article-container-contents'))
             if (pageSection !== undefined) {
                 newHash = newHash + "%" + pageSection;
@@ -349,8 +354,11 @@ function GenerateIndexOnClick() {
 function IndexClick(clickedElement) {
     if (clickedElement === undefined || clickedElement.innerHTML === undefined) return
     let newHash;
-    if (window.location.hash.includes("%")) newHash = window.location.hash.split("%")[0]
-    else newHash = window.location.hash
+    if (window.location.hash.includes("%")) {
+        newHash = window.location.hash.split("%")[0]
+    } else {
+        newHash = window.location.hash
+    }
     newHash = newHash + "%" + TurnHeaderIntoLink(clickedElement.innerHTML.replace("→ ", "").replaceAll("🔗 ", ""))
     // Update the URL without triggering a hashchange event
     ModifyHash(newHash);
@@ -687,21 +695,34 @@ let resizer = document.getElementById('resizer');
 let leftSide = document.getElementById('sidebar');
 let rightSide = document.getElementById('article-container-container');
 
-resizer.addEventListener('mousedown', function(e) {
+function startResize(e) {
     e.preventDefault();
-    document.addEventListener('mousemove', mousemove);
-    document.addEventListener('mouseup', mouseup);
-});
+    document.addEventListener('mousemove', resize);
+    document.addEventListener('mouseup', stopResize);
+    document.addEventListener('touchmove', resize);
+    document.addEventListener('touchend', stopResize);
+}
 
-function mousemove(e) {
-    let width = (e.clientX / window.innerWidth) * 100;
+function resize(e) {
+    let clientX;
+    if (e.type === 'touchmove') {
+        clientX = e.touches[0].clientX;
+    } else {
+        clientX = e.clientX;
+    }
+    let width = (clientX / window.innerWidth) * 100;
     if (width > 5 && width < 85) {
         leftSide.style.width = width + 'vw';
         rightSide.style.width = (100 - width) + 'vw';
     }
 }
 
-function mouseup() {
-    document.removeEventListener('mousemove', mousemove);
-    document.removeEventListener('mouseup', mouseup);
+function stopResize() {
+    document.removeEventListener('mousemove', resize);
+    document.removeEventListener('mouseup', stopResize);
+    document.removeEventListener('touchmove', resize);
+    document.removeEventListener('touchend', stopResize);
 }
+
+resizer.addEventListener('mousedown', startResize);
+resizer.addEventListener('touchstart', startResize);
