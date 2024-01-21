@@ -6,23 +6,23 @@ Targets are a central part of Elite Scripts, and are required for Actions and Zo
 
 Target types set what entities or locations get targeted by a script.
 
-| Target Type | Details | Special |
-| --- | :-: | :-: |
-| `NEARBY_PLAYERS` | Players in [range](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md%range) | Requires [`range`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md%range) |
-| `WORLD_PLAYERS` | Players in world | ❌ |
-| `ALL_PLAYERS` | Players in the server | ❌ |
-| `DIRECT_TARGET` | Players in event | [Requires compatible event](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_events.md) |
-| `SELF` | Elite using power | ❌ |
-| `SELF_SPAWN` | Targets the spawn location of a boss | ❌ |
-| `LOCATION` | Specific location | Requires [`location`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md%location) |
-| `LOCATIONS` | Several specific locations | Requires [`locations`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md%locations) |
-| `ZONE_FULL` | Targets inside of zone | Requires [`Zone`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md) |
-| `ZONE_BORDER` | Targets border of zone | Requires [`Zone`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md) |
-| `ACTION_TARGET` | Inherits the targets from an action. | **Can only be used for action [conditions](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_conditions.md) and [Relative Vectors](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_relative_vectors.md)!!** |
-| `LANDING_LOCATION` | Targets the location a block fell on. | **Can only be used for the [`SPAWN_FALLING_BLOCK` action](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_actions.md%spawn_falling_block)!** |
-| `INHERIT_SCRIPT_TARGET` | Inherits the target from the script that runs this script | Can only run if the script was called by another script! |
-| `INHERIT_SCRIPT_ZONE_FULL` | Targets inside of zone inherited from the script that runs this script | Requires [`Zone`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md) **in the the script that calls this script!** |
-| `INHERIT_SCRIPT_ZONE_BORDER` | Targets border of zone inherited from the script that runs this script | Requires [`Zone`](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md) **in the the script that calls this script!** |
+| Target Type |                                Details                                 |                                                                                   Special                                                                                   |
+| --- |:----------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| `NEARBY_PLAYERS` | Players in [range]($language$/elitemobs/elitescript_targets.md%range)  |                                                    Requires [`range`]($language$/elitemobs/elitescript_targets.md%range)                                                    |
+| `WORLD_PLAYERS` |                            Players in world                            |                                                                                      ❌                                                                                      |
+| `ALL_PLAYERS` |                         Players in the server                          |                                                                                      ❌                                                                                      |
+| `DIRECT_TARGET` |                            Players in event                            |                                                   [Requires compatible event]($language$/elitemobs/elitescript_events.md)                                                   |
+| `SELF` |                           Elite using power                            |                                                                                      ❌                                                                                      |
+| `SELF_SPAWN` |                  Targets the spawn location of a boss                  |                                                                                      ❌                                                                                      |
+| `LOCATION` |                           Specific location                            |                                                 Requires [`location`]($language$/elitemobs/elitescript_targets.md%location)                                                 |
+| `LOCATIONS` |                       Several specific locations                       |                                                Requires [`locations`]($language$/elitemobs/elitescript_targets.md%locations)                                                |
+| `ZONE_FULL` |                         Targets inside of zone                         |                                                        Requires [`Zone`]($language$/elitemobs/elitescript_zones.md)                                                         |
+| `ZONE_BORDER` |                         Targets border of zone                         |                                                        Requires [`Zone`]($language$/elitemobs/elitescript_zones.md)                                                         |
+| `ACTION_TARGET` |                  Inherits the targets from an action.                  | **Can only be used for action [conditions]($language$/elitemobs/elitescript_conditions.md) and [Relative Vectors]($language$/elitemobs/elitescript_relative_vectors.md)!!** |
+| `LANDING_LOCATION` |                 Targets the location a block fell on.                  |                        **Can only be used for the [`SPAWN_FALLING_BLOCK` action]($language$/elitemobs/elitescript_actions.md%spawn_falling_block)!**                        |
+| `INHERIT_SCRIPT_TARGET` |       Inherits the target from the script that runs this script        |                                                          Can only run if the script was called by another script!                                                           |
+| `INHERIT_SCRIPT_ZONE_FULL` | Targets inside of zone inherited from the script that runs this script |                                 Requires [`Zone`]($language$/elitemobs/elitescript_zones.md) **in the the script that calls this script!**                                  |
+| `INHERIT_SCRIPT_ZONE_BORDER` | Targets border of zone inherited from the script that runs this script |                                 Requires [`Zone`]($language$/elitemobs/elitescript_zones.md) **in the the script that calls this script!**                                  |
 
 **Example**
 
@@ -157,7 +157,7 @@ This spawns a lighting strike at the location x=100, y=64, z=200 of a world call
 
 ## Targeting zones
 
-[Zones](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md) have multiple targets, and it is important to understand how they work in order to use Elite Scripting to its fullest potential.
+[Zones]($language$/elitemobs/elitescript_zones.md) have multiple targets, and it is important to understand how they work in order to use Elite Scripting to its fullest potential.
 
 Zones work in two parts:
 
@@ -184,7 +184,7 @@ eliteScript:
 
 This spawns a cylindrical zone around the boss. Note that no actions are set in this example yet, that is covered below.
 
-Some zones, like [STATIC\_RAY](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%static_ray), have two or more targets. This is because rays are lines, and lines are defined by two points. This is covered more extensively in the [zones page](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md), but they fundamentally all work the same way.
+Some zones, like [STATIC\_RAY]($language$/elitemobs/elitescript_zones.md%static_ray), have two or more targets. This is because rays are lines, and lines are defined by two points. This is covered more extensively in the [zones page]($language$/elitemobs/elitescript_zones.md), but they fundamentally all work the same way.
 
 ### Part 2 - Targetting the inside of the zone
 
@@ -217,7 +217,7 @@ eliteScript:
 
 Using the same zone from the first part, we now add the action. The target for this action is `ZONE_FULL`, which means that it will be spawning particles inside of the whole zone.
 
-Note that ZONE\_BORDER is not available for every zone. More on that in the [script zones](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md) page.
+Note that ZONE\_BORDER is not available for every zone. More on that in the [script zones]($language$/elitemobs/elitescript_zones.md) page.
 
 ### Zone track
 
@@ -227,7 +227,7 @@ Sets if the zone will move with the target, such as if the zone will move when t
 | --- | :-: | :-: |
 | `track` | Sets if the zone will move around with the target. | `true` |
 
-Note that animatable zones can't track. [More on that here.](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md%animatable)
+Note that animatable zones can't track. [More on that here.]($language$/elitemobs/elitescript_zones.md%animatable)
 
 **Example**
 
@@ -481,7 +481,7 @@ When using `INHERIT_SCRIPT_TARGET`, the targets from the _parent script_ will be
 
 When using `INHERIT_SCRIPT_ZONE_FULL` or `INHERIT_SCRIPT_ZONE_BORDER`, it is imperative that the _parent script_ defines a zone, or else the _inheriting script_ will not be able to run correctly.
 
-Additionally zones can optionally be [tracked](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md%zone-track). This will also be passed along with the zone.
+Additionally zones can optionally be [tracked]($language$/elitemobs/elitescript_targets.md%zone-track). This will also be passed along with the zone.
 
 - An **untracked** zone will always create a zone where defined by the _inheriting script_. This means that the zone settings will be used by the actions in the _inheriting scripts_ to create brand new zones every time an action runs, and the location of those zones will be defined by the action.
 

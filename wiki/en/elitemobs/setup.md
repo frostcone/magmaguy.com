@@ -17,7 +17,7 @@ This change requires a restart to actually work.</details>
 
 # Permissions
 
-As of EliteMobs 7.2.23, all recommended permissions are already setup by default. You can see more about permissions [here](https://magmaguy.com/wiki.html#en+elitemobs+permissions_and_commands.md).
+As of EliteMobs 7.2.23, all recommended permissions are already setup by default. You can see more about permissions [here]($language$/elitemobs/permissions_and_commands.md).
 
 # Adventurer's Guild Hub world & Lairs / Minidungeons
 
@@ -33,20 +33,20 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 4) Click on the yellow glass in the `/em setup` menu to install features! For schematic-based minidungeons, a green message will appear in chat which you can click to install the minidungeon where you are standing.
 
-5) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here](https://magmaguy.com/wiki.html#en+elitemobs+custom_models.md%importing-custom-models-from-dungeons) to install them.
+5) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md%importing-custom-models-from-dungeons) to install them.
 
 That's it! **You can find teleports to the installed dungeons & adventurers guild in /em, in the Teleports page!**
 
-[More info on the Adventurer's Guild here!](https://magmaguy.com/wiki.html#en+elitemobs+adventurers_guild_world.md)
+[More info on the Adventurer's Guild here!]($language$/elitemobs/adventurers_guild_world.md)
 
 # Recommended plugins
 
 - [WorldEdit](https://dev.bukkit.org/projects/worldedit): Used to install schematic-based minidungeons.
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard): Used to setup and protect areas. [EliteMobs flags list](https://magmaguy.com/wiki.html#en+elitemobs+worldguard_flags.md).
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard): Used to setup and protect areas. [EliteMobs flags list]($language$/elitemobs/worldguard_flags.md).
 - [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/): Used for the anti-fly flag, useful to have.
-- [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/): Used to displaying EliteMobs info on other plugins, like for chat. [More info](https://magmaguy.com/wiki.html#en+elitemobs+placeholders.md).
-- [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/): Used to disguise Custom Bosses as anything else. Disguises are heavily used in our official dungeons so it is highly recommended you install this plugin. [More info](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md).
-- [DiscordSRV](https://magmaguy.com/wiki.html#en+elitemobs+discordsrv.md): Used to link EliteMobs announcements to Discord chat. [More info](https://magmaguy.com/wiki.html#en+elitemobs+discordsrv.md)
+- [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/): Used to displaying EliteMobs info on other plugins, like for chat. [More info]($language$/elitemobs/placeholders.md).
+- [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/): Used to disguise Custom Bosses as anything else. Disguises are heavily used in our official dungeons so it is highly recommended you install this plugin. [More info]($language$/elitemobs/libsdisguises.md).
+- [DiscordSRV]($language$/elitemobs/discordsrv.md): Used to link EliteMobs announcements to Discord chat. [More info]($language$/elitemobs/discordsrv.md)
 
 # Updating dungeon content
 
@@ -61,7 +61,7 @@ To update dungeon content, simply repeat the installation steps above. **You do 
 
 <details><summary>Answer</summary>
 
-This 100% means you are using the wrong version of WorldGuard / WorldEdit on your server. [You can get the right version from the section above.](https://magmaguy.com/wiki.html#en+elitemobs+setup.md%recommended-plugins)
+This 100% means you are using the wrong version of WorldGuard / WorldEdit on your server. [You can get the right version from the section above.]($language$/elitemobs/setup.md%recommended-plugins)
 
 </details>
 

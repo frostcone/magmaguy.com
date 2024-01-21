@@ -18,13 +18,13 @@ For some mechanics, you will probably not want to rely on how far apart two poin
 
 ## Properties
 
-| Value | Details | Mandatory? | Default value |
-| --- | :-: | :-: | :-: |
-| `SourceTarget` | [Target](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) at the point from which the vector will start from | ✅ | `none` |
-| `DestinationTarget` | [Target](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) at the end point for the vector | ✅ | `none` |
-| `normalize` | Sets if the vector should be normalized | ❌ | `false` |
-| `multiplier` | Multiplies the vector's length | ❌ | `1.0` |
-| `offset` | Allows inserting a manual fixed offset to this offset | ❌ | `none` |
+| Value |                                                 Details                                                  | Mandatory? | Default value |
+| --- |:--------------------------------------------------------------------------------------------------------:| :-: | :-: |
+| `SourceTarget` | [Target]($language$/elitemobs/elitescript_targets.md) at the point from which the vector will start from | ✅ | `none` |
+| `DestinationTarget` |          [Target]($language$/elitemobs/elitescript_targets.md) at the end point for the vector           | ✅ | `none` |
+| `normalize` |                                 Sets if the vector should be normalized                                  | ❌ | `false` |
+| `multiplier` |                                      Multiplies the vector's length                                      | ❌ | `1.0` |
+| `offset` |                          Allows inserting a manual fixed offset to this offset                           | ❌ | `none` |
 
 Example:
 

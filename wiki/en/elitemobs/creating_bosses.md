@@ -252,7 +252,7 @@ damageMultiplier: 1.5
 ### isBaby
 
 Sets if the boss uses the baby variant of the mob. Can only be applied to mobs with baby variants.
-If you would like to [disguise](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md) the boss but would like it to also remain a baby while in disguise (make sure the disguise entity also supports the baby variant) you can use this setting:
+If you would like to [disguise]($language$/elitemobs/libsdisguises.md) the boss but would like it to also remain a baby while in disguise (make sure the disguise entity also supports the baby variant) you can use this setting:
 <div align="left">
 
 ```yaml
@@ -347,7 +347,7 @@ powers:
 
 ### Easy configuration - premade powers
 
-A boss can have one or several powers. We recommend you keep the amount under 5. A full list of powers can be found in the `~/plugins/EliteMobs/powers` folder. The following list is not necessarily complete [since you can make custom powers](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md) and some dungeons come with their own powers.
+A boss can have one or several powers. We recommend you keep the amount under 5. A full list of powers can be found in the `~/plugins/EliteMobs/powers` folder. The following list is not necessarily complete [since you can make custom powers]($language$elitemobs/creating_powers.md) and some dungeons come with their own powers.
 
 <details> 
 
@@ -427,7 +427,7 @@ A boss can have one or several powers. We recommend you keep the amount under 5.
 
 </details>
 
-Note that some of the powers are in the [Elite Script](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md) format, and can be customized.
+Note that some of the powers are in the [Elite Script]($language$/elitemobs/creating_powers.md) format, and can be customized.
 
 <details> 
 
@@ -469,7 +469,7 @@ Reinforcements also go into the powers category, using the following settings:
 | `inheritAggro` | Makes the reinforcement inherit the aggro from the boss. Optional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
 | `spawnNearby` | Makes the reinforcements spawn in a 30 block radius from the boss. Optional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
 | `inheritLevel` | Makes the reinforcement inherit the level of the boss. Optional |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `customSpawn` | Makes the reinforcement spawn using the [custom spawn system](https://magmaguy.com/wiki.html#en+elitemobs+creating_spawns.md). Only used for `summonType: GLOBAL`
+| `customSpawn` | Makes the reinforcement spawn using the [custom spawn system]($language$/elitemobs/creating_spawns.md). Only used for `summonType: GLOBAL`
 | `location` | Spawn location. Optional. | `world_name,x,y,z` or `x,y,z` for a location relative to the boss. The offset is relative to the spawn location for regional bosses. You can also use `same_as_boss` to make reinforcements spawn in the same world as the boss. | none |
 | `lightningRod` | Special setting for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Makes end crystals spawn lightning around them. Optional. |                                                                                                        `true` / `false`                                                                                                        | none |
 
@@ -481,17 +481,17 @@ Summon types set the conditions for the reinforcements spawning. The following i
 
 <summary><b>Summon types</b></summary>
 
-| Value | Description |
-|-|:-:|
-| `ONCE` | Only spawns the reinforcements once, the first time the boss is damaged. |
-| `ON_HIT`  | Spawns the reinforcements on hit. |
-| `ON_COMBAT_ENTER` | Spawns the reinforcements when the boss enters combat. |
-| `GLOBAL` | Spawns a reinforcement for every online player. Requires the `customSpawn` key to have a valid [custom spawn](https://magmaguy.com/wiki.html#en+elitemobs+creating_spawns.md) set. |
-| `ON_COMBAT_ENTER_PLACE_CRYSTAL` | Places end crystal reinforcements on combat enter, only for use with custom dragon fights. |
+| Value |                                                                         Description                                                                         |
+|-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| `ONCE` |                                          Only spawns the reinforcements once, the first time the boss is damaged.                                           |
+| `ON_HIT`  |                                                              Spawns the reinforcements on hit.                                                              |
+| `ON_COMBAT_ENTER` |                                                   Spawns the reinforcements when the boss enters combat.                                                    |
+| `GLOBAL` | Spawns a reinforcement for every online player. Requires the `customSpawn` key to have a valid [custom spawn]($language$/elitemobs/creating_spawns.md) set. |
+| `ON_COMBAT_ENTER_PLACE_CRYSTAL` |                                 Places end crystal reinforcements on combat enter, only for use with custom dragon fights.                                  |
 
 </details>
 
-Note that it is also possible to spawn reinforcements through [Elite Scripts](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md), so there are more customizable ways of spawning reinforcements.
+Note that it is also possible to spawn reinforcements through [Elite Scripts]($language$/elitemobs/creating_powers.md), so there are more customizable ways of spawning reinforcements.
 
 <details> 
 
@@ -519,11 +519,11 @@ powers:
 
 ### Expert configuration - Creating your own powers
 
-It is possible to create your own powers, either on the boss file itself or as a new configuration file in the powers folder. You can learn more about that [here](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md).
+It is possible to create your own powers, either on the boss file itself or as a new configuration file in the powers folder. You can learn more about that [here]($language$/elitemobs/creating_powers.md).
 
 ### Limiting powers based on instanced dungeon difficulty
 
-[Instanced dungeons](https://magmaguy.com/wiki.html#en+elitemobs+dungeons.md%instanced-dungeons) can have difficulty settings, and it is possible to make it so a specific power is only enabled for specific difficulties.
+[Instanced dungeons]($language$/elitemobs/dungeons.md%instanced-dungeons) can have difficulty settings, and it is possible to make it so a specific power is only enabled for specific difficulties.
 
 <details> 
 
@@ -865,13 +865,13 @@ This would show something like `Cool boss: At 414,55,347 only 10 blocks away!`
 
 ### uniqueLootList
 
-Sets the [Custom Items](https://magmaguy.com/wiki.html#en+elitemobs+creating_items.md) that drop from the boss.
+Sets the [Custom Items]($language$/elitemobs/creating_items.md) that drop from the boss.
 
 | Key |        Values        | Default |
 |-|:--------------------:|-|
 | `uniqueLootList` | [List](#string_list) | none |
 
-Loot entries in the Custom Loot follow the Loot Table format. [Info about that here!](https://magmaguy.com/wiki.html#en+elitemobs+loot_tables.md%custom-loot-table) Take note that some older files might be using outdated loot tables that look different than the example.
+Loot entries in the Custom Loot follow the Loot Table format. [Info about that here!]($language$/elitemobs/loot_tables.md%custom-loot-table) Take note that some older files might be using outdated loot tables that look different than the example.
 
 <details> 
 
@@ -1084,12 +1084,12 @@ Sets the priority level for announcements. Lower priorities mean no announcement
 
 Here is a list of what the priorities do:
 
-| Value | Description |
-|-|:-:|
-| `0` | The boss will be fully silent, with no announcement messages. |
-| `1` | This is the default. Bosses can send chat messages, on spawn message, on death and escape messages. |
-| `2` | On top of the things in `1`, the boss will be set to be trackable by players through the `/em` menu. |
-| `3` | On top of the things in `2`, broadcast messages will be mirrored on Discord if configured. [Discord configuration info here.](https://magmaguy.com/wiki.html#en+elitemobs+discordsrv.md) |
+| Value |                                                                            Description                                                                            |
+|-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| `0` |                                                   The boss will be fully silent, with no announcement messages.                                                   |
+| `1` |                                This is the default. Bosses can send chat messages, on spawn message, on death and escape messages.                                |
+| `2` |                               On top of the things in `1`, the boss will be set to be trackable by players through the `/em` menu.                                |
+| `3` | On top of the things in `2`, broadcast messages will be mirrored on Discord if configured. [Discord configuration info here.]($language$/elitemobs/discordsrv.md) |
 
 Here's an example of a boss that is trackable, is able to send spawn/death/escape messages on chat and on Discord:
 
@@ -1289,7 +1289,7 @@ onCombatLeaveCommands:
 
 ### disguise
 
-Sets the LibsDisguises disguise if that plugin is enabled. [More info here.](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md)
+Sets the LibsDisguises disguise if that plugin is enabled. [More info here.]($language$/elitemobs/libsdisguises.md)
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1309,7 +1309,7 @@ customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8
 
 </div>
 
-Sets a custom disguise from skindex. [Check this page](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md) to learn how to correctly format this data.
+Sets a custom disguise from skindex. [Check this page]($language$/elitemobs/libsdisguises.md) to learn how to correctly format this data.
 
 </details>
 
@@ -1317,7 +1317,7 @@ Sets a custom disguise from skindex. [Check this page](https://magmaguy.com/wiki
 
 ### customModel
 
-Sets the custom model to use, if you have a custom model and ModelEngine. [More info here.](https://magmaguy.com/wiki.html#en+elitemobs+custom_models.md)
+Sets the custom model to use, if you have a custom model and ModelEngine. [More info here.]($language$/elitemobs/custom_models.md)
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1458,7 +1458,7 @@ movementSpeedAttribute: 0.3
 <div align="center">
 
 Bosses can have phases that change when the boss reaches a certain percentage of health. When this happens, the boss starts using a different configuration file, meaning that everything about the boss can change, including things like the entity type.
-</br>To learn more about boss phases click [here](https://magmaguy.com/wiki.html#en+elitemobs+creating_boss_phases.md).
+</br>To learn more about boss phases click [here]($language$/elitemobs/creating_boss_phases.md).
 
 
 | Key | Description | Values | Default |
@@ -1537,7 +1537,7 @@ The following things are important to know when designing a phase boss:
 
 Regional bosses are a specific type of Custom Bosses that spawn at a specific configured location and are able to respawn at that location after a delay. Additionally, they can have leashes that make sure they stay in a specific zone, among other features.
 
-These are used for all of the dungeon content. To learn more about regional bosses click [here](https://magmaguy.com/wiki.html#en+elitemobs+creating_world_bosses.md).
+These are used for all of the dungeon content. To learn more about regional bosses click [here]($language$/elitemobs/creating_world_bosses.md).
 
 | Key | Description | Values | Default |
 |-|:-:|:-:|-|

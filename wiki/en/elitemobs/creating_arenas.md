@@ -2,24 +2,24 @@
 
 # Creating arenas
 
-| Key |                                    Description                                    |                                            Values                                            | Default |
-|-|:---------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------:|:-:|
-| `isEnabled` |                           Sets if the arena is enabled                            |                                     [Boolean](#boolean)                                      | `true` |
-| `arenaName` |                            Sets then name of the arena                            |                                      [String](#string)                                       | none |
-| `corner1` |                        Sets the first corner of the arena                         |                               [Location](#serialized_location)                               | none |
-| `corner2` | Sets the second corner of the arena, must be diametrically opposed from `corner1` |                               [Location](#serialized_location)                               | none |
-| `startLocation` |                       Sets the start location of the arena                        |                               [Location](#serialized_location)                               | none |
-| `exitLocation` |                        Sets the exit location of the arena                        |                               [Location](#serialized_location)                               | none |
-| `waveCount` |                      Sets the amounts of waves the arena has                      |                                     [Integer](#integer)                                      | none |
-| `delayBetweenWaves` |                     Sets the delay, in seconds, between waves                     |                                     [Integer](#integer)                                      | `0` |
-| `spawnPoints` |                             Sets the mob spawn points                             |                               [String List](#string_list) [1]                                | none |
-| `bossList` |                    Sets the list of bosses that spawn on waves                    |                               [String List](#string_list) [2]                                | none |
-| `rawArenaReward` |                    Sets the rewards given at the end of waves                     | [Universal EliteMobs loot table](https://magmaguy.com/wiki.html#en+elitemobs+loot_tables.md) | none |
-| `minimumPlayerCount` |       Sets the minimum amount of players an arena must have before starting       |                                     [Integer](#integer)                                      | `1` |
-| `maximumPlayerCount` |               Sets the maximum amount of players an arena can have                |                                     [Integer](#integer)                                      | `100` |
-| `arenaMessages` |                     Sets the messages that run between waves                      |                                         Special [3]                                          | none |
-| `cylindricalArena` |          Sets if the arena uses a cylindrical shape (default is cuboid)           |                                     [Boolean](#boolean)                                      | `false`
-| `permission` |                   Sets the permission required to use the arena                   |                                      [String](#integer)                                      | none |
+| Key |                                    Description                                    |                                Values                                 | Default |
+|-|:---------------------------------------------------------------------------------:|:---------------------------------------------------------------------:|:-:|
+| `isEnabled` |                           Sets if the arena is enabled                            |                          [Boolean](#boolean)                          | `true` |
+| `arenaName` |                            Sets then name of the arena                            |                           [String](#string)                           | none |
+| `corner1` |                        Sets the first corner of the arena                         |                   [Location](#serialized_location)                    | none |
+| `corner2` | Sets the second corner of the arena, must be diametrically opposed from `corner1` |                   [Location](#serialized_location)                    | none |
+| `startLocation` |                       Sets the start location of the arena                        |                   [Location](#serialized_location)                    | none |
+| `exitLocation` |                        Sets the exit location of the arena                        |                   [Location](#serialized_location)                    | none |
+| `waveCount` |                      Sets the amounts of waves the arena has                      |                          [Integer](#integer)                          | none |
+| `delayBetweenWaves` |                     Sets the delay, in seconds, between waves                     |                          [Integer](#integer)                          | `0` |
+| `spawnPoints` |                             Sets the mob spawn points                             |                    [String List](#string_list) [1]                    | none |
+| `bossList` |                    Sets the list of bosses that spawn on waves                    |                    [String List](#string_list) [2]                    | none |
+| `rawArenaReward` |                    Sets the rewards given at the end of waves                     | [Universal EliteMobs loot table]($language$/elitemobs/loot_tables.md) | none |
+| `minimumPlayerCount` |       Sets the minimum amount of players an arena must have before starting       |                          [Integer](#integer)                          | `1` |
+| `maximumPlayerCount` |               Sets the maximum amount of players an arena can have                |                          [Integer](#integer)                          | `100` |
+| `arenaMessages` |                     Sets the messages that run between waves                      |                              Special [3]                              | none |
+| `cylindricalArena` |          Sets if the arena uses a cylindrical shape (default is cuboid)           |                          [Boolean](#boolean)                          | `false`
+| `permission` |                   Sets the permission required to use the arena                   |                          [String](#integer)                           | none |
 
 
 [1] Spawn points: Uses the following format: `name=pointName:location=world_name,x,y,z`. Example: `name=north:location=em_adventurers_guild,219.5,71,273.5`
@@ -132,7 +132,7 @@ First the arena is enabled with `isEnabled`, and we can see that it is called Ex
 | `canTalk`          | Sets if the NPC should use dialog                  | [Boolean](#boolean)                                                                               |
 | `activationRadius` | Sets the radius when the NPC should start talking  | [Double](#double)                                                                                 |
 | `interactionType`  | Sets the type of interaction the NPC will do       | Special [4]                                                                                       |
-| `disguise`         | Sets the custom NPC disguise                       | [Disguise](https://magmaguy.com/wiki.html#en+elitemobs+libsdisguises.md)                          |
+| `disguise`         | Sets the custom NPC disguise                       | [Disguise]($language$/elitemobs/libsdisguises.md)                                                 |
 | `arena`            | Sets which arena the NPC should be assigned to     | [Filename](#filename)                                                                             |
 
 <details> 

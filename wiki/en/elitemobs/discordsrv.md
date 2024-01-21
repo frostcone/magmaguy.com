@@ -1,4 +1,4 @@
-EliteMobs uses DiscordSRV to enable the broadcast of level 3 priority messages. You can read about the Announcement Priority System [here](https://magmaguy.com/wiki.html#en+elitemobs+announcement_priority_system.md).
+EliteMobs uses DiscordSRV to enable the broadcast of level 3 priority messages. You can read about the Announcement Priority System [here]($language$/elitemobs/announcement_priority_system.md).
 
 In essence, this means that some very special Custom Bosses are able to send messages on Discord in a way that looks like this:
 

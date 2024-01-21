@@ -207,9 +207,9 @@ lore:
 
 Sets the enchantments on the item.
 
-| Key | Values | Default |
-|-|:-:|-|
-| `enchantments` | [List](#list) with [Minecraft enchantments](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) or [EliteMobs Custom Enchantments](https://magmaguy.com/wiki.html#en+elitemobs+custom_enchantments_list.md) | none |
+| Key |                                                                                                       Values                                                                                                        | Default |
+|-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
+| `enchantments` | [List](#list) with [Minecraft enchantments](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) or [EliteMobs Custom Enchantments]($language$/elitemobs/custom_enchantments_list.md) | none |
 
 Note that these entries follow the format `enchantmentName:enchantmentLevel`. Check the example below!
 

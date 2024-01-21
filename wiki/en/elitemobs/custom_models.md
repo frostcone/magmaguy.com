@@ -1,30 +1,3 @@
-- [Foreword](#foreword)
-- [Minimum requirements](#minimum-requirements)
-- [Manually setting a Custom Model](#manually-setting-a-custom-model)
-    * [Step 1. Setting the EliteMobs config](#step-1-setting-the-elitemobs-config)
-    * [Step 2. Generating the Model Engine data](#step-2-generating-the-model-engine-data)
-    * [Step 3. Generating the Resource Pack](#step-3-generating-the-resource-pack)
-    * [Step 4. Hope it works](#step-4-hope-it-works)
-- [Creating and adapting Custom Models for EliteMobs](#creating-and-adapting-custom-models-for-elitemobs)
-    * [Animations](#animations)
-        + [idle](#idle)
-        + [walk](#walk)
-        + [attack](#attack)
-            - [attack](#attack-1)
-            - [attack_melee](#attack-melee)
-            - [attack_ranged](#attack-ranged)
-        + [damaged](#damaged)
-        + [death](#death)
-        + [powers](#powers)
-- [Importing Custom Models from dungeons](#importing-custom-models-from-dungeons)
-    * [Step 1. Normal import](#step-1-normal-import)
-    * [Step 2. Generating the Resource Pack](#step-2-generating-the-resource-pack)
-        + [Step 2.5. Updating the SHA1](#step-25-updating-the-sha1)
-    * [Step 3. Make the file publicly available](#step-3-make-the-file-publicly-available)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 As of EliteMobs 7.3.12, Custom Models have been added to EliteMobs through Model Engine.
 
 # Foreword
@@ -71,7 +44,7 @@ And that's it for EliteMobs! Now it gets a bit trickier.
 
 ## Step 3. Generating the Resource Pack
 
-[**Note: there is now an alternative, simpler way to do this step on this link.**](https://magmaguy.com/wiki.html#en+elitemobs+custom_models.md%step-2.-generating-the-resource-pack) However, it is a little bit less flexible than what is listed here.
+[**Note: there is now an alternative, simpler way to do this step on this link.**]($language$/elitemobs/custom_models.md%step-2.-generating-the-resource-pack) However, it is a little bit less flexible than what is listed here.
 
 This is possibly the trickiest part if you are looking to make your server manage the downloads. **Try checking if the system works when you have the resource pack on your client before looking into distributing it automatically!**
 

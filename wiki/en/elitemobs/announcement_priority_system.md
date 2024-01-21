@@ -5,11 +5,11 @@ The Announcement Priority System manages how important EliteMobs messages are. T
 *   Level 0: Silent / Local to players that fought the boss
 *   Level 1: Chat Messages (if it has spawn messages)
 *   Level 2: Tracking (if it has a location message)
-*   Level 3: [Discord announcements (if it has spawn messages and DiscordSRV is installed & configured correctly)](https://magmaguy.com/wiki.html#en+elitemobs+discordsrv.md)
+*   Level 3: [Discord announcements (if it has spawn messages and DiscordSRV is installed & configured correctly)]($language$/elitemobs/discordsrv.md)
 
 # How it works:
 
-Note: You need to set your Custom Boss up with this priority system if you want to use a non-default value. Click [here](https://magmaguy.com/wiki.html#en+elitemobs+creating_bosses.md%announcementpriority) to learn how to do that.
+Note: You need to set your Custom Boss up with this priority system if you want to use a non-default value. Click [here]($language$/elitemobs/creating_bosses.md%announcementpriority) to learn how to do that.
 
 ## Level 0
 
@@ -26,4 +26,4 @@ The Custom Boss will have the same behavior as in Level 1, and will also be able
 
 ## Level 3
 
-The Custom Boss have the same behavior as in Level 2, and will also send messages to the Discord room configured to send notifications about EliteMobs. [The page on how to set this feature up can be found here.](https://magmaguy.com/wiki.html#en+elitemobs+discordsrv.md) The messages on discord will be the same as the chat messages - spawn/death/escape
+The Custom Boss have the same behavior as in Level 2, and will also send messages to the Discord room configured to send notifications about EliteMobs. [The page on how to set this feature up can be found here.]($language$/elitemobs/discordsrv.md) The messages on discord will be the same as the chat messages - spawn/death/escape

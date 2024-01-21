@@ -113,7 +113,7 @@ _**Important note: This is a mandatory field for `summonType: ON_COMBAT_ENTER_PL
 
 `lightningRod: BOOLEAN` is a special setting only useful for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. This gives end crystals the ability to smite the floor around them on a delay. It can't be used with the other Custom Reinforcements, as those should rely on powers for these kinds of abilities.
 
-_Note: if you are confused about `DOUBLE` , `INTEGER` and `BOOLEAN` mentions,_ [_read this_](https://magmaguy.com/wiki.html#en+global+configuration_file_guide.md)_._
+_Note: if you are confused about `DOUBLE` , `INTEGER` and `BOOLEAN` mentions,_ [_read this_]($language$/global/configuration_file_guide.md)_._
 
 ### inheritAggro
 

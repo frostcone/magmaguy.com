@@ -19,7 +19,7 @@ World Bosses allow players to face a fixed challenge while knowing what the loot
 
 ## Custom Boss configuration options for World Bosses:
 
-These settings are added to the normal Custom Boss config files. [An extensive wiki page on those can be found here](https://magmaguy.com/wiki.html#en+elitemobs+creating_bosses.md).
+These settings are added to the normal Custom Boss config files. [An extensive wiki page on those can be found here]($language$/elitemobs/creating_bosses.md).
 
 ### isRegionalBoss
 

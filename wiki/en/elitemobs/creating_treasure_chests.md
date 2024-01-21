@@ -19,7 +19,7 @@ Treasure Chests are a feature allows admins to design chests that can either dro
 
 [1] `SINGLE` chests disappear after being opened and reappear when restocked, `MULTIPLE` chests stay around and let individual players know they're in cooldown.
 
-[2] Treasure chests use the [universal EliteMobs loot table format](https://magmaguy.com/wiki.html#en+elitemobs+loot_tables.md)
+[2] Treasure chests use the [universal EliteMobs loot table format]($language$/elitemobs/loot_tables.md)
 
 [3] Locations can more easily be set through `/em addTreasureChest <treasurechestfilename.yml>`
 

@@ -2,25 +2,25 @@ If you have a question that isn't listed here, ***take a look at the sidebar*** 
 
 # Run a command on Elite Mob death or give loot/rewards from other plugins on Elite Mob death?
 
-[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+creating_bosses.md%ondeathcommands)
+[Information available here.]($language$/elitemobs/creating_bosses.md%ondeathcommands)
 
 ***
 
 # Vault support?
 
-[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+vault.md)
+[Information available here.]($language$/elitemobs/vault.md)
 
 ***
 
 # PlaceholderAPI placeholders?
 
-[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+placeholders.md)
+[Information available here.]($language$/elitemobs/placeholders.md)
 
 ***
 
 # Use WorldGuard flags to allow EliteMobs in some places but not others?
 
-[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+worldguard_flags.md)
+[Information available here.]($language$/elitemobs/worldguard_flags.md)
 
 ***
 
@@ -33,7 +33,7 @@ It's a really bad idea. You can access the `MobCombatSettings.yml` configuration
 
 # Can I create custom powers?
 
-[Information available here.](https://magmaguy.com/wiki.html#en+elitemobs+creating_powers.md)
+[Information available here.]($language$/elitemobs/creating_powers.md)
 
 # Can I create custom enchantments?
 

@@ -50,27 +50,27 @@ Now that you know the general format of how scripts are structured, it's time to
 
 ----
 
-# [Events](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_events.md)
+# [Events]($language$/elitemobs/elitescript_events.md)
 
 Click on the link above to learn how to use events!
 
-# [Targets](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md)
+# [Targets]($language$/elitemobs/elitescript_targets.md)
 
 Click on the link above to learn how to use targets!
 
-# [Actions](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_actions.md)
+# [Actions]($language$/elitemobs/elitescript_actions.md)
 
 Click on the link above to learn how to use actions!
 
-# [Zones](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_zones.md)
+# [Zones]($language$/elitemobs/elitescript_zones.md)
 
 Click on the link above to learn how to use zones!
 
-# [Conditions](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_conditions.md)
+# [Conditions]($language$/elitemobs/elitescript_conditions.md)
 
 Click on the link above to learn how to use conditions!
 
-# [Cooldowns](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_cooldowns.md)
+# [Cooldowns]($language$/elitemobs/elitescript_cooldowns.md)
 
 Click on the link above to learn how to use cooldowns!
 

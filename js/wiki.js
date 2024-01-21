@@ -43,6 +43,24 @@ function SetPageHash(language, article, section, update) {
     if (update) LoadPageHash()
 }
 
+function SetPageHashFromPseudoDirectory(url){
+    if (url === undefined) {
+        SetPageHash();
+        return;
+    }
+    if (url.includes("$language$/"))
+        url = url.split("$language$/")[1];
+    else if (url.includes("magmaguy.com/"))
+        url = url.split("magmaguy.com/")[1];
+    let section = undefined;
+    if (url.includes("%")) {
+        section = url.split("%")[1];
+        url = url.split("%")[0];
+    }
+    console.log("url: " + url + " section: " + section)
+    SetPageHash(undefined, url, section, true);
+}
+
 function LoadPageHash() {
     let lang = GetPageLanguage();
     let article = GetPageArticle().replaceAll("+", "/");
@@ -143,7 +161,7 @@ function CustomMarkdownPostProcessor(container) {
         if (elementsByTagNameElement.href.includes("$language$")) {
             elementsByTagNameElement.addEventListener('click', function (event) {  // adding event listener on click
                 event.preventDefault();  // stop the actual linking to happen
-                GlobalArticleChange(elementsByTagNameElement.href.split("magmaguy.com/")[1]);  // call your function
+                SetPageHashFromPseudoDirectory(elementsByTagNameElement.href);  // call your function
             });
         }
     });

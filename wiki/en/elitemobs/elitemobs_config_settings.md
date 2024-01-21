@@ -390,7 +390,7 @@ Why? This feature is used to avoid having people instantly teleport out of dange
 
 ## DiscordSRV.yml
 
-`DiscordSRV.yml` contains the configuration settings for DiscordSRV. If you want to see how to configure this feature, [click here!](https://magmaguy.com/wiki.html#en+elitemobs+discordsrv.md)
+`DiscordSRV.yml` contains the configuration settings for DiscordSRV. If you want to see how to configure this feature, [click here!]($language$/elitemobs/discordsrv.md)
 
 ---
 
@@ -420,7 +420,7 @@ Sets the name of the currency that players see wherever the currency shows up.
 useVault - not recommended: BOOLEAN
 ```
 
-Sets whether EliteMobs will use Vault to link its currency to the server's Vault currency. This is not recommended, [read here as to why.](https://magmaguy.com/wiki.html#en+elitemobs+vault.md)
+Sets whether EliteMobs will use Vault to link its currency to the server's Vault currency. This is not recommended, [read here as to why.]($language$/elitemobs/vault.md)
 
 ```yaml
 enableCurrencyShower: BOOLEAN
@@ -616,7 +616,7 @@ limitedItemDropWeight: DOUBLE
 scalableItemDropWeight: DOUBLE
 ```
 
-This is a complicated feature which uses the concept of weighed probability in order to decide which type of item will be dropped by an Elite assuming that they are going to drop an Elite item. `Weighed items`, `fixed items`, `limited items`and `scalable items` are all different types of Custom Items which can be read about [here](https://magmaguy.com/wiki.html#en+elitemobs+creating_items.md%scalability). `Procedural items` are the items that EliteMobs randomizes.
+This is a complicated feature which uses the concept of weighed probability in order to decide which type of item will be dropped by an Elite assuming that they are going to drop an Elite item. `Weighed items`, `fixed items`, `limited items`and `scalable items` are all different types of Custom Items which can be read about [here]($language$/elitemobs/creating_items.md%scalability). `Procedural items` are the items that EliteMobs randomizes.
 
 It would take too long to explain how weighed probability works, so I will keep it very simple: the higher the number, the higher the chance that that item will drop. Be careful about setting any custom items high, as this means that unless you have hundreds or thousands of custom items you will probably be seeing the same custom item getting dropped constantly.
 
@@ -934,10 +934,10 @@ Sets whether Elites will spawn in these worlds.
 Zone-based elitemob spawning worlds: STRING LIST
 ```
 
-Sets whether these worlds will use the [Region Leveling mode](https://magmaguy.com/wiki.html#en+elitemobs+region_leveling_mode.md).
+Sets whether these worlds will use the [Region Leveling mode]($language$/elitemobs/region_leveling_mode.md).
 
 ```yaml
 Nightmare mode worlds: STRING LIST
 ```
 
-Sets whether these worlds will use the [Nightmare Mode](https://magmaguy.com/wiki.html#en+elitemobs+nightmare_mode.md).
+Sets whether these worlds will use the [Nightmare Mode]($language$/elitemobs/nightmare_mode.md).

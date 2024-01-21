@@ -91,16 +91,16 @@ Sets a 0.1% chance of running the event when a coal ore block is broken, assumin
 
 Timed Events are events that happen at configurable time intervals. Once the cooldown for a timed event is over, a random timed event is picked from the list of timed events based on the weight of the event.
 
-| Key | Description |       Values        | Default |
-|-|:-:|:-------------------:|-|
-| `customSpawn` | Sets the [Custom Spawn](https://magmaguy.com/wiki.html#en+elitemobs+creating_spawns.md) used by the event, which defines where the boss can spawn |  [STRING](#string)  | none |
-| `localCooldown` | Sets the amount of time, in minutes, before this event can be picked again | [Integer](#integer) | `0` |
-| `globalCooldown` | Sets the amount of time, in minutes, before any event will be picked | [Integer](#integer) | `0` |
-| `weight` | Sets the weight of the event, affecting the chance that it will be picked over other events. **Recommended: 100** |  [Double](#double)  | `0` |
-| `eventDuration` | Sets the maximum duration of the event, in minutes | [Integer](#integer) | `0` |
-| `eventEndsWithBossDeath` | Sets if the event ends with the boss death |  `true` / `false`   | `true` |
-| `eventEndTime` | Sets the in-game time at which the event will end | [Integer](#integer) | none |
-| `minimumPlayerCount`| Sets the minimum amount of online players before the event will start | [Integer](#integer) | `1` |
+| Key |                                                        Description                                                         |       Values        | Default |
+|-|:--------------------------------------------------------------------------------------------------------------------------:|:-------------------:|-|
+| `customSpawn` | Sets the [Custom Spawn]($language$/elitemobs/creating_spawns.md) used by the event, which defines where the boss can spawn |  [STRING](#string)  | none |
+| `localCooldown` |                         Sets the amount of time, in minutes, before this event can be picked again                         | [Integer](#integer) | `0` |
+| `globalCooldown` |                            Sets the amount of time, in minutes, before any event will be picked                            | [Integer](#integer) | `0` |
+| `weight` |     Sets the weight of the event, affecting the chance that it will be picked over other events. **Recommended: 100**      |  [Double](#double)  | `0` |
+| `eventDuration` |                                     Sets the maximum duration of the event, in minutes                                     | [Integer](#integer) | `0` |
+| `eventEndsWithBossDeath` |                                         Sets if the event ends with the boss death                                         |  `true` / `false`   | `true` |
+| `eventEndTime` |                                     Sets the in-game time at which the event will end                                      | [Integer](#integer) | none |
+| `minimumPlayerCount`|                           Sets the minimum amount of online players before the event will start                            | [Integer](#integer) | `1` |
 
 Note that events get queued, meaning they will only start once the conditions defined in the `customSpawn` are met.
 

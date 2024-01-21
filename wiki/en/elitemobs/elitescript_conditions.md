@@ -33,7 +33,7 @@ In this example, the `Example` script will only run if the elite is still alive,
 
 ## Target
 
-Conditions use the [Targets](https://magmaguy.com/wiki.html#en+elitemobs+elitescript_targets.md) system to target which entity or location is subjected to the conditions. This means that you can associate conditions to the boss or to players or to anything else you can target.
+Conditions use the [Targets]($language$/elitemobs/elitescript_targets.md) system to target which entity or location is subjected to the conditions. This means that you can associate conditions to the boss or to players or to anything else you can target.
 
 ---
 
