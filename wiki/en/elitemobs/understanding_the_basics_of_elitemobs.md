@@ -35,7 +35,7 @@ Here are the main selling points of the minidungeons:
 
 [More about minidungeons!]($language$/elitemobs/dungeons.md)
 
-# Dungeoneering
+# Instanced Dungeoneering
 Dungeons are instanced challenges. This means that a world is created when a group joins the dungeon, and once the group starts the dungeon players will be unable to join other than to spectate it. There is a dedicated system for respawning which gives players 3 deaths each before being struck out.
 
 Dungeons are the most balanced and developed content in EliteMobs, as they are significantly harder to exploit than any other content.

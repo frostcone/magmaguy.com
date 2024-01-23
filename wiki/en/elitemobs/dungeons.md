@@ -57,6 +57,24 @@ Credits: Realm of Lotheridon & MagmaGuy
 </details>
 
 <details>
+<summary>[Levels 10] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-theclimb">The Climb</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<pre>
+EliteMobs Info:
+Recommended Level[s]: 10 - Group content
+More info coming soon.
+</pre>
+</details>
+
+<details>
+<summary>[Levels 15] [Lair] <a href="https://magmaguy.itch.io/elitemobs-thecave">The Cave</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<pre>
+EliteMobs Info:
+Recommended Level[s]: 15 - Group content
+More info coming soon.
+</pre>
+</details>
+
+<details>
 <summary>[Levels 10-20] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-pirate-ship">The Pirate Ship</a> / <a href="https://www.patreon.com/posts/minidungeon-ship-62464429">patreon.com/magmaguy</a></summary>
 <pre>
 EliteMobs Info:
@@ -86,6 +104,15 @@ Encounter Type: Lair
 Compatibility: Minecraft Version: 1.16.5+ 
 EliteMobs Version: 7.3.13+ 
 Credits: MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Levels 20] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-themines">The Mines</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<pre>
+EliteMobs Info:
+Recommended Level[s]: 20 - Group content
+More info coming soon.
 </pre>
 </details>
 
@@ -126,6 +153,15 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
+<summary>[Levels 25] [Lair] <a href="https://magmaguy.itch.io/elitemobs-thebridge">The Bridge</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<pre>
+EliteMobs Info:
+Recommended Level[s]: 25 - Group content
+More info coming soon.
+</pre>
+</details>
+
+<details>
 <summary>[Level 30] [Free] [Lair] <a href="https://magmaguy.itch.io/em-free-content">The Hallosseum</a></summary>
 <pre>
 EliteMobs Info:
@@ -139,6 +175,15 @@ Compatibility:
 Minecraft Version: 1.16.5+
 EliteMobs Version: 7.3.13+
 Credits: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Levels 30] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thebridge">The City</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<pre>
+EliteMobs Info:
+Recommended Level[s]: 30 - Group content
+More info coming soon.
 </pre>
 </details>
 
@@ -159,6 +204,15 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
+<summary>[Levels 35] [Lair] <a href="https://magmaguy.itch.io/elitemobs-thepalace">The Palace</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<pre>
+EliteMobs Info:
+Recommended Level[s]: 35 - Group content
+More info coming soon.
+</pre>
+</details>
+
+<details>
 <summary>[Level 40] [Free] [Lair] <a href="https://magmaguy.itch.io/em-free-content">Dark Cathedral</a></summary>
 <pre>
 EliteMobs Info: 
@@ -171,6 +225,15 @@ Compatibility:
 Minecraft Version: 1.16.5+ 
 EliteMobs Version: 7.3.13+ 
 Credits: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Levels 40] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thequarry">The Quarry</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<pre>
+EliteMobs Info:
+Recommended Level[s]: 40 - Group content
+More info coming soon.
 </pre>
 </details>
 
@@ -306,6 +369,15 @@ Compatibility:
 Minecraft Version: 1.16.5+ 
 EliteMobs Version: 7.3.13+ 
 Credits: 69OzCanOfBepis
+</pre>
+</details>
+
+<details>
+<summary>[Levels 100-150] [Arena] <a href="https://magmaguy.itch.io/elitemobs-diamondarena">The Diamond League Arena</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<pre>
+EliteMobs Info:
+Recommended Level[s]: 100-150 - Group content
+More info coming soon.
 </pre>
 </details>
 

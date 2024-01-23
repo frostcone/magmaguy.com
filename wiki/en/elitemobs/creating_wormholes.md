@@ -65,15 +65,20 @@ In this example we will make a simple wormhole that takes us from one world into
 isEnabled: true #We enable the worm by setting this value to true
 location1: my_world,1.5,11.0,1.5,108.0,5.0 #this is where the wormhole will appear in my_world
 location2: my_other_world,766.5,29.0,517.5,-136.0,5.0 #this is where the wormhole will appear in my_other_world
-location1Text: "&aGo to My World"
-location2Text: "&aGo to My Other World"
-blindPlayer: true
-sizeMultiplier: 1.0
-style: CRYSTAL
-particleColor: 0000000
-permission: elitequest.oasis_main_quest_18.yml
+location1Text: "&aGo to My World" #makes a nice display text above wormhole location1
+location2Text: "&aGo to My Other World" #makes a nice display text above wormhole location2
+permission: eliteperm.coolplayers #only players with this permission will be able to use the wormhole, both for location1 and location2
+coinCost: 2 #the players will need to pay 12 elite coins to be able to use the worm hole
+style: CRYSTAL #this wormhole will be in the shape of a crystal
+particleColor: 0x00ff00 #this will set the wormhole particles to green
+blindPlayer: true #the wormhole teleport will blind the player for a short duration to make the transition less jarring
+sizeMultiplier: 1.0 #sets how big the shape of the wormhole should be
 ```
 
 </div>
 
 </details>
+
+#### Performance Issues
+
+The wormhole particles can cause client performance issues for players that are running bedrock. If you would like to turn off the wormhole particles you can go to `~plugins\EliteMobs\Wormholes.yml` and change the `noParticlesMode` setting to `true`.
