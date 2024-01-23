@@ -17,7 +17,7 @@ Actions always start with the type of action you are going to do. Different acti
 
 ## Action types
 
-### ACTION\_BAR\_MESSAGE
+### ACTION_BAR_MESSAGE
 
 Sets the action bar message for the targets.
 
@@ -45,7 +45,7 @@ Will set the action bar to say Hello World to a direct target.
 
 ---
 
-### BOSS\_BAR\_MESSAGE
+### BOSS_BAR_MESSAGE
 
 Adds a bossbar to the target(s).
 
@@ -113,7 +113,7 @@ This means that a multiplier of 1.0 is the same as a normal hit from the boss. 2
 
 ---
 
-### MAKE\_INVULNERABLE
+### MAKE_INVULNERABLE
 
 Makes a target invulnerable.
 
@@ -141,7 +141,7 @@ Makes a boss invulnerable for 60 ticks (3 seconds).
 
 ---
 
-### MODIFY\_DAMAGE
+### MODIFY_DAMAGE
 
 Modifies the damage dealt to a boss or dealt to players by that boss. This is a special action with a few special requirements.
 
@@ -202,7 +202,7 @@ Will send a message to all online players.
 
 ---
 
-### PLACE\_BLOCK
+### PLACE_BLOCK
 
 Places a block at the target location(s) for the duration.
 
@@ -238,7 +238,7 @@ _Note: If no duration is defined, the block placement is permanent._
 
 ---
 
-### PLAY\_ANIMATION
+### PLAY_ANIMATION
 
 Plays the specified animation for a Custom Model using Model Engine. Requires Model Engine and a valid Custom Model to be on the target that runs the animation.
 
@@ -263,7 +263,7 @@ Sets the boss to play the fortnite\_dance animation. Requires the server to have
 
 ---
 
-### PLAY\_SOUND
+### PLAY_SOUND
 
 Plays an in-game sound.
 
@@ -292,7 +292,7 @@ Plays the resonate sound from Minecraft bells at the boss location
 
 ---
 
-### POTION\_EFFECT
+### POTION_EFFECT
 
 Applies a specific potion effect to the target(s).
 
@@ -359,7 +359,7 @@ Vectors are defined by `vValue: x,y,z`. As an example, if you want the target to
 
 ---
 
-### RUN\_COMMAND\_AS\_CONSOLE
+### RUN_COMMAND_AS_CONSOLE
 
 Runs a command as console.
 
@@ -389,7 +389,7 @@ Makes console broadcast the message "Hello world!"
 
 ---
 
-### RUN\_COMMAND\_AS\_PLAYER
+### RUN_COMMAND_AS_PLAYER
 `
 Runs a command as a `player. Requires the target to be players.
 
@@ -431,7 +431,7 @@ Makes the player run the say command with Hello world!, meaning they just say "H
 
 ---
 
-### RUN\_SCRIPT
+### RUN_SCRIPT
 
 This simply runs the scripts defined in `scripts`. Any action can do this, this action only exists as a convenience action for when you just want to do that.
 
@@ -471,7 +471,7 @@ When an elite gets damaged, runs ScriptRunner, which runs Example1 and Example2.
 
 ---
 
-### SET\_MOB\_AI
+### SET_MOB_AI
 
 Sets if the mob has AI. In Minecraft, mobs with no AI will not move and will not attack. They can still get damaged, but damaging them will not result in them getting knocked back.
 
@@ -500,7 +500,7 @@ Sets the boss to not have AI for 2 seconds.
 
 ---
 
-### SET\_MOB\_AWARE
+### SET_MOB_AWARE
 
 Sets if the mob is aware. In Minecraft, mobs that are not aware will not move to new locations and will not attack. They can still get damaged, and they will get knocked back.
 
@@ -533,7 +533,7 @@ Sets the boss to not have awareness for 2 seconds.
 
 ---
 
-### SET\_ON\_FIRE
+### SET_ON_FIRE
 
 Sets an entity on fire for the duration.
 
@@ -561,7 +561,7 @@ Sets a direct target on fire for 1 second.
 
 ---
 
-### SET\_TIME
+### SET_TIME
 
 Sets the in-game time of the world the target is in.
 
@@ -588,7 +588,7 @@ Sets the time of the world the boss is in to be 0 ticks.
 
 ---
 
-### SET\_WEATHER
+### SET_WEATHER
 
 Sets the weather of the world the target is in for a set amount of time.
 
@@ -625,7 +625,7 @@ The following are valid weather patterns:
 
 ---
 
-### SPAWN\_FIREWORKS
+### SPAWN_FIREWORKS
 
 Spawns fireworks.
 
@@ -676,7 +676,7 @@ These are the effects the fireworks rocket will show. At least one effect is req
 
 ---
 
-### STRIKE\_LIGHTNING
+### STRIKE_LIGHTNING
 
 Strikes lightning. This is a visual effect, if you want damage you should add a damage action.
 
@@ -702,7 +702,7 @@ Strikes lightning at every player in the same world as the boss.
 
 ---
 
-### SPAWN\_FALLING\_BLOCK
+### SPAWN_FALLING_BLOCK
 
 Spawns a falling block at the target. Visual only, does not place the block.
 
@@ -741,7 +741,7 @@ On entering combat, this script will spawn a falling stone block 10 blocks above
 
 ---
 
-### SPAWN\_PARTICLE
+### SPAWN_PARTICLE
 
 Spawns particles at the target.
 
@@ -855,7 +855,7 @@ This will spawn a flame particle at the boss location that will go up.
 
 ---
 
-### SUMMON\_REINFORCEMENT
+### SUMMON_REINFORCEMENT
 
 Summons reinforcements from EliteMobs Custom Bosses.
 
@@ -980,7 +980,7 @@ location: same_as_boss,0,64,0,0,0
 
 ---
 
-### TITLE\_MESSAGE
+### TITLE_MESSAGE
 
 Sets the action bar message for the targets.
 
@@ -1069,7 +1069,7 @@ Removes the tag "very\_sus" from the boss, which can later be checked through sc
 
 ---
 
-### VISUAL\_FREEZE
+### VISUAL_FREEZE
 
 Gives the frozen visual effect to the player & does its associated damage. This should be combined with a repeating script if you don't want the effect to immediately fade.
 
