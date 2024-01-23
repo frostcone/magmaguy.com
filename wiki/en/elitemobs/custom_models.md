@@ -1,10 +1,14 @@
-As of EliteMobs 7.3.12, Custom Models have been added to EliteMobs through Model Engine.
+As of EliteMobs 7.3.12, Custom Models have been added to EliteMobs through [Model Engine](https://mythiccraft.io/index.php?resources/model-engine%E2%80%94ultimate-entity-model-manager-1-16-5-1-20-4.389/) and [FreeMineCraftModels](https://www.spigotmc.org/resources/free-minecraft-models.111660/).
 
 # Foreword
 
 From an EliteMobs perspective, the Custom Model system is very simple, as the only thing admins have to do is add a line to an NPC or Custom Boss config file telling it which Custom Model to use. However, it is necessary to take the correct steps with Model Engine and Minecraft in order to get this system fully functional, and these aren't quite as easy to get into.
 
 This guide will go into detail insofar as interfacing with Model Engine and Minecraft goes. It will not tell you how to use Blockbench to create custom bosses, nor will it go into detail about how Model Engine works. There are already plenty of guides on how to do that elsewhere, and if you want to learn more about those systems you are better served by looking directly at their documentation.
+
+## FreeMineCraft Models
+
+If you want to learn how you can use FMM to get your models working then you can check out [this]($language$/freeminecraftmodels/info.md) wiki page to learn more.
 
 # Minimum requirements
 
@@ -117,7 +121,7 @@ There are three types of attack animations:
 
 Note: this segment is still in development. The following are the features as they are planned.
 
-Every power in EliteMobs can have an animation assigned to it. The animation always starts when the power is triggered, and no further triggers are currently provided throughtout the use of the power. Some powers, such as the invulnerabilities, won't do anything as they have no triggers and are just passive properties of the bosses.
+Every power in EliteMobs can have an animation assigned to it. The animation always starts when the power is triggered, and no further triggers are currently provided throughout the use of the power. Some powers, such as the invulnerabilities, won't do anything as they have no triggers and are just passive properties of the bosses.
 
 In order to assign an animation to a power, the animation must be named the same as the elitemobs power file.
 

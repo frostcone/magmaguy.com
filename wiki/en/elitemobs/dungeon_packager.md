@@ -39,7 +39,7 @@ There are two major kinds of dungeons: world-based and schematic-based.
 
 World-based dungeons are for content that has its own world.
 
-The schematic-based dungeons are for content that is associated to a schematic build, which can be pasted anywhere.
+The schematic-based dungeons are for content that is associated to a schematic build, which can be pasted anywhere. (We are slowly phasing these out so schematic-based dungeons should not be something you focus on as we might only support them in the future as a legacy thing.)
 
 It is generally recommended to use world-based dungeons as they are easier to create and manage.
 
@@ -49,23 +49,23 @@ It is generally recommended to use world-based dungeons as they are easier to cr
 
 The following values apply to all dungeons
 
-| Key | Description | Values | Default | Mandatory |
-|-|:---:|:-:|:-:|:-:|
-| `isEnabled` | Sets if the dungeon package is enabled | `true` / `false` | `false` | ✅ |
-| `name` | Sets the name of the content | STRING | none | ✅ |
-| `dungeonLocationType` | Sets the type of location the dungeon uses | `WORLD` / `SCHEMATIC` / `INSTANCED` | none | ✅ |
-| `contentType` | Sets the type of dungeon | `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` / `SCHEMATIC_DUNGEON` | none | ✅ |
-| `customInfo` | Sets the additional info that will appear in the `/em setup` screen. Only for information purposes. | STRING | none | ✅ |
-| `downloadLink` | Sets the download link when the content is not downloaded. Only for information purposes.  | STRING | none | ❌ |
+| Key | Description |                                           Values                                           | Default | Mandatory |
+|-|:---:|:------------------------------------------------------------------------------------------:|:-:|:-:|
+| `isEnabled` | Sets if the dungeon package is enabled |                                    [Boolean](#boolean)                                     | `false` | ✅ |
+| `name` | Sets the name of the content |                                     [String](#string)                                      | none | ✅ |
+| `dungeonLocationType` | Sets the type of location the dungeon uses |                            `WORLD` / `SCHEMATIC` / `INSTANCED`                             | none | ✅ |
+| `contentType` | Sets the type of dungeon |             `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` / `SCHEMATIC_DUNGEON`             | none | ✅ |
+| `customInfo` | Sets the additional info that will appear in the `/em setup` screen. Only for information purposes. |                                     [String](#string)                                      | none | ✅ |
+| `downloadLink` | Sets the download link when the content is not downloaded. Only for information purposes.  |                                     [String](#string)                                      | none | ❌ |
 | `dungeonSizeCategory` | Sets the size category of the dungeon package. Only for information purposes. | `LAIR` / `SANCTUM` / `MINIDUNGEON` / `DUNGEON` / `RAID` /  `ADVENTURE` / `ARENA` / `OTHER` | none | ✅ |
-| `protect` | Sets if the dungeon package should be protected by WorldGuard | `true` / `false` | `true `| ❌ |
-| `anchorPoint` | Sets the spawn location of the build. **This is set when you install, do not set manually!** | LOCATION | none | ❌ |
-| `dungeonVersion` | Sets the version of the dungeon package | INTEGER | none | ✅ |
-| `playerInfo` | Sets the info which appears in the teleport menu | STRING | none | ✅ |
-| `regionEnterMessage` | Sets the message that appears when a player enters the dungeon zone | STRING | none | ❌ |
-| `regionLeaveMessage` | Sets the message that appears when a player leaves the dungeon zone | STRING | none | ❌ |
-| `hasCustomModels` | Sets whether the dungeon package has custom models (for ModelEngine) | `true` / `false` | false | ❌ |
-| `dungeonConfigFolderName` | Sets the name of the folders used for files associated to this dungeon. Mandatory for instanced dungeons! | STRING | none | ❌ |
+| `protect` | Sets if the dungeon package should be protected by WorldGuard |                                    [Boolean](#boolean)                                     | `true `| ❌ |
+| `anchorPoint` | Sets the spawn location of the build. **This is set when you install, do not set manually!** |                                          Location                                          | none | ❌ |
+| `dungeonVersion` | Sets the version of the dungeon package |                                    [Integer](#integer)                                     | none | ✅ |
+| `playerInfo` | Sets the info which appears in the teleport menu |                                     [String](#string)                                      | none | ✅ |
+| `regionEnterMessage` | Sets the message that appears when a player enters the dungeon zone |                                     [String](#string)                                      | none | ❌ |
+| `regionLeaveMessage` | Sets the message that appears when a player leaves the dungeon zone |                                     [String](#string)                                      | none | ❌ |
+| `hasCustomModels` | Sets whether the dungeon package has custom models (for ModelEngine) |                                    [Boolean](#boolean)                                     | false | ❌ |
+| `dungeonConfigFolderName` | Sets the name of the folders used for files associated to this dungeon. Mandatory for instanced dungeons! |                                     [String](#string)                                      | none | ❌ |
 
 ***
 
@@ -73,25 +73,25 @@ The following values apply to all dungeons
 
 The following values only apply to world-based dungeons.
 
-| Key | Description | Values | Default | Mandatory |
-|-|:-:|:-:|:-:|:-:|
-| `worldName` | Sets the name of the world packaged | STRING | none | ✅ |
-| `womholeWorldName` | Sets the name of the wormhole world. This is used as a side world for the main world, for things such as teleport hubs or special boss rooms. | STRING | none | ❌ |
-| `environment` | Sets the world's environment | [ENVIRONMENT](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) | none | ✅ |
-| `teleportLocation` | Sets the teleport location of the dungeon package | STRING | none | ✅ |
+| Key | Description |                                          Values                                           | Default | Mandatory |
+|-|:-:|:-----------------------------------------------------------------------------------------:|:-:|:-:|
+| `worldName` | Sets the name of the world packaged |                                     [String](#string)                                     | none | ✅ |
+| `womholeWorldName` | Sets the name of the wormhole world. This is used as a side world for the main world, for things such as teleport hubs or special boss rooms. |                                     [String](#string)                                     | none | ❌ |
+| `environment` | Sets the world's environment | [Environment](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) | none | ✅ |
+| `teleportLocation` | Sets the teleport location of the dungeon package |                                     [String](#string)                                     | none | ✅ |
 
 #### Instanced dungeons
 
 The following values only apply to instanced dungeons. Note that all instanced dungeons are world dungeons, so they also use the values from world dungeons.
 
-| Key | Description | Values | Default | Mandatory |
-|-|:-:|:-:|:-:|:-:|
-| `startLocation` | Sets the start location of the instanced dungeon | STRING | none | ✅ |
-| `permission` | Sets the permission required in order to enter the dungeon instance | STRING | none | ❌ |
-| `minPlayerCount` | Sets the minimum player count required to start a dungeon | INTEGER | `1` | ❌ |
-| `maxPlayerCount` | Sets the maximum player count required to start a dungeon | INTEGER | `5` | ❌ |
-| `dungeonObjectives` | Sets list of dungeon objectives required for the dungeon to be considered completed | INTEGER | `1` | ✅ |
-| `difficulties` | Sets list of difficulties in the instanced dungeon| Special format, check below!| none | ✅ |
+| Key | Description |            Values            | Default | Mandatory |
+|-|:-:|:----------------------------:|:-:|:-:|
+| `startLocation` | Sets the start location of the instanced dungeon |      [String](#string)       | none | ✅ |
+| `permission` | Sets the permission required in order to enter the dungeon instance |      [String](#string)       | none | ❌ |
+| `minPlayerCount` | Sets the minimum player count required to start a dungeon |     [Integer](#integer)      | `1` | ❌ |
+| `maxPlayerCount` | Sets the maximum player count required to start a dungeon |     [Integer](#integer)      | `5` | ❌ |
+| `dungeonObjectives` | Sets list of dungeon objectives required for the dungeon to be considered completed |     [Integer](#integer)      | `1` | ✅ |
+| `difficulties` | Sets list of difficulties in the instanced dungeon| Special format, check below! | none | ✅ |
 
 **Note 1:** There are currently two dungeon objective types:
 
@@ -102,11 +102,11 @@ The following values only apply to instanced dungeons. Note that all instanced d
 
 Difficulties are in a list format which have the following fields:
 
-| Key | Description | Values | Mandatory |
-|-|:-:|:-:|:-:|
-| `name` | Name of the difficulty for players | STRING | ✅ |
-| `id` | ID of the difficulty, used in custom bosses and custom items for the difficulty-based features | STRING | ✅ |
-| `levelSync` | Sets the level of the level sync, if any. Level sync makes all player gear max out at the set value, making it impossible for players to get overleveled for a dungeon and keeping it relevant for later runs. Based on the Final Fantasy 14 level sync system. | INTEGER | ❌ |
+| Key | Description |       Values        | Mandatory |
+|-|:-:|:-------------------:|:-:|
+| `name` | Name of the difficulty for players |  [String](#string)  | ✅ |
+| `id` | ID of the difficulty, used in custom bosses and custom items for the difficulty-based features |  [String](#string)  | ✅ |
+| `levelSync` | Sets the level of the level sync, if any. Level sync makes all player gear max out at the set value, making it impossible for players to get over leveled for a dungeon and keeping it relevant for later runs. Based on the Final Fantasy 14 level sync system. | [Integer](#integer) | ❌ |
 
 <details>
 <summary>Example</summary>
@@ -134,16 +134,16 @@ difficulties:
 
 The following values only apply to schematic-based dungeons
 
-| Key | Description | Values | Default | Mandatory |
-|-|:-:|:-:|:-:|:-:|
-| `relativeBossLocations` | Sets the boss locations of the content relative to the anchor point | STRING LIST | none | ✅ |
-| `relativeTreasureChestLocations` | Sets the treasure chest locations of the content relative to the anchor point | STRING LIST | none | ❌ |
-| `schematicName` | Sets the name of the schematic file with the build | STRING LIST | none | ✅ |
+| Key | Description |               Values                | Default | Mandatory |
+|-|:-:|:-----------------------------------:|:-:|:-:|
+| `relativeBossLocations` | Sets the boss locations of the content relative to the anchor point |     [String List](#string_list)     | none | ✅ |
+| `relativeTreasureChestLocations` | Sets the treasure chest locations of the content relative to the anchor point |     [String List](#string_list)     | none | ❌ |
+| `schematicName` | Sets the name of the schematic file with the build |     [String List](#string_list)     | none | ✅ |
 | `defaultSchematicRotation` | Sets the default rotation of the schematic. This should be the direction you face when looking towards the build from the anchor point. | `NORTH` / `SOUTH` / `EAST` / `WEST` | `SOUTH` | ✅ |
-| `calculatedRotation` | Sets the rotation of the dungeon as installed. **Do not set this manually!** This setting is generated by the plugin. | INTEGER | none | ❌ |
-| `corner1` | Sets one of the corners of the build, using relative locations from the anchor point | VECTOR | none | ✅ |
-| `corner2` | Sets the corner of the build diametrically opposd to the first corner, using relative locations from the anchor point | VECTOR | none | ✅ |
-| `teleportLocationOffset` | Sets the offset from the anchor point for the teleport point. | VECTOR | none | ❌ |
+| `calculatedRotation` | Sets the rotation of the dungeon as installed. **Do not set this manually!** This setting is generated by the plugin. |         [Integer](#integer)         | none | ❌ |
+| `corner1` | Sets one of the corners of the build, using relative locations from the anchor point |               Vector                | none | ✅ |
+| `corner2` | Sets the corner of the build diametrically opposd to the first corner, using relative locations from the anchor point |               Vector                | none | ✅ |
+| `teleportLocationOffset` | Sets the offset from the anchor point for the teleport point. |               Vector                | none | ❌ |
 
 ***
 
@@ -203,7 +203,7 @@ If you did everything correctly, the file structure should be similar to this ex
             * [Your custom powers go here]
     * world_blueprints
         * my_cool_dungeon
-            * [Your world folder goes here]
+            * [Your world folder goes here, used for instanced dungeons]
     * customevents
         * my_cool_dungeon
             * [Your custom events go here]

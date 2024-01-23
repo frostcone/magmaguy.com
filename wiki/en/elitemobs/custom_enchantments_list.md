@@ -18,7 +18,7 @@ The levels range between 1 and 5, with 1 additional block getting mined at level
 
 Elite Protection/Sharpness/Power/Bane of Arthropods/Smite/... increases level of a vanilla enchantment but only applies this special value when fighting against elites.
 
-Items only start gaining Elite enchantments once they've gone over the vanilla limits of the enchantment level (as an example, vanilla protection caps off at level 4). All subsequent levels are increased by 1, meaning that an item with protection 5 and elite protection 10 will count as a protection 15 armor for Elite Mobs, but will only count as a protection 5 armor for any other mob.
+**Items only start gaining Elite enchantments once they've gone over the vanilla limits of the enchantment level (as an example, vanilla protection caps off at level 4). All subsequent levels are increased by 1, meaning that an item with protection 5 and elite protection 10 will count as a protection 15 armor for Elite Mobs, but will only count as a protection 5 armor for any other mob.**
 
 These enchantments only apply when fighting against mobs from EliteMobs, and do not apply in pvp or when fighting other mobs.
 
@@ -62,7 +62,7 @@ The Lightning enchantment works in a way similar to the critical strikes enchant
 
 # Loud Strikes
 
-The Loud Strikes enchantment increases the aggro on hit for entities spawned by EliteMobs. Elites and bosses usually target the player that dealt the most damage, but this enchantment allows tanks to keep the mob's attention even if they are not the highest damage. This is used for traditional MMORPG tanking roles.
+The Loud Strikes enchantment increases the aggro on hit for entities spawned by EliteMobs. Elites and bosses usually target the player that dealt the most damage, but this enchantment allows tanks to keep the mob's attention even if they are not the highest damage. This is used for traditional MMORPG tanking roles. This enchantment is mainly used for [Instanced Dungeons]($language$/EliteMobs/building_for_elitemobs.md&section=instanced-dungeons) and is found on loot that drops from these dungeons.
 
 # Plasma Boots
 
@@ -70,11 +70,11 @@ The Plasma Boots enchantment, when double shifting, makes players do a short jum
 
 # Summon Merchant
 
-The Summon Merchant enchantment summons Jeeves. This is done by right clicking the item (this is usually just a paper), or saying "Jeeves!" on chat. Summoning Jeeves uses up the item with the enchantment.
+The Summon Merchant enchantment summons Jeeves. This is done by right clicking the item (this is usually just a paper), or saying "Jeeves!" in chat. Summoning Jeeves uses up the item with the enchantment.
 
 # Summon Wolf
 
-The Summon Wolf enchantment summons a friendly wolf when shift + right clicking the floor with the item in hand. The wolf has a level calculated based on the player's equipment and despawns after 2 minutes. It can not be tamed.
+The Summon Wolf enchantment summons a friendly wolf when *Shift + Right Clicking* the floor with the item in hand. The wolf has a level calculated based on the player's equipment and despawns after 2 minutes. It can not be tamed.
 
 There is a 1/1000 chance of spawning Snoopy when summoning a wolf. Snoopy is far more powerful than normal wolves.
 

@@ -78,7 +78,7 @@ This is what the damage should roughly look like in an ideal average setting.
 
 # Using this data for dungeons
 
-**NOTE: THIS ASSUMES YOU'RE USING THE normalizedCombat VALUES!** Those values were specifically made for balancing dungeons more easily.
+**NOTE: THIS ASSUMES YOU'RE USING THE `normalizedCombat` VALUES!** Those values were specifically made for balancing dungeons more easily.
 
 Part of a boss' difficulty is making it have the appropriate health and damage for the encounter. However, keep in mind that this is only a part of it, and that powers are just as important.
 
@@ -99,8 +99,8 @@ With the scaling of normalizedCombat, you can apply a very minimalistic configur
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 1.0
-damageMultiplier: 1.0
+healthMultiplier: 1.0 #4 hits to slay 
+damageMultiplier: 1.0 #1.5 hearts of dmg
 ```
 
 **Note: since 1.0 is the default, this means you can also just not define anything**.
@@ -111,8 +111,8 @@ Trash packs are numerous but not very dangerous:
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 0.75
-damageMultiplier: 0.5
+healthMultiplier: 0.7 #3 hits to slay 
+damageMultiplier: 0.5 #0.5 hearts of dmg
 ```
 
 ## Creating reinforcements
@@ -121,8 +121,8 @@ Reinforcements should die very easily, but pose a danger damage-wise (these valu
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 0.25
-damageMultiplier: 0.8
+healthMultiplier: 0.25 #1 hit to slay 
+damageMultiplier: 0.6 #1 heart of dmg
 ```
 
 ## Creating minibosses
@@ -131,8 +131,8 @@ Minibosses should hold their ground, and pose a mechanic challenge to players. I
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 2.0 - 3.0
-damageMultiplier: 2.0
+healthMultiplier: 3.0 #10 hits to slay 
+damageMultiplier: 1.2 #2 hearts of dmg
 ```
 
 ## Creating bosses
@@ -141,16 +141,18 @@ Bosses are a real challenge, the conclusion of a buildup in a dungeon and a real
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 4.0-6.0
-damageMultiplier: 2.0
+healthMultiplier: 7.0 #23 hits to slay 
+damageMultiplier: 1.4 #2.5 hearts of dmg
 ```
 
 ## Creating World Bosses
 
-World bosses are dangerous, but most of all they have a lot of health and summon a lot of reinforcements / have a lot of area of effect attacks. These are meant to be fought by large groups of players over the longest amount of time an elite encounter should last. They aren't very deadly, but have a lot of mechanics that can overwhelm underprepared players.
+World bosses are dangerous, but most of all they have a lot of health and summon a lot of reinforcements / have a lot of area of effect attacks. These are meant to be fought by large groups of players over the longest amount of time an elite encounter should last. They aren't very deadly, but have a lot of mechanics that can overwhelm under prepared players.
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 30.0
-damageMultiplier: 1.5
+healthMultiplier: 40.0 #160 hits to slay 
+damageMultiplier: 1.5 #2.5-3 hearts of dmg
 ```
+
+These are just rough recommended values and any final values should be adjusted around the encounters themselves.
