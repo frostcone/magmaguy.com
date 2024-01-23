@@ -666,3 +666,17 @@ function stopResize() {
 
 resizer.addEventListener('mousedown', startResize);
 resizer.addEventListener('touchstart', startResize);
+
+function ExpandSidebar(){
+    document.getElementById("sidebar").hidden = false;
+    document.getElementById("resizer").style.display = "block";
+    document.getElementById("maximize-sidebar").dataset.disabled = "true";
+    document.getElementById("maximize-sidebar").hidden = true;
+}
+
+function MinimizeSidebar(){
+    document.getElementById("sidebar").hidden = true;
+    document.getElementById("resizer").style.display = "none";
+    document.getElementById("maximize-sidebar").dataset.disabled = "false";
+    document.getElementById("maximize-sidebar").hidden = false;
+}

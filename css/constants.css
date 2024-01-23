@@ -109,3 +109,27 @@ li {
 .plugin_icon{
     max-width: 2rem;
 }
+
+.burger-menu-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.burger-menu-icons svg {
+    stroke: whitesmoke;
+    align-content: end;
+    cursor: pointer;
+}
+
+.burger-menu-icons svg[data-disabled="true"]{
+    display: none;
+}
+
+.burger-menu-icons svg[data-disabled="false"]{
+    display: block;
+    z-index: 1000;
+}
+
+#maximize-sidebar{
+    position: absolute;
+}
