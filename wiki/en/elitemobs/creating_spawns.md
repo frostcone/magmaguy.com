@@ -2,9 +2,9 @@
 
 # What are Custom Spawns?
 
-Custom Spawns are used by Events and global reiforcements to set how, where and when an event should spawn the boss for that event.
+Custom Spawns are used by Events and global reinforcements to set how, where and when an event should spawn the boss for that event.
 
-Events and global reinforcements set which spawn they are using by writting down its filename.
+Events and global reinforcements set which spawn they are using by writing down its filename.
 
 # Creating Custom Spawns
 
@@ -26,15 +26,15 @@ isSurfaceSpawn: true
 | Key | Description |                                                          Values                                                          | Default |
 |-|:-:|:------------------------------------------------------------------------------------------------------------------------:|-|
 | `isEnabled` | Sets if the event is enabled |                                                     `true` / `false`                                                     | `true` |
-| `lowestYLevel` | Sets the lowest y level (map height) used |                                                   [INTEGER](#integer)                                                    | `0` |
-| `highestYLevel` | Sets the highest y level (map height) used |                                                   [INTEGER](#integer)                                                    | `320` |
-| `validWorlds` | Sets the list of the worlds where the custom spawn can happen |                                               [STRING LIST](#string_list)                                                | none |
-| `validWorldEnvironments` | Sets the list of valid world environments where the custom spawn can happen |                  [ENVIRONMENT LIST](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html)                  | none |
-| `validBiomes` | Sets the list of valid biomes where the custom spawn can happen |                    [BIOME LIST](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html)                    | none |
-| `earliestTime` | Sets the earliest in-game time at which the custom spawn can happen |                                                   [INTEGER](#integer)                                                    | `0`|
-| `latestTime` | Sets teh latest in-game time at which the custom spawn can happen |                                                   [INTEGER](#integer)                                                    | `24000` |
+| `lowestYLevel` | Sets the lowest y level (map height) used |                                                   [Integer](#integer)                                                    | `0` |
+| `highestYLevel` | Sets the highest y level (map height) used |                                                   [Integer](#integer)                                                    | `320` |
+| `validWorlds` | Sets the list of the worlds where the custom spawn can happen |                                               [String List](#string_list)                                                | none |
+| `validWorldEnvironments` | Sets the list of valid world environments where the custom spawn can happen |                  [Environment List](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html)                  | none |
+| `validBiomes` | Sets the list of valid biomes where the custom spawn can happen |                    [Biome List](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html)                    | none |
+| `earliestTime` | Sets the earliest in-game time at which the custom spawn can happen |                                                   [Integer](#integer)                                                    | `0`|
+| `latestTime` | Sets teh latest in-game time at which the custom spawn can happen |                                                   [Integer](#integer)                                                    | `24000` |
 | `moonPhase` | Sets the phase of the moon at which the custom spawn happens | `FULL_MOON` / `WANING_GIBBOUS` / `WANING_CRESCENT` / `NEW_MOON` / `WAXING_CRESCENT` / `FIRST_QUARTER` / `WAXING_GIBBOUS` | none |
-| `bypassWorldGuard` | Sets if the custom spawn will bypass protection systems such as WorldGuard |                                                     `true` / `false`                                                     | false |
-| `canSpawnInLight` | Sets if the custom spawn can happen in lit blocks |                                                     `true` / `false`                                                     | `false` |
-| `isSurfaceSpawn` | Sets if the custom spawn can only happen at the surface of a world |                                                     `true` / `false`                                                     | `false` |
-| `isUndergroundSpawn` | Sets if the custom spawn can only happen underground |                                                     `true` / `false`                                                     | `false` |
+| `bypassWorldGuard` | Sets if the custom spawn will bypass protection systems such as WorldGuard |                                                   [Boolean](#boolean)                                                    | `false` |
+| `canSpawnInLight` | Sets if the custom spawn can happen in lit blocks |                                                     [Boolean](#boolean)                                                     | `false` |
+| `isSurfaceSpawn` | Sets if the custom spawn can only happen at the surface of a world |                                                     [Boolean](#boolean)                                                     | `false` |
+| `isUndergroundSpawn` | Sets if the custom spawn can only happen underground |                                                     [Boolean](#boolean)                                                     | `false` |

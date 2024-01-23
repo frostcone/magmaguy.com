@@ -45,6 +45,8 @@ The reinforcement is now added to the boss entity. However, as you can see, ther
 
 ## All Custom Reinforcement options
 
+*Tip: You can also use EliteScript to summon reinforcements, more about that [here]($language$/elitemobs/elitescript_actions.md&section=summon_reinforcement).*
+
 ### summonType
 
 `summonType: SUMMON_TYPE` **is a mandatory field** **as it sets when the reinforcement should spawn.** Here are the valid options:
@@ -88,7 +90,7 @@ demonstrates this. However, if you want or need something more complex, keep rea
 
 ### chance
 
-`chance: DOUBLE` is an optional config field made to compliment the `summonType` `ONCE` and `ON_HIT` options. It represents the chance of the Custom Reinforcement spawning when a boss gets hit. Here are a few examples:
+`chance:`[Double](#double) is an optional config field made to compliment the `summonType` `ONCE` and `ON_HIT` options. It represents the chance of the Custom Reinforcement spawning when a boss gets hit. Here are a few examples:
 
 - `chance: 0.2` represents a 20% chance to spawn the Custom Reinforcement
 - `chance: 0.5` represents a 50% chance to spawn the Custom Reinforcement
@@ -111,27 +113,27 @@ _**Important note: This is a mandatory field for `summonType: ON_COMBAT_ENTER_PL
 
 ### lightningRod
 
-`lightningRod: BOOLEAN` is a special setting only useful for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. This gives end crystals the ability to smite the floor around them on a delay. It can't be used with the other Custom Reinforcements, as those should rely on powers for these kinds of abilities.
+`lightningRod:`[Boolean](#boolean) is a special setting only useful for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. This gives end crystals the ability to smite the floor around them on a delay. It can't be used with the other Custom Reinforcements, as those should rely on powers for these kinds of abilities.
 
-_Note: if you are confused about `DOUBLE` , `INTEGER` and `BOOLEAN` mentions,_ [_read this_]($language$/global/configuration_file_guide.md)_._
+_Note: if you are confused about `Double` , `Integer` and `Boolean` mentions,_ [_read this_]($language$/global/configuration_file_guide.md)_._
 
 ### inheritAggro
 
-`inheritAggro: BOOLEAN` is an optional config field which makes Custom Reinforcements inherit the threat levels of the boss. This is especially useful when you want to have the reinforcements that spawn target the person who is dealing the largest amount of damage.
+`inheritAggro:`[Boolean](#boolean) is an optional config field which makes Custom Reinforcements inherit the threat levels of the boss. This is especially useful when you want to have the reinforcements that spawn target the person who is dealing the largest amount of damage.
 
 ### amount
 
-`amount: INTEGER` is an optional config field which sets the amount of Custom Bosses that spawn. Example:
+`amount:`[Integer](#integer) is an optional config field which sets the amount of Custom Bosses that spawn. Example:
 
 - `amount: 5` spawns 5 Custom Bosses
 
 ### spawnNearby
 
-`spawnNearby: BOOLEAN` is an optional config field which sets whether the Custom Reinforcement should spawn nearby instead of on top of the boss or at a specific relative location. This method should take terrain variation into account correctly, and not spawn bosses inside of walls, though in some setups it might result in them spawning behind walls if the combat area is too small. Has a ~30 blocks radius.
+`spawnNearby:`[Boolean](#boolean) is an optional config field which sets whether the Custom Reinforcement should spawn nearby instead of on top of the boss or at a specific relative location. This method should take terrain variation into account correctly, and not spawn bosses inside of walls, though in some setups it might result in them spawning behind walls if the combat area is too small. Has a ~30 blocks radius.
 
 ### inheritLevel
 
-`inheritLevel: BOOLEAN` is an optional config field which sets whether the Custom Reinforcement should inherit the level of the Custom Boss it is reinforcing.
+`inheritLevel:`[Boolean](#boolean) is an optional config field which sets whether the Custom Reinforcement should inherit the level of the Custom Boss it is reinforcing.
 
 ### customSpawn
 
