@@ -1,16 +1,16 @@
 # Creating World Bosses
-
+*World Bosses are also sometimes referred to as Regional Bosses.*
 ## What are they?
 
-World Bosses are Custom Bosses set to spawn in a specific location on a specific delay. These are the bosses used in Dungeons.
+World Bosses are Custom Bosses set to spawn in a specific location on a specific delay. These are also the bosses used in Dungeons. Though in this section we will specifically be discussing making World Bosses for use outside of dungeons.
 
 ## What are they for?
 
-World Bosses allow players to face a fixed challenge while knowing what the loot will be.
+World Bosses allow players to face a fixed challenge while knowing that the loot will be rewarding.
 
 ## What do I need to make a World Boss?
 
-1. **A location**. A boss room is recommended, with a roughly 15 block radius (30 blocks across) due to the Minecraft aggro range. Additionally, make sure that the terrain is protected through a worldguard region (so players can't build traps) and that the terrain can't be exploited for combat.
+1. **A location**. A boss room is recommended, with a roughly 15 block radius (30 blocks across) due to the Minecraft aggro range. Additionally, make sure that the terrain is protected through a [WorldGuard](https://dev.bukkit.org/projects/worldguard) region (so players can't build traps) and that the terrain can't be exploited for combat.
 2. **A respawn time**. The respawn timer is essential. I don't recommend doing less than a 30 minute respawn timer or else the boss respawning will be less of an event. 1 hour is a fairly good time, but you may also want to make it so the boss respawns once per day or even once per week.
 3. **An escape time**. The longer the respawn, the longer the escape time should be. Also take into account that the escape time should be long enough that people can comfortably challenge the boss. Escape timers are important if you don't want to allow players to kamikaze the boss to death. This is not mandatory, nor even recommended if you want to do massive week-long respawn bosses.
 4. **A Custom Boss**. World Bosses are really just Custom Bosses with custom spawning rules. Make sure you select powers with a good raid-size combat compatibility.
@@ -72,13 +72,14 @@ Sets the radius from the `spawnLocation` that the World Boss go to before gettin
 
 **Note: try avoiding making combat areas that require leashes shorter than 20 blocks, as it will make the fight worse.**
 
-### onSpawnBlockStates and onRemoveBlockStates
+### Transitive Blocks
+Also known as `onSpawnBlockStates` and `onRemoveBlockStates`.
 
 These values allow Regional Bosses to spawn blocks when they enter combat and to remove them when they get removed, meaning when they either escape due to timeout or when they die.
 
 **This is how you can make bosses open or close doors / areas or even modify an arena during combat if you are using it with phase bosses!**
 
-**All of the blocks are relative to the spawn location. Make sure that you have your final spawn location before starting to set any blocks.**
+**All of the blocks are relative to the spawn location. Make sure that you have your final spawn location before starting to set any blocks.** </br>If you already made a large Transitive Block area and now need to move the boss, but you do not want to redo the Transitive Blocks. Then you can use the EliteScript [Teleport]($language$/elitemobs/elitescript_actions.md&section=teleport%teleport) action to move the boss to the correct location after it spawns. Do keep in mind that you will have to adjust your leash accordingly.
 
 Due to the complexity of setting blocks, it is not recommended you do this manually. You should use the following commands to do it:
 
