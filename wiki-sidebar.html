@@ -1,429 +1,448 @@
-<a class="sidebar-home" onclick="ArticleClick('$language$/main_info.md', this)">Home</a>
-<details>
-    <summary id="elitemobs_section">
-        EliteMobs
-    </summary>
-    <div>
+<div class="burger-menu">
+    <div class="burger-menu-icons">
+        <svg onclick="MinimizeSidebar()" data-disabled="false" id="minimize-sidebar" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-minimize" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M5 9l4 0l0 -4" />
+            <path d="M3 3l6 6" />
+            <path d="M5 15l4 0l0 4" />
+            <path d="M3 21l6 -6" />
+            <path d="M19 9l-4 0l0 -4" />
+            <path d="M15 9l6 -6" />
+            <path d="M19 15l-4 0l0 4" />
+            <path d="M15 15l6 6" />
+        </svg>
+    </div>
+    <a class="sidebar-home" onclick="ArticleClick('$language$/main_info.md', this)">Home</a>
+    <details>
+        <summary id="elitemobs_section">
+            EliteMobs
+        </summary>
+        <div>
+            <div class="wiki-category">
+                <div class="wiki-category-header">
+                    Setup & Installation
+                </div>
+                <div class="wiki-category-contents">
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/info.md', this)">• What is EliteMobs?</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/setup.md', this)">• Quick Setup</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/permissions_and_commands.md', this)">•
+                            Permissions
+                            and commands</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/faq.md', this)">• FAQ</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/elitemobs_config_settings.md', this)">• EliteMobs Settings</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/adventurers_guild_world.md', this)">• Adventurer's Guild World</a>
+                    </div>
+                </div>
+            </div>
+            <div class="wiki-category">
+                <div class="wiki-category-header">
+                    Content creation & content editing
+                </div>
+                <div class="wiki-category-contents">
+                    <div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_bosses.md', this)">•
+                                Creating
+                                Bosses</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_boss_phases.md', this)">•
+                                Creating
+                                Boss Phases</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_reinforcements.md', this)">•
+                                Creating
+                                Reinforcements</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_world_bosses.md', this)">•
+                                Creating
+                                World Bosses</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_items.md', this)">• Creating
+                                Items</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_events.md', this)">•
+                                Creating
+                                Events</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_spawns.md', this)">•
+                                Creating
+                                Spawns</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_quests.md', this)">•
+                                Creating
+                                Quests</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_npcs.md', this)">• Creating
+                                NPCs</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_treasure_chests.md', this)">•
+                                Creating
+                                Treasure Chests</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_wormholes.md', this)">•
+                                Creating
+                                Wormholes</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_powers.md', this)">•
+                                Creating
+                                Powers
+                            </a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/creating_arenas.md', this)">•
+                                Creating
+                                Arenas</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/dungeon_packager.md', this)">•
+                                Creating
+                                Dungeons</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/loot_tables.md', this)">•
+                                Creating
+                                Loot Tables</a>
+                        </div>
+                        <div>
+                            <a onclick="ArticleClick('$language$/elitemobs/modifying_existing_minidungeons.md', this)">•
+                                Modifying Existing Minidungeons</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wiki-category">
+                <div class="wiki-category-header">
+                    EliteScript
+                </div>
+                <div class="wiki-category-contents">
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/elitescript_info.md', this)">•
+                            EliteScript Information</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/elitescript_actions.md', this)">•
+                            EliteScript Actions</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/elitescript_conditions.md', this)">•
+                            EliteScript Conditions</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/elitescript_cooldowns.md', this)">•
+                            EliteScript Cooldowns</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/elitescript_events.md', this)">•
+                            EliteScript Events</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/elitescript_relative_vectors.md', this)">•
+                            EliteScript Relative Vectors</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/elitescript_targets.md', this)">•
+                            EliteScript Targets</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/elitescript_zones.md', this)">•
+                            EliteScript Zones</a>
+                    </div>
+                </div>
+            </div>
+            <div class="wiki-category">
+                <div class="wiki-category-header">
+                    Mechanics
+                </div>
+                <div class="wiki-category-contents">
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/prestige_system.md', this)">• Prestige
+                            system</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/soulbind.md', this)">• Soulbind</a>
+
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/item_upgrade_system.md', this)">• Item
+                            Upgrade System</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/discordsrv.md', this)">• DiscordSRV &
+                            Discord
+                            Announcements</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/libsdisguises.md', this)">• LibsDisguises
+                            &
+                            Disguising Custom
+                            Bosses</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/instanced_dungeon_difficulty.md', this)">•
+                            Instanced
+                            dungeon difficulty</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/damage_system.md', this)">• How damage
+                            works</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/disabling_explosions.md', this)">• Disabling explosions</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/guild_tier_loot_limiter.md', this)">• Guild
+                            tier loot limiter</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/spawning_tiers_loot.md', this)">• Spawning,
+                            Tiers, Loot</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/announcement_priority_system.md', this)">•
+                            Announcement
+                            Priority System</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/advanced_aggro_system.md', this)">• Advanced
+                            Aggro System</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wiki-category">
+                <div class="wiki-category-header">
+                    Content guides
+                </div>
+                <div class="wiki-category-contents">
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/feature_list.md', this)">•
+                            EliteMobs Features</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/understanding_the_basics_of_elitemobs.md', this)">•
+                            Understanding
+                            the basics of
+                            EliteMobs</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/building_for_elitemobs.md', this)">•
+                            Building for
+                            EliteMobs</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/primis_info.md', this)">• Primis Adventure
+                            info</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/oasis_info.md', this)">• Oasis Adventure
+                            info</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/dungeons.md', this)">• Dungeons</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/custom_enchantments_list.md', this)">• List
+                            of Custom Enchantments</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wiki-category">
+                <div class="wiki-category-header">
+                    Third party compatibility
+                </div>
+                <div class="wiki-category-contents">
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/custom_models.md', this)">• Custom
+                            Models</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/worldguard_flags.md', this)">• WorldGuard
+                            flags</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/vault.md', this)">• Vault</a>
+                    </div>
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/placeholders.md', this)">• PlaceholderAPI
+                            PAPI</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wiki-category">
+                <div class="wiki-category-header">
+                    Game modes
+                </div>
+                <div class="wiki-category-contents">
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/nightmare_mode.md', this)">• Nightmare
+                            mode</a>
+                    </div>
+
+                    <div>
+                        <a onclick="ArticleClick('$language$/elitemobs/region_leveling_mode.md', this)">• Region
+                            leveling mode</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary id="betterstructures_section">
+            BetterStructures
+        </summary>
+
         <div class="wiki-category">
             <div class="wiki-category-header">
                 Setup & Installation
             </div>
             <div class="wiki-category-contents">
                 <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/info.md', this)">• What is EliteMobs?</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/setup.md', this)">• Quick Setup</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/permissions_and_commands.md', this)">•
-                        Permissions
-                        and commands</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/faq.md', this)">• FAQ</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/elitemobs_config_settings.md', this)">• EliteMobs Settings</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/adventurers_guild_world.md', this)">• Adventurer's Guild World</a>
+                    <a onclick="ArticleClick('$language$/betterstructures/info.md', this)">Info</a>
+                    <a onclick="ArticleClick('$language$/betterstructures/setup.md', this)">Setup and Installation</a>
                 </div>
             </div>
         </div>
+
         <div class="wiki-category">
             <div class="wiki-category-header">
                 Content creation & content editing
             </div>
             <div class="wiki-category-contents">
                 <div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_bosses.md', this)">•
-                            Creating
-                            Bosses</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_boss_phases.md', this)">•
-                            Creating
-                            Boss Phases</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_reinforcements.md', this)">•
-                            Creating
-                            Reinforcements</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_world_bosses.md', this)">•
-                            Creating
-                            World Bosses</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_items.md', this)">• Creating
-                            Items</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_events.md', this)">•
-                            Creating
-                            Events</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_spawns.md', this)">•
-                            Creating
-                            Spawns</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_quests.md', this)">•
-                            Creating
-                            Quests</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_npcs.md', this)">• Creating
-                            NPCs</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_treasure_chests.md', this)">•
-                            Creating
-                            Treasure Chests</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_wormholes.md', this)">•
-                            Creating
-                            Wormholes</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_powers.md', this)">•
-                            Creating
-                            Powers
-                        </a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/creating_arenas.md', this)">•
-                            Creating
-                            Arenas</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/dungeon_packager.md', this)">•
-                            Creating
-                            Dungeons</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/loot_tables.md', this)">•
-                            Creating
-                            Loot Tables</a>
-                    </div>
-                    <div>
-                        <a onclick="ArticleClick('$language$/elitemobs/modifying_existing_minidungeons.md', this)">•
-                            Modifying Existing Minidungeons</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="wiki-category">
-            <div class="wiki-category-header">
-                EliteScript
-            </div>
-            <div class="wiki-category-contents">
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/elitescript_info.md', this)">•
-                        EliteScript Information</a>
+                    <a onclick="ArticleClick('$language$/betterstructures/creating_structures.md', this)">Creating Structures</a>
                 </div>
                 <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/elitescript_actions.md', this)">•
-                        EliteScript Actions</a>
+                    <a onclick="ArticleClick('$language$/betterstructures/basic_users.md', this)">Basic
+                        users</a>
                 </div>
                 <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/elitescript_conditions.md', this)">•
-                        EliteScript Conditions</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/elitescript_cooldowns.md', this)">•
-                        EliteScript Cooldowns</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/elitescript_events.md', this)">•
-                        EliteScript Events</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/elitescript_relative_vectors.md', this)">•
-                        EliteScript Relative Vectors</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/elitescript_targets.md', this)">•
-                        EliteScript Targets</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/elitescript_zones.md', this)">•
-                        EliteScript Zones</a>
-                </div>
-            </div>
-        </div>
-        <div class="wiki-category">
-            <div class="wiki-category-header">
-                Mechanics
-            </div>
-            <div class="wiki-category-contents">
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/prestige_system.md', this)">• Prestige
-                        system</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/soulbind.md', this)">• Soulbind</a>
-
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/item_upgrade_system.md', this)">• Item
-                        Upgrade System</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/discordsrv.md', this)">• DiscordSRV &
-                        Discord
-                        Announcements</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/libsdisguises.md', this)">• LibsDisguises
-                        &
-                        Disguising Custom
-                        Bosses</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/instanced_dungeon_difficulty.md', this)">•
-                        Instanced
-                        dungeon difficulty</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/damage_system.md', this)">• How damage
-                        works</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/disabling_explosions.md', this)">• Disabling explosions</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/guild_tier_loot_limiter.md', this)">• Guild
-                        tier loot limiter</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/spawning_tiers_loot.md', this)">• Spawning,
-                        Tiers, Loot</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/announcement_priority_system.md', this)">•
-                        Announcement
-                        Priority System</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/advanced_aggro_system.md', this)">• Advanced
-                        Aggro System</a>
+                    <a onclick="ArticleClick('$language$/betterstructures/advanced_users.md', this)">Advanced
+                        users</a>
                 </div>
             </div>
         </div>
 
         <div class="wiki-category">
             <div class="wiki-category-header">
-                Content guides
+                Developers & API
             </div>
             <div class="wiki-category-contents">
                 <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/feature_list.md', this)">•
-                        EliteMobs Features</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/understanding_the_basics_of_elitemobs.md', this)">•
-                        Understanding
-                        the basics of
-                        EliteMobs</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/building_for_elitemobs.md', this)">•
-                        Building for
-                        EliteMobs</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/primis_info.md', this)">• Primis Adventure
-                        info</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/oasis_info.md', this)">• Oasis Adventure
-                        info</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/dungeons.md', this)">• Dungeons</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/custom_enchantments_list.md', this)">• List
-                        of Custom Enchantments</a>
+                    <a onclick="ArticleClick('$language$/betterstructures/developers.md', this)">Developers &
+                        API</a>
                 </div>
             </div>
         </div>
+    </details>
+
+    <details>
+        <summary id="freeminecraftmodels_section">
+            FreeMinecraftModels
+        </summary>
+        <div class="wiki-category">
+            <div class="wiki-category-header">
+                Info
+            </div>
+            <div class="wiki-category-contents">
+                <div>
+                    <a onclick="ArticleClick('$language$/freeminecraftmodels/info.md', this)">Info</a>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary id="eternaltd_section">
+            EternalTD
+        </summary>
+        <div class="wiki-category">
+            <div class="wiki-category-header">
+                Info
+            </div>
+            <div class="wiki-category-contents">
+                <div>
+                    <a onclick="ArticleClick('$language$/eternaltd/info.md', this)">Info</a>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary id="resurrectionchest_section">
+            ResurrectionChest
+        </summary>
+        <div class="wiki-category">
+            <div class="wiki-category-header">
+                Info
+            </div>
+            <div class="wiki-category-contents">
+                <div>
+                    <a onclick="ArticleClick('$language$/resurrectionchest/info.md', this)">Info</a>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary id="betterfood_section">
+            BetterFood
+        </summary>
+        <div class="wiki-category">
+            <div class="wiki-category-header">
+                Info
+            </div>
+            <div class="wiki-category-contents">
+                <div>
+                    <a onclick="ArticleClick('$language$/betterfood/info.md', this)">Info</a>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary id="global_section">
+            Global
+        </summary>
 
         <div class="wiki-category">
             <div class="wiki-category-header">
-                Third party compatibility
+                Global guides
             </div>
             <div class="wiki-category-contents">
                 <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/custom_models.md', this)">• Custom
-                        Models</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/worldguard_flags.md', this)">• WorldGuard
-                        flags</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/vault.md', this)">• Vault</a>
-                </div>
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/placeholders.md', this)">• PlaceholderAPI
-                        PAPI</a>
+                    <a onclick="ArticleClick('$language$/global/configuration_file_guide.md', this)">Configuration
+                        file guide</a>
                 </div>
             </div>
         </div>
-
-        <div class="wiki-category">
-            <div class="wiki-category-header">
-                Game modes
-            </div>
-            <div class="wiki-category-contents">
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/nightmare_mode.md', this)">• Nightmare
-                        mode</a>
-                </div>
-
-                <div>
-                    <a onclick="ArticleClick('$language$/elitemobs/region_leveling_mode.md', this)">• Region
-                        leveling mode</a>
-                </div>
-            </div>
-        </div>
+    </details>
+    <p id="view-bar" title="Total articles read counter!"><b id="view-counter"></b> 👀</p>
+    <input class="search-bar" name="search" oninput="StartSearch(this)" placeholder="Search..." type="text">
+    <div class="dropdown" id="searchResults">
     </div>
-</details>
-
-<details>
-    <summary id="betterstructures_section">
-        BetterStructures
-    </summary>
-
-    <div class="wiki-category">
-        <div class="wiki-category-header">
-            Setup & Installation
-        </div>
-        <div class="wiki-category-contents">
-            <div>
-                <a onclick="ArticleClick('$language$/betterstructures/info.md', this)">Info</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="wiki-category">
-        <div class="wiki-category-header">
-            Content creation & content editing
-        </div>
-        <div class="wiki-category-contents">
-            <div>
-                <a onclick="ArticleClick('$language$/betterstructures/basic_users.md', this)">Basic
-                    users</a>
-            </div>
-            <div>
-                <a onclick="ArticleClick('$language$/betterstructures/advanced_users.md', this)">Advanced
-                    users</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="wiki-category">
-        <div class="wiki-category-header">
-            Developers & API
-        </div>
-        <div class="wiki-category-contents">
-            <div>
-                <a onclick="ArticleClick('$language$/betterstructures/developers.md', this)">Developers &
-                    API</a>
-            </div>
-        </div>
-    </div>
-</details>
-
-<details>
-    <summary id="freeminecraftmodels_section">
-        FreeMinecraftModels
-    </summary>
-    <div class="wiki-category">
-        <div class="wiki-category-header">
-            Info
-        </div>
-        <div class="wiki-category-contents">
-            <div>
-                <a onclick="ArticleClick('$language$/freeminecraftmodels/info.md', this)">Info</a>
-            </div>
-        </div>
-    </div>
-</details>
-
-<details>
-    <summary id="eternaltd_section">
-        EternalTD
-    </summary>
-    <div class="wiki-category">
-        <div class="wiki-category-header">
-            Info
-        </div>
-        <div class="wiki-category-contents">
-            <div>
-                <a onclick="ArticleClick('$language$/eternaltd/info.md', this)">Info</a>
-            </div>
-        </div>
-    </div>
-</details>
-
-<details>
-    <summary id="resurrectionchest_section">
-        ResurrectionChest
-    </summary>
-    <div class="wiki-category">
-        <div class="wiki-category-header">
-            Info
-        </div>
-        <div class="wiki-category-contents">
-            <div>
-                <a onclick="ArticleClick('$language$/resurrectionchest/info.md', this)">Info</a>
-            </div>
-        </div>
-    </div>
-</details>
-
-<details>
-    <summary id="betterfood_section">
-        BetterFood
-    </summary>
-    <div class="wiki-category">
-        <div class="wiki-category-header">
-            Info
-        </div>
-        <div class="wiki-category-contents">
-            <div>
-                <a onclick="ArticleClick('$language$/betterfood/info.md', this)">Info</a>
-            </div>
-        </div>
-    </div>
-</details>
-
-<details>
-    <summary id="global_section">
-        Global
-    </summary>
-
-    <div class="wiki-category">
-        <div class="wiki-category-header">
-            Global guides
-        </div>
-        <div class="wiki-category-contents">
-            <div>
-                <a onclick="ArticleClick('$language$/global/configuration_file_guide.md', this)">Configuration
-                    file guide</a>
-            </div>
-        </div>
-    </div>
-</details>
-<p id="view-bar" title="Total articles read counter!"><b id="view-counter"></b> 👀</p>
-<input class="search-bar" name="search" oninput="StartSearch(this)" placeholder="Search..." type="text">
-<div class="dropdown" id="searchResults">
 </div>
