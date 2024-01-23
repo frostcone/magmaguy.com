@@ -468,3 +468,9 @@ body {
 #maximize-sidebar{
     position: absolute;
 }
+
+#article-container img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
