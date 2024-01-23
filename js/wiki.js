@@ -57,7 +57,6 @@ function SetPageHashFromPseudoDirectory(url){
         section = url.split("%")[1];
         url = url.split("%")[0];
     }
-    console.log("url: " + url + " section: " + section)
     SetPageHash(undefined, url, section, true);
 }
 
@@ -666,3 +665,19 @@ function stopResize() {
 
 resizer.addEventListener('mousedown', startResize);
 resizer.addEventListener('touchstart', startResize);
+
+function ExpandSidebar(){
+    let sidebar = document.getElementById("sidebar");
+    sidebar.hidden = false;
+    document.getElementById("resizer").style.display = "block";
+    document.getElementById("maximize-sidebar").dataset.disabled = "true";
+    document.getElementById("maximize-sidebar").hidden = true;
+}
+
+function MinimizeSidebar(){
+    let sidebar = document.getElementById("sidebar");
+    sidebar.hidden = true;
+    document.getElementById("resizer").style.display = "none";
+    document.getElementById("maximize-sidebar").dataset.disabled = "false";
+    document.getElementById("maximize-sidebar").hidden = false;
+}
