@@ -1,7 +1,10 @@
 # Setup video
 
-<div align="center"><a href="https://youtu.be/boRg2X4qhw4"><img src="https://i.ytimg.com/vi/boRg2X4qhw4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBKCzqqxUu0AB95hcrBAg0VwzJ5XA" alt="video thumbnail"></a></div>
-
+<div class="outer-container">
+<div class="iframe-container">
+  <iframe class="video-iframe" src="https://www.youtube.com/embed/boRg2X4qhw4?si=2aRLV_j9UzNz_VO0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
 
 ***
 

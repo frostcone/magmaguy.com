@@ -241,19 +241,19 @@ code:not(.language-yml):not(.language-yaml) {
 }
 
 #article-container h2, #article-container h2 code {
-    font-size: 1.55rem;
+    font-size: 1.50rem;
 }
 
 #article-container h3, #article-container h3 code {
-    font-size: 1.45rem;
+    font-size: 1.40rem;
 }
 
 #article-container h4, #article-container h4 code {
-    font-size: 1.35rem;
+    font-size: 1.30rem;
 }
 
 #article-container h5, #article-container h5 code {
-    font-size: 1.25rem;
+    font-size: 1.20rem;
 }
 
 #article-container a {
@@ -437,4 +437,34 @@ body {
     width: 100%;
     height: 100%;
     display: block;
+}
+
+/*Sidebar opening and closing*/
+#sidebar {
+    transition: transform 0.5s ease-in-out; /* You can adjust timing and easing function to your liking */
+    overflow-x: hidden; /* To make sure horizontal scrollbar does not appear */
+}
+
+.burger-menu-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#maximize-sidebar, #minimize-sidebar {
+    stroke: whitesmoke;
+    align-content: end;
+    cursor: pointer;
+    position: absolute;
+}
+
+#maximize-sidebar[data-disabled="true"], #minimize-sidebar[data-disabled="true"]{
+    display: none;
+}
+
+.burger-menu-icons svg[data-disabled="false"]{
+    display: block;
+}
+
+#maximize-sidebar{
+    position: absolute;
 }
