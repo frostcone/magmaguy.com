@@ -73,6 +73,14 @@ As an example, if you want your custom boss to be disguised as a sheep, you'd do
 ```yml
 disguise: SHEEP
 ```
+## How can I disguise a custom boss as a baby entity?
+
+To disguise a custom boss (or a regional boss) as a baby entity, all you need to do is add the following line to the boss config file:
+
+```yml
+disguise: HOGLIN:baby
+```
+As you can see in this example our boss would be disguised as a Baby Hoglin.
 
 # How can I disguise an entity with a custom disguise?
 

@@ -99,7 +99,7 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 
 ---
 
-### STATIC\_RAY
+### STATIC_RAY
 
 | Key                                                          | Details | Mandatory |
 |--------------------------------------------------------------| :-: | :-: |
@@ -112,7 +112,7 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 
 ---
 
-### ROTATING\_RAY
+### ROTATING_RAY
 
 | Key                                                          | Details | Mandatory |
 |--------------------------------------------------------------| :-: | :-: |
@@ -130,7 +130,7 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 
 ---
 
-### TRANSLATING\_RAY
+### TRANSLATING_RAY
 
 | Key                                                           | Details | Mandatory |
 |---------------------------------------------------------------| :-: | :-: |

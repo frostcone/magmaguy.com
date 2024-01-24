@@ -4,15 +4,15 @@ Region leveling mode is a game mode which overrides the default EliteMobs behavi
 
 # What is the region leveling mode for?
 
-The region leveling mode **is not supposed to act as the main game mode for your network**. It's been added on request and in order to spice up the mob level mechanics of networks who may wish to run the Nightmare mode. Both modes can be enabled for the same world. Like the Nightmare mode, I recommend you run this in a world dedicated to hunting Elite Mobs and not on your main world.
+The region leveling mode **is not supposed to act as the main game mode for your server network**. It's been added on request and in order to spice up the mob level mechanics of server networks who may wish to run the Nightmare mode. Both modes can be enabled for the same world. Like the Nightmare mode, I recommend you run this in a world dedicated to hunting Elite Mobs and not on your main world.
 
 # How to activate
 
 You can activate this game mode on the ValidWorlds.yml folder using the following format:
 
-```
+```yml
 zoneBasedWorlds:
-- worldName1
-- worldName2
-- worldName3
+- yourWorldName1
+- yourWorldName2
+- yourWorldName3
 ```

@@ -4,7 +4,7 @@
 
 Relative vectors are vectors that are relative to a specific but dynamic location.
 
-To best explain what these are, let's consider the following case: you want to push a player towards the boss as a part of a power. Since both the boss and the player move around during combat, it is not possible to rely of a specific vector to accomplish this effect - you will need a vector that goes from the player towards the boss.
+To best explain what these are, let's consider the following case: you want to push a player towards the boss as a part of a power. Since both the boss and the player move around during combat, it is not possible to rely of a specific vector to accomplish this effect - you will need a vector that goes from the player towards the boss. (Imagine a short line with an arrow going from the player towards the boss.)
 
 Relative vectors can be use in so many ways that it would be impossible to list them all, but among them are: shooting entities (like projectiles) towards a specific player or mob; spawning reinforcements behind a player; shooting a falling block in a specific direction; creating rays that are shot towards a player, and so much more.
 

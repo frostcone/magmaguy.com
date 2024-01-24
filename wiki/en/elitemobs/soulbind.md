@@ -7,7 +7,7 @@ This enchantment is meant to be used in conjunction with the guild tier loot lim
 
 ***
 
-Like all enchantments, it can be disabled in the enchantments folder (soulbind.yml, set isEnabled to false), though this is strongly not recommended.
+Like all enchantments, it can be disabled in the enchantments folder (soulbind.yml, set `isEnabled` to `false`), though this is strongly not recommended.
 
 ***Issues caused by removing Soulbind:***
 - Elites will no longer drop coins

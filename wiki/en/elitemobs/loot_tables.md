@@ -134,7 +134,7 @@ When the players beat the first wave then this will make the arena drop 10 *Brea
 
 </details>
 
-### Instanced dungeons:
+### Instanced Dungeons:
 
 | Key | Details | Values            | Default |
 | --- | :-: |-------------------| --- |

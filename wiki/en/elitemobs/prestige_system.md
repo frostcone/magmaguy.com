@@ -8,7 +8,7 @@ One of the purposes of this is to allow players to clearly distinguish themselve
 
 ## What is the cost of the Prestige System?
 
-**Everything.** At least, everything related to EliteMobs. The player's current guild rank will be reset to 1, the currency will be wiped and all the items will lose their binding to the player, meaning that when the player tries to equip it it will drop and they will be unable to pick it back up.
+**Everything.** At least, everything related to EliteMobs. The player's current guild rank will be reset to 1, the currency will be wiped and all the items will lose their binding to the player, meaning that when the player tries to equip it, it will drop and they will be unable to pick it back up.
 
 This is quite funny to see happen all at once when a fully equipped player activates the prestige while having all gear equipped, making it look like they're being born again.
 
