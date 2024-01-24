@@ -474,3 +474,29 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+/*Test for minecraft signs*/
+@font-face {
+    font-family: "Your Font";
+    src: url("../font/manaspace/manaspc.ttf") format("truetype");
+}
+
+.minecraft-sign {
+    background-image: url("../img/wiki/sign.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    max-width: 13rem;
+    aspect-ratio: 30 / 14;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.minecraft-sign p{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'manaspace', sans-serif;
+    font-size: 1.3rem
+}

@@ -1,28 +1,55 @@
 # Creating content
 
+***
+
 ## Creating the build
 
 There are no restrictions with what you can build for BetterStructures, although it is recommended to keep the size of the structures under 100x100x100 blocks for general world fit and performance reasons. That being said, it can easily handle structure much larger structures.
+
+***
 
 ### Special blocks
 
 BetterStructures has two special blocks: barriers and bedrock. Any other block that WorldEdit / FAWE can paste will be pasted normally, but barriers and bedrock blocks are the exception. Instead of pasting, these blocks get replaced with the following custom behaviors:
 
+***
+
 #### Barrier
 
-Barrier blocks tell the plugin not to paste any blocks at that location. This means that whatever block was originally there in the normal world generation will remain there.
+Barrier blocks make the plugin not place any blocks at that location. This means that whatever block was originally there in the normal world generation will remain there.
 
 Builders can use this to round the edges of a paste, making it look more natural, or to mold walls to a potential cave, among other tricks.
+
+***
+
+#### Bedrock
+
+Bedrock blocks make the plugin guarantee that there is a solid block at that location. This means that if a solid block is already there in the default world generation, that block will not be modified; however, if the block is air or liquid, it will be replaced with a solid block from the [pedestal](#pedestalmaterial).
+
+Builders can use this to create floors with features such as the floor for minecart rails or guarantee that a floor exists without overriding potentially already existing solid blocks at that location in the world, making the builds look more organic.
+
+***
 
 ### Spawn signs
 
 BetterStructures can use signs with specific text to spawn mobs and even bosses from EliteMobs and MythicMobs at specific locations of the build.
+
+***
 
 ##### Spawning vanilla mobs
 
 If you take a normal sign and place it somewhere, then make sure the first line says `[spawn]` and the second line has the [entity type name following the Spigot API](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) you will spawn a persistent entity at that location of the type you specified.
 
 As an example, if you have a sign that says `[spawn]` on the first line and `ZOMBIE` on the second line, you will spawn a zombie at that location when the build gets placed. This can also be used for non-living entities such as armor stands or ender crystals.
+
+<div class="minecraft-sign"> 
+<p>[spawn]</p>
+<p>ZOMBIE</p>
+<p></p>
+<p></p>
+</div>
+
+***
 
 ##### Spawning Elite Mobs (recommended boss plugin)
 
@@ -34,17 +61,27 @@ As an example, if you do `[elitemobs]` on the first line and then `test_boss.yml
 
 As a reminder, by default the combat arenas will be protected until players kill all the bosses in the build if your server is using WorldGuard.
 
+<div class="minecraft-sign"> 
+<p>[elitemobs]</p>
+<p>test_boss_with</p>
+<p>_a_long_name</p>
+<p>.yml</p>
+</div>
+
+***
+
 ##### Spawning Mythic Mobs
 
 BetterStructures also has simple MythicMobs integration, which allows it to spawn a mob from MythicMobs into the build. On the first line of a normal sign write `[mythicmobs]`, then on the second line use the mob identified. You can use a number on the third line to set the level of the mob.
 
-#### Bedrock
+<div class="minecraft-sign"> 
+<p>[mythicmobs]</p>
+<p>my_mythic_boss</p>
+<p>1</p>
+<p></p>
+</div>
 
-Bedrock blocks tell the plugin to guarantee that there is a floor at that location. This means that if a solid block is already there in the default world generation, that block will not be modified; however, if the block is solid or liquid, it will be replaced with a solid block from the [pedestal](#pedestalmaterial).
-
-Builders can use this to create floors with features such as minecart rails on them or guarantee that a floor exists without necessarily overriding the blocks originally at that location in the world.
-
-
+***
 
 ## Schematics
 
@@ -57,18 +94,11 @@ Detailed instructions on how to make a schematic are not included here, as they 
 3) use the `//copy` command
 4) use the command `/schem save <schematicname>` where `<schematicName>` is the filename you want to use for your schematic.
 
-<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="worldedit documentation image">
+<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="worldedit documentation image from their docs">
 
-*Make sure you run the command `//pos1` on point 1 and `//pos2` on point 2!* 
+*Make sure you run the command `//pos1` on point 1 and `//pos2` on point 2!*
 
-
-
-
-
-#### Applying these blocks
-
-In order to better understand how these blocks work, it is recommended you move some of the default builds over to the schematics folder of your WorldEdit or FastAsyncWorldEdit plugin and paste them to see what they originally look like, and then use the paste command to see what the plugin pastes it as.
-
+***
 
 #### Anchor point
 
@@ -83,17 +113,23 @@ Anchor points are important to get right for the schematics to work correctly.
 
 **Please note that you should always be very close or directly on top of the builds when copying - the farther away you are, the laggier it will be when the build needs to be pasted.**
 
-## Schematic configurations
+***
+
+# Schematic configurations
 
 Every schematic file has a schematic configuration. If a schematic file has just been added to the server, the configuration will be generated after a restart or after a `/betterstructures reload`.
 
 These configurations allow you to set the following settings for the schematic paste:
 
-### isEnabled
+***
+
+## isEnabled
 
 Sets whether the schematic is enabled. If disabled, it will not be placed anywhere.
 
-### weight
+***
+
+## weight
 
 Weight sets the weight of the schematic in terms of how likely it is to get picked.
 
@@ -101,7 +137,9 @@ The default value is `1.0`. If you make a build have a `2.0` weight, it will be 
 
 _**Note:** Keep in mind that the odds of a specific build getting picked change drastically based on how many build there are in total competing for the location that will be getting a structure!_
 
-### pedestalMaterial
+***
+
+## pedestalMaterial
 
 **Important: optional field!**
 
@@ -111,123 +149,18 @@ Pedestals are the blocks that get placed under surface and underground buildings
 
 When nothing is defined in the configuration, the blocks under the location for the paste get analyzed and the best fit gets selected as the material for the best integrated look.
 
-### generatorConfigFilename
+***
+
+## generatorConfigFilename
 
 This option sets the name of the configuration file, by file name, that the schematic will be using. This requires the full filename, including the `.yml` extension at the end. As an example, `generatorConfigFilename: generator_surface_global.yml` would be the correct option if you want to use the generator defined in `generator_surface_global.yml` which you can find in the generators configuration folder.
 
-## Generators
+***
 
-Generators are the most powerful part of the configuration system for BetterStructures. By default there are 27 generators which collectively manage over 200 builds currently distributed by BetterStructures, and while you can create your own generators, you can also use existing ones as a shortcut.
+## treasureFile
 
-Generators tell the plugin where exactly things should spawn and define loot tables. The default generators are also named in ways that should be very easy to guess what they do.
+Sets the [treasure file]($language$/betterstructures/creating_treasure.md) that this structure will use, overwriting the treasure file set by the structure's [generator]($language$/betterstructures/creating_generators.md). This is generally not recommended unless it is for a very special build. It is generally better to modify or create a generator for this purpose.
 
-The only mandatory field for generators is the `structureType` setting, which tells the plugin if the building is meant to spawn in the sky, shallow underground, deep underground, surface or surface liquid.
-
-### isEnabled
-
-Sets whether the generator is enabled.
-
-### structureType
-
-Sets what kind of structure the build is. **Note that you can make a list of several types!** This has the following settings:
-
-#### surface
-
-```yml
-structureType: 
-- SURFACE
-```
-
-Surface structures spawn at the surface of the world. The only exception is the Nether environment, where it spawns at points the plugin deems to be sufficiently surface-like.
-
-#### sky
-
-```yml
-structureType: 
-- SKY
-```
-
-Sky structures spawn between 80 to 120 blocks above the air, configurable in config.yml. The only exception is the Nether environment, where it spawns at points the plugin deems to be sufficiently air-like.
-
-#### underground_shallow
-
-```yml
-structureType: 
-- UNDERGROUND_SHALLOW
-```
-
-Underground shallow structures spawn between y=0 and y=60 in the overworld, y=60 and y=120 in the nether and any valid underground height in the End.
-
-_**Note: ** You will notice there are two underground settings. This is because only having one results in having a very sparse underground, as Minecraft has a lot of underground space and players will often times miss underground structure simply because they didn't mine into them. This also guarantees that there is an even spread across different depths._
-
-#### underground_deep
-
-```yml
-structureType: 
-- UNDERGROUND_DEEP
-```
-
-Underground deep structures spawn between y=-64 and y=0 in the overworld, y=0 and y=60 in the nether and do not spawn in the End.
-
-#### liquid_surface
-
-```yml
-structureType: 
-- LIQUID_SURFACE
-```
-
-Liquid surface structures will spawn on liquids. In the case of the overworld, they will spawn on water, and almost always on oceans. In the case of the Nether, they will spawn in the lava lakes. They will not spawn in the End.
-
-### lowestYLevel
-
-Sets the lowest Y level (altitude) the structure will spawn in.
-
-### highestYLevel
-
-Sets the highest Y level (altitude) the structure will spawn in.
-
-### validWorlds
-
-Sets the list of worlds the structure will spawn in. **If no list is present, it will use all worlds allowed by the plugin**, unless otherwise limited (such as by the environment type or biomes).
-
-### validBiomes
-
-Sets the list of valid biomes the structure will spawn in. **If no list is defined, it will assume every biome is valid!**.
-
-This requires using the list of biomes as defined by the [Spigot API](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html).
-
-
-### chestEntries
-
-Sets the list of chest entries that chests can have. If a structure has chests, the contents of the chest will be randomized based on this list. If no list exists, chests will not be filled.
-
-This list has a subset of configurations, which are as follows:
-
-#### material
-
-Sets the material using the [Spigot API names](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) of the item to potentially drop.
-
-### amount
-
-Sets the amount to drop. This is expressed as a range as follows `amount=MIN-MAX`. As an example, to drop between 1 to 5 items: `amount=1-5`.
-
-### chance
-
-Sets the chance of the item to drop. This is a value between 0 and 1, where 0 is 0%, 1 is 100%  and 0.5 is 50%.
-
-### example
-
-```yml
-chestEntries:
-- material=COAL:amount=2-5:chance=0.02
-- material=BONE:amount=2-5:chance=0.02
-```
-
-Please take note of the specific use of `=` and `:` as separators. This is very format-sensitive.
-
-### serialized
-
-Serialized is a special case for when items have been added to the generator using the lootify command. These values are not readable by humans, and need to be generated from in-game. The serialized option replaces the material option in this case.
 
 # Customizing content
 
