@@ -4,6 +4,8 @@
 
 The Adventurer's Guild World is the name of a premade world made for EliteMobs by Realm of Lotheridon.
 
+![ag_pic_1.jpg](ag_pic_1.jpg)
+
 ### What is the Adventurer's Guild World for?
 
 The Adventurer's Guild World acts as a hub for EliteMobs. By hosting the hub, players no longer have to memorize any commands (other than /em) in order to interact with EliteMobs features.

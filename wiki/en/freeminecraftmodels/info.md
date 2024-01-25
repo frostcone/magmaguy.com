@@ -36,7 +36,7 @@ To import a model, just drag the .bbmodel to the imports folder and do `/fmm rel
 There are two (planned) categories of models.
 
 - `Static` models are for models that do not move (but can have animations), and serve more like decorations - think
-  something like a tower or a Christmas tree.
+  something like a light post or a Christmas tree.
 - `Dynamic` models are for models that behave like Minecraft mobs, that is to say they move around and do various
   behaviors associated to mobs. Think something like custom boss models or adding completely new entity types to
   Minecraft.
@@ -278,26 +278,26 @@ The tricks used here are fairly well-established and standardized, but will be l
 
 Please note that these tricks are all completely invisible to users and model makers; restrictions and workarounds are only listed to help you understand how FMM bypasses various Minecraft limitations.
 
-- All models are scaled up 4x and then the size and pivot point is readjusted in code in order to extend the theoretical maximum size of the model
+- All models are scaled up 4x and then the size and pivot point is readjusted in code in order to extend the theoretical maximum size of the model.
 - Because resource pack models can only have models go from -16 to +32 in size, models are shifted in the background. This is completely invisible to players.
 - Leather horse armor is used to create models with a hue that can be influenced through code (i.e. for damage indications). The horse armor must be set to white to display the correct colors!
 - Blockbench uses a specific system of IDs for the textures, but actually reads the textures sequentially from config. IDs are assigned here based on their position in the list of textures, following how Blockbench does it.
-- Each boneBlueprint is a different armor stand entity due to Minecraft limitations
+- Each boneBlueprint is a different armor stand entity due to Minecraft limitations.
 - Leather horse armor is on the head slot of the armor stand
 - Armor stands are used for the default static items. //todo: soon I'll have to implement the new alternative display
-  system from MC 1.19.4+, it's way more efficient
+  system from MC 1.19.4+, it's way more efficient.
 - To avoid collisions with other plugins which modify leather horse armor, FMM uses custom model data values starting at
-  50,000
+  50,000.
 
 # Contributing to the FreeMinecraftModels (FMM) project in general
 
-FMM is actually crowdfunded by the lovely people over at https://www.patreon.com/magmaguy ! All contributions help more than you'd imagine ;)
+FMM is actually crowdfunded by the lovely people over at [https://www.patreon.com/magmaguy](https://www.patreon.com/magmaguy)! All contributions help more than you'd imagine ;)
 
 # Currently planned features:
-- Bedrock client RSP generation
-- Server properties-independent RSP management with geyser integration
-- Custom entities (?)
-- tag_projectile as meta bones from which projectiles can be shot (can have more than one per model)
+- Bedrock client RSP generation.
+- Server properties-independent RSP management with geyser integration.
+- Custom entities (?).
+- tag_projectile as meta bones from which projectiles can be shot (can have more than one per model).
 
 # Current weird limitations that need to be fixed:
-- If the pivot point (origin) of a boneBlueprint is set to be over 67ish the model starts floating
+- If the pivot point (origin) of a boneBlueprint is set to be over 67ish the model starts floating.

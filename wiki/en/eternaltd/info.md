@@ -23,7 +23,7 @@ levelDescription:
 ```
 You can add more lines to the description, but keeping it brief is a good idea.
 
-5. Time for waves! Specify which EterntalTD waves your level should use:
+5. Time for waves! Specify which EternalTD waves your level should use:
 ```yaml
 wavesConfigFile: my_waves.yml
 ```
