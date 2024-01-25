@@ -2,7 +2,7 @@
 const powerTypes = ["UNIQUE", "OFFENSIVE", "DEFENSIVE", "MISCELLANEOUS", "MAJOR_ZOMBIE", "MAJOR_SKELETON", "MAJOR_BLAZE", "MAJOR_ENDERMAN", "MAJOR_GHAST"]
 
 function createEliteScriptsTemplateCard(cardContents) {
-    let templateContainer = generateTemplatesCard(cardContents, "Custom Power", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Scripts")
+    let templateContainer = generateTemplatesCard(cardContents, "Custom Power", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_powers.md")
     generateTemplateOption("General", function () {
         createGeneralScriptsContents(templateContainer)
     }, templateContainer)
@@ -10,7 +10,7 @@ function createEliteScriptsTemplateCard(cardContents) {
 
 function createGeneralScriptsContents(templateContainer) {
     let innerCard = createGlobalTemplate(templateContainer)
-    createListField(innerCard, "powerType", "Power Type", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Scripts#powertype", powerTypes)
+    createListField(innerCard, "powerType", "Power Type", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_powers.md&section=powertype%powertype", powerTypes)
     generateScriptsSection(innerCard)
 }
 
@@ -100,19 +100,19 @@ function generateNewScript(innerCard) {
 
     generateInactiveScriptSectionContainer("Events", function () {
         generateEvents(this)
-    }, scriptContainer, "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Events", false).classList.add("elite-script-events-button")
+    }, scriptContainer, "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_events.md", false).classList.add("elite-script-events-button")
     generateInactiveScriptSectionContainer("Zone", function () {
         generateZone(this)
-    }, scriptContainer, "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Zones", false).classList.add("elite-script-zone-button")
+    }, scriptContainer, "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_zones.md", false).classList.add("elite-script-zone-button")
     generateInactiveScriptSectionContainer("Conditions", function () {
         generateConditions(this)
-    }, scriptContainer, "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Conditions", false).classList.add("elite-script-conditions-button")
+    }, scriptContainer, "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_conditions.md", false).classList.add("elite-script-conditions-button")
     generateInactiveScriptSectionContainer("Actions", function () {
         generateAction(this)
-    }, scriptContainer, "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Actions",true).classList.add("elite-script-action-button")
+    }, scriptContainer, "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_actions.md",true).classList.add("elite-script-action-button")
     generateInactiveScriptSectionContainer("Cooldowns", function () {
         generateCooldown(this)
-    }, scriptContainer, "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Cooldowns",false).classList.add("elite-script-cooldown-button")
+    }, scriptContainer, "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_cooldowns.md",false).classList.add("elite-script-cooldown-button")
     innerCard.append(innerCard.getElementsByClassName("new-script-container")[0])
     innerCard.getElementsByClassName("new-script-container")[0].getElementsByTagName("input")[0].value = ""
 }

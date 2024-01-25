@@ -146,7 +146,7 @@ name: "$normalLevel &cCool boss!"
 ```
 <div align="center">
 
-![create_boss_name_pic_no_level.jpg](create_boss_name_pic_no_level.jpg)
+![create_boss_name_pic_no_level.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_name_pic_no_level.jpg)
 
 </div>
 
@@ -178,7 +178,7 @@ name: "$normalLevel &cCool boss!"
 
 <div align="center">
 
-![create_boss_name_pic.jpg](create_boss_name_pic.jpg)
+![create_boss_name_pic.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_name_pic.jpg)
 
 </div>
 
@@ -331,7 +331,7 @@ offHand: SHIELD
 
 <div align="center">
 
-![create_boss_armor.jpg](create_boss_armor.jpg)
+![create_boss_armor.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_armor.jpg)
 
 </div>
 
@@ -604,7 +604,7 @@ spawnMessage: I rise once more!
 
 <div align="center">
 
-![create_boss_spawn_message.jpg](create_boss_spawn_message.jpg)
+![create_boss_spawn_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_spawn_message.jpg)
 
 </div>
 
@@ -642,7 +642,7 @@ deathMessages:
 
 <div align="center">
 
-![create_boss_death_message.jpg](create_boss_death_message.jpg)
+![create_boss_death_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_death_message.jpg)
 
 </div>
 
@@ -855,7 +855,7 @@ escapeMessage: "Sayonara!"
 
 <div align="center">
 
-![create_boss_escape_message.jpg](create_boss_escape_message.jpg)
+![create_boss_escape_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_escape_message.jpg)
 
 </div>
 
@@ -895,7 +895,7 @@ locationMessage: "&4Cool boss: At $location only $distance blocks away!"
 
 <div align="center">
 
-![create_boss_location_message.jpg](create_boss_location_message.jpg)
+![create_boss_location_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_location_message.jpg)
 
 </div>
 
@@ -1060,7 +1060,7 @@ onDamageMessages:
 ```
 <div align="center">
 
-![create_boss_damage_message.jpg](create_boss_damage_message.jpg)
+![create_boss_damage_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_damage_message.jpg)
 
 </div>
 
@@ -1091,7 +1091,7 @@ onDamagedMessages:
 ```
 <div align="center">
 
-![create_boss_damaged_message.jpg](create_boss_damaged_message.jpg)
+![create_boss_damaged_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_damaged_message.jpg)
 
 </div>
 
@@ -1123,11 +1123,9 @@ mountedEntity: wild_wolf.yml
 
 <div align="center">
 
-![create_boss_mounted.jpg](create_boss_mounted.jpg)
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_mounted.jpg)
 
 </div>
-
-![create_boss_spawn_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_spawn_message.jpg)
 
 </div>
 
@@ -1296,7 +1294,7 @@ onSpawnCommands:
 
 ***
 
-### onCombatEnterCommands:
+### onCombatEnterCommands
 
 Sets the list of commands that will run when the boss enters combat.
 
@@ -1323,7 +1321,7 @@ onCombatEnterCommands:
 
 ***
 
-### onCombatLeaveCommands:
+### onCombatLeaveCommands
 
 Sets the list of commands to run when the boss leaves combat.
 
