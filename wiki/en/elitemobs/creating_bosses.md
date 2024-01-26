@@ -142,12 +142,20 @@ Sets the name of the boss.
 <div align="left">
 
 ```yml
-name: "&cCool boss!"
+name: "$normalLevel &cCool boss!"
 ```
+<div align="center">
+
+![create_boss_name_pic_no_level.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_name_pic_no_level.jpg)
+
+</div>
+
 
 </div>
 
 </details>
+
+If you wish to include the boss level in their name field, simply use one of the following placeholders.
 
 | Placeholder | Description | Example |Output (for a level 10 boss) |
 |-|:-:|:-:|-|
@@ -167,6 +175,12 @@ name: "&cCool boss!"
 ```yml
 name: "$normalLevel &cCool boss!"
 ```
+
+<div align="center">
+
+![create_boss_name_pic.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_name_pic.jpg)
+
+</div>
 
 </div>
 
@@ -314,6 +328,12 @@ boots: NETHERITE_BOOTS
 mainHand: DIAMOND_SWORD
 offHand: SHIELD
 ```
+
+<div align="center">
+
+![create_boss_armor.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_armor.jpg)
+
+</div>
 
 </div>
 
@@ -582,6 +602,12 @@ announcementPriority: 3
 spawnMessage: I rise once more!
 ```
 
+<div align="center">
+
+![create_boss_spawn_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_spawn_message.jpg)
+
+</div>
+
 </div>
 
 </details>
@@ -613,6 +639,12 @@ deathMessages:
 - '&4Slayers: $players'
 - '&e&l---------------------------------------------'
 ```
+
+<div align="center">
+
+![create_boss_death_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_death_message.jpg)
+
+</div>
 
 </div>
 
@@ -821,6 +853,12 @@ timeout: 60
 escapeMessage: "Sayonara!"
 ```
 
+<div align="center">
+
+![create_boss_escape_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_escape_message.jpg)
+
+</div>
+
 </div>
 
 </details>
@@ -854,6 +892,12 @@ Placeholders:
 announcementPriority: 3
 locationMessage: "&4Cool boss: At $location only $distance blocks away!"
 ```
+
+<div align="center">
+
+![create_boss_location_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_location_message.jpg)
+
+</div>
 
 </div>
 
@@ -1014,6 +1058,11 @@ onDamageMessages:
 - "I hit you!"
 - "Haha I hit you!"
 ```
+<div align="center">
+
+![create_boss_damage_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_damage_message.jpg)
+
+</div>
 
 </div>
 
@@ -1036,9 +1085,15 @@ Sets the message that the Boss Mob displays when damaged by a player. This is a 
 <div align="left">
 
 ```yml
-onDamageMessages:
+onDamagedMessages:
 - "You hit me!"
+- "I've been hit!"
 ```
+<div align="center">
+
+![create_boss_damaged_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_damaged_message.jpg)
+
+</div>
 
 </div>
 
@@ -1063,8 +1118,14 @@ Don't try to make the boss mount itself.
 <div align="left">
 
 ```yml
-mountedEntity: balrog.yml
+mountedEntity: wild_wolf.yml
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_mounted.jpg)
+
+</div>
 
 </div>
 
@@ -1233,7 +1294,7 @@ onSpawnCommands:
 
 ***
 
-### onCombatEnterCommands:
+### onCombatEnterCommands
 
 Sets the list of commands that will run when the boss enters combat.
 
@@ -1260,7 +1321,7 @@ onCombatEnterCommands:
 
 ***
 
-### onCombatLeaveCommands:
+### onCombatLeaveCommands
 
 Sets the list of commands to run when the boss leaves combat.
 

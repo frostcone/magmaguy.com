@@ -5,7 +5,7 @@ const potionEffectApplicationType = ["onHit", "continuous"]
 const amplifierLevels = ["0","1","2","3","4","5","6","7","8","9","10"]
 
 function createCustomItemsTemplateCard(cardContents) {
-    let templateContainer = generateTemplatesCard(cardContents, "Custom Item", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items")
+    let templateContainer = generateTemplatesCard(cardContents, "Custom Item", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md")
     generateTemplateOption("General", function () {
         createGeneralCustomItemsContents(templateContainer)
     }, templateContainer)
@@ -13,17 +13,17 @@ function createCustomItemsTemplateCard(cardContents) {
 
 function createGeneralCustomItemsContents(templateContainer) {
     let innerCard = createGlobalTemplate(templateContainer)
-    createTextField(innerCard, "name", "Name", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#name", false)
-    createListField(innerCard, "material", "Material", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#material", materialAPINames, true)
-    createIntegerField(innerCard, "level", "Level", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#level", false)
-    createTextFields(innerCard, "lore", "Lore", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#lore", false)
-    createComplexTextList(innerCard, "enchantments", "Enchantments", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#enchantments", createSingleFieldForEnchantments)
-    createComplexTextList(innerCard, "potionEffects", "Potion Effects", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#potioneffects", createSingleFieldForPotionEffects)
-    createListField(innerCard, "scalability", "Scalability", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#scalability", scalabilityAPINames, false)
-    createListField(innerCard, "itemType", "Item Type", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#itemtype", itemTypeAPINames, false)
-    createTextField(innerCard, "dropWeight", "Drop Weight", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#dropweight", "dynamic", false)
-    createIntegerField(innerCard, "customModelID", "Custom Model ID", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#custommodelid", false)
-    createTextField(innerCard, "permission", "Permission", "https://github.com/MagmaGuy/EliteMobs/wiki/Custom-Items#permission", false)
+    createTextField(innerCard, "name", "Name", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=name%name", false)
+    createListField(innerCard, "material", "Material", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=material%material", materialAPINames, true)
+    createIntegerField(innerCard, "level", "Level", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=level%level", false)
+    createTextFields(innerCard, "lore", "Lore", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=lore%lore", false)
+    createComplexTextList(innerCard, "enchantments", "Enchantments", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=enchantments%enchantments", createSingleFieldForEnchantments)
+    createComplexTextList(innerCard, "potionEffects", "Potion Effects", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=potioneffects%potioneffects", createSingleFieldForPotionEffects)
+    createListField(innerCard, "scalability", "Scalability", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=scalability%scalability", scalabilityAPINames, false)
+    createListField(innerCard, "itemType", "Item Type", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=itemtype%itemtype", itemTypeAPINames, false)
+    createTextField(innerCard, "dropWeight", "Drop Weight", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=dropweight%dropweight", "dynamic", false)
+    createIntegerField(innerCard, "customModelID", "Custom Model ID", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=custommodelid%custommodelid", false)
+    createTextField(innerCard, "permission", "Permission", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_items.md&section=permission%permission", false)
 }
 
 function createComplexTextList(container, configKey, keyText, keyLink, newButtonFunction) {

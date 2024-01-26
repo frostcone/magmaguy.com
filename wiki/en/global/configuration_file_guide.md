@@ -1,6 +1,6 @@
 # Getting started
 
-This page helps you understand how to correctly edit a .yml file. All of my plugins use .yml configuration files, which will reset themselves or stop working if you edit them incorrectly.
+This page helps you understand how to correctly edit a .yml (.yaml) file. All of my plugins use .yml configuration files, which will reset themselves or stop working if you edit them incorrectly.
 
 Below, you will find every configuration entry type and how they should be formatted if you are modifying any values!
 
@@ -206,15 +206,37 @@ uniqueLootList:
 
 <div id="config_trimming_worlds">
 
-# `Trimming Worlds` WORK IN PROGRESS
+# Trimming Worlds
 
-Upcoming section that will describe how to trim worlds for distribution.
+Sometimes, you may need to reduce the size of your Minecraft world to make it lighter and, consequently, easier to distribute. This can be achieved through the use of the [WorldBorder plugin](https://www.spigotmc.org/resources/worldborder-1-15.80466/). Despite the plugin being listed as only supporting MineCraft up to version 1.19, it functions seamlessly on the latest MineCraft version as of January 25, 2024.
 
-**Trimming the world folder**
+<details>
+<summary>Tip</summary>
+If you are doing this for the first time it might be a good idea to create a backup of your world just in case something goes wrong.
+</details>
 
-There are several files and folders located in your world folder that we can discard since EternalTD does not use all of them. This will cut down the size of your world and make it easier to dsitribute.
+Once the plugin is installed, navigate to the middle of the world or the specific area you wish to trim. Then, execute the command `/wb set x`, where `x` represents the approximate radius size you want for your area.
 
-For NORMAL Environment:
+<details>
+<summary>Tip</summary>
+If <code>/wb</code> is not working for you, try <code>/worldborder:wb</code>.
+</details>
+
+After executing this command, fly to the edges of your world to verify that the world border has been properly set and covers the intended size. You will recognize reaching the world border edge when you are pushed back, accompanied by a message in the chat.
+
+![trim_pic_1.jpg](trim_pic_1.jpg)
+
+In the image above, we aim to trim the world around the purple blocks, leaving only a few chunks around them. To achieve this, we stand in the middle of the purple area on the red squares and execute `/wb set 50`, setting the world border just beyond the purple area.
+
+Next, we use the `/wb trim [freq] [pad]` command, with the frequency set to 200 and the pad to 20. The pad determines how many chunks should be left around the world border (the purple area), and the frequency determines how many chunks should be processed per second. After running `/wb trim 200 20`, we will be prompted to confirm by executing `/wb trim confirm`. We confirm the action, and after some time, our world will be trimmed, reducing its size and making it more convenient for distribution.
+
+You can now remove the world border using `/wb clear all` or just leave it if you wish.
+
+## Trimming the world folder
+
+There are several files and folders located in your world folder that we can discard since the plugins do not use all of them. This will cut down the size of your world and make it easier to distribute.
+
+For a NORMAL world Environment:
 
 To prepare your world, keep the following files and folders:
 
@@ -224,7 +246,7 @@ To prepare your world, keep the following files and folders:
 
 You can safely delete all other files and folders located in the world folder. This will set up your world correctly for the NORMAL environment.
 
-For NETHER and THE\_END Environment:
+For NETHER and THE_END world Environments:
 
 To prepare your world, keep the following files and folders:
 
@@ -232,10 +254,4 @@ To prepare your world, keep the following files and folders:
 2. **raids.dat** from within the **data** folder (ensure it's placed inside the **data** folder when copying)
 3. **level.dat** file
 
-You can safely delete all other files and folders located in the world folder. This will set up your world correctly for the NETHER and THE\_END environments.
-
-```yml
-Coming soon
-```
-
-</div>
+You can safely delete all other files and folders located in the world folder. This will set up your world correctly for the NETHER and THE_END environments.

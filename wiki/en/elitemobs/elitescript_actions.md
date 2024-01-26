@@ -24,7 +24,7 @@ Sets the action bar message for the targets.
 | Values |                            Details                            | Mandatory | Special |
 | --- |:-------------------------------------------------------------:| :-: | :-: |
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
-| `sValue` |                            Message                            | ✅ | Can use color codes with `&` |
+| `sValue` |                            Message                            | ✅ | Can use [Color Codes](#color_codes) with `&` |
 
 **Example**
 
@@ -49,11 +49,11 @@ Will set the action bar to say Hello World to a direct target.
 
 Adds a bossbar to the target(s).
 
-| Values |                            Details                            | Mandatory | Special |
-| --- |:-------------------------------------------------------------:| :-: | :-: |
-| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
-| `sValue` |                            Message                            | ✅ | Can use color codes with `&` |
-| `duration` |               Duration of the boss bar in ticks               | ✅ | ❌ |
+| Values |                            Details                            | Mandatory |                   Special                    |
+| --- |:-------------------------------------------------------------:| :-: |:--------------------------------------------:|
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |                      ❌                       |
+| `sValue` |                            Message                            | ✅ | Can use [Color Codes](#color_codes) with `&` |
+| `duration` |               Duration of the boss bar in ticks               | ✅ |                      ❌                       |
 
 **Example**
 
@@ -181,7 +181,7 @@ Sends a message to the target(s).
 | Values |                            Details                            | Mandatory | Special |
 | --- |:-------------------------------------------------------------:| :-: | :-: |
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
-| `sValue` |                            Message                            | ✅ | Can use color codes with `&` |
+| `sValue` |                            Message                            | ✅ | Can use [Color Codes](#color_codes) with `&` |
 
 **Example**
 
@@ -206,11 +206,11 @@ Will send a message to all online players.
 
 Places a block at the target location(s) for the duration.
 
-| Values |                                                  Details                                                   | Mandatory |
-| --- |:----------------------------------------------------------------------------------------------------------:| :-: |
-| `Target` |                       [More info here]($language$/elitemobs/elitescript_targets.md)                        | ✅ |
-| `material` | Material of the block, [full list here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | ✅ |
-| `duration` |                                        Duration of effect, in ticks                                        | ❌ |
+| Values |                                                         Details                                                         | Mandatory |
+| --- |:-----------------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target` |                              [More info here]($language$/elitemobs/elitescript_targets.md)                              | ✅ |
+| `material` | [Material](#material) of the block, [full list here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | ✅ |
+| `duration` |                                              Duration of effect, in ticks                                               | ❌ |
 
 **Example**
 
@@ -259,7 +259,7 @@ eliteScript:
       sValue: "fortnite_dance"
 ```
 
-Sets the boss to play the fortnite\_dance animation. Requires the server to have Model Engine, the boss to have a custom disguise and the custom disguise to have an animation called "fortnite\_dance".
+Sets the boss to play the fortnite_dance animation. Requires the server to have Model Engine, the boss to have a custom disguise and the custom disguise to have an animation called "fortnite\_dance".
 
 ---
 
@@ -267,10 +267,12 @@ Sets the boss to play the fortnite\_dance animation. Requires the server to have
 
 Plays an in-game sound.
 
-| Values |                            Details                            | Mandatory |
-| --- |:-------------------------------------------------------------:| :-: |
-| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `sValue` |            Sets the name of the sound to be played            | ✅ |
+| Values   |                            Details                            | Mandatory |
+|----------|:-------------------------------------------------------------:|:---------:|
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) |     ✅     |
+| `sValue` |            Sets the name of the sound to be played            |     ✅     |
+| `pitch`  |           Sets the pitch of the sound to be played            |     ❌     |
+| `volume` |           Sets the volume of the sound to be played           |     ❌     |
 
 [Here's a handy list of all Minecraft sounds!](https://www.digminecraft.com/lists/sound_list_pc.php) Remember that this can also play custom sounds from resource packs.
 
@@ -368,7 +370,7 @@ Runs a command as console.
 | `Target` |  [More info here]($language$/elitemobs/elitescript_targets.md)  | ✅ |
 | `sValue` |                    Command that will be run                     | ✅ |
 
-**Note: there are placeholders available! Check RUN\_COMMAND\_AS\_PLAYER, they're the same**
+**Note: there are placeholders available! Check RUN_COMMAND_AS_PLAYER, they're the same**
 
 **Example**
 
@@ -398,7 +400,7 @@ Runs a command as a `player. Requires the target to be players.
 | `target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `sValue` |                   Command that will be run                    | ✅ |
 
-**Note: RUN\_COMMAND\_AS\_PLAYER and RUN\_COMMAND\_AS\_CONSOLE use the following placeholders:**
+**Note: RUN_COMMAND_AS_PLAYER and RUN_COMMAND_AS_CONSOLE use the following placeholders:**
 
 | Placeholder | Details | Special |
 | --- | :-: | :-: |
@@ -629,18 +631,18 @@ The following are valid weather patterns:
 
 Spawns fireworks.
 
-| Values |                                                                                                             Details                                                                                                             | Mandatory |
-| --- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
-| `Target` |                                                                                  [More info here]($language$/elitemobs/elitescript_targets.md)                                                                                  | ✅ |
-| `vValue` |                                                                                            Sets the velocity of the fireworks rocket                                                                                            | ✅ |
-| `flicker` |                                                                                           Sets if the firework particles will flicker                                                                                           | ❌ |
-| `withTrail` |                                                                                         Sets if the firework rocket will leave a trail                                                                                          | ❌ |
-| `power` |                                                                                                 Sets the power of the fireworks                                                                                                 | ❌ |
-| `fireworkEffects` |                                                                      Sets the effects of the fireworks, relating to how long it will take before exploding                                                                      | ✅ |
-| `fireworkEffectType` |                                                  Sets the shape of the firework [from this list](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html)                                                  | ❌ |
-| `fireworkEffectTypes` | Sets the shapes of the firework [from this list](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html) . This is a list of shapes - if you want a list of shapes, don't use `fireworkEffectType`! \[1\] | ❌ |
+| Values |                                                                                                            Details                                                                                                            | Mandatory |
+| --- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target` |                                                                                 [More info here]($language$/elitemobs/elitescript_targets.md)                                                                                 | ✅ |
+| `vValue` |                                                                                           Sets the velocity of the fireworks rocket                                                                                           | ✅ |
+| `flicker` |                                                                                          Sets if the firework particles will flicker                                                                                          | ❌ |
+| `withTrail` |                                                                                         Sets if the firework rocket will leave a trail                                                                                        | ❌ |
+| `power` |                                                                                                Sets the power of the fireworks                                                                                                | ❌ |
+| `fireworkEffects` |                                                                     Sets the effects of the fireworks, relating to how long it will take before exploding                                                                     | ✅ |
+| `fireworkEffectType` |                                                 Sets the shape of the firework [from this list](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html)                                                 | ❌ |
+| `fireworkEffectTypes` | Sets the shapes of the firework [from this list](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html) . This is a list of shapes - if you want a list of shapes, don't use `fireworkEffectType`! [1] | ❌ |
 
-\[1\] When using multiple shapes for the fireworks, each shape will use the colors from the list of colors at the same position. Check example below.
+[1] When using multiple shapes for the fireworks, each shape will use the colors from the list of colors at the same position. Check example below.
 
 **Example**
 
@@ -709,7 +711,7 @@ Spawns a falling block at the target. Visual only, does not place the block.
 | Values |                                                                                      Details                                                                                       | Mandatory |
 | --- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
 | `Target` |                                                           [More info here]($language$/elitemobs/elitescript_targets.md)                                                            | ✅ |
-| `material` | Sets the material of the falling block. [Check valid types here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) and make sure they are a valid block material. | ✅ |
+| `material` | Sets the [Material](#material) of the falling block. [Check valid types here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) and make sure they are a valid block material. | ✅ |
 | `landingScripts` |                                                            Sets the list of scripts that will run when the block falls                                                             | ✅ |
 
 `landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md%run_script) but can accept the special target type `LANDING_LOCATION`.
@@ -775,7 +777,7 @@ _(2) Only for the `REDSTONE`, `DUST_COLOR_TRANSITION`, `SPELL_MOB` and `SPELL_MO
 
 _(3) Only for the `DUST_COLOR_TRANSITION` `particle`_
 
-It is important to note that one SPAWN\_PARTICLE script can spawn multiple particles. Each particle can then have its own configuration fields within the SPAWN\_PARTICLE action. Here is an example:
+It is important to note that one SPAWN_PARTICLE script can spawn multiple particles. Each particle can then have its own configuration fields within the SPAWN_PARTICLE action. Here is an example:
 
 **Example**
 
@@ -879,7 +881,7 @@ eliteScript:
       sValue: your_boss_file.yml
 ```
 
-Spawns the reinforcement with the filename "my\_boss.yml" at the boss location.
+Spawns the reinforcement with the filename "my_boss.yml" at the boss location.
 
 ---
 
@@ -923,7 +925,7 @@ eliteScript:
         - fireworks
 ```
 
-Tags the boss with the string "very\_sus", which can later be checked through script conditions.
+Tags the boss with the string "very_sus", which can later be checked through script conditions.
 
 **Important:** It is only possible to tag player and elite mobs.
 
@@ -987,8 +989,8 @@ Sets the action bar message for the targets.
 | Values |                            Details                            | Mandatory | Special | Default |
 | --- |:-------------------------------------------------------------:| :-: | :-: | :-: |
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ | ❌ |
-| `title` |                    Sets the title message                     | ✅ | Can use color codes with `&` | ❌ |
-| `subtitle` |                   Sets the subtitle message                   | ✅ | Can use color codes with `&` | ❌ |
+| `title` |                    Sets the title message                     | ✅ | Can use [Color Codes](#color_codes) with `&` | ❌ |
+| `subtitle` |                   Sets the subtitle message                   | ✅ | Can use [Color Codes](#color_codes) with `&` | ❌ |
 | `duration` |           Sets the duration of the message (ticks)            | ✅ | ❌ | `0` |
 | `fadeIn` |                   Sets fade in time (ticks)                   | ❌ | ❌ | `0` |
 | `fadeOut` |                  Sets fade out time (ticks)                   | ❌ | ❌ | `0` |
@@ -1065,7 +1067,7 @@ eliteScript:
       - fireworks
 ```
 
-Removes the tag "very\_sus" from the boss, which can later be checked through script conditions.
+Removes the tag "very_sus" from the boss, which can later be checked through script conditions.
 
 ---
 

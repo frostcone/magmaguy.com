@@ -3,7 +3,7 @@ const contentTypeAPINames = ["OPEN_DUNGEON", "INSTANCED_DUNGEON", "HUB", "SCHEMA
 const dungeonSizeCategoryAPINames = ["LAIR", "SANCTUM", "MINIDUNGEON", "DUNGEON", "RAID", "ADVENTURE", "ARENA", "OTHER"]
 
 function createDungeonTemplateCard(cardContents) {
-    let templateContainer = generateTemplatesCard(cardContents, "Dungeon", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager")
+    let templateContainer = generateTemplatesCard(cardContents, "Dungeon", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md")
     generateTemplateOption("World-based Dungeon", function () {
         createWorldDungeonContents(templateContainer)
     }, templateContainer)
@@ -16,31 +16,31 @@ function createDungeonTemplateCard(cardContents) {
 }
 
 function createGlobalDungeonContents(innerCard) {
-    createBooleanField(innerCard, "isEnabled", "Is Enabled", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", true)
-    createTextField(innerCard, "name", "Name", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", true)
-    createListField(innerCard, "dungeonLocationtype", "Dungeon Location Type", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", dungeonLocationTypeAPINames, true)
-    createListField(innerCard, "contentType", "Content Type", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", contentTypeAPINames, true)
-    createTextField(innerCard, "customInfo", "Custom Info", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", true)
-    createTextField(innerCard, "downloadLink", "Download Link", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", false)
-    createListField(innerCard, "dungeonSizeCategory", "Dungeon Size Category", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", dungeonSizeCategoryAPINames, true)
-    createBooleanField(innerCard, "protect", "Protect", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", false)
-    createLocationField(innerCard, "anchorPoint", "Anchor Point", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", false)
-    createIntegerField(innerCard, "dungeonVersion", "Dungeon Version", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", true)
-    createTextField(innerCard, "playerInfo", "Player Info", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", true)
-    createTextField(innerCard, "regionEnterMessage", "Region Enter Message", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", false)
-    createTextField(innerCard, "regionLeaveMessage", "Region Leave Message", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", false)
-    createBooleanField(innerCard, "hasCustomModels", "Has Custom Models", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", false)
-    createTextField(innerCard, "dungeonConfigFolderName", "Dungeon Config Folder Name", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", false)
+    createBooleanField(innerCard, "isEnabled", "Is Enabled", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", true)
+    createTextField(innerCard, "name", "Name", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", true)
+    createListField(innerCard, "dungeonLocationtype", "Dungeon Location Type", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", dungeonLocationTypeAPINames, true)
+    createListField(innerCard, "contentType", "Content Type", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", contentTypeAPINames, true)
+    createTextField(innerCard, "customInfo", "Custom Info", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", true)
+    createTextField(innerCard, "downloadLink", "Download Link", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", false)
+    createListField(innerCard, "dungeonSizeCategory", "Dungeon Size Category", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", dungeonSizeCategoryAPINames, true)
+    createBooleanField(innerCard, "protect", "Protect", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", false)
+    createLocationField(innerCard, "anchorPoint", "Anchor Point", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", false)
+    createIntegerField(innerCard, "dungeonVersion", "Dungeon Version", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", true)
+    createTextField(innerCard, "playerInfo", "Player Info", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", true)
+    createTextField(innerCard, "regionEnterMessage", "Region Enter Message", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", false)
+    createTextField(innerCard, "regionLeaveMessage", "Region Leave Message", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", false)
+    createBooleanField(innerCard, "hasCustomModels", "Has Custom Models", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", false)
+    createTextField(innerCard, "dungeonConfigFolderName", "Dungeon Config Folder Name", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", false)
 }
 
 
 function createWorldDungeonContents(templateContainer) {
     let innerCard = createGlobalTemplate(templateContainer)
     createGlobalDungeonContents(innerCard)
-    createTextField(innerCard, "worldName", "World Name", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", true)
-    createTextField(innerCard, "wormholeWorldName", "Wormhole World Name", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", false)
-    createListField(innerCard, "environment", "World Environment", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", environmentAPINames, true)
-    createLocationField(innerCard, "teleportLocation", "Teleport Location", "https://github.com/MagmaGuy/EliteMobs/wiki/Dungeon-packager#global-values", true)
+    createTextField(innerCard, "worldName", "World Name", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", true)
+    createTextField(innerCard, "wormholeWorldName", "Wormhole World Name", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", false)
+    createListField(innerCard, "environment", "World Environment", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", environmentAPINames, true)
+    createLocationField(innerCard, "teleportLocation", "Teleport Location", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+dungeon_packager.md&section=global-values%global-values", true)
     return innerCard;
 }
 

@@ -59,9 +59,9 @@ Conditions inside of actions are set to `FILTERING` by default.
 
 Sets the condition to be whether the location of the target is air.
 
-| Key | Details | Values |
-| --- | :-: | :-: |
-| `locationIsAir` | Sets to check if the location is an air block (or the opposite). | `true` / `false` |
+| Key | Details |       Values        |
+| --- | :-: |:-------------------:|
+| `locationIsAir` | Sets to check if the location is an air block (or the opposite). | [Boolean](#boolean) |
 
 **Example**
 
@@ -85,7 +85,7 @@ Checks if the location is on the floor. This means the block at the location is 
 
 | Key | Details | Values |
 | --- | :-: | :-: |
-| `isOnFloor` | Sets to check if the location is a floor location (or the opposite). | `true` / `false` |
+| `isOnFloor` | Sets to check if the location is a floor location (or the opposite). | [Boolean](#boolean) |
 
 **Example**
 
@@ -108,7 +108,7 @@ Sets the condition to be whether the condition target entity is alive.
 
 | Key | Details | Values |
 | --- | :-: | :-: |
-| `isAlive` | Sets to check if the entity is alive (or dead). | `true` / `false` |
+| `isAlive` | Sets to check if the entity is alive (or dead). | [Boolean](#boolean) |
 
 **Example**
 
@@ -129,9 +129,9 @@ Will only run if the boss is dead.
 
 Checks if the target entity has specific tags. Scripters can assign and unassign any tag through actions and use them as conditions for later behavior. Tags are just strings (words) that you can assign to a boss.
 
-| Key | Details | Values |
-| --- | :-: | :-: |
-| `hasTags` | Sets to check if the entity has a list of tags. | List of strings |
+| Key | Details |           Values            |
+| --- | :-: |:---------------------------:|
+| `hasTags` | Sets to check if the entity has a list of tags. | [String List](#string_list) |
 
 **Example**
 
@@ -156,7 +156,7 @@ Same as `hasTags`, but checks if the boss does not have these values.
 
 | Key | Details | Values |
 | --- | :-: | :-: |
-| `doesNotHaveTags` | Sets to check if the entity does not have a list of tags. | List of strings |
+| `doesNotHaveTags` | Sets to check if the entity does not have a list of tags. | [String List](#string_list) |
 
 **Example**
 

@@ -2,7 +2,7 @@ const chestMaterialAPINames = ["CHEST", "BARREL","TRAPPED_CHEST", "ENDER_CHEST",
 const facingDirectionAPINames = ["NORTH", "SOUTH", "EAST", "WEST"]
 
 function createTreasureChestTemplateCard(cardContents) {
-    let templateContainer = generateTemplatesCard(cardContents, "Treasure Chest", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests")
+    let templateContainer = generateTemplatesCard(cardContents, "Treasure Chest", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md")
     generateTemplateOption("General", function () {
         createGeneralTreasureChestContents(templateContainer)
     }, templateContainer)
@@ -10,13 +10,13 @@ function createTreasureChestTemplateCard(cardContents) {
 
 function createGeneralTreasureChestContents(templateContainer) {
     let innerCard = createGlobalTemplate(templateContainer)
-    createListField(innerCard, "chestType", "Chest Type", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests", chestMaterialAPINames, true)
-    createListField(innerCard, "facing", "Facing direction", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests", facingDirectionAPINames, true)
-    createListField(innerCard, "dropStyle", "Drop Style", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests", ["SINGLE", "MULTIPLE"], true)
-    createTextFields(innerCard, "lootList", "Loot List", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests", false)
-    createIntegerField(innerCard, "mimicChance", "Mimic Chance", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests", false)
-    createTextFields(innerCard, "mimicCustomBossesList","Mimic Custom Bosses", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests", false)
-    createIntegerField(innerCard, "restockTimer", "Restock Time (minutes)", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests", true)
-    createTextFields(innerCard, "effects", "Particle Effects", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests", false)
-    createTextFields(innerCard, "locations", "Locations", "https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Treasure-Chests", false)
+    createListField(innerCard, "chestType", "Chest Type", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md", chestMaterialAPINames, true)
+    createListField(innerCard, "facing", "Facing direction", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md", facingDirectionAPINames, true)
+    createListField(innerCard, "dropStyle", "Drop Style", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md", ["SINGLE", "MULTIPLE"], true)
+    createTextFields(innerCard, "lootList", "Loot List", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md", false)
+    createIntegerField(innerCard, "mimicChance", "Mimic Chance", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md", false)
+    createTextFields(innerCard, "mimicCustomBossesList","Mimic Custom Bosses", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md", false)
+    createIntegerField(innerCard, "restockTimer", "Restock Time (minutes)", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md", true)
+    createTextFields(innerCard, "effects", "Particle Effects", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md", false)
+    createTextFields(innerCard, "locations", "Locations", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+creating_treasure_chests.md", false)
 }

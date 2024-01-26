@@ -10,7 +10,7 @@ Here is a specific example: a level 100 sword does 100 damage unenchanted. If a 
 
 However, if that sword has level 10 sharpness, it will still add the same amount of damage on top of the base damage.
 
-This means that, in instanced dungeons with difficulties, what matters is not so much the level of the gear but the quality of the gear. Players seeking to beat the mythic difficulty will have to work towards getting high quality items from other instanced dungeons and possibly heavily interact with the (upcoming) item upgrade system.
+This means that, in instanced dungeons with difficulties, what matters is not so much the level of the gear but the quality of the gear. Players seeking to beat the mythic difficulty will have to work towards getting high quality items from other instanced dungeons and possibly heavily interact with the item upgrade system.
 
 This also makes it nearly impossible for veteran players to stomp on old high-difficulty content and provides an incentive to do it even if their level is well beyond the level of the dungeon.
 
@@ -58,6 +58,8 @@ powers:
 **Note: this is a part of the configuration file of the custom boss!**
 
 In this case, the boss will only have fire invulnerability for difficulties with the ID `1` and `2`.
+
+*When adding difficulties, their ID's will start counting from 0 and increase as you add more difficulties.*
 
 ## Loot based on difficulty
 

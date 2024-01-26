@@ -107,7 +107,11 @@ Tracks a custom boss. Note: this is meant to be run from the `/em` menu, as it i
 
 # Admin commands
 
-\> \> \> `elitemobs.*` - Admin permission for EliteMobs for full access! < < <
+<div>
+
+**> > > `elitemobs.*` - Admin permission for EliteMobs for full access! < < <**
+
+</div>
 
 - `/em setup`
 

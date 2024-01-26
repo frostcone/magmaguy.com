@@ -48,7 +48,7 @@ This example quest will give players the task of slaying 1 test_boss.yml. (The a
 
 _Please note that every Custom Objective field is separated with a `:` !_
 
-### Permissions:
+### Permissions
 
 As mentioned in the tables above, permissions are usually [Strings](#string) or [String Lists](#string_list). But let us go into more detail how you will be using these to lock and unlock quests. 
 

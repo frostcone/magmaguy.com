@@ -64,7 +64,7 @@ eliteScript:
         offset: "0,2,0"
 ```
 
-This strikes lightning 2 blocks above the boss. Note that STRIKE\_LIGHTNING uses locations and does not affect entities, so it can have offsets. You can't set an offset to send a message, since messages are sent to players. You can, however, set an offset to a zone that can then target entities.
+This strikes lightning 2 blocks above the boss. Note that STRIKE_LIGHTNING uses locations and does not affect entities, so it can have offsets. You can't set an offset to send a message, since messages are sent to players. You can, however, set an offset to a zone that can then target entities.
 
 ---
 
@@ -103,7 +103,7 @@ Sets the location for the `LOCATION` target type.
 
 This uses the format `location: worldname,x,y,z,pitch,yaw` for the location.
 
-Note that `same_as_boss` is a valid placeholder for the world name, such as `same_as_boss,100,64,100,0,0` would be a valid location that would target the same world as where the boss is.
+**Note that `same_as_boss` is a valid placeholder for the world name, such as `same_as_boss,100,64,100,0,0` would be a valid location that would target the same world as where the boss is.**
 
 **Example**
 
@@ -133,7 +133,7 @@ Sets the locations for the `LOCATIONS` target type.
 
 This uses the format `worldname,x,y,z,pitch,yaw` for the location.
 
-Note that `same_as_boss` is a valid placeholder for the world name, such as `same_as_boss,100,64,100,0,0` would be a valid location that would target the same world as where the boss is.
+**Note that `same_as_boss` is a valid placeholder for the world name, such as `same_as_boss,100,64,100,0,0` would be a valid location that would target the same world as where the boss is.**
 
 **Example**
 
@@ -184,9 +184,9 @@ eliteScript:
 
 This spawns a cylindrical zone around the boss. Note that no actions are set in this example yet, that is covered below.
 
-Some zones, like [STATIC\_RAY]($language$/elitemobs/elitescript_zones.md%static_ray), have two or more targets. This is because rays are lines, and lines are defined by two points. This is covered more extensively in the [zones page]($language$/elitemobs/elitescript_zones.md), but they fundamentally all work the same way.
+Some zones, like [STATIC_RAY]($language$/elitemobs/elitescript_zones.md%static_ray), have two or more targets. This is because rays are lines, and lines are defined by two points. This is covered more extensively in the [zones page]($language$/elitemobs/elitescript_zones.md), but they fundamentally all work the same way.
 
-### Part 2 - Targetting the inside of the zone
+### Part 2 - Targeting the inside of the zone
 
 Now that the zone knows where it is, we need the action to know that its target is the zone that we defined. That is what `targetType: ZONE_FULL` and `targetType:ZONE_BORDER` are for.
 
@@ -208,7 +208,7 @@ eliteScript:
     Actions:
     - action: SPAWN_PARTICLE
       times: 12
-      repeatevery: 5
+      repeatEvery: 5
       particles:
       - particle: SMOKE_NORMAL
       Target:
@@ -217,7 +217,7 @@ eliteScript:
 
 Using the same zone from the first part, we now add the action. The target for this action is `ZONE_FULL`, which means that it will be spawning particles inside of the whole zone.
 
-Note that ZONE\_BORDER is not available for every zone. More on that in the [script zones]($language$/elitemobs/elitescript_zones.md) page.
+Note that ZONE_BORDER is not available for every zone. More on that in the [script zones]($language$/elitemobs/elitescript_zones.md) page.
 
 ### Zone track
 
@@ -247,7 +247,7 @@ eliteScript:
     Actions:
     - action: SPAWN_PARTICLE
       times: 12
-      repeatevery: 5
+      repeatEvery: 5
       particles:
       - particle: SMOKE_NORMAL
       Target:
@@ -281,7 +281,7 @@ eliteScript:
     Actions:
     - action: SPAWN_PARTICLE
       times: 12
-      repeatevery: 5
+      repeatEvery: 5
       particles:
       - particle: SMOKE_NORMAL
       Target:
@@ -290,7 +290,7 @@ eliteScript:
     - action: SPAWN_PARTICLE
       wait: 60
       times: 13
-      repeatevery: 3
+      repeatEvery: 3
       particles:
       - particle: FLAME
         amount: 0
@@ -377,7 +377,7 @@ eliteScript:
     Actions:
     - action: DAMAGE
       wait: 60
-      repeatevery: 10
+      repeatEvery: 10
       times: 4
       multiplier: 4
       Target:
@@ -429,7 +429,7 @@ eliteScript:
     Actions:
     - action: SPAWN_PARTICLE
       times: 12
-      repeatevery: 5
+      repeatEvery: 5
       particles:
       - particle: SMOKE_NORMAL
       Target:
@@ -468,7 +468,7 @@ Finally, it is possible to layer targets to create complex zones, optionally usi
 
 When using target inheritance, it is important to take a careful look at the _parent script_ to make sure the correct data is getting passed down.
 
-#### INHERIT\_SCRIPT\_TARGET
+#### INHERIT_SCRIPT_TARGET
 
 When using `INHERIT_SCRIPT_TARGET`, the targets from the _parent script_ will be passed down to the inheriting script. This has a couple of caveats:
 
