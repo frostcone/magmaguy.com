@@ -1235,9 +1235,15 @@ Take a look at the example below to get a better understanding of how these work
 
 ```yml
 onDeathCommands:
-- "broadcast $players has killed $name! That was level $level!"
+- "say $players has killed $name! That was level $level!"
 - "$chance=0.5$ broadcast What a kill!"
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_ondeathcommands.jpg)
+
+</div>
 
 </div>
 
@@ -1285,8 +1291,14 @@ Sets the list of commands that will run on boss spawn.
 
 ```yml
 onSpawnCommands:
-- broadcast Boss has spawned!
+- say Boss has spawned!
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_onspawncommands.jpg)
+
+</div>
 
 </div>
 
@@ -1312,8 +1324,14 @@ Sets the list of commands that will run when the boss enters combat.
 
 ```yml
 onCombatEnterCommands:
-- broadcast Boss has entered combat!
+- say Boss has entered combat!
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_oncombatentercommands.jpg)
+
+</div>
 
 </div>
 
@@ -1339,8 +1357,14 @@ Sets the list of commands to run when the boss leaves combat.
 
 ```yml
 onCombatLeaveCommands:
-- broadcast Boss has left combat!
+- say Boss has left combat!
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_oncombatleavecommands.jpg)
+
+</div>
 
 </div>
 
@@ -1359,7 +1383,27 @@ Sets the LibsDisguises disguise if that plugin is enabled. [More info here.]($la
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Example disguise</b></summary>
+
+<div align="left">
+
+```yml
+disguise: CHICKEN
+```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_disguise.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+<details> 
+
+<summary><b>Example custom disguise</b></summary>
 
 <div align="left">
 
@@ -1367,6 +1411,12 @@ Sets the LibsDisguises disguise if that plugin is enabled. [More info here.]($la
 disguise: custom:the_beast_sanctuary_beast
 customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8d-4e48-873b-fae7afed36e4","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY2NjcwNjYwODA1MCwKICAicHJvZmlsZUlkIiA6ICI3MmY5MTdjNWQyNDU0OTk0YjlmYzQ1YjVhM2YyMjIzMCIsCiAgInByb2ZpbGVOYW1lIiA6ICJUaGF0X0d1eV9Jc19NZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS82YmYyMTY4NmM1MGQ1ODhmZmExMDZhZDdjNmViZTk1ZWZiMjE2NDU5ODRjZDFjZWYwODkzNDc4NzMzNmI2YTI3IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=","signature":"jSsQvpUeWVtyqjtnydPadormkrZLVihetiX4dFQb3+BF/1x6wOgsNKRnnwj6J1mfu2im79LYEJbL+fQ9p1SJIW1uZ6hV7vPSAGUopyXGHNibNXorfV/dGjM77S0t86Jls50XWgJAnLn5RdhQcHahDAHHZ8to6K0HW5gvKKSalR5X/myaiV0E5ujJ+LUFWIiuDmtsmyxTX1zsohyYrVMo/4sD0DpBN+as95wO476gLb5fDTDV569QwExlDOt60W8qSzPw6ncYsOKJIiRE3EddspUm3/NrfDiKApUh8UbzVtwu1XlVAxWNgYN3PkqhWKuE4kvORQuoSJzOgSHkiqdXsQOED2HXfOKdfsnpZUwjepIU5A+/mu0gc3mPQPToKSss2bC1nXn//0bOZZSuQRgTS6PkKDHIQ1nClSZQZlJIsiLmaaN2k1tIHTIlDquKN6G1Ta9c3t6G5kugjqRo78ebbt7l3e0Z3BcdOkuO2WbvBjIg5Uiqyf+cYDZedJ+OEOqL/U6VVlsmbw0rd5deHrbnPn9cRzmWGjrXnxIlAszl+0Uqabj/BrkWcbBCwZJEPaV1hHpC4nJX1m5xvKZHB2Bw0AYWaQ3f3tRBbCA/xqwCS0Px1QohzV0nvtiMbjB38ziT1M5DgLtAVLcHPio7THZMxXAi4IjEIMac9ODbh5OxthA="}],"legacy":false}
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_custom_disguise.jpg)
+
+</div>
 
 </div>
 

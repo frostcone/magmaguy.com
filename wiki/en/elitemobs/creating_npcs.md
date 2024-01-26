@@ -30,8 +30,8 @@
 
 ```yml
 isEnabled: true
-name: &cRed Rubin
-role: &a<Generic NPC>
+name: "&cRed Rubin"
+role: "&a<Generic NPC>"
 profession: NITWIT
 greetings:
   - Hiya!
@@ -46,14 +46,21 @@ canTalk: true
 activationRadius: 4
 interactionType: CHAT
 timeout: 0
-questFileName: my_quest.yml #npc interactionType must be set to QUEST_GIVER
-disguise: ZOMBIE
+questFileName: 
+- my_quest.yml #npc interactionType must be set to CUSTOM_QUEST_GIVER
+disguise: SKELETON
 customDisguiseData: #used when a custom libsdisguise is being set
 customModel: MODEL_ONE
 arena: my_arena.yml #npc interactionType must be set to ARENA_MASTER
 command: /say Hello World! #npc interactionType must be set to COMMAND
 spawnLocation: my_world,584,55,127,90,10 #remember that NPCs use pitch and yaw to set where they are looking at. this is also automatically set when running the /em spawnnpc <npcfilename.yml> command, so make sure you pose where you want the NPC to be facing when running the command.
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_npc_npc.jpg)
+
+</div>
 
 </div>
 
