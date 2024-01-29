@@ -201,8 +201,8 @@ There items have the following settings:
 
 ***
 
-Sets the amount to drop. This is expressed as a range as follows `amount=MIN-MAX`. As an example, to drop between 1 to 5
-items: `amount=1-5`.
+Sets the amount to drop. This is expressed as a range as follows `amount: MIN-MAX`. As an example, to drop between 1 to 5
+items: `amount: 1-5`.
 
 #### material
 

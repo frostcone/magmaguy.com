@@ -43,15 +43,12 @@ function SetPageHash(language, article, section, update) {
     if (update) LoadPageHash()
 }
 
-function SetPageHashFromPseudoDirectory(url){
+function SetPageHashFromPseudoDirectory(url) {
     if (url === undefined) {
         SetPageHash();
         return;
     }
-    if (url.includes("$language$/"))
-        url = url.split("$language$/")[1];
-    else if (url.includes("magmaguy.com/"))
-        url = url.split("magmaguy.com/")[1];
+    if (url.includes("$language$/")) url = url.split("$language$/")[1]; else if (url.includes("magmaguy.com/")) url = url.split("magmaguy.com/")[1];
     let section = undefined;
     if (url.includes("%")) {
         section = url.split("%")[1];
@@ -75,14 +72,35 @@ function LoadPageHash() {
         })
         .then(data => {
             document.getElementById('article-container-contents').innerHTML = marked.parse(data);
-            CustomMarkdownPostProcessor(document.getElementById('article-container-contents'))
-            if (section != null) ScrollIntoPageSection(section)
-            GenerateIndexOnClick()
-            IncrementViewCounter()
+            CustomMarkdownPostProcessor(document.getElementById('article-container-contents'));
+            if (section != null) ScrollIntoPageSection(section);
+            GenerateIndexOnClick();
+            IncrementViewCounter();
+            SyncSidebarWithPage(directory);
         })
         .catch(error => {
             console.error('Error:', error)
         });
+}
+
+function SyncSidebarWithPage(directory) {
+    setTimeout(function () {
+        let sidebarDetails = document.getElementsByClassName("wiki-category");
+        for (let i = 0; i < sidebarDetails.length; i++) {
+            let contents = sidebarDetails[i].querySelectorAll("a");
+            contents.forEach(content => {
+                let contentInteraction = content.onclick;
+                let contentUrl = contentInteraction.toString()
+                    .split("function onclick(event) {\nArticleClick('$language$/")[1]
+                    .split("', this")[0];
+                if (directory.includes(contentUrl)) {
+                    sidebarDetails[i].parentElement.open = true;
+                    console.log("found the element")
+                }
+            });
+        }
+    }, 500);
+
 }
 
 function IncrementViewCounter() {
@@ -297,7 +315,7 @@ function GenerateIndexOnClick() {
     for (let elementsByTagNameElement of document.getElementsByTagName("a")) {
         if (elementsByTagNameElement.onclick === undefined || elementsByTagNameElement.onclick === null) continue
         if (!elementsByTagNameElement.onclick.toString().includes("$language$")) continue
-        let url = elementsByTagNameElement.onclick.toString().split("'")[1].split("$")[2].replace("/","")
+        let url = elementsByTagNameElement.onclick.toString().split("'")[1].split("$")[2].replace("/", "")
         let currentURL = GetPageArticle().replaceAll("+", "/");
         if (!currentURL.includes(url)) continue
         sidebarElement = elementsByTagNameElement
@@ -666,7 +684,7 @@ function stopResize() {
 resizer.addEventListener('mousedown', startResize);
 resizer.addEventListener('touchstart', startResize);
 
-function ExpandSidebar(){
+function ExpandSidebar() {
     let sidebar = document.getElementById("sidebar");
     sidebar.hidden = false;
     document.getElementById("resizer").style.display = "block";
@@ -674,7 +692,7 @@ function ExpandSidebar(){
     document.getElementById("maximize-sidebar").hidden = true;
 }
 
-function MinimizeSidebar(){
+function MinimizeSidebar() {
     let sidebar = document.getElementById("sidebar");
     sidebar.hidden = true;
     document.getElementById("resizer").style.display = "none";
