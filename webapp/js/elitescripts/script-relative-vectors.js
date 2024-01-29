@@ -14,7 +14,7 @@ function generateRelativeVector(container, vectorName) {
     targetContents.classList.add("script-target-contents")
     setAsConfigMap(targetContents, targetText.innerText)
 
-    let select = createListField(targetContents, "targetType", "Relative Vector", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Relative-Vectors", targetTypes, true)
+    let select = createListField(targetContents, "targetType", "Relative Vector", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_relative_vectors.md", targetTypes, true)
     select.onchange = function () {
         redrawRelativeVectors(this)
     }
@@ -32,7 +32,7 @@ function redrawRelativeVectors(select) {
 function commonRelativeVectorElements(container) {
     generateTarget(container, "SourceTarget")
     generateTarget(container, "DestinationTarget")
-    createBooleanField(container, "normalize", "Normalize", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Relative-Vectors#properties", false)
-    createIntegerField(container, "multiplier", "Multiplier", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Relative-Vectors#properties", false)
-    createVectorField(container, "offset", "Offset", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Relative-Vectors#properties", false)
+    createBooleanField(container, "normalize", "Normalize", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_relative_vectors.md&section=properties%properties", false)
+    createIntegerField(container, "multiplier", "Multiplier", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_relative_vectors.md&section=properties%properties", false)
+    createVectorField(container, "offset", "Offset", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_relative_vectors.md&section=properties%properties", false)
 }

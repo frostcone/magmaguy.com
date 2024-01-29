@@ -11,12 +11,25 @@ _Custom Quests are in the `~plugins/EliteMobs/customquests` folder!_
 ```yaml
 isEnabled: true
 customObjectives:
-- KILL_CUSTOM:filename=test_boss.yml:amount=1
+  Objective1:
+    amount: '1'
+    filename: test_boss.yml
+    objectiveType: KILL_CUSTOM
 customRewards:
 - filename=magmaguys_toothpick.yml:amount=1:chance=1
-name: Kill the Test Boss
-questLore: '&cEnd the test boss'' reign of terror!'
+name: "&aKill the Test Boss"
+questLore: 
+- "&cEnd the test boss'' reign of terror!"
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_quest_quest.jpg)
+
+</div>
+
+*If your quest UI does not look like this you can change it to match using `/em alt`.*
+
 This example quest will give players the task of slaying 1 test_boss.yml. (The actual name of the boss displayed in the quest tracker will be the `name:` set in test_boss.yml.) And as a reward for completing the quest they will be rewarded with 1 Magmaguy's Toothpick.
 
 ## Creating Custom Quests

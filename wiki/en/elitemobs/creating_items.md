@@ -168,8 +168,14 @@ Sets the display name of the item.
 <div align="left">
 
 ```yml
-name: "&2Test"
+name: "&2Cool item"
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_item_name.jpg)
+
+</div>
 
 </div>
 
@@ -196,6 +202,12 @@ lore:
 - "&2This is the coolest sword"
 - "&2of all time!"
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_item_lore.jpg)
+
+</div>
 
 </div>
 
@@ -226,6 +238,12 @@ enchantments:
 - "DAMAGE_ALL,7"
 - "LOUD_STRIKES,3"
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_item_enchantments.jpg)
+
+</div>
 
 </div>
 
@@ -265,6 +283,12 @@ potionEffects:
 - "HEAL,1,self,onHit"
 - "NIGHT_VISION,0,self,continuous"
 ```
+
+<div align="center">
+
+![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_item_potion_effects.jpg)
+
+</div>
 
 </div>
 

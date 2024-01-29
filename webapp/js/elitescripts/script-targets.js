@@ -16,7 +16,7 @@ function generateTarget(container, targetName) {
     targetContents.classList.add("script-target-contents")
     setAsConfigMap(targetContents, targetText.innerText)
 
-    let select = createListField(targetContents, "targetType", "Target type", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#target-types", targetTypes, true)
+    let select = createListField(targetContents, "targetType", "Target type", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_targets.md", targetTypes, true)
     select.onchange = function () {
         redrawTarget(this)
     }
@@ -44,19 +44,19 @@ function redrawTarget(select) {
 }
 
 function commonTargetElements(container) {
-    createVectorField(container, "offset", "Offset", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#shared-attributes", false)
-    createBooleanField(container, "track", "Track", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#zone-track", false)
-    createIntegerField(container, "coverage", "Coverage", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#coverage", false)
+    createVectorField(container, "offset", "Offset", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_targets.md&section=shared-attributes%shared-attributes", false)
+    createBooleanField(container, "track", "Track", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_targets.md&section=zone-track%zone-track", false)
+    createIntegerField(container, "coverage", "Coverage", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_targets.md&section=coverage%coverage", false)
 }
 
 function generateNearbyPlayers(container) {
-    createIntegerField(container, "range", "Range", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#range", true)
+    createIntegerField(container, "range", "Range", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_targets.md&section=range%range", true)
 }
 
 function generateLocation(container) {
-    createLocationField(container, "location", "Location", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#location", true)
+    createLocationField(container, "location", "Location", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_targets.md&section=location%location", true)
 }
 
 function generateLocations(container) {
-    createTextFields(container, "locations", "Locations", "https://github.com/MagmaGuy/EliteMobs/wiki/Elite-Script-Targets#locations", true)
+    createTextFields(container, "locations", "Locations", "https://magmaguy.com/wiki.html#lang=en&article=elitemobs+elitescript_targets.md&section=locations%locations", true)
 }
