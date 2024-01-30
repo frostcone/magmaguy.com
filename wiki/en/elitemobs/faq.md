@@ -1,4 +1,260 @@
-If you have a question that isn't listed here, ***take a look at the sidebar*** to see if it has a page dedicated to it in the wiki!
+If you have a question that isn't listed here, ***take a look at the sidebar*** to see if it has a page dedicated to it
+in the wiki!
+
+# Setup and Installation FAQ
+
+## Dungeon appeared in wrong place when installing
+
+<details>
+<summary>
+Info
+</summary>
+
+If you have a dungeon that has appeared in front you in the world you were in after you clicked install in
+the `/em setup` menu, then you have installed a schematic dungeon.
+
+Schematic dungeons can be installed anywhere. They were made to be installed in a normal survival world, but you can
+also create your own world to put them in.
+
+To remove an incorrectly placed schematic dungeon, go to the `/em setup` menu again and uninstall it. If you reload
+EliteMobs or restart the server in the meantime, you won't be able to remove the structure when you do this.
+
+In this case, you should either manually remove it or use the regen command from WorldEdit. The regen command is
+dangerous to use, so go read the WorldEdit documentation on how to use it correctly so you don't accidentally destroy
+something important.
+
+If you have installed the schematic dungeon in the EliteMobs Adventurer's Guild or have installed it in a dungeon, it
+might be faster to reimport both the schematic dungeon you pasted and the dungeon you installed the schematic dungeon in
+and install both of them again.
+
+Some schematic dungeons can leave blocks behind even if they are uninstalled without restarting or reloading the server.
+You will have to remove those blocks manually. If you need to remove treasure chests, you can either reimport the
+schematic dungeon or use `/em remove` to manually remove elitemobs-specific content such as those treasure chests.
+
+</details>
+
+## How do I set up custom models?
+
+<details>
+<summary>
+Info
+</summary>
+
+There are two different plugins that handle "Custom Models".
+
+- LibsDisguises (including the free edition) lets you disguise mobs as other mobs or as custom player skins. If you see a Custom Boss with a player disguise on it, it is using LibsDisguises for the disguise. You will have to download LibsDisguises to get this specific feature to work.
+- FreeMinecraftModels (and ModelEngine R3, although ModelEngine is no longer recommended) lets you disguise mobs as any Custom Model, with very few limitations. FreeMinecraftModels lets you do this for free and is recommended. You will have to either use FreeMinecraftModels or ModelEngine R3 (not R4) for Custom Models to work. FreeMinecraftModels can be run alongside ModelEngine, so you can also just run both.
+If you have installed FreeMinecraftModels/ModelEngine and the Custom Models are still not working, you may have installed the content before you installed the model plugin. To make sure this isn't an issue, reimport the EliteMobs content with the Custom Disguises and install it again.
+
+</details>
+
+## Console / EliteMobs says I'm using the wrong WorldGuard / WorldEdit version
+
+<details>
+<summary>
+Info
+</summary>
+
+If WorldGuard or WorldEdit are reported by EliteMobs as not being installed, that is because you are using the wrong WorldGuard / WorldEdit version for your server platform. WorldGuard / WorldEdit are very sensitive about which version you are using, and have different version for server software.
+- You can download the WorldEdit version for Spigot / Paper from here: https://dev.bukkit.org/projects/worldedit - Make sure that it says it is compatible with your Minecraft version!
+- You can download the WorldGuard version for Spigot / Paper from here: https://dev.bukkit.org/projects/worldguard - Make sure that it says it that it is compatible with your Minecraft version!
+
+</details>
+
+## Wormholes / arenas / NPCs don't seem to be working correctly immediately after installation
+
+<details>
+<summary>
+Info
+</summary>
+
+If wormholes / arenas / NPCs don't seem to be working correctly immediately after installing content, you should run `/em reload`. It is always good to run it after installing EliteMobs content.
+
+</details>
+
+## Dungeon Bosses are not reappearing after killing them
+
+<details>
+<summary>
+Info
+</summary>
+
+Most of the time, this is just because some bosses have long respawn times. The Shadow of the Binder of Worlds has the longer respawn timer of 1 real life week. Lair bosses usually have a 4 hour respawn timer. Everything else tends to be on a 5-30 minute respawn timer. You can edit a Custom Boss' respawn timer in their configuration file in the `~/plugins/EliteMobs/custombosses` folder.
+
+</details>
+
+## Dungeon Bosses never appeared after installation
+
+<details>
+<summary>
+Info
+</summary>
+
+This is almost certainly due to a third party plugin's interference. Check the following:
+- Is your world on Peaceful difficulty? Mobs don't spawn on Peaceful difficulty
+- Is your region protected against spawning? EliteMobs dungeons handle their own region protections via WorldGuard, you don't need to protect their worlds or schematics, and doing so may prevent spawning if the wrong flags are used.
+- Is there another plugin preventing EliteMobs bosses from spawning or removing them? These confilicts will often show up in console, so check your console logs.
+
+</details>
+
+## The plugin isn't autocompleting commands for content I just installed
+
+<details>
+<summary>
+Info
+</summary>
+
+Autosuggestions in commands are handled by CloudCommandFramework and only updates command suggestions after a server restart. Unfortunately, there is nothing I can do about that.
+
+</details>
+
+## How do I use the EliteMobs translations?
+
+<details>
+<summary>
+Info
+</summary>
+
+You can change EliteMob's language by running the `/em language <languagename>.yml`. to use the default plugin translation created and managed by the EliteMobs community
+
+To add a language that is not in the plugin, or to customize the existing language, it is recommended you use `custom_language.yml`.
+
+Language files only generate their contents when you switch the language!
+
+If you break the formatting of the yml file, which is very easy to do by mistake, it will reset the file! ***Make sure you keep a local backup of your translation if you are manually translating the content!***
+
+It is easier to translate the language file in the community translation website, as that handles formatting for you! It also automatically suggests translations. You can find that here: https://crowdin.com/project/elitemobs
+
+As a reminder, if you're translating, if you use special characters such as `&` to start a configuration value, you must put that value between quotes like \"&cCool value\"! Otherwise, the file will be broken, and it will reset your progress. You can use a linter to check yml file validity - just paste your yml contents here: <https://www.yamllint.com/>
+
+</details>
+
+# EliteMobs and BetterStructures compatibility FAQ
+
+## Can I get structures in BetterStructure with bosses from EliteMobs in them?
+
+<details>
+<summary>
+Info
+</summary>
+
+Yes, the BetterStructures shrine packages are exactly this kind of content.
+
+</details>
+
+## Why are the shrines protected with WorldGuard and how do I prevent that
+
+<details>
+<summary>
+Info
+</summary>
+
+The EliteMobs shrine structures are protected with WorldGuard by default to make sure that players don't build contraptions to abuse the Minecraft combat system inside the fighting area.
+
+The protections automatically get deleted once the boss is defeated.
+
+Every shrine has entry points that players must dig around to find if they are underground.
+
+If you do not wish to use WorldGuard protections, you can disable it in the BetterStructures config.yml configuration file.
+
+</details>
+
+## Why are the shrines spawning without elites in them?
+
+<details>
+<summary>
+Info
+</summary>
+
+This can happen if you install the BetterStructures shrines before you install EliteMobs. To fix this, reimport and reinstall the shrines into you server after EliteMobs is installed.
+
+</details>
+
+## Can I use the shrines without using EliteMobs
+
+<details>
+<summary>
+Info
+</summary>
+
+The shrines were made specifically for combating the bosses that are in them, but if you just want the combat arenas for the aesthetics, you can just run the shrine packages without having EliteMobs installed.
+
+</details>
+
+# EliteMobs and FreeMinecraftModels compatibility FAQ
+
+## Is FreeMinecraftModels compatible with EliteMobs?
+
+<details>
+<summary>
+Info
+</summary>
+
+Yes. FreeMinecraftModels was made specifically around EliteMobs and EternalTD.
+
+</details>
+
+## How do I install EliteMobs custom models?
+
+<details>
+<summary>
+Info
+</summary>
+
+You can download the custom models for EliteMobs from https://www.patreon.com/magmaguy and https://magmaguy.itch.io/ . Once you have them installed, you will have to merge the resource pack generated by FreeMinecraftModels in its output folder with the official resource pack from EliteMobs if you want to use the official resource pack and distribute that to players by hosting it online.
+
+</details>
+
+## How do I install EliteMobs custom models?
+
+<details>
+<summary>
+Info
+</summary>
+
+You can download the custom models for EliteMobs from https://www.patreon.com/magmaguy and https://magmaguy.itch.io/ . Once you have them installed, you will have to merge the resource pack generated by FreeMinecraftModels in its output folder with the official resource pack from EliteMobs if you want to use the official resource pack and distribute that to players by hosting it online.
+
+</details>
+
+
+# EliteMobs and ResurrectionChest compatibility FAQ
+
+## Does EliteMobs work with ResurrectionChest?
+
+<details>
+<summary>
+Info
+</summary>
+
+Yes. ResurrectionChest was made specifically for EliteMobs content and is completely compatible.
+
+</details>
+
+# Compatibility with other plugins FAQ
+
+## Can I use EliteMobs with a plugin similar to MCMMO or AureliumSkills
+
+<details>
+<summary>
+Info
+</summary>
+
+Yes. That being said, you might want to disable the bonus health from the EliteMobs prestige system.
+
+</details>
+
+## Can I use EliteMobs with another custom items plugin
+
+<details>
+<summary>
+Info
+</summary>
+
+Yes. If you want bosses to drop specific items from that plugin, you set on death commands to run and give players items that way. However, there is no real way to balance EliteMobs with whatever item system you are using. Elites go from having 7 health points to hundreds of thousands of health points, and as such other item plugins will either be insanely overpowered of incredibly underpowered. EliteMobs already has an item system built into it and does not require any external items plugin.
+
+</details>
+
+# Other FAQ
 
 # Run a command on Elite Mob death or give loot/rewards from other plugins on Elite Mob death?
 
@@ -26,10 +282,10 @@ If you have a question that isn't listed here, ***take a look at the sidebar*** 
 
 # Can I make 100% of mobs that spawn be Elite Mobs?
 
-It's a really bad idea. You can access the `MobCombatSettings.yml` configuration file and change `eliteMobsSpawnPercentage: 1` to accomplish this.
+It's a really bad idea. You can access the `MobCombatSettings.yml` configuration file and
+change `eliteMobsSpawnPercentage: 1` to accomplish this.
 
 ***
-
 
 # Can I create custom powers?
 
@@ -45,24 +301,29 @@ This is on our to do list and should be coming soon, but it is currently not pos
 
 # Can I create custom potion effects?
 
-The only way to do this is to learn Java and writing them yourselves. At that point, you might as well modify the EliteMobs source code.
+The only way to do this is to learn Java and writing them yourselves. At that point, you might as well modify the
+EliteMobs source code.
 
 ***
 
 # How can I turn off wormhole particles?
 
-To turn of the wormhole particles navigate to *~plugins\EliteMobs\Wormholes.yml* and then locate `noParticlesMode` and change the value to `false`.
+To turn of the wormhole particles navigate to *~plugins\EliteMobs\Wormholes.yml* and then locate `noParticlesMode` and
+change the value to `false`.
 
 ***
 
 # How can I unbind items?
 
-The only way to remove soulbound from items is to use Unbind Scrolls. Read more about that [here]($language$/elitemobs/soulbind.md).
+The only way to remove soulbound from items is to use Unbind Scrolls. Read more about
+that [here]($language$/elitemobs/soulbind.md).
 
 ***
 
 # How can I disable Super Mobs?
 
-Super Mobs are farm animals which stack when 50 are in close proximity. If you would like to disable this feature you can go to *~plugins\EliteMobs\mobproperties* then go into any file that is prefixed with *super_* (example: *super_pig.yml*) and toggle `isEnabled` to `false`.
+Super Mobs are farm animals which stack when 50 are in close proximity. If you would like to disable this feature you
+can go to *~plugins\EliteMobs\mobproperties* then go into any file that is prefixed with *super_* (example:
+*super_pig.yml*) and toggle `isEnabled` to `false`.
 
 ***
