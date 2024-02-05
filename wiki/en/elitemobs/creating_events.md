@@ -12,7 +12,188 @@ This system is called **Custom** Events because the events can not only be custo
 
 <div align="center">
 
-The follow settings can/should be used for both action and timed events.
+The following settings can/should be used for both action and timed events.
+
+***
+
+### isEnabled
+
+Sets if the event is enabled.
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `isEnabled` | [Boolean](#boolean) | `true`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+```
+
+<div align="center"> remove me later
+
+![create_arena_name.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_name.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### eventType
+
+Sets the type of event.
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `eventType` | `BREAK_BLOCK` / `FISH` / `TILL_SOIL` / `TIMED` | none  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+eventType: BREAK_BLOCK
+```
+
+</div>
+
+</details>
+
+***
+
+### bossFilenames
+
+Sets the list of bosses which will be spawned. **Mandatory!**
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `bossFilenames` | [String List](#string_list) | none  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+bossFilenames:
+- balrog.yml
+- my_event_boss.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### announcementPriority
+
+Sets the [announcement priority]($language$/elitemobs/creating_bosses.md&section=announcementpriority%announcementpriority).
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `announcementPriority` | [Integer](#integer) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+announcementPriority: 1
+```
+
+</div>
+
+</details>
+
+***
+
+### startMessage
+
+Sets the message sent at the start of the event.
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `startMessage` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+startMessage: "An event has started!"
+```
+
+</div>
+
+</details>
+
+***
+
+### endMessage
+
+Sets the message sent at the end of the event.
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `endMessage` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+endMessage: "An event has ended!"
+```
+
+</div>
+
+</details>
+
+***
+
+### eventStartCommands
+
+Sets the commands that run at the start of the event.
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `eventStartCommands` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+eventStartCommands:
+  - say This event is starting
+```
+
+</div>
+
+</details>
+
+</div>
+
+***
 
 | Key |                          Description                          |                     Values                     | Default |
 |-|:-------------------------------------------------------------:|:----------------------------------------------:|-|

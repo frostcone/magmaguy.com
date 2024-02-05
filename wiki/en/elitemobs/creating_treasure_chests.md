@@ -52,7 +52,6 @@ locations:
 <div align="center">
 
 ![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_chest_chest.jpg)
-<!-- NOTE FROST: Redesign all pages to use the same guide format as create_bosses does where there is a table with a setting explaining what it does and then an example right underneath it. Much better way to show examples and the ability to include pictures for every setting,-->
 
 </div>
 

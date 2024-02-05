@@ -2,35 +2,448 @@
 
 # Creating arenas
 
-| Key |                                    Description                                    |                                Values                                 | Default |
-|-|:---------------------------------------------------------------------------------:|:---------------------------------------------------------------------:|:-:|
-| `isEnabled` |                           Sets if the arena is enabled                            |                          [Boolean](#boolean)                          | `true` |
-| `arenaName` |                            Sets then name of the arena                            |                           [String](#string)                           | none |
-| `corner1` |                        Sets the first corner of the arena                         |                   [Location](#serialized_location)                    | none |
-| `corner2` | Sets the second corner of the arena, must be diametrically opposed from `corner1` |                   [Location](#serialized_location)                    | none |
-| `startLocation` |                       Sets the start location of the arena                        |                   [Location](#serialized_location)                    | none |
-| `exitLocation` |                        Sets the exit location of the arena                        |                   [Location](#serialized_location)                    | none |
-| `waveCount` |                      Sets the amounts of waves the arena has                      |                          [Integer](#integer)                          | none |
-| `delayBetweenWaves` |                     Sets the delay, in seconds, between waves                     |                          [Integer](#integer)                          | `0` |
-| `spawnPoints` |                             Sets the mob spawn points                             |                    [String List](#string_list) [1]                    | none |
-| `bossList` |                    Sets the list of bosses that spawn on waves                    |                    [String List](#string_list) [2]                    | none |
-| `rawArenaReward` |                    Sets the rewards given at the end of waves                     | [Universal EliteMobs loot table]($language$/elitemobs/loot_tables.md) | none |
-| `minimumPlayerCount` |       Sets the minimum amount of players an arena must have before starting       |                          [Integer](#integer)                          | `1` |
-| `maximumPlayerCount` |               Sets the maximum amount of players an arena can have                |                          [Integer](#integer)                          | `100` |
-| `arenaMessages` |                     Sets the messages that run between waves                      |                              Special [3]                              | none |
-| `cylindricalArena` |          Sets if the arena uses a cylindrical shape (default is cuboid)           |                          [Boolean](#boolean)                          | `false`
-| `permission` |                   Sets the permission required to use the arena                   |                          [String](#integer)                           | none |
+<div align="center">
 
+### isEnabled
 
-[1] Spawn points: Uses the following format: `name=pointName:location=world_name,x,y,z`. Example: `name=north:location=em_adventurers_guild,219.5,71,273.5`
+Sets if the arena is enabled.
 
-[2] Boss list: Uses the following format: `wave=x:spawnPoint=Y:boss=bossfilename.yml`. Example: `wave=1:spawnPoint=north:boss=wood_league_wave_1_melee.yml`
-
-[3] Arena messages: Uses the following format: `wave=X:message=your message here`. Example: `wave=1:message=&2This is the first wave!`
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+|`isEnabled`| [Boolean](#boolean) | `true`    |
 
 <details> 
 
-<summary align="center"><b>Example</b></summary>
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+```
+
+</div>
+
+</details>
+
+***
+
+### arenaName
+
+
+Sets the name of the arena.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+|`arenaName`| [String](#string) | none    |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+arenaName: Bedrock Arena
+```
+
+<div align="center">
+
+![create_arena_name.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_name.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### corner1
+
+Sets the first corner of the arena.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+|`corner1`| [Location](#serialized_location) | none    |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+corner1: my_arena_world,10,50,-10,0,0
+```
+
+<div align="center">
+
+In this image `corner1` is represented by *green wool* and `corner2` is represented by *red wool*. This configuration designates the area between them as the arena, represented by *yellow wool*.
+
+![create_arena_corner.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_corner.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### corner2
+
+Sets the second corner of the arena, must be diametrically opposed from `corner1`.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `corner2` | [Location](#serialized_location) | none    |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+corner2: my_arena_world,-10,50,10,0,0
+```
+
+<div align="center">
+
+In this image `corner1` is represented by *green wool* and `corner2` is represented by *red wool*. This configuration designates the area between them as the arena, represented by *yellow wool*.
+
+![create_arena_corner.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_corner.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### startLocation
+
+Sets the start location of the arena.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `startLocation` | [Location](#serialized_location) | none    |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+startLocation: my_arena_world,1,50,1,0,0
+```
+
+</div>
+
+</details>
+
+***
+
+### exitLocation
+
+Sets the exit location of the arena.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `exitLocation` | [Location](#serialized_location) | none    |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+exitLocation: my_world,1,50,1,0,0
+```
+
+</div>
+
+</details>
+
+***
+
+### waveCount
+
+Sets the amounts of waves the arena has.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `waveCount` | [Integer](#integer) | none    |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+waveCount: 10
+```
+
+</div>
+
+</details>
+
+***
+
+### delayBetweenWaves
+
+Sets the delay, in seconds, between waves.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `delayBetweenWaves` | [Integer](#integer) | `0`    |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+delayBetweenWaves: 5
+```
+
+</div>
+
+</details>
+
+***
+
+### spawnPoints
+
+Sets the spawn locations for the arena bosses.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `spawnPoints` | [String List](#string_list) [1] |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+spawnPoints:
+- name=north:location=my_arena_world,219.5,71,273.5
+- name=south:location=my_arena_world,219.5,71,316.5
+- name=west:location=my_arena_world,197.5,71,295.5
+- name=east:location=my_arena_world,240.5,71,295.5
+- name=center:location=my_arena_world,219.5,71,295.5
+```
+
+</div>
+
+</details>
+
+***
+
+### bossList
+
+Sets the list of bosses that appear during the arena waves.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `bossList` | [String List](#string_list) [2] |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+bossList:
+- wave=1:spawnPoint=north:boss=my_boss_wave_1.yml
+- wave=1:spawnPoint=south:boss=my_boss_wave_1.yml
+- wave=2:spawnPoint=center:boss=my_boss_wave_2.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### rawArenaReward
+
+Sets the rewards given at the end of waves.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `rawArenaReward` | [Universal EliteMobs loot table]($language$/elitemobs/loot_tables.md) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+rawArenaReward:
+- filename=enchanted_book_damage_all.yml:wave=5:chance=0.25
+- filename=elite_scrap_tiny.yml:wave=1:chance=0.5:amount=5
+- currencyAmount=3:wave=3
+- level=5:filename=summon_merchant_scroll.yml:wave=5
+- filename=magmaguys_toothpick.yml:itemlevel=10:wave=10:chance=0.95
+```
+
+</div>
+
+</details>
+
+***
+
+### minimumPlayerCount
+
+Sets the minimum amount of players an arena must have before starting.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `minimumPlayerCount` | [Integer](#integer) |   `1`   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+minimumPlayerCount: 1
+```
+
+</div>
+
+</details>
+
+***
+
+### maximumPlayerCount
+
+Sets the maximum amount of players an arena can have.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `maximumPlayerCount` | [Integer](#integer) |  `100`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+maximumPlayerCount: 100
+```
+
+</div>
+
+</details>
+
+***
+
+### arenaMessages
+
+Sets the messages that run between waves.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `arenaMessages` | Special [3] |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+arenaMessages:
+- wave=1:message="&a[Arena Announcer] &fTime for wave one!"
+- wave=2:message="&a[Arena Announcer] &fWow, wave two already."
+```
+
+<div align="center">
+
+![create_arena_messages.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_messages.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### cylindricalArena
+
+Sets if the arena uses a cylindrical shape (default is cuboid).
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `cylindricalArena` | [Boolean](#boolean) |  `false`   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+cylindricalArena: false
+```
+
+</div>
+
+</details>
+
+***
+
+### permission
+
+Sets the permission required to use the arena.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `permission` | [String](#integer) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+permission: mypermission.arena
+```
+
+</div>
+
+</details>
+
+***
+
+</div>
+
+
+[1] Spawn points: Uses the following format: `name=pointName:location=world_name,x,y,z`.
+
+[2] Boss list: Uses the following format: `wave=x:spawnPoint=Y:boss=bossfilename.yml`.
+
+[3] Arena messages: Uses the following format: `wave=X:message=your message here`.
+
+<details> 
+
+<summary align="center"><b>Arena Config Example</b></summary>
 
 <div align="left">
 
@@ -117,27 +530,392 @@ First the arena is enabled with `isEnabled`, and we can see that it is called Ex
 
 ## Creating the Arena NPC
 
-     
+<div align="center">
 
-| Key                | Description                                        | Values                                                                                            |
-|--------------------|----------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| `isEnabled`        | Sets if the NPC is enabled                         | [Boolean](#boolean)                                                                               |
-| `name`             | Sets the display name of the NPC                   | [String](#string)                                                                                 |
-| `role`             | Sets role display under the NPC name               | [String](#string)                                                                                 |
-| `profession`       | Sets the minecraft profession of the NPC           | [Profession](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) |
-| `spawnLocation`    | Sets the spawn location of the NPC                 | [Location](#serialized_location)                                                                  |
-| `greetings`        | Sets greeting dialog for the NPC                   | [String](#string)                                                                                 |
-| `dialog`           | Sets dialog when the players interact with the NPC | [String](#string)                                                                                 |
-| `farewell`         | Sets the goodbye dialog for the NPC                | [String](#string)                                                                                 |
-| `canTalk`          | Sets if the NPC should use dialog                  | [Boolean](#boolean)                                                                               |
-| `activationRadius` | Sets the radius when the NPC should start talking  | [Double](#double)                                                                                 |
-| `interactionType`  | Sets the type of interaction the NPC will do       | Special [4]                                                                                       |
-| `disguise`         | Sets the custom NPC disguise                       | [Disguise]($language$/elitemobs/libsdisguises.md)                                                 |
-| `arena`            | Sets which arena the NPC should be assigned to     | [Filename](#filename)                                                                             |
+### isEnabled
+
+Sets if the NPC is enabled.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `isEnabled` | [Boolean](#boolean) | `true`  |
 
 <details> 
 
-<summary align="center"><b>Example</b></summary>
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+```
+
+</div>
+
+</details>
+
+***
+
+### name
+
+Sets the display name of the NPC.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `name` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+name: "&aGladius"
+```
+
+<div align="center">
+
+![create_arena_npc_name.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_name.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### role
+
+Sets role display under the NPC name.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `role` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+role: "&c<Arena Master>"
+```
+<div align="center">
+
+![create_arena_npc_role.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_role.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### profession
+
+Sets the MineCraft profession of the NPC.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `profession` | [Profession](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+profession: ARMORER
+```
+
+<div align="center">
+
+
+*Will be overridden if a `diguise` is used.*
+
+![create_arena_npc_profession.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_profession.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### spawnLocation
+
+Sets the spawn location of the NPC.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `spawnLocation` | [Location](#serialized_location) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+spawnLocation: my_world,1.5,50,1.5,-108,0
+```
+
+</div>
+
+</details>
+
+***
+
+### greetings
+
+Sets greeting dialog for the NPC.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `greetings` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+greetings:
+- Welcome to the Arena!
+- The Arena welcomes you!
+```
+
+<div align="center">
+
+![create_arena_npc_greetings.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_greetings.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### dialog
+
+Sets dialog when the players interact with the NPC.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `dialog` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+dialog:
+- Ready for a challenge?
+- Face the Arena?
+```
+
+<div align="center">
+
+![create_arena_npc_dialog.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_dialog.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### farewell
+
+Sets the goodbye dialog for the NPC.
+
+| Key       |           Values            | Default |
+|-----------|:---------------------------:|:-------:|
+| `farewell` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+farewell:
+- Bye.
+- Return with your shield, or on it!
+```
+
+<div align="center">
+
+![create_arena_npc_farewell.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_farewell.jpg)
+
+<div align="center">
+
+*If a string is too long you can use \n to separate the string into multiples lines.*
+
+<div align="left">
+
+```yml
+farewell:
+- Bye.
+- Return with your\nshield, or on it!
+```
+</div>
+
+![create_arena_npc_lines.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_lines.jpg)
+
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### canTalk
+
+Sets the goodbye dialog for the NPC.
+
+| Key       |           Values            | Default |
+|-----------|:---------------------------:|:-------:|
+| `canTalk` | [Boolean](#boolean) | `true`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+canTalk: true
+```
+
+</div>
+
+</details>
+
+***
+
+### activationRadius
+
+Sets the radius when the NPC should start talking.
+
+| Key       |           Values            | Default |
+|-----------|:---------------------------:|:-------:|
+| `activationRadius` | [Double](#double) |  `3.0`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+activationRadius: 3.0
+```
+
+</div>
+
+</details>
+
+***
+
+### interactionType
+
+Sets the type of interaction the NPC will do.
+
+| Key       |           Values            | Default |
+|-----------|:---------------------------:|:-------:|
+| `interactionType` | Special [4] |  `ARENA_MASTER`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+interactionType: ARENA_MASTER
+```
+
+</div>
+
+</details>
+
+***
+
+### disguise
+
+Sets the custom NPC disguise.
+
+| Key       |           Values            | Default |
+|-----------|:---------------------------:|:-------:|
+| `disguise` | [Disguise]($language$/elitemobs/libsdisguises.md) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+disguise: ZOMBIE
+```
+
+<div align="center">
+
+![create_arena_npc_disguise.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_disguise.jpg)
+
+<div align="center">
+
+</div>
+
+</details>
+
+***
+
+### arena
+
+Sets which arena the players will be teleported to.
+
+| Key       |           Values            | Default |
+|-----------|:---------------------------:|:-------:|
+| `arena` | [Filename](#filename) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+arena: my_arena.yml
+```
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+<details>
+
+<summary align="center"><b>Arena Config Example</b></summary>
 
 <div align="left">
 
