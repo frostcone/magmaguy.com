@@ -98,6 +98,12 @@ However, at the very least, the following virtual bones will be compatible with 
 
 No other virtual boneBlueprint feature is guaranteed to be added in the immediate future.
 
+## Merging resource packs
+
+While using FMM you will probably need to merge resource packs.
+
+You can merge resource packs manually, but we recommend using an online tool such as [merge.elmakers](https://merge.elmakers.com/) to merge your resource packs.
+
 #### **Safer, easier, uneditable file distribution**
 
 One thing that FMM tries to tackle is users repurposing models they have obtained to edit them in ways the model creator did not want them to edit, specifically in order to reskin or otherwise slightly alter a model and potentially try to resell as an original creation.

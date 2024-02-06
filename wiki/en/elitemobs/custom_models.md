@@ -64,6 +64,10 @@ This is possibly the trickiest part if you are looking to make your server manag
 
 **\*** Note: There are a lot of guides online that can help you get this working if these instructions aren't helping you.
 
+### Merge resource packs
+
+Should you need to merge your resource packs you can do so manually. But we recommend using an online tool such as [merge.elmakers](https://merge.elmakers.com/) to merge your resource packs.
+
 ## Step 4. Hope it works
 
 Assuming everything was done correctly, you should now be able to see the Custom Model on your boss or NPC. You can spawn them through the commands:

@@ -49,23 +49,25 @@ It is generally recommended to use world-based dungeons as they are easier to cr
 
 The following values apply to all dungeons
 
-| Key | Description |                                           Values                                           | Default | Mandatory |
-|-|:---:|:------------------------------------------------------------------------------------------:|:-:|:-:|
-| `isEnabled` | Sets if the dungeon package is enabled |                                    [Boolean](#boolean)                                     | `false` | ✅ |
-| `name` | Sets the name of the content |                                     [String](#string)                                      | none | ✅ |
-| `dungeonLocationType` | Sets the type of location the dungeon uses |                            `WORLD` / `SCHEMATIC` / `INSTANCED`                             | none | ✅ |
-| `contentType` | Sets the type of dungeon |             `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` / `SCHEMATIC_DUNGEON`             | none | ✅ |
-| `customInfo` | Sets the additional info that will appear in the `/em setup` screen. Only for information purposes. |                                     [String](#string)                                      | none | ✅ |
-| `downloadLink` | Sets the download link when the content is not downloaded. Only for information purposes.  |                                     [String](#string)                                      | none | ❌ |
-| `dungeonSizeCategory` | Sets the size category of the dungeon package. Only for information purposes. | `LAIR` / `SANCTUM` / `MINIDUNGEON` / `DUNGEON` / `RAID` /  `ADVENTURE` / `ARENA` / `OTHER` | none | ✅ |
-| `protect` | Sets if the dungeon package should be protected by WorldGuard |                                    [Boolean](#boolean)                                     | `true `| ❌ |
-| `anchorPoint` | Sets the spawn location of the build. **This is set when you install, do not set manually!** |                                          Location                                          | none | ❌ |
-| `dungeonVersion` | Sets the version of the dungeon package |                                    [Integer](#integer)                                     | none | ✅ |
-| `playerInfo` | Sets the info which appears in the teleport menu |                                     [String](#string)                                      | none | ✅ |
-| `regionEnterMessage` | Sets the message that appears when a player enters the dungeon zone |                                     [String](#string)                                      | none | ❌ |
-| `regionLeaveMessage` | Sets the message that appears when a player leaves the dungeon zone |                                     [String](#string)                                      | none | ❌ |
-| `hasCustomModels` | Sets whether the dungeon package has custom models (for ModelEngine) |                                    [Boolean](#boolean)                                     | false | ❌ |
-| `dungeonConfigFolderName` | Sets the name of the folders used for files associated to this dungeon. Mandatory for instanced dungeons! |                                     [String](#string)                                      | none | ❌ |
+| Key |                                                Description                                                |                                           Values                                           | Default | Mandatory |
+|-|:---------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------:|:-------:|:-:|
+| `isEnabled` |                                  Sets if the dungeon package is enabled                                   |                                    [Boolean](#boolean)                                     | `false` | ✅ |
+| `name` |                                       Sets the name of the content                                        |                                     [String](#string)                                      |  none   | ✅ |
+| `dungeonLocationType` |                                Sets the type of location the dungeon uses                                 |                            `WORLD` / `SCHEMATIC` / `INSTANCED`                             |  none   | ✅ |
+| `contentType` |                                         Sets the type of dungeon                                          |             `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` / `SCHEMATIC_DUNGEON`             |  none   | ✅ |
+| `customInfo` |    Sets the additional info that will appear in the `/em setup` screen. Only for information purposes.    |                                     [String](#string)                                      |  none   | ✅ |
+| `downloadLink` |         Sets the download link when the content is not downloaded. Only for information purposes.         |                                     [String](#string)                                      |  none   | ❌ |
+| `dungeonSizeCategory` |               Sets the size category of the dungeon package. Only for information purposes.               | `LAIR` / `SANCTUM` / `MINIDUNGEON` / `DUNGEON` / `RAID` /  `ADVENTURE` / `ARENA` / `OTHER` |  none   | ✅ |
+| `protect` |                       Sets if the dungeon package should be protected by WorldGuard                       |                                    [Boolean](#boolean)                                     | `true ` | ❌ |
+| `anchorPoint` |       Sets the spawn location of the build. **This is set when you install, do not set manually!**        |                                          Location                                          |  none   | ❌ |
+| `dungeonVersion` |                                  Sets the version of the dungeon package                                  |                                    [Integer](#integer)                                     |  none   | ✅ |
+| `playerInfo` |                             Sets the info which appears in the teleport menu                              |                                     [String](#string)                                      |  none   | ✅ |
+| `regionEnterMessage` |                    Sets the message that appears when a player enters the dungeon zone                    |                                     [String](#string)                                      |  none   | ❌ |
+| `regionLeaveMessage` |                    Sets the message that appears when a player leaves the dungeon zone                    |                                     [String](#string)                                      |  none   | ❌ |
+| `hasCustomModels` |                   Sets whether the dungeon package has custom models (for ModelEngine)                    |                                    [Boolean](#boolean)                                     |  false  | ❌ |
+| `dungeonConfigFolderName` | Sets the name of the folders used for files associated to this dungeon. Mandatory for instanced dungeons! |                                     [String](#string)                                      |  none   | ❌ |
+| `contentLevel` |                     Sets the content level the dungeon should display in the EM menu.                     |                                    [Integer](#integer)                                     |  none   | ❌ |
+| `enchantmentChallenge` |                      Sets if the dungeon should be an Enchantment Challenge dungeon.                      |                                    [Boolean](#boolean)                                     | `false` | ❌ |
 
 ***
 

@@ -23,6 +23,8 @@ isSurfaceSpawn: true
 
 ## Values
 
+<!-- FROSTCONE: make sure that the wiki makes it clear that the fields are optional and that empty examples are specifically shown like for the custom boss file. Especially for valid worlds. -->
+
 | Key | Description |                                                          Values                                                          | Default |
 |-|:-:|:------------------------------------------------------------------------------------------------------------------------:|-|
 | `isEnabled` | Sets if the event is enabled |                                                     `true` / `false`                                                     | `true` |

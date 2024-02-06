@@ -384,7 +384,7 @@ eliteScript:
       Target:
         targetType: NEARBY_PLAYERS
         range: 10
-      sValue: broadcast Hello $bossName my name is $playerName. What is your level? $bossName my level is $bossLevel.
+      sValue: say Hello $bossName my name is $playerName. What is your level? $bossName my level is $bossLevel.
 ```
 
 Makes console broadcast the message "Hello world!"
@@ -882,6 +882,32 @@ eliteScript:
 ```
 
 Spawns the reinforcement with the filename "my_boss.yml" at the boss location.
+
+---
+
+### SUMMON_ENTITY
+
+MAGMA PLEASE FILL IN THIS SECTION WITH CORRECT INFORMATION,
+
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `sValue` |                Sets the                  | ✅ |
+
+**Example**
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+      - EliteMobEnterCombatEvent
+    Actions:
+      - action: SUMMON_ENTITY
+        Target:
+          targetType: DIRECT_TARGET
+```
+
+Sets the boss to .
 
 ---
 

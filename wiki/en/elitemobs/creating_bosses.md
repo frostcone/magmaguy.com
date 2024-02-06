@@ -146,7 +146,7 @@ name: "$normalLevel &cCool boss!"
 ```
 <div align="center">
 
-![create_boss_name_pic_no_level.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_name_pic_no_level.jpg)
+![create_boss_name_pic_no_level.jpg](../../../img/wiki/create_boss_name_pic_no_level.jpg)
 
 </div>
 
@@ -178,7 +178,7 @@ name: "$normalLevel &cCool boss!"
 
 <div align="center">
 
-![create_boss_name_pic.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_name_pic.jpg)
+![create_boss_name_pic.jpg](../../../img/wiki/create_boss_name_pic.jpg)
 
 </div>
 
@@ -331,7 +331,7 @@ offHand: SHIELD
 
 <div align="center">
 
-![create_boss_armor.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_armor.jpg)
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
 
 </div>
 
@@ -604,7 +604,7 @@ spawnMessage: I rise once more!
 
 <div align="center">
 
-![create_boss_spawn_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_spawn_message.jpg)
+![create_boss_spawn_message.jpg](../../../img/wiki/create_boss_spawn_message.jpg)
 
 </div>
 
@@ -642,7 +642,7 @@ deathMessages:
 
 <div align="center">
 
-![create_boss_death_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_death_message.jpg)
+![create_boss_death_message.jpg](../../../img/wiki/create_boss_death_message.jpg)
 
 </div>
 
@@ -665,6 +665,35 @@ Death messages use the following placeholders:
 | `$damager2damage` | The damage amount of second top damager |
 | `$damager3damage` | The damage amount of the third top damager |
 | `$players` | Displays a list of all damagers |
+
+</details>
+
+### onKillMessage
+
+Sets the message to send when the boss kills a player. Requires setting up the [announcementPriority](#announcementPriority).
+
+| Key | Values | Default |
+|-|:-:|-|
+| `onKillMessage` | [Strings](#string) and [color codes](#color_codes) | none |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+announcementPriority: 3
+onKillMessage: I win, you lose!
+```
+
+<div align="center">
+
+![create_boss_spawn_message.jpg](../../../img/wiki/create_boss_spawn_message.jpg)
+
+</div>
+
+</div>
 
 </details>
 
@@ -855,7 +884,7 @@ escapeMessage: "Sayonara!"
 
 <div align="center">
 
-![create_boss_escape_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_escape_message.jpg)
+![create_boss_escape_message.jpg](../../../img/wiki/create_boss_escape_message.jpg)
 
 </div>
 
@@ -895,7 +924,7 @@ locationMessage: "&4Cool boss: At $location only $distance blocks away!"
 
 <div align="center">
 
-![create_boss_location_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_location_message.jpg)
+![create_boss_location_message.jpg](../../../img/wiki/create_boss_location_message.jpg)
 
 </div>
 
@@ -1060,7 +1089,7 @@ onDamageMessages:
 ```
 <div align="center">
 
-![create_boss_damage_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_damage_message.jpg)
+![create_boss_damage_message.jpg](../../../img/wiki/create_boss_damage_message.jpg)
 
 </div>
 
@@ -1091,7 +1120,7 @@ onDamagedMessages:
 ```
 <div align="center">
 
-![create_boss_damaged_message.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_damaged_message.jpg)
+![create_boss_damaged_message.jpg](../../../img/wiki/create_boss_damaged_message.jpg)
 
 </div>
 
@@ -1123,7 +1152,7 @@ mountedEntity: wild_wolf.yml
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_mounted.jpg)
+![create_boss_mounted.jpg](../../../img/wiki/create_boss_mounted.jpg)
 
 </div>
 
@@ -1236,12 +1265,12 @@ Take a look at the example below to get a better understanding of how these work
 ```yml
 onDeathCommands:
 - "say $players has killed $name! That was level $level!"
-- "$chance=0.5$ broadcast What a kill!"
+- "$chance=0.5$ say What a kill!"
 ```
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_ondeathcommands.jpg)
+![create_boss_mounted.jpg](../../../img/wiki/create_boss_ondeathcommands.jpg)
 
 </div>
 
@@ -1252,9 +1281,9 @@ If Player1, Player2 and Player3 all damaged the boss before killing it, this is 
 <div align="left">
 
 ```
-broadcast Player1 has killed CustomBossName! That was level X!
-broadcast Player2 has killed CustomBossName! That was level X!
-broadcast Player3 has killed CustomBossName! That was level X!
+say Player1 has killed CustomBossName! That was level X!
+say Player2 has killed CustomBossName! That was level X!
+say Player3 has killed CustomBossName! That was level X!
 ```
 
 </div>
@@ -1264,7 +1293,7 @@ Additionally, there is a 50% chance that the following will also be output:
 <div align="left">
 
 ```
-broadcast What a kill!
+say What a kill!
 ```
 
 </div>
@@ -1296,7 +1325,7 @@ onSpawnCommands:
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_onspawncommands.jpg)
+![create_boss_mounted.jpg](../../../img/wiki/create_boss_onspawncommands.jpg)
 
 </div>
 
@@ -1329,7 +1358,7 @@ onCombatEnterCommands:
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_oncombatentercommands.jpg)
+![create_boss_mounted.jpg](../../../img/wiki/create_boss_oncombatentercommands.jpg)
 
 </div>
 
@@ -1362,7 +1391,7 @@ onCombatLeaveCommands:
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_oncombatleavecommands.jpg)
+![create_boss_mounted.jpg](../../../img/wiki/create_boss_oncombatleavecommands.jpg)
 
 </div>
 
@@ -1393,7 +1422,7 @@ disguise: CHICKEN
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_disguise.jpg)
+![create_boss_mounted.jpg](../../../img/wiki/create_boss_disguise.jpg)
 
 </div>
 
@@ -1414,7 +1443,7 @@ customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_boss_custom_disguise.jpg)
+![create_boss_mounted.jpg](../../../img/wiki/create_boss_custom_disguise.jpg)
 
 </div>
 
