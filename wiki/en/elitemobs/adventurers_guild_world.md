@@ -4,7 +4,7 @@
 
 The Adventurer's Guild World is the name of a premade world made for EliteMobs by Realm of Lotheridon.
 
-![ag_pic_1.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fag_pic_1.jpg)
+![ag_pic_1.jpg](../../../img/wiki/ag_pic_1.jpg)
 
 ### What is the Adventurer's Guild World for?
 

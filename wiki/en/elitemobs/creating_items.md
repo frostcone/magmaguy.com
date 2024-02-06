@@ -173,7 +173,7 @@ name: "&2Cool item"
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_item_name.jpg)
+![create_item_name.jpg](../../../img/wiki/create_item_name.jpg)
 
 </div>
 
@@ -205,7 +205,7 @@ lore:
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_item_lore.jpg)
+![create_item_lore.jpg](../../../img/wiki/create_item_lore.jpg)
 
 </div>
 
@@ -241,7 +241,7 @@ enchantments:
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_item_enchantments.jpg)
+![create_item_enchantments.jpg](../../../img/wiki/create_item_enchantments.jpg)
 
 </div>
 
@@ -286,7 +286,7 @@ potionEffects:
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_item_potion_effects.jpg)
+![create_item_potion_effects.jpg](../../../img/wiki/create_item_potion_effects.jpg)
 
 </div>
 
@@ -464,6 +464,30 @@ permission: "elitemobs.cool.permission"
 </div>
 
 With this setup, only players with the permission `elitemobs.cool.permission` will be able to obtain this item.
+
+</details>
+
+***
+
+### soulbound
+
+Sets if the item should be soulbound on drop.
+
+| Key |       Values        | Default |
+|-|:-------------------:|---------|
+| `soulbound` | [Boolean](#boolean) | `true`  |
+
+<details>
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+soulbound: true
+```
+
+</div>
 
 </details>
 

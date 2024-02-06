@@ -49,7 +49,7 @@ arenaName: Bedrock Arena
 
 <div align="center">
 
-![create_arena_name.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_name.jpg)
+![create_arena_name.jpg](../../../img/wiki/create_arena_name.jpg)
 
 </div>
 
@@ -81,7 +81,7 @@ corner1: my_arena_world,10,50,-10,0,0
 
 In this image `corner1` is represented by *green wool* and `corner2` is represented by *red wool*. This configuration designates the area between them as the arena, represented by *yellow wool*.
 
-![create_arena_corner.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_corner.jpg)
+![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
 
 </div>
 
@@ -113,7 +113,7 @@ corner2: my_arena_world,-10,50,10,0,0
 
 In this image `corner1` is represented by *green wool* and `corner2` is represented by *red wool*. This configuration designates the area between them as the arena, represented by *yellow wool*.
 
-![create_arena_corner.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_corner.jpg)
+![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
 
 </div>
 
@@ -374,7 +374,7 @@ arenaMessages:
 
 <div align="center">
 
-![create_arena_messages.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_messages.jpg)
+![create_arena_messages.jpg](../../../img/wiki/create_arena_messages.jpg)
 
 </div>
 
@@ -576,7 +576,7 @@ name: "&aGladius"
 
 <div align="center">
 
-![create_arena_npc_name.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_name.jpg)
+![create_arena_npc_name.jpg](../../../img/wiki/create_arena_npc_name.jpg)
 
 </div>
 
@@ -605,7 +605,7 @@ role: "&c<Arena Master>"
 ```
 <div align="center">
 
-![create_arena_npc_role.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_role.jpg)
+![create_arena_npc_role.jpg](../../../img/wiki/create_arena_npc_role.jpg)
 
 </div>
 
@@ -638,7 +638,7 @@ profession: ARMORER
 
 *Will be overridden if a `diguise` is used.*
 
-![create_arena_npc_profession.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_profession.jpg)
+![create_arena_npc_profession.jpg](../../../img/wiki/create_arena_npc_profession.jpg)
 
 </div>
 
@@ -694,7 +694,7 @@ greetings:
 
 <div align="center">
 
-![create_arena_npc_greetings.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_greetings.jpg)
+![create_arena_npc_greetings.jpg](../../../img/wiki/create_arena_npc_greetings.jpg)
 
 </div>
 
@@ -726,7 +726,7 @@ dialog:
 
 <div align="center">
 
-![create_arena_npc_dialog.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_dialog.jpg)
+![create_arena_npc_dialog.jpg](../../../img/wiki/create_arena_npc_dialog.jpg)
 
 </div>
 
@@ -758,7 +758,7 @@ farewell:
 
 <div align="center">
 
-![create_arena_npc_farewell.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_farewell.jpg)
+![create_arena_npc_farewell.jpg](../../../img/wiki/create_arena_npc_farewell.jpg)
 
 <div align="center">
 
@@ -773,7 +773,7 @@ farewell:
 ```
 </div>
 
-![create_arena_npc_lines.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_lines.jpg)
+![create_arena_npc_lines.jpg](../../../img/wiki/create_arena_npc_lines.jpg)
 
 </div>
 
@@ -877,7 +877,7 @@ disguise: ZOMBIE
 
 <div align="center">
 
-![create_arena_npc_disguise.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_arena_npc_disguise.jpg)
+![create_arena_npc_disguise.jpg](../../../img/wiki/create_arena_npc_disguise.jpg)
 
 <div align="center">
 
@@ -903,6 +903,30 @@ Sets which arena the players will be teleported to.
 
 ```yml
 arena: my_arena.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### teleportLocation
+
+Sets where the players should be teleported after interacting with the NPC. This setting is usually used to teleport players to a dedicated lobby type area of the arena where they can start the arena challenge or wait for other players to finish going through the arena. 
+
+| Key       |        Values         | Default |
+|-----------|:---------------------:|:-------:|
+| `teleportLocation` | [Location](#location) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+teleportLocation: my_arena_world,10,50,10,0,0
 ```
 
 </div>

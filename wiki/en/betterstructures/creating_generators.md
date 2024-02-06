@@ -97,6 +97,12 @@ Sets the list of worlds the structure will spawn in. **If no list is present, it
 
 ***
 
+### validWorldEnvironments
+
+Sets the list of world environments the structure will spawn in. **If no list is present, it will use all world environments allowed by the plugin**. Valid values: `NORMAL`, `NETHER`, `END` and `CUSTOM`.
+
+***
+
 ### validBiomes
 
 Sets the list of valid biomes the structure will spawn in. **If no list is defined, it will assume every biome is valid!**.

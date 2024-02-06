@@ -273,8 +273,8 @@ Sets a list of commands to run when a player unlocks a new rank of the Adventure
 
 ```yaml
 onRankUpCommand:
-- "broadcast Congratulations to $player for unlocking the prestige $prestigeRank tier $activeRank rank!"
-- "broadcast Very cool!"
+- "say Congratulations to $player for unlocking the prestige $prestigeRank tier $activeRank rank!"
+- "say Very cool!"
 ```
 
 This runs 2 broadcasts. Note: This accepts the following placeholders: `$player` for the player's name, `$prestigeRank` for the number of the current prestige tier and `$activeRank` for the number of the rank they just unlocked.
@@ -865,8 +865,8 @@ Sets the list of commands to run once an Elite Mob dies. Example:
 
 ```yaml
 commandsOnEliteMobDeath:
-- "broadcast $players have killed level $level $name in world $locationWorldName!"
-- "broadcast The boss was killed at coordinates $locationx $locationY $locationZ !"
+- "say $players have killed level $level $name in world $locationWorldName!"
+- "say The boss was killed at coordinates $locationx $locationY $locationZ !"
 ```
 
 _**Note:**_ the $players placeholder will not only be replaced with the name of a player, but it will also make the command run as many times as there are players in the kill list. This means that if there were 3 players killing the boss, the first broadcast would run 3 times.

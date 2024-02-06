@@ -327,3 +327,9 @@ can go to *~plugins\EliteMobs\mobproperties* then go into any file that is prefi
 *super_pig.yml*) and toggle `isEnabled` to `false`.
 
 ***
+
+# How can I merge resource packs?
+
+It is possible to merge resource packs manually, but we recommend using an online tool such as [merge.elmakers](https://merge.elmakers.com/) to merge your resource packs.
+
+***

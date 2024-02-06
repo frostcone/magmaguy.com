@@ -97,8 +97,28 @@ eliteScript:
       Target:
         targetType: SELF
 ```
+---
 
-Will only run if the boss is on the floor.
+### isStandingOnMaterial
+
+Checks if the location underneath the target is a matching material type.
+
+| Key |                     Details                     |        Values         |
+| --- |:-----------------------------------------------:|:---------------------:|
+| `isStandingOnMaterial` | Sets which material type should be checked for. | [Material](#material) |
+
+**Example**
+
+```yaml
+eliteScript:
+  Example:
+    Conditions:
+      isStandingOnMaterial: BIRCH_WOOD
+      Target:
+        targetType: SELF
+```
+
+Will only run if the boss is standing on BIRCH_WOOD.
 
 ## Entity-based conditions
 

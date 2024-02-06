@@ -24,7 +24,7 @@ questLore:
 
 <div align="center">
 
-![create_boss_mounted.jpg](..%2F..%2F..%2Fimg%2Fwiki%2Fcreate_quest_quest.jpg)
+![create_boss_mounted.jpg](../../../img/wiki/create_quest_quest.jpg)
 
 </div>
 
