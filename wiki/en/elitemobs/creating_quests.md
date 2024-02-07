@@ -24,7 +24,7 @@ questLore:
 
 <div align="center">
 
-![create_boss_mounted.jpg](../../../img/wiki/create_quest_quest.jpg)
+![create_quest_quest.jpg](../../../img/wiki/create_quest_quest.jpg)
 
 </div>
 
@@ -34,24 +34,431 @@ This example quest will give players the task of slaying 1 test_boss.yml. (The a
 
 ## Creating Custom Quests
 
-| Key | Description |                                     Values                                      | Default |
-|-|:-:|:-------------------------------------------------------------------------------:|:-:|
-| `customObjectives `| Sets the quest objectives |                                 Check below [1]                                 | none |
-| `customRewards`| Sets the quest rewards | [Universal EliteMobs loot format]($language$elitemobs/elitemobs+loot_tables.md) | none |
-| `questAcceptPermissions` | Sets the permissions the player must have in order to accept the quest |                           [String List](#string_list)                           | none |
-| `questLockoutPermission` | Sets the permission that the player will get upon completing the quest which will lock them out from doing the quest again. |                                [String](#string)                                | none |
-| `questLockoutMinutes` | Sets how long, in minutes, the player will have to wait before being able to do the quest again (works by removing the quest lockout permission)|                               [Integer](#integer)                               | `-1`(will never repeat) |
-| `questName` | Sets the quest name |                                [String](#string)                                | none |
-| `questLore` | Sets the lore of the quest that will appear in the in-game quest menu |                           [String List](#string_list)                           | none |
-| `temporaryPermissions` | Sets the permissions assigned to the player until they turn the quest in |                           [String List](#string_list)                           | none |
-| `questAcceptDialog` | Sets the dialog that appears on chat on quest accept |                           [String List](#string_list)                           | none |
-| `questCompleteDialog` | Sets the dialog that appears on chat on quest completion |                           [String List](#string_list)                           | none |
-| `questCompleteCommands` | Sets the commands that will run on quest completion |                           [String List](#string_list)                           | none |
-| `turnInNPC` | Sets the filename of the NPC that will complete the quest |                              [Filename](#filename)                              | none |
-| `trackable` | Sets if the quest will use the quest tracker |                               [Boolean](#boolean)                               | `true` |
-| `questLevel` | Sets the level of the quest |                               [Integer](#integer)                               | `0` |
+<div align="center">
 
-[1] Custom Objectives are constructed using the following format:
+### customObjectives
+
+Sets the quest objectives.
+
+| Key       |   Values    | Default |
+|-----------|:-----------:|:-------:|
+| `customObjectives` | Special [1] |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: my_cool_boss.yml
+    objectiveType: KILL_CUSTOM
+```
+
+<div align="center">
+
+![create_quest_objective.jpg](../../../img/wiki/create_quest_objective.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### customRewards
+
+Sets the quest rewards.
+
+| Key       |   Values    | Default |
+|-----------|:-----------:|:-------:|
+| `customRewards` | [Universal EliteMobs loot format]($language$elitemobs/elitemobs+loot_tables.md) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+customRewards:
+- currencyAmount=50:amount=1:chance=0.05
+- material=COOKED_COD:amount=3:chance=1.0
+- filename=magmaguys_toothpick.yml:amount=1:chance=1.0
+```
+
+<div align="center">
+
+![create_quest_rewards.jpg](../../../img/wiki/create_quest_rewards.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### questAcceptPermission
+
+Sets the permission the player must have in order to accept the quest.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `questAcceptPermission` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questAcceptPermission: elitequest.my_permission
+```
+
+</div>
+
+</details>
+
+***
+
+### questAcceptPermissions
+
+Sets the permissions the player must have in order to accept the quest.
+
+| Key       |   Values    | Default |
+|-----------|:-----------:|:-------:|
+| `questAcceptPermissions` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questAcceptPermissions: 
+- elitequest.my_previous_quest_one.yml
+- elitequest.my_previous_quest_two.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### questLockoutPermission
+
+Sets the permission that the player will get upon completing the quest which will lock them out from doing the quest again (Usually the [Filename](#fielname) of the quest you are editing).
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `questLockoutPermission` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questLockoutPermission: elitequest.my_quest.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### questLockoutMinutes
+
+Sets how long, in minutes, the player will have to wait before being able to do the quest again (works by removing the quest lockout permission).
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `questLockoutMinutes` | [Integer](#integer) |  `-1`(will never repeat)   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questLockoutMinutes: 60
+```
+
+</div>
+
+</details>
+
+***
+
+### name
+
+Sets the quest name. Accepts [Color Codes](#color_codes).
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `name` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+name: "&aMy Great Quest Name"
+```
+
+</div>
+
+</details>
+
+***
+
+### questLore
+
+Sets the lore of the quest that will appear in the in-game quest menu.
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `questLore` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questLore:
+- "Interesting lore sentence."
+- "Yet another interesting lore sentence."
+```
+
+<div align="center">
+
+![create_quest_lore.jpg](../../../img/wiki/create_quest_lore.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### temporaryPermissions
+
+Sets the permissions assigned to the player until they turn the quest in.
+
+If you're using this setting to ensure that an item only drops when players have a specific quest active, you'll also need to configure the [Same Permission]($language$/elitemobs/creating_items.md&section=permission%permission) in the item's configuration file.
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `temporaryPermissions` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+temporaryPermissions:
+- elitequest.item_that_should_drop_only_during_quest.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### questAcceptDialog
+
+Sets the dialog that appears in chat upon quest acceptance.
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `questAcceptDialog` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questAcceptDialog:
+- "My hero! You are so helpful!"
+- "I wish you the best of luck!"
+```
+
+<div align="center">
+
+![create_quest_accept.jpg](../../../img/wiki/create_quest_accept.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### questCompleteMessage
+
+Sets the dialog that appears in chat upon quest completion.
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `questCompleteMessage` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questCompleteMessage:
+- "My hero! You have completed my difficult quest!"
+- "As a reward you can have this loaf of bread!"
+```
+
+<div align="center">
+
+![create_quest_complete.jpg](../../../img/wiki/create_quest_complete.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### questCompleteCommands
+
+Sets the commands that will run upon quest completion.
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `questCompleteCommands` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questCompleteCommands:
+- say $player has finished a quest!
+```
+
+<div align="center">
+
+![create_quest_commands.jpg](../../../img/wiki/create_quest_commands.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### turnInNPC
+
+Sets the filename of the NPC that the players need to talk to/interact with to complete the quest. This does **not** have to be the same NPC that handed out the quest.
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `turnInNPC` | [Filename](#filename) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+turnInNPC: my_cool_quest_npc.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### trackable
+
+Sets if the quest will use the quest tracker.
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `trackable` | [Boolean](#boolean) | `true`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+trackable: true
+```
+
+</div>
+
+</details>
+
+***
+
+### questLevel
+
+Sets the level of the quest. This is only a visual guide so the players can tell how challenging the quest will be. This does **not** in any way modify boss, item or other levels.
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `questLevel` | [Integer](#integer) | `0`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questLevel: 10
+```
+
+<div align="center">
+
+![create_quest_level.jpg](../../../img/wiki/create_quest_BUGGEDaddLATER.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+## Special [1] 
+Custom Objectives are constructed using the following format:
 
 1.  `- KILL_CUSTOM`, `- FETCH_ITEM` or `- DIALOG`: Used to set the type of objective this represents. `KILL_CUSTOM` indicates the quest involves killing a specific Custom Boss, `FETCH_ITEM` indicates that the quest involves getting a specific Custom Item and `DIALOG` indicates that the quest involves talking to an NPC.
 2.  `filename=your_filename_here.yml` : Used to set the file name of the Custom Boss, the Custom Item that the player has to kill / obtain or the NPC they have to talk to.
@@ -77,9 +484,9 @@ Should you want to make a quest that only becomes available after the players ha
 
 ```yml
 questAcceptPermissions: 
-  - elitequest.quest_2.yml
-  - elitequest.quest_3.yml
-  - elitequest.quest_4.yml
+- elitequest.quest_2.yml
+- elitequest.quest_3.yml
+- elitequest.quest_4.yml
 ```
 
 If you want players to only be able to loot certain items when they have the correct quest active, then we can do that by using `temporaryPermissions`. We would make a permission in the quest file using `temporaryPermissions` then make a matching [permission]($language$/elitemobs/creating_items.md&section=permission%permission) in the item file using `permission`.
@@ -88,7 +495,7 @@ For example we would open up our quest file and add the following:
 
 ```yml
 temporaryPermissions: 
-  - elitequest.my_cool_item.yml
+- elitequest.my_cool_item.yml
 ```
 Then we would open up the item file, in our case *my_cool_item.yml* and then add the following:
 

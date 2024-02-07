@@ -47,31 +47,77 @@ The reinforcement is now added to the boss entity. However, as you can see, ther
 
 *Tip: You can also use EliteScript to summon reinforcements, more about that [here]($language$/elitemobs/elitescript_actions.md&section=summon_reinforcement).*
 
+<div align="center">
+
 ### summonType
 
-`summonType: SUMMON_TYPE` **is a mandatory field** **as it sets when the reinforcement should spawn.** Here are the valid options:
+This is a mandatory field. It sets when the reinforcement should spawn.
 
-- `summonType: ONCE` Spawns the reinforcement once, the first time the boss is hit. (can rely on a % chance to happen)
-- `summonType: ON_HIT` Spawn the reinforcement any time the boss gets hit (can rely on a % chance to happen)
-- `summonType: ON_COMBAT_ENTER` Spawn the reinforcement when the boss enters combat (1)
-- `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` Special: this is specifically for placing down end crystals for dragon fights when the boss enters combat(1)
-- `summonType: GLOBAL` Spawns reinforcements for every player in the same world as the boss. The reinforcements will spawn near the players, no matter how far they are from the boss. This requires the `customSpawn` field to be set to work!
+| Key    |   Values    | Default  |
+|--------|:-----------:|:--------:|
+| `summonType` | Special [1] | `ON_HIT` |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+summonType: ON_HIT
+```
+
+<div align="center">
+
+![create_quest_level.jpg](../../../img/wiki/create_quest_BUGGEDaddLATER.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+#### Special [1]
+
+| Key | Description                                                                                       |
+|-----|---------------------------------------------------------------------------------------------------|
+|  `ONCE`   | Spawns the reinforcement once, the first time the boss is hit. (can rely on a % chance to happen) |
+| `ON_HIT`  | Spawn the reinforcement any time the boss gets hit (can rely on a % chance to happen)             |
+| `ON_COMBAT_ENTER`    | Spawn the reinforcement when the boss enters combat (1)                                                                                                  |
+| `ON_COMBAT_ENTER_PLACE_CRYSTAL`    |  Special: this is specifically for placing down end crystals for dragon fights when the boss enters combat(1)                                                                                                 |
+| `GLOBAL`    |  Spawns reinforcements for every player in the same world as the boss. The reinforcements will spawn near the players, no matter how far they are from the boss. This requires the `customSpawn` field to be set to work!                                                                                                 |
 
 _(1) Bosses enter combat either when they get hit by players or when they detect a player within range._
 
+***
+
 ### filename
 
-`filename: filename.yml` **is a mandatory field as it sets which reinforcement should spawn.** The only exception to making this field mandatory is when using the `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` setting, as end crystals aren't elites.
+This is a mandatory field as it sets which reinforcement should spawn. The only exception to making this field mandatory is when using the `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` setting, as end crystals aren't elites.
 
-Here is an example of this field in action:
+| Key    |        Values         | Default |
+|--------|:---------------------:|:-------:|
+| `filename` | [Filename](#filename) |  none   |
 
-- `filename: test_boss.yml` uses the boss from the filename `test_boss.yml` as the reinforcement boss.
+<details> 
 
----
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+filename: test_boss.yml
+```
+
+</div>
+
+</details>
+
+</div>
 
 ### Minimum viability
 
-`summonType: SUMMON_TYPE` and `filename: filename.yml` are enough on their own to create a Custom Reinforcement. The example
+`summonType: SUMMON_TYPE` and `filename: filename.yml` are enough on their own to create a Custom Reinforcement. The following example
 
 ```yaml
 isEnabled: true
@@ -86,15 +132,34 @@ powers:
 
 demonstrates this. However, if you want or need something more complex, keep reading to see what else you can do with these options.
 
----
+<div align="center">
+
+***
 
 ### chance
 
-`chance:`[Double](#double) is an optional config field made to compliment the `summonType` `ONCE` and `ON_HIT` options. It represents the chance of the Custom Reinforcement spawning when a boss gets hit. Here are a few examples:
+This is an optional config field made to compliment the `summonType` `ONCE` and `ON_HIT` options. It represents the chance of the Custom Reinforcement spawning when a boss gets hit.
 
-- `chance: 0.2` represents a 20% chance to spawn the Custom Reinforcement
-- `chance: 0.5` represents a 50% chance to spawn the Custom Reinforcement
-- `chance: 1` represents a 100% chance to spawn the Custom Reinforcement
+| Key    |        Values         | Default |
+|--------|:---------------------:|:-------:|
+| `chance` | [Double](#double) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+chance: 0.5
+```
+*Represents a 50% chance to spawn a Custom Reinforcement.*
+
+</div>
+
+</details>
+
+</div>
 
 ### location
 

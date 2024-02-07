@@ -435,11 +435,14 @@ permission: mypermission.arena
 </div>
 
 
-[1] Spawn points: Uses the following format: `name=pointName:location=world_name,x,y,z`.
+## Special [1] 
+Spawn points: Uses the following format: `name=pointName:location=world_name,x,y,z`.
 
-[2] Boss list: Uses the following format: `wave=x:spawnPoint=Y:boss=bossfilename.yml`.
+## Special [2] 
+Boss list: Uses the following format: `wave=x:spawnPoint=Y:boss=bossfilename.yml`.
 
-[3] Arena messages: Uses the following format: `wave=X:message=your message here`.
+## Special [3] 
+Arena messages: Uses the following format: `wave=X:message=your message here`.
 
 <details> 
 
@@ -967,7 +970,8 @@ This example shows a basic Arena NPC that will spawn in my_minecraft_world with 
 
 </details>
 
-[4] The following is the list of valid NPC interaction types:
+## Special [4] 
+The following is the list of valid NPC interaction types:
 
 | Type | Description |
 | --- | :-: |

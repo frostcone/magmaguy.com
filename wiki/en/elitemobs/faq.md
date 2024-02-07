@@ -333,3 +333,9 @@ can go to *~plugins\EliteMobs\mobproperties* then go into any file that is prefi
 It is possible to merge resource packs manually, but we recommend using an online tool such as [merge.elmakers](https://merge.elmakers.com/) to merge your resource packs.
 
 ***
+
+# What are the EliteMobs command placeholders?
+
+Coming soon...
+
+***
