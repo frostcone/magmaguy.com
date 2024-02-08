@@ -67,12 +67,6 @@ This is a mandatory field. It sets when the reinforcement should spawn.
 summonType: ON_HIT
 ```
 
-<div align="center">
-
-![create_quest_level.jpg](../../../img/wiki/create_quest_BUGGEDaddLATER.jpg)
-
-</div>
-
 </div>
 
 </details>
@@ -115,9 +109,19 @@ filename: test_boss.yml
 
 </div>
 
-### Minimum viability
+***
 
-`summonType: SUMMON_TYPE` and `filename: filename.yml` are enough on their own to create a Custom Reinforcement. The following example
+**Minimum Viability**
+
+`summonType: SUMMON_TYPE` and `filename: filename.yml` are enough on their own to create a Custom Reinforcement. The following example demonstrates this.
+
+<div align="center">
+
+<details>
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 isEnabled: true
@@ -130,7 +134,13 @@ powers:
   filename: binder_of_worlds_phase_1_parkour_reinforcement.yml
 ```
 
-demonstrates this. However, if you want or need something more complex, keep reading to see what else you can do with these options.
+*However, if you want or need something more complex, keep reading below to see what else you can do with these options.*
+
+</div>
+
+</details>
+
+</div>
 
 <div align="center">
 
@@ -159,50 +169,196 @@ chance: 0.5
 
 </details>
 
-</div>
+***
 
 ### location
 
 `location: x,y,z` is an optional config field which allows admins to offset the location of the reinforcement by a number of blocks. Here are the key concepts you need to know about this option:
 
-- **The offset location is relative.** This means that `location: 0,10,0` will spawn a boss exactly 10 blocks above the boss, and not on world coordinates 0,10,0.
-- **The relative location is different for regional bosses.** Regional bosses will always use their spawn point as the origin for the relative location, meaning that if you know where the spawn point of the boss is and count the blocks, you can get reinforcement bosses to spawn in specific locations. The Binder of Worlds lair relies on this to spawn the challenge tower bosses in extremely specific block positions, regardless of where the dragon boss is.
-- **Bosses will spawn inside of blocks if you mess up measuring distances.**
+**The offset location is relative.** This means that `location: 0,10,0` will spawn a boss exactly 10 blocks above the boss, and not on world coordinates 0,10,0.
 
-Here are a few examples:
 
-- `location: 0,10,0` for a non-regional Custom Boss will spawn the reinforcement exactly 10 blocks above the boss, regardless of where it might be
-- `location: 0,10,0` for a regional Custom Boss will spawn the reinforcement exactly 10 blocks above the spawn point of the regional boss, regardless of where the boss is.
+**The relative location is different for regional bosses.** Regional bosses will always use their spawn point as the origin for the relative location, meaning that if you know where the spawn point of the boss is and count the blocks, you can get reinforcement bosses to spawn in specific locations. The Binder of Worlds lair relies on this to spawn the challenge tower bosses in extremely specific block positions, regardless of where the dragon boss is.
+
+
+**Bosses will spawn inside of blocks if you mess up measuring distances.**
+
+| Key    |      Values       | Default |
+|--------|:-----------------:|:-------:|
+| `location` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+location: 0,10,0
+```
+*For a non-regional Custom Boss will spawn the reinforcement exactly 10 blocks above the boss, regardless of where it might be.*
+
+*For a regional Custom Boss will spawn the reinforcement exactly 10 blocks above the spawn point of the regional boss, regardless of where the boss is.*
+
+</div>
+
+</details>
 
 _**Important note: This is a mandatory field for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` specifically!**_
 
+***
+
 ### lightningRod
 
-`lightningRod:`[Boolean](#boolean) is a special setting only useful for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. This gives end crystals the ability to smite the floor around them on a delay. It can't be used with the other Custom Reinforcements, as those should rely on powers for these kinds of abilities.
+Is a special setting only useful for `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. This gives end crystals the ability to smite the floor around them on a delay. 
 
-_Note: if you are confused about `Double` , `Integer` and `Boolean` mentions,_ [_read this_]($language$/global/configuration_file_guide.md)_._
+It can't be used with the other Custom Reinforcements, as those should rely on powers for these kinds of abilities.
+
+| Key    |       Values        | Default |
+|--------|:-------------------:|:-------:|
+| `lightningRod` | [Boolean](#boolean) | `false` |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+lightningRod: false
+```
+
+</div>
+
+</details>
+
+***
 
 ### inheritAggro
 
-`inheritAggro:`[Boolean](#boolean) is an optional config field which makes Custom Reinforcements inherit the threat levels of the boss. This is especially useful when you want to have the reinforcements that spawn target the person who is dealing the largest amount of damage.
+Is an optional config field which makes Custom Reinforcements inherit the threat levels of the boss. 
+
+This is especially useful when you want to have the reinforcements that spawn target the person who is dealing the largest amount of damage.
+
+| Key    |       Values        | Default |
+|--------|:-------------------:|:-------:|
+| `inheritAggro` | [Boolean](#boolean) | `false` |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+inheritAggro: false
+```
+
+</div>
+
+</details>
+
+***
 
 ### amount
 
-`amount:`[Integer](#integer) is an optional config field which sets the amount of Custom Bosses that spawn. Example:
+Is an optional config field which sets the amount of Reinforcements that spawn.
 
-- `amount: 5` spawns 5 Custom Bosses
+| Key    |       Values        | Default |
+|--------|:-------------------:|:-------:|
+| `amount` | [Integer](#integer) |   `1`   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+amount: 1
+```
+
+</div>
+
+</details>
+
+***
 
 ### spawnNearby
 
-`spawnNearby:`[Boolean](#boolean) is an optional config field which sets whether the Custom Reinforcement should spawn nearby instead of on top of the boss or at a specific relative location. This method should take terrain variation into account correctly, and not spawn bosses inside of walls, though in some setups it might result in them spawning behind walls if the combat area is too small. Has a ~30 blocks radius.
+Is an optional config field which sets whether the Custom Reinforcement should spawn nearby instead of on top of the boss or at a specific relative location. 
+
+This method should take terrain variation into account correctly, and not spawn bosses inside of walls, though in some setups it might result in them spawning behind walls if the combat area is too small. Has a ~30 blocks radius.
+
+| Key    |       Values        | Default |
+|--------|:-------------------:|:-------:|
+| `spawnNearby` | [Boolean](#boolean) | `false` |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+spawnNearby: false
+```
+
+</div>
+
+</details>
+
+***
 
 ### inheritLevel
 
-`inheritLevel:`[Boolean](#boolean) is an optional config field which sets whether the Custom Reinforcement should inherit the level of the Custom Boss it is reinforcing.
+Is an optional config field which sets whether the Custom Reinforcement should inherit the level of the Custom Boss it is reinforcing.
+
+| Key    |       Values        | Default |
+|--------|:-------------------:|:-------:|
+| `inheritLevel` | [Boolean](#boolean) | `false` |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+inheritLevel: false
+```
+
+</div>
+
+</details>
+
+***
 
 ### customSpawn
 
-`customSpawn: customSpawnFilename` is a config field which is only used for global reinforcements. It uses the custom spawn settings to set where the reinforcements will be able to spawn. This can be used to make reinforcements able to spawn on the surface, in places with light, in specific biomes and so on. Check the wiki page on custom spawns for more details
+Is a config field which is only used for global reinforcements. It uses the custom spawn settings to set where the reinforcements will be able to spawn. 
+
+This can be used to make reinforcements able to spawn on the surface, in places with light, in specific biomes and so on. Check the wiki page on [Custom Spawns]($language$/elitemobs/creating_spawns.md) for more details
+
+| Key    |        Values         | Default |
+|--------|:---------------------:|:-------:|
+| `customSpawn` | [Filename](#filename) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+customSpawn: normal_surface_spawn.yml
+```
+
+</div>
+
+</details>
+
+</div>
 
 ## Putting a big reinforcement together
 

@@ -49,11 +49,88 @@ It is generally recommended to use world-based dungeons as they are easier to cr
 
 The following values apply to all dungeons
 
+<div align="center">
+
+### isEnabled
+
+Sets if the dungeon package is enabled.
+
+| Key         |      Values       | Default | Mandatory |
+|-------------|:-----------------:|:-------:|:---------:|
+| `isEnabled` | [Boolean](#boolean) | `false` |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+```
+
+<div align="center">
+
+![create_wormhole_size.jpg](../../../img/wiki/create_wormhole_size.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### name
+
+Sets the name of the content. Supports [Color Codes](#color_codes).
+
+| Key         |      Values       | Default | Mandatory |
+|-------------|:-----------------:|:-------:|:---------:|
+| `name` | [String](#string) | `false` |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+name: '&c[lvl 999] &aThe Green Dungeon'
+```
+
+</div>
+
+</details>
+
+***
+
+### dungeonLocationType
+
+Sets the type of location the dungeon uses.
+
+| Key         |        Values         | Default | Mandatory |
+|-------------|:---------------------:|:-------:|:---------:|
+| `dungeonLocationType` | `WORLD` / `INSTANCED` |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+dungeonLocationType: WORLD
+```
+
+</div>
+
+</details>
+
+</div>
+
 | Key |                                                Description                                                |                                           Values                                           | Default | Mandatory |
 |-|:---------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------:|:-------:|:-:|
-| `isEnabled` |                                  Sets if the dungeon package is enabled                                   |                                    [Boolean](#boolean)                                     | `false` | ✅ |
-| `name` |                                       Sets the name of the content                                        |                                     [String](#string)                                      |  none   | ✅ |
-| `dungeonLocationType` |                                Sets the type of location the dungeon uses                                 |                            `WORLD` / `SCHEMATIC` / `INSTANCED`                             |  none   | ✅ |
 | `contentType` |                                         Sets the type of dungeon                                          |             `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` / `SCHEMATIC_DUNGEON`             |  none   | ✅ |
 | `customInfo` |    Sets the additional info that will appear in the `/em setup` screen. Only for information purposes.    |                                     [String](#string)                                      |  none   | ✅ |
 | `downloadLink` |         Sets the download link when the content is not downloaded. Only for information purposes.         |                                     [String](#string)                                      |  none   | ❌ |

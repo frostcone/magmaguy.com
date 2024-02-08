@@ -39,23 +39,319 @@ location1: em_primis,1288.5,19,452.5,135,-23
 location2: em_primis,1288.5,-39,451.5,180,-1
 ```
 
-| Key | Description |                                        Values                                         | Default |
-|-|:-:|:-------------------------------------------------------------------------------------:|:-:|
-| `isEnabled` | Sets if the wormhole is enabled |                                   [Boolean](#boolean)                                    | `true` |
-| `location1` | Sets one end of the wormhole |                                     Location [1]                                      | none |
-| `location2` | Sets the other end of the wormhole |                                     Location [1]                                      | none |
-| `location1Text` | Sets the display text of the first location |                                   [String](#string)                                   | none |
-| `location2Text` | Sets the display text of the second location |                                   [String](#string)                                   | none |
-| `permission` | Sets the permission required to use the wormhole |                                   [String](#string)                                   | none |
-| `coinCost` | Sets the cost, in elite coins, of using the wormhole |                                   [Double](#double)                                   | none |
-| `style` | Sets the visual shape of the wormhole |                      `NONE` / `CRYSTAL` / `ISOCAHEDRON` / `CUBE`                      | `CUBE` |
-| `particleColor` | Sets the color of the particle | [`0x` followed by a hexcode](https://www.w3schools.com/colors/colors_hexadecimal.asp) | `0x800080` |
-| `blindPlayer` | Sets if the portal blinds the player for a smoother teleport |                                  [Boolean](#boolean)                                  | `false` |
-| `sizeMultiplier` | Multiplies the size of the portal |                               [Multiplier](#multiplier)                               | `1` |
+***
+
+<div align="center">
+
+### isEnabled
+
+Sets if the wormhole is enabled.
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `isEnabled` | [Boolean](#boolean) | `true`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+```
+
+</div>
+
+</details>
+
+***
+
+### location1
+
+Specifies the first location for the wormhole.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `location1` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+location1: world_one,50,100,50,0,0
+```
+
+</div>
+
+</details>
+
+***
+
+### location2
+
+Specifies the second location for the wormhole.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `location2` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+location2: world_two,100,33,100,0,0
+```
+
+</div>
+
+</details>
+
+***
+
+### location1Text
+
+Sets the display text of the first location.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `location1Text` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+location1Text: Awesome Wormhole In World One
+```
+
+<div align="center">
+
+![create_wormhole_location1text.jpg](../../../img/wiki/create_wormhole_location1text.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### location2Text
+
+Sets the display text of the second location.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `location2Text` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+location2Text: Awesome Wormhole In World Two
+```
+
+<div align="center">
+
+![create_wormhole_location2text.jpg](../../../img/wiki/create_wormhole_location2text.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### permission
+
+Sets the permission required to use the wormhole.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `permission` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+permission: elitemobs.mypermission
+```
+
+</div>
+
+</details>
+
+***
+
+### coinCost
+
+Sets the cost, in elite coins, of using the wormhole.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `coinCost` | [Double](#double) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+coinCost: 2.5
+```
+
+</div>
+
+</details>
+
+***
+
+### style
+
+Sets the visual shape of the wormhole.
+
+*The particles that make up these shapes can cause lag in certain clients. To turn particles off go into **Wormholes.yml** and set `noParticlesMode` to `true`.*
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `style` | `NONE` / `CRYSTAL` / `ISOCAHEDRON` / `CUBE` |  `CUBE`   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+style: CRYSTAL
+```
+
+<div align="center">
+
+![create_wormhole_style.jpg](../../../img/wiki/create_wormhole_style.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### particleColor
+
+Sets the color of the particles used in the `style` setting.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `particleColor` | [`0x` followed by a hexcode](https://www.w3schools.com/colors/colors_hexadecimal.asp) |  `0x800080`   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+particleColor: 0x9f5cdd
+```
+
+<div align="center">
+
+![create_wormhole_particlecolor.jpg](../../../img/wiki/create_wormhole_particlecolor.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### blindPlayer
+
+Sets if the portal blinds the player for a smoother teleport.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `blindPlayer` | [Boolean](#boolean) | `false` |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+blindPlayer: true
+```
+
+<div align="center">
+
+![create_wormhole_blind.jpg](../../../img/wiki/create_wormhole_blind.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### sizeMultiplier
+
+Multiplies the size of the portal and the shape set by `style`.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `sizeMultiplier` | [Multiplier](#multiplier) |   `1`   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+sizeMultiplier: 3
+```
+
+*Keep in mind that you will have to adjust the Y coordinates of the wormhole after applying the size multiplier.*
+
+<div align="center">
+
+![create_wormhole_size.jpg](../../../img/wiki/create_wormhole_size.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+***
 
 <details>
 
-<summary align="center"><b>Example</b></summary>
+<summary align="center"><b>Wormhole Config Example</b></summary>
 
 <div align="left">
 
