@@ -46,9 +46,11 @@ Sets the quest objectives.
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Examples</b></summary>
 
 <div align="left">
+
+`KILL_CUSTOM`:
 
 ```yml
 customObjectives:
@@ -56,6 +58,30 @@ customObjectives:
     amount: '1'
     filename: my_cool_boss.yml
     objectiveType: KILL_CUSTOM
+```
+`DIALOG`:
+
+```yml
+customObjectives:
+  Objective1:
+    dialog:
+    - "&a[Dialog NPC] &fCome here often?"
+    - "&7&oI should eat more apples."
+    filename: dialog_npc.yml
+    npcName: Dialog NPC
+    location: at dialog location.
+    objectiveType: DIALOG
+```
+
+`FETCH_ITEM`:
+
+```yml
+customObjectives:
+  Objective1:
+    amount: '99'
+    itemName: Red Apples
+    filename: my_quest_item_red_apples.yml
+    objectiveType: FETCH_ITEM
 ```
 
 <div align="center">
@@ -68,15 +94,39 @@ customObjectives:
 
 </details>
 
+**Special [1]**
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+<div align="center">
+
+Custom Objectives are constructed using the following values:
+
+| Key                                     | Description |
+|-----------------------------------------|-------------|
+| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | Used to set the type of objective this represents. `KILL_CUSTOM` indicates the quest involves killing a specific Custom Boss, `FETCH_ITEM` indicates that the quest involves getting a specific Custom Item and `DIALOG` indicates that the quest involves talking to an NPC.            |
+| `filename`                                    | Used to set the file name of the Custom Boss, the Custom Item that the player has to kill / obtain or the NPC they have to talk to.            |
+| `amount`                                      | Used to set the amount of Custom Bosses that must be killed or items that must be obtained.            |
+| `dialog`                                      | Used to set the dialog of the NPC the player talks to.            |
+| `name`                                        | Used to set the name of the quest objective, be it an NPC or a custom item. For visual purposes only.            |
+
+_Please note that every Custom Objective field is separated with a `:` !_
+
+</div>
+
+</details>
+
 ***
 
 ### customRewards
 
 Sets the quest rewards.
 
-| Key       |   Values    | Default |
-|-----------|:-----------:|:-------:|
-| `customRewards` | [Universal EliteMobs loot format]($language$elitemobs/elitemobs+loot_tables.md) |  none   |
+| Key       |                                Values                                 | Default |
+|-----------|:---------------------------------------------------------------------:|:-------:|
+| `customRewards` | [Universal EliteMobs loot format]($language$elitemobs/loot_tables.md) |  none   |
 
 <details> 
 
@@ -456,17 +506,6 @@ questLevel: 10
 </details>
 
 </div>
-
-## Special [1] 
-Custom Objectives are constructed using the following format:
-
-1.  `- KILL_CUSTOM`, `- FETCH_ITEM` or `- DIALOG`: Used to set the type of objective this represents. `KILL_CUSTOM` indicates the quest involves killing a specific Custom Boss, `FETCH_ITEM` indicates that the quest involves getting a specific Custom Item and `DIALOG` indicates that the quest involves talking to an NPC.
-2.  `filename=your_filename_here.yml` : Used to set the file name of the Custom Boss, the Custom Item that the player has to kill / obtain or the NPC they have to talk to.
-3.  `amount=x` : Used to set the amount of Custom Bosses that must be killed or items that must be obtained.
-4. `dialog=x` : Used to set the dialog of the NPC the player talks to.
-6. `name=x`: Used to set the name of the quest objective, be it an NPC or a custom item. For visual purposes only.
-
-_Please note that every Custom Objective field is separated with a `:` !_
 
 ### Permissions
 
