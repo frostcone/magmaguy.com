@@ -153,17 +153,9 @@ Spawns a Super Mob based on the entity type.
 
 Adds a spawn location to a Regional Boss.
 
-- `/em addRelativeSpawnLocation <customBossFileName> <minidungeonFileName>`
-
-Adds a spawn location to a Regional Boss in a schematic-based minidungeon.
-
 - `/em addTreasureChest <fileName>`
 
 Adds a treasure chest at the location the player is standing in.
-
-- `/em addRelativeTreasureChest <fileName> <minidungeonFileName`
-
-Adds a treasure chest at the location the player is standing in for a schematic-based minidungeon.
 
 - `/em setLeashRadius <fileName> <radius>`
 
@@ -315,10 +307,6 @@ Stops showing messages on admin login.
 - `/em setup minidungeon <minidungeonName> `
 
 Installs a Minidungeon
-
-- `/em setup minidungeon <minidungeonName> noPaste`
-
-Installs a Minidungeon without pasting the WorldEdit schematic
 
 - `/em setup minidungeon <minidungeonName>`
 

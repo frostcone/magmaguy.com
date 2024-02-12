@@ -34,7 +34,7 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 **IMPORTANT: [WORLDGUARD](https://dev.bukkit.org/projects/worldguard) AND [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
 
-4) Click on the yellow glass in the `/em setup` menu to install features! For schematic-based minidungeons, a green message will appear in chat which you can click to install the minidungeon where you are standing.
+4) Click on the yellow glass in the `/em setup` menu to install features!
 
 5) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md%importing-custom-models-from-dungeons) to install them.
 
@@ -44,7 +44,6 @@ That's it! **You can find teleports to the installed dungeons & adventurers guil
 
 # Recommended plugins
 
-- [WorldEdit](https://dev.bukkit.org/projects/worldedit): Used to install schematic-based minidungeons.
 - [WorldGuard](https://dev.bukkit.org/projects/worldguard): Used to setup and protect areas. [EliteMobs flags list]($language$/elitemobs/worldguard_flags.md).
 - [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/): Used for the anti-fly flag, useful to have.
 - [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/): Used to displaying EliteMobs info on other plugins, like for chat. [More info]($language$/elitemobs/placeholders.md).
@@ -54,9 +53,6 @@ That's it! **You can find teleports to the installed dungeons & adventurers guil
 # Updating dungeon content
 
 To update dungeon content, simply repeat the installation steps above. **You do ***not*** have to delete any files**, EliteMobs handles that when you import the update.
-
-- For world-based dungeons, no further setup is required
-- For schematic-base dungeons, go to your anchor location (the place where the target blocks appeared when installing the content the first time) and you can select the option to install only the bosses during the setup process if the schematic has not changed for the update.
 
 # Frequently Asked Questions (FAQ)
 

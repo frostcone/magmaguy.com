@@ -1,111 +1,14 @@
-# EliteMobs Settings
+# EliteMobs Config Defaults
 
 **EliteMobs comes with the recommended defaults installed by default. If you change things at random, odds are you'll only make the experience worse overall.**
 
 _**EliteMobs is provided to all users with the recommended default settings. If you change things at random and then request support, there is a very strong chance that you will be told to reset your configuration files. Modifications to the plugin should be borne of playtesting and not of just guesswork.**_
 
-- [Getting started]($language$/elitemobs/elitemobs_config_settings.md&section=getting-started%getting-started)
-    - [`Boolean`](#boolean)
-    - [`String`](#string)
-    - [`Serialized Location`]($language$/global/configuration_file_guide.md&section=serialized-location%serialized-location)
-    - [`Multiplier`]($language$/global/configuration_file_guide.md&section=multiplier%multiplier)
-    - [`Integer`](#integer)
-    - [`Double`](#double)
-    - [`String List`](#string_list)
-- [config.yml]($language$/elitemobs/elitemobs_config_settings.md&section=config.yml%config.yml)
-- [AdventurersGuild.yml]($language$/elitemobs/elitemobs_config_settings.md&section=adventurersguild.yml%adventurersguild.yml)
-- [AntiExploit.yml]($language$/elitemobs/elitemobs_config_settings.md&section=antiexploit.yml%antiexploit.yml)
-- [CombatTag.yml]($language$/elitemobs/elitemobs_config_settings.md&section=combattag.yml%combattag.yml)
-- [DiscordSRV.yml]($language$/elitemobs/elitemobs_config_settings.md&section=discordsrv.yml%discordsrv.yml)
-- [EconomySettings.yml]($language$/elitemobs/elitemobs_config_settings.md&section=economysettings.yml%economysettings.yml)
-- [events.yml]($language$/elitemobs/elitemobs_config_settings.md&section=events.yml%events.yml)
-- [ItemSettings.yml]($language$/elitemobs/elitemobs_config_settings.md&section=itemsettings.yml%itemsettings.yml)
-- [MobCombatSettings.yml]($language$/elitemobs/elitemobs_config_settings.md&section=mobcombatsettings.yml%mobcombatsettings.yml)
-- [ProceduralItemGenerationSettings.yml]($language$/elitemobs/elitemobs_config_settings.md&section=proceduralitemgenerationsettings.yml%proceduralitemgenerationsettings.yml)
-- [translation.yml]($language$/elitemobs/elitemobs_config_settings.md&section=translation.yml%translation.yml)
-- [ValidWorlds.yml]($language$/elitemobs/elitemobs_config_settings.md&section=validworlds.yml%validworlds.yml)
-
----
-
 ## Getting started
 
-EliteMobs currently has a very large amount of configuration options as a result of the high demand for customizability. To make this wiki page as short as possible, I will explain the default values configuration files can have here so I don't have to reexplain it on every entry.
+EliteMobs currently offers a vast array of configuration options due to high demand for customization. To keep this wiki page concise, only the default configurations will be displayed. 
 
-### `Boolean`
-
-`Boolean` values are `true` or `false`. This is what they look like:
-
-```yaml
-value1: true
-value2: false
-```
-
-`Boolean`s only ever accept either `true` or `false` values. They are usually used to turn specific features on or off.
-
-### `String`
-
-`String` values are usually just normal text. It is highly recommended that you create `String` values between quotes, following this format:
-
-```yaml
-value: "String"
-```
-
-While this is not always mandatory, it is mandatory for any string that contains color codes, especially if the first character starts with a color code. _**Color codes follow the in-game color code format**_ meaning that `"&aTest`" would result in green text. The availability of colored text varies depending on the configuration setting. Check [this page](#color_codes) for color codes.
-
-Why? Configuration strings can accept special characters such as \`&\`. If these special characters occupy the first character, such as in \`value: "&aString"\`, if the \`String\` is not between quotes the value will be wiped and the config option will be reset to its defaults. This is a limitation of the configuration system that Spigot uses.
-
-### `Serialized Location`
-
-`Serialized Location` is a specific type of String which looks like this:
-
-```yaml
-location: world,1.0,2.0,3.0,4.0,5.0
-```
-
-These are used to store and configure locations. It follows this format: `worldName,X,Y,Z,PITCH,YAW`. Pitch and yaw just determine the direction that the player is looking at, and is implemented the same way Minecraft locations are.
-
-### `Multiplier`
-
-`Multiplier` values multiply plugin values by that number. These values should _**never**_ be between quotes. Here's an example:
-
-```yaml
-damageMultiplier: 1.0
-```
-
-In this case, the damage multiplier would be multiplied by 1, meaning that there is no change from the default value. If the `Multiplier` was `2.0`, the value would be multiplied by `2.0`. If it was `0.5`, it would be multiplied by `0.5`. For those not good with fractions, multiplying by `0.5` is the same as dividing by 2. `Multiplier` values should always be larger than 0 (`0.0001` is valid) and don't tend to have a higher ceiling.
-
-### `Integer`
-
-`Integer` values are just whole numbers. Example:
-
-```yaml
-value: 10
-```
-
-The main thing about `Integer` values they must be whole numbers. This means that `10.1` is not valid.
-
-### `Double`
-
-`Double`s are irrational numbers. Example:
-
-```yaml
-value: 10.01
-```
-
-`Double`s can also happen to be whole numbers like integers, like `10.0` or even represented as `10`.
-
-### `String List`
-
-`String List`s are lists of `String` values. These tend to be the hardest values to configure, as they require a very specific config format:
-
-```yaml
-valuesList:
-- "value,1"
-- "value,2"
-- "value,3"
-```
-
-Like with `String`s, it is recommended to keep the values between quotes. Each `String List` has its own format, so you'll have to find the specific format the one you're editing requires; however, globally, that is what the overall format should look like.
+If you wish to learn more about a specific setting, you can refer to the config file and review the comments.
 
 ---
 
@@ -113,206 +16,449 @@ Like with `String`s, it is recommended to keep the values between quotes. Each `
 
 `config.yml` contains mostly random settings that couldn't comfortably fit elsewhere at the time of creating them. It is the config file most likely to see changes between versions.
 
-```yaml
-defaultSpawnLocation: SERIALIZED LOCATION
+<div align="left">
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+instancedDungeonTitle: Start $difficulty difficulty dungeon!
+instancedDungeonDescription:
+- '&fCreate a new instance of the dungeon'
+- $dungeonName &ffor youreself and maybe
+- '&fsome friends!'
+treasureChestNoDropMessage: '&8[EliteMobs] &cYou didn''t get anything! Better luck
+  next time!'
+allowSpectatorsInInstancedContent: true
+noPendingCommands: '&cYou don''t currently have any pending commands!'
+trackMessage: Track the $name
+chestLowRankMessage: '&7[EM] &cYour guild rank needs to be at least $rank &cin order
+  to open this chest!'
+chestCooldownMessage: '&7[EM] &cYou''ve already opened this chest recently! Wait $time!'
+dismissEMMessage: '&8[EliteMobs] &2/elitemobs &fmenu not working for you? Try &2/elitemobs
+  alt &fto see an alternative version of the menu! &cDon''t want to see this message
+  again? &4/em dismiss'
+switchEMStyleMessage: '&8[EliteMobs] &2/elitemobs &fmenu style changed! Check it out!'
+alwaysShowEliteMobNameTags: false
+superMobStackAmount: 50
+preventEliteCreeperDamageToPassiveMobs: true
+useTitlesForMissingPermissionMessages: true
+preventEliteMobConversionOfNamedMobs: true
+enableHighCompatibilityMode: false
+nightmareWorldSpawnBonus: 0.5
+emLeadsToStatusMenu: true
+otherCommandsLeadToEMStatusMenu: true
+setupDoneV3: true
+preventVanillaReinforcementsForEliteEntities: true
+defaultSpawnLocation: world,0.0,99.0,0.0,0.0,0.0
+doExplosionRegen: true
+doRegenerateContainers: true
+defaultTransitiveBlockLimiter: 500
+onlyUseBedrockMenus: false
+characterLimitForBookMenuPages: 185
+useGlassToFillMenuEmptySpace: false
+menuUnicodeFormatting: false
+language: english
 ```
 
-Sets the default spawn location that is used by the Spawn teleport in the `/em` menu, specifically in the Teleports page.
-
-```yaml
-Use permissions: BOOLEAN
-```
-
-Sets whether the server will use permissions or the permissionless mode. This setting should be set from in-game via the `/em setup` menu.
-
-```yaml
-setupDone: BOOLEAN
-```
-
-Sets whether the 1-time setup is completed, which will determine whether or not OPs will be notified about it being completed or not upon logging in.
-
-```yaml
-otherCommandsLeadToEMStatusMenu: BOOLEAN
-```
-
-Sets whether running player commands that have been replaced by the `/em` interface will open the `/em` interface. Highly recommended to set this to `true`.
-
-```yaml
-emLeadsToStatusMenu: BOOLEAN
-```
-
-Sets whether the `/em` interface is enabled or not. Highly recommended to set this to `true`.
-
-```yaml
-alwaysShowEliteMobNameTags: BOOLEAN
-```
-
-Sets whether Elite name tags will always be shown or will only be shown after an Elite enters combat for the first time.
-
-```yaml
-superMobStackAmount: INTEGER
-```
-
-Sets how many passive mobs must be in close proximity of each other for them to stack and become a Super Mob.
-
-```yaml
-preventEliteCreeperDamageToPassiveMobs: BOOLEAN
-```
-
-Sets whether Elite Creeper blasts can damage farmable passive mobs or not.
-
-```yaml
-useTitlesForMissingPermissionMessages: BOOLEAN
-```
-
-Sets whether EliteMobs will display titles or text for showing a lack of permissions when attempting to run a command a player does not have the permissions for.
-
-```yaml
-preventEliteMobConversionOfNamedMobs: BOOLEAN
-```
-
-Sets whether EliteMobs will prevent the conversion of named mobs to Elite Mobs. Setting this to false may be important if you have other plugins that modify mobs, as it is an easy way to make EliteMobs compatible with those plugins.
-
-```yaml
-enableHighCompatibilityMode: BOOLEAN
-```
-
-Sets whether EliteMobs will convert mobs that spawn due to the CUSTOM spawn reason. Mobs may spawn with a CUSTOM spawn reason when another plugin spawns an entity, or when an entity is spawned through a command. If you are experiencing issues where EliteMobs is converting mobs from other plugins that it shouldn't, turn this on. If you are using commands or some plugin to create custom spawning logic (like in arenas), leave this set to false.
-
-```yaml
-nightmareWorldSpawnBonus: MULTIPLIER
-```
-
-Sets the multiplier for the spawn bonus in nightmare worlds. Nightmare worlds are set in ValidWorlds.yml, and the feature consists in higher Elite spawn rates, shorter days and the inability to sleep at night.
+</details>
 
 ---
 
 ## AdventurersGuild.yml
 
-`AdventurersGuild.yml` contains config settings relevant to both the Adventurer's Guild Hub (the world), as well as settings relevant to the Adventurer's Guild rankup system.
+`AdventurersGuild.yml` contains config settings relevant to both the Adventurer's Guild Hub (the world), and settings relevant to the Adventurer's Guild rankup system.
 
-```yaml
-Add max health when unlocking higher guild ranks: BOOLEAN
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+Add max health when unlocking higher guild ranks: true
+Add critical chance when unlocking higher guild ranks: true
+Add dodge chance when unlocking higher guild ranks: true
+guildHubIsEnabledv2: true
+Adventurer's Guild world name v3: em_adventurers_guild
+Guild world coordinates: 208.5,88,236.5,-80,0
+userCommandsTeleportToAdventurersGuild: true
+adventurersGuildMenuName: '&6&lAdventurer''s Hub'
+Prestige 0 rank 0: '&8Commoner - disables elites!'
+Prestige 0 rank 0 short placeholder: '&6&l✧&e0'
+Prestige 0 rank 1: '&fRookie'
+Prestige 0 rank 1 short placeholder: '&6&l✧&eⅠ'
+Prestige 0 rank 2: '&fNovice'
+Prestige 0 rank 2 short placeholder: '&6&l✧&eⅠⅠ'
+Prestige 0 rank 3: '&fApprentice'
+Prestige 0 rank 3 short placeholder: '&6&l✧&eⅠⅠⅠ'
+Prestige 0 rank 4: '&2Adventurer'
+Prestige 0 rank 4 short placeholder: '&6&l✧&eⅠⅤ'
+Prestige 0 rank 5: '&2Journeyman'
+Prestige 0 rank 5 short placeholder: '&6&l✧&eⅤ'
+Prestige 0 rank 6: '&2Adept'
+Prestige 0 rank 6 short placeholder: '&6&l✧&eⅤⅠ'
+Prestige 0 rank 7: '&1Veteran'
+Prestige 0 rank 7 short placeholder: '&6&l✧&eⅤⅠⅠ'
+Prestige 0 rank 8: '&1Elite'
+Prestige 0 rank 8 short placeholder: '&6&l✧&eⅤⅠⅠⅠ'
+Prestige 0 rank 9: '&lMaster'
+Prestige 0 rank 9 short placeholder: '&6&l✧&eⅠⅩ'
+Prestige 0 rank 10: '&5Hero'
+Prestige 0 rank 10 short placeholder: '&6&l✧&eⅩ'
+Prestige 1 rank 0: '&ePrestige 1 &8Commoner'
+Prestige 1 rank 0 short placeholder: '&e⚜Ⅰ&6&l✧&e0'
+Prestige 1 rank 1: '&ePrestige 1 &fRookie'
+Prestige 1 rank 1 short placeholder: '&e⚜Ⅰ&6&l✧&eⅠ'
+Prestige 1 rank 2: '&ePrestige 1 &fNovice'
+Prestige 1 rank 2 short placeholder: '&e⚜Ⅰ&6&l✧&eⅠⅠ'
+Prestige 1 rank 3: '&ePrestige 1 &fApprentice'
+Prestige 1 rank 3 short placeholder: '&e⚜Ⅰ&6&l✧&eⅠⅠⅠ'
+Prestige 1 rank 4: '&ePrestige 1 &2Adventurer'
+Prestige 1 rank 4 short placeholder: '&e⚜Ⅰ&6&l✧&eⅠⅤ'
+Prestige 1 rank 5: '&ePrestige 1 &2Journeyman'
+Prestige 1 rank 5 short placeholder: '&e⚜Ⅰ&6&l✧&eⅤ'
+Prestige 1 rank 6: '&ePrestige 1 &2Adept'
+Prestige 1 rank 6 short placeholder: '&e⚜Ⅰ&6&l✧&eⅤⅠ'
+Prestige 1 rank 7: '&ePrestige 1 &1Veteran'
+Prestige 1 rank 7 short placeholder: '&e⚜Ⅰ&6&l✧&eⅤⅠⅠ'
+Prestige 1 rank 8: '&ePrestige 1 &1Elite'
+Prestige 1 rank 8 short placeholder: '&e⚜Ⅰ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 1 rank 9: '&ePrestige 1 &5Master'
+Prestige 1 rank 9 short placeholder: '&e⚜Ⅰ&6&l✧&eⅠⅩ'
+Prestige 1 rank 10 short placeholder: '&e⚜Ⅰ&6&l✧&eⅩ'
+Prestige 1 rank 10: '&ePrestige 1 &5Hero'
+Prestige 1 rank 11: '&ePrestige 1 &5Legend'
+Prestige 1 rank 11 short placeholder: '&e⚜Ⅰ&6&l✧&eⅩⅠ'
+Prestige 2 rank 0: '&2Prestige 2 &8Commoner'
+Prestige 2 rank 0 short placeholder: '&2⚜ⅠⅠ&6&l✧&e0'
+Prestige 2 rank 1: '&2Prestige 2 &fRookie'
+Prestige 2 rank 1 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅠ'
+Prestige 2 rank 2: '&2Prestige 2 &fNovice'
+Prestige 2 rank 2 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅠⅠ'
+Prestige 2 rank 3: '&2Prestige 2 &fApprentice'
+Prestige 2 rank 3 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅠⅠⅠ'
+Prestige 2 rank 4: '&2Prestige 2 &2Adventurer'
+Prestige 2 rank 4 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅠⅤ'
+Prestige 2 rank 5: '&2Prestige 2 &2Journeyman'
+Prestige 2 rank 5 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅤ'
+Prestige 2 rank 6: '&2Prestige 2 &2Adept'
+Prestige 2 rank 6 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅤⅠ'
+Prestige 2 rank 7: '&2Prestige 2 &1Veteran'
+Prestige 2 rank 7 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅤⅠⅠ'
+Prestige 2 rank 8: '&2Prestige 2 &1Elite'
+Prestige 2 rank 8 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 2 rank 9: '&2Prestige 2 &5Master'
+Prestige 2 rank 9 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅠⅩ'
+Prestige 2 rank 10 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅩ'
+Prestige 2 rank 10: '&2Prestige 2 &5Hero'
+Prestige 2 rank 11: '&2Prestige 2 &5Legend'
+Prestige 2 rank 11 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅩⅠ'
+Prestige 2 rank 12: '&2Prestige 2 &5Myth'
+Prestige 2 rank 12 short placeholder: '&2⚜ⅠⅠ&6&l✧&eⅩⅠⅠ'
+Prestige 3 rank 0: '&aPrestige 3 &8Commoner'
+Prestige 3 rank 0 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&e0'
+Prestige 3 rank 1: '&aPrestige 3 &fRookie'
+Prestige 3 rank 1 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅠ'
+Prestige 3 rank 2: '&aPrestige 3 &fNovice'
+Prestige 3 rank 2 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅠⅠ'
+Prestige 3 rank 3: '&aPrestige 3 &fApprentice'
+Prestige 3 rank 3 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅠⅠⅠ'
+Prestige 3 rank 4: '&aPrestige 3 &2Adventurer'
+Prestige 3 rank 4 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅠⅤ'
+Prestige 3 rank 5: '&aPrestige 3 &2Journeyman'
+Prestige 3 rank 5 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅤ'
+Prestige 3 rank 6: '&aPrestige 3 &2Adept'
+Prestige 3 rank 6 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅤⅠ'
+Prestige 3 rank 7: '&aPrestige 3 &1Veteran'
+Prestige 3 rank 7 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅤⅠⅠ'
+Prestige 3 rank 8: '&aPrestige 3 &1Elite'
+Prestige 3 rank 8 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 3 rank 9: '&aPrestige 3 &5Master'
+Prestige 3 rank 9 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅠⅩ'
+Prestige 3 rank 10 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅩ'
+Prestige 3 rank 10: '&aPrestige 3 &5Hero'
+Prestige 3 rank 11: '&aPrestige 3 &5Legend'
+Prestige 3 rank 11 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅩⅠ'
+Prestige 3 rank 12: '&aPrestige 3 &5Myth'
+Prestige 3 rank 12 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅩⅠⅠ'
+Prestige 3 rank 13: '&aPrestige 3 &5Immortal'
+Prestige 3 rank 13 short placeholder: '&a⚜ⅠⅠⅠ&6&l✧&eⅩⅠⅠⅠ'
+Prestige 4 rank 0: '&3Prestige 4 &8Commoner'
+Prestige 4 rank 0 short placeholder: '&3⚜ⅠⅤ&6&l✧&e0'
+Prestige 4 rank 1: '&3Prestige 4 &fRookie'
+Prestige 4 rank 1 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅠ'
+Prestige 4 rank 2: '&3Prestige 4 &fNovice'
+Prestige 4 rank 2 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅠⅠ'
+Prestige 4 rank 3: '&3Prestige 4 &fApprentice'
+Prestige 4 rank 3 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅠⅠⅠ'
+Prestige 4 rank 4: '&3Prestige 4 &2Adventurer'
+Prestige 4 rank 4 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅠⅤ'
+Prestige 4 rank 5: '&3Prestige 4 &2Journeyman'
+Prestige 4 rank 5 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅤ'
+Prestige 4 rank 6: '&3Prestige 4 &2Adept'
+Prestige 4 rank 6 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅤⅠ'
+Prestige 4 rank 7: '&3Prestige 4 &1Veteran'
+Prestige 4 rank 7 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅤⅠⅠ'
+Prestige 4 rank 8: '&3Prestige 4 &1Elite'
+Prestige 4 rank 8 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 4 rank 9: '&3Prestige 4 &5Master'
+Prestige 4 rank 9 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅠⅩ'
+Prestige 4 rank 10 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅩ'
+Prestige 4 rank 10: '&3Prestige 4 &5Hero'
+Prestige 4 rank 11: '&3Prestige 4 &5Legend'
+Prestige 4 rank 11 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅩⅠ'
+Prestige 4 rank 12: '&3Prestige 4 &5Myth'
+Prestige 4 rank 12 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅩⅠⅠ'
+Prestige 4 rank 13: '&3Prestige 4 &5Immortal'
+Prestige 4 rank 13 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅩⅠⅠⅠ'
+Prestige 4 rank 14: '&3Prestige 4 &5Chosen'
+Prestige 4 rank 14 short placeholder: '&3⚜ⅠⅤ&6&l✧&eⅩⅠⅤ'
+Prestige 5 rank 0: '&bPrestige 5 &8Commoner'
+Prestige 5 rank 0 short placeholder: '&b⚜Ⅴ&6&l✧&e0'
+Prestige 5 rank 1: '&bPrestige 5 &fRookie'
+Prestige 5 rank 1 short placeholder: '&b⚜Ⅴ&6&l✧&eⅠ'
+Prestige 5 rank 2: '&bPrestige 5 &fNovice'
+Prestige 5 rank 2 short placeholder: '&b⚜Ⅴ&6&l✧&eⅠⅠ'
+Prestige 5 rank 3: '&bPrestige 5 &fApprentice'
+Prestige 5 rank 3 short placeholder: '&b⚜Ⅴ&6&l✧&eⅠⅠⅠ'
+Prestige 5 rank 4: '&bPrestige 5 &2Adventurer'
+Prestige 5 rank 4 short placeholder: '&b⚜Ⅴ&6&l✧&eⅠⅤ'
+Prestige 5 rank 5: '&bPrestige 5 &2Journeyman'
+Prestige 5 rank 5 short placeholder: '&b⚜Ⅴ&6&l✧&eⅤ'
+Prestige 5 rank 6: '&bPrestige 5 &2Adept'
+Prestige 5 rank 6 short placeholder: '&b⚜Ⅴ&6&l✧&eⅤⅠ'
+Prestige 5 rank 7: '&bPrestige 5 &1Veteran'
+Prestige 5 rank 7 short placeholder: '&b⚜Ⅴ&6&l✧&eⅤⅠⅠ'
+Prestige 5 rank 8: '&bPrestige 5 &1Elite'
+Prestige 5 rank 8 short placeholder: '&b⚜Ⅴ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 5 rank 9: '&bPrestige 5 &5Master'
+Prestige 5 rank 9 short placeholder: '&b⚜Ⅴ&6&l✧&eⅠⅩ'
+Prestige 5 rank 10 short placeholder: '&b⚜Ⅴ&6&l✧&eⅩ'
+Prestige 5 rank 10: '&bPrestige 5 &5Hero'
+Prestige 5 rank 11: '&bPrestige 5 &5Legend'
+Prestige 5 rank 11 short placeholder: '&b⚜Ⅴ&6&l✧&eⅩⅠ'
+Prestige 5 rank 12: '&bPrestige 5 &5Myth'
+Prestige 5 rank 12 short placeholder: '&b⚜Ⅴ&6&l✧&eⅩⅠⅠ'
+Prestige 5 rank 13: '&bPrestige 5 &5Immortal'
+Prestige 5 rank 13 short placeholder: '&b⚜Ⅴ&6&l✧&eⅩⅠⅠⅠ'
+Prestige 5 rank 14: '&bPrestige 5 &5Chosen'
+Prestige 5 rank 14 short placeholder: '&b⚜Ⅴ&6&l✧&eⅩⅠⅤ'
+Prestige 5 rank 15: '&bPrestige 5 &5Ascendant'
+Prestige 5 rank 15 short placeholder: '&b⚜Ⅴ&6&l✧&eⅩⅤ'
+Prestige 6 rank 0: '&4Prestige 6 &8Commoner'
+Prestige 6 rank 0 short placeholder: '&4⚜ⅤⅠ&6&l✧&e0'
+Prestige 6 rank 1: '&4Prestige 6 &fRookie'
+Prestige 6 rank 1 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅠ'
+Prestige 6 rank 2: '&4Prestige 6 &fNovice'
+Prestige 6 rank 2 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅠⅠ'
+Prestige 6 rank 3: '&4Prestige 6 &fApprentice'
+Prestige 6 rank 3 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅠⅠⅠ'
+Prestige 6 rank 4: '&4Prestige 6 &2Adventurer'
+Prestige 6 rank 4 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅠⅤ'
+Prestige 6 rank 5: '&4Prestige 6 &2Journeyman'
+Prestige 6 rank 5 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅤ'
+Prestige 6 rank 6: '&4Prestige 6 &2Adept'
+Prestige 6 rank 6 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅤⅠ'
+Prestige 6 rank 7: '&4Prestige 6 &1Veteran'
+Prestige 6 rank 7 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅤⅠⅠ'
+Prestige 6 rank 8: '&4Prestige 6 &1Elite'
+Prestige 6 rank 8 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 6 rank 9: '&4Prestige 6 &5Master'
+Prestige 6 rank 9 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅠⅩ'
+Prestige 6 rank 10 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅩ'
+Prestige 6 rank 10: '&4Prestige 6 &5Hero'
+Prestige 6 rank 11: '&4Prestige 6 &5Legend'
+Prestige 6 rank 11 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅩⅠ'
+Prestige 6 rank 12: '&4Prestige 6 &5Myth'
+Prestige 6 rank 12 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅩⅠⅠ'
+Prestige 6 rank 13: '&4Prestige 6 &5Immortal'
+Prestige 6 rank 13 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅩⅠⅠⅠ'
+Prestige 6 rank 14: '&4Prestige 6 &5Chosen'
+Prestige 6 rank 14 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅩⅠⅤ'
+Prestige 6 rank 15: '&4Prestige 6 &5Ascendant'
+Prestige 6 rank 15 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅩⅤ'
+Prestige 6 rank 16: '&4Prestige 6 &5Titan'
+Prestige 6 rank 16 short placeholder: '&4⚜ⅤⅠ&6&l✧&eⅩⅤⅠ'
+Prestige 7 rank 0: '&cPrestige 7 &8Commoner'
+Prestige 7 rank 0 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&e0'
+Prestige 7 rank 1: '&cPrestige 7 &fRookie'
+Prestige 7 rank 1 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅠ'
+Prestige 7 rank 2: '&cPrestige 7 &fNovice'
+Prestige 7 rank 2 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅠⅠ'
+Prestige 7 rank 3: '&cPrestige 7 &fApprentice'
+Prestige 7 rank 3 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅠⅠⅠ'
+Prestige 7 rank 4: '&cPrestige 7 &2Adventurer'
+Prestige 7 rank 4 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅠⅤ'
+Prestige 7 rank 5: '&cPrestige 7 &2Journeyman'
+Prestige 7 rank 5 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅤ'
+Prestige 7 rank 6: '&cPrestige 7 &2Adept'
+Prestige 7 rank 6 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅤⅠ'
+Prestige 7 rank 7: '&cPrestige 7 &1Veteran'
+Prestige 7 rank 7 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅤⅠⅠ'
+Prestige 7 rank 8: '&cPrestige 7 &1Elite'
+Prestige 7 rank 8 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 7 rank 9: '&cPrestige 7 &5Master'
+Prestige 7 rank 9 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅠⅩ'
+Prestige 7 rank 10 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅩ'
+Prestige 7 rank 10: '&cPrestige 7 &5Hero'
+Prestige 7 rank 11: '&cPrestige 7 &5Legend'
+Prestige 7 rank 11 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅩⅠ'
+Prestige 7 rank 12: '&cPrestige 7 &5Myth'
+Prestige 7 rank 12 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅩⅠⅠ'
+Prestige 7 rank 13: '&cPrestige 7 &5Immortal'
+Prestige 7 rank 13 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅩⅠⅠⅠ'
+Prestige 7 rank 14: '&cPrestige 7 &5Chosen'
+Prestige 7 rank 14 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅩⅠⅤ'
+Prestige 7 rank 15: '&cPrestige 7 &5Ascendant'
+Prestige 7 rank 15 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅩⅤ'
+Prestige 7 rank 16: '&cPrestige 7 &5Titan'
+Prestige 7 rank 16 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅩⅤⅠ'
+Prestige 7 rank 17: '&cPrestige 7 &5Demigod'
+Prestige 7 rank 17 short placeholder: '&c⚜ⅤⅠⅠ&6&l✧&eⅩⅤⅠⅠ'
+Prestige 8 rank 0: '&9Prestige 8 &8Commoner'
+Prestige 8 rank 0 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&e0'
+Prestige 8 rank 1: '&9Prestige 8 &fRookie'
+Prestige 8 rank 1 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅠ'
+Prestige 8 rank 2: '&9Prestige 8 &fNovice'
+Prestige 8 rank 2 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅠⅠ'
+Prestige 8 rank 3: '&9Prestige 8 &fApprentice'
+Prestige 8 rank 3 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅠⅠⅠ'
+Prestige 8 rank 4: '&9Prestige 8 &2Adventurer'
+Prestige 8 rank 4 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅠⅤ'
+Prestige 8 rank 5: '&9Prestige 8 &2Journeyman'
+Prestige 8 rank 5 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅤ'
+Prestige 8 rank 6: '&9Prestige 8 &2Adept'
+Prestige 8 rank 6 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅤⅠ'
+Prestige 8 rank 7: '&9Prestige 8 &1Veteran'
+Prestige 8 rank 7 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅤⅠⅠ'
+Prestige 8 rank 8: '&9Prestige 8 &1Elite'
+Prestige 8 rank 8 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 8 rank 9: '&9Prestige 8 &5Master'
+Prestige 8 rank 9 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅠⅩ'
+Prestige 8 rank 10 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅩ'
+Prestige 8 rank 10: '&9Prestige 8 &5Hero'
+Prestige 8 rank 11: '&9Prestige 8 &5Legend'
+Prestige 8 rank 11 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅩⅠ'
+Prestige 8 rank 12: '&9Prestige 8 &5Myth'
+Prestige 8 rank 12 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅩⅠⅠ'
+Prestige 8 rank 13: '&9Prestige 8 &5Immortal'
+Prestige 8 rank 13 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅩⅠⅠⅠ'
+Prestige 8 rank 14: '&9Prestige 8 &5Chosen'
+Prestige 8 rank 14 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅩⅠⅤ'
+Prestige 8 rank 15: '&9Prestige 8 &5Ascendant'
+Prestige 8 rank 15 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅩⅤ'
+Prestige 8 rank 16: '&9Prestige 8 &5Titan'
+Prestige 8 rank 16 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅩⅤⅠ'
+Prestige 8 rank 17: '&9Prestige 8 &5Demigod'
+Prestige 8 rank 17 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅩⅤⅠⅠ'
+Prestige 8 rank 18: '&9Prestige 8 &5Deity'
+Prestige 8 rank 18 short placeholder: '&9⚜ⅤⅠⅠⅠ&6&l✧&eⅩⅤⅠⅠⅠ'
+Prestige 9 rank 0: '&dPrestige 9 &8Commoner'
+Prestige 9 rank 0 short placeholder: '&d⚜ⅠⅩ&6&l✧&e0'
+Prestige 9 rank 1: '&dPrestige 9 &fRookie'
+Prestige 9 rank 1 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅠ'
+Prestige 9 rank 2: '&dPrestige 9 &fNovice'
+Prestige 9 rank 2 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅠⅠ'
+Prestige 9 rank 3: '&dPrestige 9 &fApprentice'
+Prestige 9 rank 3 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅠⅠⅠ'
+Prestige 9 rank 4: '&dPrestige 9 &2Adventurer'
+Prestige 9 rank 4 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅠⅤ'
+Prestige 9 rank 5: '&dPrestige 9 &2Journeyman'
+Prestige 9 rank 5 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅤ'
+Prestige 9 rank 6: '&dPrestige 9 &2Adept'
+Prestige 9 rank 6 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅤⅠ'
+Prestige 9 rank 7: '&dPrestige 9 &1Veteran'
+Prestige 9 rank 7 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅤⅠⅠ'
+Prestige 9 rank 8: '&dPrestige 9 &1Elite'
+Prestige 9 rank 8 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 9 rank 9: '&dPrestige 9 &5Master'
+Prestige 9 rank 9 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅠⅩ'
+Prestige 9 rank 10 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩ'
+Prestige 9 rank 10: '&dPrestige 9 &5Hero'
+Prestige 9 rank 11: '&dPrestige 9 &5Legend'
+Prestige 9 rank 11 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩⅠ'
+Prestige 9 rank 12: '&dPrestige 9 &5Myth'
+Prestige 9 rank 12 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩⅠⅠ'
+Prestige 9 rank 13: '&dPrestige 9 &5Immortal'
+Prestige 9 rank 13 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩⅠⅠⅠ'
+Prestige 9 rank 14: '&dPrestige 9 &5Chosen'
+Prestige 9 rank 14 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩⅠⅤ'
+Prestige 9 rank 15: '&dPrestige 9 &5Ascendant'
+Prestige 9 rank 15 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩⅤ'
+Prestige 9 rank 16: '&dPrestige 9 &5Titan'
+Prestige 9 rank 16 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩⅤⅠ'
+Prestige 9 rank 17: '&dPrestige 9 &5Demigod'
+Prestige 9 rank 17 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩⅤⅠⅠ'
+Prestige 9 rank 18: '&dPrestige 9 &5Deity'
+Prestige 9 rank 18 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩⅤⅠⅠⅠ'
+Prestige 9 rank 19: '&dPrestige 9 &5Godhunter'
+Prestige 9 rank 19 short placeholder: '&d⚜ⅠⅩ&6&l✧&eⅩⅠⅩ'
+Prestige 10 rank 0: '&5Prestige 10 &8Commoner'
+Prestige 10 rank 0 short placeholder: '&5⚜Ⅹ&6&l✧&e0'
+Prestige 10 rank 1: '&5Prestige 10 &fRookie'
+Prestige 10 rank 1 short placeholder: '&5⚜Ⅹ&6&l✧&eⅠ'
+Prestige 10 rank 2: '&5Prestige 10 &fNovice'
+Prestige 10 rank 2 short placeholder: '&5⚜Ⅹ&6&l✧&eⅠⅠ'
+Prestige 10 rank 3: '&5Prestige 10 &fApprentice'
+Prestige 10 rank 3 short placeholder: '&5⚜Ⅹ&6&l✧&eⅠⅠⅠ'
+Prestige 10 rank 4: '&5Prestige 10 &2Adventurer'
+Prestige 10 rank 4 short placeholder: '&5⚜Ⅹ&6&l✧&eⅠⅤ'
+Prestige 10 rank 5: '&5Prestige 10 &2Journeyman'
+Prestige 10 rank 5 short placeholder: '&5⚜Ⅹ&6&l✧&eⅤ'
+Prestige 10 rank 6: '&5Prestige 10 &2Adept'
+Prestige 10 rank 6 short placeholder: '&5⚜Ⅹ&6&l✧&eⅤⅠ'
+Prestige 10 rank 7: '&5Prestige 10 &1Veteran'
+Prestige 10 rank 7 short placeholder: '&5⚜Ⅹ&6&l✧&eⅤⅠⅠ'
+Prestige 10 rank 8: '&5Prestige 10 &1Elite'
+Prestige 10 rank 8 short placeholder: '&5⚜Ⅹ&6&l✧&eⅤⅠⅠⅠ'
+Prestige 10 rank 9: '&5Prestige 10 &5Master'
+Prestige 10 rank 9 short placeholder: '&5⚜Ⅹ&6&l✧&eⅠⅩ'
+Prestige 10 rank 10 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩ'
+Prestige 10 rank 10: '&5Prestige 10 &5Hero'
+Prestige 10 rank 11: '&5Prestige 10 &5Legend'
+Prestige 10 rank 11 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅠ'
+Prestige 10 rank 12: '&5Prestige 10 &5Myth'
+Prestige 10 rank 12 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅠⅠ'
+Prestige 10 rank 13: '&5Prestige 10 &5Immortal'
+Prestige 10 rank 13 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅠⅠⅠ'
+Prestige 10 rank 14: '&5Prestige 10 &5Chosen'
+Prestige 10 rank 14 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅠⅤ'
+Prestige 10 rank 15: '&5Prestige 10 &5Ascendant'
+Prestige 10 rank 15 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅤ'
+Prestige 10 rank 16: '&5Prestige 10 &5Titan'
+Prestige 10 rank 16 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅤⅠ'
+Prestige 10 rank 17: '&5Prestige 10 &5Demigod'
+Prestige 10 rank 17 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅤⅠⅠ'
+Prestige 10 rank 18: '&5Prestige 10 &5Deity'
+Prestige 10 rank 18 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅤⅠⅠⅠ'
+Prestige 10 rank 19: '&5Prestige 10 &5Godhunter'
+Prestige 10 rank 19 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅠⅩ'
+Prestige 10 rank 20: '&5Prestige 10 &5Godslayer'
+Prestige 10 rank 20 short placeholder: '&5⚜Ⅹ&6&l✧&eⅩⅩ'
+limitLootBasedOnGuildTier: true
+lootLimiterMessage: '&7[EM] &cYou must unlock the next guild rank through /ag to loot
+  better items!'
+onRankUpCommand: []
+onPrestigeUpCommand: []
+dodgePrestige3Bonus: 3.0
+dodgePrestige6Bonus: 6.0
+dodgePrestige9Bonus: 10.0
+critPrestige2Bonus: 3.0
+critPrestige5Bonus: 6.0
+critPrestige8Bonus: 10.0
+healthPrestige1Bonus: 2.0
+healthPrestige4Bonus: 2.5
+healthPrestige7Bonus: 3.0
+healthPrestige10Bonus: 4.0
+baseKillsForRankUp: 100
+additionalKillsForRankUpPerTier: 50
+prestigeUnlockMessageTitle: $player
+prestigeUnlockMessageSubtitle: '&2has unlocked $tier&2!'
+peacefulModeEliteChanceDecrease: 0.2
+worldsWithoutAGBonuses: []
 ```
 
-Sets whether the Prestige system health boost will be applied when ranking up in the Adventurer's Guild. Note: Requires at least Prestige 1 to start taking effect.
-
-```yaml
-Add critical chance when unlocking higher guild ranks: BOOLEAN
-```
-
-Sets whether the Prestige system critical strike chance bonus will be applied when ranking up in the Adventurer's Guild. Note: Requires at least Prestige 2 to start taking effect.
-
-```yaml
-Add dodge chance when unlocking higher guild ranks: BOOLEAN
-```
-
-Sets whether the Prestige system dodge chance bonus will be applied when ranking up in the Adventurer's Guild. Note: Requires at least Prestige 3 to start taking effect.
-
-```yaml
-Adventurer's Guild world name: STRING
-```
-
-Name of the world which contains the Adventurer's Guild. Note: This will soon be replaced with a proper `Serialized Location` value.
-
-```yaml
-Guild world coordinates: X,Y,Z,PITCH,YAW
-```
-
-Spawn location in the Adventurer's GUild world. Note: This will soon be replaced with a proper `Serialized Location` value.
-
-```yaml
-Teleport players to the adventurers guild using /ag: BOOLEAN
-```
-
-Sets whether players will be teleported to the Adventurer's Guild Hub when running the /ag command. Note: This has no effect if the Adventurer's Guild world isn't installed.
-
-```yaml
-adventurersGuildMenuName: STRING
-```
-
-Sets the name of the Adventurer's Guild Hub to be used in player displays. Note: Accepts color codes.
-
-```yaml
-Prestige X rank Y: STRING
-```
-
-Sets the name of the rank for players to read in various in-game locations. Note: Accepts color codes. Note: You can't add more than what already exists!
-
-```yaml
-Prestige X rank Y short placeholder: STRING
-```
-
-Sets the placeholder for the shortened version of the rank name. Note: This is the recommended placeholder for displaying ranks in chat or leaderboards.
-
-```yaml
-limitLootBasedOnGuildTier: BOOLEAN
-```
-
-Sets whether the loot that players can obtain is limited by their guild rank. The formula is 10 tiers of loot by guild rank, meaning that rank 1 is limited to tiers 0-10, rank 2 is limited to tiers 0-20, tier 3 0-30, 4 0-40... \*\*\*Note: This is key feature of EliteMobs for progression, and setting it to `false`will cause a lot of issues with gear progression in your server. Make sure you think it through before changing it from `true`. _**This feature won't work as intended if you turn Soulbind off!**_
-
-Why? Players are able to powerlevel (level up incredibly quickly) by simply sticking around with other high tier players and killing super high tier mobs with their help, then bypassing potentially hundreds of ranks worth of gear, and immediately completing all of the plugin's gear progression in quite possibly a single kill.
-
-```yaml
-lootLimiterMessage: STRING
-```
-
-Sets the message that will display in the action bar when a player kills a mob that would've looted better items if the player wasn't limited by the `limitLootBasedOnGuildTier` feature.
-
-```yaml
-alwaysUseNpcsWhenAvailable: true
-```
-
-Sets whether players will be forced to use NPCs for things like shops. If set to `true`, running a command like `/em shop` will instead teleport the player to the Adventurer's Guild Hub world where they will be able to interact with NPCs for trading in gear (Note: there is a summon scroll for a merchant for players that wish to take the shop to them, but it is a cheap 1-time use item). Note: This is highly recommended for immersion and for letting players explore the Hub world for other features they might've missed, such as Quests.
-
-```yaml
-onRankUpCommand: STRING LIST
-```
-
-Sets a list of commands to run when a player unlocks a new rank of the Adventurer's Guild. Here's an example format:
-
-```yaml
-onRankUpCommand:
-- "say Congratulations to $player for unlocking the prestige $prestigeRank tier $activeRank rank!"
-- "say Very cool!"
-```
-
-This runs 2 broadcasts. Note: This accepts the following placeholders: `$player` for the player's name, `$prestigeRank` for the number of the current prestige tier and `$activeRank` for the number of the rank they just unlocked.
-
-```yaml
-onPrestigeUpCommand: STRING LIST
-```
-
-Sets a list of commands to run when a player unlocks a prestige rank. This works in exactly the same way as `onRankUpCommand`, so check the option above.
-
-```yaml
-dodgePrestige3Bonus: MULTIPLIER
-dodgePrestige6Bonus: MULTIPLIER
-dodgePrestige9Bonus: MULTIPLIER
-critPrestige2Bonus: MULTIPLIER
-critPrestige5Bonus: MULTIPLIER
-critPrestige8Bonus: MULTIPLIER
-healthPrestige1Bonus: MULTIPLIER
-healthPrestige4Bonus: MULTIPLIER
-healthPrestige7Bonus: MULTIPLIER
-healthPrestige10Bonus: MULTIPLIER
-```
-
-Sets the various multipliers that will be used by the Prestige system when players rank up. Note: You can set how high the multipliers can go, but not when they activate in the Prestige system.
-
-```yaml
-baseKillsForRankUp: INTEGER
-```
-
-Sets the base amount of mobs, on average, that a player must kill in order to afford to rank up in the Adventurer's Guild.
-
-Details This assumes that players are legitimately killing Elites at the highest unlocked tier and also doesn't take things such as the value of items looted into account. It is just a rough estimation, and if players insist in killing lower level mobs it will take significantly longer, as it should.
-
-```yaml
-additionalKillsForRankUpPerTier: INTEGER
-```
-
-Sets the amount of mobs, on average, that is added to the base amount to unlock an Adventurer's Guild rank. Example: assuming a base of `100` adding `50` per tier, at tier 7 a player would have to kill `100 + 50 * 7 = 450` elites in order to rank up. Note: These are just high estimations, the real amount can be significantly lower as this doesn't take loot resale into account, only coins from the coin shower.
+</details>
 
 ---
 
@@ -322,43 +468,28 @@ Sets the amount of mobs, on average, that is added to the base amount to unlock 
 
 This is a critical system to keep on if you don't want people to just afk grind the entire plugin and want to actually have them interact with minidungeons.
 
-```yaml
-AntiExploit message: STRING
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+AntiExploit message: '&c[EM AntiExploit] &7Nearby elite won''t drop special loot.'
+Enable darkroom antiexploit 1: true
+Enable darkroom antiexploit 2: true
+Enable darkroom antiexploit 3: true
+Enable large darkroom antiexploit 1: true
+Enable large darkroom antiexploit 2: true
+Enable large darkroom antiexploit 3: true
+Enable enderman height antiexploit: true
+Enable mount antiexploit: true
+Enable tower antiexploit: true
+preventItemPickupByMobs: true
+Enable ambient damage antiexploit: true
+Enable honey block antiexploit: true
+antiExploitThreshold: 10
 ```
 
-Sets the message that shows up on nearby player Action Bars when a mob has exceeded the threshold of the AntiExploit system and will no longer drop EliteMobs loot.
-
-```yaml
-Enable darkroom antiexploit 1: BOOLEAN
-Enable darkroom antiexploit 2: BOOLEAN
-Enable darkroom antiexploit 3: BOOLEAN
-Enable large darkroom antiexploit 1: BOOLEAN
-Enable large darkroom antiexploit 2: BOOLEAN
-Enable large darkroom antiexploit 3: BOOLEAN
-Enable large darkroom antiexploit 4: BOOLEAN
-Enable enderman height antiexploit: BOOLEAN
-Enable mount antiexploit: BOOLEAN
-Enable tower antiexploit: BOOLEAN
-Enable density antiexploit: BOOLEAN
-Enable ambient damage antiexploit: BOOLEAN
-Enable honey block antiexploit: BOOLEAN
-```
-
-Sets whether a certain type of antiexploit is on. You can tell which AntiExploit feature triggered if you are OP on a server and are nearby when the antiexploit is triggered, as it will give a different message with a code saying which AntiExploit feature was triggered. No documentation is provided for what exactly each antiexploit feature does to prevent having people read documentation and then create exploits that they know will work based on what the documentation says.
-
-```yaml
-preventItemPickupByMobs: BOOLEAN
-```
-
-Sets whether Elites can pick up dropped items. Elites will never drop items they picked up, so this will result in permanent item loss the moment items get picked up.
-
-```yaml
-antiExploitThreshold: INTEGER
-```
-
-Sets the threshold after which EliteMobs will stop dropping items for the AntiExploit.
-
-What does this actually do? The AntiExploit works on a point-based system, where each different exploit results in a different score being applied. Additionally, certain interactions result in scores getting lowered. If the score goes over the number set by \`antiExploitThreshold\`, the Elite will no longer drop Elite loot, regardless of what happens after that point. This system is tweaked around the assumption that the total score to beat is 10, and it is highly recommended that that value does not change, or at least doesn't change much from 10. Thoroughly playtest any modifications to this value.
+</details>
 
 ---
 
@@ -366,25 +497,19 @@ What does this actually do? The AntiExploit works on a point-based system, where
 
 `CombatTag.yml` contains the config settings for the Combat Tag system. This system is still very far from being complete, but it attempts to manage player behavior once they enter combat.
 
-```yaml
-Enable combat tag: BOOLEAN
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+Teleport time left: '&7[EM] Teleporting in &a$time &7seconds...'
+Teleport cancelled: '&7[EM] &cTeleport interrupted!'
+Enable combat tag: true
+Combat tag message: '&c[EliteMobs] Combat tag activated!'
+Enable adventurers guild teleport timer: true
 ```
 
-Sets whether the combat tag system is enabled.
-
-```yaml
-Combat tag message: STRING
-```
-
-Sets the message that is sent to a player's Action Bar if they trigger the Combat Tag. Note. Accepts color codes.
-
-```yaml
-Enable adventurers guild teleport timer: BOOLEAN
-```
-
-Sets whether teleportation to the Adventurer's Guild will take a certain amount of time or if it will be instant. Note: This now also sets the time for all teleports in the Teleports page of the `/em` menu. Additionally, if players move during the teleport, it will be cancelled. If enabled, it will take 3 seconds before a teleportation is completed.
-
-Why? This feature is used to avoid having people instantly teleport out of danger during combat.
+</details>
 
 ---
 
@@ -392,127 +517,163 @@ Why? This feature is used to avoid having people instantly teleport out of dange
 
 `DiscordSRV.yml` contains the configuration settings for DiscordSRV. If you want to see how to configure this feature, [click here!]($language$/elitemobs/discordsrv.md)
 
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+announcementRoomName: YOU_NEED_TO_PUT_THE_NAME_OF_THE_DISCORD_ROOM_YOU_WANT_ELITEMOBS_ANNOUNCEMENTS_TO_BE_BROADCASTED_IN_AS_YOU_HAVE_IN_YOUR_DISCORDSRV_CONFIGURATION_FILE_CHECK_ELITEMOBS_WIKI_FOR_DETAILS
+```
+
+</details>
+
 ---
 
 ## EconomySettings.yml
 
 `EconomySettings.yml` contains the configuration settings for the EliteMobs economy.
 
-```yaml
-enableEconomy: BOOLEAN
-```
+<details>
 
-Sets whether the economy will be used. _**Note: at this point disabling this would cause so many issues that there is no support for users who choose to disable this.**_ Just don't disable it. It breaks the entire progression system.
+<summary><b>Expand Table</b></summary>
 
-```yaml
-itemResaleValue: DOUBLE
-```
-
-Sets the % of the original value items will resell for. As an example, a value of `5` would mean that all items resell for 5% of their original worth.
-
-```yaml
-currencyName: STRING
-```
-
-Sets the name of the currency that players see wherever the currency shows up.
-
-```yaml
-useVault - not recommended: BOOLEAN
-```
-
-Sets whether EliteMobs will use Vault to link its currency to the server's Vault currency. This is not recommended, [read here as to why.]($language$/elitemobs/vault.md)
-
-```yaml
-enableCurrencyShower: BOOLEAN
-```
-
-Sets whether Elites / Custom Bosses will drop a bunch of Elite Coins when they die. _**Note: This will be deactivated by default if you turn the Soulbind feature is off.**_
-
-```yaml
-currencyShowerTierMultiplier: MULTIPLIER
-```
-
-Sets the multiplier for the coins dropped in the currency shower.
-
-```yaml
-chatCurrencyShowerMessage: STRING
-```
-
-Sets the message that shows up on chat once players are done picking coins up. Note: can use color codes.
-
-```yaml
-actionbarCurrencyShowerMessage: String
-```
-
-Sets the message that shows up on action bar as players pick coins up. Note: can use color codes.
-
-```yaml
-adventurersGuildNotificationMessages: STRING
-```
-
-Sets the message that shows up on action bar after players are done picking up coins. Note: can use color codes. This is used to teach players how to spend currency.
-
-```yaml
+```yml
+Economy pay message v2: '&2You have paid &2$amount_sent $currency_name &2to $receiver&2,
+  who got $amount_received after taxes!'
+Economy currency left message: You now have &2$amount_left $currency_name
+Economy money from payment message: You have received &2$amount_received $currency_name
+  &ffrom $sender
+Economy payment insufficient currency: '&cYou don''t have enough $currency_name to
+  do that!'
+Wallet command message: You have &2$balance $currency_name
+Tax confirmation message: '&cSending a payment will cost $percentage% in taxes. &aDo
+  &9$command &ato proceed!'
+Shop buy message: '&aYou have bought $item_name &afor $item_value $currency_name!'
+Shop current balance message: '&aYou have $currency_amount $currency_name.'
+Shop insufficient funds message: '&cYou don''t have enough $currency_name!'
+Shop item cost message: That item costs &c$item_value $currency_name.
+Shop sell message: '&aYou have sold $item_name &afor $currency_amount $currency_name!'
+Shop sale player items warning: '&cYou can''t sell items that are not currently soulbound
+  to you! This includes items from other prestige tiers!'
+Shop sale instructions: '&cYou can only sell EliteMobs loot here! (Armor / weapons
+  dropped from elites showing a value on their lore)'
+shopBatchSellItem: '&aYou have sold your items &afor $currency_amount $currency_name!'
+enableEconomy: true
+itemResaleValue: 5.0
+currencyName: Elite Coins
+useVault - not recommended: false
+enableCurrencyShower: true
+currencyShowerTierMultiplier: 1.0
+chatCurrencyShowerMessage: '&7[EM] You''ve picked up &a$amount $currency_name!'
+actionbarCurrencyShowerMessage: '&7[EM] You''ve picked up &a$amount $currency_name!'
 lootShowerMaterial:
-  '1': STRING
-  '5': STRING
-  '10': STRING
-  '20': STRING
-  '50': STRING
-  '100': STRING
-  '500': STRING
-  '1000': STRING
+  '1': GOLD_NUGGET
+  '5': GOLD_INGOT
+  '10': GOLD_BLOCK
+  '20': EMERALD
+  '50': EMERALD_BLOCK
+  '100': DIAMOND
+  '500': DIAMOND_BLOCK
+  '1000': NETHER_STAR
+lootShowerData:
+  '1': 1
+  '5': 1
+  '10': 1
+  '20': 1
+  '50': 1
+  '100': 1
+  '500': 1
+  '1000': 1
+adventurersGuildNotificationMessages: '&7[EM] Extra spending money? Try &a/em !'
+materialWorth:
+  DIAMOND_AXE: 17.0
+  DIAMOND_BOOTS: 17.0
+  DIAMOND_CHESTPLATE: 17.0
+  DIAMOND_LEGGINGS: 17.0
+  DIAMOND_HELMET: 17.0
+  DIAMOND_PICKAXE: 17.0
+  DIAMOND_SHOVEL: 17.0
+  DIAMOND_SWORD: 17.0
+  DIAMOND_HOE: 17.0
+  IRON_AXE: 16.0
+  IRON_BOOTS: 16.0
+  IRON_LEGGINGS: 16.0
+  IRON_CHESTPLATE: 16.0
+  IRON_HELMET: 16.0
+  IRON_PICKAXE: 16.0
+  IRON_SHOVEL: 16.0
+  IRON_HOE: 16.0
+  IRON_SWORD: 16.0
+  SHIELD: 16.0
+  BOW: 16.0
+  CHAINMAIL_BOOTS: 15.0
+  CHAINMAIL_LEGGINGS: 15.0
+  CHAINMAIL_CHESTPLATE: 15.0
+  CHAINMAIL_HELMET: 15.0
+  STONE_SWORD: 15.0
+  STONE_AXE: 15.0
+  STONE_PICKAXE: 15.0
+  STONE_SHOVEL: 15.0
+  STONE_HOE: 15.0
+  GOLDEN_AXE: 13.0
+  GOLDEN_BOOTS: 13.0
+  GOLDEN_LEGGINGS: 13.0
+  GOLDEN_CHESTPLATE: 13.0
+  GOLDEN_HELMET: 13.0
+  GOLDEN_SWORD: 13.0
+  GOLDEN_SHOVEL: 13.0
+  GOLDEN_PICKAXE: 13.0
+  GOLDEN_HOE: 13.0
+  GOLDEN_APPLE: 17.0
+  ENCHANTED_GOLDEN_APPLE: 17.0
+  LEATHER_BOOTS: 13.0
+  LEATHER_LEGGINGS: 13.0
+  LEATHER_CHESTPLATE: 13.0
+  LEATHER_HELMET: 13.0
+  WOODEN_SWORD: 13.0
+  WOODEN_AXE: 13.0
+  WOODEN_HOE: 13.0
+  WOODEN_PICKAXE: 13.0
+  TRIDENT: 17.0
+  ELYTRA: 17.0
+  TURTLE_HELMET: 13.0
+  NETHERITE_AXE: 18.0
+  NETHERITE_PICKAXE: 18.0
+  NETHERITE_SHOVEL: 18.0
+  NETHERITE_HOE: 18.0
+  NETHERITE_SWORD: 18.0
+  NETHERITE_HELMET: 18.0
+  NETHERITE_CHESTPLATE: 18.0
+  NETHERITE_LEGGINGS: 18.0
+  NETHERITE_BOOTS: 18.0
+defaultMaterialWorth: 1.0
+playerToPlayerPaymentTaxes: 0.2
 ```
 
-Sets the material to be used for the different coin values. [These MUST use values as they are written in this list or it will NOT work.](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) Note: you can't add values that don't already exist.
+</details>
 
-```yaml
-materialWorth: STRING LIST
-```
-
-Sets the base worth of different material types. This will directly affect items sold by and to elite shops. NOTE: You can add your own values here, assuming you use the [correct API names.](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) Additionally, the `defaultMaterialWorth` sets the default worth of materials, which will be used for materials that are not explicitly listed in this `String List`.
+---
 
 ## events.yml
 
-`events.yml` contains the configuration options for events. _**Note: these are just the very basic global settings.**_ You can further modify specific events in the `events` folder.
+`events.yml` contains the configuration options for events. 
 
-```yaml
-Enable events: BOOLEAN
+_**Note: these are just the very basic global settings.**_ 
+
+You can further modify specific events in the `events` folder.
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+Only broadcast event message in event worlds: false
+actionEventMinimumCooldownMinutes: 240
+actionEventsEnabled: true
+timedEventsEnabled: true
 ```
 
-Sets whether all events are enabled.
-
-```yaml
-Minimum amount of online players for event to trigger: INTEGER
-```
-
-Sets the minimum amount of online players for events to have a chance to trigger.
-
-```yaml
-Maximum amount of online players after which the event frequency won't increase: INTEGER
-```
-
-Sets the amount after which event frequency won't increase.
-
-Why? More players online = more events. This is because a lot of events, like the Treasure Goblin, can realistically only be done by a few players. This means that the more players are online, the fewer players get to do events. To compensate for this issue, if there are more players online, the server will have more events so everyone has a chance to participate.
-
-```yaml
-Minimum event frequency (minutes): INTEGER
-```
-
-Sets the minimum delay between events, in minutes. Note: every event has a trigger. This is the delay between events getting queued and not triggered. There might be a further delay between the moment an event gets queued and the moment when an event is actually triggered. As an example, the Dead Moon event requires night time, a new moon phase (AKA dark moon) and for a zombie to spawn somewhere valid. This is the most complex set of requirements, but it explains why there can be a delay between when an event should've fired and when it actually does fire pretty well.
-
-```yaml
-Maximum event frequency (minutes): INTEGER
-```
-
-Sets the maximum delay between events, in minutes.
-
-```yaml
-Only broadcast event message in event world: BOOLEAN
-```
-
-Sets whether the message about the event triggered will only be broadcasted to the world where it was triggered.
+</details>
 
 ---
 
@@ -520,28 +681,22 @@ Sets whether the message about the event triggered will only be broadcasted to t
 
 `ItemSettings.yml` contains the global settings for Elite items.
 
-```yaml
-doEliteMobsLoot: BOOLEAN
-```
+<details>
 
-Sets whether EliteMobs will drop Elite loot. _**NOTE: Disabling this would break or disable so many systems that it is not officially supported.**_
+<summary><b>Expand Table</b></summary>
 
-```yaml
-doMMORPGColorsForItems: BOOLEAN
-```
-
-Sets whether Elite items will be colored following an adapted World of Warcraft item quality system. The quality system goes like this: light blue (above max config enchant level) > gold > purple > blue > green > white > gray .
-
-```yaml
-preventCustomItemPlacement: BOOLEAN
-```
-
-Sets whether players are unable to place Elite items. This is recommended for things like charms that are actually anvil items, as players can missclick and accidentally place them down. Placing charms down will break them.
-
-```yaml
-itemLoreStructures:
+```yml
+levelRangeTooDifferent: '&8EM] &4Your gear is level $playerLevel and the boss is level
+  $bossLevel, level difference is too high to get coins!'
+levelIncreaseDropRateV2: 0.0
+maximumItemLevel: 200
+doEliteMobsLoot: true
+doMMORPGColorsForItems: true
+preventCustomItemPlacement: true
+itemLoreStructureV2:
 - §7§m§l---------§7<§lEquip Info§7>§m§l---------
 - '§7Item level: §f$itemLevel §7Prestige §6$prestigeLevel'
+- $weaponOrArmorStats
 - $soulbindInfo
 - $itemSource
 - $ifLore§7§m§l-----------§7< §f§lLore§7 >§m§l-----------
@@ -555,144 +710,60 @@ itemLoreStructures:
 - $potionEffect
 - §7§l§m-----------------------------
 - $loreResaleValue
+shopSourceItemLores: '&7Purchased from a store'
+mobSourceItemLores: '&7Looted from $mob'
+loreWorths: '&7Worth $worth $currencyName'
+loreResaleValues: '&7Sells for $resale $currencyName'
+flatDropRateV3: 0.2
+regionalBossNonUniqueDropRate: 0.05
+regionalBossesDropVanillaLoot: false
+proceduralItemDropWeight: 90.0
+weighedItemDropWeight: 1.0
+fixedItemDropWeight: 10.0
+limitedItemDropWeight: 3.0
+scalableItemDropWeight: 6.0
+defaultLootMultiplier: 0.0
+levelCapForDefaultLootMultiplier: 200
+defaultExperienceMultiplier: 1.0
+useEliteEnchantments: true
+eliteEnchantmentLoreStrings: Elite
+useHoesAsWeapons: false
+enableRareItemParticleEffects: true
+potionEffectOnHitTargetLore: '&4⚔☠'
+potionEffectOnHitSelfLore: '&9⚔🛡'
+potionEffectContinuousLore: '&6⟲'
+eliteEnchantmentLoreColor: '&9◇'
+vanillaEnchantmentLoreColor: '&7◇'
+customEnchantmentColor: '&3◇'
+potionEffectLoreColor: '&5◇'
+noSoulbindLore: '&7Not Soulbound!'
+preventEliteItemEnchantment: true
+preventEliteItemDisenchantment: true
+preventEliteItemDisenchantmentMessage: '&c[EliteMobs] Can''t disenchant Elite Items!'
+preventEliteItemDiamondToNetheriteUpgrade: true
+eliteItemsDurabilityLossOnlyOnDeath: true
+eliteItemsDurabilityLossMultiplier: 1.0
+scrapSucceededMessageV2: '&8[EliteMobs] &2Scrapping succeeded $amount times!'
+scrapFailedMessageV2: '&8[EliteMobs] &cScrapping failed $amount times!'
+putLootDirectlyIntoPlayerInventory: false
+lootLevelDifferenceLockout: 10
+preventEliteItemsFromBreaking: true
+lowDurabilityItemDropMessage: '&8[EliteMobs] &cDropped armor due to low durability!
+  &8Repair it at the NPC with scrap to use it!'
+lowWeaponItemDropMessage: '&8[EliteMobs] &cDropped weapon due to low durability! &8Repair
+  it at the NPC with scrap to use it!'
+minimumProcedurallyGeneratedDiamondLootLevelPlusSeven: 10
+simlootMessageSuccess: '&8[EliteMobs] &2Rolled for loot and got $itemName &2!'
+simlootMessageFailure: '&8[EliteMobs] &cRolled for loot and got nothing!'
+directDropCustomLootMessage: '&8[EliteMobs] &2Obtained $itemName &2!'
+directDropMinecraftLootMessage: '&8[EliteMobs] &aObtained $itemName &a!'
+directDropCoinMessage: '&8[EliteMobs] &aObtained &2$amount $currencyName &a!'
+hideItemAttributes: true
+weaponEntry: '&7Elite DPS: &2$EDPS'
+armorEntry: '&7Elite Armor: &2$EDEF'
 ```
 
-Sets the structure of the lore of Elite items. This affects both custom and procedurally generated items. It takes the following placeholders:
-
-- `$itemLevel` shows the item level
-- `$prestigeLevel` shows the prestige level (based on the prestige level of the player that looted the item)
-- `$soulbindInfo` posts a line containing the Soulbind info
-- `$itemSource` posts a line about the item source, i.e. if it came from a specific mob or from a shop
-- `$ifEnchantments` - conditional config line - everything on this line will only appear if the item has enchantments
-- `$enchantments`\- posts all lines with info about enchantments
-- `$eliteEnchantments` - posts all lines with info about Elite enchantments
-- `$ifCustomEnchantments` - conditional config line - everything on this line will only appear if the item has custom Elite enchantments
-- `$customEnchantments` - posts all lines with info about custom Elite enchantments
-- `$ifPotionEffects` - conditional config line - everything on this line will only appear if the item has potion effects
-- `$potionEffect` - posts all lines with info about potion effects
-- `$loreResaleValue` - posts a line with info about the worth of this item. This line is situational - when buying it shows the buying price, when selling it shows the selling price.
-
-```yaml
-shopSourceItemLores: STRING
-```
-
-Sets the message for the item source when it is purchased from a store.
-
-```yaml
-mobSourceItemLores: STRING
-```
-
-Sets the message for the item source when it was looted from a mob.
-
-```yaml
-loreWorths: STRING
-```
-
-Sets the message for the item price when a player is looking to buy it.
-
-```yaml
-loreResaleValues: STRING
-```
-
-Sets the message for the item price when a player has it in their posession.
-
-```yaml
-flatDropRate: DOUBLE
-```
-
-Sets the flat drop rate for items. This is a % where the `1` is 100%. Every other modifier to the drop chance is added to this base chance.
-
-```yaml
-tierIncreaseDropRate: DOUBLE
-```
-
-Sets the bonus to a chance to drop an item based on an Elite Mob tier. By default, with a value of `0.05`, this is 5% more per Elite Mob level. This means that at level 10 it'd be 50% chance to drop an item, on top of the base `0.25` or 25%, meaning a total of 75% chance to drop.
-
-```yaml
-proceduralItemDropWeight: DOUBLE
-weighedItemDropWeight: DOUBLE
-fixedItemDropWeight: DOUBLE
-limitedItemDropWeight: DOUBLE
-scalableItemDropWeight: DOUBLE
-```
-
-This is a complicated feature which uses the concept of weighed probability in order to decide which type of item will be dropped by an Elite assuming that they are going to drop an Elite item. `Weighed items`, `fixed items`, `limited items`and `scalable items` are all different types of Custom Items which can be read about [here]($language$/elitemobs/creating_items.md%scalability). `Procedural items` are the items that EliteMobs randomizes.
-
-It would take too long to explain how weighed probability works, so I will keep it very simple: the higher the number, the higher the chance that that item will drop. Be careful about setting any custom items high, as this means that unless you have hundreds or thousands of custom items you will probably be seeing the same custom item getting dropped constantly.
-
-```yaml
-defaultLootMultiplier: MULTIPLIER
-```
-
-Sets the multiplier for default loot, based on the tier of the Elite mob. NOTE: be careful if you want to use this setting, as levels can go as high as 250+. If you set it to `1.0`, this would mean that at level 250 an Elite Mob of any kind would drop 250x the default loot of that entity type. This can cause quite a bit of lag very quickly.
-
-```yaml
-levelCapForDefaultLootMultiplier: INTEGER
-```
-
-Sets the level cap after which the `defaultLootMultiplier` will no longer be multiplied. This is used as a safeguard for servers that spawn level `100,000,000` Elites and then try to drop 500,000,000 items at the same time.
-
-```yaml
-defaultExperienceMultiplier: MULTIPLIER
-```
-
-Sets the multiplier for vanilla Minecraft experience dropped by Elite Mobs based on their level. This is based on the amount dropped by a default Minecraft mob.
-
-```yaml
-maximumLootTiers: INTEGER
-```
-
-Sets the maximum tier of loot dropped by Elite Mobs. Note: certain loot systems, such as Custom Items with a fixed drop system can go over this limit.
-
-```yaml
-useEliteEnchantments: BOOLEAN
-```
-
-Sets whether the Elite enchantments system will be used. This is a key feature of EliteMobs. By default, if enchantments go beyond vanilla Minecraft defaults, they turn into Elite enchantments. Elite enchantments only modify damage dealt to Elite Mobs and Bosses. This is done to prevent harming the PvP scene, as well not destroying the Vanilla difficulty with sharpness 200 swords. Using Elite enchantments, you are able to still have a challenging vanilla experience without losing the EliteMobs progression. _**Note: disabling this can cause a lot of issues, and it is not supported.**_
-
-```yaml
-useHoesAsWeapons: BOOLEAN
-```
-
-Sets whether EliteMobs will consider Minecraft hoes as weapons for the combat system.
-
-```yaml
-enableRareItemParticleEffects: BOOLEAN
-```
-
-Sets whether EliteMobs will do special particle effects when an item of a high quality/rarity is dropped.
-
-```yaml
-potionEffectOnHitTargetLore: STRING
-potionEffectOnHitSelfLore: STRING
-potionEffectContinuousLore: STRING
-eliteEnchantmentLoreColor: STRING
-vanillaEnchantmentLoreColor: STRING
-customEnchantmentColor: STRING
-potionEffectLoreColor: STRING
-```
-
-Sets the messages and colors in the item lore of Elite items for the following features:
-
-- `potionEffectOnHitTargetLore` potion effects that occur on hit and apply to the target
-- `potionEffectOnHitSelfLore` potion effects that occur on hit and apply to the wielder
-- `potionEffectContinuousLore` potion effects that occur continuously and apply to the wielder
-- `eliteEnchantmentLoreColor` color and prefix of the lore of Elite enchantments
-- `vanillaEnchantmentLoreColor` color and prefix of the lore of vanilla enchantments
-- `customEnchantmentColor` color and prefix of the lore of custom enchantments
-- `potionEffectLoreColor` color and prefix of the lore of potion effects
-
-```yaml
-noSoulbindLore: STRING
-```
-
-Sets the item lore of Elite items that are not Soulbound.
-
-```yaml
-preventEliteItemEnchantment: BOOLEAN
-```
-
-Prevents Elite items from getting used in anvils and other locations where they might be modified by vanilla Minecraft mechanics.
+</details>
 
 ---
 
@@ -700,200 +771,84 @@ Prevents Elite items from getting used in anvils and other locations where they 
 
 `MobCombatSettings.yml` contains all config options related to the custom combat system and most config options generally related to how Elite Mobs work.
 
-```yaml
-defaultOtherWorldBossLocationMessage: STRING
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+damageToEliteMobMultiplierV2: 1.0
+damageToPlayerMultiplierV2: 1.0
+normalizedRegionalBossBaselineDamageV2: 3.0
+normalizedRegionalBossBaselineHealthV3: 4.0
+doNaturalEliteMobSpawning: true
+doSpawnersSpawnEliteMobs: false
+eliteMobsSpawnPercentage: 0.05
+superMobStackRange: 15
+naturalEliteMobsLevelCap: 250
+doElitesWearArmor: true
+doElitesWearHelmets: true
+doNaturalEliteMobVisualEffects: true
+doSpawnerEliteMobVisualEffects: false
+doPowerBuildupVisualEffects: true
+doCustomEliteMobsDeathMessages: true
+doDisplayMobHealthOnHit: true
+doDisplayMobDamageOnHit: true
+doIncreaseEliteMobLevelBasedOnSpawnDistance: false
+distanceBetweenIncrements: 100.0
+levelIncreaseAtIncrements: 1.0
+hideEliteMobPowersUntilAggro: true
+damageToEliteMobMultiplier: 1.0
+damageToPlayerMultiplier: 1.0
+showCustomBossLocation: true
+bossLocationMessage: '&7[EM] &2[Click to track!]'
+commandsOnEliteMobDeath: []
+bossKillParticipationMessage: '&eYour damage: &2$playerDamage'
+regenerateCustomBossHealthOnCombatEnd: true
+defaultOtherWorldBossLocationMessage: '$name: In different world!'
+weakTextColor: '&9'
+resistTextColor: '&c'
+weakText: '&9&lWeak!'
+resistText: '&c&lResist!'
+doWeakEffect: true
+doResistEffect: true
+normalizeRegionalBosses: true
+fullHealMessage: '&2FULL HEAL!'
+strengthAndWeaknessDamageMultipliers: 2.0
+resistanceDamageMultiplier: 1.0
+blockingDamageReduction: 0.8
 ```
 
-Sets the message that players will see if they attempt to track a boss and it is in a different world
+</details>
 
-```yaml
-regenerateCustomBossHealthOnCombatEnd: �BOOLEAN
-```
-
-Sets whether Custom bosses regenerate health when they leave combat. This is an important feature that I seriously recommend you leave on to avoid issues such as zerging - having players do dozens of suicide runs to kill a boss because it is worth trying to punch it to death for hours for the loot it drops.
-
-```yaml
-doNaturalEliteMobSpawning: BOOLEAN
-```
-
-Sets whether procedurally generated Elites will spawn.
-
-```yaml
-doSpawnersSpawnEliteMobs: BOOLEAN
-```
-
-Sets whether spawners will be able to spawn procedurally generated Elites. Note: Requires procedurally generated Elites to be on. Spawner-spawned Elites will not drop Elite loot.
-
-```yaml
-eliteMobsSpawnPercentage: DOUBLE
-```
-
-Sets the percentage of naturally spawned mobs which will be converted into Elite mobs. `1.0` is 100%, `0.5` is 50%, `0.0` is 0%.
-
-```yaml
-mobTierLevelIncrease: INTEGER
-```
-
-Sets the amount of levels between tiers. This is a complicated feature and I just recommend you leave it on 1, there is no reason to go higher.
-
-```yaml
-superMobStackRange: INTEGER
-```
-
-Sets the range, in blocks, at which Super Mobs will stack.
-
-```yaml
-naturalEliteMobsLevelCap: INTEGER
-```
-
-Sets the maximum level of naturally spawned Elite Mobs.
-
-```yaml
-eliteCreeperExplosionsMultiplier: MULTIPLIER
-```
-
-Sets the multiplier for Elite Creeper explosions.
-
-```yaml
-doElitesWearArmor: BOOLEAN
-```
-
-Sets whether naturally spawned Elites can wear armor.
-
-```yaml
-doElitesWearHelmets: BOOLEAN
-```
-
-Sets whether naturally spawned Elites wear helmets.
-
-```yaml
-doNaturalEliteMobVisualEffects: BOOLEAN
-```
-
-Sets whether naturally spawned Elites do particle effects. This is recommended as the visual effects indicate which powers they have, which is important to learn for combat.
-
-```yaml
-doSpawnerEliteMobVisualEffects: BOOLEAN
-```
-
-Sets whether Elites spawned from spawners do visual effects, if they are enabled.
-
-```yaml
-doPowerBuildupVisualEffects: BOOLEAN
-```
-
-Sets whether Elites do particle effects that warn players that a power is about to be triggered. _**You really shouldn't disable this option!**_
-
-```yaml
-doCustomEliteMobsDeathMessages: BOLEAN
-```
-
-Sets whether players killed by Elites will display custom death messages on chat.
-
-```yaml
-doDisplayMobHealthOnHit: BOOLEAN
-```
-
-Sets whether health displays will show up when damaging an Elite Mob.
-
-```yaml
-doDisplayMobDamageOnHit: BOOLEAN
-```
-
-Sets whether damage displays will show up when damaging an Elite Mob.
-
-```yaml
-doEliteMobHealthDisplayOnly: BOOLEAN
-doEliteMobDamageDisplayOnly: BOOLEAN
-```
-
-Currently deprecated.
-
-```yaml
-doIncreaseEliteMobLevelBasedOnSpawnDistance: BOOLEAN
-```
-
-Sets if there will be a distance-based bonus to Elite levels. This does not set fixed levels based on distance from spawn, that's the region leveling mode in ValidWorlds.yml. This sets a bonus on top of the level that the boss would have based on the gear that the player is wearing. This option isn't really recommended.
-
-```yaml
-distanceBetweenIncrements: DOUBLE
-```
-
-Sets the distance, in blocks, between level increments if the `doIncreaseEliteMobLevelBasedOnSpawnDistance` option is enabled.
-
-```yaml
-levelIncreaseAtIncrements: DOUBLE
-```
-
-Sets how many levels will increment at the set `distanceBetweenIncrements`.
-
-```yaml
-hideEliteMobPowersUntilAggro: BOOLEAN
-```
-
-Sets whether Elites will display their powers before entering combat. The recommended option is false for general optimization purposes.
-
-```yaml
-damageToEliteMobMultiplier: MULTIPLIER
-```
-
-Sets the multiplier for the damage dealt to Elite Mobs by players.
-
-```yaml
-damageToPlayerMultiplier: MULTIPLIER
-```
-
-Sets the multiplier for the damage dealt to player by Elite Mobs.
-
-```yaml
-showCustomBossLocation: BOOLEAN
-```
-
-Sets whether Custom Bosses can show their location and be tracked if those Custom Bosses have been configured to do so.
-
-```yaml
-bossLocationMessage: STRING
-```
-
-Sets the message that shows up on chat when a trackable Custom Boss spawns. When clicked, players will be able to track the Custom Boss' location in real time.
-
-```yaml
-commandsOnEliteMobDeath: STRING LIST
-```
-
-Sets the list of commands to run once an Elite Mob dies. Example:
-
-```yaml
-commandsOnEliteMobDeath:
-- "say $players have killed level $level $name in world $locationWorldName!"
-- "say The boss was killed at coordinates $locationx $locationY $locationZ !"
-```
-
-_**Note:**_ the $players placeholder will not only be replaced with the name of a player, but it will also make the command run as many times as there are players in the kill list. This means that if there were 3 players killing the boss, the first broadcast would run 3 times.
-
-```yaml
-bossKillParticipationMessage: STRING
-```
-
-Sets the message that is sent to a player when they kill a Custom Boss configured to send this message. Tells the player how much damage they dealt throughout the battle. Uses the placeholder `$playerDamage` which is replaced with the damage dealt to the Elite.
+---
 
 ## ProceduralItemGenerationSettings.yml
 
 `ProceduralItemGenerationSettings.yml` contains all the configuration options for configuring procedurally generated items.
 
-```yaml
-dropProcedurallyGeneratedItems: BOOLEAN
-```
+<details>
 
-Sets whether procedurally generated items will be dropped. It is highly recommended to leave this on, as most items dropped will be procedurally generated.
+<summary><b>Expand Table</b></summary>
 
-```yaml
-customEnchantmentsChance: DOUBLE
-```
-
-Sets the chance that a procedurally generated item will contain a custom enchantment, if applicable, where `1.0` is 100%, `0.5` is 50% and `0.0` is 0%.
-
-```yaml
+```yml
+dropProcedurallyGeneratedItems: true
+customEnchantmentsChance: 0.5
+materialNames:
+  swordName: Sword
+  bowName: Bow
+  pickaxe: Pickaxe
+  spade: Spade
+  hoe: Hoe
+  axe: Axe
+  helmet: Helmet
+  chestplate: Chestplate
+  leggings: Leggings
+  boots: Boots
+  shears: Shears
+  fishingRod: Fishing Rod
+  shield: Shield
+  trident: Trident
+  crossbow: Crossbow
 nameFormats:
 - $verb $itemType of the $adjective $noun
 - $itemType of the $adjective $noun
@@ -902,15 +857,1334 @@ nameFormats:
 - $adjective $verb $itemType
 - The $verb-er
 - The $adjective $verb-er
-nouns: STRING LIST
-adjectives: STRING LIST
-verbs: STRING LIST
-verb-ers (noun): STRING LIST
-validMaterials: STRING LIST
-materialNames: STRING LIST
+nouns:
+- MagmaGuy
+- Dawn
+- Sunset
+- Heaven
+- Hell
+- Angel
+- Archangel
+- Cherub
+- Seraph
+- Demon
+- Fiend
+- Bat
+- Chicken
+- Cow
+- Mooshroom
+- Pig
+- Rabbit
+- Sheep
+- Squid
+- Villager
+- Cave Spider
+- Enderman
+- Polar Bear
+- Spider
+- Zombie Pigman
+- Blaze
+- Creeper
+- Elder Guardian
+- Endermite
+- Evoker
+- Ghast
+- Guardian
+- Husk
+- Magma Cube
+- Shulker
+- Silverfish
+- Skeleton
+- Slime
+- Stray
+- Vex
+- Vindicator
+- Witch
+- Wither Skeleton
+- Zombie
+- Donkey
+- Horse
+- Llama
+- Mule
+- Ocelot
+- Wolf
+- Iron Golem
+- Snow Golem
+- Ender Dragon
+- Wither
+- Illusioner
+- Parrot
+- Giant
+- Killer Bunny
+- Steve
+- Wolfbane
+- Chaos
+- Aeon
+- Dragon
+- Sphynx
+- Minotaur
+- Hades
+- Oath
+- Oathbreaker
+- Deserter
+- Betrayer
+- Jade
+- Light
+- Darkness
+- Oblivion
+- Shadow
+- Void
+- Xeno
+- Zealot
+- Zenith
+- Dusk
+- Twilight
+- Mob
+- Elite  Mob
+- Urist
+- Dwarf
+- Elf
+- Ork
+- Goblin
+- Gnome
+- Goliath
+- Drow
+- Human
+- Halfling
+- Half-Orc
+- Beholder
+- Mind Flayer
+- Owlbear
+- Bulette
+- Rust Monster
+- Hill Giant
+- Stone Giant
+- Frost Giant
+- Fire Giant
+- Cloud Giant
+- Storm Giant
+- Kobold
+- Lich
+- Ork
+- Umber Hulk
+- Fighter
+- Wizard
+- Paladin
+- Cleric
+- Ranger
+- Archer
+- Mage
+- Tiefling
+- Werewolf
+- Vampire
+- Centaur
+- Catfolk
+- Half-Giant
+- Ogre
+- Troll
+- Rogue
+- Barbarian
+- Bard
+- Druid
+- Monk
+- Sorcerer
+- Warlock
+- Demon Hunter
+- Death Knight
+- Priest
+- Shaman
+- Warrior
+- Basilisk
+- Chimera
+- Imp
+- Dryad
+- Gargoyle
+- Djinni
+- Efreeti
+- Ghost
+- Hobgoblin
+- Hydra
+- Kraken
+- Lamia
+- Medusa
+- Mimic
+- Mummy
+- Pegasus
+- Roc
+- Satyr
+- Tarrasque
+- Abomination
+- Ghoul
+- Treant
+- Unicorn
+- Wraith
+- Acolyte
+- Gladiator
+- Knight
+- Gryphon
+- Raider
+- Scout
+- Spy
+- Thg
+- Noble
+- Guard
+- Veteran
+- Wyvern
+- Abyssal
+- Infernal
+- Elemental
+- Tauren
+- Pandaren
+- Sasquatch
+- Forsaken
+- Yeti
+- Banshee
+- Arachnid
+- Undead
+- Night Elf
+- Blood Elf
+- Draenei
+- Worgen
+- Warlord
+- Witch
+- Magi
+- Sage
+- Thief
+- Assassin
+- Templar
+- Beastmaster
+- Berserker
+- Inventor
+- Luchador
+- Pirate
+- Vanguard
+- Voidblade
+- Wisp
+- Peasant
+- Footman
+- Swordsman
+- Thrall
+- Felhound
+- Huntress
+- Hunter
+- Aarakorcra
+- Aboleth
+- Deva
+- Planetar
+- Solar
+- Ankheg
+- Azer
+- Behir
+- Death Tyrant
+- Blight
+- Bugbear
+- Hugbear
+- Bullywug
+- Cambion
+- Chuul
+- Lich King
+- Cockatrice
+- Couatl
+- Cyclops
+- Titan
+- Darkmantle
+- Ancient One
+- Demilich
+- Balor
+- Barlgura
+- Chasme
+- Dretch
+- Glabrezu
+- Goristro
+- Hezrou
+- Manes
+- Marilith
+- Nalfeshnee
+- Quasit
+- Vrock
+- Yochlol
+- Pit Fiend
+- Lemure
+- Dracolich
+- Doppleganger
+- Chromatic Dragon
+- Drider
+- Air Elemental
+- Earth Elemental
+- Fire Elemental
+- Water Elemental
+- Rohirrim
+- Gondorian
+- Empyrean
+- Faerie Dragon
+- Ettin
+- Flumph
+- Fomorian
+- Dao
+- Gnoll
+- Parshendi
+- Listener
+- Spren
+- Stormfather
+- Rosharian
+- Brightlord
+- Highprince
+- King
+- Emperor
+- Shardbearer
+- Surgebinder
+- Bondsmith
+- Golem
+- Gorgon
+- Hag
+- Harpy
+- Hippogriff
+- Homunculus
+- State Alchemist
+- Undying Soldier
+- Jackalwere
+- Nothic
+- Oni
+- Rakshasa
+- Revenant
+- Cultist
+adjectives:
+- Adorable
+- Beautiful
+- Clean
+- Elegant
+- Fancy
+- Glamorous
+- Handsome
+- Long
+- Magnificent
+- Plain
+- Quaint
+- Sparkling
+- Ugliest
+- Red
+- Orange
+- Yellow
+- Green
+- Blue
+- Purple
+- Gray
+- Black
+- White
+- Dead
+- Odd
+- Powerful
+- Rich
+- Vast
+- Zealous
+- Deafening
+- Faint
+- Melodic
+- Quiet
+- Thundering
+- Whispering
+- Hissing
+- Ancient
+- Fast
+- Old
+- Rapid
+- Slow
+- Rotten
+- Creepy
+- Crooked
+- Empty
+- Heavy
+- Abhorrent
+- Abnormal
+- Absurd
+- Acceptable
+- Accidental
+- Adamant
+- Adventurous
+- Agonizing
+- Alert
+- Annoyed
+- Annoying
+- Anxious
+- Aromatic
+- Aggressive
+- Aloof
+- Amazing
+- Ambiguous
+- Ambitious
+- Amused
+- Angry
+- Arrogant
+- Ashamed
+- Aspiring
+- Astonishing
+- Auspicious
+- Average
+- Awesome
+- Awful
+- Bad
+- Barbarous
+- Bashful
+- Beffiting
+- Belligerent
+- Beneficial
+- Berserk
+- Best
+- Bewildered
+- Big
+- Bitter
+- Bizarre
+- Bloody
+- Boiling
+- Boundless
+- Brash
+- Brave
+- Brawny
+- Breakable
+- Brief
+- Bright
+- Broken
+- Busy
+- Calculating
+- Callous
+- Calm
+- Capricious
+- Careful
+- Careless
+- Caring
+- Cautious
+- Ceaseless
+- Certain
+- Charming
+- Cheap
+- Chief
+- Chilly
+- Chivalrous
+- Chunky
+- Clear
+- Clever
+- Cloistered
+- Clumsy
+- Cloudy
+- Classy
+- Colossal
+- Combative
+- Common
+- Confused
+- Condemned
+- Cool
+- Courageous
+- Cowardly
+- Crazy
+- Craven
+- Cruel
+- Cuddly
+- Curious
+- Cute
+- Damaged
+- Damaging
+- Dangerous
+- Dark
+- Dashing
+- Decisive
+- Deep
+- Defeated
+- Defective
+- Defiant
+- Delicate
+- Delicious
+- Delightful
+- Demonic
+- Delirious
+- Deranged
+- Descriptive
+- Devilish
+- Difficult
+- Diligent
+- Direful
+- Dirty
+- Disastrous
+- Disgusted
+- Disgusting
+- Disillusioned
+- Distinct
+- Disturbed
+- Draconian
+- Dramatic
+- Dreary
+- Dysfunctional
+- Eager
+- Elderly
+- Electric
+- Elite
+- Enchanted
+- Enchanting
+- Energetic
+- Enormous
+- Entertaining
+- Enthusiastic
+- Envious
+- Erratic
+- Ethereal
+- Evasive
+- Excellent
+- Excited
+- Exciting
+- Exotic
+- Exuberant
+- Fabulous
+- Faded
+- Fair
+- Faithful
+- 'False'
+- Familiar
+- Famous
+- Fanatical
+- Fantastic
+- Fascinated
+- Fat
+- Fearful
+- Fearless
+- Feeble
+- Festive
+- Fierce
+- Filthy
+- Fine
+- Finicky
+- First
+- Fixed
+- Flashy
+- Flawless
+- Flimsy
+- Flippant
+- Flowery
+- Fluffy
+- Fluttering
+- Foamy
+- Foolish
+- Forgetful
+- Fortunate
+- Frail
+- Fragile
+- Frantic
+- Free
+- Freezing
+- Fresh
+- Friendly
+- Frightening
+- Fumbling
+- Funny
+- Furry
+- Furtive
+- Fuzzy
+- Giant
+- Gifted
+- Gigantic
+- Glistening
+- Glorious
+- Godly
+- Good
+- Goofy
+- Gorgeous
+- Graceful
+- Grandiose
+- Grateful
+- Greasy
+- Great
+- Greedy
+- Grieving
+- Groovy
+- Grotesque
+- Grubby
+- Gruesome
+- Grumpy
+- Guarded
+- Guiltless
+- Gullible
+- Gutsy
+- Guttural
+- Hallowed
+- Hanging
+- Hapless
+- Happy
+- Harmonious
+- Hateful
+- Healthy
+- Heartbreaking
+- Heavenly
+- Hellish
+- Helpful
+- Helpless
+- Hesitant
+- Hideous
+- Hilarious
+- Hollow
+- Homeless
+- Honorable
+- Horrible
+- Hospitable
+- Huge
+- Hulking
+- Humorous
+- Hungry
+- Hurt
+- Hushed
+- Hypnotic
+- Hysterical
+- Icky
+- Icy
+- Ignorant
+- Ill
+- Illegal
+- Illustrious
+- Imaginary
+- Immense
+- Imminent
+- Impartial
+- Imperfect
+- Impolite
+- Important
+- Incandescent
+- Incompetent
+- Industrious
+- Incredible
+- Inexpensive
+- Infamous
+- Innocent
+- Inquisitive
+- Insidious
+- Instinctive
+- Intelligent
+- Interesting
+- Invincible
+- Irate
+- Itchy
+- Jaded
+- Jagged
+- Jealous
+- Jolly
+- Joyous
+- Jumpy
+- Juvenile
+- Keen
+- Kind
+- Kindhearted
+- Knowing
+- Knowledgeable
+- Known
+- Labored
+- Lame
+- Large
+- Last
+- Late
+- Laughable
+- Lazy
+- Lean
+- Lethal
+- Light
+- Little
+- Living
+- Lonely
+- Loud
+- Lovely
+- Lucky
+- Magenta
+- Magical
+- Majestic
+- Malicious
+- Marked
+- Massive
+- Marvelous
+- Mean
+- Medical
+- Melted
+- Messy
+- Mighty
+- Military
+- Mindless
+- Minor
+- Misty
+- Mixed
+- Modern
+- Motionless
+- Mysterious
+- Naive
+- Narrow
+- Natural
+- Neat
+- Necessary
+- Needless
+- Needy
+- Nervous
+- New
+- Nice
+- Normal
+- Nostalgic
+- Numberless
+- Obsolete
+- Obtainable
+- Oceanic
+- Old-fashioned
+- Omniscient
+- Optimal
+- Ordinary
+- Organic
+- Outstanding
+- Oval
+- Overrated
+- Painful
+- Parallel
+- Pathetic
+- Peaceful
+- Penitent
+- Perfect
+- Periodic
+- Petite
+- Physical
+- Pink
+- Plastic
+- Pleasant
+- Pointless
+- Polite
+- Poor
+- Precious
+- Premium
+- Present
+- Pretty
+- Private
+- Productive
+- Protective
+- Public
+- Puzzling
+- Questionable
+- Quick
+- Quickest
+- Rare
+- Ready
+- Real
+- Rebel
+- Regular
+- Remarkable
+- Responsible
+- Romantic
+- Round
+- Royal
+- Sad
+- Safe
+- Salty
+- Satisfying
+- Scared
+- Scary
+- Scientific
+- Scrawny
+- Screeching
+- Second
+- Second-hand
+- Secret
+- Selfish
+- Sequacious
+- Serious
+- Shallow
+- Sharp
+- Shiny
+- Shocking
+- Short
+- Shy
+- Sick
+- Silent
+- Silky
+- Silly
+- Simple
+- Skinny
+- Slim
+- Slimy
+- Slippery
+- Small
+- Smart
+- Smiling
+- Smooth
+- Sneaky
+- Soft
+- Solid
+- Special
+- Spectacular
+- Spicy
+- Spiky
+- Splendid
+- Spooky
+- Spotless
+- Square
+- Staking
+- Standing
+- Steady
+- Sticky
+- Strange
+- Striped
+- Strong
+- Successful
+- Super
+- Supreme
+- Sweet
+- Talented
+- Tall
+- Tasty
+- Temporary
+- Tense
+- Terrible
+- Terrific
+- Tested
+- Thankful
+- Thick
+- Thin
+- Thirsty
+- Thoughtful
+- Tiny
+- Tired
+- Tricky
+- Troubled
+- 'True'
+- Ugly
+- Ultra
+- Unadvised
+- Unarmed
+- Uncovered
+- Unhealthy
+- Unique
+- Unknown
+- Unnatural
+- Unused
+- Unusual
+- Used
+- Useful
+- Useless
+- Valuable
+- Violent
+- Waiting
+- Wandering
+- Warm
+- Weak
+- Wealthy
+- Whole
+- Wise
+- Wonderful
+- Wooden
+- Worried
+- Worthless
+- Wrong
+- Menacing
+- Trusting
+- Unassuming
+- Threatening
+verbs:
+- Slashing
+- Cutting
+- Stabbing
+- Scratching
+- Killing
+- Slaying
+- Butchering
+- Destroying
+- Tickling
+- Hugging
+- Murdering
+- Slapping
+- Hissing
+- Traveling
+- Teleporting
+- Blinking
+- Destroying
+- Wrecking
+- Flashing
+- Materializing
+- Spawning
+- Questioning
+- Inquiring
+- Pleading
+- Demanding
+- Interrogating
+- Querying
+- Assaulting
+- Striking
+- Ambushing
+- Assailing
+- Rushing
+- Storming
+- Bombarding
+- Barraging
+- Smiting
+- Charging
+- Clobbering
+- Battling
+- Battering
+- Hammering
+- Beating
+- Combating
+- Overwhelming
+- Raiding
+- Tackling
+- Shooting
+- Venturing
+- Cracking
+- Rupturing
+- Smashing
+- Shattering
+- Fracturing
+- Splintering
+- Pulverizing
+- Tearing
+- Rending
+- Snapping
+- Bursting
+- Exploding
+- Damaging
+- Fragmenting
+- Splitting
+- Fortifying
+- Nudging
+- Tapping
+- Jostling
+- Thumping
+- Butting
+- Clattering
+- Striking
+- Whacking
+- Slamming
+- Summoning
+- Screaming
+- Bellowing
+- Roaring
+- Shifting
+- Transforming
+- Modifying
+- Twisting
+- Mutating
+- Distorting
+- Blurring
+- Adjusting
+- Warping
+- Altering
+- Adapting
+- Evolving
+- Varying
+- Hunting
+- Trailing
+- Following
+- Stalking
+- Shadowing
+- Hounding
+- Casing
+- Mounting
+- Ascending
+- Rising
+- Heaving
+- Springing
+- Cresting
+- Gathering
+- Corralling
+- Hoarding
+- Reaping
+- Harvesting
+- Saving
+- Sheltering
+- Cloaking
+- Shrouding
+- Enclosing
+- Concealing
+- Hiding
+- Disguising
+- Masking
+- Burying
+- Smothering
+- Clouding
+- Shielding
+- Shading
+- Sealing
+- Enveloping
+- Veiling
+- Obscuring
+- Traversing
+- Fording
+- Gliding
+- Howling
+- Whimpering
+- Screaming
+- Shrieking
+- Squealing
+- Roaring
+- Wailing
+- Bawling
+- Screeching
+- Cleaving
+- Chopping
+- Chipping
+- Severing
+- Slicing
+- Snipping
+- Splitting
+- Axing
+- Slashing
+- Rending
+- Tearing
+- Thinning
+- Cropping
+- Carving
+- Dissecting
+- Hacking
+- Piercing
+- Sawing
+- Shaving
+- Shearing
+- Mining
+- Delving
+- Excavating
+- Burrowing
+- Drilling
+- Hollowing
+- Gouging
+- Tunneling
+- Invading
+- Boarding
+- Wandering
+- Infiltrating
+- Intruding
+- Evading
+- Fleeing
+- Running
+- Dodging
+- Crashing
+- Battling
+- Tussling
+- Wrestling
+- Scuffling
+- Dueling
+- Brawling
+- Jousting
+- Sparring
+- Clashing
+- Warring
+- Grappling
+- Scrapping
+- Attacking
+- Feuding
+- Skirmishing
+- Discovering
+- Detecting
+- Catching
+- Solving
+- Revealing
+- Unearthing
+- Leaping
+- Bouncing
+- Springing
+- Vaulting
+- Hopping
+- Surging
+- Punting
+- Booting
+- Dropkicking
+- Sensing
+- Perceiving
+- Detecting
+- Fading
+- Bleeding
+- Shrinking
+- Weakening
+- Abating
+- Diminishing
+- Forging
+- Releasing
+- Gathering
+- Collecting
+- Culling
+- Crushing
+- Propelling
+- Jogging
+- Sprinting
+- Questing
+- Scouting
+- Exploring
+- Digging
+- Trembling
+- Rattling
+- Parting
+- Hacking
+- Rupturing
+- Carving
+- Dividing
+- Halving
+- Breaking
+- Sundering
+- Separating
+- Rending
+- Ripping
+- Grazing
+- Imprisoning
+- Snaring
+- Cornering
+- Entangling
+- Pinning
+- Catching
+- Restraining
+- Binding
+- Hooking
+- Snagging
+- Snatching
+- Caging
+- Capturing
+- Haunting
+- Creeping
+- Sneaking
+- Spying
+- Avenging
+- Storming
+verb-ers (noun):
+- World Breaker
+- World Shatterer
+- Avenger
+- Ashbringer
+- Windseeker
+- Defiler
+- Thunderfury
+- Slicer
+- Slasher
+- Cutter
+- Stabber
+- Scratcher
+- Killer
+- Slayer
+- Destroyer
+- Hugger
+- Murderer
+- Slapper
+- Traveller
+- Teleporter
+- Blinker
+- Wrecker
+- Materializer
+- Spawner
+- Demander
+- Assaulter
+- Striker
+- Ambusher
+- Rusher
+- Stormer
+- Bombarder
+- Barrager
+- Smiter
+- Charger
+- Battler
+- Hammerer
+- Beater
+- Combater
+- Overwhelmer
+- Raider
+- Tackler
+- Shooter
+- Venturer
+- Cracker
+- Smasher
+- Shatterer
+- Fracturer
+- Splinterer
+- Pulverizer
+- Tearer
+- Renderer
+- Snapper
+- Burster
+- Exploder
+- Damager
+- Fragmenter
+- Splitter
+- Fortifier
+- Nudger
+- Tapper
+- Thumper
+- Butter
+- Clatterer
+- Striker
+- Whacker
+- Slammer
+- Summoner
+- Screamer
+- Shifter
+- Transformer
+- Modifyer
+- Twister
+- Blurrer
+- Warper
+- Alterer
+- Adapter
+- Evolver
+- HunterEnchantment
+- Trailer
+- Follower
+- Stalker
+- Shadower
+- Hounder
+- Caser
+- Mounter
+- Ascender
+- Riser
+- Springer
+- Hoarder
+- Reaper
+- Harvester
+- Saver
+- Shelterer
+- Cloaker
+- Shrouder
+- Encloser
+- Hider
+- Masker
+- Buryer
+- Clouder
+- Shader
+- Sealer
+- Enveloper
+- Veiler
+- Traverser
+- Forder
+- Glider
+- Howler
+- Whimperer
+- Screamer
+- Squealer
+- Bawler
+- Screecher
+- Chopper
+- Chipper
+- Snipper
+- Splitter
+- Axer
+- Slasher
+- Renderer
+- Tearer
+- Thinner
+- Cropper
+- Carver
+- Hacker
+- Piercer
+- Sawer
+- Shaver
+- Shearer
+- Miner
+- Excavater
+- Burrower
+- Driller
+- Tunneler
+- Invader
+- Boarder
+- Wanderer
+- Intruder
+- Evader
+- Runner
+- Dodger
+- Crasher
+- Battler
+- Wrestler
+- Scuffler
+- Dueler
+- Brawler
+- Clasher
+- Grappler
+- Scrapper
+- Attacker
+- Feuder
+- Catcher
+- Solver
+- Revealer
+- Leaper
+- Bouncer
+- Vaulter
+- Hopper
+- Surger
+- Punter
+- Dropkicker
+- Perceiver
+- Fader
+- Bleeder
+- Weakener
+- Forger
+- Releaser
+- Gatherer
+- Crusher
+- Propeller
+- Jogger
+- Sprinter
+- Scouter
+- Explorer
+- Digger
+- Trembler
+- Parter
+- Hacker
+- Carver
+- Divider
+- Halver
+- Breaker
+- Renderer
+- Ripper
+- Grazer
+- Imprisoner
+- Cornerer
+- Pinner
+- Catcher
+- Restrainer
+- Binder
+- Snagger
+- Snatcher
+- Cager
+- Capturer
+- Haunter
+- Creeper
+- Sneaker
+- Binder
+- Jailer
+- Seducer
+- Dancer
+- Blasphemer
+- Eater
+- Snorer
+- Thruster
+- Slapper
+validMaterials:
+  DIAMOND_HELMET: true
+  DIAMOND_CHESTPLATE: true
+  DIAMOND_LEGGINGS: true
+  DIAMOND_BOOTS: true
+  DIAMOND_SWORD: true
+  DIAMOND_AXE: true
+  IRON_HELMET: true
+  IRON_CHESTPLATE: true
+  IRON_LEGGINGS: true
+  IRON_BOOTS: true
+  IRON_SWORD: true
+  IRON_AXE: true
+  GOLDEN_HELMET: true
+  GOLDEN_CHESTPLATE: true
+  GOLDEN_LEGGINGS: true
+  GOLDEN_BOOTS: true
+  GOLDEN_SWORD: true
+  GOLDEN_AXE: true
+  CHAINMAIL_HELMET: true
+  CHAINMAIL_CHESTPLATE: true
+  CHAINMAIL_LEGGINGS: true
+  CHAINMAIL_BOOTS: true
+  LEATHER_HELMET: true
+  LEATHER_CHESTPLATE: true
+  LEATHER_LEGGINGS: true
+  LEATHER_BOOTS: true
+  STONE_SWORD: true
+  STONE_AXE: true
+  WOODEN_SWORD: true
+  WOODEN_AXE: true
+  SHIELD: true
+  TURTLE_HELMET: true
+  TRIDENT: true
+  BOW: true
+  CROSSBOW: true
 ```
 
-Sets the formatting for the names of procedurally generated items. The placeholders `$verb`, `$verb-er`, `$adjective` and `$noun` are randomized from the `String Lists` that correspond to them. `$itemType` is obtained from the `materialNames` list. `validMaterials` sets the list of materials that procedurally generated items can be.
+</details>
 
 ---
 
@@ -918,26 +2192,65 @@ Sets the formatting for the names of procedurally generated items. The placehold
 
 `translation.yml` contains a collection of values which can be modified to customize and translate the plugin. These are self-explanatory.
 
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+Economy pay message v2: '&2You have paid &2$amount_sent $currency_name &2to $receiver&2,
+  who got $amount_received after taxes!'
+Economy currency left message: You now have &2$amount_left $currency_name
+Economy money from payment message: You have received &2$amount_received $currency_name
+  &ffrom $sender
+Economy payment insuficient currency: '&cYou don''t have enough $currency_name to
+  do that!'
+Wallet command message: You have &2$balance $currency_name
+Tax confirmation message: '&cSending a payment will cost $percentage% in taxes. &aDo
+  &9$command &ato proceed!'
+shopBatchSellItem: '&aYou have sold your items &afor $currency_amount $currency_name!'
+Shop buy message: '&aYou have bought $item_name &afor $item_value $currency_name!'
+Shop current balance message: '&aYou have $currency_amount $currency_name.'
+Shop insufficient funds message: '&cYou don''t have enough $currency_name!'
+Shop item cost message: That item costs &c$item_value $currency_name.
+Shop sell message: '&aYou have sold $item_name &afor $currency_amount $currency_name!'
+Shop sale player items warning: '&cYou can''t sell items that are not currently soulbound
+  to you! This includes items from other prestige tiers!'
+Shop sale instructions: '&cYou can only sell EliteMobs loot here! (Armor / weapons
+  dropped from elites showing a value on their lore)'
+Teleport time left: '&7[EM] Teleporting in &a$time &7seconds...'
+Teleport cancelled: '&7[EM] &cTeleport interrupted!'
+noPendingCommands: '&cYou don''t currently have any pending commands!'
+trackMessage: Track the $name
+chestLowRankMessage: '&7[EM] &cYour guild rank needs to be at least $rank &cin order
+  to open this chest!'
+chestCooldownMessage: '&7[EM] &cYou''ve already opened this chest recently! Wait $time!'
+insufficientCurrencyForWormholeMessage: '&8[EliteMobs] &cInsufficient currency! You
+  need $amount to use this com.magmaguy.elitemobs.wormhole!'
+dismissEMMessage: '&8[EliteMobs] &2/elitemobs &fmenu not working for you? Try &2/elitemobs
+  alt &fto see an alternative version of the menu! &cDon''t want to see this message
+  again? &4/em dismiss'
+switchEMStyleMessage: '&8[EliteMobs] &2/elitemobs &fmenu style changed! Check it out!'
+```
+
+</details>
+
 ---
 
 ## ValidWorlds.yml
 
 `ValidWorlds.yml` contains the list of worlds that EliteMobs has detected, as well as options to customize EliteMobs features on them.
 
-```yaml
-Valid worlds: STRING LIST
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+zoneBasedWorlds: []
+nightmareWorlds: []
+Valid worlds:
+  world: true
+  world_nether: true
+  world_the_end: true
 ```
 
-Sets whether Elites will spawn in these worlds.
-
-```yaml
-Zone-based elitemob spawning worlds: STRING LIST
-```
-
-Sets whether these worlds will use the [Region Leveling mode]($language$/elitemobs/region_leveling_mode.md).
-
-```yaml
-Nightmare mode worlds: STRING LIST
-```
-
-Sets whether these worlds will use the [Nightmare Mode]($language$/elitemobs/nightmare_mode.md).
+</details>
