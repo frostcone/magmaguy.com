@@ -306,6 +306,10 @@ It is possible to merge resource packs manually, but we recommend using an onlin
 
 # What are the EliteMobs command placeholders?
 
-Coming soon...
+| Placeholder | Details |
+| --- | :-: |
+| `$player` | Display name of the player |
+| `$bossName` | Display name of the player |
+| `$bossLevel` | Level of the boss |
 
 ***

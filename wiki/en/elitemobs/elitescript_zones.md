@@ -144,7 +144,13 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | `ignoresSolidBlocks`                                          | Sets if the ray will pass through solid blocks | ❌ |
 | `pointRadius`                                                 | Sets the thickness of the ray. Default is 0.5 blocks. | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -181,6 +187,12 @@ eliteScript:
         z: 1
         speed: 0.1
 ```
+
+</div>
+
+</details>
+
+</div>
 
 ---
 

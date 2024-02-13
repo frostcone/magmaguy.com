@@ -26,7 +26,13 @@ For some mechanics, you will probably not want to rely on how far apart two poin
 | `multiplier` |                                      Multiplies the vector's length                                      | ❌ | `1.0` |
 | `offset` |                          Allows inserting a manual fixed offset to this offset                           | ❌ | `none` |
 
-Example:
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -87,6 +93,12 @@ eliteScript:
 ```
 
 Spawns a zombie 2 blocks behind the player, relative to the boss.
+
+</div>
+
+</details>
+
+</div>
 
 ### Order of operations
 

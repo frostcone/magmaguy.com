@@ -26,7 +26,13 @@ Sets the action bar message for the targets.
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
 | `sValue` |                            Message                            | ✅ | Can use [Color Codes](#color_codes) with `&` |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -43,6 +49,12 @@ eliteScript:
 
 Will set the action bar to say Hello World to a direct target.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### BOSS_BAR_MESSAGE
@@ -55,7 +67,13 @@ Adds a bossbar to the target(s).
 | `sValue` |                            Message                            | ✅ | Can use [Color Codes](#color_codes) with `&` |
 | `duration` |               Duration of the boss bar in ticks               | ✅ |                      ❌                       |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -73,6 +91,12 @@ eliteScript:
 
 Will set a boss bar saying Hello World to a direct target for 1 second.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### DAMAGE
@@ -86,7 +110,13 @@ _Note: this natively uses the EliteMobs damage system! This means that you will 
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `multiplier` |                       Damage multiplier                       | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -102,6 +132,12 @@ eliteScript:
 ```
 
 Sets the damage to be half the amount of base damage the boss would deal to the player, taking damage reductions into account.
+
+</div>
+
+</details>
+
+</div>
 
 #### multiplier
 
@@ -123,7 +159,13 @@ Makes a target invulnerable.
 | `invulnerable` |               Sets if the boss is invulnerable                | ✅ |
 | `duration` |       Sets the duration of the invulnerability (ticks)        | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -139,6 +181,12 @@ eliteScript:
 
 Makes a boss invulnerable for 60 ticks (3 seconds).
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### MODIFY_DAMAGE
@@ -153,7 +201,13 @@ This action is special and must be in a script that has an event listener for a 
 
 It is highly recommended that you learn how the `hasTag` condition works in order to best use this action. When used correctly, it is possible to make the boss temporarily resist or be weaker to damage, and this can be associated to player buffs, boss location or many other factors.
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -172,6 +226,12 @@ eliteScript:
 
 Increases the damage dealt to the boss by the players by 2x, but only if the player has a tag called "CoolPlayer"
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### MESSAGE
@@ -183,7 +243,13 @@ Sends a message to the target(s).
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
 | `sValue` |                            Message                            | ✅ | Can use [Color Codes](#color_codes) with `&` |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -200,6 +266,12 @@ eliteScript:
 
 Will send a message to all online players.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### PLACE_BLOCK
@@ -212,7 +284,13 @@ Places a block at the target location(s) for the duration.
 | `material` | [Material](#material) of the block, [full list here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | ✅ |
 | `duration` |                                              Duration of effect, in ticks                                               | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -236,6 +314,12 @@ Places lava down at the Direct Target's location for 1 second.
 
 _Note: If no duration is defined, the block placement is permanent._
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### PLAY_ANIMATION
@@ -247,7 +331,13 @@ Plays the specified animation for a Custom Model using Model Engine. Requires Mo
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `sValue` |                Sets the name of the animation                 | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -260,6 +350,12 @@ eliteScript:
 ```
 
 Sets the boss to play the fortnite_dance animation. Requires the server to have Model Engine, the boss to have a custom disguise and the custom disguise to have an animation called "fortnite\_dance".
+
+</div>
+
+</details>
+
+</div>
 
 ---
 
@@ -276,7 +372,13 @@ Plays an in-game sound.
 
 [Here's a handy list of all Minecraft sounds!](https://www.digminecraft.com/lists/sound_list_pc.php) Remember that this can also play custom sounds from resource packs.
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -292,6 +394,12 @@ eliteScript:
 
 Plays the resonate sound from Minecraft bells at the boss location
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### POTION_EFFECT
@@ -305,7 +413,13 @@ Applies a specific potion effect to the target(s).
 | `amplifier` |                                          Potion effect level (starts at 0)                                          | ✅ |
 | `duration` |                                           Duration of the effect (ticks)                                            | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -324,6 +438,12 @@ eliteScript:
 
 This adds a level 1 slowness potion effect to a direct entity for 1 second (20 ticks).
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### PUSH
@@ -335,7 +455,13 @@ Pushes a target by a set vector.
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `vValue` |       Sets vector of the velocity that will be applied        | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -355,6 +481,12 @@ eliteScript:
 
 Sets the boss to jump indefinitely.
 
+</div>
+
+</details>
+
+</div>
+
 #### vector
 
 Vectors are defined by `vValue: x,y,z`. As an example, if you want the target to be pushed upwards, you can do `vValue: 0,0.3,0`.
@@ -372,7 +504,13 @@ Runs a command as console.
 
 **Note: there are placeholders available! Check RUN_COMMAND_AS_PLAYER, they're the same**
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -388,6 +526,12 @@ eliteScript:
 ```
 
 Makes console broadcast the message "Hello world!"
+
+</div>
+
+</details>
+
+</div>
 
 ---
 
@@ -414,7 +558,13 @@ Runs a command as a `player. Requires the target to be players.
 | `$bossZ` | Boss' Z location | ❌ |
 | `$bossLevel` | Level of the boss | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -431,6 +581,12 @@ eliteScript:
 
 Makes the player run the say command with Hello world!, meaning they just say "Hello world!"
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### RUN_SCRIPT
@@ -442,7 +598,13 @@ This simply runs the scripts defined in `scripts`. Any action can do this, this 
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `scripts` |                   Scripts that will be run                    | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -471,6 +633,12 @@ eliteScript:
 
 When an elite gets damaged, runs ScriptRunner, which runs Example1 and Example2.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### SET_MOB_AI
@@ -483,7 +651,13 @@ Sets if the mob has AI. In Minecraft, mobs with no AI will not move and will not
 | `bValue` |                 Sets whether the boss has AI                  | ✅ |
 | `duration` |               Sets the of the value set (ticks)               | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -499,6 +673,12 @@ eliteScript:
 ```
 
 Sets the boss to not have AI for 2 seconds.
+
+</div>
+
+</details>
+
+</div>
 
 ---
 
@@ -516,7 +696,13 @@ This means you can use unaware mobs to move to defined locations, unlike mobs wi
 | `bValue` |                   Sets whether the is aware                   | ✅ |
 | `duration` |               Sets the of the value set (ticks)               | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -533,6 +719,12 @@ eliteScript:
 
 Sets the boss to not have awareness for 2 seconds.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### SET_ON_FIRE
@@ -544,7 +736,13 @@ Sets an entity on fire for the duration.
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `duration` |                 Duration of effect, in ticks                  | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -561,6 +759,12 @@ eliteScript:
 
 Sets a direct target on fire for 1 second.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### SET_TIME
@@ -572,7 +776,13 @@ Sets the in-game time of the world the target is in.
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `time` |                         Sets the time                         | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -588,6 +798,12 @@ eliteScript:
 
 Sets the time of the world the boss is in to be 0 ticks.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### SET_WEATHER
@@ -600,7 +816,13 @@ Sets the weather of the world the target is in for a set amount of time.
 | `weather` |                     Sets the weather type                     | ✅ |
 | `duration` |           Sets the duration of the weather pattern            | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -616,6 +838,12 @@ eliteScript:
 ```
 
 Sets the weather of the world the boss is in to be thundering for the next minute.
+
+</div>
+
+</details>
+
+</div>
 
 #### weather
 
@@ -644,7 +872,13 @@ Spawns fireworks.
 
 [1] When using multiple shapes for the fireworks, each shape will use the colors from the list of colors at the same position. Check example below.
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -668,7 +902,15 @@ eliteScript:
       - STAR
 ```
 
-Spawns fireworks at the boss location offset by x= 1, y= 1.5 and z = 0. Gives the fireworks a velocity of x=.5, y=-.35 and z=1. The fireworks won't flicker nor have trails; power is set to 2, so the fireworks explosion will be delayed by that amount. Finally, there are two lists of color lists: list 1 is orange & red and list 2 is yellow & blue. There are two shapes for the fireworks: BALL\_LARGE and STAR. This means that BALL\_LARGE (element 1) will use orange & red colors (list 1) and STAR (element 2) will use yellow & blue colors (list 2).
+Spawns fireworks at the boss location offset by x= 1, y= 1.5 and z = 0. Gives the fireworks a velocity of x=.5, y=-.35 and z=1. The fireworks won't flicker nor have trails; power is set to 2, so the fireworks explosion will be delayed by that amount. 
+
+Finally, there are two lists of color lists: list 1 is orange & red and list 2 is yellow & blue. There are two shapes for the fireworks: BALL\_LARGE and STAR. This means that BALL\_LARGE (element 1) will use orange & red colors (list 1) and STAR (element 2) will use yellow & blue colors (list 2).
+
+</div>
+
+</details>
+
+</div>
 
 #### fireworkEffects
 
@@ -686,7 +928,13 @@ Strikes lightning. This is a visual effect, if you want damage you should add a 
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -702,6 +950,12 @@ eliteScript:
 
 Strikes lightning at every player in the same world as the boss.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### SPAWN_FALLING_BLOCK
@@ -716,7 +970,13 @@ Spawns a falling block at the target. Visual only, does not place the block.
 
 `landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md%run_script) but can accept the special target type `LANDING_LOCATION`.
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -740,6 +1000,12 @@ eliteScript:
 ```
 
 On entering combat, this script will spawn a falling stone block 10 blocks above and 3 blocks next to the boss location. Once the block falls, it will run the LandingScriptExample script, which will place a stone block at the location the block landed on.
+
+</div>
+
+</details>
+
+</div>
 
 ---
 
@@ -779,7 +1045,13 @@ _(3) Only for the `DUST_COLOR_TRANSITION` `particle`_
 
 It is important to note that one SPAWN_PARTICLE script can spawn multiple particles. Each particle can then have its own configuration fields within the SPAWN_PARTICLE action. Here is an example:
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -809,6 +1081,12 @@ eliteScript:
 
 This will spawn a flame particle and a smoke particle at the boss location.
 
+</div>
+
+</details>
+
+</div>
+
 #### Moving a particle:
 
 It is possible to set a specific speed for a particle, and it works the same way the Spigot API does. This allows scripters to set a particle to go in a specific direction at a specific speed. It is not possible to make particles change direction midway. This effect is used in the flamethrower enchantment and boss power.
@@ -817,7 +1095,13 @@ To move a particle, set `amount: 0`. This will signal to Minecraft that the `x`,
 
 Let's say that you want a `FLAME` particle to go up. To do this, you want a positive `y` value, and nothing else. Finally, you will want to set the velocity to what you want the speed to be. Here is a full example:
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -855,6 +1139,12 @@ eliteScript:
 
 This will spawn a flame particle at the boss location that will go up.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### SUMMON_REINFORCEMENT
@@ -867,7 +1157,13 @@ Summons reinforcements from EliteMobs Custom Bosses.
 | `sValue` |      Sets the filename of the Custom Boss reinforcement       | ✅ |
 | `duration` |        Sets the duration of the reinforcement (ticks)         | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -883,6 +1179,12 @@ eliteScript:
 
 Spawns the reinforcement with the filename "my_boss.yml" at the boss location.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### SUMMON_ENTITY
@@ -894,7 +1196,13 @@ MAGMA PLEASE FILL IN THIS SECTION WITH CORRECT INFORMATION,
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `sValue` |                Sets the                  | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -909,6 +1217,12 @@ eliteScript:
 
 Sets the boss to .
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### TAG
@@ -921,7 +1235,13 @@ Adds tags to the boss. Tags are just Strings, or words, that scripters can defin
 | `tags` |                         Sets the tags                         | ✅ |
 | `duration` |             Sets the duration of the tags (ticks)             | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -955,6 +1275,12 @@ Tags the boss with the string "very_sus", which can later be checked through scr
 
 **Important:** It is only possible to tag player and elite mobs.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### TELEPORT
@@ -967,7 +1293,13 @@ Teleports the target(s) to the defined location.
 | `FinalTarget` | Sets _where_ they will be teleported. [General target info here!]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `location` |                                               Teleport location                                                | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -985,6 +1317,12 @@ eliteScript:
 ```
 
 This would teleport all players in the same world as the boss to the coordinates 0, 64, 0 of that world upon its death.
+
+</div>
+
+</details>
+
+</div>
 
 #### location
 
@@ -1021,7 +1359,13 @@ Sets the action bar message for the targets.
 | `fadeIn` |                   Sets fade in time (ticks)                   | ❌ | ❌ | `0` |
 | `fadeOut` |                  Sets fade out time (ticks)                   | ❌ | ❌ | `0` |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -1042,6 +1386,12 @@ eliteScript:
 
 Will set the action bar to say Hello World to a direct target.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### UNTAG
@@ -1054,7 +1404,13 @@ Removes tags from the boss. Check `TAG` to see how tags work.
 | `tags` |                         Sets the tags                         | ✅ |
 | `duration` |      Sets the duration of the remove of the tags (ticks)      | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -1095,6 +1451,12 @@ eliteScript:
 
 Removes the tag "very_sus" from the boss, which can later be checked through script conditions.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### VISUAL_FREEZE
@@ -1106,7 +1468,13 @@ Gives the frozen visual effect to the player & does its associated damage. This 
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `duration` |                 Duration of effect, in ticks                  | ✅ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -1125,13 +1493,25 @@ eliteScript:
 
 Gives direct targets the freezing visual for 1 second.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 # Multiple actions
 
 Sometimes you may want to do several actions all at once when an event happens, like sending multiple messages or doing different actions sequentially. This is easily done! Let's add a potion effect action to our example:
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -1148,3 +1528,9 @@ eliteScript:
         targetType: DIRECT_TARGET
       message: I am messaging the player that hit the boss!
 ```
+
+</div>
+
+</details>
+
+</div>

@@ -1,72 +1,35 @@
 # User commands
 
-*Note: All player permissions are set to be true by default. This means that they are already set up. If you do not want players to have access to a specific feature via permissions, you will have to deny that player the permission!*
+*Note: All player permissions are set to be true by default. This means that they are already set up.*
 
-- `/elitemobs` / `/em`
+*If you do not want players to have access to a specific feature via permissions, you will have to deny that player the permission!*
 
-Main command, condenses all player info in the plugin in an easy to access menu. *Note:* all other user commands are in this main command. `/em menu` is also a valid command for this.
-
-- `/adventurersguild` / `/ag`
-
-In a recommended setup, teleports the player to the adventurer's guild world where they interact with the various EliteMobs NPCs.
-
-- `/shareitem`
-
-Links an item in chat so other players may see its stats.
-
-- `/em help`
-
-Lists all commands
-
-The remaining user commands are usually replaced by the use of NPCs or the `/em` interface!
-
-- `/em wallet`
-
-Displays player money
-
-- `/em pay <username> <amount>`
-
-Lets players pay each other. Transactions are taxed a configurable amount.
-
-- `/em updateitem`
-
-Updates the lore of an item in case it desynced. This command is meant for debugging purposes, and is not required in normal play.
-
-- `/em spawntp`
-
-Teleports a player to a server spawn
+| Command |    Description    |
+|---------|:-----------------:|
+| `/elitemobs` / `/em` | Main command, condenses all player info in the plugin in an easy to access menu. *Note:* all other user commands are in this main command. `/em menu` is also a valid command for this |
+| `/adventurersguild` / `/ag`     |In a recommended setup, teleports the player to the adventurer's guild world where they interact with the various EliteMobs NPCs.|
+| `/shareitem`     |Links an item in chat so other players may see its stats.|
+| `/em help`     |Lists all commands. The remaining user commands are usually replaced by the use of NPCs or the `/em` interface!|
+| `/em wallet`     |Displays player money.|
+| `/em pay <username> <amount>`     |Lets players pay each other. Transactions are taxed a configurable amount.|
+| `/em updateitem`     |Updates the lore of an item in case it desynced. This command is meant for debugging purposes, and is not required in normal play.|
+| `/em spawntp`     |Teleports a player to a server spawn.|
 
 ## NPC commands
 
-These commands are only useful if you do not have the Adventurer's Guild Hub with NPCs installed. It is recommended you install these to run all of these commands through NPCs instead of having players remember how the commands work.
+These commands are only useful if you do not have the Adventurer's Guild Hub with NPCs installed. 
 
-- `/em rank`
+It is recommended you install these to run all of these commands through NPCs instead of having players remember how the commands work.
 
-Opens the rank menu or teleports players to the Adventurer's Guild hub
-
-- `/em shop`
-
-Accesses the shop or teleports players to the Adventurer's Guild Hub
-
-- `/em customshop`
-
-Accesses the custom shop or teleports players to the Adventurer's Guild hub
-
-- `/em repair`
-
-Accesses the repair menu or teleports players to the Adventurer's Guild hub
-
-- `/em enchant`
-
-Accesses the enchant menu or teleports players to the Adventurer's Guild hub
-
-- `/em scrap`
-
-Accesses the scrap menu or teleports players to the Adventurer's Guild hub
-
-- `/em unbind`
-
-Accesses the unbind menu or teleports players to the Adventurer's Guild hub
+| Command | Description |
+|---------|:-----------:|
+| `/em rank`     |     Opens the rank menu or teleports players to the Adventurer's Guild hub.     |
+| `/em shop`     |     Accesses the shop or teleports players to the Adventurer's Guild Hub.     |
+| `/em customshop`     |     Accesses the custom shop or teleports players to the Adventurer's Guild hub.     |
+| `/em repair`     |     Accesses the repair menu or teleports players to the Adventurer's Guild hub.     |
+| `/em enchant`     |     Accesses the enchant menu or teleports players to the Adventurer's Guild hub.     |
+| `/em scrap`     |     Accesses the scrap menu or teleports players to the Adventurer's Guild hub.     |
+| `/em unbind`     |     Accesses the unbind menu or teleports players to the Adventurer's Guild hub.     |
 
 ## Internal user commands
 
@@ -74,36 +37,20 @@ Accesses the unbind menu or teleports players to the Adventurer's Guild hub
 
 ### Identifiable
 
-- `/em dungeontp <dungeonid>`
-
-Teleports a player to a dungeon. Note: this is meant to be run from the `/em` menu, as it is impossible for players to guess dungeon IDs. The IDs of the dungeons are the same as the .yml filenames in `~/plugins/EliteMobs/dungeonpackages/`. You can see the IDs on console when using the `/em` command and pick a teleport from the Teleports page.
-
+| Command | Description |
+|---------|-------------|
+|`/em dungeontp <dungeonid>`         |Teleports a player to a dungeon.|
+*Note: this is meant to be run from the `/em` menu, as it is impossible for players to guess dungeon IDs. The IDs of the dungeons are the same as the .yml filenames in `~/plugins/EliteMobs/dungeonpackages/`. <br/>You can see the IDs on console when using the `/em` command and pick a teleport from the Teleports page.*
 
 ### Unidentifiable
 
-- `/em quest accept <questID>`
-
-Accepts a quest
-
-- `/em quest track <questID>`
-
-Tracks a quest
-
-- `/em quest complete <questID>`
-
-Completes a quest
-
-- `/em quest leave <questID>`
-
-Leaves a quest
-
-- `/em trackcustomboss <uuid>`
-
-Tracks a custom boss. Note: this is meant to be run from the `/em` menu, as it is impossible for players to guess boss UUIDs
-
-
-
-***
+| Command | Description |
+|---------|:-----------:|
+| `/em quest accept <questID>`     |     Accepts a quest.     |
+| `/em quest track <questID>`     |     Tracks a quest.     |
+| `/em quest complete <questID>`     |     Completes a quest.     |
+| `/em quest leave <questID>`     |     Leaves a quest.     |
+| `/em trackcustomboss <uuid>`     |     Tracks a custom boss. Note: this is meant to be run from the `/em` menu, as it is impossible for players to guess boss UUIDs.     |
 
 # Admin commands
 
@@ -113,105 +60,40 @@ Tracks a custom boss. Note: this is meant to be run from the `/em` menu, as it i
 
 </div>
 
-- `/em setup`
-
-Opens the main setup menu
-
-- `/em setup area <areaName>`
-
-Protects an area using WorldGuard, used for Minidungeons and the Adventurer's World Hub. Note: You do not have to run this manually when setting things up using the recommended setup method.
-
-- `/em spawnelite <entityType> <level> <power1> <power2> <power3>`
-
-Spawns an Elite based on the entity type.
-
-- `/em spawnlocationelite <entityType> <worldName> <x> <y> <z> <level> <power1> <power2> <power3>`
-
-Spawns an Elite based on the entity type and location.
-
-- `/em spawncustom <fileName>`
-
-Spawns a Custom Boss from a config file.
-
-- `/em spawncustomlevel <fileName> <level>`
-
-Spawns a Custom Boss from a config file and overrides the level.
-
-- `/em spawnlocationcustom <filename> <worldName> <x> <y> <z>`
-
-Spawns a Custom Boss from a config file at a location.
-
-- `/em spawnlocationcustomlevel <filename> <worldName> <x> <y> <z>`
-
-Spawns a Custom Boss from a config file at a location and overrides the level.
-
-- `/em spawnsuper <EntityType>`
-
-Spawns a Super Mob based on the entity type.
-
-- `/em addSpawnLocation <fileName>`
-
-Adds a spawn location to a Regional Boss.
-
-- `/em addTreasureChest <fileName>`
-
-Adds a treasure chest at the location the player is standing in.
-
-- `/em setLeashRadius <fileName> <radius>`
-
-Adds a spawn location to a Regional Boss.
-
-- `/em remove`
-
-Permanently removes an Elite Mob entity. Elite/Regional/Super/NPCs all work. Run again to exit remove mode.
-
-- `/em debug <name>`
-
-Opens a debug screen for players or regional bosses.
-
-- `/em event <eventName>`
-
-Launches a custom timed event.
-
-- `/em spawnnpc <npcFileName>`
-
-Spawns an NPC
-
-- `/em stats`
-
-Gets the stats for the currently active EliteMobs entities and players.
-
-- `/em getloot`
-
-Opens a menu where you can get any Custom Loot
-
-- `/em getloot <filename>`
-
-Get specific custom loot
-
-- `/em giveloot <filename> <player>`
-
-Give specific custom loot to a player.
-
-- `/em simloot <level>`
-
-Simulates drops from an Elite Mob from the set tier
-
-- `/em simloot <level> <times>`
-
-Simulates drops from an Elite Mob from the set tier a set amount of times
-
-- `/em version`
-
-Gets the version of the plugin
-
-- `/em reload`
-
-Reloads the plugin. Works almost every time.
-
-- `/em killaggressive`
-
-Kills all aggressive Elite Mobs.
+| Command | Description |
+|---------|:-----------:|
+| `/em setup`     |     Opens the main setup menu.     |
+| `/em setup area <areaName>`     |     Protects an area using WorldGuard, used for Minidungeons and the Adventurer's World Hub. Note: You do not have to run this manually when setting things up using the recommended setup method.     |
+| `/em spawnelite <entityType> <level> <power1> <power2> <power3>`     |     Spawns an Elite based on the entity type.     |
+| - `/em spawnlocationelite <entityType> <worldName> <x> <y> <z> <level> <power1> <power2> <power3>`     |     Spawns an Elite based on the entity type and location.     |
+| `/em spawncustom <fileName>`     |     Spawns a Custom Boss from a config file.     |
+| `/em spawncustomlevel <fileName> <level>`     |     Spawns a Custom Boss from a config file and overrides the level.     |
+| `/em spawnlocationcustom <filename> <worldName> <x> <y> <z>`     |     Spawns a Custom Boss from a config file at a location.     |
+| `/em spawnlocationcustomlevel <filename> <worldName> <x> <y> <z>`     |     Spawns a Custom Boss from a config file at a location and overrides the level.     |
+| `/em spawnsuper <EntityType>`     |     Spawns a Super Mob based on the entity type.     |
+| `/em addSpawnLocation <fileName>`     |     Adds a spawn location to a Regional Boss.     |
+| `/em addTreasureChest <fileName>`     |     Adds a treasure chest at the location the player is standing in.     |
+| `/em setLeashRadius <fileName> <radius>`     |     Adds a spawn location to a Regional Boss.     |
+| `/em remove`     |     Permanently removes an Elite Mob entity. Elite/Regional/Super/NPCs all work. Run again to exit remove mode.     |
+| `/em debug <name>`     |     Permanently removes an Elite Mob entity. Elite/Regional/Super/NPCs all work. Run again to exit remove mode.     |
+| `/em debug <name>`     |     Opens a debug screen for players or regional bosses.     |
+| `/em event <eventName>`     |     Launches a custom timed event.     |
+| `/em spawnnpc <npcFileName>`     |     Spawns an NPC.     |
+| `/em stats`     |     Gets the stats for the currently active EliteMobs entities and players.     |
+| `/em getloot`     |     Opens a menu where you can get any Custom Loot.     |
+| `/em getloot <filename>`     |     Get specific custom loot.     |
+| `/em giveloot <filename> <player>`     |     Give specific custom loot to a player.     |
+| `/em simloot <level>`     |     Simulates drops from an Elite Mob from the set tier.     |
+| `/em simloot <level> <times>`     |     Simulates drops from an Elite Mob from the set tier a set amount of times.     |
+| `/em version`     |     Gets the version of the plugin.     |
+| `/em reload`     |     Reloads the plugin. Works almost every time.     |
+| `/em killaggressive`     |     Kills all aggressive Elite Mobs.     |
+| sss     |     sss     |
+| sss     |     sss     |
+| sss     |     sss     |
+| sss     |     sss     |
+| sss     |     sss     |
+| sss     |     sss     |
 
 - `/em killaggressive <radius>`
 

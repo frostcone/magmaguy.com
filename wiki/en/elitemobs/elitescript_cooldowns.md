@@ -39,6 +39,14 @@ Additionally, if your power has a specific duration during which it is active, y
 ### Run Scripts Once with Cooldowns
 To ensure scripts trigger only once while still using an [Event]($language$/elitemobs/elitescript_events.md) that may occur multiple times during a fight, set the local cooldown to a high number, such as `99999`. This example demonstrates the concept:
 
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
 ```yaml
 eliteScript:
 SetMeOnFireOnlyOnce:
@@ -56,3 +64,9 @@ global: 50
 In this scenario, the `EliteMobDamagedByPlayerEvent` triggers the `SET_ON_FIRE` action. Without cooldowns, the action would activate every time the player hits the mob. 
 
 However, with a local cooldown set to `99999`, the action will only trigger every `99999` ticks (83 minutes).
+
+</div>
+
+</details>
+
+</div>
