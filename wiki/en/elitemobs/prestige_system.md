@@ -20,6 +20,6 @@ Activating the prestige system will unlock the following in differing amounts, b
 - Chance to crit (starting from prestige 2)
 - Chance to dodge (starting from prestige 3)
 
-Additionally, players will gain more money per kill for each prestige tier they increase, but rank costs will also go up proportionately. This is to reward players for upgrading, but also to lower the incentive that a player might have to try to farm at a really high level and then find a way to use that money to speed through the ranks of the next prestige run.
+Additionally, players will gain more money per kill for each prestige tier they increase, but rank costs will also go up proportionately. <br>This is to reward players for upgrading, but also to lower the incentive that a player might have to try to farm at a really high level and then find a way to use that money to speed through the ranks of the next prestige run.
 
 A fully upgraded player can experience 120 max health (compared to the vanilla 20), 10% base chance to dodge, 10% base chance to crit and 15x currency multiplier. This assumes a default setup. ***It's also important to note that this is for the maximum rank of Prestige 10 rank 20, which takes dedicated players years to obtain.*** Most people will stop playing Minecraft before grinding enough to reach this level.

@@ -14,9 +14,16 @@
 # First boot
 
 Restart once.
-<details><summary>Why?</summary>EliteMobs sets increases maximum health of your spigot.yml config file the first time the server starts up. This is so Elite mobs can have more than 2000 health. It does not alter the health of any other mob - so it doesn't change vanilla or plugin mobs.
 
-This change requires a restart to actually work.</details>
+<details>
+
+<summary>Why?</summary>
+
+EliteMobs sets increases maximum health of your spigot.yml config file the first time the server starts up. This is so Elite mobs can have more than 2000 health. It does not alter the health of any other mob - so it doesn't change vanilla or plugin mobs.
+
+This change requires a restart to actually work.
+
+</details>
 
 # Permissions
 
@@ -74,16 +81,21 @@ This 100% means you are using the wrong version of WorldGuard / WorldEdit on you
 
 ## NPC chat looks weird / wormholes aren't working / other weird behavior after installing
 
-<details><summary>Answer</summary>
+<details>
+
+<summary>Answer</summary>
 
 Run the command `/em reload` after setting a dungeon up to make sure all of the values get fully initialized. A restart is even better, but should not be necessary.
+
 </details>
 
 ## Bosses aren't spawning
 
 ### The boss was spawning earlier!
 
-<details><summary>Answer</summary
+<details>
+
+<summary>Answer</summary>
 
 Regional bosses have a respawn time. You can check when the boss is scheduled to respawn by going to its configuration file and copying the numbers after the `:` in the spawn locations section.
 
@@ -100,7 +112,9 @@ In this case the numbers you're looking for are `1643259941451`. You can use [th
 
 ### The boss was never spawning!
 
-<details><summary>Answer</summary>
+<details>
+
+<summary>Answer</summary>
 
 Check the following things:
 
@@ -117,7 +131,9 @@ Check the following things:
 
 ## Something's messed up and I just can't fix it
 
-<details><summary>Answer</summary>
+<details>
+
+<summary>Answer</summary>
 
 This usually happens after trying and failing to correctly modify files in a way that EliteMobs could not self-repair. If you are stuck and can't figure out how to repair it from the console messages on startup / dungeon installation, the best thing to do is a clean installation of EliteMobs.
 

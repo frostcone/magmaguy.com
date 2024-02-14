@@ -283,6 +283,22 @@ change the value to `false`.
 
 ***
 
+# How can I edit the wormhole in AG to teleport players where I want?
+
+<div align="center">
+
+![faq_ag_wormhole.jpg](../../../img/wiki/faq_ag_wormhole.jpg)
+
+</div>
+
+You can do so by opening up *plugins\EliteMobs\wormholes\adventurers_guild_wormhole.yml*.
+
+Then find the following setting
+`location2: your_world_here,0.5,64,0.5,0,0`
+and change it to your preferred coordinates.
+
+***
+
 # How can I unbind items?
 
 The only way to remove soulbound from items is to use Unbind Scrolls. Read more about

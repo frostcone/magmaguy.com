@@ -88,134 +88,44 @@ It is recommended you install these to run all of these commands through NPCs in
 | `/em version`     |     Gets the version of the plugin.     |
 | `/em reload`     |     Reloads the plugin. Works almost every time.     |
 | `/em killaggressive`     |     Kills all aggressive Elite Mobs.     |
-| sss     |     sss     |
-| sss     |     sss     |
-| sss     |     sss     |
-| sss     |     sss     |
-| sss     |     sss     |
-| sss     |     sss     |
-
-- `/em killaggressive <radius>`
-
-Kills all aggressive Elite Mobs in a radius.
-
-- `/em killpassive`
-
-Kills all passive Super Mobs
-
-- `/em killpassive <radius>`
-
-Kills all passive Super Mobs in a radius
-
-- `/em killtype <entityType>`
-
-Kills all elites of a specific type
-
-- `/em killtype <entityType> <radius>`
-
-Kills all elites of a specific type in a radius
-
-- `/em gettier <tier>`
-
-Gets debug items for testing purposes
-
-- `/em money add <username> <amount>`
-
-Adds a set amount of money to a player
-
-- `/em money addall <amount>`
-
-Adds a set amount of money to all online players
-
-- `/em money remove <username> <amount>`
-
-Removes a set amount of money from a player
-
-- `/em money set <username> <amount>`
-
-Sets the total currency amount of a player
-
-- `/em setrank <player> <prestigetier> <guildtier>`
-
-Sets the guild rank of a player.
-
-- `/em discord`
-
-Gets the link for the support Discord server.
-
-- `/em discord <message>`
-
-Posts a debug message on Discord if DiscordSRV is configured correctly.
-
-- `/em forceunbind`
-
-Unbinds a held soulbound item.
-
-- `/em relativecoords <minidungeon>`
-
-Gets the relative coordinates to an installed dungeon.
-
-- `/em wallet <player>`
-
-Checks the currency of a specific player.
-
-- `/em fireball`
-
-Spawns a fireball to test elite explosion regeneration
-
-- `/em registerblocks <regional_boss_file.yml> <on_spawn/on_remove>`
-- `/em registerblocksedit <regional_boss_file.yml> <on_spawn/on_remove>`
-- `/em registerblocksarea <regional_boss_file.yml> <on_spawn/on_remove>`
-- `/em registerblocksareaedit <regional_boss_file.yml> <on_spawn/on_remove>`
-- `/em cancelblocks`
-
-Check the wiki entry on Regional Bosses for more details on these commands.
-
-- `/em debugmode`
-
-Toggles debug mode on, showing mob spawning and despawning on console and allowing tracking.
-
-
+| `/em killaggressive <radius>`     |     Kills all aggressive Elite Mobs in a radius.     |
+| `/em killpassive`     |     Kills all passive Super Mobs.     |
+| `/em killpassive <radius>`     |     Kills all passive Super Mobs in a radius.     |
+| `/em killtype <entityType>`     |     Kills all elites of a specific type.     |
+| `/em killtype <entityType> <radius>`     |     Kills all elites of a specific type in a radius.     |
+| `/em gettier <tier>`     |     Gets debug items for testing purposes.     |
+| `/em money add <username> <amount>`     |     Adds a set amount of money to a player.     |
+| `/em money addall <amount>`     |     Adds a set amount of money to all online players.     |
+| `/em money remove <username> <amount>`     |     Removes a set amount of money from a player.     |
+| `/em money set <username> <amount>`     |     Sets the total currency amount of a player.     |
+| `/em setrank <player> <prestigetier> <guildtier>`     |     Sets the guild rank of a player.     |
+| `/em discord`     |     Gets the link for the support Discord server.     |
+| `/em discord <message>`     |     Posts a debug message on Discord if DiscordSRV is configured correctly.     |
+| `/em forceunbind`     |     Unbinds a held soulbound item.     |
+| `/em relativecoords <minidungeon>`     |     Gets the relative coordinates to an installed dungeon.     |
+| `/em wallet <player>`     |     Checks the currency of a specific player.     |
+| `/em fireball`     |     Spawns a fireball to test elite explosion regeneration.     |
+| `/em registerblocks <regional_boss_file.yml> <on_spawn/on_remove>`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em registerblocksedit <regional_boss_file.yml> <on_spawn/on_remove>`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em registerblocksarea <regional_boss_file.yml> <on_spawn/on_remove>`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em registerblocksareaedit <regional_boss_file.yml> <on_spawn/on_remove>`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em cancelblocks`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em debugmode`     |     Toggles debug mode on, showing mob spawning and despawning on console and allowing tracking.     |
 
 ## Internal admin commands
 
 These commands are meant to be run when interacting with menus or interactable text on chat, and not manually.
 
-
-- `/em setup done`
-
-Stops showing messages on admin login.
-
-- `/em setup minidungeon <minidungeonName> `
-
-Installs a Minidungeon
-
-- `/em setup minidungeon <minidungeonName>`
-
-Uninstalls a Minidungeon
-
-- `/em setup unminidungeon <minidungeonName> noPaste`
-
-Uninstalls a Minidungeon without undoing a WorldEdit paste.
-
-- `/em trace <uuid>`
-
-Traces the spawns / despawns of a Custom Boss. Requires debug mode to be on.
-
-- `/em debugtp <uuid>`
-
-Teleports to the location of a traced Custom Boss. Requires debug mode to be on.
-
-- `/em generateresourcepack`
-
-Generates a resource pack. Check the wiki entry about Custom Models on how to use this.
-
-- `/em updateresourcepack`
-
-Updates the SHA1 of the resource pack in the server.properties config. Check the wiki entry about Custom Models on how to use this.
-
-
-
+| Command | Description |
+|---------|:-----------:|
+| `/em setup done`     |     Stops showing messages on admin login.     |
+| `/em setup minidungeon <minidungeonName>`     |     Installs a Minidungeon.     |
+| `/em setup minidungeon <minidungeonName>`     |     Uninstalls a Minidungeon.     |
+| `/em setup unminidungeon <minidungeonName> noPaste`     |     Uninstalls a Minidungeon without undoing a WorldEdit paste.     |
+| `/em trace <uuid>`     |     Traces the spawns / despawns of a Custom Boss. Requires debug mode to be on.     |
+| `/em debugtp <uuid>`     |     Teleports to the location of a traced Custom Boss. Requires debug mode to be on.     |
+| `/em generateresourcepack`     |     Generates a resource pack. Check the wiki entry about Custom Models on how to use this.     |
+| `/em updateresourcepack`     |     Updates the SHA1 of the resource pack in the server.properties config. Check the wiki entry about Custom Models on how to use this.     |
 
 # Raw permissions:
 ```
