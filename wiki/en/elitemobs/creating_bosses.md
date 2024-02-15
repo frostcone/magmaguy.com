@@ -365,18 +365,42 @@ powers:
 
 </details>
 
-### Easy configuration - premade powers
+### Powers list
 
 A boss can have one or several powers. We recommend you keep the amount under 5. A full list of powers can be found in the `~/plugins/EliteMobs/powers` folder. The following list is not necessarily complete [since you can make custom powers]($language$elitemobs/creating_powers.md) and some dungeons come with their own powers.
 
 <details> 
 
-<summary><b>List of premade elite powers</b></summary>
+<summary><b>Expand Table</b></summary>
+
+| Filename | Description |
+|----------|-------------|
+| `arrow_fireworks.yml`      | Boss shoots fireworks when hit.         |
+
+
+<div align="center">
+
+![boss_powers_arrowfireworks.gif](../../../img/wiki/boss_powers_arrowfireworks.gif)
+
+</div>
+
+***
+
+| Filename | Description |
+|----------|-------------|
+| `arrow_rain.yml`      | Makes arrows rain from the sky.         |
+
+
+<div align="center">
+
+![boss_powers_arrowrain.gif](../../../img/wiki/boss_powers_arrowrain.gif)
+
+</div>
+
+***
 
 | Power filename                               |                                                   Description                                                    |
 |----------------------------------------------|:----------------------------------------------------------------------------------------------------------------:|
-| `arrow_fireworks.yml`                        |                                         Boss shoots fireworks when hit.                                          |
-| `arrow_rain.yml`                             |                                         Makes arrows rain from the sky.                                          |
 | `attack_arrow.yml`                           |                                           Makes the boss shoot arrows.                                           |
 | `attack_blinding.yml`                        |                                   Gives the blindness potion effect on attack.                                   |
 | `attack_confusing.yml`                       |                                    Gives the nausea potion effect on attack.                                     |

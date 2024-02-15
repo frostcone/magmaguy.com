@@ -20,6 +20,14 @@ Below is a comprehensive list of commands available for use with the BetterStruc
 
 This is a very specific system, for more details on how these values work you can read [this page]($language$/betterstructures/creating_structures.md).
 
+## Place Command
+
+**Command:** `/betterstructures place <structure filename> <generator type>`
+
+**Permission:** `betterstructures.*`
+
+**Description:** Forces placement of selected structure at your location.
+
 ## Teleportcoords Command
 
 **Command:** `/betterstructures teleporttocoords <worldName> <x> <y> <z>`
