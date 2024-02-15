@@ -22,6 +22,14 @@ EliteScripts are event-based. This means that they are launched when a specific 
 
 There can only be one [Event]($language$/elitemobs/elitescript_events.md) section per script. However, several events can be set as triggers for a script:
 
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
 ```yaml
 eliteScript:
   Example:
@@ -39,3 +47,9 @@ eliteScript:
 ```
 
 This script would make the elite jump when hit by a player or when targeting a player.
+
+</div>
+
+</details>
+
+</div>

@@ -21,19 +21,53 @@ World Bosses allow players to face a fixed challenge while knowing that the loot
 
 These settings are added to the normal Custom Boss config files. [An extensive wiki page on those can be found here]($language$/elitemobs/creating_bosses.md).
 
-### isRegionalBoss
+<div align="center">
 
-`isRegionalBoss: true`
+***
+
+### isRegionalBoss
 
 Sets whether the boss is a regional boss. Regional bosses are another name for World Bosses, so you want to set that to `true`.
 
-### spawnLocation
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `isRegionalBoss` | [Boolean](#boolean) | `false` |
 
-Spawn locations should be set from in-game using the command `/em addSpawnLocation[filename.yml]`.
+<details> 
 
-While it is possible to manually add locations from config, I don't recommend trying to do that as it is just too easy to mess up.
+<summary><b>Example</b></summary>
 
-Locations in configuration files (for advanced users) The Regional Boss' config files stores all the instances of that Regional Boss in a single file by storing multiple spawn locations as well as respawn timers. In practical terms, that means that this entry:
+<div align="left">
+
+```yml
+isRegionalBoss: true
+```
+
+</div>
+
+</details>
+
+***
+
+### spawnLocations
+
+Spawn locations should be set from in-game using the command `/em addSpawnLocation <filename.yml>`.
+
+While it is possible to manually add locations from config, I don't recommend trying to do that as it is just too easy to get it wrong.
+
+| Key              |           Values            | Default |
+|------------------|:---------------------------:|:-------:|
+| `spawnLocations` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+Locations in configuration files (for advanced users) The Regional Boss' config files stores all the instances of that Regional Boss in a single file by storing multiple spawn locations as well as respawn timers. 
+
+In practical terms, that means that this entry:
 
 ```yaml
 spawnLocations:
@@ -46,7 +80,9 @@ spawnLocations:
 - elitemobs_sewer_maze,-106.21847515732084,169.2,-152.3609257554766,-170.86523,21.450315:1610537606222
 ```
 
-contains 7 different Regional Bosses, in different locations, and with different respawn timers. Let's break the details down, taking a look at the first Regional Boss:
+contains 7 different Regional Bosses, in different locations, and with different respawn timers. 
+
+Let's break the details down, taking a look at the first Regional Boss:
 
 ```yaml
 - elitemobs_sewer_maze,-70.17178578884845,168.2,-173.17112099568718,-271.24023,64.19999:1610710903931
@@ -54,32 +90,94 @@ contains 7 different Regional Bosses, in different locations, and with different
 
 Since this follows the format `world,x,y,z,pitch,yaw:unixTimeStamp`, the boss is spawning in a world called `elitemobs_sewer_maze`at x = `-70.17178578884845`, y = `168.2`, z = `-173.17112099568718`, pitch = `-271.24023`, yaw = `64.19999`.
 
-The unix timestamp stores the time, in unix time, at which the boss will respawn. This is used to store respawn times through restarts. If you wish to know what time that corresponds to, there are countless unix time to real time conversion tools you can find online. If you wish to have a specific boss respawn after a reload or restart, all you need to do it clear the `:unixTimeStamp` entry.
+The unix timestamp stores the time, in unix time, at which the boss will respawn. This is used to store respawn times through restarts. If you wish to know what time that corresponds to, there are countless unix time to real time conversion tools you can find online. 
+
+If you wish to have a specific boss respawn after a reload or restart, all you need to do it clear the `:unixTimeStamp` entry.
+
+</div>
+
+</details>
+
+***
 
 ### spawnCooldown
 
-`spawnCooldown: 60`
-
 Sets how long it takes for the boss to respawn, in **minutes**.
 
-**Note: longer respawns are recommended for big bosses!**
+**Note: longer respawns are recommended for big bosses!**.
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `spawnCooldown` | [Integer](#integer) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+spawnCooldown: 20
+```
+
+</div>
+
+</details>
+
+***
 
 ### leashRadius
-
-`leashradius: 30`
 
 Sets the radius from the `spawnLocation` that the World Boss go to before getting teleported back to its spawn point. This prevent players from dragging the boss to a location where it could be easier to fight it.
 
 **Note: try avoiding making combat areas that require leashes shorter than 20 blocks, as it will make the fight worse.**
 
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `leashRadius` | [Integer](#integer) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+leashRadius: 30
+```
+
+</div>
+
+</details>
+
+***
+
 ### Transitive Blocks
+
 Also known as `onSpawnBlockStates` and `onRemoveBlockStates`.
 
 These values allow Regional Bosses to spawn blocks when they enter combat and to remove them when they get removed, meaning when they either escape due to timeout or when they die.
 
 **This is how you can make bosses open or close doors / areas or even modify an arena during combat if you are using it with phase bosses!**
 
-**All of the blocks are relative to the spawn location. Make sure that you have your final spawn location before starting to set any blocks.** </br>If you already made a large Transitive Block area and now need to move the boss, but you do not want to redo the Transitive Blocks. Then you can use the EliteScript [Teleport]($language$/elitemobs/elitescript_actions.md&section=teleport%teleport) action to move the boss to the correct location after it spawns. Do keep in mind that you will have to adjust your leash accordingly.
+| Key       |          Values          | Default |
+|-----------|:------------------------:|:-------:|
+| `onSpawnBlockStates` | See Detailed Explanation |  none   |
+
+
+| Key       | Values  | Default |
+|-----------|:-------:|:-------:|
+| `onRemoveBlockStates` | See Detailed Explanation |  none   |
+
+<details> 
+
+<summary><b>Detailed Explanation</b></summary>
+
+<div align="left">
+
+**All of the blocks are relative to the spawn location. Make sure that you have your final spawn location before starting to set any blocks.**
+
+</br>If you already made a large Transitive Block area and now need to move the boss, but you do not want to redo the Transitive Blocks. Then you can use the EliteScript [Teleport]($language$/elitemobs/elitescript_actions.md&section=teleport%teleport) action to move the boss to the correct location after it spawns. Do keep in mind that you will have to adjust your leash accordingly.
 
 Due to the complexity of setting blocks, it is not recommended you do this manually. You should use the following commands to do it:
 
@@ -91,7 +189,7 @@ Due to the complexity of setting blocks, it is not recommended you do this manua
 
 Let's break this down.
 
-#### /em registerblocks <regional\_boss\_file.yml> <on\_spawn/on\_remove>
+**/em registerblocks <regional\_boss\_file.yml> <on\_spawn/on\_remove>**
 
 The most basic command. This is a toggle that you run once to start, and again to commit. Just like all other commands, you pick whether you are setting these blocks to be modified for the `on_spawn` or the `on_remove` state.
 
@@ -99,26 +197,44 @@ If registering the on\_spawn, this will modify the blocks when the boss spawns o
 
 To register blocks, simply place or remove the blocks you wish to modify while this setting is on.
 
-#### /em registerblocksedit <regional\_boss\_file.yml> <on\_spawn/on\_remove>
+**/em registerblocksedit <regional\_boss\_file.yml> <on\_spawn/on\_remove>**
 
 If you want to modify already set blocks, you can use this command. Works in a very similar way to `/em registerblocks <regional_boss_file.yml> <on_spawn/on_remove>`.
 
-#### /em registerblocksarea <regional\_boss\_file.yml> <on\_spawn/on\_remove>
+**/em registerblocksarea <regional\_boss\_file.yml> <on\_spawn/on\_remove>**
 
-Just like `/em registerblocks <regional_boss_file.yml> <on_spawn/on_remove>`, this allows you to register blocks, but it allows selecting them by getting two diametrically opposed corners (same as the worldedit / worldguard region selection) instead of individually selecting blocks. For safety reasons, there is a cap of 200 blocks (by default, modifiable in config.yml) for regional selections. Keep in mind that every block gets modified on the same tick, so if you are modifying a lot of terrain you will probably start seeing big lag spikes when running these modifications.
+Just like `/em registerblocks <regional_boss_file.yml> <on_spawn/on_remove>`, this allows you to register blocks, but it allows selecting them by getting two diametrically opposed corners (same as the worldedit / worldguard region selection) instead of individually selecting blocks. 
 
-#### /em registerblocksareaedit <regional\_boss\_file.yml> <on\_spawn/on\_remove>
+For safety reasons, there is a cap of 200 blocks (by default, modifiable in config.yml) for regional selections. Keep in mind that every block gets modified on the same tick, so if you are modifying a lot of terrain you will probably start seeing big lag spikes when running these modifications.
+
+**/em registerblocksareaedit <regional\_boss\_file.yml> <on\_spawn/on\_remove>**
 
 Works the same way as `/em registerblocksedit` but for areas. Can be used to go over the 200 (default) block registration limit for areas.
 
-#### /em cancelblocks
+**/em cancelblocks**
 
 At any time, if a mistake is made while registering blocks, you can run this command to cancel registration. It will revert any changes you started registering on that edit / registration.
+
+</div>
+
+</details>
+
+</div>
+
+***
 
 ## Pro tips to make a good, big Regional Boss fight
 
 1. **Actually think about how the powers on your Custom Boss compliment each other**. You don't want your boss to spend most of its time stopped because he's casting something, as that can actually make the fight really easy. You also don't want the boss to have all ranged attacks and no melee powers or the opposite unless you're designing something very specific. Playtesting is important.
+
+
 2. **Health - lots of it**. That health multiplier should probably be at a solid 10 if you want people to actually group up to fight the boss.
+
+
 3. **Damage - not too much**. EliteMobs are already extremely deadly by default, and the powers tend to be exponentially deadlier. Instead of boosting the damage through the ceiling, consider using powers to make the boss hit harder.
+
+
 4. **Exploits, everywhere**. Make extra sure the terrain isn't exploitable. Put the boss in a closed room to prevent people from trying to snipe it from far. The arrow invulnerability power is probably extremely important for a lot of World Bosses since Minecraft mobs can't deal with getting sniped from chunks away, so if you want to allow bow attacks make sure bows can't be exploited.
+
+
 5. **Know the plugin**. There's a lot of tiny tricks to beating EliteMobs, like how some powers can be countered by using shields, while others should be countered by dodging or even temporarily running away from the boss. The more you know how the powers work and how they're countered, the better the bosses you make will be.

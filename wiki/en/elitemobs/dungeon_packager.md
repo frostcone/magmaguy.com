@@ -28,20 +28,17 @@ The following settings are used to create a configuration file which should go i
 
 ## Required plugins
 
-In order to use the Dungeon Packager, you will need the following plugins:
+In order to use the Dungeon Packager, you will need the following plugin:
 
-1) [WorldGuard](https://dev.bukkit.org/projects/worldguard) - protects the Minidungeon
-2) (For schematics) [WorldEdit](https://dev.bukkit.org/projects/worldedit) ***or*** FastAsyncWorldEdit (FAWE) - Copies the build from a schematic file
+[WorldGuard](https://dev.bukkit.org/projects/worldguard) - protects the Minidungeon
 
 ## Creating a dungeon, step-by-step
 
-There are two major kinds of dungeons: world-based and schematic-based.
+EliteMobs used to have two major kinds of dungeons: world-based and schematic-based.
 
-World-based dungeons are for content that has its own world.
+Schematic-based dungeons, were associated with a schematic build. They are now phased out and not supported anymore.
 
-The schematic-based dungeons are for content that is associated to a schematic build, which can be pasted anywhere. (We are slowly phasing these out so schematic-based dungeons should not be something you focus on as we might only support them in the future as a legacy thing.)
-
-It is generally recommended to use world-based dungeons as they are easier to create and manage.
+All EliteMobs dungeons are now world based.
 
 ***
 
@@ -49,25 +46,464 @@ It is generally recommended to use world-based dungeons as they are easier to cr
 
 The following values apply to all dungeons
 
-| Key |                                                Description                                                |                                           Values                                           | Default | Mandatory |
-|-|:---------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------:|:-------:|:-:|
-| `isEnabled` |                                  Sets if the dungeon package is enabled                                   |                                    [Boolean](#boolean)                                     | `false` | ✅ |
-| `name` |                                       Sets the name of the content                                        |                                     [String](#string)                                      |  none   | ✅ |
-| `dungeonLocationType` |                                Sets the type of location the dungeon uses                                 |                            `WORLD` / `SCHEMATIC` / `INSTANCED`                             |  none   | ✅ |
-| `contentType` |                                         Sets the type of dungeon                                          |             `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` / `SCHEMATIC_DUNGEON`             |  none   | ✅ |
-| `customInfo` |    Sets the additional info that will appear in the `/em setup` screen. Only for information purposes.    |                                     [String](#string)                                      |  none   | ✅ |
-| `downloadLink` |         Sets the download link when the content is not downloaded. Only for information purposes.         |                                     [String](#string)                                      |  none   | ❌ |
-| `dungeonSizeCategory` |               Sets the size category of the dungeon package. Only for information purposes.               | `LAIR` / `SANCTUM` / `MINIDUNGEON` / `DUNGEON` / `RAID` /  `ADVENTURE` / `ARENA` / `OTHER` |  none   | ✅ |
-| `protect` |                       Sets if the dungeon package should be protected by WorldGuard                       |                                    [Boolean](#boolean)                                     | `true ` | ❌ |
-| `anchorPoint` |       Sets the spawn location of the build. **This is set when you install, do not set manually!**        |                                          Location                                          |  none   | ❌ |
-| `dungeonVersion` |                                  Sets the version of the dungeon package                                  |                                    [Integer](#integer)                                     |  none   | ✅ |
-| `playerInfo` |                             Sets the info which appears in the teleport menu                              |                                     [String](#string)                                      |  none   | ✅ |
-| `regionEnterMessage` |                    Sets the message that appears when a player enters the dungeon zone                    |                                     [String](#string)                                      |  none   | ❌ |
-| `regionLeaveMessage` |                    Sets the message that appears when a player leaves the dungeon zone                    |                                     [String](#string)                                      |  none   | ❌ |
-| `hasCustomModels` |                   Sets whether the dungeon package has custom models (for ModelEngine)                    |                                    [Boolean](#boolean)                                     |  false  | ❌ |
-| `dungeonConfigFolderName` | Sets the name of the folders used for files associated to this dungeon. Mandatory for instanced dungeons! |                                     [String](#string)                                      |  none   | ❌ |
-| `contentLevel` |                     Sets the content level the dungeon should display in the EM menu.                     |                                    [Integer](#integer)                                     |  none   | ❌ |
-| `enchantmentChallenge` |                      Sets if the dungeon should be an Enchantment Challenge dungeon.                      |                                    [Boolean](#boolean)                                     | `false` | ❌ |
+<div align="center">
+
+### isEnabled
+
+Sets if the dungeon package is enabled.
+
+| Key         |      Values       | Default | Mandatory |
+|-------------|:-----------------:|:-------:|:---------:|
+| `isEnabled` | [Boolean](#boolean) | `false` |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+```
+
+</div>
+
+</details>
+
+***
+
+### name
+
+Sets the name of the content. Supports [Color Codes](#color_codes).
+
+| Key         |      Values       | Default | Mandatory |
+|-------------|:-----------------:|:-------:|:---------:|
+| `name` | [String](#string) | `false` |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+name: '&c[lvl 999] &aThe Green Dungeon'
+```
+
+<div align="center">
+
+![create_packager_name.jpg](../../../img/wiki/create_packager_name.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### dungeonLocationType
+
+Sets the type of location the dungeon uses.
+
+| Key         |        Values         | Default | Mandatory |
+|-------------|:---------------------:|:-------:|:---------:|
+| `dungeonLocationType` | `WORLD` / `INSTANCED` |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+dungeonLocationType: WORLD
+```
+
+</div>
+
+</details>
+
+***
+
+### contentType
+
+Sets the type of dungeon.
+
+| Key         |                    Values                    | Default | Mandatory |
+|-------------|:--------------------------------------------:|:-------:|:---------:|
+| `contentType` | `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+contentType: INSTANCED_DUNGEON
+```
+
+</div>
+
+</details>
+
+***
+
+### customInfo
+
+Sets the additional info that will appear in the `/em setup` screen. Only for information purposes. Supports [Color Codes](#color_codes).
+
+| Key         |           Values            | Default | Mandatory |
+|-------------|:---------------------------:|:-------:|:---------:|
+| `customInfo` | [String List](#string_list) |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+customInfo:
+- '&aThe best dungeon.'
+- '&aMade by: CoolPlayer'
+```
+
+<div align="center">
+
+![create_packager_custominfo.jpg](../../../img/wiki/create_packager_custominfo.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### downloadLink
+
+Sets the download link when the content is not downloaded. Only for information purposes.
+
+| Key         |      Values       | Default | Mandatory |
+|-------------|:-----------------:|:-------:|:---------:|
+| `downloadLink` | [String](#string) |  none   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+downloadLink: http://www.example.org
+```
+
+<div align="center">
+
+![create_packager_downloadlink.jpg](../../../img/wiki/create_packager_downloadlink.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### dungeonSizeCategory
+
+Sets the size category of the dungeon package. Only for information purposes.
+
+| Key         |   Values    | Default | Mandatory |
+|-------------|:-----------:|:-------:|:---------:|
+| `dungeonSizeCategory` | Special [1] |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+dungeonSizeCategory: MINIDUNGEON
+```
+
+<div align="center">
+
+![create_packager_size.jpg](../../../img/wiki/create_packager_size.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+**Special [1]**
+
+<details> 
+
+<summary><b>Expand Table</b></summary>
+
+<div align="center">
+
+| Key | Description                                                                                                                                         |
+|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `LAIR`    | Lairs are a type of small dungeon which focuses on one big boss fight.  |
+| `SANCTUM`    | Sanctums are the equivalent of instanced Lairs. This means that they focus around one huge boss fight. |
+| `MINIDUNGEON`    | Minidungeons are a type of medium sized dungeon which usually contains 3-15 minibosses and a big boss, as well as a lot of "trash" mobs which are meant to be "farmed" for coins and gear by players. |
+| `DUNGEON`    | Dungeons are the equivalent of instanced Minidungeons. This the the most traditional MMORPG type of dungeon, where players party up and go through a gauntlet of trash mobs and minibosses to fight a final boss. |
+| `RAID`    | Coming soon!|
+| `ADVENTURE`    | Adventures are full adventure maps. They include quests lines, npcs, large amounts of minibosses and bosses and can even contain their own arenas or dungeons inside of them. |
+| `ARENA`    | Arenas are wave-based survival areas in which players get rewarded for defeating waves. |
+| `OTHER`    | Anything else that does not alreeady fall in the previous categories. |
+
+For more detailed descriptions see [Dungeons]($language$/elitemobs/dungeons.md)
+
+</div>
+
+</details>
+
+***
+
+### protect
+
+Sets if the dungeon package should be protected by WorldGuard.
+
+| Key         |      Values       | Default | Mandatory |
+|-------------|:-----------------:|:-------:|:---------:|
+| `protect` | [Boolean](#boolean) |  `true`   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+protect: true
+```
+
+</div>
+
+</details>
+
+***
+
+### dungeonVersion
+
+Sets the version of the dungeon package.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `dungeonVersion` | [Integer](#integer) |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+dungeonVersion: 1
+```
+
+</div>
+
+</details>
+
+***
+
+### playerInfo
+
+Sets the info which appears in the menu. Supports [Color Codes](#colorcodes).
+
+*Works only when the `/em` is set to book mode using `/em alt`.*
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `playerInfo` | [String](#string) |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+playerInfo: 'Difficulty: &a1-man easy content!'
+```
+
+<div align="center">
+
+![create_packager_playerinfo.jpg](../../../img/wiki/create_packager_playerinfo.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### regionEnterMessage
+
+Sets the message that appears when a player enters the dungeon zone. Supports [Color Codes](#colorcodes).
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `regionEnterMessage` | [String](#string) |  none   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+regionEnterMessage: '&aYou have entered the dungeon!'
+```
+
+<div align="center">
+
+![create_packager_enter.jpg](../../../img/wiki/create_packager_enter.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### regionLeaveMessage
+
+Sets the message that appears when a player leaves the dungeon zone. Supports [Color Codes](#colorcodes).
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `regionLeaveMessage` | [String](#string) |  none   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+regionLeaveMessage: '&aYou have left the dungeon!'
+```
+
+<div align="center">
+
+![create_packager_leave.jpg](../../../img/wiki/create_packager_leave.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### hasCustomModels
+
+Sets whether the dungeon package has custom models (for ModelEngine).
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `hasCustomModels` | [Boolean](#boolean) |  none   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+hasCustomModels: false
+```
+
+</div>
+
+</details>
+
+***
+
+### dungeonConfigFolderName
+
+Sets the name of the folders used for files associated to this dungeon. 
+
+**Mandatory for instanced dungeons!.**
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `dungeonConfigFolderName` | [String](#string) |  none   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+dungeonConfigFolderName: my_dungeon_folder
+```
+
+</div>
+
+</details>
+
+***
+
+### contentLevel
+
+Sets the content level the dungeon should display in the EM menu.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `contentLevel` | [Integer](#integer) |  none   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+contentLevel: 20
+```
+
+</div>
+
+</details>
+
+***
+
+### enchantmentChallenge
+
+Sets if the dungeon should be an Enchantment Challenge dungeon.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `enchantmentChallenge` | [Boolean](#boolean) | `false` |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+enchantmentChallenge: false
+```
+
+</div>
+
+</details>
+
+</div>
 
 ***
 
@@ -75,77 +511,378 @@ The following values apply to all dungeons
 
 The following values only apply to world-based dungeons.
 
-| Key | Description |                                          Values                                           | Default | Mandatory |
-|-|:-:|:-----------------------------------------------------------------------------------------:|:-:|:-:|
-| `worldName` | Sets the name of the world packaged |                                     [String](#string)                                     | none | ✅ |
-| `womholeWorldName` | Sets the name of the wormhole world. This is used as a side world for the main world, for things such as teleport hubs or special boss rooms. |                                     [String](#string)                                     | none | ❌ |
-| `environment` | Sets the world's environment | [Environment](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) | none | ✅ |
-| `teleportLocation` | Sets the teleport location of the dungeon package |                                     [String](#string)                                     | none | ✅ |
+<div align="center">
 
-#### Instanced dungeons
+***
 
-The following values only apply to instanced dungeons. Note that all instanced dungeons are world dungeons, so they also use the values from world dungeons.
+### worldName
 
-| Key | Description |            Values            | Default | Mandatory |
-|-|:-:|:----------------------------:|:-:|:-:|
-| `startLocation` | Sets the start location of the instanced dungeon |      [String](#string)       | none | ✅ |
-| `permission` | Sets the permission required in order to enter the dungeon instance |      [String](#string)       | none | ❌ |
-| `minPlayerCount` | Sets the minimum player count required to start a dungeon |     [Integer](#integer)      | `1` | ❌ |
-| `maxPlayerCount` | Sets the maximum player count required to start a dungeon |     [Integer](#integer)      | `5` | ❌ |
-| `dungeonObjectives` | Sets list of dungeon objectives required for the dungeon to be considered completed |     [Integer](#integer)      | `1` | ✅ |
-| `difficulties` | Sets list of difficulties in the instanced dungeon| Special format, check below! | none | ✅ |
+Sets the name of the world that should be packaged.
 
-**Note 1:** There are currently two dungeon objective types:
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `worldName` | [String](#string) |  none   |    ✅      |
 
-* Kill target: `filename=boss.yml:amount=X` example `filename=myboss.yml:amount=1`
-* Kill percentage of dungeon: `clearpercentage=X.Y` example `clearpercentage=0.8` is 80%
+<details> 
 
-**Note 2:** Setting instanced dungeon difficulties will automatically create different difficulty options when entering the dungeon, and the difficulty names set here will be the ones used in the custom bosses folder, where you are able to set which powers bosses have based on the difficulty.
+<summary><b>Example</b></summary>
 
-Difficulties are in a list format which have the following fields:
-
-| Key | Description |       Values        | Mandatory |
-|-|:-:|:-------------------:|:-:|
-| `name` | Name of the difficulty for players |  [String](#string)  | ✅ |
-| `id` | ID of the difficulty, used in custom bosses and custom items for the difficulty-based features |  [String](#string)  | ✅ |
-| `levelSync` | Sets the level of the level sync, if any. Level sync makes all player gear max out at the set value, making it impossible for players to get over leveled for a dungeon and keeping it relevant for later runs. Based on the Final Fantasy 14 level sync system. | [Integer](#integer) | ❌ |
-
-<details>
-<summary>Example</summary>
+<div align="left">
 
 ```yml
-difficulties:
-- name: normal
-  id: 0
-  levelSync: 60
-- name: hard
-  id: 1
-  levelSync: 50
-- name: mythic
-  id: 2
-  levelSync: 40
+worldName: my_minecraft_world
 ```
+
+</div>
 
 </details>
 
 ***
 
-**Note 3:** Instanced worlds create a new world for every time a group of players wants to complete a dungeon, and deletes it when it's done. For this to work correctly, you must put a folder following the `dungeonConfigFolderName` in the the `world_blueprints` configuration folder of EliteMobs. You then place the world you'll be using inside of the folder you created, making sure that the `session.lock` file of the world is deleted.
+### womholeWorldName
 
-### Schematic-based Minidungeons
+This function sets the name of the wormhole world, which serves as a secondary world linked to the main world. It is utilized for features like teleport hubs or unique boss chambers.
 
-The following values only apply to schematic-based dungeons
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `womholeWorldName` | [String](#string) |  none   |    ❌      |
 
-| Key | Description |               Values                | Default | Mandatory |
-|-|:-:|:-----------------------------------:|:-:|:-:|
-| `relativeBossLocations` | Sets the boss locations of the content relative to the anchor point |     [String List](#string_list)     | none | ✅ |
-| `relativeTreasureChestLocations` | Sets the treasure chest locations of the content relative to the anchor point |     [String List](#string_list)     | none | ❌ |
-| `schematicName` | Sets the name of the schematic file with the build |     [String List](#string_list)     | none | ✅ |
-| `defaultSchematicRotation` | Sets the default rotation of the schematic. This should be the direction you face when looking towards the build from the anchor point. | `NORTH` / `SOUTH` / `EAST` / `WEST` | `SOUTH` | ✅ |
-| `calculatedRotation` | Sets the rotation of the dungeon as installed. **Do not set this manually!** This setting is generated by the plugin. |         [Integer](#integer)         | none | ❌ |
-| `corner1` | Sets one of the corners of the build, using relative locations from the anchor point |               Vector                | none | ✅ |
-| `corner2` | Sets the corner of the build diametrically opposd to the first corner, using relative locations from the anchor point |               Vector                | none | ✅ |
-| `teleportLocationOffset` | Sets the offset from the anchor point for the teleport point. |               Vector                | none | ❌ |
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+womholeWorldName: my_minecraft_world_wormhole
+```
+
+</div>
+
+</details>
+
+***
+
+### environment
+
+Sets the world's environment.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `environment` | [Environment](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+environment: NORMAL
+```
+
+</div>
+
+</details>
+
+***
+
+### teleportLocation
+
+Sets the teleport location of the dungeon package. This is where the players will be teleported to when entering the dungeon.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `teleportLocation` | [String](#string) |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+teleportLocation: my_minecraft_world,-1.5,68,0.5,0.0,0.0
+```
+
+</div>
+
+</details>
+
+</div>
+
+#### Instanced dungeons
+
+*Instanced dungeons create a new world for every time a group of players wants to complete a dungeon, and deletes it when it's done. For this to work correctly, you must put a folder following the `dungeonConfigFolderName` in the the `world_blueprints` configuration folder of EliteMobs.*
+
+*You then place the world you'll be using inside of the folder you created, making sure that the `session.lock` file of the world is deleted.*
+
+The following values only apply to instanced dungeons. Note that all instanced dungeons are world dungeons, so they also use the values from world dungeons.
+
+<div align="center">
+
+***
+
+### startLocation
+
+Sets the teleport location of the instanced dungeon starting point. This is where the players will be teleported to when starting the instanced dungeon with `/em start`.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `startLocation` | [String](#string) |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+startLocation: my_minecraft_world,10.5,70,10.5,0.0,0.0
+```
+
+</div>
+
+</details>
+
+***
+
+### permission
+
+Sets the permission required in order to enter the dungeon instance.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `permission` | [String](#string) |  none   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+permission: elitedungeon.mypermission
+```
+
+</div>
+
+</details>
+
+***
+
+### minPlayerCount
+
+Sets the minimum player count required to start a dungeon.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `minPlayerCount` | [Integer](#integer) |  `1`   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+minPlayerCount: 1
+```
+
+</div>
+
+</details>
+
+***
+
+### maxPlayerCount
+
+Sets the minimum player count required to start a dungeon.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `maxPlayerCount` | [Integer](#integer) |   `5`   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+maxPlayerCount: 5
+```
+
+</div>
+
+</details>
+
+***
+
+### dungeonObjectives
+
+Sets list of dungeon objectives required for the dungeon to be considered completed.
+
+| Key         |           Values            | Default | Mandatory |
+|-------------|:---------------------------:|:-------:|:---------:|
+| `dungeonObjectives` | [String List](#string_list) |  none   |    ✅      |
+
+<details> 
+
+<summary><b>Examples</b></summary>
+
+<div align="left">
+
+There are currently two dungeon objective types:
+
+* Kill target: `filename=boss.yml:amount=X`
+* Kill percentage of dungeon: `clearpercentage=X.Y`
+
+```yml
+dungeonObjectives:
+- filename=dungeon_final_boss.yml
+- filename=dungeon_miniboss_one.yml
+- filename=dungeon_miniboss_two.yml
+```
+
+```yml
+dungeonObjectives: 
+- clearpercentage=0.8
+```
+
+</div>
+
+</details>
+
+***
+
+### difficulties
+
+Sets list of difficulties in the instanced dungeon. 
+
+**Mandatory for instanced dungeons!**
+
+| Key         |   Values    | Default | Mandatory |
+|-------------|:-----------:|:-------:|:---------:|
+| `difficulties` | Special [1] |  none   |    ❌      |
+
+<details> 
+
+<summary><b>Examples</b></summary>
+
+<div align="left">
+
+```yml
+difficulties:
+- levelSync: 25
+  id: 0
+  name: normal
+- levelSync: 20
+  id: 1
+  name: hard
+- levelSync: 15
+  id: 2
+  name: mythic
+```
+
+<div align="center">
+
+![create_packager_difficulty.jpg](../../../img/wiki/create_packager_difficulty.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+**Special [1]**
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+<div align="center">
+
+Setting instanced dungeon difficulties will automatically create different difficulty options when entering the dungeon. 
+
+The difficulty names set here will be the ones used in the custom bosses folder, where you are able to set which powers bosses have based on the difficulty.
+
+Difficulties are in a list format which have the following fields:
+
+|     Key     | Description                                                                                                                                                                                                                                                    | Values | Mandatory |
+|:-----------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|:---------:|
+|   `name`    | Name of the difficulty for players.                                                                                                                                                                                                                            |[String](#string)        |     ✅     |
+|    `id`     | ID of the difficulty, used in custom bosses and custom items for the difficulty-based feature.                                                                                                                                                                 |[String](#string)        |     ✅     |
+| `levelSync` | Sets the level of the level sync, if any. Level sync makes all player gear max out at the set value, making it impossible for players to get over leveled for a dungeon and keeping it relevant for later runs. Based on the Final Fantasy 14 level sync system. |[Integer](#integer)        |     ❌     |
+
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+# Recommended Boss Values
+
+## Creating an average dungeon mob
+
+We recommend leaving the setting normalizedCombat set to true. This setting normalizes all mobs to scale equally with health and damage, regardless of their entity type.
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 1.0 #4 hits to slay 
+damageMultiplier: 1.0 #1.5 hearts of dmg
+```
+
+Certainly, here's the revised version with clarity and formatting retained:
+
+**Note: Given that `1.0` is the default value for health and damage, you can simply omit defining `healthMultiplier` or `damageMultiplier` and set `normalizedCombat` to `true`.**
+
+## Creating trash packs
+
+Trash packs are numerous but not very dangerous:
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 0.7 #3 hits to slay 
+damageMultiplier: 0.5 #0.5 hearts of dmg
+```
+
+## Creating reinforcements
+
+Reinforcements should die very easily, but pose a danger damage-wise (these values are recommended for 4+ melee entities, actual use may vary):
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 0.25 #1 hit to slay 
+damageMultiplier: 0.6 #1 heart of dmg
+```
+
+## Creating minibosses
+
+Minibosses should hold their ground, and pose a mechanic challenge to players. It should be a test of skill that lasts for a little while, but not something extremely deadly:
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 3.0 #10 hits to slay 
+damageMultiplier: 1.2 #2 hearts of dmg
+```
+
+## Creating bosses
+
+Bosses are a real challenge, the conclusion of a buildup in a dungeon and a real test of skill with everything on the line. Encounters should be long and death should be a present threat.
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 7.0 #23 hits to slay 
+damageMultiplier: 1.4 #2.5 hearts of dmg
+```
+
+**These recommended values are merely rough estimates, and the final values should be adjusted according to the specific encounters.**
+
+**This is particularly crucial for final dungeon bosses; you may want to significantly exceed the recommended 7.0 value for healthMultiplier to give the last fight that epic feeling.**
 
 ***
 
@@ -154,6 +891,56 @@ The following values only apply to schematic-based dungeons
 Finally, you will probably want to package your dungeon either for storage or for distribution.
 
 EliteMobs has an import system which allows admins to quickly import, install and uninstall content. [You can see how it works here.]($language$/elitemobs/setup.md)
+
+## Trimming Worlds
+
+Sometimes, you may need to reduce the size of your Minecraft world to make it lighter and, consequently, easier to distribute. This can be achieved through the use of the [WorldBorder plugin](https://www.spigotmc.org/resources/worldborder-1-15.80466/). Despite the plugin being listed as only supporting MineCraft up to version 1.19, it functions seamlessly on the latest MineCraft version as of January 25, 2024.
+
+<details>
+<summary>Tip</summary>
+If you are doing this for the first time it might be a good idea to create a backup of your world just in case something goes wrong.
+</details>
+
+Once the plugin is installed, navigate to the middle of the world or the specific area you wish to trim. Then, execute the command `/wb set x`, where `x` represents the approximate radius size you want for your area.
+
+<details>
+<summary>Tip</summary>
+If <code>/wb</code> is not working for you, try <code>/worldborder:wb</code>.
+</details>
+
+After executing this command, fly to the edges of your world to verify that the world border has been properly set and covers the intended size. You will recognize reaching the world border edge when you are pushed back, accompanied by a message in the chat.
+
+![trim_pic_1.jpg](../../../img/wiki/trim_pic_1.jpg)
+
+In the image above, we aim to trim the world around the purple blocks, leaving only a few chunks around them. To achieve this, we stand in the middle of the purple area on the red squares and execute `/wb set 50`, setting the world border just beyond the purple area.
+
+Next, we use the `/wb trim [freq] [pad]` command, with the frequency set to 200 and the pad to 20. The pad determines how many chunks should be left around the world border (the purple area), and the frequency determines how many chunks should be processed per second. After running `/wb trim 200 20`, we will be prompted to confirm by executing `/wb trim confirm`. We confirm the action, and after some time, our world will be trimmed, reducing its size and making it more convenient for distribution.
+
+You can now remove the world border using `/wb clear all` or just leave it if you wish.
+
+## Trimming the world folder
+
+There are several files and folders located in your world folder that we can discard since the plugins do not use all of them. This will cut down the size of your world and make it easier to distribute.
+
+For a NORMAL world Environment:
+
+To prepare your world, keep the following files and folders:
+
+1. **region** folder
+2. **raids.dat** from within the **data** folder (ensure it's placed inside the **data** folder when copying)
+3. **level.dat** file
+
+You can safely delete all other files and folders located in the world folder. This will set up your world correctly for the NORMAL environment.
+
+For NETHER and THE_END world Environments:
+
+To prepare your world, keep the following files and folders:
+
+1. **region** folder inside the **DIM-1** folder (ensure it's placed inside the **DIM-1** folder when copying)
+2. **raids.dat** from within the **data** folder (ensure it's placed inside the **data** folder when copying)
+3. **level.dat** file
+
+You can safely delete all other files and folders located in the world folder. This will set up your world correctly for the NETHER and THE_END environments.
 
 ## Running the package command
 
@@ -212,8 +999,6 @@ If you did everything correctly, the file structure should be similar to this ex
     * customspawns
         * my_cool_dungeon
             * [Your custom spawns go here]
-    * schematics
-        * [Your schematic goes here]
     * ModelEngine
         * [Your ModelEngine bbmodel format models go here, accepts folders]
 

@@ -67,7 +67,9 @@ These are used to store and configure locations. It follows this format: `worldN
 damageMultiplier: 1.0
 ```
 
-In this case, the damage multiplier would be multiplied by 1, meaning that there is no change from the default value. If the `Multiplier` was `2.0`, the value would be multiplied by `2.0`. If it was `0.5`, it would be multiplied by `0.5`. For those not good with fractions, multiplying by `0.5` is the same as dividing by 2. `Multiplier` values should always be larger than 0 (`0.0001` is valid) and don't tend to have a higher ceiling.
+In this case, the damage multiplier would be multiplied by 1, meaning that there is no change from the default value. If the `Multiplier` was `2.0`, the value would be multiplied by `2.0`. If it was `0.5`, it would be multiplied by `0.5`. 
+
+For those not good with fractions, multiplying by `0.5` is the same as dividing by 2. `Multiplier` values should always be larger than 0 (`0.0001` is valid) and don't tend to have a higher ceiling.
 
 </div>
 
@@ -142,24 +144,31 @@ As you can see, Map Lists can contain any kind of format inside them, but if you
 
 You can also assign colors or make text bold using the following modifiers:
 
-| Color                                                  | Code                                                       | Table                                                    |
-|--------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------|
-| **&4** for dark red text.                              | **&c** for red text.                                       | **&6** for orange text.                                  |
-| <div style="color: darkred;">&4Dark red example.</div> | <div style="color: red;">&cRed example.</div>              | <div style="color: orange;">&6Orange example.</div>      |
-| **&e** for yellow text.                                | **&2** for dark green text.                                | **&a** for green text.                                   |
-| <div style="color: yellow;">&eYellow example.</div>    | <div style="color: darkgreen;">&2Dark green example.</div> | <div style="color: green;">&aGreen example.</div>        |
-| **&b** for aqua text.                                  | **&3** for dark aqua text.                                 | **&1** for dark blue text.                               |
-| <div style="color: aqua;">&bAqua example.</div>        | <div style="color: cadetblue;">&3Dark aqua example.</div>  | <div style="color: darkblue;">&1Dark aqua example.</div> |
-| **&9** for blue text.                                  | **&d** for light purple text.                              | **&5** for dark purple text.                             |
-| <div style="color: blue;">&9Blue example.</div>        | <div style="color: hotpink;">&dLight purple example.</div> | <div style="color: purple;">&5Dark purple example.</div> |
-| **&f** for white text.                                 | **&7** for gray text.                                      | **&8** for dark gray text.                               |
-| <div style="color: white;">&fWhite example.</div>      | <div style="color: gray;">&7Gray example.</div>            | <div style="color: darkgray;">&8Dark gray example.</div> |
-| **&0** for black text.                                 | **&r** to reset color to default.                          | **&i** for bold text.                                    |
-| <div style="color: black;">&0Black example.</div>      | &rReset example.                                           | **&iBold example.**                                      |
-| **&o** for italic text.                                | **&n** for underline text.                                 | **&m** for strikethrough text.                           |
-| _&oItalic example._                                    | <u> &nUnderline example. </u>                              | ~~&mStrikethrough example.~~                             |
-|                                                        | **&k** for random text.                                    |                                                          |
-|                                                        | &k<div class="magic-text"></div> example.                  |                                                          |
+| Code        | Color          | Example                                                |
+|-------------|----------------|--------------------------------------------------------|
+| **&4**      | Dark red       | <div style="color: darkred;">&4Dark red example.</div> |
+| **&c**      | Red            | <div style="color: red;">&cRed example.</div>          |
+| **&6**      | Orange         | <div style="color: orange;">&6Orange example.</div>    |
+| **&e**      | Yellow         | <div style="color: yellow;">&eYellow example.</div>    |
+| **&2**      | Dark green     | <div style="color: darkgreen;">&2Dark green example.</div> |
+| **&a**      | Green          | <div style="color: green;">&aGreen example.</div>      |
+| **&b**      | Aqua           | <div style="color: aqua;">&bAqua example.</div>        |
+| **&3**      | Dark aqua      | <div style="color: cadetblue;">&3Dark aqua example.</div> |
+| **&1**      | Dark blue      | <div style="color: darkblue;">&1Dark blue example.</div> |
+| **&9**      | Blue           | <div style="color: blue;">&9Blue example.</div>        |
+| **&d**      | Light purple   | <div style="color: hotpink;">&dLight purple example.</div> |
+| **&5**      | Dark purple    | <div style="color: purple;">&5Dark purple example.</div> |
+| **&f**      | White          | <div style="color: white;">&fWhite example.</div>      |
+| **&7**      | Gray           | <div style="color: darkgray;">&7Gray example.</div>    |
+| **&8**      | Dark gray      | <div style="color: gray;">&8Dark gray example.</div>   |
+| **&0**      | Black          | <div style="color: black;">&0Black example.</div>      |
+| **&r**      | Reset color    | &rReset example.                                       |
+| **&i**      | Bold           | **&iBold example.**                                    |
+| **&o**      | Italic         | _&oItalic example._                                    |
+| **&n**      | Underline      | <u>&nUnderline example.</u>                            |
+| **&m**      | Strikethrough  | ~~&mStrikethrough example.~~                           |
+| **&k**      | Random         | &k<div class="magic-text"></div> &fexample.            |
+
 
 As you can see in the examples, the modifiers follow the regular minecraft syntax except that the § is replaced with a & when used with EliteMobs. You can use this to modify most EliteMobs text such as, mob names, quest text, dungeon names etc.
 

@@ -71,17 +71,218 @@ To begin the enchantment the players would place one Elite Item, one Enchanted B
 
 Here is a short guide that explains how you can make your own Enchanted Books.
 
-| Key           | Description                                                      | Value                                                                                                                                                                                     |
-|---------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `isEnabled`   | Sets if the item is enabled.                                     | [Boolean](#boolean)                                                                                                                                                                       |
-| `material`    | Sets what MineCraft material the item should be.                 | [Material](#material)                                                                                                                                                                     |
-| `name`        | Sets the name of item. Supports [Color Codes](#color_codes).     | [String](#string)                                                                                                                                                                         |
-| `lore`        | Sets the lore of the item. Supports [Color Codes](#color_codes). | [String](#string)                                                                                                                                                                         |
-| `enchantments` | Sets which enchantments the item should hold.                    | [MineCraft Enchantments](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) or [EliteMobs Enchantments]($language$/elitemobs/custom_enchantments_list.md) |
-| `itemType`    | Sets where you can obtain the item from.                         | [Values]($language$/elitemobs/creating_items.md&section=itemtype)                                                                                                                         |
-| `soulbound`   | Sets if them can be traded with other players.                   | [Boolean](#boolean)                                                                                                                                                                       |
+<div align="center">
 
-Example:
+***
+
+### isEnabled
+
+Sets if the item is enabled.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `isEnabled` | [Boolean](#boolean) | `true`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+```
+
+</div>
+
+</details>
+
+***
+
+### name
+
+Sets the name of item. Supports [Color Codes](#color_codes).
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `name` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+name: '&aElite Custom Enchanted Book'
+```
+
+<div align="center">
+
+![create_book_name.jpg](../../../img/wiki/create_book_name.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### lore
+
+Sets the lore of the item. Supports [Color Codes](#color_codes).
+
+| Key         |           Values            | Default |
+|-------------|:---------------------------:|:-------:|
+| `lore` | [String List](#string_list) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+lore:
+- '&2Use this custom book to'
+- '&2enchant items at the enchanter!'
+```
+
+<div align="center">
+
+![create_book_lore.jpg](../../../img/wiki/create_book_lore.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### material
+
+Sets what MineCraft material the item should be.
+
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `material` | [Material](#material) | `BOOK`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+material: BOOK
+```
+
+<div align="center">
+
+![create_book_material.jpg](../../../img/wiki/create_book_material.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### enchantments
+
+Sets which enchantments the item should hold.
+
+| Key         |    Values    | Default |
+|-------------|:------------:|:-------:|
+| `enchantments` | [MineCraft Enchantments](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) or [EliteMobs Enchantments]($language$/elitemobs/custom_enchantments_list.md) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+enchantments:
+- EARTHQUAKE,1
+- LUCK,1
+```
+
+<div align="center">
+
+![create_book_enchantments.jpg](../../../img/wiki/create_book_enchantments.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### itemType
+
+Sets where you can obtain the item from. You can set this to `custom` if you want your book to be dropped by random elites and sold in shops. 
+
+Otherwise you can set it to `unique` to have it only drop from configured loot tables.
+
+| Key         |    Values    | Default |
+|-------------|:------------:|:-------:|
+| `itemType` | [Values]($language$/elitemobs/creating_items.md&section=itemtype) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+itemType: custom
+```
+
+</div>
+
+</details>
+
+***
+
+### soulbound
+
+Sets if them can be traded with other players.
+
+| Key         |    Values    | Default |
+|-------------|:------------:|:-------:|
+| `soulbound` | [Boolean](#boolean) | `true`  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+soulbound: true
+```
+
+</div>
+
+</details>
+
+</div>
+
+## Enchanted Book Example
+
+<div align="center">
+
+<details> 
+
+<summary><b>Enchanted Book Config Example</b></summary>
+
+<div align="left">
+
 ```yml
 isEnabled: true
 material: BOOK
@@ -95,4 +296,14 @@ itemType: UNIQUE
 soulbound: false
 ```
 
-As you can see making your Enchanted Books is not that complicated. Most of the settings are regular settings you would use when creating an [item]($language$/elitemobs/creating_items.md). Except that of course here our main focus would be the `enchantments` section. Our example book has one MineCraft enchantment `MENDING` and one EliteMobs enchantment `DRILLING`. This would make our example book an excellent book you would want to use on a pickaxe.
+As you can see making your Enchanted Books is not that complicated. Most of the settings are regular settings you would use when creating an [item]($language$/elitemobs/creating_items.md).
+
+Except that of course here our main focus would be the `enchantments` section. Our example book has one MineCraft enchantment `MENDING` and one EliteMobs enchantment `DRILLING`.
+
+This would make our example book an excellent book you would want to use on a pickaxe.
+
+</div>
+
+</details>
+
+</div>

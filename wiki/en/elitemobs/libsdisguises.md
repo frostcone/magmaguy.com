@@ -96,6 +96,10 @@ disguise: custom:you_custom_disguise_name
 
 There is no official list of valid entity types, but here's an unofficial list that should work at the time of writing this (August 3rd 2020)
 
+<details>
+
+<summary><b>Expand List</b></summary>
+
 ```
     ARMOR_STAND
     ARROW
@@ -205,3 +209,5 @@ There is no official list of valid entity types, but here's an unofficial list t
     ZOMBIE_VILLAGER
     ZOMBIFIED_PIGLIN
 ```
+
+</details>

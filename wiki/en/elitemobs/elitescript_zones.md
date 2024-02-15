@@ -44,6 +44,58 @@ All animatable zones are set to not track on the script targets since the extra 
 
 Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as the target of the zone. Borders are defined by creating a second, smaller shape inside the first, larger shape. The area between the smaller zone and the larger zone is the border.
 
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+      - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      borderRadius: 3
+      height: 8
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: SMOKE_LARGE
+        Target:
+          targetType: ZONE_BORDER
+        repeatEvery: 5
+        times: 20
+```
+
+<div align="center">
+
+![elitescript_zones_border.jpg](../../../img/wiki/elitescript_zones_border.jpg)
+
+</div>
+
+This script makes smoke particles that **only** appear in the zone border for 5 seconds (repeat every 5 x times 20 = 100 ticks).
+
+If you did not use the `ZONE_BORDER` option but the `ZONE_FULL` option instead then the entire zone would be covered in smoke particles like this:
+
+<div align="center">
+
+![elitescript_zones_borderfull.jpg](../../../img/wiki/elitescript_zones_borderfull.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### SPHERE
@@ -55,6 +107,49 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | [`filter`]($language$/elitemobs/elitescript_zones.md%filter) | Sets which types of entities get targeted | ❌ |
 | `radius`                                                     | Radius of the sphere | ✅ |
 | `borderRadius`                                               | Radius of the inner sphere | ❌ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+      - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: SPHERE
+      radius: 4
+      borderRadius: 3
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
+        repeatEvery: 5
+        times: 20
+```
+
+<div align="center">
+
+![elitescript_zones_sphere.jpg](../../../img/wiki/elitescript_zones_sphere.jpg)
+
+</div>
+
+This script demonstrates the shape of a sphere using cloud particles.
+
+</div>
+
+</details>
+
+</div>
 
 ---
 
@@ -68,6 +163,49 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | `radius`                                                     | Radius of the dome | ✅ |
 | `borderRadius`                                               | Radius of the inner dome | ❌ |
 
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+      - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: DOME
+      radius: 4
+      borderRadius: 3
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
+        repeatEvery: 5
+        times: 20
+```
+
+<div align="center">
+
+![elitescript_zones_dome.jpg](../../../img/wiki/elitescript_zones_dome.jpg)
+
+</div>
+
+This script demonstrates the shape of a dome using cloud particles.
+
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### CYLINDER
@@ -80,6 +218,50 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | `radius`                                                     | Radius of the cylinder | ✅ |
 | `borderRadius`                                               | Radius of the inner cylinder | ❌ |
 | `height`                                                     | Height of the cylinder | ❌ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+      - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      borderRadius: 3
+      height: 8
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
+        repeatEvery: 5
+        times: 20
+```
+
+<div align="center">
+
+![elitescript_zones_cylinder.jpg](../../../img/wiki/elitescript_zones_cylinder.jpg)
+
+</div>
+
+This script demonstrates the shape of a cylinder using cloud particles.
+
+</div>
+
+</details>
+
+</div>
 
 ---
 
@@ -97,6 +279,53 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | `yBorder`                                                    | Sets the height of the inner cuboid | ❌ |
 | `zBorder`                                                    | Sets the width of the inner cuboid, defaults to `x` | ❌ |
 
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+      - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CUBOID
+      x: 4
+      y: 4
+      z: 4
+      xBorder: 3
+      yBorder: 3
+      zBorder: 3
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
+        repeatEvery: 5
+        times: 20
+```
+
+<div align="center">
+
+![elitescript_zones_cuboid.jpg](../../../img/wiki/elitescript_zones_cuboid.jpg)
+
+</div>
+
+This script demonstrates the shape of a cuboid using cloud particles.
+
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### STATIC_RAY
@@ -109,6 +338,53 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | [`filter`]($language$/elitemobs/elitescript_zones.md%filter) | Sets which types of entities get targeted | ❌ |
 | `ignoresSolidBlocks`                                         | Sets if the ray will pass through solid blocks | ❌ |
 | `pointRadius`                                                | Sets the thickness of the ray. Default is 0.5 blocks. | ❌ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+      - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: STATIC_RAY
+      Target2:
+        targetType: DIRECT_TARGET
+        offset: 0,1,0
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
+        repeatEvery: 5
+        times: 20
+```
+
+<div align="center">
+
+![elitescript_zones_staticray.jpg](../../../img/wiki/elitescript_zones_staticray.jpg)
+
+</div>
+
+This script demonstrates the shape of a static ray using cloud particles. 
+
+We have adjusted the height of the zone by using the `offset` option on both ends of the zone to make the ray appear from the middle of the player and the boss, otherwise the ray would appear at their feet.
+
+</div>
+
+</details>
+
+</div>
 
 ---
 
@@ -128,6 +404,61 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | `ignoresSolidBlocks`                                         | Sets if the ray will pass through solid blocks | ❌ |
 | `pointRadius`                                                | Sets the thickness of the ray. Default is 0.5 blocks. | ❌ |
 
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+      - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: ROTATING_RAY
+      animationDuration: 100
+      pitchPrerotation: 0
+      yawPrerotation: 0
+      pitchRotation: 0
+      yawRotation: 360
+      ignoresSolidBlocks: true
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+      Target2:
+        targetType: DIRECT_TARGET
+        offset: 0,1,0
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
+        repeatEvery: 1
+        times: 100
+```
+
+<div align="center">
+
+![elitescript_zones_rotatingray.gif](../../../img/wiki/elitescript_zones_rotatingray.gif)
+
+</div>
+
+This script shows how a rotating ray looks using cloud particles.
+
+First, it creates a ray from the boss to the player who harmed it, using cloud particles. Then, it adjusts the positions slightly upward by one block using `offset`.
+
+Next, it spins the ray in a full circle around the player who was targeted. This rotation lasts for 5 seconds (100 ticks) to complete, with the targeted player as the center.
+
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### TRANSLATING_RAY
@@ -144,43 +475,71 @@ Certain zones can have borders. Borders mean that `ZONE_BORDER` can be used as t
 | `ignoresSolidBlocks`                                          | Sets if the ray will pass through solid blocks | ❌ |
 | `pointRadius`                                                 | Sets the thickness of the ray. Default is 0.5 blocks. | ❌ |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
-  TranslatingRay:
+  Example:
     Events:
-    - EliteMobDamagedEvent
+      - EliteMobDamagedByPlayerEvent
     Zone:
-      Shape: TRANSLATING_RAY
-      animationDuration: 160
+      shape: TRANSLATING_RAY
       Target:
-        targetType: SELF_SPAWN
-        offset: 24,1,24
-      Target2:
-        targetType: SELF_SPAWN
-        offset: -24,1,24
+        targetType: SELF
       FinalTarget:
-        targetType: SELF_SPAWN
-        offset: 24,1,-24
+        targetType: SELF
+        offset: 0,10,0
+      Target2:
+        targetType: DIRECT_TARGET
       FinalTarget2:
-        targetType: SELF_SPAWN
-        offset: -24,1,-24
+        targetType: DIRECT_TARGET
+        offset: 0,10,0
+      animationDuration: 100
+      ignoresSolidBlocks: true
     Actions:
-    - action: SPAWN_PARTICLE
-      repeatEvery: 2
-      times: 80
-      Target: 
-        targetType: ZONE_FULL
-        track: false
-      particles:
-      - particle: REDSTONE
-        amount: 0
-        x: 0
-        y: 0
-        z: 1
-        speed: 0.1
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
+        repeatEvery: 1
+        times: 100
 ```
+
+<div align="center">
+
+![elitescript_zones_translatingray.gif](../../../img/wiki/elitescript_zones_translatingray.gif)
+
+</div>
+
+This script shows how a translating ray looks using cloud particles.
+
+First, it creates a ray from the boss to the player who harmed it, using cloud particles. 
+
+Then, it animates the ray to go upwards 10 blocks from both targets using the `offset` on the `FinalTarget1` and `FinalTarget2`.
+
+The animation takes 5 seconds (100 ticks) to complete.
+
+We can easily make the ray move sideways by adjusting the Z `offset`  to something like `offset: 0,0,10`:
+
+<div align="center">
+
+![elitescript_zones_translatingray2.gif](../../../img/wiki/elitescript_zones_translatingray2.gif)
+
+</div>
+
+This behavior might change depending on where you're facing in the game. 
+<br>If we modify the X `offset` in the script shown in the GIF image, the ray would appear to move away from us in a straight line from our perspective.
+
+</div>
+
+</details>
 
 ---
 

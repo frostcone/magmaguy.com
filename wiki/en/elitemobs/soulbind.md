@@ -1,6 +1,8 @@
 The Soulbind enchantment links all EliteMobs loot to the players the loot drops for. This means that each player gets their own reward from killing an Elite Mob, making sharing loot a non-issue.
 
-Players are unable to pick up loot that isn't soulbound to them from the floor. They are able to pick it up from chests, but are unable to equip them in combat, meaning that they can only really be carried around. This is so players don't accidentally clog up each other's chests with unmovable items. Additionally, players can only sell items soulbound to them.
+Players are unable to pick up loot that isn't soulbound to them from the floor. They are able to pick it up from chests, but are unable to equip them in combat, meaning that they can only really be carried around. 
+
+This is so players don't accidentally clog up each other's chests with unmovable items. Additionally, players can only sell items soulbound to them.
 
 This enchantment is meant to be used in conjunction with the guild tier loot limiter.
 

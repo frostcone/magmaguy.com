@@ -14,9 +14,16 @@
 # First boot
 
 Restart once.
-<details><summary>Why?</summary>EliteMobs sets increases maximum health of your spigot.yml config file the first time the server starts up. This is so Elite mobs can have more than 2000 health. It does not alter the health of any other mob - so it doesn't change vanilla or plugin mobs.
 
-This change requires a restart to actually work.</details>
+<details>
+
+<summary>Why?</summary>
+
+EliteMobs sets increases maximum health of your spigot.yml config file the first time the server starts up. This is so Elite mobs can have more than 2000 health. It does not alter the health of any other mob - so it doesn't change vanilla or plugin mobs.
+
+This change requires a restart to actually work.
+
+</details>
 
 # Permissions
 
@@ -34,7 +41,7 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 **IMPORTANT: [WORLDGUARD](https://dev.bukkit.org/projects/worldguard) AND [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
 
-4) Click on the yellow glass in the `/em setup` menu to install features! For schematic-based minidungeons, a green message will appear in chat which you can click to install the minidungeon where you are standing.
+4) Click on the yellow glass in the `/em setup` menu to install features!
 
 5) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md%importing-custom-models-from-dungeons) to install them.
 
@@ -44,7 +51,6 @@ That's it! **You can find teleports to the installed dungeons & adventurers guil
 
 # Recommended plugins
 
-- [WorldEdit](https://dev.bukkit.org/projects/worldedit): Used to install schematic-based minidungeons.
 - [WorldGuard](https://dev.bukkit.org/projects/worldguard): Used to setup and protect areas. [EliteMobs flags list]($language$/elitemobs/worldguard_flags.md).
 - [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/): Used for the anti-fly flag, useful to have.
 - [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/): Used to displaying EliteMobs info on other plugins, like for chat. [More info]($language$/elitemobs/placeholders.md).
@@ -54,9 +60,6 @@ That's it! **You can find teleports to the installed dungeons & adventurers guil
 # Updating dungeon content
 
 To update dungeon content, simply repeat the installation steps above. **You do ***not*** have to delete any files**, EliteMobs handles that when you import the update.
-
-- For world-based dungeons, no further setup is required
-- For schematic-base dungeons, go to your anchor location (the place where the target blocks appeared when installing the content the first time) and you can select the option to install only the bosses during the setup process if the schematic has not changed for the update.
 
 # Frequently Asked Questions (FAQ)
 
@@ -78,16 +81,21 @@ This 100% means you are using the wrong version of WorldGuard / WorldEdit on you
 
 ## NPC chat looks weird / wormholes aren't working / other weird behavior after installing
 
-<details><summary>Answer</summary>
+<details>
+
+<summary>Answer</summary>
 
 Run the command `/em reload` after setting a dungeon up to make sure all of the values get fully initialized. A restart is even better, but should not be necessary.
+
 </details>
 
 ## Bosses aren't spawning
 
 ### The boss was spawning earlier!
 
-<details><summary>Answer</summary
+<details>
+
+<summary>Answer</summary>
 
 Regional bosses have a respawn time. You can check when the boss is scheduled to respawn by going to its configuration file and copying the numbers after the `:` in the spawn locations section.
 
@@ -104,7 +112,9 @@ In this case the numbers you're looking for are `1643259941451`. You can use [th
 
 ### The boss was never spawning!
 
-<details><summary>Answer</summary>
+<details>
+
+<summary>Answer</summary>
 
 Check the following things:
 
@@ -121,7 +131,9 @@ Check the following things:
 
 ## Something's messed up and I just can't fix it
 
-<details><summary>Answer</summary>
+<details>
+
+<summary>Answer</summary>
 
 This usually happens after trying and failing to correctly modify files in a way that EliteMobs could not self-repair. If you are stuck and can't figure out how to repair it from the console messages on startup / dungeon installation, the best thing to do is a clean installation of EliteMobs.
 

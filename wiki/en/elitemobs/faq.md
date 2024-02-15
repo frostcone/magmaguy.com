@@ -3,36 +3,6 @@ in the wiki!
 
 # Setup and Installation FAQ
 
-## Dungeon appeared in wrong place when installing
-
-<details>
-<summary>
-Info
-</summary>
-
-If you have a dungeon that has appeared in front you in the world you were in after you clicked install in
-the `/em setup` menu, then you have installed a schematic dungeon.
-
-Schematic dungeons can be installed anywhere. They were made to be installed in a normal survival world, but you can
-also create your own world to put them in.
-
-To remove an incorrectly placed schematic dungeon, go to the `/em setup` menu again and uninstall it. If you reload
-EliteMobs or restart the server in the meantime, you won't be able to remove the structure when you do this.
-
-In this case, you should either manually remove it or use the regen command from WorldEdit. The regen command is
-dangerous to use, so go read the WorldEdit documentation on how to use it correctly so you don't accidentally destroy
-something important.
-
-If you have installed the schematic dungeon in the EliteMobs Adventurer's Guild or have installed it in a dungeon, it
-might be faster to reimport both the schematic dungeon you pasted and the dungeon you installed the schematic dungeon in
-and install both of them again.
-
-Some schematic dungeons can leave blocks behind even if they are uninstalled without restarting or reloading the server.
-You will have to remove those blocks manually. If you need to remove treasure chests, you can either reimport the
-schematic dungeon or use `/em remove` to manually remove elitemobs-specific content such as those treasure chests.
-
-</details>
-
 ## How do I set up custom models?
 
 <details>
@@ -92,8 +62,8 @@ Info
 
 This is almost certainly due to a third party plugin's interference. Check the following:
 - Is your world on Peaceful difficulty? Mobs don't spawn on Peaceful difficulty
-- Is your region protected against spawning? EliteMobs dungeons handle their own region protections via WorldGuard, you don't need to protect their worlds or schematics, and doing so may prevent spawning if the wrong flags are used.
-- Is there another plugin preventing EliteMobs bosses from spawning or removing them? These confilicts will often show up in console, so check your console logs.
+- Is your region protected against spawning? EliteMobs dungeons handle their own region protection via WorldGuard, you don't need to protect EliteMobs dungeon worlds, actually doing so may prevent spawning if the wrong flags are used.
+- Is there another plugin preventing EliteMobs bosses from spawning or removing them? These conflicts will often show up in console, so check your console logs.
 
 </details>
 
@@ -313,6 +283,22 @@ change the value to `false`.
 
 ***
 
+# How can I edit the wormhole in AG to teleport players where I want?
+
+<div align="center">
+
+![faq_ag_wormhole.jpg](../../../img/wiki/faq_ag_wormhole.jpg)
+
+</div>
+
+You can do so by opening up *plugins\EliteMobs\wormholes\adventurers_guild_wormhole.yml*.
+
+Then find the following setting
+`location2: your_world_here,0.5,64,0.5,0,0`
+and change it to your preferred coordinates.
+
+***
+
 # How can I unbind items?
 
 The only way to remove soulbound from items is to use Unbind Scrolls. Read more about
@@ -331,5 +317,15 @@ can go to *~plugins\EliteMobs\mobproperties* then go into any file that is prefi
 # How can I merge resource packs?
 
 It is possible to merge resource packs manually, but we recommend using an online tool such as [merge.elmakers](https://merge.elmakers.com/) to merge your resource packs.
+
+***
+
+# What are the EliteMobs command placeholders?
+
+| Placeholder | Details |
+| --- | :-: |
+| `$player` | Display name of the player |
+| `$bossName` | Display name of the player |
+| `$bossLevel` | Level of the boss |
 
 ***

@@ -2,7 +2,13 @@
 
 Conditions allow scripters to make scripts and / or actions **not** run based on specific conditions.
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -30,6 +36,12 @@ eliteScript:
 ```
 
 In this example, the `Example` script will only run if the elite is still alive, and will only place a dirt block 3 blocks above the elite location if that block is an air block. Individual actions can have individual conditions.
+
+</div>
+
+</details>
+
+</div>
 
 ## Target
 
@@ -63,7 +75,13 @@ Sets the condition to be whether the location of the target is air.
 | --- | :-: |:-------------------:|
 | `locationIsAir` | Sets to check if the location is an air block (or the opposite). | [Boolean](#boolean) |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -77,6 +95,12 @@ eliteScript:
 
 Check if the location 2 blocks above where the boss is standing is air.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### isOnFloor
@@ -87,7 +111,13 @@ Checks if the location is on the floor. This means the block at the location is 
 | --- | :-: | :-: |
 | `isOnFloor` | Sets to check if the location is a floor location (or the opposite). | [Boolean](#boolean) |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -97,6 +127,13 @@ eliteScript:
       Target:
         targetType: SELF
 ```
+
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### isStandingOnMaterial
@@ -107,7 +144,13 @@ Checks if the location underneath the target is a matching material type.
 | --- |:-----------------------------------------------:|:---------------------:|
 | `isStandingOnMaterial` | Sets which material type should be checked for. | [Material](#material) |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -120,6 +163,12 @@ eliteScript:
 
 Will only run if the boss is standing on BIRCH_WOOD.
 
+</div>
+
+</details>
+
+</div>
+
 ## Entity-based conditions
 
 ### isAlive
@@ -130,7 +179,13 @@ Sets the condition to be whether the condition target entity is alive.
 | --- | :-: | :-: |
 | `isAlive` | Sets to check if the entity is alive (or dead). | [Boolean](#boolean) |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -143,6 +198,12 @@ eliteScript:
 
 Will only run if the boss is dead.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ### hasTags
@@ -153,7 +214,13 @@ Checks if the target entity has specific tags. Scripters can assign and unassign
 | --- | :-: |:---------------------------:|
 | `hasTags` | Sets to check if the entity has a list of tags. | [String List](#string_list) |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -166,7 +233,14 @@ eliteScript:
         targetType: SELF
 ```
 
-Will only run if the boss has the tags "isCool" and "hasANiceBeard"
+Will only run if the boss has the tags "isCool" and "hasANiceBeard".
+
+</div>
+
+</details>
+
+</div>
+
 
 ---
 
@@ -178,7 +252,13 @@ Same as `hasTags`, but checks if the boss does not have these values.
 | --- | :-: | :-: |
 | `doesNotHaveTags` | Sets to check if the entity does not have a list of tags. | [String List](#string_list) |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -193,6 +273,12 @@ eliteScript:
 
 Will only run if the boss does not have the tags "isStinky" and "isSus".
 
+</div>
+
+</details>
+
+</div>
+
 ## Other conditions
 
 ### randomChance
@@ -204,5 +290,3 @@ Gives the condition a random chance to be valid.
 | `randomChance` | Chance that the condition will be valid. | Number between 0.0 and 1.0 |
 
 Note that this condition is special as it does not require a target.
-
-**Example**

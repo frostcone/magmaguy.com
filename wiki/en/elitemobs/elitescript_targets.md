@@ -25,7 +25,13 @@ Target types set what entities or locations get targeted by a script.
 | `INHERIT_SCRIPT_ZONE_FULL`   | Targets inside of zone inherited from the script that runs this script |                                 Requires [`Zone`]($language$/elitemobs/elitescript_zones.md) **in the the script that calls this script!**                                  |
 | `INHERIT_SCRIPT_ZONE_BORDER` | Targets border of zone inherited from the script that runs this script |                                 Requires [`Zone`]($language$/elitemobs/elitescript_zones.md) **in the the script that calls this script!**                                  |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -41,6 +47,12 @@ eliteScript:
 
 This sends a message to the target. Since the target is set to `ALL_PLAYERS`, it will send that message to all online players.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ## Shared attributes
@@ -51,7 +63,13 @@ The following settings can be applied to all targets.
 | --- | :-: | :-: |
 | `offset` | Sets the offset for the target location. | Can't target entities! |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -65,7 +83,15 @@ eliteScript:
         offset: "0,2,0"
 ```
 
-This strikes lightning 2 blocks above the boss. Note that STRIKE_LIGHTNING uses locations and does not affect entities, so it can have offsets. You can't set an offset to send a message, since messages are sent to players. You can, however, set an offset to a zone that can then target entities.
+This strikes lightning 2 blocks above the boss. Note that STRIKE_LIGHTNING uses locations and does not affect entities, so it can have offsets. 
+
+You can't set an offset to send a message, since messages are sent to players. You can, however, set an offset to a zone that can then target entities.
+
+</div>
+
+</details>
+
+</div>
 
 ---
 
@@ -77,7 +103,13 @@ Sets the range to scan for nearby players in the `NEARBY_PLAYERS` target type.
 | --- | :-: | :-: |
 | `range` | Sets the range, in blocks, to scan for player targets. | `20.0` |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -94,6 +126,12 @@ eliteScript:
 
 This sends a message to players within 25 blocks of the boss when the boss when the boss dies.
 
+</div>
+
+</details>
+
+</div>
+
 ## location
 
 Sets the location for the `LOCATION` target type.
@@ -106,7 +144,13 @@ This uses the format `location: worldname,x,y,z,pitch,yaw` for the location.
 
 **Note that `same_as_boss` is a valid placeholder for the world name, such as `same_as_boss,100,64,100,0,0` would be a valid location that would target the same world as where the boss is.**
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -122,6 +166,12 @@ eliteScript:
 
 This spawns a lighting strike at the location x=100, y=64, z=200 of a world called `myWorld`.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ## locations
@@ -136,7 +186,13 @@ This uses the format `worldname,x,y,z,pitch,yaw` for the location.
 
 **Note that `same_as_boss` is a valid placeholder for the world name, such as `same_as_boss,100,64,100,0,0` would be a valid location that would target the same world as where the boss is.**
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -154,6 +210,12 @@ eliteScript:
 
 This spawns a lighting strike at the location x=100, y=64, z=200 of a world called `myWorld` and another lighting strike in the same world as the boss at the location x=-100, y=12 and z=130.
 
+</div>
+
+</details>
+
+</div>
+
 ---
 
 ## Targeting zones
@@ -166,7 +228,13 @@ Zones work in two parts:
 
 Zones need to know where they are supposed to be, and to do that you use the target system the same way you would for any other location-based effect, like a lightning strike.
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -187,11 +255,23 @@ This spawns a cylindrical zone around the boss. Note that no actions are set in 
 
 Some zones, like [STATIC_RAY]($language$/elitemobs/elitescript_zones.md%static_ray), have two or more targets. This is because rays are lines, and lines are defined by two points. This is covered more extensively in the [zones page]($language$/elitemobs/elitescript_zones.md), but they fundamentally all work the same way.
 
+</div>
+
+</details>
+
+</div>
+
 ### Part 2 - Targeting the inside of the zone
 
 Now that the zone knows where it is, we need the action to know that its target is the zone that we defined. That is what `targetType: ZONE_FULL` and `targetType:ZONE_BORDER` are for.
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -220,6 +300,12 @@ Using the same zone from the first part, we now add the action. The target for t
 
 Note that ZONE_BORDER is not available for every zone. More on that in the [script zones]($language$/elitemobs/elitescript_zones.md) page.
 
+</div>
+
+</details>
+
+</div>
+
 ### Zone track
 
 Sets if the zone will move with the target, such as if the zone will move when the boss moves for `targetType: SELF`.
@@ -230,7 +316,13 @@ Sets if the zone will move with the target, such as if the zone will move when t
 
 Note that animatable zones can't track. [More on that here.]($language$/elitemobs/elitescript_zones.md%animatable)
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -256,6 +348,12 @@ eliteScript:
         track: false
 ```
 
+</div>
+
+</details>
+
+</div>
+
 Using the same example from part 1 and part 2, the zone is now set to not track. This means that the zone will spawn at the boss location, but even as the boss keeps moving away, the zone will stay where it first spawned.
 
 Finally, note that if a zone is set to not track, it will register its location at the moment the script is called.
@@ -264,7 +362,13 @@ As an example, you want to have a warning phase and a damage phase for your scri
 
 The following is a correct example of a power with a warning and a damage phase taken from the Frost Palace Sanctum.
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -392,6 +496,12 @@ eliteScript:
         track: false
 ```
 
+</div>
+
+</details>
+
+</div>
+
 This script does a lot of things, but it is separated into two clear scripts: `VisualCylinder` and `DamageCylinder`.
 
 VisualCylinder runs first and has the `RUN_SCRIPT` action which immediately also runs the `DamageCylinder` at the same time the `VisualCylinder` is running.
@@ -412,7 +522,13 @@ Sets the percentage of the zone that will actually be used for the action. Only 
 | --- | :-: | :-: |
 | `coverage` | Sets the percentage of the zone that will be covered. | `1.0` |
 
-**Example**
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
 
 ```yaml
 eliteScript:
@@ -440,6 +556,12 @@ eliteScript:
 ```
 
 In this case, only 50% of the zone will be covered in particles.
+
+</div>
+
+</details>
+
+</div>
 
 ### Inheriting targets
 

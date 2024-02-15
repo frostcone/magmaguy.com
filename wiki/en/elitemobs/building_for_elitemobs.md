@@ -14,7 +14,7 @@ Vocabulary:
 
 Smallest size category
 
-Lairs are usually 50x50 single-build structures, either distributed as worlds or as schematic files (we are slowly phasing out schematics and all our newer dungeons are world based), and usually contain one big boss encounter, though some can also contain a miniboss and some fodder.
+Lairs are usually 50x50 single-build structures, distributed as worlds, and usually contain one big boss encounter, though some can also contain a miniboss and some fodder.
 
 ### Minidungeons
 

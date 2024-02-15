@@ -6,7 +6,9 @@ What is ResurrectionChest?
 
 Video explanation
 
-ResurrectionChest is a very simple DeathChest plugin. Players set up a deathchest using a chest and a sign at some location ahead of time, and when they die the items they would've dropped get transferred to the chest instead. If the chest is full, the items are lost. It is compatible with double chests and hoppers.
+ResurrectionChest is a very simple DeathChest plugin. Players set up a death-chest using a chest and a sign at some location ahead of time, and when they die the items they would've dropped get transferred to the chest instead. 
+
+If the chest is full, the items are lost. It is compatible with double chests and hoppers.
 
 
 
@@ -15,7 +17,8 @@ How do players setup a ResurrectionChest?
 <p>
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/unMSW2WL2AE?si=9uqtEM9u0MlEUvkC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </p>
-Video guide
+Video guide.
+
 Place down a chest (can even be a double chest. For this first version, only normal chests work, not shulker boxes or trapped chests)
 While sneaking, place a sign on the chest
 Write: [deathchest] (works on the first couple of lines of the sign)
