@@ -63,6 +63,10 @@ body{
     display: flex;
     flex: 1 1 auto; /* changed from 1 0 auto */
     overflow: auto; /* allow scroll */
+
+    font-family: "Open Sans";
+    font-size: 1.2rem;
+    color: white;
 }
 
 .sidebar-home{
