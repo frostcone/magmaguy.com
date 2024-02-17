@@ -49,11 +49,7 @@ function SetPageHashFromPseudoDirectory(url) {
         return;
     }
     if (url.includes("$language$/")) url = url.split("$language$/")[1]; else if (url.includes("magmaguy.com/")) url = url.split("magmaguy.com/")[1];
-    let section = undefined;
-    if (url.includes("%")) {
-        section = url.split("%")[1];
-        url = url.split("%")[0];
-    }
+    let section = GetPageSection;
     SetPageHash(undefined, url, section, true);
 }
 
@@ -389,11 +385,6 @@ function ScrollIntoPageSection(headerName) {
         target.scrollIntoView({
             behavior: 'smooth', block: 'start'
         })
-        if (window.location.hash.includes("%")) {
-            window.location.hash.replace(window.location.hash.split("%")[1], headerName)
-        } else {
-            window.location.hash += "%" + headerName;
-        }
     } else console.log("Failed to find header for " + headerName)
 }
 
