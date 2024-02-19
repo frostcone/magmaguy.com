@@ -577,16 +577,23 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 ## Flame Pyre
 
-| Filename | Description |
-|----------|-------------|
-| `flame_pyre.yml`  | Makes a flame pillar appear on the boss.  |
+| Filename | Description                                  |
+|----------|----------------------------------------------|
+| `flame_pyre.yml`  | Makes a flame pillar appear around the boss. |
 
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_flamepyre.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -597,11 +604,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `flamethrower.yml`  | Makes the boss shoot a flamethrower.  |
 
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_flamethrower.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -612,11 +626,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `frost_cone.yml`  | Makes the boss shoot snowballs in a direction.  |
 
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_frostcone.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -627,53 +648,81 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `frost_walker.yml`  | Gives the boss frost walking boots to walk on water. Will freeze any water blocks it touches. |
 
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_frostwalker.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Gold Explosion
 
-| Filename | Description |
-|----------|-------------|
-| `gold_explosion.yml`  | Spawns damaging gold nuggets on the boss that can be blocked.  |
+| Filename | Description                                                 |
+|----------|-------------------------------------------------------------|
+| `gold_explosion.yml`  | Spawns damaging gold nuggets from the boss. Can be blocked. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_goldexplosion.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Gold Shotgun
 
-| Filename | Description |
-|----------|-------------|
-| `gold_shotgun.yml`  | Spawns damaging gold nuggets in a direction that can be blocked.  |
+| Filename | Description                                                  |
+|----------|--------------------------------------------------------------|
+| `gold_shotgun.yml`  | Spawns damaging gold nuggets in a direction. Can be blocked. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_goldshotgun.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Ground Pound
 
-| Filename | Description |
-|----------|-------------|
-| `ground_pound.yml`  | Makes the boss jump and drop to the floor with knockback.  |
+| Filename | Description                                                                             |
+|----------|-----------------------------------------------------------------------------------------|
+| `ground_pound.yml`  | Makes the boss jump and then drop down to the floor with force. Will knockback players. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_groundpound.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -683,12 +732,6 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|-------------|
 | `hyper_loot.yml`  | Drops 10x the normal loot.  |
 
-<div align="center">
-
-![boss_powers_](../../../img/wiki/boss_powers_)
-
-</div>
-
 ***
 
 ## Implosion
@@ -697,11 +740,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|-------------|
 | `implosion.yml`  | Pulls all nearby entities towards the boss on death.  |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_implosion.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -711,11 +761,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|-------------|
 | `invisibility.yml`  | Makes the boss invisible.  |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_invis.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -725,11 +782,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|-------------|
 | `invulnerability_arrow.yml`  | Makes the boss immune to projectiles.  |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_invularrow.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -739,11 +803,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|-------------|
 | `invulnerability_fall_damage.yml`  | Makes the boss immune to fall damage.  |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_invulfall.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -753,11 +824,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|-------------|
 | `invulnerability_fire.yml`  | Makes the boss immune to fire damage.  |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_invulfire.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -767,11 +845,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|-------------|
 | `invulnerability_fireworks.yml`  | Makes the boss immune to fireworks.  |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_invulfireworks.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -781,39 +866,62 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|-------------|
 | `invulnerability_knockback.yml`  | Makes the boss immune to damage knockback.  |
 
+*Note: Turning this power on while you also have the boss set to use `ground_pound.yml` will result in the boss not running the jump animation for `ground_pound.yml`.*
+
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_invulknockback.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Lightning Bolts
 
-| Filename | Description                                |
-|----------|--------------------------------------------|
-| `lightning_bolts.yml`  | Spawns lightning bolts in a straight line. |
+| Filename | Description                                                                                            |
+|----------|--------------------------------------------------------------------------------------------------------|
+| `lightning_bolts.yml`  | Spawns lightning bolts in a straight line from the boss to the location where the player was standing. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_lightbolts.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Meteor Shower
 
-| Filename | Description                                |
-|----------|--------------------------------------------|
-| `meteor_shower.yml`  | Spawns several fireballs from the sky. |
+| Filename | Description                                           |
+|----------|-------------------------------------------------------|
+| `meteor_shower.yml`  | Spawns several fireballs that fall down from the sky. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_meteorshower.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -823,11 +931,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `moonwalk.yml`  | Makes the boss jump extra high. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_moonwalk.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -837,11 +952,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `movement_speed.yml`  | Makes the boss extra fast. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_movespeed.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -851,39 +973,60 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `photon_ray.yml`  | Spawns a damaging ray that will bounce off of walls. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_photonray.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Plasma Blaster
 
-| Filename | Description                                |
-|----------|--------------------------------------------|
-| `plasma_blaster.yml`  | Spawns a damaging ray that will bounce off of walls. |
+| Filename | Description                                                    |
+|----------|----------------------------------------------------------------|
+| `plasma_blaster.yml`  | Spawns a damaging projectile that will aim for nearby players. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_plasmablaster.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Shield Wall
 
-| Filename | Description                                |
-|----------|--------------------------------------------|
-| `shield_wall.yml`  | Spawns shields that will protect the boss from a specific direction until destroyed. Hit the boss to remove the shields. |
+| Filename | Description                                                                                                                  |
+|----------|------------------------------------------------------------------------------------------------------------------------------|
+| `shield_wall.yml`  | Spawns shields that will protect the boss from a specific direction until destroyed. Hit **the boss** to remove the shields. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_shieldwall.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -893,11 +1036,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `skeleton_pillar.yml`  | Spawns two pillars of particles that damage players in the zone. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_skeletonpill.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -907,11 +1057,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `skeleton_tracking_arrow.yml`  | Spawns a tracking arrow. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_skeletonarrow.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -921,11 +1078,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `spirit_walk.yml`  | Makes the boss teleport to a nearby safe location if it keeps getting hit without being able to damage a player. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_spiritwalk.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -935,11 +1099,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `summon_embers.yml`  | Summons the embers reinforcement. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_summonembers.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
