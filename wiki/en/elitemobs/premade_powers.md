@@ -1120,11 +1120,20 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `summon_the_returned.yml`  | Summons the returned reinforcement. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_summonreturned.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
+
+## Taunt
 
 ***
 
@@ -1132,39 +1141,60 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `taunt.yml`  | Taunts the player with messages. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_taunt.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Taze
 
-| Filename | Description                                |
-|----------|--------------------------------------------|
-| `taze.yml`  | Tazes the player, shocking it and applying knockback. |
+| Filename | Description                                             |
+|----------|---------------------------------------------------------|
+| `taze.yml`  | Tazes the player, shocking them and applying knockback. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_taze.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Thunderstorm
 
-| Filename | Description                                |
-|----------|--------------------------------------------|
-| `thunderstorm.yml`  | Spawns several lightning bolts. |
+| Filename | Description                                     |
+|----------|-------------------------------------------------|
+| `thunderstorm.yml`  | Spawns several lightning bolts around the boss. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_thunderstorm.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -1174,11 +1204,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|------------------------------------------|
 | `tracking_fireball.yml`  | Spawns a fireball that follows a player. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_trackingfball.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -1188,11 +1225,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `zombie_bloat.yml`  | Knocks players away from the boss. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_zombiebloat.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -1202,25 +1246,39 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `zombie_friends.yml`  | Spawns the zombie friends reinforcement. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_zombiefriends.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
 ## Zombie Necronomicon
 
-| Filename | Description                                |
-|----------|--------------------------------------------|
-| `zombie_necronomicon.yml`  | Makes the boss channel summoning reinforcements. |
+| Filename | Description                                  |
+|----------|----------------------------------------------|
+| `zombie_necronomicon.yml`  | Makes the boss channel reinforcements. |
+
+<details>
 
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_zombienecro.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 
@@ -1230,11 +1288,18 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 |----------|--------------------------------------------|
 | `zombie_parents.yml`  | Spawns the zombie parents reinforcement. |
 
+<details>
+
 <div align="center">
 
-![boss_powers_](../../../img/wiki/boss_powers_)
+<video autoplay loop muted>
+  <source src="../../../img/wiki/boss_powers_zombieparents.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 </div>
+
+</details>
 
 ***
 

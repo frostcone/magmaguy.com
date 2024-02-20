@@ -1118,6 +1118,8 @@ The block will stay there for 10 seconds (200 ticks) before it disappears.
 
 Spawns particles at the target.
 
+**Note: If coverage is not set, then the coverage will be set to 0.3 by default!**
+
 | Values |                            Details                            | Mandatory |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
@@ -1592,6 +1594,7 @@ Gives the frozen visual effect to the player & does its associated damage. This 
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `duration` |                 Duration of effect, in ticks                  | ✅ |
 
+<div align="center">
 <div align="center">
 
 <details> 
