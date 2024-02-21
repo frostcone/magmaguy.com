@@ -6,14 +6,15 @@ Actions always start with the type of action you are going to do. Different acti
 
 ## Shared attributes
 
-| Values |                            Details                             | Special |
-| --- |:--------------------------------------------------------------:| :-: |
-| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md)  | ❌ |
-| `wait` | Sets the amount of time to wait (ticks) before running actions | ❌ |
-| `repeatEvery` |      Sets the actions to repeat every set amount of ticks      | ❌ |
-| `times` |       Sets the amount of times an action will happen for       | Requires `repeatEvery` |
-| `scripts` |    Sets the scripts that will run at the end of the action     | ❌ |
-| `onlyRunOneScript` |  Picks one of the `scripts` at random and only runs that one.  | ❌ |
+| Values             |                                                                                 Details                                                                                  | Special |
+|--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target`           |                                                      [More info here]($language$/elitemobs/elitescript_targets.md)                                                       | ❌ |
+| `wait`             |                                                      Sets the amount of time to wait (ticks) before running actions                                                      | ❌ |
+| `repeatEvery`      |                                                           Sets the actions to repeat every set amount of ticks                                                           | ❌ |
+| `times`            |                                                            Sets the amount of times an action will happen for                                                            | Requires `repeatEvery` |
+| `scripts`          |                                                         Sets the scripts that will run at the end of the action                                                          | ❌ |
+| `onlyRunOneScript` |                                                       Picks one of the `scripts` at random and only runs that one.                                                       | ❌ |
+| `offset`           | This option goes under `Target`. Allows you to offset the target location. Offset does not work with actions that are targeting zones with `ZONE_FULL` or `ZONE_BORDER`. | ❌ |
 
 ## Action types
 
