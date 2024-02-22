@@ -224,7 +224,7 @@ eliteScript:
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/power_example_.webm" type="video/webm">
+  <source src="../../../img/wiki/power_example_arrowrain.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
@@ -298,6 +298,15 @@ eliteScript:
         hasTags:
         - "FireOn"
 ```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_fireaura.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</div>
 
 </div>
 
@@ -409,6 +418,15 @@ eliteScript:
       times: 12
 ```
 
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_poisonlines.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</div>
+
 </div>
 
 </details>
@@ -464,6 +482,15 @@ eliteScript:
       global: 80
 ```
 
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_bounce.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</div>
+
 </div>
 
 </details>
@@ -504,7 +531,7 @@ eliteScript:
       duration: 400
       Target:
         targetType: ZONE_FULL
-        coverage: 0.1
+        coverage: 0.2
       wait: 40
     - action: TITLE_MESSAGE
       subtitle: "Friends! Help!!!"
@@ -517,6 +544,15 @@ eliteScript:
       local: 333
       global: 80
 ```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_summon.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</div>
 
 </div>
 
@@ -646,6 +682,15 @@ eliteScript:
         range: 20
 ```
 
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_potionzones.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</div>
+
 </div>
 
 </details>
@@ -765,6 +810,15 @@ eliteScript:
       repeatEvery: 1
       times: 100
 ```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_blindwaves.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</div>
 
 </div>
 
@@ -897,6 +951,15 @@ eliteScript:
       repeatEvery: 1
       times: 200
 ```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_freezewall.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</div>
 
 </div>
 

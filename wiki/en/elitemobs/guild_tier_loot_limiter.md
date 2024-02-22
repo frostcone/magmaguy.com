@@ -1,5 +1,10 @@
-The guild tier loot limiter limits the best loot a player can loot based on their guild tier. By default, players are limited in the following ways (assuming you're using the default settings):
+# Guild Tier Limiter
 
+The guild tier loot limiter limits the best loot a player can loot based on their guild tier. 
+
+Players can unlock higher tiers by going to the Adventurer's Guild hub and talking to Gillian the Guild Attendant NPC or by running the */em rank* command. Ranks are unlocked by purchasing them with Elite Coins.
+
+By default, players are limited in the following ways (assuming you're using the default settings):
 
 - Guild tier 1 (starting default): up to tier 10 items, level 10 mobs
 - Guild tier 2: up to tier 20 items, level 20 mobs
@@ -25,7 +30,7 @@ From point on, prestige levels are required in order to unlock the guild tiers.
 - Prestige 9 Guild tier 19: up to tier 180 items, level 190 mobs
 - Prestige 10 Guild tier 20: up to tier 200 items, level 200 mobs
 
-# How this works & edge cases
+## How this works & edge cases
 Since the guild tier limits the tier of the item that players can kill, this means that players can only spawn mobs up to a certain level as the level of the mob is based on the gear the player is wearing. Should players go hunt mobs with higher level friends, the loot that they will get will be of a lower level than their friends'. 
 
 Combined with the [soulbind]($language/elitemobs/soulbind.md$) enchantment, this curbs the issue of powerleveling quite a bit and allows admins to not have to worry about visitors reaching the maximum tier within a few minutes of joining the server / new players instantly getting loads of diamond tier items. Additionally, it gives players a deeper connection with their loot, as it makes it belong to them and only them.
