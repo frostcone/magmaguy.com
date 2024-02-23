@@ -8,20 +8,20 @@ Feel free to redistribute and modify the information in this wiki.
 
 # What is EliteMobs for?
 
-EliteMobs aims to extend the end-game of Minecraft by implementing bosses and boss-related content.
+EliteMobs aims to extend the end-game of Minecraft by implementing various boss-related content.
 
 This means:
-- Dynamic Bosses
+- Dynamic Bosses (Leveled Mobs)
 - Custom Bosses
-- Event Bosses
+- Events
 - Arenas
-- Open-World Dungeons
+- World Based Dungeons
 - Instanced Dungeons
-- Open-World random dungeons (with BetterStructures integration)
-- Custom Items
-- ... and more!
+- Open-World Random Dungeons (with BetterStructures integration)
+- Custom Items (Elite Items/Loot)
+- ... and more! 
 
-Simultaneously, EliteMobs does not seek to replace vanilla Minecraft content, but rather build around it. As such, players are able to avoid EliteMobs content, and EliteMobs items generally do not affect PvP or vanilla Minecraft combat (the damage and defense bonuses from elite items don't apply outside of combat with EliteMobs)
+The plugin does not aim to replace vanilla Minecraft content but rather complement it, allowing players to opt-out of EliteMobs content if desired. EliteMobs items typically do not affect PvP or vanilla Minecraft combat, as their damage and defense bonuses only apply during combat with EliteMobs.
 
 # EliteMobs Feature Overview
 
@@ -29,9 +29,9 @@ In this section we will take a look at the some of the **major** features EliteM
 
 You can also check out [this]($language$/elitemobs/understanding_the_basics_of_elitemobs.md) page to find the intended way the players are supposed to interact with EliteMobs.
 
-## Leveled Elite Mobs
+## Dynamic Bosses
 
-This is one of the main functions of EliteMobs. It replaces some of the vanilla Minecraft spawns with Elite Mob spawns.
+Dynamic Bosses is one of the main features of EliteMobs. It replaces a percentage of vanilla Minecraft spawns with Elite Mob spawns.
 
 Elites are tougher mobs designed to challenge players and reward them with possible loot drops upon defeat. The level of Elites is determined by the quality of armor and gear equipped by the player. Normal Minecraft gear has a level determined by the material quality, as explained [here]($language$/elitemobs/spawning_tiers_loot.md&section=material-levels). However, as players defeat Elites and acquire better loot, they will eventually start obtaining Elite items with set levels, making it easier to predict the levels of Elites that will spawn.
 
@@ -42,15 +42,39 @@ You can adjust the difficulty of elites by modifying the `damageToEliteMobMultip
 
 If you wish to disable this feature entirely, you can do so by setting the `doNaturalEliteMobSpawning` value to `false`.
 
+<div align="center">
+
+<details> 
+
+<summary><b>Visual Example</b></summary>
+
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+
+</details>
+
+</div>
+
 ## Elite Items/Loot
 
 EliteMobs features randomly generated items that can be found in shops or be dropped by Elites. There also custom items that are usually found in dungeons and other Elite content.
 
-Elite items are just like vanilla items except they are usually equipped with extra goodies and are more powerful than anything you can find in vanilla MineCraft. Elite items will have stats on them that are called **Elite Sharpness** and **Elite Defense**, these stats will only apply when players are fighting Elites.
+Elite items are just like vanilla items except they are usually equipped with extra goodies and are more powerful than anything you can find in vanilla MineCraft. Some Elite items will have stats on them that are called **Elite Sharpness** and **Elite Defense**, these stats will only apply when players are fighting Elites and do not affect vanilla mobs.
 
 Elite items can also have enchantments, [Custom Enchantments]($language$/elitemobs/custom_enchantments_list.md) and potion effects.
 
 You can disable Elite items by opening up *ItemSettings.yml* and setting the `doEliteMobsLoot` value to `false`. (Not recommended, makes MMORPG level progression impossible.)
+
+<div align="center">
+
+<details> 
+
+<summary><b>Visual Example</b></summary>
+
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+
+</details>
+
+</div>
 
 ## Events
 
@@ -64,6 +88,18 @@ You can disable all events by opening events.yml and setting the values actionEv
 
 If you would like to disable individual events you can go to ~plugins\EliteMobs\customevents. there you will find configs for each event and you can disable any event by opening its config and setting the value isEnabled to false.
 
+<div align="center">
+
+<details> 
+
+<summary><b>Visual Example</b></summary>
+
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+
+</details>
+
+</div>
+
 ## Adventurer's Guild
 
 The Adventurer's Guild is an additional hub world that you can install and it is also a set of commands that the players can use.
@@ -76,6 +112,18 @@ For more information on the Adventurer's Guild and how to install the hub world 
 
 You can disable the hub world by opening up *AdventurersGuild.yml* and setting the `guildHubIsEnabledv2` to `false`.
 
+<div align="center">
+
+<details> 
+
+<summary><b>Visual Example</b></summary>
+
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+
+</details>
+
+</div>
+
 ## Guild Tier
 
 As players progress and acquire better items they will eventually hit a limit and mobs will stop dropping higher level items, this is called the guild tier loot limiter.
@@ -85,6 +133,18 @@ The guild tier loot limiter restricts the highest loot players can obtain based 
 This system, combined with the soulbind enchantment, mitigates powerleveling issues, maintains server balance, and fosters player attachment to their acquired loot. You can read more about guild tier [here]($language$/elitemobs/guild_tier_loot_limiter.md).
 
 All settings for the Guild Tier can be adjusted and are located in *AdventurersGuild.yml*.
+
+<div align="center">
+
+<details> 
+
+<summary><b>Visual Example</b></summary>
+
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+
+</details>
+
+</div>
 
 ## Arenas
 
@@ -96,6 +156,18 @@ You can get additional arenas by going to: [Itch.io](https://magmaguy.itch.io/) 
 
 You can disable arenas by going to *~plugins\EliteMobs\customarenas*
 and then opening up the arena config, for example *wood_league.yml* and then finding the value `isEnabled` and setting it to `false`.
+
+<div align="center">
+
+<details> 
+
+<summary><b>Visual Example</b></summary>
+
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+
+</details>
+
+</div>
 
 ## World Dungeons
 
@@ -112,6 +184,18 @@ You can get dungeons by going to: [Itch.io](https://magmaguy.itch.io/) or by sub
 
 You can disable individual dungeons by going to *~plugins\EliteMobs\dungeonpackages* and opening up the dungeon config for the dungeon you wish to disable and setting the `isEnabled` value to `false`.
 
+<div align="center">
+
+<details> 
+
+<summary><b>Visual Example</b></summary>
+
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+
+</details>
+
+</div>
+
 ## Instanced Dungeons
 
 Instanced Dungeons differ from World Dungeons in several ways. They are instanced, meaning a new world is dynamically created from a blueprint, providing players and their friends with a private dungeon experience similar to those found in MMOs. 
@@ -123,6 +207,18 @@ Additionally, players can resurrect each other within Instanced Dungeons, enabli
 You can get instanced dungeons by going to: [Itch.io](https://magmaguy.itch.io/) or by subscribing on [Patreon](https://www.patreon.com/magmaguy). There are free instanced dungeons that you can download from [here](https://magmaguy.itch.io/em-free-content).
 
 You can disable individual dungeons by going to *~plugins\EliteMobs\dungeonpackages* and opening up the dungeon config for the dungeon you wish to disable and setting the `isEnabled` value to `false`.
+
+<div align="center">
+
+<details> 
+
+<summary><b>Visual Example</b></summary>
+
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+
+</details>
+
+</div>
 
 ## Adventures
 
@@ -138,6 +234,18 @@ You can get adventures by going to: [Itch.io](https://magmaguy.itch.io/) or by s
 
 You can disable individual adventures by going to *~plugins\EliteMobs\dungeonpackages* and opening up the config for the adventure you wish to disable and setting the `isEnabled` value to `false`. Adventures can have additional sub-dungeons and sub-arenas that come with adventures so make sure you disable those as well if you are disabling an adventure.
 
+<div align="center">
+
+<details> 
+
+<summary><b>Visual Example</b></summary>
+
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+
+</details>
+
+</div>
+
 ## Wormhole Teleports
 
 EliteMobs also features simple from A to B teleporters called wormholes. You will see these mostly used in the Adventurer's Guild hub world as a way to teleport players from there to a dungeon or back to server spawn.
@@ -146,17 +254,32 @@ They are usually in the shape of a hexagon, cube or a diamond made out of partic
 
 You can make your own wormholes and use them however you wish. Click [here]($language$/elitemobs/creating_wormholes.md) to find out how.
 
-## Making Content
+<div align="center">
 
-EliteMobs allows you to make your own content.
+<details> 
 
-# For admins & server owners
+<summary><b>Visual Example</b></summary>
 
-This plugin is made for survival and survival-like (skyblock, skywars, heavily modded survival variants) servers.
+![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
 
-The plugin is meant to be usable simply by dragging and dropping the server jar into the server. The default settings are the ones I use on my own servers and are subject to tweaks as time goes on.
+</details>
 
-**However!** The ability to customize EliteMobs has been a very high priority throughout the development process. Almost every aspect of the plugin can be translated, customized, disabled or modified.
+</div>
+
+## Custom Content
+
+EliteMobs also offers you the opportunity to create your own content, including [bosses]($language$/elitemobs/creating_bosses.md), [dungeons]($language$/elitemobs/dungeon_packager.md), [powers]($language$/elitemobs/creating_powers.md), [NPCs]($language$/elitemobs/creating_npcs.md), [quests]($language$/elitemobs/creating_quests.md), [arenas]($language$/elitemobs/creating_arenas.md), and much more! You can find guides for creating other types of content than the ones listed above in the wiki's sidebar menu.
+
+For the easiest and most efficient content creation experience, we recommend using the WebApp. This tool enables you to generate ready-to-use configuration files without the need to extensively browse through the wiki to ensure correctness, particularly if you're considering creating EliteScript boss powers. Access the [WebApp here](https://magmaguy.com/webapp/webapp.html).
+
+# For Admins & Server Owners
+
+This plugin is designed for survival and survival-like servers (such as Skyblock, Skywars, and heavily modded survival variants).
+
+The plugin is intended to be easily usable by simply dragging and dropping the plugin jar into the server. The default settings are the ones I use on my own servers and are subject to change over time.
+
+**However!** Customizability has been a top priority throughout the development process of EliteMobs. Almost every aspect of the plugin can be translated, customized, disabled, or modified.
+
 
 # For other developers
 
