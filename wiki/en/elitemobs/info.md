@@ -48,7 +48,7 @@ If you wish to disable this feature entirely, you can do so by setting the `doNa
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_dynamic_boss.jpg](../../../img/wiki/eminfo_dynamic_boss.jpg)
 
 </details>
 
@@ -70,7 +70,7 @@ You can disable Elite items by opening up *ItemSettings.yml* and setting the `do
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_elite_items.jpg](../../../img/wiki/eminfo_elite_items.jpg)
 
 </details>
 
@@ -94,7 +94,7 @@ If you would like to disable individual events you can go to ~plugins\EliteMobs\
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_event_boss.jpg](../../../img/wiki/eminfo_event_boss.jpg)
 
 </details>
 
@@ -118,13 +118,13 @@ You can disable the hub world by opening up *AdventurersGuild.yml* and setting t
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_ag.jpg](../../../img/wiki/eminfo_ag.jpg)
 
 </details>
 
 </div>
 
-## Guild Tier
+## Guild Tier/Rank
 
 As players progress and acquire better items they will eventually hit a limit and mobs will stop dropping higher level items, this is called the guild tier loot limiter.
 
@@ -140,7 +140,7 @@ All settings for the Guild Tier can be adjusted and are located in *AdventurersG
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_guild_tier.jpg](../../../img/wiki/eminfo_guild_tier.jpg)
 
 </details>
 
@@ -163,7 +163,7 @@ and then opening up the arena config, for example *wood_league.yml* and then fin
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_arena.jpg](../../../img/wiki/eminfo_arena.jpg)
 
 </details>
 
@@ -190,7 +190,7 @@ You can disable individual dungeons by going to *~plugins\EliteMobs\dungeonpacka
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_world_dungeon.jpg](../../../img/wiki/eminfo_world_dungeon.jpg)
 
 </details>
 
@@ -214,7 +214,7 @@ You can disable individual dungeons by going to *~plugins\EliteMobs\dungeonpacka
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_instanced_dungeon.jpg](../../../img/wiki/eminfo_instanced_dungeon.jpg)
 
 </details>
 
@@ -240,7 +240,7 @@ You can disable individual adventures by going to *~plugins\EliteMobs\dungeonpac
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_adventure.jpg](../../../img/wiki/eminfo_adventure.jpg)
 
 </details>
 
@@ -260,7 +260,7 @@ You can make your own wormholes and use them however you wish. Click [here]($lan
 
 <summary><b>Visual Example</b></summary>
 
-![create_boss_armor.jpg](../../../img/wiki/create_boss_armor.jpg)
+![eminfo_wormhole.jpg](../../../img/wiki/eminfo_wormhole.jpg)
 
 </details>
 
