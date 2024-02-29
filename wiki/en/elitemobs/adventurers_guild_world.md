@@ -14,7 +14,7 @@ In the world, the following NPCs are placed ahead of time:
 
 - Transporter (for going back to your previous location)
 - Guide (introductory quest to meet all NPC's)
-- Guild Attendant (for upgrading [Guild Ranks]($language$/elitemobs/understanding_the_basics_of_elitemobs.md%step-2:-discovering-the-economy))
+- Guild Attendant (for upgrading [Guild Ranks]($language$/elitemobs/understanding_the_basics_of_elitemobs.md&section=step-2:-discovering-the-economy))
 - Dungeon Teleporters (special NPC's that will teleport players to any installed [Dungeons]($language$/elitemobs/dungeons.md))
 - Barkeep (currently unimplemented)
 - Quest Giver (for browsing and accepting randomly generated quests)
