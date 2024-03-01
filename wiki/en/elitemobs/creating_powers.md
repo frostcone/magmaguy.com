@@ -50,27 +50,39 @@ Now that you know the general format of how scripts are structured, it's time to
 
 ----
 
-# [Events]($language$/elitemobs/elitescript_events.md)
+# Events
+
+[Events]($language$/elitemobs/elitescript_events.md)
 
 Click on the link above to learn how to use events!
 
-# [Targets]($language$/elitemobs/elitescript_targets.md)
+# Targets
+
+[Targets]($language$/elitemobs/elitescript_targets.md)
 
 Click on the link above to learn how to use targets!
 
-# [Actions]($language$/elitemobs/elitescript_actions.md)
+# Actions
+
+[Actions]($language$/elitemobs/elitescript_actions.md)
 
 Click on the link above to learn how to use actions!
 
-# [Zones]($language$/elitemobs/elitescript_zones.md)
+# Zones
+
+[Zones]($language$/elitemobs/elitescript_zones.md)
 
 Click on the link above to learn how to use zones!
 
-# [Conditions]($language$/elitemobs/elitescript_conditions.md)
+# Conditions
+
+[Conditions]($language$/elitemobs/elitescript_conditions.md)
 
 Click on the link above to learn how to use conditions!
 
-# [Cooldowns]($language$/elitemobs/elitescript_cooldowns.md)
+# Cooldowns
+
+[Cooldowns]($language$/elitemobs/elitescript_cooldowns.md)
 
 Click on the link above to learn how to use cooldowns!
 

@@ -14,7 +14,7 @@ In the world, the following NPCs are placed ahead of time:
 
 - Transporter (for going back to your previous location)
 - Guide (introductory quest to meet all NPC's)
-- Guild Attendant (for upgrading [Guild Ranks]($language$/elitemobs/understanding_the_basics_of_elitemobs.md%step-2:-discovering-the-economy))
+- Guild Attendant (for upgrading [Guild Ranks]($language$/elitemobs/understanding_the_basics_of_elitemobs.md&section=step-2:-discovering-the-economy))
 - Dungeon Teleporters (special NPC's that will teleport players to any installed [Dungeons]($language$/elitemobs/dungeons.md))
 - Barkeep (currently unimplemented)
 - Quest Giver (for browsing and accepting randomly generated quests)
@@ -45,3 +45,9 @@ To install the Adventurer's Guild World do the following:
    **IMPORTANT: [WORLDGUARD](https://dev.bukkit.org/projects/worldguard) AND [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
 
 4. Click on the yellow glass in the `/em setup` menu to install the imported features. If everything installed properly you should be in the Adventurer's Guild hub world. You can teleport to the Adventurer's Guild at any time by doing `/ag`.
+
+#### Configuring The Wormhole
+
+After installing the Adventurer's Guild hub world you will notice that there is a wormhole located where the players teleport in. This wormhole is supposed to be configured by you, to lead back to your regular world spawn or any other central location of your server.
+
+To configure the wormhole, navigate to the directory *~plugins\EliteMobs\wormholes* and open *adventurers_guild_wormhole.yml*. Locate the `location2` value and replace `your_world_here` with the name of your world, followed by the correct coordinates where players should be teleported to.

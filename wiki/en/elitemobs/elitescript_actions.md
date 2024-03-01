@@ -6,14 +6,15 @@ Actions always start with the type of action you are going to do. Different acti
 
 ## Shared attributes
 
-| Values |                            Details                             | Special |
-| --- |:--------------------------------------------------------------:| :-: |
-| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md)  | ❌ |
-| `wait` | Sets the amount of time to wait (ticks) before running actions | ❌ |
-| `repeatEvery` |      Sets the actions to repeat every set amount of ticks      | ❌ |
-| `times` |       Sets the amount of times an action will happen for       | Requires `repeatEvery` |
-| `scripts` |    Sets the scripts that will run at the end of the action     | ❌ |
-| `onlyRunOneScript` |  Picks one of the `scripts` at random and only runs that one.  | ❌ |
+| Values             |                                                                                 Details                                                                                  | Special |
+|--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target`           |                                                      [More info here]($language$/elitemobs/elitescript_targets.md)                                                       | ❌ |
+| `wait`             |                                                      Sets the amount of time to wait (ticks) before running actions                                                      | ❌ |
+| `repeatEvery`      |                                                           Sets the actions to repeat every set amount of ticks                                                           | ❌ |
+| `times`            |                                                            Sets the amount of times an action will happen for                                                            | Requires `repeatEvery` |
+| `scripts`          |                                                         Sets the scripts that will run at the end of the action                                                          | ❌ |
+| `onlyRunOneScript` |                                                       Picks one of the `scripts` at random and only runs that one.                                                       | ❌ |
+| `offset`           | This option goes under `Target`. Allows you to offset the target location. Offset does not work with actions that are targeting zones with `ZONE_FULL` or `ZONE_BORDER`. | ❌ |
 
 ## Action types
 
@@ -486,6 +487,8 @@ Pushes a target by a set vector.
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `vValue` |       Sets vector of the velocity that will be applied        | ✅ |
+
+*Note: This action also accepts relative vectors. Learn more about how to use those [here]($language$/elitemobs/elitescript_relative_vectors.md).*
 
 <div align="center">
 
@@ -1057,13 +1060,16 @@ Strikes lightning the boss every 5 ticks for 5 times.
 
 Spawns a falling block at the target. Visual only, does not place the block.
 
-| Values |                                                                                      Details                                                                                       | Mandatory |
-| --- |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
-| `Target` |                                                           [More info here]($language$/elitemobs/elitescript_targets.md)                                                            | ✅ |
-| `material` | Sets the [Material](#material) of the falling block. [Check valid types here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) and make sure they are a valid block material. | ✅ |
+| Values           |                                                                                      Details                                                                                       | Mandatory |
+|------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target`         |                                                           [More info here]($language$/elitemobs/elitescript_targets.md)                                                            | ✅ |
+| `material`       | Sets the [Material](#material) of the falling block. [Check valid types here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) and make sure they are a valid block material. | ✅ |
 | `landingScripts` |                                                            Sets the list of scripts that will run when the block falls                                                             | ✅ |
+| `vValue`         | Sets the velocity and direction of a falling block. | ✅ |
 
 `landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md%run_script) but can accept the special target type `LANDING_LOCATION`.
+
+*Note: This action also accepts relative vectors. Learn more about how to use those [here]($language$/elitemobs/elitescript_relative_vectors.md).*
 
 <div align="center">
 
@@ -1084,6 +1090,7 @@ eliteScript:
         targetType: SELF
         offset: 3,10,0
       material: STONE
+      vValue: 0,0,0
       landingScripts:
       - LandingScriptExample
   LandingScriptExample:
@@ -1117,6 +1124,8 @@ The block will stay there for 10 seconds (200 ticks) before it disappears.
 ### SPAWN_PARTICLE
 
 Spawns particles at the target.
+
+**Note: If coverage is not set, then the coverage will be set to 0.3 by default!**
 
 | Values |                            Details                            | Mandatory |
 | --- |:-------------------------------------------------------------:| :-: |
@@ -1306,6 +1315,8 @@ MAGMA PLEASE FILL IN THIS SECTION WITH CORRECT INFORMATION,
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `sValue` |                Sets the                  | ✅ |
+
+*Note: This action also accepts relative vectors. Learn more about how to use those [here]($language$/elitemobs/elitescript_relative_vectors.md).*
 
 <div align="center">
 
@@ -1592,6 +1603,7 @@ Gives the frozen visual effect to the player & does its associated damage. This 
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `duration` |                 Duration of effect, in ticks                  | ✅ |
 
+<div align="center">
 <div align="center">
 
 <details> 

@@ -44,6 +44,8 @@ Sets the quest objectives.
 |-----------|:-----------:|:-------:|
 | `customObjectives` | Special [1] |  none   |
 
+*Note: If you are using a multiphase boss as your objective then the objective should be using the first phase as the target.*
+
 <details> 
 
 <summary><b>Examples</b></summary>
@@ -59,6 +61,7 @@ customObjectives:
     filename: my_cool_boss.yml
     objectiveType: KILL_CUSTOM
 ```
+
 `DIALOG`:
 
 ```yml

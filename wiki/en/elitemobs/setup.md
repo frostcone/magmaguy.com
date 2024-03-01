@@ -13,15 +13,15 @@
 
 # First boot
 
-Restart once.
+Restart the server once.
 
 <details>
 
-<summary>Why?</summary>
+<summary><b>Why?</b></summary>
 
-EliteMobs sets increases maximum health of your spigot.yml config file the first time the server starts up. This is so Elite mobs can have more than 2000 health. It does not alter the health of any other mob - so it doesn't change vanilla or plugin mobs.
+EliteMobs increases the maximum health of your spigot.yml config file the first time the server starts up. This is so Elite mobs can have more than 2000 health. It does not alter the health of any other mob - so it doesn't change vanilla or plugin mobs.
 
-This change requires a restart to actually work.
+This change requires a server restart to actually work.
 
 </details>
 
@@ -29,25 +29,72 @@ This change requires a restart to actually work.
 
 As of EliteMobs 7.2.23, all recommended permissions are already setup by default. You can see more about permissions [here]($language$/elitemobs/permissions_and_commands.md).
 
-# Adventurer's Guild Hub world & Lairs / Minidungeons
+# Dungeons & Adventurer's Guild Hub World
 
-As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs directory. The installation process for the Adventurer's Guild World, Lairs and Minidungeons is the same:
+As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs directory. The installation process for the Dungeons, Adventurer's Guild World is the same:
 
 1) Download the files. You can click on the red glass in `/em setup` to get links to the downloads.
 
-2) Upload / move the files to your server's `/plugins/EliteMobs/imports` folder. Make sure you put the **ZIPPED** files inside of the `imports` folder without modifying them in any way, EliteMobs will automatically extract the files and move them to the correct locations.
+2) Upload / move the files to your server's `/plugins/EliteMobs/imports` folder. Make sure you put the **ZIPPED** files inside the `imports` folder without modifying them in any way, EliteMobs will automatically extract the files and move them to the correct locations.
+
+<div align="center">
+
+<details>
+
+<summary>Visual Example</summary>
+
+<video autoplay loop muted controls>
+  <source src="../../../img/wiki/setup_import.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</details>
+
+</div>
 
 3) Restart or do `/em reload`. After a few seconds, when you do `/em setup` the indicators for the features you downloaded should be yellow.
+
+<div align="center">
+
+<details>
+
+<summary>Visual Example</summary>
+
+<video autoplay loop muted controls>
+  <source src="../../../img/wiki/setup_reload.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</details>
+
+</div>
 
 **IMPORTANT: [WORLDGUARD](https://dev.bukkit.org/projects/worldguard) AND [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
 
 4) Click on the yellow glass in the `/em setup` menu to install features!
+
+<div align="center">
+
+<details>
+
+<summary>Visual Example</summary>
+
+
+<video autoplay loop muted controls>
+  <source src="../../../img/wiki/setup_install.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</details>
+
+</div>
 
 5) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md%importing-custom-models-from-dungeons) to install them.
 
 That's it! **You can find teleports to the installed dungeons & adventurers guild in /em, in the Teleports page!**
 
 [More info on the Adventurer's Guild here!]($language$/elitemobs/adventurers_guild_world.md)
+<br>[Download the Adventurer's Guild Hub World here!](https://magmaguy.itch.io/elitemobs-the-adventurers-guild)
 
 # Recommended plugins
 
