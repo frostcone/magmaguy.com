@@ -41,16 +41,16 @@ Below is a list of bonuses and when they unlock as set by **default** in the Adv
 
 | Prestige |   Bonus    | Value |
 |:--------:|:----------:|:-----:|
-| Level 1  |  Health 1  |   2   |
-| Level 2  | Critical 1 |   3   | Actually 3
-| Level 3  |  Dodge 1   |   3   | Actually 4
-| Level 4  |  Health 2  |  2.5  |
-| Level 5  | Critical 2 |   6   |
-| Level 6  |  Dodge 2   |   6   |
-| Level 7  |  Health 3  |   3   |
-| Level 8  | Critical 3 |  10   |
-| Level 9  |  Dodge 3   |  10   |
-| Level 10 |  Health 4  |   4   |
+| Prestige 1  |  Health 1  |   2   |
+| Prestige 2  | Critical 1 |   3   | Actually 3
+| Prestige 3  |  Dodge 1   |   3   | Actually 4
+| Prestige 4  |  Health 2  |  2.5  |
+| Prestige 5  | Critical 2 |   6   |
+| Prestige 6  |  Dodge 2   |   6   |
+| Prestige 7  |  Health 3  |   3   |
+| Prestige 8  | Critical 3 |  10   |
+| Prestige 9  |  Dodge 3   |  10   |
+| Prestige 10 |  Health 4  |   4   |
 
 </div>
 

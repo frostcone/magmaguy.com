@@ -54,6 +54,8 @@ eliteScript:
 
 Shoots a chicken
 
+***
+
 ```yaml
 eliteScript:
   ShootChicken:
@@ -74,6 +76,8 @@ eliteScript:
 
 Shoots an arrow
 
+***
+
 ```yaml
 eliteScript:
   SpawnReinforcement:
@@ -93,6 +97,43 @@ eliteScript:
 ```
 
 Spawns a zombie 2 blocks behind the player, relative to the boss.
+
+***
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      Shape: SPHERE
+      target:
+        targetType: SELF_SPAWN
+        offset: 0,0,0
+        track: false
+      filter: PLAYER
+      radius: 6
+    Actions:
+    - action: SPAWN_PARTICLE
+      repeatEvery: 38
+      times: 5
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 0.9
+      particles:
+      - particle: FLAME
+        RelativeVector:
+          SourceTarget:
+            targetType: ACTION_TARGET
+            track: true
+          DestinationTarget:
+            targetType: SELF_SPAWN
+            offset: 0,-0.5,0
+        speed: 0.05
+```
+
+Creates a animated flame sphere that shrinks to the spawn location.
 
 </div>
 

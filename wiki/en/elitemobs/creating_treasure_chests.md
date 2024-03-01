@@ -1,4 +1,4 @@
-[![](https://i.imgur.com/LPnSUkK.jpg)](https://magmaguy.com/webapp/webapp.html)
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
 Treasure Chests are a feature allows admins to make chests that can either drop loot or spawn a mimic (hostile) boss.
 
