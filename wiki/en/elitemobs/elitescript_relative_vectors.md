@@ -42,7 +42,8 @@ eliteScript:
     Actions:
     - action: SUMMON_ENTITY
       sValue: CHICKEN
-      Target: SELF
+      Target:
+        targetType: SELF
       RelativeVector:
         SourceTarget:
           targetType: SELF
@@ -58,13 +59,14 @@ Shoots a chicken
 
 ```yaml
 eliteScript:
-  ShootChicken:
+  ShootArrow:
     Events:
     - EliteMobDamagedByPlayerEvent
     Actions:
     - action: SUMMON_ENTITY
       sValue: ARROW
-      Target: SELF
+      Target:
+        targetType: SELF
       RelativeVector:
         SourceTarget:
           targetType: SELF
@@ -86,7 +88,8 @@ eliteScript:
     Actions:
     - action: SUMMON_ENTITY
       sValue: ZOMBIE
-      Target: SELF
+      Target:
+        targetType: SELF
       RelativeOffset:
         SourceTarget:
           targetType: SELF
