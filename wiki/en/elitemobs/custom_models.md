@@ -48,7 +48,7 @@ And that's it for EliteMobs! Now it gets a bit trickier.
 
 ## Step 3. Generating the Resource Pack
 
-[**Note: there is now an alternative, simpler way to do this step on this link.**]($language$/elitemobs/custom_models.md%step-2.-generating-the-resource-pack) However, it is a little bit less flexible than what is listed here.
+[**Note: there is now an alternative, simpler way to do this step on this link.**]($language$/elitemobs/custom_models.md&section=step-2.-generating-the-resource-pack) However, it is a little bit less flexible than what is listed here.
 
 This is possibly the trickiest part if you are looking to make your server manage the downloads. **Try checking if the system works when you have the resource pack on your client before looking into distributing it automatically!**
 

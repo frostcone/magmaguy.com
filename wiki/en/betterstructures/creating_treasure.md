@@ -1,8 +1,8 @@
 # What is a treasure file?
 
 Treasure files are what determine the loot tables for BetterStructures chests. They are usually assigned
-to [generators]($language$/betterstructures/creating_generators.md%treasurefilename) but they can also be set at the
-level of an [individual build configuration]($language$/betterstructures/creating_structures.md%treasurefile).
+to [generators]($language$/betterstructures/creating_generators.md&section=treasurefilename) but they can also be set at the
+level of an [individual build configuration]($language$/betterstructures/creating_structures.md&section=treasurefile).
 
 These loot tables are quite powerful, but also require knowledge of some basic statistics concepts to understand.
 
@@ -184,7 +184,7 @@ Aside from the weight, each rarity table has its own list of `items`.
 
 ### rarity items
 
-Rarity items are a [map list]($language$/global/configuration_file_guide.md%map_list) which lists all the items that the rarity table has.
+Rarity items are a [map list]($language$/global/configuration_file_guide.md&section=map_list) which lists all the items that the rarity table has.
 
 There items have the following settings:
 

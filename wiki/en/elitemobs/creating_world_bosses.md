@@ -177,7 +177,7 @@ These values allow Regional Bosses to spawn blocks when they enter combat and to
 
 **All of the blocks are relative to the spawn location. Make sure that you have your final spawn location before starting to set any blocks.**
 
-</br>If you already made a large Transitive Block area and now need to move the boss, but you do not want to redo the Transitive Blocks. Then you can use the EliteScript [Teleport]($language$/elitemobs/elitescript_actions.md&section=teleport%teleport) action to move the boss to the correct location after it spawns. Do keep in mind that you will have to adjust your leash accordingly.
+</br>If you already made a large Transitive Block area and now need to move the boss, but you do not want to redo the Transitive Blocks. Then you can use the EliteScript [Teleport]($language$/elitemobs/elitescript_actions.md&section=teleport) action to move the boss to the correct location after it spawns. Do keep in mind that you will have to adjust your leash accordingly.
 
 Due to the complexity of setting blocks, it is not recommended you do this manually. You should use the following commands to do it:
 

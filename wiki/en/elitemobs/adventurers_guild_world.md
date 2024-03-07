@@ -22,12 +22,12 @@ In the world, the following NPCs are placed ahead of time:
 - Special Blacksmith (for buying custom items and selling drops from elite mobs)
 - Combat Instructor (for giving tips about EliteMobs combat)
 - Wormholes (portals that will teleport players to [Dungeons]($language$elitemobs/dungeons.md) and any other installed content)
-- Arena Master (this NPC will let players participate in the [Wood League Arena]($language$elitemobs/understanding_the_basics_of_elitemobs.md%arenas))
+- Arena Master (this NPC will let players participate in the [Wood League Arena]($language$elitemobs/understanding_the_basics_of_elitemobs.md&section=arenas))
 - Story Mode Quests (let's players take quests for the [Story Mode Dungeons](www.magmaguy.com))
-- Unbinder (let's players [Unbind]($language$/elitemobs/item_upgrade_system.md%unbinding-items) their EliteMobs loot for a price)
-- Scrapper (let's players convert any unwanted loot to [Scrap]($language$/elitemobs/item_upgrade_system.md%scrapping-items))
-- Repairman (players can interact with this NPC to [Repair]($language$/elitemobs/item_upgrade_system.md%repairing-elite-items) their items using scrap)
-- Enchanter (let's players [Enchant]($language$/elitemobs/item_upgrade_system.md%enchanting-elite-items) their items)
+- Unbinder (let's players [Unbind]($language$/elitemobs/item_upgrade_system.md&section=unbinding-items) their EliteMobs loot for a price)
+- Scrapper (let's players convert any unwanted loot to [Scrap]($language$/elitemobs/item_upgrade_system.md&section=scrapping-items))
+- Repairman (players can interact with this NPC to [Repair]($language$/elitemobs/item_upgrade_system.md&section=repairing-elite-items) their items using scrap)
+- Enchanter (let's players [Enchant]($language$/elitemobs/item_upgrade_system.md&section=enchanting-elite-items) their items)
 
 Additionally, features an adventurer's guild building for the NPCs, as well as an EliteMobs Arena (currently unimplemented, coming soon!).
 

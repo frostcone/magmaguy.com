@@ -94,7 +94,7 @@ bossFilenames:
 
 ### announcementPriority
 
-Sets the [announcement priority]($language$/elitemobs/creating_bosses.md&section=announcementpriority%announcementpriority).
+Sets the [announcement priority]($language$/elitemobs/creating_bosses.md&section=announcementpriority).
 
 | Key       |       Values        | Default |
 |-----------|:-------------------:|:-------:|

@@ -1067,7 +1067,7 @@ Spawns a falling block at the target. Visual only, does not place the block.
 | `landingScripts` |                                                            Sets the list of scripts that will run when the block falls                                                             | ✅ |
 | `vValue`         | Sets the velocity and direction of a falling block. | ✅ |
 
-`landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md%run_script) but can accept the special target type `LANDING_LOCATION`.
+`landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md&section=run_script) but can accept the special target type `LANDING_LOCATION`.
 
 *Note: This action also accepts relative vectors. Learn more about how to use those [here]($language$/elitemobs/elitescript_relative_vectors.md).*
 

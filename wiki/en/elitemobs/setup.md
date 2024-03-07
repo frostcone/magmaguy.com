@@ -89,7 +89,7 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 </div>
 
-5) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md%importing-custom-models-from-dungeons) to install them.
+5) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md&section=importing-custom-models-from-dungeons) to install them.
 
 That's it! **You can find teleports to the installed dungeons & adventurers guild in /em, in the Teleports page!**
 
@@ -114,7 +114,7 @@ To update dungeon content, simply repeat the installation steps above. **You do 
 
 <details><summary>Answer</summary>
 
-This 100% means you are using the wrong version of WorldGuard / WorldEdit on your server. [You can get the right version from the section above.]($language$/elitemobs/setup.md%recommended-plugins)
+This 100% means you are using the wrong version of WorldGuard / WorldEdit on your server. [You can get the right version from the section above.]($language$/elitemobs/setup.md&section=recommended-plugins)
 
 </details>
 
