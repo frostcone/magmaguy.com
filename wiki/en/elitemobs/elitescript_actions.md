@@ -10,7 +10,7 @@ Actions always start with the type of action you are going to do. Different acti
 |--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
 | `Target`           |                                                      [More info here]($language$/elitemobs/elitescript_targets.md)                                                       | ❌ |
 | `wait`             |                                                      Sets the amount of time to wait (ticks) before running actions                                                      | ❌ |
-| `repeatEvery`      |                                                           Sets the actions to repeat every set amount of ticks                                                           | ❌ |
+| `repeatEvery`      |        Sets the actions to repeat every set amount of ticks. Any script that has this set but is not using times will be terminated upon mob death to avoid lag.         | ❌ |
 | `times`            |                                                            Sets the amount of times an action will happen for                                                            | Requires `repeatEvery` |
 | `scripts`          |                                                         Sets the scripts that will run at the end of the action                                                          | ❌ |
 | `onlyRunOneScript` |                                                       Picks one of the `scripts` at random and only runs that one.                                                       | ❌ |
