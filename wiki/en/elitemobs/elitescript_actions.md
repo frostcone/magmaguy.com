@@ -1349,7 +1349,7 @@ Sets the boss to .
 
 ### TAG
 
-Adds tags to the boss. Tags are just Strings, or words, that scripters can define. These are only used to run condition checks and have no direct gameplay effect outside of what they are used for in scripts.
+Adds tags to the bosses or players. Tags are just Strings, or words, that scripters can define. These are only used to run condition checks and have no direct gameplay effect outside of what they are used for in scripts.
 
 | Values |                            Details                            | Mandatory |
 | --- |:-------------------------------------------------------------:| :-: |
