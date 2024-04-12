@@ -527,7 +527,7 @@ For WoW / FF14 fans, this is essentially the whole base game of questing and fin
 
 Instanced dungeons are dungeons that create worlds as needed, allowing server to run as many simultaneous fights for as many players as necessary. It is the best option to create hard but fair content, and is the least exploitable type of content.
 
-There are lot of features to Instanced Dungeons, which you can read about [here]($language$/elitemobs/instanced_dungeon_difficulty.md%how-it-works).
+There are lot of features to Instanced Dungeons, which you can read about [here]($language$/elitemobs/instanced_dungeon_difficulty.md&section=how-it-works).
 
 For WoW and FF14 fans, this is the equivalent of dungeons / duties instancing.
 

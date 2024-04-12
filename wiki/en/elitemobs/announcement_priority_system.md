@@ -9,7 +9,7 @@ The Announcement Priority System manages how important EliteMobs messages are. T
 
 # How it works:
 
-Note: You need to set your Custom Boss up with this priority system if you want to use a non-default value. Click [here]($language$/elitemobs/creating_bosses.md%announcementpriority) to learn how to do that.
+Note: You need to set your Custom Boss up with this priority system if you want to use a non-default value. Click [here]($language$/elitemobs/creating_bosses.md&section=announcementpriority) to learn how to do that.
 
 ## Level 0
 

@@ -113,4 +113,4 @@ This requires using the list of biomes as defined by the [Spigot API](https://hu
 
 ### treasureFilename
 
-Sets the treasure file that the generator will use. This sets what spawns in the chests for all builds that use this generator, unless a different value is set in a [schematic configuration's `treasureFile` setting]($language$/betterstructures/creating_structures.md%treasurefile).
+Sets the treasure file that the generator will use. This sets what spawns in the chests for all builds that use this generator, unless a different value is set in a [schematic configuration's `treasureFile` setting]($language$/betterstructures/creating_structures.md&section=treasurefile).

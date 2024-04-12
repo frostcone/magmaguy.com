@@ -8,9 +8,9 @@ EliteMobs has so many features it's easy to miss some of them. Here's a checklis
 - Custom Elite Mobs can be set to have different boss phases ([Boss Phases]($language$/elitemobs/creating_boss_phases.md)).
 - Loot can be dynamic.
 - Loot can be [custom]($language$/elitemobs/creating_items.md).
-- Custom loot can use [custom models]($language$/elitemobs/creating_items.md&section=custommodelid%custommodelid).
+- Custom loot can use [custom models]($language$/elitemobs/creating_items.md&section=custommodelid&section=custommodelid).
 - Loot can be [soulbound]($language$/elitemobs/soulbind.md) to one player, preventing other players from using it.
-- Loot can have continuous and on hit [potion effects]($language$/elitemobs/creating_items.md&section=potioneffects%potioneffects) that apply to the player or to the target.
+- Loot can have continuous and on hit [potion effects]($language$/elitemobs/creating_items.md&section=potioneffects) that apply to the player or to the target.
 - There are several custom [EliteMobs Enchantments]($language$/elitemobs/custom_enchantments_list.md).
 - All enchantments prefixed with "Elite" (like "Elite Protection") only apply when fighting against Elite Mobs.
 - There are [treasure chests]($language$/elitemobs/creating_treasure_chests.md) in Elite Mobs that can be locked based on guild progression and can turn out to be mimics (spawn a Custom Boss).

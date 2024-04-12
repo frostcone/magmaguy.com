@@ -1,4 +1,4 @@
-[![](https://i.imgur.com/LPnSUkK.jpg)](https://magmaguy.com/webapp/webapp.html)
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
 # Example Quest
 
@@ -314,7 +314,7 @@ questLore:
 
 Sets the permissions assigned to the player until they turn the quest in.
 
-If you're using this setting to ensure that an item only drops when players have a specific quest active, you'll also need to configure the [Same Permission]($language$/elitemobs/creating_items.md&section=permission%permission) in the item's configuration file.
+If you're using this setting to ensure that an item only drops when players have a specific quest active, you'll also need to configure the [Same Permission]($language$/elitemobs/creating_items.md&section=permission) in the item's configuration file.
 
 | Key    |      Values       | Default |
 |--------|:-----------------:|:-------:|
@@ -589,7 +589,7 @@ questAcceptPermissions:
 - elitequest.quest_4.yml
 ```
 
-If you want players to only be able to loot certain items when they have the correct quest active, then we can do that by using `temporaryPermissions`. We would make a permission in the quest file using `temporaryPermissions` then make a matching [permission]($language$/elitemobs/creating_items.md&section=permission%permission) in the item file using `permission`.
+If you want players to only be able to loot certain items when they have the correct quest active, then we can do that by using `temporaryPermissions`. We would make a permission in the quest file using `temporaryPermissions` then make a matching [permission]($language$/elitemobs/creating_items.md&section=permission) in the item file using `permission`.
 
 For example we would open up our quest file and add the following:
 

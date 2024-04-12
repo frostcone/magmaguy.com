@@ -236,7 +236,7 @@ Yes. If you want bosses to drop specific items from that plugin, you set on deat
 
 ### Run a command on Elite Mob death or give loot/rewards from other plugins on Elite Mob death?
 
-[Information available here.]($language$/elitemobs/creating_bosses.md%ondeathcommands)
+[Information available here.]($language$/elitemobs/creating_bosses.md&section=ondeathcommands)
 
 ### Vault support?
 

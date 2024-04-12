@@ -1,3 +1,6 @@
+
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+
 # EliteScript
 
 Elitescript is a scripting system for MagmaGuy's Plugins, providing advanced customization options for creating dynamic behaviors for bosses and other entities in Minecraft. 

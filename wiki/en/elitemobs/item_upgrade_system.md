@@ -56,6 +56,21 @@ To begin the enchantment the players would place one Elite Item, one Enchanted B
 - **Critical Failure:** A more severe failure, leading to the loss of the Enchanted Book, Elite Coins, and the Elite Item itself.
 - **Challenge:** Engage in a Boss Battle with a 10% chance of critical failure upon losing. The item is enchanted if the players win.
 
+<details>
+
+<summary><b>Visual Example</b></summary>
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/enchant_example.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+</div>
+
+</details>
+
 ***
 
 <details>
