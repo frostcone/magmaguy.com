@@ -508,7 +508,65 @@ questLevel: 10
 
 </details>
 
+***
+
+### questAcceptSound
+
+Sets the sound that plays when a quest is accepted. It is possible to both play Minecraft sounds and play sounds from a resource pack.
+
+| Key                |      Values       | Default |
+|--------------------|:-----------------:|:-------:|
+| `questAcceptSound` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questAcceptSound: entity.experience_orb.pickup
+```
+
+<div align="center">
+
+![create_quest_level.jpg](../../../img/wiki/create_quest_BUGGEDaddLATER.jpg)
+
 </div>
+
+</div>
+
+</details>
+
+***
+
+### questCompleteSound
+
+Sets the sound that plays when a quest is completed (turned in). It is possible to both play Minecraft sounds and play sounds from a resource pack.
+
+| Key                |      Values       | Default |
+|--------------------|:-----------------:|:-------:|
+| `questCompleteSound` | [String](#string) |  none   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+questCompleteSound: entity.player.levelup
+```
+
+<div align="center">
+
+![create_quest_level.jpg](../../../img/wiki/create_quest_BUGGEDaddLATER.jpg)
+
+</div>
+
+</div>
+
+</details>
 
 ### Permissions
 
@@ -545,3 +603,5 @@ Then we would open up the item file, in our case *my_cool_item.yml* and then add
 permission: elitequest.my_cool_item.yml
 ```
 Both files have now matching permissions which should now make our item only drop when the players have the correct quest active.
+
+</div>
