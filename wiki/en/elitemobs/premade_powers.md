@@ -19,6 +19,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -41,6 +43,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -58,10 +62,12 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 | Filename | Description                                       |
 |----------|---------------------------------------------------|
-| `attack_arrow.yml`  | Makes the player shoot an arrow in front of itself. |
+| `attack_arrow.yml`  | Makes the boss shoot an arrow in front of itself. |
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -83,6 +89,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `attack_blinding.yml`  | Gives the player blindness potion effect on attack. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -106,6 +114,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -127,6 +137,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -150,6 +162,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -171,6 +185,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -194,6 +210,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -215,6 +233,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -238,6 +258,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -260,6 +282,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -281,6 +305,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -312,6 +338,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -333,6 +361,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -372,6 +402,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -393,6 +425,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -416,6 +450,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -437,6 +473,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -540,6 +578,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -561,6 +601,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -584,6 +626,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -605,6 +649,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -628,6 +674,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -650,6 +698,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -670,6 +720,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `gold_explosion.yml`  | Spawns damaging gold nuggets from the boss. Can be blocked. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -692,6 +744,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -712,6 +766,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `ground_pound.yml`  | Makes the boss jump and then drop down to the floor with force. Will knockback players. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -742,6 +798,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -762,6 +820,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `invisibility.yml`  | Makes the boss invisible.  |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -784,6 +844,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -804,6 +866,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `invulnerability_fall_damage.yml`  | Makes the boss immune to fall damage.  |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -826,6 +890,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -846,6 +912,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `invulnerability_fireworks.yml`  | Makes the boss immune to fireworks.  |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -870,6 +938,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -890,6 +960,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `lightning_bolts.yml`  | Spawns lightning bolts in a straight line from the boss to the location where the player was standing. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -912,6 +984,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -932,6 +1006,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `moonwalk.yml`  | Makes the boss jump extra high. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -954,6 +1030,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -974,6 +1052,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `photon_ray.yml`  | Spawns a damaging ray that will bounce off of walls. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -996,6 +1076,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -1016,6 +1098,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `shield_wall.yml`  | Spawns shields that will protect the boss from a specific direction until destroyed. Hit **the boss** to remove the shields. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -1038,6 +1122,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -1058,6 +1144,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `skeleton_tracking_arrow.yml`  | Spawns a tracking arrow. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -1080,6 +1168,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -1100,6 +1190,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `summon_embers.yml`  | Summons the embers reinforcement. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -1122,6 +1214,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -1142,6 +1236,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `taunt.yml`  | Taunts the player with messages. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -1164,6 +1260,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -1184,6 +1282,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `thunderstorm.yml`  | Spawns several lightning bolts around the boss. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -1206,6 +1306,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -1226,6 +1328,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `zombie_bloat.yml`  | Knocks players away from the boss. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 
@@ -1248,6 +1352,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -1269,6 +1375,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 <details>
 
+<summary><b>Visual Example</b></summary>
+
 <div align="center">
 
 <video autoplay loop muted>
@@ -1289,6 +1397,8 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 | `zombie_parents.yml`  | Spawns the zombie parents reinforcement. |
 
 <details>
+
+<summary><b>Visual Example</b></summary>
 
 <div align="center">
 

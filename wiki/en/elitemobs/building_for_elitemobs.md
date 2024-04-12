@@ -60,7 +60,7 @@ Corridors should aim to be at least 5 blocks wide if they are meant to have adds
 
 Please note that these are minimum dimensions. There's not really any problem if you go over.
 
-Keep in mind that you can seal off or change the environment blocks either using [EliteScript]($language$/elitemobs/elitescript_actions.md%place_block) or [Transitive Blocks]($language$elitemobs/creating_world_bosses.md%onspawnblockstates-and-onremoveblockstates). This is a great way to make sure players can only progress further once they have defeated a certain mob.
+Keep in mind that you can seal off or change the environment blocks either using [EliteScript]($language$/elitemobs/elitescript_actions.md&section=place_block) or [Transitive Blocks]($language$elitemobs/creating_world_bosses.md&section=onspawnblockstates-and-onremoveblockstates). This is a great way to make sure players can only progress further once they have defeated a certain mob.
 
 ## Designing for EliteMobs
 
@@ -71,7 +71,7 @@ The better you know EliteMobs, the better the content you make for it will be. T
 - [EliteScript]($language$/elitemobs/creating_powers.md) EliteScript is the most powerful tool at your disposal when it comes to creating unforgettable encounters where only your imagination is the limit.
 - [Treasure Chests]($language$/elitemobs/creating_treasure_chests.md) These can have items or even turn into enemies
 - [Boss phases]($language$/elitemobs/creating_boss_phases.md) - Bosses can have phases. This system is very powerful because bosses can turn into anything between phases, including different entity types, different disguises, different custom models and so on.
-- [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md%onspawnblockstates-and-onremoveblockstates) These are blocks that get placed when a boss spawns or dies. They also can be spawned and cleared when a boss changes phases! These can be used to be make very interesting dynamic arenas.
+- [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=onspawnblockstates-and-onremoveblockstates) These are blocks that get placed when a boss spawns or dies. They also can be spawned and cleared when a boss changes phases! These can be used to be make very interesting dynamic arenas.
 - [Wormholes]($language$/elitemobs/creating_wormholes.md) - cool portals that can teleport players to other locations.
 
 ## Encounter design

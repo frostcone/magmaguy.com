@@ -15,7 +15,7 @@ Example of values you would want to modify:
 healthMultiplier: 0.5
 damageMultiplier: 0.5
 ```
-More about boss stats [here]($language$/elitemobs/creating_bosses.md&section=healthmultiplier%healthmultiplier).
+More about boss stats [here]($language$/elitemobs/creating_bosses.md&section=healthmultiplier).
 
 Please keep in mind that for a lot of powers the damage multiplier does not modify the damage applied by the power. Refer to the next section on how to modify powers.
 
@@ -29,7 +29,7 @@ powers:
 - invulnerability_fire.yml
 - invulnerability_arrow.yml
 ```
-More about boss powers [here]($language$/elitemobs/creating_bosses.md&section=powers%powers).
+More about boss powers [here]($language$/elitemobs/creating_bosses.md&section=powers).
 
 Since there are too many power combinations to list here, you will have to learn how the powers work and playtest your encounters in order to find the sweet spot for what you think is an encounter that is neither too hard nor too easy.
 
@@ -41,7 +41,7 @@ Example of values you would want to modify:
 ```yml
 level: 21
 ```
-More about boss levels [here]($language$/elitemobs/creating_bosses.md&section=level%level).
+More about boss levels [here]($language$/elitemobs/creating_bosses.md&section=level).
 
 This takes a combination of both what is said about the damage / health multipliers, as bosses at lower / higher levels might need slightly different health and damage multipliers to make the fight feel right.
 

@@ -1,5 +1,5 @@
 
-[![](https://i.imgur.com/LPnSUkK.jpg)](https://magmaguy.com/webapp/webapp.html)
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
 # Creating custom bosses
 
@@ -440,7 +440,7 @@ It is possible to create your own powers, either on the boss file itself or as a
 
 ### Limiting powers based on instanced dungeon difficulty
 
-[Instanced dungeons]($language$/elitemobs/dungeons.md%instanced-dungeons) can have difficulty settings, and it is possible to make it so a specific power is only enabled for specific difficulties.
+[Instanced dungeons]($language$/elitemobs/dungeons.md&section=instanced-dungeons) can have difficulty settings, and it is possible to make it so a specific power is only enabled for specific difficulties.
 
 <details> 
 
@@ -841,7 +841,7 @@ Sets the [Custom Items]($language$/elitemobs/creating_items.md) that drop from t
 |-|:--------------------:|-|
 | `uniqueLootList` | [List](#string_list) | none |
 
-Loot entries in the Custom Loot follow the Loot Table format. [Info about that here!]($language$/elitemobs/loot_tables.md%custom-loot-table) Take note that some older files might be using outdated loot tables that look different than the example.
+Loot entries in the Custom Loot follow the Loot Table format. [Info about that here!]($language$/elitemobs/loot_tables.md) Take note that some older files might be using outdated loot tables that look different than the example.
 
 <details> 
 

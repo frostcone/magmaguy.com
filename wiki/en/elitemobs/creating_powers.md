@@ -1,4 +1,4 @@
-[![](https://i.imgur.com/LPnSUkK.jpg)](https://magmaguy.com/webapp/webapp.html)
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
 # EliteMobs Scripting system
 
@@ -6,7 +6,7 @@ The following page covers how to Create Elite Scripts!
 
 This is an advanced feature and requires some in-depth knowledge of EliteMobs.
 
-**Note: Elite Scripts can be added as power files or to custom boss files!** If used as power files, you can add them as normal powers to bosses using the [powers]($language$/elitemobs/creating_bosses.md&section=powers%powers) configuration setting of Custom Bosses, as per usual.
+**Note: Elite Scripts can be added as power files or to custom boss files!** If used as power files, you can add them as normal powers to bosses using the [powers]($language$/elitemobs/creating_bosses.md&section=powers) configuration setting of Custom Bosses, as per usual.
 
 ## Adding an EliteScript
 

@@ -10,7 +10,7 @@ Actions always start with the type of action you are going to do. Different acti
 |--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
 | `Target`           |                                                      [More info here]($language$/elitemobs/elitescript_targets.md)                                                       | ❌ |
 | `wait`             |                                                      Sets the amount of time to wait (ticks) before running actions                                                      | ❌ |
-| `repeatEvery`      |                                                           Sets the actions to repeat every set amount of ticks                                                           | ❌ |
+| `repeatEvery`      |        Sets the actions to repeat every set amount of ticks. Any script that has this set but is not using times will be terminated upon mob death to avoid lag.         | ❌ |
 | `times`            |                                                            Sets the amount of times an action will happen for                                                            | Requires `repeatEvery` |
 | `scripts`          |                                                         Sets the scripts that will run at the end of the action                                                          | ❌ |
 | `onlyRunOneScript` |                                                       Picks one of the `scripts` at random and only runs that one.                                                       | ❌ |
@@ -1067,7 +1067,7 @@ Spawns a falling block at the target. Visual only, does not place the block.
 | `landingScripts` |                                                            Sets the list of scripts that will run when the block falls                                                             | ✅ |
 | `vValue`         | Sets the velocity and direction of a falling block. | ✅ |
 
-`landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md%run_script) but can accept the special target type `LANDING_LOCATION`.
+`landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md&section=run_script) but can accept the special target type `LANDING_LOCATION`.
 
 *Note: This action also accepts relative vectors. Learn more about how to use those [here]($language$/elitemobs/elitescript_relative_vectors.md).*
 
@@ -1349,7 +1349,7 @@ Sets the boss to .
 
 ### TAG
 
-Adds tags to the boss. Tags are just Strings, or words, that scripters can define. These are only used to run condition checks and have no direct gameplay effect outside of what they are used for in scripts.
+Adds tags to the bosses or players. Tags are just Strings, or words, that scripters can define. These are only used to run condition checks and have no direct gameplay effect outside of what they are used for in scripts.
 
 | Values |                            Details                            | Mandatory |
 | --- |:-------------------------------------------------------------:| :-: |
