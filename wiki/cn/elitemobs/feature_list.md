@@ -1,0 +1,41 @@
+# 功能列表
+
+EliteMobs拥有如此多的功能，以至于你可能会遗漏一些。以下是一份清单，看看你是否了解所有功能！
+
+- Elite Mobs可以进行程序化生成。
+- Elite Mobs还可以是[自定义Boss]($language$/elitemobs/创建boss.md)，其具有非常深度的定制选项。
+- 可以将自定义的Elite Mobs设置为在一个固定位置持续生成和重新生成（[世界Boss]($language$/elitemobs/创建世界boss.md)）。
+- 自定义Elite Mobs可以设置为有不同的Boss阶段（[Boss阶段]($language$/elitemobs/创建boss阶段.md)）。
+- 戰利品可以是动态的。
+- 戰利品可以是[自定义的]($language$/elitemobs/创建物品.md)。
+- 自定义战利品可以使用[自定义模型]($language$/elitemobs/创建物品.md&section=自定义模型id&section=自定义模型id)。
+- 战利品可以被[绑定]($language$/elitemobs/魂绑.md)到一个玩家，以防止其他玩家使用。
+- 战利品可以有连续的和命中时的[药水效果]($language$/elitemobs/创建物品.md&section=药水效果)，这些效果适用于玩家或目标。
+- 有一些自定义的[EliteMobs魔咒]($language$/elitemobs/自定义附魔列表.md)。
+- 所有以“精英”为前缀的魔咒（如“精英保护”）只有在与精英怪物战斗时才有效。
+- Elite Mobs有[宝箱]($language$/elitemobs/创建宝箱.md)，可以根据公会的进度锁定，可能是拟人的（生成一个自定义Boss）。
+- 你可以使用[LibsDisguises]($language$/elitemobs/libsdisguises.md)将自定义Boss伪装成其他任何东西，包括其他玩家！
+- 你可以使用[Vault]($language$/elitemobs/vault.md)将EliteMobs经济系统连接到其他经济系统（不推荐）。
+- 你可以使用[WorldGuard]($language$/elitemobs/worldguard.md)设置EliteMobs在世界中的生成位置、不能生成的地方、非精英怪生成、不生成的地方、反欺诈系统不起作用的地方、在那里生成的精英怪物的最小和最大等级，以及无法进行EliteMobs事件的区域。
+- 你可以使用PlaceholderAPI ([PAPI]($language$/elitemobs/占位符.md))将各种EliteMobs元素连接到诸如聊天，记分板等。
+- 你可以使用[DiscordSRV]($language$/elitemobs/discordsrv.md)在你的discord服务器上发布EliteMobs公告，如特定世界Boss的生成或死亡。
+- 一些Boss基于玩家[事件]($language$/elitemobs/elitemobs+创建事件.md&section=自定义事件是什么?)生成，如采矿。
+- 一些Boss基于服务器[事件]($language$/elitemobs/elitemobs+创建事件.md&section=自定义事件是什么?)生成，比如陨石坠入世界。
+- EliteMobs有一个NPC系统（[在此了解更多]($language$/elitemobs/adventurers_guild_world.md)），它可以强制玩家只通过NPC交易，而不使用命令。
+- **你可以在Discord上免费下载[EliteMobs的巢穴和迷你地牢]($language$/elitemobs/dungeons.md)，在Patreon上有更多**
+- EliteMobs完全支持[副本地牢]($language$/elitemobs/了解EliteMobs的基本知识.md&section=副本地下城)，并配备完整的难度和职业角色支持。
+- 你可以使用[冒险者公会]($language$/elitemobs/adventurers_guild_world.md)世界作为EliteMobs的NPC中心，如果上传到你的服务器，它会自动配置好（并非你的主世界的替代品!）。
+- 有一些杀死精英怪的动态任务。
+- 有一个每个世界可选的[噩梦模式]($language$/elitemobs/噩梦模式.md)，长夜并加快精英怪的生成。
+- 有一个每个世界可选的[区域升级]($language$/elitemobs/区域升级模式.md)模式，根据精英怪所在的区域的等级进行精英怪的升级。
+- 有一个[公会系统]($language$/elitemobs/公会等级装备限制.md)，玩家可以通过它获得更好的装备和奖励，比如增加最大生命值和回避几率。
+- 公会系统有一个[声望系统]($language$/elitemobs/声望系统.md)，允许玩家解锁更多级别和更好的奖励，换取的代价是放弃他们目前为止所有的EliteMobs进度。
+- 装备默认受到公会等级的限制，鼓励人们更多地与挑战性的机制进行互动。
+- 有一个反欺诈系统，防止玩家通过利用地形轻易地农田装备。
+- 在程序生成的精英怪附近的痕迹可以表明他们具有怎样的力量。
+- 更高级别的精英怪有更多，更强的[力量]($language$/elitemobs/创建boss.md&section=简单的配置-预制的力量)。
+- 你的装备等级越高，生成的精英怪等级越高，它掉落的装备等级也越高。
+- 所有玩家指令都集中在/em指令中，这意味着玩家不需要记住除此之外的任何指令。
+- Elite Mobs有超级怪，当50只农场动物紧密接触时，它们会叠加在一起。（这个功能将在未来移除，并且成为自己的插件）。
+- EliteMobs默认使用无权限模式，管理员无需进行进一步设置即可基本使用该插件（但是强烈推荐AG世界和地牢）。
+- EliteMobs是100%由一个人开发的。送帮助。最好是以咖啡因的形式。[Patreon](https://www.patreon.com/magmaguy)同样可以。
