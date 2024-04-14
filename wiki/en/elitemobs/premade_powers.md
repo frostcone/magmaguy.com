@@ -30,7 +30,7 @@ The power GIFs are solely for demonstration purposes. Please note that their ani
 
 </div>
 
-</details>
+`</details>
 
 ***
 
