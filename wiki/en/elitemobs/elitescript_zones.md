@@ -552,3 +552,30 @@ The filter property can be used to only target specific entities inside of the z
 | `PLAYER` | Only targets players in the zone (default) |
 | `ELITE` | Only targets elites in the zone |
 | `LIVING` | Targets all living entities in the zone |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  FilterExample:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Zone:
+      shape: SPHERE
+      radius: 12
+      borderRadius: 11
+      filter: ELITE
+      Target:
+        targetType: SELF
+        track: false
+```
+
+This example script shows how to use the filter to make the zone only target elites.
+
+</div>
