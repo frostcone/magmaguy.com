@@ -5,7 +5,7 @@
 <repositories>
     <repository>
         <id>oss-sonatype</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
     </repository>
 </repositories>
 

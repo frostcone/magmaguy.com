@@ -544,12 +544,37 @@ Este comportamiento puede cambiar dependiendo de hacia dónde estés mirando en 
 
 ---
 
-## filter
-
-La propiedad de filtrar se puede utilizar para dirigir sólo a entidades específicas dentro de la zona. Estas entidades pueden ser:
+## filtro
+La propiedad filtro se puede usar para dirigirse solo a entidades específicas dentro de la zona. Estas entidades pueden ser:
 
 | Valor | Detalles |
 | --- | :-: |
-| `PLAYER` | Solo apunta a los jugadores en la zona (predeterminado) |
-| `ELITE` | Solo apunta a las elites en la zona |
-| `LIVING` | Apunta a todas las entidades vivas en la zona |
+| `PLAYER` | Solo se enfoca en los jugadores en la zona (predeterminado) |
+| `ELITE` | Solo se enfoca en las élites en la zona |
+| `LIVING` | Dirige a todas las entidades vivas en la zona |
+<div align="center">
+
+<details> 
+
+<summary><b>Ejemplo</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  FilterExample:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Zone:
+      shape: SPHERE
+      radius: 12
+      borderRadius: 11
+      filter: ELITE
+      Target:
+        targetType: SELF
+        track: false
+```
+
+Este ejemplo de script muestra cómo usar el filtro para hacer que la zona se dirija solo a las élites.
+
+</div>

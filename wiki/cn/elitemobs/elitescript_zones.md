@@ -546,10 +546,38 @@ eliteScript:
 
 ## 过滤器
 
-过滤器属性可以用来只在区域内目标化特定实体。这些实体可以是：
+`filter` 属性可以用来只针对区域内的特定实体。这些实体可以是：
 
-| 值 | 详情 |
+| 值 | 详细信息 |
 | --- | :-: |
-| `PLAYER` | 只在区域内目标化玩家（默认） |
-| `ELITE` | 只在区域内目标化精英 |
-| `LIVING` | 在区域内目标化所有活动实体 |
+| `PLAYER` | 只针对区域内的玩家（默认） |
+| `ELITE` | 只针对区域内的精英 |
+| `LIVING` | 针对区域内的所有生物 |
+
+<div align="center">
+
+<details> 
+
+<summary><b>示例</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  FilterExample:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Zone:
+      shape: SPHERE
+      radius: 12
+      borderRadius: 11
+      filter: ELITE
+      Target:
+        targetType: SELF
+        track: false
+```
+
+此示例脚本展示了如何使用过滤器让区域仅针对精英。
+
+</div>
+
