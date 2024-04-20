@@ -250,7 +250,7 @@ spawnPoints:
 
 ### bossList
 
-Sets the list of bosses that appear during the arena waves.
+Sets the list of bosses that appear during the arena waves. EliteMobs Arenas do support Mythic Mobs spawning in the arenas.
 
 | Key       |      Values       | Default |
 |-----------|:-----------------:|:-------:|
@@ -266,8 +266,12 @@ Sets the list of bosses that appear during the arena waves.
 bossList:
 - wave=1:spawnPoint=north:boss=my_boss_wave_1.yml
 - wave=1:spawnPoint=south:boss=my_boss_wave_1.yml
-- wave=2:spawnPoint=center:boss=my_boss_wave_2.yml
+- wave=2:spawnPoint=center:boss=my_mythicmobs_boss:mythicmob=true:level=10
 ```
+
+In this example, wave 1 will spawn one boss at the north spawn point and one boss at the south spawn point. Then, on wave 2, a mythic boss will spawn, at level 10, in the center point.
+
+Note that you can also force a level for the EliteMobs bosses, but it is recommended you set their level in their configuration file.
 
 </div>
 

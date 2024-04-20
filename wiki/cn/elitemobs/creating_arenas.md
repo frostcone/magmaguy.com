@@ -266,11 +266,11 @@ spawnPoints:
 
 ### bossList
 
-设置竞技场波次中出现的 boss 列表。
+设置在竞技场波次中出现的boss列表。EliteMobs竞技场确实支持在竞技场中生成神话怪物。
 
-| 键       |     值值      | 默认值 |
-|----------|:--------------:|:-------:|
-| `bossList` | [字符串列表](#string_list) [2] |  无 |
+| 键       |      值       | 默认 |
+|-----------|:-----------------:|:-------:|
+| `bossList` | [字符串列表](#string_list) [2] |  无   |
 
 <details> 
 
@@ -282,8 +282,12 @@ spawnPoints:
 bossList:
 - wave=1:spawnPoint=north:boss=my_boss_wave_1.yml
 - wave=1:spawnPoint=south:boss=my_boss_wave_1.yml
-- wave=2:spawnPoint=center:boss=my_boss_wave_2.yml
+- wave=2:spawnPoint=center:boss=my_mythicmobs_boss:mythicmob=true:level=10
 ```
+
+在这个示例中，wave 1会在北方的生成点和南方的生成点各生成一个boss。然后，在波次2中，一个等级为10的神话级boss将在中心点生成。
+
+请注意，你也可以为EliteMobs的boss强制设置一个等级，但建议你在他们的配置文件中设置他们的等级。
 
 </div>
 

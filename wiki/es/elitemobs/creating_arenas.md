@@ -249,11 +249,11 @@ spawnPoints:
 
 ### bossList
 
-Establece la lista de jefes que aparecen durante las olas de la arena.
+Establece la lista de jefes que aparecen durante las oleadas de la arena. Las Arenas de EliteMobs admiten el generacion de Mythic Mobs en las arenas.
 
-| Clave       | Valores | Predeterminado |
-|------------ | :-----: | :----: |
-| `bossList` | [Lista de Strings](#lista_de_strings) [2] |  ninguno   |
+| Clave       | Valores               | Predeterminado |
+|-----------|:-----------------:|:-------:|
+| `bossList` | [Lista de Cadenas](#lista_de_cadenas) [2] | ninguno   |
 
 <details> 
 
@@ -262,11 +262,15 @@ Establece la lista de jefes que aparecen durante las olas de la arena.
 <div align="left">
 
 ```yml
-bossList:
-- wave=1:spawnPoint=north:boss=my_boss_wave_1.yml
-- wave=1:spawnPoint=south:boss=my_boss_wave_1.yml
-- wave=2:spawnPoint=center:boss=my_boss_wave_2.yml
+listaDeJefes:
+- ola=1:posicionGeneracion=norte:jefe=mijefe_ola_1.yml
+- ola=1:posicionGeneracion=sur:jefe=mijefe_ola_1.yml
+- ola=2:posicionGeneracion=center:jefe=mimythicmobs_jefe:mythicmob=true:level=10
 ```
+
+En este ejemplo, la ola 1 generará un jefe en el punto de generación del norte y un jefe en el punto de generación del sur. Entonces, en la ola 2, se generará un jefe mítico, a nivel 10, en el punto central.
+
+Tenga en cuenta que también puede forzar un nivel para los jefes EliteMobs, pero se recomienda que configure su nivel en su archivo de configuración.
 
 </div>
 
