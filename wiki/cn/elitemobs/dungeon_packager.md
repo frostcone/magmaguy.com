@@ -410,7 +410,7 @@ regionLeaveMessage: '&aYou have left the dungeon!'
 
 ### hasCustomModels
 
-设置地牢包是否有自定义模型（适用于ModelEngine）。
+设置地牢包是否有自定义模型（适用于ModelEngine/FreeMinecraftModels）。
 
 | 键   |  值  | 默认 | 必填 |
 |------|:----:|:-----:|:------:|
@@ -998,7 +998,7 @@ EliteMobs 有 **`/em package <dungeonName> <version>`** 命令。这个命令会
     * customspawns
         * my_cool_dungeon
             * [你的自定义刷新点在这里]
-    * ModelEngine
+    * models
         * [你的ModelEngine bbmodel格式的模型在这里，接受的文件夹]
 
 </details>

@@ -408,7 +408,7 @@ regionLeaveMessage: '&a¡Has salido del calabozo!'
 
 ### hasCustomModels
 
-Establece si el paquete de calabozo tiene modelos personalizados (para ModelEngine).
+Establece si el paquete de calabozo tiene modelos personalizados (para ModelEngine / FreeMinecraftModels).
 
 | Llave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
@@ -999,7 +999,7 @@ Si hiciste todo correctamente, la estructura del archivo debería ser similar a 
     * customspawns
         * mi_dungeon_genial
             * [Aquí van tus spawns personalizados]
-    * ModelEngine
+    * models
         * [Aquí van tus modelos en formato bbmodel de ModelEngine, acepta carpetas]
 
 </details>
