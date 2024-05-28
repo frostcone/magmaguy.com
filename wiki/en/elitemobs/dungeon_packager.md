@@ -409,7 +409,7 @@ regionLeaveMessage: '&aYou have left the dungeon!'
 
 ### hasCustomModels
 
-Sets whether the dungeon package has custom models (for ModelEngine).
+Sets whether the dungeon package has custom models (for ModelEngine or FreeMinecraftModels).
 
 | Key         |  Values  | Default | Mandatory |
 |-------------|:--------:|:-------:|:---------:|
@@ -999,7 +999,7 @@ If you did everything correctly, the file structure should be similar to this ex
     * customspawns
         * my_cool_dungeon
             * [Your custom spawns go here]
-    * ModelEngine
+    * models
         * [Your ModelEngine bbmodel format models go here, accepts folders]
 
 </details>
