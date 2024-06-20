@@ -609,6 +609,30 @@ teleportLocation: my_minecraft_world,-1.5,68,0.5,0.0,0.0
 
 </details>
 
+***
+
+### allowExplosionBlockDamage
+
+Either allows or prevents explosions to damage blocks in a dungeon. The explosions are considered elite explosions so any damage to blocks will be regenerated within 2 minutes.
+
+| Key         |  Values  | Default | Mandatory |
+|-------------|:--------:|:-------:|:---------:|
+| `allowExplosionBlockDamage` | [Boolean](#boolean) |  `false`   |    ❌      |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+allowExplosionBlockDamage: true
+```
+
+</div>
+
+</details>
+
 </div>
 
 #### Instanced dungeons
