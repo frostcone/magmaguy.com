@@ -397,7 +397,8 @@ Plays an in-game sound.
 | `pitch`  |           Sets the pitch of the sound to be played            |     ❌     |
 | `volume` |           Sets the volume of the sound to be played           |     ❌     |
 
-[Here's a handy list of all Minecraft sounds!](https://www.digminecraft.com/lists/sound_list_pc.php) Remember that this can also play custom sounds from resource packs.
+[Here's a handy list of all Minecraft sounds!](https://www.digminecraft.com/lists/sound_list_pc.php) Remember that this can also play custom sounds from resource packs. 
+When the action is targeting a zone then the action will play a sound for every block in that zone. This can make the sound considerably louder than normal so consider lowering the volume if targeting a zone.
 
 <div align="center">
 
