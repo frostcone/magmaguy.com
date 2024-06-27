@@ -293,6 +293,53 @@ Will send a chat message to all players within 10 blocks from the boss.
 
 ---
 
+### NAVIGATE
+
+Makes the boss navigate (walk) to the specified target.
+
+| Values |                            Details                            | Mandatory | Special |
+| --- |:-------------------------------------------------------------:| :-: | :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
+| `FinalTarget` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
+| `velocity` | Sets the navigation speed of the boss. `1.0` being the boss value as set in the config. | ❌ | ❌ |
+| `bValue` | Sets if the the boss should be force teleported to the `FinalTarget` if navigation fails. | ❌ | ❌ |
+| `duration` | How long should the boss try to navigate before it gives up. Set in ticks. Default is 100 ticks. | ✅ | ❌ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: NAVIGATE
+      Target: 
+        targetType: SELF
+      FinalTarget:
+        targetType: NEARBY_PLAYERS
+        range: 88
+      velocity: 4.0
+      bValue: true
+      duration: 100
+```
+
+Will make the boss navigate to the spot the player was standing at when they hit the boss.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
 ### PLACE_BLOCK
 
 Places a block at the target location(s) for the duration.
