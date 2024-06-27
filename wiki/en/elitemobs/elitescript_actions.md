@@ -324,8 +324,8 @@ eliteScript:
         targetType: SELF
       FinalTarget:
         targetType: NEARBY_PLAYERS
-        range: 88
-      velocity: 4.0
+        range: 50
+      velocity: 1.0
       bValue: true
       duration: 100
 ```
