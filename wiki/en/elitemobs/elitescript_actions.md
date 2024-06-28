@@ -700,6 +700,7 @@ This simply runs the scripts defined in `scripts`. Any action can do this, this 
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `scripts` |                   Scripts that will be run                    | ✅ |
+| `onlyRunOneScript` |         Run only one script from the list.           | ❌ |
 
 <div align="center">
 
@@ -716,6 +717,7 @@ eliteScript:
     - EliteMobDamagedByPlayerEvent
     Actions:
     - action: RUN_SCRIPT
+      onlyRunOneScript: false
       scripts:
       - Example1
       - Example2
