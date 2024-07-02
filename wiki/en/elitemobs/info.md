@@ -6,6 +6,14 @@ The EliteMobs source code is covered under the [GPLV3](https://choosealicense.co
 
 Feel free to redistribute and modify the information in this wiki.
 
+# Versions
+
+Starting with EliteMobs version 9.0.0, the only supported Minecraft version is 1.21 and above.
+
+For those seeking compatibility with older Minecraft versions (1.19.4 - 1.20.4), please use EliteMobs version 8.
+
+**Note: No version of EliteMobs supports Minecraft versions 1.20.5 and 1.20.6.**
+
 # What is EliteMobs for?
 
 EliteMobs aims to extend the end-game of Minecraft by implementing various boss-related content.
