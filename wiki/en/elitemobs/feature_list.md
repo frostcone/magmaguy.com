@@ -26,8 +26,6 @@ EliteMobs has so many features it's easy to miss some of them. Here's a checklis
 - EliteMobs fully supports [Instanced Dungeons]($language$/elitemobs/understanding_the_basics_of_elitemobs.md&section=instanced-dungeoneering), complete with full difficulty and class role support.
 - You can use the [Adventurer's Guild]($language$/elitemobs/adventurers_guild_world.md) world as a hub for EliteMobs NPCs, it sets itself up automatically if uploaded to your server (not a replacement for your overworld!).
 - There are dynamic quests to kill Elites.
-- There is a per-world optional [Nightmare mode]($language$/elitemobs/nightmare_mode.md) which makes nights longer and increases Elite Mob spawns.
-- There is a per-world optional [Region Leveling]($language$/elitemobs/region_leveling_mode.md) mode which makes Elite Mobs' level based on the zone they're standing in.
 - There is a [guild system]($language$/elitemobs/guild_tier_loot_limiter.md) which players progress through to get better gear and rewards like increased max health and chance to dodge.
 - The guild system has a [prestige system]($language$/elitemobs/prestige_system.md) which allows players to unlock more ranks and better rewards in exchange for losing all of their EliteMobs progress so far.
 - Gear is limited by the guild rank by default, encouraging people to interact more with challenging mechanics.
