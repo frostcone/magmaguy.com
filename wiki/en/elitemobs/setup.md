@@ -69,7 +69,7 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 </div>
 
-**IMPORTANT: [WORLDGUARD](https://dev.bukkit.org/projects/worldguard) AND [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
+**IMPORTANT: [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
 
 4) Click on the yellow glass in the `/em setup` menu to install features!
 
@@ -98,7 +98,7 @@ That's it! **You can find teleports to the installed dungeons & adventurers guil
 
 # Recommended plugins
 
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard): Used to setup and protect areas. [EliteMobs flags list]($language$/elitemobs/worldguard_flags.md).
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard): Used for flags. [EliteMobs flags list]($language$/elitemobs/worldguard_flags.md).
 - [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/): Used for the anti-fly flag, useful to have.
 - [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/): Used to displaying EliteMobs info on other plugins, like for chat. [More info]($language$/elitemobs/placeholders.md).
 - [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/): Used to disguise Custom Bosses as anything else. Disguises are heavily used in our official dungeons so it is highly recommended you install this plugin. [More info]($language$/elitemobs/libsdisguises.md).
@@ -110,11 +110,11 @@ To update dungeon content, simply repeat the installation steps above. **You do 
 
 # Frequently Asked Questions (FAQ)
 
-## EliteMobs says WorldGuard / WorldEdit is not installed when it is
+## EliteMobs says WorldEdit is not installed when it is
 
 <details><summary>Answer</summary>
 
-This 100% means you are using the wrong version of WorldGuard / WorldEdit on your server. [You can get the right version from the section above.]($language$/elitemobs/setup.md&section=recommended-plugins)
+This 100% means you are using the wrong version of WorldEdit on your server. [You can get the right version from the section above.]($language$/elitemobs/setup.md&section=recommended-plugins)
 
 </details>
 
