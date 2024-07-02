@@ -15,10 +15,15 @@ EliteScripts are event-based. This means that they are launched when a specific 
 | EliteMobTargetPlayerEvent | Elite target player |                         Targeted player                          |
 | PlayerDamagedByEliteMobEvent | Elite damage player |                          Damaged player                          |
 | ElitePhaseSwitchEvent | Boss spawn from phase switch |                                ❌                                 |
+| ZoneEnterEvent | Entity enters zone. This event requires a zone to be set! | Entity that entered the zone                                 |
+| ZoneLeaveEvent | Entity leaves zone. This event requires a zone to be set! | Entity that left the zone                                 |
 
 **Note: "Elite" refers to any aggressive entity spawned by the plugin, no matter if they're a reinforcement, a boss or anything else.**
+**Note: ZoneEnterEvent and ZoneLeaveEvent are computationally expensive to run so please use these sparingly!**
 
 `Direct Target` is used by the Script Targets, more on that [here]($language$/elitemobs/elitescript_targets.md).
+
+`ZoneEnterEvent` and `ZoneLeaveEvent` are special events that allow scripters to trigger actions based on entities entering and leaving zones set in scripts. The DIRECT_TARGET of ZoneEnterEvent and ZoneLeaveEvent is the entity that entered or left (this means you can't use the direct target as the target of the zone), and due to how the internal logic works only absolute points (specific coordinates) and points relative to the boss can be used for scanning entering and leaving (cannot use zones that target players).
 
 There can only be one [Event]($language$/elitemobs/elitescript_events.md) section per script. However, several events can be set as triggers for a script:
 
