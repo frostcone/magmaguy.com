@@ -36,6 +36,5 @@ EliteMobs has so many features it's easy to miss some of them. Here's a checklis
 - Higher level Elites have more, stronger [powers]($language$/elitemobs/creating_bosses.md&section=easy-configuration---premade-powers).
 - The higher your gear, the higher the level of the elite spawned, the higher the level of the gear it drops.
 - All player commands are centralized in the /em command, meaning players don't have to remember any commands other than that one.
-- Elite Mobs has Super Mobs, which stacks farm animals when 50 are in close proximity. (This feature will be removed and made into its own plugin in the future.)
 - EliteMobs uses the permissionless mode by default, which requires no further setup from admins for the plugin to basically work (though the AG world and the dungeons are strongly recommended).
 - EliteMobs was 100% developed by one guy. Send help. Preferably in the form of caffeine. [Patreon](https://www.patreon.com/magmaguy) is fine too.
