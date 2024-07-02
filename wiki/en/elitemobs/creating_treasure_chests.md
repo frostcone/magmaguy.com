@@ -328,7 +328,7 @@ chestTier: 3
 
 ***
 
-### intsanced
+### instanced
 
 Sets if the chest should be instanced (for use in instanced dungeons).
 All restock timers are disabled when chests are placed in dungeons.
