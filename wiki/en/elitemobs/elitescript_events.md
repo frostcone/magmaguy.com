@@ -15,7 +15,7 @@ EliteScripts are event-based. This means that they are launched when a specific 
 | EliteMobTargetPlayerEvent | Elite target player |                         Targeted player                          |
 | PlayerDamagedByEliteMobEvent | Elite damage player |                          Damaged player                          |
 | ElitePhaseSwitchEvent | Boss spawn from phase switch |                                ❌                                 |
-| ZoneEnterEvent | Entity enters zone. Rrequires a zone to be set! | Entity that entered the zone                                 |
+| ZoneEnterEvent | Entity enters zone. Requires a zone to be set! | Entity that entered the zone                                 |
 | ZoneLeaveEvent | Entity leaves zone. Requires a zone to be set! | Entity that left the zone                                 |
 
 **Note: "Elite" refers to any aggressive entity spawned by the plugin, no matter if they're a reinforcement, a boss or anything else.**
