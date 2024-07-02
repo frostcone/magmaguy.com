@@ -325,6 +325,36 @@ chestTier: 3
 
 </details>
 
+
+***
+
+### intsanced
+
+Sets if the chest should be instanced (for use in instanced dungeons).
+All restock timers are disabled when chests are placed in dungeons.
+
+**DO NOT SET THIS VALUE MANUALLY**.
+
+| Key       |     Values     | Default |
+|-----------|:--------------:|:-------:|
+| `instanced` | [Boolean](#boolean) |  `false`   |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+instanced: true
+```
+
+</div>
+
+</details>
+
+</div>
+
 ***
 
 ### restockTime
