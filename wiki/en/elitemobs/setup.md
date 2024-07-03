@@ -52,26 +52,9 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 </div>
 
-3) Restart or do `/em reload`. After a few seconds, when you do `/em setup` the indicators for the features you downloaded should be yellow.
-
-<div align="center">
-
-<details>
-
-<summary>Visual Example</summary>
-
-<video autoplay loop muted controls>
-  <source src="../../../img/wiki/setup_reload.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
-
-</details>
-
-</div>
+3) Restart or do `/em reload`. After a few seconds the dungeons should auto-install, when you do `/em setup` the indicators for the dungeons you downloaded should be green and ready to played.
 
 **IMPORTANT: [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
-
-4) Click on the yellow glass in the `/em setup` menu to install features!
 
 <div align="center">
 
@@ -89,7 +72,7 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 </div>
 
-5) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md&section=importing-custom-models-from-dungeons) to install them.
+4) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md&section=importing-custom-models-from-dungeons) to install them.
 
 That's it! **You can find teleports to the installed dungeons & adventurers guild in /em, in the Teleports page!**
 
