@@ -52,7 +52,7 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 </div>
 
-3) Restart or do `/em reload`. After a few seconds the dungeons should auto-install, when you do `/em setup` the indicators for the dungeons you downloaded should be green and ready to played.
+3) Restart or do `/em reload`. After a few seconds the dungeons should auto-install, when you do `/em setup` the indicators for the dungeons you downloaded should be green and indicating that the dungeons are properly installed and up-to-date. If any dungeons show a yellow glass pane then that means there is a newer version of the dungeon and it needs to be updated.
 
 **IMPORTANT: [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
 
