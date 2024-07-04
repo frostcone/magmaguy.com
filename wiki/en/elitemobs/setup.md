@@ -52,26 +52,9 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 </div>
 
-3) Restart or do `/em reload`. After a few seconds, when you do `/em setup` the indicators for the features you downloaded should be yellow.
+3) Restart or do `/em reload`. After a few seconds the dungeons should auto-install, when you do `/em setup` the indicators for the dungeons you downloaded should be green and indicating that the dungeons are properly installed and up-to-date. If any dungeons show a yellow glass pane then that means there is a newer version of the dungeon and it needs to be updated.
 
-<div align="center">
-
-<details>
-
-<summary>Visual Example</summary>
-
-<video autoplay loop muted controls>
-  <source src="../../../img/wiki/setup_reload.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
-
-</details>
-
-</div>
-
-**IMPORTANT: [WORLDGUARD](https://dev.bukkit.org/projects/worldguard) AND [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
-
-4) Click on the yellow glass in the `/em setup` menu to install features!
+**IMPORTANT: [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
 
 <div align="center">
 
@@ -89,7 +72,7 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 </div>
 
-5) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md&section=importing-custom-models-from-dungeons) to install them.
+4) ***If your dungeon files have Custom Models***, you can optionally follow the installation steps listed [here]($language$/elitemobs/custom_models.md&section=importing-custom-models-from-dungeons) to install them.
 
 That's it! **You can find teleports to the installed dungeons & adventurers guild in /em, in the Teleports page!**
 
@@ -98,7 +81,7 @@ That's it! **You can find teleports to the installed dungeons & adventurers guil
 
 # Recommended plugins
 
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard): Used to setup and protect areas. [EliteMobs flags list]($language$/elitemobs/worldguard_flags.md).
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard): Used for flags. [EliteMobs flags list]($language$/elitemobs/worldguard_flags.md).
 - [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/): Used for the anti-fly flag, useful to have.
 - [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/): Used to displaying EliteMobs info on other plugins, like for chat. [More info]($language$/elitemobs/placeholders.md).
 - [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/): Used to disguise Custom Bosses as anything else. Disguises are heavily used in our official dungeons so it is highly recommended you install this plugin. [More info]($language$/elitemobs/libsdisguises.md).
@@ -110,11 +93,11 @@ To update dungeon content, simply repeat the installation steps above. **You do 
 
 # Frequently Asked Questions (FAQ)
 
-## EliteMobs says WorldGuard / WorldEdit is not installed when it is
+## EliteMobs says WorldEdit is not installed when it is
 
 <details><summary>Answer</summary>
 
-This 100% means you are using the wrong version of WorldGuard / WorldEdit on your server. [You can get the right version from the section above.]($language$/elitemobs/setup.md&section=recommended-plugins)
+This 100% means you are using the wrong version of WorldEdit on your server. [You can get the right version from the section above.]($language$/elitemobs/setup.md&section=recommended-plugins)
 
 </details>
 

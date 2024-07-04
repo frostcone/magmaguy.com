@@ -49,9 +49,6 @@ switchEMStyleMessage: '&8[EliteMobs] &2/elitemobs &fmenu style changed! Check it
 # Sets whether elites and bosses spawned by elitemobs will always show their nametags.
 # Not recommended!
 alwaysShowEliteMobNameTags: false
-# Sets the amount of passive mobs that have to be in close proximity before they can be merged.
-# Don't set this to 0!
-superMobStackAmount: 50
 # Makes elites not damage passive mobs with explosions.
 preventEliteCreeperDamageToPassiveMobs: true
 # Sets whether EliteMobs will use titles to warn players about missing permissions
@@ -1079,8 +1076,6 @@ doNaturalEliteMobSpawning: true
 doSpawnersSpawnEliteMobs: false
 # Sets the percentage of naturally spawned mobs that get converted to elite mobs.
 eliteMobsSpawnPercentage: 0.05
-# Sets the super mob range to scan for super mob stacking
-superMobStackRange: 15
 # Sets the maximum level elites can spawn at.
 # Note: elite mob level is based on what armor and weapons players are wearing, and armor only scales up to level 200.
 naturalEliteMobsLevelCap: 250

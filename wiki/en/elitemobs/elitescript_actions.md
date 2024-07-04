@@ -293,6 +293,53 @@ Will send a chat message to all players within 10 blocks from the boss.
 
 ---
 
+### NAVIGATE
+
+Makes the boss navigate (walk) to the specified target.
+
+| Values |                            Details                            | Mandatory | Special |
+| --- |:-------------------------------------------------------------:| :-: | :-: |
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
+| `FinalTarget` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
+| `velocity` | Sets the navigation speed of the boss. `1.0` being the boss value as set in the config. | ❌ | ❌ |
+| `bValue` | Sets if the the boss should be force teleported to the `FinalTarget` if navigation fails. | ❌ | ❌ |
+| `duration` | How long should the boss try to navigate before it gives up. Set in ticks. Default is 100 ticks. | ✅ | ❌ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: NAVIGATE
+      Target: 
+        targetType: SELF
+      FinalTarget:
+        targetType: NEARBY_PLAYERS
+        range: 50
+      velocity: 1.0
+      bValue: true
+      duration: 100
+```
+
+Will make the boss navigate to the spot the player was standing at when they hit the boss.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
 ### PLACE_BLOCK
 
 Places a block at the target location(s) for the duration.
@@ -397,7 +444,8 @@ Plays an in-game sound.
 | `pitch`  |           Sets the pitch of the sound to be played            |     ❌     |
 | `volume` |           Sets the volume of the sound to be played           |     ❌     |
 
-[Here's a handy list of all Minecraft sounds!](https://www.digminecraft.com/lists/sound_list_pc.php) Remember that this can also play custom sounds from resource packs.
+[Here's a handy list of all Minecraft sounds!](https://www.digminecraft.com/lists/sound_list_pc.php) Remember that this can also play custom sounds from resource packs. 
+When the action is targeting a zone then the action will play a sound for every block in that zone. This can make the sound considerably louder than normal so consider lowering the volume if targeting a zone.
 
 <div align="center">
 
@@ -652,6 +700,7 @@ This simply runs the scripts defined in `scripts`. Any action can do this, this 
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `scripts` |                   Scripts that will be run                    | ✅ |
+| `onlyRunOneScript` |         Run only one script from the list.           | ❌ |
 
 <div align="center">
 
@@ -668,6 +717,7 @@ eliteScript:
     - EliteMobDamagedByPlayerEvent
     Actions:
     - action: RUN_SCRIPT
+      onlyRunOneScript: false
       scripts:
       - Example1
       - Example2

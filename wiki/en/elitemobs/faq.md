@@ -292,12 +292,6 @@ and change the values to your preferred location.
 The only way to remove soulbound from items is to use Unbind Scrolls. Read more about
 that [here]($language$/elitemobs/soulbind.md).
 
-### How can I disable Super Mobs?
-
-Super Mobs are farm animals that will stack into one mob when fifty of the same mob are in close proximity. If you would like to disable this feature you
-can go to *~plugins\EliteMobs\mobproperties* then go into any file that is prefixed with *super_* (example:
-*super_pig.yml*) and toggle `isEnabled` to `false`.
-
 ### How can I merge resource packs?
 
 It is possible to merge resource packs manually, but we recommend using an online tool such as [merge.elmakers](https://merge.elmakers.com/) to merge your resource packs.

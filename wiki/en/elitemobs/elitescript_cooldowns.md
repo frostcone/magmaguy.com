@@ -49,17 +49,17 @@ To ensure scripts trigger only once while still using an [Event]($language$/elit
 
 ```yaml
 eliteScript:
-SetMeOnFireOnlyOnce:
-Events:
-- EliteMobDamagedByPlayerEvent
-Actions:
-- action: SET_ON_FIRE
-duration: 60
-Target:
-targetType: DIRECT_TARGET
-Cooldowns:
-local: 99999
-global: 50
+  SetMeOnFireOnlyOnce:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_ON_FIRE
+      duration: 60
+      Target:
+      targetType: DIRECT_TARGET
+    Cooldowns:
+    local: 99999
+    global: 50
 ```
 In this scenario, the `EliteMobDamagedByPlayerEvent` triggers the `SET_ON_FIRE` action. Without cooldowns, the action would activate every time the player hits the mob. 
 

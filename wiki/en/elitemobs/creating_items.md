@@ -271,6 +271,8 @@ Furthermore, potion effects use a specific format that allows admins to select w
 
 The format for potion effects is `potionEffectName,potionEffectLevel,affectedEntity,applicationMethod`. Check the example below!
 
+EliteMobs also features custom items that function as charms. These items do nothing else but provide potion effects to the player when the item is being held or is equipped in a slot.
+
 <details>
 
 <summary><b>Example</b></summary>
