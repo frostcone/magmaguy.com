@@ -287,6 +287,8 @@ Then find the following setting
 `location2: your_world_here,0.5,64,0.5,0,0`
 and change the values to your preferred location.
 
+Remember to do `/em reload` for the changes to take effect.
+
 ### How can I unbind items?
 
 The only way to remove soulbound from items is to use Unbind Scrolls. Read more about
