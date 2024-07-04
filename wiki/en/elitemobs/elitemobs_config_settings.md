@@ -23,32 +23,15 @@ If you wish to learn more about a specific setting, you can refer to the config 
 <summary><b>Expand Table</b></summary>
 
 ```yml
-# Sets the character limit per line for book menu pages.
-# Lower this amount if text is getting cut off in book menus such as for quests
-characterLimitForBookMenuPagesV2: 170
-# Sets the message that appears when a player tries to track a boss that is no longer valid
-bossAlreadyGoneMessage: '&c[EliteMobs] Sorry, this boss is already gone!'
-# Sets the message that appears when a player opens a treasure chest but gets nothing
-treasureChestNoDropMessage: '&8[EliteMobs] &cYou didn''t get anything! Better luck
-  next time!'
-# Sets the message sent to players if they run '/em confirm' with no pending commands.
-noPendingCommands: '&cYou don''t currently have any pending commands!'
-# Sets the tracking message for bosses that send tracking messages.
-trackMessage: Track the $name
-# Sets the message sent to players that open treasure chests with level requirements above their guild rank.
-chestLowRankMessage: '&7[EM] &cYour guild rank needs to be at least $rank &cin order
-  to open this chest!'
-# Sets the message sent to players that try to reopen a treasure chest they have already opened.
-chestCooldownMessage: '&7[EM] &cYou''ve already opened this chest recently! Wait $time!'
-# Sets the message that appears recommending the /em alt command for players having issues with the /em command
-dismissEMMessage: '&8[EliteMobs] &2/elitemobs &fmenu not working for you? Try &2/elitemobs
-  alt &fto see an alternative version of the menu! &cDon''t want to see this message
-  again? &4/em dismiss'
-# Sets the message that appears when players run the /em alt command.
-switchEMStyleMessage: '&8[EliteMobs] &2/elitemobs &fmenu style changed! Check it out!'
+# Sets the language file used by EliteMobs
+# Do NOT change this manually! It is meant to be installed with the command '/em language <languagefile>'
+language: english
 # Sets whether elites and bosses spawned by elitemobs will always show their nametags.
 # Not recommended!
 alwaysShowEliteMobNameTags: false
+# Sets the amount of passive mobs that have to be in close proximity before they can be merged.
+# Don't set this to 0!
+superMobStackAmount: 50
 # Makes elites not damage passive mobs with explosions.
 preventEliteCreeperDamageToPassiveMobs: true
 # Sets whether EliteMobs will use titles to warn players about missing permissions
@@ -71,8 +54,8 @@ otherCommandsLeadToEMStatusMenu: true
 setupDoneV3: true
 # Sets if elites will prevent spawning vanilla reinforcements, such as for the Zombie reinforcement feature.
 preventVanillaReinforcementsForEliteEntities: true
-# Sets the default spawn location of the server for EliteMobs. /em spawn will lead to this location.
-defaultSpawnLocation: world,0.0,99.0,0.0,0.0,0.0
+# Sets the default spawn location of the server for EliteMobs. /em spawntp will lead to this location.
+defaultSpawnLocation: world,16.0,76.0,80.0,0.0,0.0
 # Sets if EliteMobs will regenerate blocks blown up by elites.
 doExplosionRegen: true
 # Sets if the explosion regen will also regenerate the contents of containers such as chests.
@@ -82,6 +65,9 @@ defaultTransitiveBlockLimiter: 500
 # Sets whether the /em menu will only use the inventory-based menu style which is compatible with bedrock.
 # As a reminder, players can otherwise do the command /em alt to switch between /em menu styles
 onlyUseBedrockMenus: false
+# Sets the character limit per line for book menu pages.
+# Lower this amount if text is getting cut off in book menus such as for quests
+characterLimitForBookMenuPagesV2: 170
 # Sets if empty menu space will be filled with glass panes.
 # Not recommended if you are using the EliteMobs resource pack.
 useGlassToFillMenuEmptySpace: false
@@ -89,9 +75,26 @@ useGlassToFillMenuEmptySpace: false
 # Do not set this manually, it is set automatically upon installation of the resource pack.
 # Only set it manually if you had to merge the EliteMobs resource pack, and expect that the spacing might not work if you do that.
 menuUnicodeFormatting: false
-# Sets the language file used by EliteMobs
-# Do NOT change this manually! It is meant to be installed with the command '/em language <languagefile>'
-language: english
+# Sets the message sent to players if they run '/em confirm' with no pending commands.
+noPendingCommands: '&cYou don''t currently have any pending commands!'
+# Sets the tracking message for bosses that send tracking messages.
+trackMessage: Track the $name
+# Sets the message sent to players that open treasure chests with level requirements above their guild rank.
+chestLowRankMessage: '&7[EM] &cYour guild rank needs to be at least $rank &cin order
+  to open this chest!'
+# Sets the message sent to players that try to reopen a treasure chest they have already opened.
+chestCooldownMessage: '&7[EM] &cYou''ve already opened this chest recently! Wait $time!'
+# Sets the message that appears recommending the /em alt command for players having issues with the /em command
+dismissEMMessage: '&8[EliteMobs] &2/elitemobs &fmenu not working for you? Try &2/elitemobs
+  alt &fto see an alternative version of the menu! &cDon''t want to see this message
+  again? &4/em dismiss'
+# Sets the message that appears when players run the /em alt command.
+switchEMStyleMessage: '&8[EliteMobs] &2/elitemobs &fmenu style changed! Check it out!'
+# Sets the message that appears when a player opens a treasure chest but gets nothing
+treasureChestNoDropMessage: '&8[EliteMobs] &cYou didn''t get anything! Better luck
+  next time!'
+# Sets the message that appears when a player tries to track a boss that is no longer valid
+bossAlreadyGoneMessage: '&c[EliteMobs] Sorry, this boss is already gone!'
 ```
 
 </details>
@@ -107,22 +110,12 @@ language: english
 <summary><b>Expand Table</b></summary>
 
 ```yml
-# Disables users' ability to switch to peaceful mode for EliteMobs. Peaceful mode lowers level and spawn rates of mobs around that player specifically
-disableCommonerRank: false
 # Sets if EliteMobs will add max health when unlocking guild ranks as a prestige reward
 Add max health when unlocking higher guild ranks: true
 # Sets if EliteMobs will add a critical strike chance when unlocking guild ranks as a prestige reward
 Add critical chance when unlocking higher guild ranks: true
 # Sets if EliteMobs will add dodge chance when unlocking guild ranks as a prestige reward
 Add dodge chance when unlocking higher guild ranks: true
-# Sets if the adventurer's guild hub is enabled. Don't set this manually! It is meant to be installed through the '/em setup' command
-guildHubIsEnabledv2: true
-# Sets the adventurer's guild world name. Do NOT change this to the name of your main world.
-# Only change this if you have created your own custom dedicated guild hub world that is meant for nothing else than to be a guild hub.
-# Most normal interaction are disabled in the guild hub world!
-Adventurer's Guild world name v3: em_adventurers_guild
-# Sets the spawn coordinates for the adventurer's guild world.
-Guild world coordinates: 208.5,88,236.5,-80,0
 # Sets if user commands get rerouted to the adventurer's guild hub. This is highly recommended for gameplay immersion and tutorial purposes.
 userCommandsTeleportToAdventurersGuild: true
 # Sets the in-game display name of the adventurer's guild
@@ -530,6 +523,8 @@ prestigeUnlockMessageSubtitle: '&2has unlocked $tier&2!'
 peacefulModeEliteChanceDecrease: 0.2
 # Sets the list of worlds to which guild rank bonuses will not be applied
 worldsWithoutAGBonuses: []
+# Disables users' ability to switch to peaceful mode for EliteMobs. Peaceful mode lowers level and spawn rates of mobs around that player specifically
+disableCommonerRank: false
 ```
 
 </details>
@@ -547,8 +542,6 @@ This is a critical system to keep on if you don't want people to just afk grind 
 <summary><b>Expand Table</b></summary>
 
 ```yml
-# Sets if the no path antiexploit is enabled
-nPathExploit: true
 # Sets the message that shows up when the antiexploit is triggered.
 AntiExploit message: '&c[EM AntiExploit] &7Nearby elite won''t drop special loot.'
 # Sets if the darkroom antiexploit 1 is enabled.
@@ -579,6 +572,8 @@ Enable ambient damage antiexploit: true
 Enable honey block antiexploit: true
 # Sets the threshold for antiexploit activation. Higher values make it more tolerant. Modifying this is not recommended.
 antiExploitThreshold: 10
+# Sets if the no path antiexploit is enabled
+nPathExploit: true
 ```
 
 </details>
@@ -594,10 +589,6 @@ antiExploitThreshold: 10
 <summary><b>Expand Table</b></summary>
 
 ```yml
-# Sets the action message set while waiting for the teleport timer.
-Teleport time left: '&7[EM] Teleporting in &a$time &7seconds...'
-# Sets the message sent when players move while waiting for teleportation.
-Teleport cancelled: '&7[EM] &cTeleport interrupted!'
 # Sets if the combat tag is enabled.
 # When enabled, flying players that engage in combat are set to stop flying.
 Enable combat tag: true
@@ -605,6 +596,10 @@ Enable combat tag: true
 Combat tag message: '&c[EliteMobs] Combat tag activated!'
 # Sets if the /ag command will have a timer before teleportation
 Enable adventurers guild teleport timer: true
+# Sets the action message set while waiting for the teleport timer.
+Teleport time left: '&7[EM] Teleporting in &a$time &7seconds...'
+# Sets the message sent when players move while waiting for teleportation.
+Teleport cancelled: '&7[EM] &cTeleport interrupted!'
 ```
 
 </details>
@@ -620,8 +615,9 @@ Enable adventurers guild teleport timer: true
 <summary><b>Expand Table</b></summary>
 
 ```yml
-# Documentation can be found here: https://github.com/MagmaGuy/EliteMobs/wiki/DiscordSRV---Discord-broadcasts
+# Documentation can be found here: https://magmaguy.com/wiki.html#lang=en&article=elitemobs+discordsrv.md
 announcementRoomName: YOU_NEED_TO_PUT_THE_NAME_OF_THE_DISCORD_ROOM_YOU_WANT_ELITEMOBS_ANNOUNCEMENTS_TO_BE_BROADCASTED_IN_AS_YOU_HAVE_IN_YOUR_DISCORDSRV_CONFIGURATION_FILE_CHECK_ELITEMOBS_WIKI_FOR_DETAILS
+
 ```
 
 </details>
@@ -637,6 +633,28 @@ announcementRoomName: YOU_NEED_TO_PUT_THE_NAME_OF_THE_DISCORD_ROOM_YOU_WANT_ELIT
 <summary><b>Expand Table</b></summary>
 
 ```yml
+# Sets if the EliteMobs economy is enabled. This means elite coins, the ability to buy and sell gear and the ability to upgrade guild ranks
+# If disabled, players will not be able to progress in the plugin!
+enableEconomy: true
+# Sets the resale item of items, as a % of the original price. 5 is 5%
+itemResaleValue: 5.0
+# Sets the in-game name of the currency used.
+currencyName: Elite Coins
+# Sets the plugin to use Vault. THIS IS NOT RECOMMENDED! Read why here: https://github.com/MagmaGuy/EliteMobs/wiki/%5BThird-party-support%5D-Vault
+useVault - not recommended: false
+# Sets if elites will drop coins based on their level.
+enableCurrencyShower: true
+# Sets the multiplier for the currency dropped by elites.
+currencyShowerTierMultiplier: 1.0
+# Sets the message sent when players pick up elite currency.
+chatCurrencyShowerMessage: '&7[EM] You''ve picked up &a$amount $currency_name!'
+# Sets the action bar message sent when players pick up elite currency.
+actionbarCurrencyShowerMessage: '&7[EM] You''ve picked up &a$amount $currency_name!'
+# Send the message players get after looting currency. Useful for tutorial purposes.
+adventurersGuildNotificationMessages: '&7[EM] Extra spending money? Try &a/ag !'
+# Sets the tax rate for transactions between players.
+# Strongly recommended for balance reasons, as high level players can gain up to 6x more currency and try to use other players to bypass prestige currency resets.
+playerToPlayerPaymentTaxes: 0.2
 # Message sent when sending elite currency to other players.
 Economy pay message v2: '&2You have paid &2$amount_sent $currency_name &2to $receiver&2,
   who got $amount_received after taxes!'
@@ -671,23 +689,6 @@ Shop sale instructions: '&cYou can only sell EliteMobs loot here! (Armor / weapo
   dropped from elites showing a value on their lore)'
 # Message sent upon selling a batch of elite items.
 shopBatchSellItem: '&aYou have sold your items &afor $currency_amount $currency_name!'
-# Sets if the EliteMobs economy is enabled. This means elite coins, the ability to buy and sell gear and the ability to upgrade guild ranks
-# If disabled, players will not be able to progress in the plugin!
-enableEconomy: true
-# Sets the resale item of items, as a % of the original price. 5 is 5%
-itemResaleValue: 5.0
-# Sets the in-game name of the currency used.
-currencyName: Elite Coins
-# Sets the plugin to use Vault. THIS IS NOT RECOMMENDED! Read why here: https://github.com/MagmaGuy/EliteMobs/wiki/%5BThird-party-support%5D-Vault
-useVault - not recommended: false
-# Sets if elites will drop coins based on their level.
-enableCurrencyShower: true
-# Sets the multiplier for the currency dropped by elites.
-currencyShowerTierMultiplier: 1.0
-# Sets the message sent when players pick up elite currency.
-chatCurrencyShowerMessage: '&7[EM] You''ve picked up &a$amount $currency_name!'
-# Sets the action bar message sent when players pick up elite currency.
-actionbarCurrencyShowerMessage: '&7[EM] You''ve picked up &a$amount $currency_name!'
 lootShowerMaterial:
   # Sets the material type of 1 dropped elite coin.
   '1': GOLD_NUGGET
@@ -708,8 +709,6 @@ lootShowerData:
   '100': 1
   '500': 1
   '1000': 1
-# Send the message players get after looting currency. Useful for tutorial purposes.
-adventurersGuildNotificationMessages: '&7[EM] Extra spending money? Try &a/em !'
 materialWorth:
   # Sets the worth of this material for the elitemobs currency system.
   DIAMOND_AXE: 17.0
@@ -831,11 +830,8 @@ materialWorth:
   NETHERITE_LEGGINGS: 18.0
   # Sets the worth of this material for the elitemobs currency system.
   NETHERITE_BOOTS: 18.0
-  # Sets the default material worth for items not defined in this config.
+  # Sets the default material worth for items not specifically defined.
   defaultMaterialWorth: 1.0
-# Sets the tax rate for transactions between players.
-# Strongly recommended for balance reasons, as high level players can gain up to 6x more currency and try to use other players to bypass prestige currency resets.
-playerToPlayerPaymentTaxes: 0.2
 ```
 
 </details>
@@ -857,14 +853,14 @@ You can further modify specific events in the `events` folder.
 ```yml
 # Sets if events will only broadcasted in the world the events happens in.
 Only broadcast event message in event worlds: false
-# Sets the minimum cooldown, in minutes, between action events
+# Sets the minimum cooldown, in minutes, between timed events
 actionEventMinimumCooldownMinutes: 240
 # Sets if action events will happen.
 # https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#action-events
 actionEventsEnabled: true
 # Sets if timed events will happen.
 # https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#timed-events
-timedEventsEnabled: false
+timedEventsEnabled: true
 ```
 
 </details>
@@ -880,15 +876,8 @@ timedEventsEnabled: false
 <summary><b>Expand Table</b></summary>
 
 ```yml
-# Sets the message sent when a played kills a boss but the gear level is too different from the boss level to get coins
-levelRangeTooDifferent: '&8EM] &4Your gear is level $playerLevel and the boss is level
-  $bossLevel, level difference is too high to get coins!'
-# Sets how much the chance of an elite item dropping increases based on the level of the boss.
-# The level of the boss is multiplied by this value and added to the base chance.
-# It is no longer recommended to have this above 0.0!
-levelIncreaseDropRateV2: 0.0
-# Sets the level of the maximum loot that will be dropped by EliteMobs. Strongly recommended to leave it at 200.
-maximumItemLevel: 200
+# Sets the characters prefixed to vanilla enchantments in item lore.
+noItemDurabilityMessage: '&8[EliteMobs] $item &4is broken! It won''t work until repaired!'
 # Sets if any EliteMobs loot will drop.
 # Includes Elite Coins, Custom Items, Procedurally Generate Items - everything!
 # Not recommended, makes mmorpg progression impossible.
@@ -947,6 +936,10 @@ flatDropRateV3: 0.2
 regionalBossNonUniqueDropRate: 0.05
 # Sets if the regional bosses can drop vanilla loot
 regionalBossesDropVanillaLoot: false
+# Sets how much the chance of an elite item dropping increases based on the level of the boss.
+# The level of the boss is multiplied by this value and added to the base chance.
+# It is no longer recommended to have this above 0.0!
+levelIncreaseDropRateV2: 0.0
 # Sets the weighed chance of a procedurally generated item dropping.
 # This system uses weighted probabilities! Look that up on google if you don't know what that is.
 proceduralItemDropWeight: 90.0
@@ -965,6 +958,8 @@ defaultLootMultiplier: 0.0
 levelCapForDefaultLootMultiplier: 200
 # Sets the vanilla Minecraft experience dropped multiplier for the boss, based on the level of the boss.
 defaultExperienceMultiplier: 1.0
+# Sets the level of the maximum loot that will be dropped by EliteMobs. Strongly recommended to leave it at 200.
+maximumItemLevel: 200
 # Sets if elite enchantments will be used. 
 # Elite enchantments replace vanilla enchantments when elite items get enchantment levels that go beyond vanilla limits.
 # Example: if an elite sword is supposed to have sharpness 10, since the Minecraft limit is level 5, it will have sharpness 5 and elite sharpness 5.
@@ -1020,12 +1015,6 @@ lootLevelDifferenceLockout: 10
 # Sets if EliteMobs will prevent Elite Items from breaking when using the durability loss on death system.
 # Players will not be able to use items with no durability left anyway, this is simply to prevent the accidental loss of high level but low durability items.
 preventEliteItemsFromBreaking: true
-# Sets the message that will be sent to players if the durability left on an item is too low to be used in combat.
-lowDurabilityItemDropMessage: '&8[EliteMobs] &cDropped armor due to low durability!
-  &8Repair it at the NPC with scrap to use it!'
-# Sets the characters prefixed to vanilla enchantments in item lore.
-lowWeaponItemDropMessage: '&8[EliteMobs] &cDropped weapon due to low durability! &8Repair
-  it at the NPC with scrap to use it!'
 # Sets the minimum level, +7, of bosses that can procedurally generated drop diamond gear in EliteMobs.
 # There is no procedurally generated netherite gear in EliteMobs, only custom loot.
 minimumProcedurallyGeneratedDiamondLootLevelPlusSeven: 10
@@ -1045,6 +1034,9 @@ hideItemAttributes: true
 weaponEntry: '&7Elite DPS: &2$EDPS'
 # Sets the armor-specific lore entry on an elite item. The $EDEF placeholder gets replaced with the elite DEF (defense) of the weapon.
 armorEntry: '&7Elite Armor: &2$EDEF'
+# Sets the message sent when a played kills a boss but the gear level is too different from the boss level to get coins
+levelRangeTooDifferent: '&8EM] &4Your gear is level $playerLevel and the boss is level
+  $bossLevel, level difference is too high to get coins!'
 ```
 
 </details>
@@ -1060,22 +1052,14 @@ armorEntry: '&7Elite Armor: &2$EDEF'
 <summary><b>Expand Table</b></summary>
 
 ```yml
-# Sets the multiplier for the damage dealt to all bosses spawned by EliteMobs, except those using the normalized damage system (regional dungeon bosses). Higher values increase the damage dealt, making bosses easier to kill.
-# 2.0 = 200%, 0.5 = 50%
-damageToEliteMobMultiplierV2: 1.0
-# Sets the multiplier for the damage dealt to players by elites. Higher values increase the amount of damage dealt by bosses, except those using the normalized damage system (regional dungeon bosses), making bosses hit harder.
-# 2.0 = 200%, 0.5 = 50%
-damageToPlayerMultiplierV2: 1.0
-# Sets the baseline damage for custom bosses using the normalized damage (usually regional bosses).
-normalizedRegionalBossBaselineDamageV2: 3.0
-# Sets the baseline health for custom bosses using the normalized health (usually regional bosses).
-normalizedRegionalBossBaselineHealthV3: 4.0
 # Sets if naturally spawned elites will spawn. Note: event mobs like the zombie king are not naturally spawned elites! You will have to disable events if you want to disable event bosses.
 doNaturalEliteMobSpawning: true
 # Sets if spawns spawned from mob spawners can be converted to elites. Not recommended!
 doSpawnersSpawnEliteMobs: false
 # Sets the percentage of naturally spawned mobs that get converted to elite mobs.
 eliteMobsSpawnPercentage: 0.05
+# Sets the super mob range to scan for super mob stacking
+superMobStackRange: 15
 # Sets the maximum level elites can spawn at.
 # Note: elite mob level is based on what armor and weapons players are wearing, and armor only scales up to level 200.
 naturalEliteMobsLevelCap: 250
@@ -1105,12 +1089,12 @@ distanceBetweenIncrements: 100.0
 levelIncreaseAtIncrements: 1.0
 # Sets if the powers of elites will be hidden until they enter combat. This is recommended for performance reasons.
 hideEliteMobPowersUntilAggro: true
-# Sets the multiplier for the damage dealt to bosses using the normalized damage system (regional dungeon bosses). Higher values increase the damage dealt, making bosses easier to kill.
+# Sets the multiplier for the damage dealt to all bosses spawned by EliteMobs, except those using the normalized damage system (regional dungeon bosses). Higher values increase the damage dealt, making bosses easier to kill.
 # 2.0 = 200%, 0.5 = 50%
-damageToEliteMobMultiplier: 1.0
-# Sets the multiplier for the damage dealt to players by bosses using the normalized damage system (regional dungeon bosses). Higher values increase the amount of damage dealt by bosses, making bosses hit harder.
+damageToEliteMobMultiplierV2: 1.0
+# Sets the multiplier for the damage dealt to players by elites. Higher values increase the amount of damage dealt by bosses, except those using the normalized damage system (regional dungeon bosses), making bosses hit harder.
 # 2.0 = 200%, 0.5 = 50%
-damageToPlayerMultiplier: 1.0
+damageToPlayerMultiplierV2: 1.0
 # Sets if special bosses can be tracked.
 showCustomBossLocation: true
 # Sets the message sent to players to track a boss location.
@@ -1138,6 +1122,16 @@ resistText: '&c&lResist!'
 doWeakEffect: true
 # Sets if visuals will be used to show that a boss is strong against an attack.
 doResistEffect: true
+# Sets the multiplier for the damage dealt to bosses using the normalized damage system (regional dungeon bosses). Higher values increase the damage dealt, making bosses easier to kill.
+# 2.0 = 200%, 0.5 = 50%
+damageToEliteMobMultiplier: 1.0
+# Sets the multiplier for the damage dealt to players by bosses using the normalized damage system (regional dungeon bosses). Higher values increase the amount of damage dealt by bosses, making bosses hit harder.
+# 2.0 = 200%, 0.5 = 50%
+damageToPlayerMultiplier: 1.0
+# Sets the baseline damage for custom bosses using the normalized damage (usually regional bosses).
+normalizedRegionalBossBaselineDamageV2: 3.0
+# Sets the baseline health for custom bosses using the normalized health (usually regional bosses).
+normalizedRegionalBossBaselineHealthV3: 4.0
 # Sets if regional bosses will used the normalized combat system.
 # This is very strongly recommended, and premade content will not be balanced properly if modified.
 normalizeRegionalBosses: true
@@ -1164,11 +1158,8 @@ blockingDamageReduction: 0.8
 <summary><b>Expand Table</b></summary>
 
 ```yml
-# Sets if procedurally generated loot should be dropped
 dropProcedurallyGeneratedItems: true
-# Sets the chance percentage of procedural loot drops having enchantments
 customEnchantmentsChance: 0.5
-# Sets the display names of different materials
 materialNames:
   swordName: Sword
   bowName: Bow
@@ -1185,7 +1176,6 @@ materialNames:
   shield: Shield
   trident: Trident
   crossbow: Crossbow
-# Sets which name formats should be used for procedural loot
 nameFormats:
 - $verb $itemType of the $adjective $noun
 - $itemType of the $adjective $noun
@@ -1194,7 +1184,6 @@ nameFormats:
 - $adjective $verb $itemType
 - The $verb-er
 - The $adjective $verb-er
-# Sets available nouns for the placeholder $noun
 nouns:
 - MagmaGuy
 - Dawn
@@ -1486,7 +1475,6 @@ nouns:
 - Rakshasa
 - Revenant
 - Cultist
-# Sets available adjectives for the placeholder $adjective
 adjectives:
 - Adorable
 - Beautiful
@@ -2014,7 +2002,6 @@ adjectives:
 - Trusting
 - Unassuming
 - Threatening
-# Sets available verbs for the placeholder $verb
 verbs:
 - Slashing
 - Cutting
@@ -2486,7 +2473,6 @@ verb-ers (noun):
 - Snorer
 - Thruster
 - Slapper
-# Sets materials that can be used for procedural loot
 validMaterials:
   DIAMOND_HELMET: true
   DIAMOND_CHESTPLATE: true
@@ -2525,57 +2511,6 @@ validMaterials:
   CROSSBOW: true
 ```
 
-</details>
-
----
-
-## translation.yml
-
-`translation.yml` contains a collection of values which can be modified to customize and translate the plugin. These are self-explanatory.
-
-<details>
-
-<summary><b>Expand Table</b></summary>
-
-```yml
-Economy pay message v2: '&2You have paid &2$amount_sent $currency_name &2to $receiver&2,
-  who got $amount_received after taxes!'
-Economy currency left message: You now have &2$amount_left $currency_name
-Economy money from payment message: You have received &2$amount_received $currency_name
-  &ffrom $sender
-Economy payment insuficient currency: '&cYou don''t have enough $currency_name to
-  do that!'
-Wallet command message: You have &2$balance $currency_name
-Tax confirmation message: '&cSending a payment will cost $percentage% in taxes. &aDo
-  &9$command &ato proceed!'
-shopBatchSellItem: '&aYou have sold your items &afor $currency_amount $currency_name!'
-Shop buy message: '&aYou have bought $item_name &afor $item_value $currency_name!'
-Shop current balance message: '&aYou have $currency_amount $currency_name.'
-Shop insufficient funds message: '&cYou don''t have enough $currency_name!'
-Shop item cost message: That item costs &c$item_value $currency_name.
-Shop sell message: '&aYou have sold $item_name &afor $currency_amount $currency_name!'
-Shop sale player items warning: '&cYou can''t sell items that are not currently soulbound
-  to you! This includes items from other prestige tiers!'
-Shop sale instructions: '&cYou can only sell EliteMobs loot here! (Armor / weapons
-  dropped from elites showing a value on their lore)'
-Teleport time left: '&7[EM] Teleporting in &a$time &7seconds...'
-Teleport cancelled: '&7[EM] &cTeleport interrupted!'
-noPendingCommands: '&cYou don''t currently have any pending commands!'
-trackMessage: Track the $name
-chestLowRankMessage: '&7[EM] &cYour guild rank needs to be at least $rank &cin order
-  to open this chest!'
-chestCooldownMessage: '&7[EM] &cYou''ve already opened this chest recently! Wait $time!'
-insufficientCurrencyForWormholeMessage: '&8[EliteMobs] &cInsufficient currency! You
-  need $amount to use this com.magmaguy.elitemobs.wormhole!'
-dismissEMMessage: '&8[EliteMobs] &2/elitemobs &fmenu not working for you? Try &2/elitemobs
-  alt &fto see an alternative version of the menu! &cDon''t want to see this message
-  again? &4/em dismiss'
-switchEMStyleMessage: '&8[EliteMobs] &2/elitemobs &fmenu style changed! Check it out!'
-
-```
-
-</details>
-
 ---
 
 ## ValidWorlds.yml
@@ -2599,6 +2534,358 @@ Valid worlds:
   world: true
   world_nether: true
   world_the_end: true
+```
+
+</details>
+
+---
+
+## Arenas.yml
+
+`Arenas.yml` contains the default messages and settings for Arenas that you can modify.
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+# Message that appears when not enough players are present to start an arena.
+notEnoughPlayersMessage: '&8[EliteMobs] &cYou need at least $amount to start the match!'
+# Title that appears when an arena is starting.
+startingMessage: '&2Starting!'
+# Subtitle that appears when an arena is starting.
+startingSubtitle: '&2in $count...'
+# Message that appears when an arena is full.
+arenaFullMessage: '&4[EliteMobs] &cArena is full! You can spectate instead while you
+  wait for it to finish!'
+# Message that appears when a player attempts to join an active arena.
+arenasOngoingMessage: '&4[EliteMobs] &cCan''t join the arena now - a match is currently
+  happening! You can spectate instead while you wait for it to finish!'
+# Message that appears to remind players how to start an arena after joining as a player.
+instanceStartHintMessage: '&2[EliteMobs] &aYou can start the instance by doing &2/em
+  start'
+# Message that appears to remind players how to leave an arena.
+instanceQuitHintMessage: '&4[EliteMobs] &cYou can leave the instance by doing &4/em
+  quit'
+# Message that appears when players join an arena.
+arenaJoinPlayerMessage: "&2[EliteMobs] &aYou can start the arena by doing &2/em start\
+  \ &aif there are at least &2$count &aplayers in it! \nYou can leave the arena by\
+  \ doing &c/em quit"
+# Message that appears to remind players how to leave an arena after joining as a spectator.
+arenaJoinSpectatorMessage: '&2[EliteMobs] &aYou can leave the arena at any time using
+  &2/em quit'
+# Title message that appears when a wave is starting.
+waveTitle: '&aWave &2$wave'
+# Subtitle message that appears when a wave is starting.
+waveSubtitle: ''
+# Title that appears when an arena is completed.
+victoryTitle: '&2Victory!'
+# Subtitle that appears when an arena is completed.
+victorySubtitle: '&aCompleted &2$wave &awaves!'
+# Title that appears when players fail an arena.
+defeatTitle: '&4Defeat!'
+# Subitle that appears when players fail an arena.
+defeatSubtitle: '&cReached wave &4$wave&c!'
+# Message broadcasted when players beat an arena.
+victoryBroadcast: Arena $arenaName was conquered by $players!
+# Title that appears when a player joins an arena.
+joinPlayerTitle: '&aStart with &2/em start &a!'
+# Subtitle that appears when a player joins an arena.
+joinPlayerSubtitle: '&cLeave with &4/em quit &c!'
+# Title that appears when a spectator joins an arena.
+joinSpectatorTitle: '&aNow spectating!'
+# Subtitle that appears when a spectator joins an arena.
+joinSpectatorSubtitle: '&cLeave with &4/em quit &c!'
+# Sets the message sent to players if they do not have permission to enter an arena.
+noArenaPermissionMessage: '[EliteMobs] You don''t have the permission to enter this
+  arena!'
+```
+
+</details>
+
+---
+
+## Database.yml
+
+`Database.yml` Includes settings for how you want EM to handle databases.
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+# Sets whether MySQL will be used. By default EliteMobs uses SQLite. If you wish to use MySQL you will need a valid MySQL configuration.
+useMySQL: false
+# The host of your MySQL database
+mysqlHost: localhost
+# The port of your MySQL database
+mysqlPort: '3306'
+# The name of the database
+mysqlDatabaseName: elitemobs
+# The username for MySQl
+mysqlUsername: your_username_mysql_here
+# The password for your MysSQL database
+mysqlPassword: your_mysql_password_here
+# Whether to use SSL
+useSSL: true
+```
+
+</details>
+
+---
+
+## dungeons.yml
+
+`dungeons.yml` Includes settings that let you adjust messages that appear in dungeons and other settings like damage multipliers for applied effects.
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+# Sets the damage multiplier for poison damage in dungeons
+# This is important for balance as by default the damage is a bit too high for the dungeons as we design them
+poisonDamageMultiplier: 0.5
+# Sets the damage multiplier for fire damage in dungeons
+# This is important for balance as by default the damage is a bit too high for the dungeons as we design them
+fireDamageMultiplier: 0.5
+# Sets the damage multiplier for wither damage in dungeons
+# This is important for balance as by default the damage is a bit too high for the dungeons as we design them
+witherDamageMultiplier: 0.5
+# Sets if PvP will be allowed in dungeons
+friendlyFireInDungeons: false
+# Sets the text that appears over resurrection banners in dungeons
+dungeonRezInstructions: '&aPunch to rez!'
+# Sets the text that shows how many lives players have left in a dungeon! Placeholders:
+# $amount - the amount of lives left
+dungeonLivesLeftText: '&c$amount lives left!'
+# Sets the text for joining a dungeon as a player! Placeholders:
+# $dungeonName - the name of the dungeon
+joinDungeonAsPlayerText: '&fJoin $dungeonName as a player!'
+# Sets the text for joining a dungeon as a spectator! Placeholders:
+# $dungeonName - the name of the dungeon
+joinDungeonAsSpectatorText: '&fJoin $dungeonName as a spectator!'
+# Sets the title that will show up in the item description of instanced dungeon menus
+# $difficulty is the placeholder for the difficulty name in the configuration file of the dungeon
+instancedDungeonTitle: Start $difficulty difficulty dungeon!
+# Sets the description that will show up in the item description of instanced dungeon menus
+# $dungeonName is the placeholder for the dungeon name in the configuration file of the dungeon
+instancedDungeonDescription:
+- '&fCreate a new instance of the dungeon'
+- $dungeonName &ffor yourself and maybe
+- '&fsome friends!'
+# Sets is spectating instanced content will be available.
+allowSpectatorsInInstancedContent: true
+# Sets the message that appears when an instanced dungeon is completed
+instancedDungeonCompleteMessage: '[EliteMobs] Dungeon completed! It will self-destruct
+  in 2 minutes!'
+# Sets the message that appears when an instanced dungeon closing
+instancedDungeonClosingInstanceMessage: '[EliteMobs] Closing instance!'
+```
+
+</details>
+
+---
+
+## Quests.yml
+
+`Quests.yml` Includes settings for quests and what messages are displayed.
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+# Sets if quests have to be returned to quest givers to complete the quest.
+requireQuestTurnIn: true
+# Sets the message sent when a quest is accepted.
+questJoinMessage: '&aYou have accepted the quest $questName &a!'
+# Sets the message sent when a quest is abandoned.
+questLeaveMessage: '&cYou have abandoned the quest $questName &c!'
+# Sets message sent when a quest is completed.
+questCompleteMessage: '&2You completed the quest $questName &2!'
+# Sets the message sent when a player tried to abandon a quest when none are active.
+leaveWhenNoActiveQuestsExist: '&cYou don''t currently have an active quest!'
+# Sets the confirmation message sent when players try to leave a quest.
+questLeaveConfirmationMessage: '&cAre you sure you want to abandon your current quest?
+  Do &a/em confirm &c to confirm your choice!'
+# Sets if some of the messages related to quests will use titles instead of chat messages.
+useQuestAcceptTitles: true
+# Sets the title sent when a players starts a quest.
+questStartTitle: '&aQuest Accepted!'
+# Sets the subtitle sent when a players starts a quest.
+questStartSubtitle: $questName
+# Sets if titles will be sent when players complete a quest.
+useQuestCompleteTitles: true
+# Sets the title sent when a player completes a quest.
+questCompleteTitle: '&2Quest Completed!'
+# Sets the subtitle sent when a player completes a quest.
+questCompleteSubtitle: $questName
+# Sets if titles are sent when players leave quests..
+useQuestLeaveTitles: true
+# Sets the title sent when a player leaves a quest.
+questLeaveTitle: '&cQuest Abandoned!'
+# Sets the subtitle sent when a player leaves a quest.
+questLeaveSubtitle: $questName
+# Sets if messages are sent on chat reporting quest objective progression.
+doQuestChatProgression: true
+# Sets the color codes for completed objectives.
+ongoingQuestColorCode: '&2'
+# Sets the formatting for progression messages of kill quests.
+killQuestChatProgressionMessage: '&8[EliteMobs]&c➤Kill $name:$color$current&0/$color$target'
+# Sets the formatting for progression messages of fetch quests.
+fetchQuestChatProgressionMessage: '&8[EliteMobs]&c➤Get $name:$color$current&0/$color$target'
+# Sets the formatting for progression messages of dialog quests.
+dialogQuestChatProgressionMessage: '&8[EliteMobs]&c➤Talk to $name:$color$current&0/$color$target'
+# Sets the maximum amount of accepted quests a player can have.
+maximumActiveQuests: 10
+# Sets the message sent to players when trying to accept an amount of quests that exceed the active quest cap.
+questCapMessage: '&8[EliteMobs] &cYou have reached the maximum amount of active quests
+  (10)! &4Abandon or complete at least one active quest if you want to get more quests!'
+# Sets if scoreboards messages will be used for quests.
+useQuestScoreboards: true
+# Sets the formatting for scoreboard progression messages of kill quests.
+killQuestScoreboardProgressionMessage: '&c➤Kill $name:$color$current&0/$color$target'
+# Sets the formatting for scoreboard progression message of fetch quests.
+fetchQuestScoreboardProgressionMessage: '&c➤Get $name:$color$current&0/$color$target'
+# Sets the formatting for scoreboard progression messages of dialog quests.
+dialogQuestScoreboardProgressionMessage: '&c➤Talk to $name:$color$current&0/$color$target'
+questEntityTypes:
+- BLAZE
+- CAVE_SPIDER
+- DROWNED
+- ELDER_GUARDIAN
+- ENDERMAN
+- ENDERMITE
+- EVOKER
+- GHAST
+- GUARDIAN
+- HUSK
+- ILLUSIONER
+- IRON_GOLEM
+- PILLAGER
+- RAVAGER
+- SILVERFISH
+- SKELETON
+- SPIDER
+- STRAY
+- VINDICATOR
+- WITCH
+- WITHER_SKELETON
+- WOLF
+- ZOMBIE
+- HOGLIN
+- ZOGLIN
+- PIGLIN_BRUTE
+- PIGLIN
+- ZOMBIFIED_PIGLIN
+# Sets the message sent to players to activate quest tracking.
+chatTrackMessage: '&8[EliteMobs]&2 Click here to track your quest!'
+# Sets the hover message of the quest tracking message.
+chatTrackHover: '&2Click to track!'
+# Sets the command sent when clicking on the tracking message. You really should not modify this.
+chatTrackCommand: /elitemobs quest track $questID
+# Sets the message sent to players when activating quest tracking.
+chatTrackingMessage: '&8[EliteMobs]&9 You are now tracking a quest!'
+# Sets the hover message of the quest tracking enabled message.
+chatTrackingHover: '&2Click to untrack/track! /em -> Quests to track a different quest!'
+# Sets the command sent when click on the quest tracking activation message. You really should not modify this.
+chatTrackingCommand: /elitemobs quest track $questID
+# Sets if quests are automatically tracked when accepted.
+autoTrackQuestsOnAccept: true
+# Sets the message that appears when the destination of the quest could not be found.
+noQuestDestinationFound: '[EM] No quest destination found!'
+# Sets the message that appears when the quest target is in a different world.
+questDestinationInOtherWorld: '[EM] Go to world $world!'
+# Sets the message sent to players when trying to accept a quest they have already completed.
+questAlreadyCompletedMessage: '&8[EliteMobs] &cYou already completed this quest!'
+# Sets the message sent to players when trying to accept a quest they do not have the permission for.
+questPrerequisitesMissingMessage: '&8[EliteMobs] &cThis NPC has some quest(s) you
+  can''t accept yet!'
+# Sets the message sent to players trying to get a quest for which they do not have the correct guild rank activated.
+lowRankDynamicQuestWarning: '&8[EliteMobs] &cYou can''t take these quests with your
+  current guild rank! Increase your guild rank to accept these quests.'
+# Sets the formatting for the quest turn-in message.
+questTurnInObjective: '&a2Talk to $npcName'
+# Sets the maximum amount of characters inventory-based menus for quests will have before breaking the line.
+horizontalCharacterLimitBedrockMenu: 30
+# Sets the maximum amount of characters per item entry in inventory-based menus for quests before creating another item to continue the entry.
+itemEntryCharacterLimitBedrockMenu: 300
+```
+
+</details>
+
+---
+
+## resource_pack_config.yml
+
+`resource_pack_config.yml` Includes settings related to the EliteMobs resource pack.
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+eliteMobsResourcePackEnabled: false
+forceResourcePack: false
+resourcePackPrompt: '[EliteMobs] The use of the resource pack is highly recommended!'
+resourcePackLink: https://www.magmaguy.com/downloads/elitemobs_resource_pack.zip
+```
+
+</details>
+
+---
+
+## Sounds.yml
+
+`Sounds.yml` Includes settings that define which sounds should be played when certain EliteMobs interactions are performed. The sound files are stored in the resource pack.
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+# Sets the sound that will play when a treasure chest opens
+treasureChestOpenSound: elitemobs:treasure_chest.open
+# Sets the sound that will play when a player ranks up at the guild
+guildRankUpSound: elitemobs:guild.rankup
+# Sets the sound that will play when a player prestiges at the guild
+guildPrestigeSound: elitemobs:guild.prestige
+# Sets the sound that will play when a player progresses a quest
+questProgressionSound: elitemobs:quest.progression
+# Sets the sound that will play when a player completes a quest
+questCompleteSound: elitemobs:quest.completion
+# Sets the sound that will play when a player abandons a quest
+questAbandonSound: elitemobs:quest.abandon
+# Sets the sound that will play when a player accepts a quest
+questAcceptSound: elitemobs:quest.accept
+```
+
+</details>
+
+---
+
+## Wormholes.yml
+
+`Wormholes.yml` Includes settings for the EliteMobs wormhole teleports.
+
+<details>
+
+<summary><b>Expand Table</b></summary>
+
+```yml
+# Sets the message that appears when a teleport is used for a dungeon that is not installed.
+dungeonNotInstalledMessage: '&8[EliteMobs] &cDungeon $dungeonID &cis not installed!
+  This teleport will not work.'
+# Sets the message that appears when a wormhole is used for a dungeon that is not installed.
+defaultPortalMissingMessage: '&8[EliteMobs] &cThis portal doesn''t seem to lead anywhere!'
+# Sets if the reduced particles mode for wormholes is used. This is especially recommended if you are allowing bedrock clients in.
+reducedParticlesMode: true
+# Sets if wormholes don't use particles at all. Not recommended, but might be necessary for really bad bedrock clients.
+noParticlesMode: false
+# Sets the message that is sent when a player tries to use a wormhole but does not have enough currency to use it.
+insufficientCurrencyForWormholeMessage: '&8[EliteMobs] &cInsufficient currency! You
+  need $amount to use this wormhole!'
 ```
 
 </details>
