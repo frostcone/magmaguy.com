@@ -233,7 +233,7 @@ If <code>/wb</code> is not working for you, try <code>/worldborder:wb</code>.
 
 After executing this command, fly to the edges of your world to verify that the world border has been properly set and covers the intended size. You will recognize reaching the world border edge when you are pushed back, accompanied by a message in the chat.
 
-![trim_pic_1.jpg](trim_pic_1.jpg)
+![trim_pic_1.jpg](../../../img/wiki/trim_pic_1.jpg)
 
 In the image above, we aim to trim the world around the purple blocks, leaving only a few chunks around them. To achieve this, we stand in the middle of the purple area on the red squares and execute `/wb set 50`, setting the world border just beyond the purple area.
 
