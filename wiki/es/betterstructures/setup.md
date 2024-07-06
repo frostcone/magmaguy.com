@@ -2,30 +2,32 @@
 
 <div class="outer-container">
 <div class="iframe-container">
-  <iframe class="video-iframe" src="https://www.youtube.com/embed/1z47lSxmyq0?si=zCk9OfM9b-FH7nUU" title="Reproductor de video de YouTube" frameborder="0" allow="accelerometer; autoplay; escritura-clipboard; media-encrypted; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe class="video-iframe" src="https://www.youtube.com/embed/1z47lSxmyq0?si=zCk9OfM9b-FH7nUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 
-# Plugins requeridos
+# Complementos requeridos
 
 - [WorldEdit](https://dev.bukkit.org/projects/worldedit) ***o*** [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)
 
-# Plugins recomendados
+# Complementos recomendados
 
-- [EliteMobs](https://www.spigotmc.org/resources/%E2%9A%94elitemobs%E2%9A%94.40090/) para estructuras con batallas de jefes
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard) para proteger las arenas de los jefes de EliteMobs
+- [EliteMobs](https://www.spigotmc.org/resources/%E2%9A%94elitemobs%E2%9A%94.40090/) para estructuras con batallas contra jefes
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard) para proteger las arenas de jefes de EliteMobs
 
-# Instalando contenido
+# Instalar contenido
 
-Puedes crear tu propio contenido, por lo que este paso no es obligatorio, pero si deseas instalar los cientos de construcciones oficiales prehechas de BetterStructures puedes seguir estos pasos:
+Puedes crear tu propio contenido, por lo que este paso no es obligatorio, pero si deseas instalar los cientos de compilaciones oficiales prefabricadas de BetterStructures, puedes seguir estos pasos:
 
-1) Ir a [magmaguy.itch.io](https://magmaguy.itch.io/) o [patreon.com/magmaguy](https://www.patreon.com/magmaguy)
-2) Descargar el contenido que quieras
-3) Coloca el contenido - aún comprimido, como lo descargaste - en la carpeta `~plugins/BetterStructures/imports`
+1) Ve a [magmaguy.itch.io](https://magmaguy.itch.io/) o [patreon.com/magmaguy](https://www.patreon.com/magmaguy)
+2) Descarga el contenido que quieras
+3) Coloca el contenido, aún comprimido, tal como lo descargaste, en la carpeta `~plugins/BetterStructures/imports`
 4) Ejecuta el comando `/bs reload`
 
-¡Terminaste! La estructura comenzará a aparecer en ***nuevos chunks***. *¡Los chunks que tu servidor ya generó no podrán obtener estructuras!*
+¡Estás listo! La estructura ahora comenzará a generarse en ***nuevos fragmentos***. *¡Los fragmentos que tu servidor ya ha generado no podrán obtener estructuras!*
 
 # Preguntas frecuentes
 
-¿Tienes un problema o una pregunta? ¡Consulta las [Preguntas frecuentes]($language$/betterstructures/faq.md)!
+¿Tienes algún problema o pregunta? Consulta las [Preguntas frecuentes]($language$/betterstructures/faq.md).
+
+

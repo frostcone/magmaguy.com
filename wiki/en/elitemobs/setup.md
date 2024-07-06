@@ -54,8 +54,6 @@ As of EliteMobs 7.2.35, there is now an `imports` folder in the EliteMobs direct
 
 3) Restart or do `/em reload`. After a few seconds the dungeons should auto-install, when you do `/em setup` the indicators for the dungeons you downloaded should be green and indicating that the dungeons are properly installed and up-to-date. If any dungeons show a yellow glass pane then that means there is a newer version of the dungeon and it needs to be updated.
 
-**IMPORTANT: [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
-
 <div align="center">
 
 <details>
@@ -93,15 +91,7 @@ To update dungeon content, simply repeat the installation steps above. **You do 
 
 # Frequently Asked Questions (FAQ)
 
-## EliteMobs says WorldEdit is not installed when it is
-
-<details><summary>Answer</summary>
-
-This 100% means you are using the wrong version of WorldEdit on your server. [You can get the right version from the section above.]($language$/elitemobs/setup.md&section=recommended-plugins)
-
-</details>
-
-## The world-based minidungeon is just flat terrain
+## The minidungeon is just flat terrain
 
 <details><summary>Answer</summary>
 
@@ -140,7 +130,7 @@ In this case the numbers you're looking for are `1643259941451`. You can use [th
 
 </details>
 
-### The boss was never spawning!
+### The boss never spawned!
 
 <details>
 

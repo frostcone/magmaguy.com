@@ -1,20 +1,21 @@
-# Lista de Poderes Predefinidos
+# Lista de poderes prefabricados
 
 Un jefe puede tener uno o varios poderes. Te recomendamos que mantengas la cantidad por debajo de 5. Puedes encontrar una lista completa de poderes en la carpeta `~/plugins/EliteMobs/powers`.
 
-La siguiente lista no es necesariamente completa [ya que puedes crear poderes personalizados]($language$elitemobs/creating_powers.md) y algunos calabozos vienen con sus propios poderes.
+La siguiente lista no está necesariamente completa [ya que puedes crear poderes personalizados]($language$elitemobs/creating_powers.md) y algunas mazmorras vienen con sus propios poderes.
 
-*Nota: Haz clic [aquí]($language$/elitemobs/creating_bosses.md&section=powers) para aprender cómo puedes personalizar a los jefes con estos poderes.*
+*Nota: haz clic [aquí]($language$/elitemobs/creating_bosses.md&section=powers) para aprender cómo puedes personalizar jefes con estos poderes.*
 
-Los GIFs de poder están únicamente para fines de demostración. Por favor, ten en cuenta que su animación **NO** refleja la velocidad real de animación de los poderes en el juego.
+Los GIF de poder son únicamente para fines de demostración. Ten en cuenta que su animación **NO** refleja la velocidad de animación real de los poderes en el juego.
 
 <div align="center">
 
-## Fuegos Artificiales de Flechas
+## Fuegos artificiales de flecha
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
 | `arrow_fireworks.yml`      | El jefe dispara fuegos artificiales cuando es golpeado.         |
+
 
 <details>
 
@@ -24,20 +25,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_arrowfireworks.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
 
-</details>
+`</details>
 
 ***
 
-## Lluvia de Flechas
+## Lluvia de flechas
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
 | `arrow_rain.yml`      | Hace que las flechas lluevan del cielo.         |
+
 
 <details>
 
@@ -47,7 +49,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_arrowrain.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -56,11 +58,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque de Flecha
+## Ataque de flecha
 
-| Nombre del archivo | Descripción                                       |
+| Nombre de archivo | Descripción                                       |
 |----------|---------------------------------------------------|
-| `attack_arrow.yml`  | Hace que el jefe dispare una flecha frente a él. |
+| `attack_arrow.yml`  | Hace que el jefe dispare una flecha frente a sí mismo. |
+
 
 <details>
 
@@ -70,7 +73,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackarrow.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -79,11 +82,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque Cegador
+## Ataque cegador
 
-| Nombre del archivo | Descripción                                       |
+| Nombre de archivo | Descripción                                       |
 |----------|---------------------------------------------------|
-| `attack_blinding.yml`  | Aplica el efecto de poción de ceguera al jugador al atacar. |
+| `attack_blinding.yml`  | Da al jugador el efecto de poción de ceguera al atacar. |
 
 <details>
 
@@ -93,7 +96,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackblinding.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -102,11 +105,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque Confuso
+## Ataque confuso
 
-| Nombre del archivo | Descripción                                    |
+| Nombre de archivo | Descripción                                    |
 |----------|------------------------------------------------|
-| `attack_confusing.yml`  | Aplica el efecto de poción de náusea al jugador al atacar. |
+| `attack_confusing.yml`  | Da al jugador el efecto de poción de náuseas al atacar. |
+
 
 <details>
 
@@ -116,7 +120,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackconfusing.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -125,11 +129,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque de Fuego
+## Ataque de fuego
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `attack_fire.yml`  | Enciende a los jugadores al atacar.   |
+| `attack_fire.yml`  | Prende fuego a los jugadores al atacar.   |
+
 
 <details>
 
@@ -139,7 +144,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackfire.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -148,11 +153,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Bola de Fuego de Ataque
+## Ataque de bola de fuego
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `attack_fireball.yml`  | Hace que el jefe dispare bolas de fuego. |
+| `attack_fireball.yml`  | Hace que el jefe dispare bolas de fuego.   |
+
 
 <details>
 
@@ -162,7 +168,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackfireball.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -171,11 +177,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque Congelante
+## Ataque de congelación
 
-| Nombre del archivo | Descripción                                   |
+| Nombre de archivo | Descripción                                   |
 |----------|-----------------------------------------------|
-| `attack_freeze.yml`  | Hace que el jefe congele a cualquier jugador que ataque. |
+| `attack_freeze.yml`  | Hace que el jefe congele a los jugadores que ataca. |
+
 
 <details>
 
@@ -185,7 +192,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackfreeze.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -194,11 +201,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque Gravitacional
+## Ataque de gravedad
 
-| Nombre del archivo | Descripción                                          |
+| Nombre de archivo | Descripción                                          |
 |----------|------------------------------------------------------|
-| `attack_gravity.yml`  | Aplica el efecto de poción de levitación al jugador al atacar. |
+| `attack_gravity.yml`  | Da al jugador el efecto de poción de levitación al atacar. |
+
 
 <details>
 
@@ -208,7 +216,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackgravity.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -217,11 +225,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque de Relámpago
+## Ataque de relámpago
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `attack_lightning.yml`  | Lanza relámpagos a los jugadores cercanos.   |
+| `attack_lightning.yml`  | Lanza rayos a los jugadores cercanos.   |
+
 
 <details>
 
@@ -231,7 +240,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attacklightning.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -240,11 +249,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque de Veneno
+## Ataque de veneno
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
 | `attack_poison.yml`  | Aplica veneno en los ataques.   |
+
 
 <details>
 
@@ -254,7 +264,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackpoison.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -263,11 +273,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque de Empuje
+## Ataque de empuje
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
 | `attack_push.yml`  | Aumenta el retroceso de los ataques.   |
+
 
 <details>
 
@@ -277,7 +288,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackpush.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -286,11 +297,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque de Vacío
+## Ataque de vacío
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `attack_vacuum.yml`  | Atrae a los jugadores hacia el jefe cuando ataca.   |
+| `attack_vacuum.yml`  | Atrae a los jugadores hacia el jefe al atacar.   |
+
 
 <details>
 
@@ -300,7 +312,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackpull.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -309,19 +321,20 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque de Debilidad
+## Ataque de debilidad
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
 | `attack_weakness.yml`  | Aplica el efecto de poción de debilidad al atacar.   |
 
 ***
 
-## Ataque de Telaraña
+## Ataque de telaraña
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `attack_web.yml`  | Crea una telaraña en la ubicación del jugador al ser dañado. |
+| `attack_web.yml`  | Genera una telaraña en la ubicación del jugador al dañar al jugador.   |
+
 
 <details>
 
@@ -331,7 +344,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackweb.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -340,11 +353,12 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Ataque de Decadencia
+## Ataque de marchitamiento
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `attack_wither.yml`  | Aplica el efecto de poción de decadencia al atacar. |
+| `attack_wither.yml`  | Aplica el efecto de poción de marchitamiento al atacar.   |
+
 
 <details>
 
@@ -354,7 +368,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_attackwither.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -363,38 +377,38 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Monedas de Bonus
-
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `bonus_coins.yml`  | Suelta monedas extra.   |
-
-***
-
-## Botín de Bonus
-
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `bonus_loot.yml`  | Suelta botín extra.   |
-
-***
-
-## Infierno de Balas
+## Monedas de bonificación
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
-| `bullet_hell.yml`  | Hace que el jefe levite y dispare varias flechas de rastreo. |
+| `bonus_coins.yml`  | Suelta monedas adicionales.   |
+
+***
+
+## Botín de bonificación
+
+| Nombre de archivo | Descripción |
+|----------|-------------|
+| `bonus_loot.yml`  | Suelta botín adicional.   |
+
+***
+
+## Infierno de balas
+
+| Nombre de archivo | Descripción |
+|----------|-------------|
+| `bullet_hell.yml`  | Hace que el jefe levite y dispare varias flechas de rastreo.   |
 
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_infierno_de_balas.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_bullethell.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -403,22 +417,22 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Canalización de Curación
+## Canalización de curación
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
-| `channel_healing.yml`  | Hace que el jefe cure a otros jefes cercanos. |
+| `channel_healing.yml`  | Hace que el jefe cure a otros jefes cercanos.   |
 
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_canalizacion_de_curacion.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_channelhealing.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -431,18 +445,18 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 | Nombre de archivo | Descripción                                                                 |
 |----------|-----------------------------------------------------------------------------|
-| `corpse.yml`  | Genera un bloque de hueso a la muerte del jefe. El bloque desaparecerá después de un tiempo. |
+| `corpse.yml`  | Genera un bloque de hueso al morir el jefe. El bloque desaparecerá después de un tiempo. |
 
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_cadaver.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_corpse.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -451,22 +465,22 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Corte Mortal
+## Corte mortal
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
-| `death_slice.yml`  | Crea una zona de daño alrededor del jefe. |
+| `death_slice.yml`  | Crea una zona de daño alrededor del jefe.   |
 
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_corte_mortal.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_deathslice.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -475,7 +489,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Bola de Fuego Dirigida del Dragón
+## Bola de fuego dirigida por dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
@@ -483,7 +497,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Bombardeo de Flechas del Dragón
+## Bombardeo de flechas de dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
@@ -491,31 +505,31 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Bolas de Fuego Disco del Dragón
+## Bolas de fuego disco de dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
-| `ender_dragon_disco_fireballs.yml`  | Hace que el dragón gire las bolas de fuego a su alrededor y luego las dispare.   |
+| `ender_dragon_disco_fireballs.yml`  | Hace que el dragón gire bolas de fuego a su alrededor y luego las dispare.   |
 
 ***
 
-## Rayo Potenciado del Dragón
+## Relámpago potenciado por dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
-| `ender_dragon_empowered_lightning.yml`  | Provoca un rayo con una animación personalizada de destrucción de bloques.   |
+| `ender_dragon_empowered_lightning.yml`  | Hace que caiga un rayo con una animación de bloque personalizada para la destrucción.   |
 
 ***
 
-## Bombardeo de Bolas de Fuego de Ender del Dragón
+## Bombardeo de bolas de fuego ender de dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
-| `ender_dragon_ender_fireball_bombardment.yml`  | Hace que el dragón dispare bolas de fuego de ender.  |
+| `ender_dragon_ender_fireball_bombardment.yml`  | Hace que el dragón dispare bolas de fuego ender.   |
 
 ***
 
-## Bombardeo de Endermitas del Dragón
+## Bombardeo de endermitas de dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
@@ -523,7 +537,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Bombardeo de Bolas de Fuego del Dragón
+## Bombardeo de bolas de fuego de dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
@@ -531,7 +545,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Bombardeo de Pociones del Dragón
+## Bombardeo de pociones de dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
@@ -539,7 +553,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Onda de Choque del Dragón
+## Onda de choque de dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
@@ -547,7 +561,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Tornado del Dragón
+## Tornado de dragón
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
@@ -555,22 +569,22 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Tormenta de Fuego
+## Tormenta de fuego
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
-| `firestorm.yml`  | Genera varias columnas de fuego dañinas.  |
+| `firestorm.yml`  | Genera varios pilares de llamas dañinos.  |
 
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_tormenta_de_fuego.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_firestorm.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -579,7 +593,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Descarga de Fuegos Artificiales
+## Andanada de fuegos artificiales
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
@@ -588,13 +602,13 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_descarga_de_fuegos_artificiales.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_fireworksbarrage.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -603,22 +617,22 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Pira de Llamas
+## Pira de llamas
 
 | Nombre de archivo | Descripción                                  |
 |----------|----------------------------------------------|
-| `flame_pyre.yml`  | Hace aparecer una columna de llamas alrededor del jefe. |
+| `flame_pyre.yml`  | Hace que aparezca un pilar de llamas alrededor del jefe. |
 
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_pira_de_llamas.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_flamepyre.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -636,13 +650,13 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_lanzallamas.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_flamethrower.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -651,7 +665,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Cono de Escarcha
+## Cono de escarcha
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
@@ -660,13 +674,13 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_cono_de_escarcha.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_frostcone.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -675,22 +689,22 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Andarino de Escarcha
+## Caminante de escarcha
 
 | Nombre de archivo | Descripción |
 |----------|-------------|
-| `frost_walker.yml`  | Da al jefe botas de andarino de escarcha para caminar sobre el agua. Congelará cualquier bloque de agua que toque. |
+| `frost_walker.yml`  | Le da al jefe botas heladas para caminar sobre el agua. Congelará cualquier bloque de agua que toque. |
 
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_andarino_de_escarcha.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_frostwalker.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -699,21 +713,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Explosión de Oro
+## Explosión de oro
 
 | Nombre de archivo | Descripción                                                 |
 |----------|-------------------------------------------------------------|
-| `gold_explosion.yml`  | Genera pepitas de oro dañinas desde el jefe. Pueden ser bloqueadas. |
+| `gold_explosion.yml`  | Genera pepitas de oro dañinas del jefe. Se puede bloquear. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_explosion_de_oro.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_goldexplosion.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -722,21 +736,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Escopeta de Oro
+## Escopeta de oro
 
 | Nombre de archivo | Descripción                                                  |
 |----------|--------------------------------------------------------------|
-| `gold_shotgun.yml`  | Genera pepitas de oro dañinas en una dirección. Pueden ser bloqueadas. |
+| `gold_shotgun.yml`  | Genera pepitas de oro dañinas en una dirección. Se puede bloquear. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_escopeta_de_oro.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_goldshotgun.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -745,21 +759,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Golpe de Tierra
+## Golpe en el suelo
 
 | Nombre de archivo | Descripción                                                                             |
 |----------|-----------------------------------------------------------------------------------------|
-| `ground_pound.yml`  | Hace que el jefe salte y luego caiga al suelo con fuerza. Hará que los jugadores retrocedan. |
+| `ground_pound.yml`  | Hace que el jefe salte y luego caiga al suelo con fuerza. Derribará a los jugadores. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
-  <source src="../../../img/wiki/poderes_del_jefe_golpe_de_tierra.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/boss_powers_groundpound.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -768,17 +782,17 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Hyper Loot (Botín Hiper)
+## Hiperbotín
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `hyper_loot.yml`  | Da 10 veces más botín normal.  |
+| `hyper_loot.yml`  | Suelta 10 veces el botín normal.  |
 
 ***
 
-## Implosion
+## Implosión
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
 | `implosion.yml`  | Atrae a todas las entidades cercanas hacia el jefe al morir.  |
 
@@ -790,7 +804,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_implosion.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -799,11 +813,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Invisibility (Invisibilidad)
+## Invisibilidad
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `invisibility.yml`  | Hace invisible al jefe.  |
+| `invisibility.yml`  | Hace que el jefe sea invisible.  |
 
 <details>
 
@@ -813,7 +827,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_invis.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -822,11 +836,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Invulnerability Arrow (Flecha Invulnerable)
+## Flecha de invulnerabilidad
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `invulnerability_arrow.yml`  | Hace al jefe inmune a los proyectiles.  |
+| `invulnerability_arrow.yml`  | Hace que el jefe sea inmune a los proyectiles.  |
 
 <details>
 
@@ -836,7 +850,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_invularrow.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -845,11 +859,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Invulnerability Fall Damage (Invulnerabilidad al Daño por Caída)
+## Invulnerabilidad al daño por caída
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `invulnerability_fall_damage.yml`  | Hace al jefe inmune al daño por caída.  |
+| `invulnerability_fall_damage.yml`  | Hace que el jefe sea inmune al daño por caída.  |
 
 <details>
 
@@ -859,7 +873,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_invulfall.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -868,11 +882,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Invulnerability Fire (Invulnerabilidad al Fuego)
+## Invulnerabilidad al fuego
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `invulnerability_fire.yml`  | Hace al jefe inmune al daño por fuego.  |
+| `invulnerability_fire.yml`  | Hace que el jefe sea inmune al daño por fuego.  |
 
 <details>
 
@@ -882,7 +896,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_invulfire.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -891,11 +905,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Invulnerability Fireworks (Invulnerabilidad a los Fuegos Artificiales)
+## Invulnerabilidad a los fuegos artificiales
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `invulnerability_fireworks.yml`  | Hace al jefe inmune a los fuegos artificiales.  |
+| `invulnerability_fireworks.yml`  | Hace que el jefe sea inmune a los fuegos artificiales.  |
 
 <details>
 
@@ -905,7 +919,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_invulfireworks.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -914,13 +928,13 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Invulnerability Knockback (Invulnerabilidad al Repulsión)
+## Invulnerabilidad al retroceso
 
-| Nombre del archivo | Descripción |
+| Nombre de archivo | Descripción |
 |----------|-------------|
-| `invulnerability_knockback.yml`  | Hace al jefe inmune a la repulsión del daño.  |
+| `invulnerability_knockback.yml`  | Hace que el jefe sea inmune al retroceso por daño.  |
 
-*Nota: Encender este poder mientras también tienes al jefe configurado para usar `ground_pound.yml` resultará en que el jefe no ejecute la animación de salto para `ground_pound.yml`.*
+*Nota: Activar este poder mientras que también tienes al jefe configurado para usar `ground_pound.yml` hará que el jefe no ejecute la animación de salto para `ground_pound.yml`.*
 
 <details>
 
@@ -930,7 +944,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_invulknockback.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -939,11 +953,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Lightning Bolts (Rayos)
+## Rayos
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `lightning_bolts.yml`  | Invoca rayos en línea recta desde el jefe hasta la ubicación donde estaba parado el jugador. |
+| Nombre de archivo | Descripción                                                                                            |
+|----------|--------------------------------------------------------------------------------------------------------|
+| `lightning_bolts.yml`  | Genera rayos en línea recta desde el jefe hasta la ubicación donde estaba parado el jugador. |
 
 <details>
 
@@ -953,7 +967,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_lightbolts.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -962,11 +976,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Meteor Shower (Lluvia de Meteoritos)
+## Lluvia de meteoritos
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `meteor_shower.yml`  | Invoca varios meteoritos que caen del cielo. |
+| Nombre de archivo | Descripción                                           |
+|----------|-------------------------------------------------------|
+| `meteor_shower.yml`  | Genera varias bolas de fuego que caen del cielo. |
 
 <details>
 
@@ -976,7 +990,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_meteorshower.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -985,11 +999,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Moonwalk (Caminata lunar)
+## Caminata lunar
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `moonwalk.yml`  | Hace que el jefe salte muy alto. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `moonwalk.yml`  | Hace que el jefe salte más alto. |
 
 <details>
 
@@ -999,7 +1013,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_moonwalk.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1008,11 +1022,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Movement Speed (Velocidad de Movimiento)
+## Velocidad de movimiento
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `movement_speed.yml`  | Hace que el jefe sea extra rápido. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `movement_speed.yml`  | Hace que el jefe sea más rápido. |
 
 <details>
 
@@ -1022,7 +1036,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_movespeed.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1031,11 +1045,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Photon Ray (Rayo de Fotones)
+## Rayo de fotones
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `photon_ray.yml`  | Invoca un rayo dañino que rebotará en las paredes. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `photon_ray.yml`  | Genera un rayo dañino que rebotará en las paredes. |
 
 <details>
 
@@ -1045,7 +1059,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_photonray.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1054,11 +1068,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Plasma Blaster (Blaster de Plasma)
+## Pistola de plasma
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `plasma_blaster.yml`  | Invoca un proyectil dañino que apuntará a jugadores cercanos. |
+| Nombre de archivo | Descripción                                                    |
+|----------|----------------------------------------------------------------|
+| `plasma_blaster.yml`  | Genera un proyectil dañino que apuntará a los jugadores cercanos. |
 
 <details>
 
@@ -1068,7 +1082,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_plasmablaster.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1077,11 +1091,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Shield Wall (Muro de Escudo)
+## Muro de escudos
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `shield_wall.yml`  | Invoca escudos que protegerán al jefe desde una dirección específica hasta que sean destruidos. Golpee **al jefe** para quitar los escudos. |
+| Nombre de archivo | Descripción                                                                                                                  |
+|----------|------------------------------------------------------------------------------------------------------------------------------|
+| `shield_wall.yml`  | Genera escudos que protegerán al jefe desde una dirección específica hasta que sean destruidos. Golpea **al jefe** para eliminar los escudos. |
 
 <details>
 
@@ -1091,7 +1105,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_shieldwall.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1100,11 +1114,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Skeleton Pillar (Pilar de Esqueleto)
+## Pilar de esqueletos
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `skeleton_pillar.yml`  | Invoca dos pilares de partículas que dañan a los jugadores en la zona. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `skeleton_pillar.yml`  | Genera dos pilares de partículas que dañan a los jugadores en la zona. |
 
 <details>
 
@@ -1114,7 +1128,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_skeletonpill.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1123,11 +1137,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Skeleton Tracking Arrow (Flecha de Seguimiento de Esqueleto)
+## Flecha de rastreo de esqueleto
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `skeleton_tracking_arrow.yml`  | Invoca una flecha de seguimiento. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `skeleton_tracking_arrow.yml`  | Genera una flecha de rastreo. |
 
 <details>
 
@@ -1137,7 +1151,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_skeletonarrow.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1146,11 +1160,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Spirit Walk (Caminata del Espíritu)
+## Caminata espiritual
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `spirit_walk.yml`  | Hace que el jefe se teletransporte a una ubicación segura cercana si sigue recibiendo golpes sin poder dañar a un jugador. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `spirit_walk.yml`  | Hace que el jefe se teletransporte a una ubicación segura cercana si sigue siendo golpeado sin poder dañar a un jugador. |
 
 <details>
 
@@ -1160,7 +1174,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_spiritwalk.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1169,11 +1183,11 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Summon Embers (Invocar Ascua)
+## Invocar brasas
 
-| Nombre del archivo | Descripción |
-|----------|-------------|
-| `summon_embers.yml`  | Invoca el refuerzo de ascuas. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `summon_embers.yml`  | Invoca al refuerzo de brasas. |
 
 <details>
 
@@ -1183,7 +1197,7 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_summonembers.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1192,44 +1206,44 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Invocar al Retornado
+## Invocar retornados
 
-| Nombre de archivo | Descripción                                         |
-|-------------------|-----------------------------------------------------|
-| `summon_the_returned.yml`  | Invoca al refuerzo retornado. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `summon_the_returned.yml`  | Invoca al refuerzo de los retornados. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_summonreturned.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
 
 </details>
 
-## Provocar
+## Provocación
 
 ***
 
-| Nombre de archivo | Descripción                        |
-|-------------------|-------------------------------------|
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
 | `taunt.yml`  | Provoca al jugador con mensajes. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_taunt.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1240,19 +1254,19 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ## Aturdir
 
-| Nombre de archivo | Descripción                                                |
-|-------------------|-------------------------------------------------------------|
-| `taze.yml`  | Aturde al jugador, electrocutándolos y aplicando retroceso. |
+| Nombre de archivo | Descripción                                             |
+|----------|---------------------------------------------------------|
+| `taze.yml`  | Aturde al jugador, electrocutándolo y aplicando retroceso. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_taze.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1261,21 +1275,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Tormenta Eléctrica
+## Tormenta
 
-| Nombre de archivo | Descripción                                         |
-|-------------------|------------------------------------------------------|
+| Nombre de archivo | Descripción                                     |
+|----------|-------------------------------------------------|
 | `thunderstorm.yml`  | Genera varios rayos alrededor del jefe. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_thunderstorm.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1284,21 +1298,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Bola de Fuego Rastreadora
+## Bola de fuego rastreadora
 
-| Nombre de archivo | Descripción                                     |
-|-------------------|--------------------------------------------------|
+| Nombre de archivo | Descripción                              |
+|----------|------------------------------------------|
 | `tracking_fireball.yml`  | Genera una bola de fuego que sigue a un jugador. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_trackingfball.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1307,21 +1321,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Zombie Hinchado
+## Hinchazón zombi
 
 | Nombre de archivo | Descripción                                |
-|-------------------|---------------------------------------------|
+|----------|--------------------------------------------|
 | `zombie_bloat.yml`  | Aleja a los jugadores del jefe. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_zombiebloat.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1330,21 +1344,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Amigos Zombie
+## Amigos zombis
 
-| Nombre de archivo | Descripción                                                  |
-|-------------------|---------------------------------------------------------------|
-| `zombie_friends.yml`  | Convoca al refuerzo de amigos zombies. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `zombie_friends.yml`  | Genera el refuerzo de amigos zombis. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_zombiefriends.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1353,21 +1367,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Necronomicón Zombie
+## Necronomicón zombi
 
-| Nombre de archivo | Descripción                                                    |
-|-------------------|-----------------------------------------------------------------|
-| `zombie_necronomicon.yml`  | Hace que jefe canalice refuerzos. |
+| Nombre de archivo | Descripción                                  |
+|----------|----------------------------------------------|
+| `zombie_necronomicon.yml`  | Hace que el jefe canalice refuerzos. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_zombienecro.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1376,21 +1390,21 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-## Padres Zombie
+## Padres zombis
 
-| Nombre de archivo | Descripción                                  |
-|-------------------|-----------------------------------------------|
-| `zombie_parents.yml`  | Convoca al refuerzo de padres zombies. |
+| Nombre de archivo | Descripción                                |
+|----------|--------------------------------------------|
+| `zombie_parents.yml`  | Genera el refuerzo de padres zombis. |
 
 <details>
 
-<summary><b>Ejemplo Visual</b></summary>
+<summary><b>Ejemplo visual</b></summary>
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/boss_powers_zombieparents.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -1399,31 +1413,8 @@ Los GIFs de poder están únicamente para fines de demostración. Por favor, ten
 
 ***
 
-# Formato del Script Elite
-
-Tenga en cuenta que algunos de los poderes están en el formato [Script Elite]($language$/elitemobs/creating_powers.md), y se pueden personalizar.
-
-Aquí tiene un ejemplo del poder *attack_blinding.yml* y cómo está formateado utilizando el formato [Script Elite]($language$/elitemobs/creating_powers.md):
-
-<div align="left">
-
-```yml
-isEnabled: true
-effect: SPELL_MOB
-powerType: MISCELLANEOUS
-eliteScript:
-  BlindPlayer:
-    Events:
-      - PlayerDamagedByEliteMobEvent
-    Actions:
-      - potionEffectType: blindness
-        amplifier: 0
-        action: POTION_EFFECT
-        duration: 60
-        Target:
-          targetType: DIRECT_TARGET
-```
-
-Esta funcionalidad le permite personalizar completamente el poder *attack_blinding.yml*. Puede especificar qué efecto de poción se debe aplicar, la duración del efecto, el objetivo y el evento que activa al jefe para usar el poder.
-
 </div>
+
+***
+
+# Formato de Elite Script

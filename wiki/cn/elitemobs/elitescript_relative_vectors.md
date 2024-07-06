@@ -1,29 +1,30 @@
-
-# Elite Script 相对向量
+# Elite 脚本相对向量
 
 ## 它们的用途
 
-相对向量是相对于某个特定但动态位置的向量。
+相对向量是相对于特定但动态位置的向量。
 
-为了更好地解释这些是什么，让我们考虑以下情况：你想将玩家向boss推进作为力量的一部分。由于boss和玩家在战斗中都会移动，因此无法依赖特定的向量来实现这种效果 - 你需要一个从玩家指向boss的向量。（想象一条从玩家向boss的短线，线尾有一个箭头。）
+为了更好地解释它们是什么，让我们考虑以下情况：您想将玩家推向 Boss，作为力量的一部分。由于 Boss 和玩家在战斗中都会四处移动，因此不可能依赖特定的向量来完成此效果 - 您需要一个从玩家指向 Boss 的向量。（想象一条从玩家指向 Boss 的短线，带有一个箭头。）
 
-相对向量可以以很多方式使用，其种类繁多以至于无法一一列举，但其中包括：向指定的玩家或怪物射击实体（如弹射物）；在玩家背后生成增援；向特定方向射出落下的方块；创建向玩家射出的射线等等。
+相对向量可以以多种方式使用，无法一一列举，但其中包括：向特定玩家或怪物射击实体（如抛射物）；在玩家身后生成增援；向特定方向射击落下的方块；创建向玩家发射的光线，等等。
 
-## 向量如何工作？
+## 向量是如何工作的？
 
-向量是单独的标记，表明从一个点向另一个点指向。因此，向量的一个属性是其长度。这个长度很重要；对于箭头，这个长度是箭头射出的速度，在试图从特定位置获取偏移点时，它是从那个点的距离。更远的物体将有更大的向量长度，而更近的物体将有更短的长度。
+如果您不知道或不记得向量是什么或它们是如何工作的，您可以将向量想象成从一个点指向另一个点的箭头。
 
-对于某些机制，你可能不想依赖两个点之间的距离，你只是想获取一个方向。幸运的是，你可以使用向量归一化，它保证了方向的保持，但改变了长度为1.0。然后你可以使用乘数轻松地修改向量，直到你对它提供的偏移或速度满意。
+因此，向量的一个属性是它们的长度。这个长度很重要；对于箭头，这个长度是箭射出的速度，对于试图从特定位置获取偏移点，它是到该点的距离。距离较远的事物将具有较长的向量长度，而距离较近的事物将具有较短的长度。
+
+对于某些机制，您可能不希望依赖两点之间的距离，因为您只想获得一个方向。幸运的是，您可以使用向量归一化，这可以确保方向保持不变，但将长度更改为 1.0。然后，您可以使用倍增器轻松修改向量，直到您对其提供的偏移量或速度感到满意为止。
 
 ## 属性
 
-| 属性 | 描述 | 是否必需 | 默认值 |
-| --- |:--------------------------------------------------------------------------------------------------------:| :-: | :-: |
-| `SourceTarget` |向量开始的点处的 [Target]($language$/elitemobs/elitescript_targets.md) | ✅ | `none` |
-| `DestinationTarget` |向量结束的点处的 [Target]($language$/elitemobs/elitescript_targets.md) | ✅ | `none` |
-| `normalize` |设定是否应该对向量进行归一化 | ❌ | `false` |
-| `multiplier` |倍增向量的长度 | ❌ | `1.0` |
-| `offset` |允许插入固定偏移值到此偏移 | ❌ | `none` |
+| 值                | 详细信息                                                                                                           | 是否必填？ | 默认值     |
+|--------------------|----------------------------------------------------------------------------------------------------------------:|------------------:|--------------|
+| `SourceTarget`     | 向量将从其开始的点的 [目标]($language$/elitemobs/elitescript_targets.md)。                                                        | ✅   | `none`      |
+| `DestinationTarget` | 向量的终点的 [目标]($language$/elitemobs/elitescript_targets.md)。                                                            | ✅   | `none`      |
+| `normalize`        | 设置是否应该对向量进行归一化。                                                                                        | ❌   | `false`     |
+| `multiplier`       | 乘以向量的长度。                                                                                                   | ❌   | `1.0`      |
+| `offset`           | 允许向此偏移量插入手动固定的偏移量。                                                                                    | ❌   | `none`      |
 
 <div align="center">
 
@@ -35,107 +36,107 @@
 
 ```yaml
 eliteScript:
-  ShootChicken:
-    Events:
+  射击鸡:
+    事件:
     - EliteMobDamagedByPlayerEvent
-    Actions:
-    - action: SUMMON_ENTITY
-      sValue: CHICKEN
-      Target:
-        targetType: SELF
-      RelativeVector:
-        SourceTarget:
-          targetType: SELF
-        DestinationTarget:
-          targetType: DIRECT_TARGET
-        normalize: true
-        multiplier: 2.0
+    动作:
+    - action: 召唤实体
+      sValue: 鸡
+      目标:
+        目标类型: 自身
+      相对向量:
+        源目标:
+          目标类型: 自身
+        目标目标:
+          目标类型: 直接目标
+        归一化: true
+        倍增器: 2.0
 ```
 
-射出一只鸡
+射击一只鸡。
 
 ***
 
 ```yaml
 eliteScript:
-  ShootArrow:
-    Events:
+  射击箭:
+    事件:
     - EliteMobDamagedByPlayerEvent
-    Actions:
-    - action: SUMMON_ENTITY
-      sValue: ARROW
-      Target:
-        targetType: SELF
-      RelativeVector:
-        SourceTarget:
-          targetType: SELF
-        DestinationTarget:
-          targetType: DIRECT_TARGET
-        normalize: true
-        multiplier: 2.0
+    动作:
+    - action: 召唤实体
+      sValue: 箭
+      目标:
+        目标类型: 自身
+      相对向量:
+        源目标:
+          目标类型: 自身
+        目标目标:
+          目标类型: 直接目标
+        归一化: true
+        倍增器: 2.0
 ```
 
-射出一支箭
+射击一支箭。
 
 ***
 
 ```yaml
 eliteScript:
-  SpawnReinforcement:
-    Events:
+  生成增援:
+    事件:
     - EliteMobDamagedByPlayerEvent
-    Actions:
-    - action: SUMMON_ENTITY
-      sValue: ZOMBIE
-      Target:
-        targetType: SELF
-      RelativeOffset:
-        SourceTarget:
-          targetType: SELF
-        DestinationTarget:
-          targetType: DIRECT_TARGET
-        normalize: true
-        multiplier: 2.0
+    动作:
+    - action: 召唤实体
+      sValue: 僵尸
+      目标:
+        目标类型: 自身
+      相对偏移:
+        源目标:
+          目标类型: 自身
+        目标目标:
+          目标类型: 直接目标
+        归一化: true
+        倍增器: 2.0
 ```
 
-生成一只僵尸在玩家2个方块后面，相对于boss.
+在玩家身后 2 个方块处生成一个僵尸，相对于 Boss 的位置。
 
 ***
 
 ```yaml
 eliteScript:
-  Example:
-    Events:
+  示例:
+    事件:
     - EliteMobDamagedByPlayerEvent
-    Zone:
-      Shape: SPHERE
-      target:
-        targetType: SELF_SPAWN
+    区域:
+      形状: 球体
+      目标:
+        目标类型: 自身生成点
         offset: 0,0,0
-        track: false
-      filter: PLAYER
-      radius: 6
-    Actions:
-    - action: SPAWN_PARTICLE
+        追踪: false
+      过滤器: 玩家
+      半径: 6
+    动作:
+    - action: 生成粒子
       repeatEvery: 38
       times: 5
-      Target:
-        targetType: ZONE_FULL
-        track: false
-        coverage: 0.9
-      particles:
-      - particle: FLAME
-        RelativeVector:
-          SourceTarget:
-            targetType: ACTION_TARGET
-            track: true
-          DestinationTarget:
-            targetType: SELF_SPAWN
+      目标:
+        目标类型: 区域_完整
+        追踪: false
+        覆盖范围: 0.9
+      粒子:
+      - 粒子: 火焰
+        相对向量:
+          源目标:
+            目标类型: 动作目标
+            追踪: true
+          目标目标:
+            目标类型: 自身生成点
             offset: 0,-0.5,0
         speed: 0.05
 ```
 
-创建一个动画火焰球体，缩小到出生地点.
+创建一个动画火焰球体，缩小到生成位置。
 
 </div>
 
@@ -147,4 +148,9 @@ eliteScript:
 
 应用属性时的操作顺序如下：
 
-向量计算 -> `normalize` -> `multiplier` -> `offset`
+向量计算 -> `归一化` -> `倍增器` -> `偏移量`
+
+
+
+
+

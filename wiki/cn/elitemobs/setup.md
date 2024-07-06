@@ -8,181 +8,158 @@
 
 ***
 
-*本指南假设您正在使用EliteMobs ***7.2.37*** 或更高版本。*
 
+*本指南假设您使用的是 EliteMobs ***7.2.37*** 或更高版本。*
 
 # 首次启动
 
-重启服务器一次。
+重新启动服务器一次。
 
 <details>
 
 <summary><b>为什么？</b></summary>
 
-EliteMobs在服务器第一次启动时会增加你的spigot.yml配置文件中的最大生命值。这样，精英怪物可以有超过2000的生命值。它并不改变任何其他生物的生命值 - 所以它不会改变原版或插件生物的生命值。
+EliteMobs 在服务器首次启动时会增加 spigot.yml 配置文件中的最大生命值。这是为了让精英怪物可以拥有超过 2000 点生命值。它不会改变任何其他怪物的生命值 - 因此它不会改变普通怪物或插件怪物。
 
-这个变更需要服务器重启才能实际生效。
+此更改需要重新启动服务器才能真正生效。
 
 </details>
 
-# 权限配置
+# 权限
 
-从EliteMobs 7.2.23开始，所有推荐的权限默认已经设置好了。你可以在[这里]($language$/elitemobs/permissions_and_commands.md)查看更多关于权限的信息。
+从 EliteMobs 7.2.23 版本开始，所有推荐的权限默认情况下都已设置好。您可以在 [此处]($language$/elitemobs/permissions_and_commands.md) 了解更多有关权限的信息。
 
-# 地下城和冒险者公会大厅世界
+# 地下城和冒险家公会中心世界
 
-从EliteMobs 7.2.35开始，在EliteMobs目录下新增了一个`imports`文件夹。地下城，冒险者公会大厅世界的安装过程是一样的：
+从 EliteMobs 7.2.35 版本开始，EliteMobs 目录中现在有一个 `imports` 文件夹。地下城、冒险家公会世界的安装过程相同：
 
-1) 下载文件。你可以在`/em setup`点击红色玻璃获取下载链接。
+1) 下载文件。您可以点击 `/em setup` 中的红色玻璃获取下载链接。
 
-2) 上传/移动文件到你的服务器的`/plugins/EliteMobs/imports`文件夹。确保你把**压缩**的文件放入`imports`文件夹，不要以任何方式修改它们，EliteMobs会自动解压这些文件并移到正确的位置。
+2) 将文件上传/移动到服务器的 `/plugins/EliteMobs/imports` 文件夹中。确保将 **压缩** 文件放在 `imports` 文件夹中，不要以任何方式修改它们，EliteMobs 会自动解压缩文件并将其移动到正确的位置。
 
 <div align="center">
 
 <details>
 
-<summary>图片示例</summary>
+<summary>视觉示例</summary>
 
 <video autoplay loop muted controls>
   <source src="../../../img/wiki/setup_import.webm" type="video/webm">
-  Your browser does not support the video tag.
+  您的浏览器不支持视频标签。
 </video>
 
 </details>
 
 </div>
 
-3) 重启或执行`/em reload`。几秒钟之后，当你执行`/em setup`，你下载的功能的指示灯应该是黄色的。
+3) 重新启动或执行 `/em reload`。几秒钟后，地下城应自动安装，当您执行 `/em setup` 时，您下载的地下城的指示器应为绿色，并指示地下城已正确安装且是最新的。如果有任何地下城显示一个黄色玻璃板，则表示存在更新版本的地下城，需要更新。
 
 <div align="center">
 
 <details>
 
-<summary>图片示例</summary>
+<summary>视觉示例</summary>
 
-<video autoplay loop muted controls>
-  <source src="../../../img/wiki/setup_reload.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
-
-</details>
-
-</div>
-
-**重要提示：如果你想在ELITEMOBS中安装一些内容，[WORLDGUARD](https://dev.bukkit.org/projects/worldguard) 和 [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (或 [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) 是必需的！**
-
-4) 在`/em setup`菜单中点击黄色玻璃以安装功能！
-
-<div align="center">
-
-<details>
-
-<summary>图片示例</summary>
 
 <video autoplay loop muted controls>
   <source src="../../../img/wiki/setup_install.webm" type="video/webm">
-  Your browser does not support the video tag.
+  您的浏览器不支持视频标签。
 </video>
 
 </details>
 
 </div>
 
-5) ***如果你的地下城文件中有自定义模型***，你可以选择按照这里列出的安装步骤[这里]($language$/elitemobs/custom_models.md&section=importing-custom-models-from-dungeons)进行安装。
+4) ***如果您的地下城文件有自定义模型***，您可以选择按照 [此处]($language$/elitemobs/custom_models.md&section=importing-custom-models-from-dungeons) 列出的安装步骤来安装它们。
 
-就这样！**你可以在/em找到通往已安装的地下城和冒险者公会的传送门，在传送页面查找！**
+就这样！**您可以在 /em 的“传送”页面中找到已安装的地下城和冒险家公会的传送点！**
 
-[更多关于冒险者公会的信息在这里!]($language$/elitemobs/adventurers_guild_world.md)
-<br>[在这里下载冒险者公会大厅世界！](https://magmaguy.itch.io/elitemobs-the-adventurers-guild)
+[有关冒险家公会的更多信息，请参阅此处！]($language$/elitemobs/adventurers_guild_world.md)
+<br>[在此处下载冒险家公会中心世界！](https://magmaguy.itch.io/elitemobs-the-adventurers-guild)
 
-# 推荐插件
+# 推荐的插件
 
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard)：用于设置和保护区域。[EliteMobs标志列表]($language$/elitemobs/worldguard_flags.md)。
-- [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/)：用于反飞行标志，非常实用。
-- [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/)：用于显示EliteMobs信息在其他插件，比如聊天。[更多信息]($language$/elitemobs/placeholders.md)。
-- [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/)：用于将自定义Boss假扮成其他任何东西。伪装在官方地下城中被大量使用，因此强烈建议你安装这个插件。[更多信息]($language$/elitemobs/libsdisguises.md)。
-- [DiscordSRV]($language$/elitemobs/discordsrv.md)：用于将EliteMobs通知链接到Discord聊天。[更多信息]($language$/elitemobs/discordsrv.md)
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard)：用于标志。[EliteMobs 标志列表]($language$/elitemobs/worldguard_flags.md)。
+- [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/)：用于反飞行标志，很有用。
+- [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/)：用于在其他插件（例如聊天）上显示 EliteMobs 信息。[更多信息]($language$/elitemobs/placeholders.md)。
+- [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/)：用于将自定义 Boss 伪装成任何其他东西。伪装在我们的官方地下城中被大量使用，因此强烈建议您安装此插件。[更多信息]($language$/elitemobs/libsdisguises.md)。
+- [DiscordSRV]($language$/elitemobs/discordsrv.md)：用于将 EliteMobs 公告链接到 Discord 聊天。[更多信息]($language$/elitemobs/discordsrv.md)
 
 # 更新地下城内容
 
-要更新地下城内容，只需重复上述的安装步骤。**你不需要删除任何文件**，当你导入更新时，EliteMobs会处理。
+要更新地下城内容，只需重复上述安装步骤。**您***无需***删除任何文件**，EliteMobs 会在您导入更新时处理该问题。
 
 # 常见问题解答 (FAQ)
 
-## EliteMobs说WorldGuard / WorldEdit没有安装，但是我已经安装了
+## 小型地下城只是平坦的地形
 
 <details><summary>答案</summary>
 
-这100%意味着你在服务器上使用的WorldGuard / WorldEdit版本错误。你可以从上面的部分获得正确的版本。
+95% 的情况下，这意味着您没有按照设置说明进行操作。如果您使用其他插件解压缩了任何文件或加载了任何世界，请按照上面列出的步骤重新安装内容。您不需要任何其他插件即可正确加载世界。
 
 </details>
 
-## 世界基础小型地下城仅为平坦地形
-
-<details><summary>答案</summary>
-
-95％的情况下，这意味着你没有按照设置指示进行操作。如果你解压了任何文件或使用其他插件加载了任何世界，重新按照上述步骤安装内容。你不需要任何其他插件来正确加载世界。
-
-</details>
-
-## 在安装后，NPC聊天看起来很奇怪 / 虫洞无法工作 / 其他奇怪的行为
+## 安装后，NPC 聊天看起来很奇怪/虫洞无法正常工作/其他奇怪的行为
 
 <details>
 
 <summary>答案</summary>
 
-在设置地下城后运行命令`/em reload`，以确保所有值得到完全初始化。重启会更好，但不是必需的。
+设置地下城后运行命令 `/em reload` 以确保所有值都已完全初始化。重新启动甚至更好，但应该不是必需的。
 
 </details>
 
-## Bosses aren't spawning
+## Boss 没有生成
 
-### The boss was spawning earlier!
+### Boss 之前正在生成！
 
 <details>
 
 <summary>答案</summary>
 
-区域boss具有重生时间。你可以通过访问其配置文件和复制"spawn locations"部分后面的`:`的数字，查看boss预计重生的时间。
+区域 Boss 有重生时间。您可以通过转到其配置文件并复制生成位置部分中 `:` 之后的数字来检查 Boss 计划何时重生。
 
-例如：
+示例：
 
 ```yml
 spawnLocations:
 - em_primis,1100.5,22.5,526.5,0.0,0.0:1643259941451
 ```
 
-在这个场景，你在寻找的数字是`1643259941451`。你可以使用[此](https://www.unixtimestamp.com/index.php)网站将数字转换为特定日期。删除这个数字以强制boss重生，确保删除后执行`/em reload`。
+在这种情况下，您要查找的数字是 `1643259941451`。您可以使用 [此](https://www.unixtimestamp.com/index.php) 网站将其转换为特定日期。您可以删除这些数字以强制 Boss 重生，确保在删除它们后执行 `/em reload`。
 
 </details>
 
-### The boss was never spawning!
+### Boss 从未生成过！
 
 <details>
 
 <summary>答案</summary>
 
-检查以下事项：
+检查以下内容：
 
-- 你或其他人有没有杀掉boss，或者是它通过超时功能逃跑了吗？boss可能正在冷却重生。查看冷却时间，信息在上文中。
-- 查看控制台是否有任何错误，尤其是在你安装地下城或者执行`/em reload`之后。错误应该会告诉你哪里出问题了。
-- 检查你的区域是否被其他插件保护了，禁止怪物生成
-- 检查你的世界难度，和平模式下怪物不能生成
-- 检查WorldGuard标志，查看是否允许怪物生成
-- 检查你是否在生成区域之上安装了地下城内容，这是默认受到保护的
-- 极少数情况下，问题可能与服务器认为是哪一天有关。确保你的服务器机器日期是正确的，否则重生机制可能会导致一些问题。
+- 您或其他人是否杀死了 Boss，或者它是否通过超时功能逃脱了？Boss 可能会重生。检查冷却时间，有关信息请参见上面的部分。
+- 查看控制台上是否有任何错误，尤其是在您安装地下城或执行 `/em reload` 之后。错误应该会告诉您出了什么问题。
+- 检查您的区域是否受到其他插件的保护，这会阻止怪物生成
+- 检查您的世界的难度，怪物无法在和平难度下生成
+- 检查 WorldGuard 标志，查看怪物生成是否设置为允许
+- 检查您是否在生成区域上安装了地下城内容，该区域默认受保护
+- 非常非常罕见的是，问题可能与您的服务器认为的日期有关。确保您的服务器机器的日期正确，否则重生机制可能会导致一些问题。
 
 </details>
 
 
-## Something's messed up and I just can't fix it
+## 某些东西弄乱了，我无法修复它
 
 <details>
 
 <summary>答案</summary>
 
-这通常发生在试图并未正确修改EliteMobs无法自我修复文件之后。如果你被困住了，无法从启动/地下城安装的控制台消息中找到如何修复的方法，最好的做法是清除安装EliteMobs。
+这通常发生在尝试以 EliteMobs 无法自我修复的方式正确修改文件并失败之后。如果您卡住了，并且无法从启动/地下城安装时的控制台消息中找出如何修复它，那么最好的办法是全新安装 EliteMobs。
 
-备份你的`~/plugins/EliteMobs/data`文件夹以保留玩家数据，然后删除`~/plugins/EliteMobs/`文件夹。启动你的服务器，关闭它，在服务器离线时恢复备份的数据文件夹的内容，然后再次启动它。现在你可以继续安装EliteMobs内容。
+备份您的 `~/plugins/EliteMobs/data` 文件夹以保留玩家数据，然后删除 `~/plugins/EliteMobs/` 文件夹。启动您的服务器，将其关闭，**在服务器离线时**恢复您备份的数据文件夹的内容，然后再次启动它。您现在可以继续安装 EliteMobs 内容。
 
 </details>
+
+
+

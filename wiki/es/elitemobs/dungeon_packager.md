@@ -2,59 +2,59 @@
 
 # ¿Qué son las mazmorras?
 
-Puede encontrar información sobre las mazmorras, incluida información sobre las mazmorras preconstruidas [aquí]($language$/elitemobs/dungeons.md).
+Puedes encontrar información sobre las mazmorras, incluida información sobre las mazmorras prefabricadas, [aquí]($language$/elitemobs/dungeons.md).
 
 ***
 
 # ¿Qué es el empaquetador de mazmorras?
 
-El empaquetador de mazmorras permite a los administradores no solo crear y empaquetar mazmorras, sino también empaquetar cualquier tipo de contenido de EliteMobs. Esto incluye cosas como paquetes de eventos, paquetes de modelos, arenas, paquetes de npc, paquetes de artículos y así sucesivamente.
+El empaquetador de mazmorras permite a los administradores no solo crear y empaquetar mazmorras, sino también empaquetar cualquier tipo de contenido de EliteMobs. Esto incluye cosas como paquetes de eventos, paquetes de modelos, arenas, paquetes de npc, paquetes de artículos, etc.
 
 <details>
 
 <summary>¿Por qué usar paquetes de mazmorras?</summary>
 
 - ***¡Mazmorras instanciadas!*** Las mazmorras instanciadas solo se pueden crear a través del sistema de paquetes de mazmorras.
-- ***¡Copias de seguridad seguras de Mini mazmorras!*** Si haces un paquete de mazmorras, podrás implementarlo y volver a implementarlo en cualquier servidor que desees en cualquier momento y por cualquier motivo.
-- ***¡Fácil de apagar y encender!*** Siempre puedes hacer `/em setup` para apagar y encender temporal o permanentemente los paquetes de mazmorras.
-- ***¡Fácil de compartir!*** Si deseas compartir tus creaciones, los paquetes de mazmorras pueden ser comprimidos y enviados a otras personas. ¡Hay una sala de Discord dedicada a las creaciones de la comunidad si estás interesado!
-- ***¡Teletransportes!*** Los paquetes de mazmorras crean automáticamente ubicaciones de teletransporte que se pueden acceder en la página de Teleportes del menú `/em`, lo cual podría ser muy útil en muchas configuraciones.
+- ***¡Copias de seguridad seguras de minidungeons!*** Si haces un paquete de mazmorras, podrás implementarlo y volver a implementarlo en cualquier servidor que desees en cualquier momento y por cualquier motivo.
+- ***¡Fácil de activar y desactivar!*** Siempre puedes hacer `/em setup` y activar y desactivar los paquetes de mazmorras temporal o permanentemente.
+- ***¡Fácil de compartir!*** Si deseas compartir tus creaciones, los paquetes de mazmorras se pueden comprimir y enviar a otras personas. ¡Hay una sala de Discord dedicada a las creaciones de la comunidad si estás interesado!
+- ***¡Teletransportes!*** Los paquetes de mazmorras crean automáticamente ubicaciones de teletransporte a las que se puede acceder en la página Teletransportes del menú `/em`, lo que podría ser muy útil en muchas configuraciones.
 
 </details>
 
-# Creando Mazmorras
+# Creando mazmorras
 
-Se usan las siguientes configuraciones para crear un archivo de configuración que debería ir en la carpeta `dungeonpackages`. Estas configuraciones se usan para crear mazmorras específicamente, y no son necesarias si solo quieres usar el empaquetador de mazmorras para distribuir contenido no de mazmorras, como un paquete de artículos o eventos.
+Los siguientes ajustes se utilizan para crear un archivo de configuración que debe ir en la carpeta `dungeonpackages`. Estos ajustes se utilizan para crear mazmorras específicamente y no son necesarios si solo quieres usar el empaquetador de mazmorras para distribuir contenido que no sea de mazmorras, como un paquete de artículos o eventos.
 
-## Plugins requeridos
+## Complementos necesarios
 
-Para utilizar el Empaquetador de Mazmorras, necesitarás el siguiente plugin:
+Para usar Dungeon Packager, necesitarás el siguiente complemento:
 
-[WorldGuard](https://dev.bukkit.org/projects/worldguard) - protege la Mini mazmorra
+[WorldGuard](https://dev.bukkit.org/projects/worldguard): protege la minidungeon.
 
 ## Creando una mazmorra, paso a paso
 
 EliteMobs solía tener dos tipos principales de mazmorras: basadas en el mundo y basadas en esquemas.
 
-Las mazmorras basadas en esquemas estaban asociadas a una construcción de esquemas. Ahora están eliminadas y ya no se admiten.
+Las mazmorras basadas en esquemas se asociaron con una construcción esquemática. Ahora están eliminados y ya no son compatibles.
 
-Todas las mazmorras de EliteMobs son ahora basadas en el mundo.
+Todas las mazmorras de EliteMobs ahora están basadas en el mundo.
 
 ***
 
 ### Valores globales
 
-Los siguientes valores se aplican a todas las mazmorras
+Los siguientes valores se aplican a todas las mazmorras.
 
 <div align="center">
 
 ### isEnabled
 
-Establece si el paquete de la mazmorra está habilitado.
+Establece si el paquete de mazmorras está habilitado.
 
-| Key         |      Values       | Default | Mandatory |
+| Clave         |      Valores       | Predeterminado | Obligatorio |
 |-------------|:-----------------:|:-------:|:---------:|
-| `isEnabled` | [Booleano](#booleano) | `falso` |    ✅      |
+| `isEnabled` | [Booleano](#booleano) | `false` |    ✅      |
 
 <details> 
 
@@ -63,7 +63,7 @@ Establece si el paquete de la mazmorra está habilitado.
 <div align="left">
 
 ```yml
-isEnabled: verdadero
+isEnabled: true
 ```
 
 </div>
@@ -72,13 +72,13 @@ isEnabled: verdadero
 
 ***
 
-### nombre
+### name
 
-Establece el nombre del contenido. Soporta [Códigos de Color](#color_codes).
+Establece el nombre del contenido. Admite [códigos de color](#códigos_de_color).
 
-| Key         |      Values       | Default | Mandatory |
+| Clave         |      Valores       | Predeterminado | Obligatorio |
 |-------------|:-----------------:|:-------:|:---------:|
-| `name` | [Cadena](#string) | `falso` |    ✅      |
+| `name` | [Texto](#texto) | `false` |    ✅      |
 
 <details> 
 
@@ -87,7 +87,7 @@ Establece el nombre del contenido. Soporta [Códigos de Color](#color_codes).
 <div align="left">
 
 ```yml
-name: '&c[nivel 999] &aLa Mazmorra Verde'
+name: '&c[lvl 999] &aLa mazmorra verde'
 ```
 
 <div align="center">
@@ -106,9 +106,9 @@ name: '&c[nivel 999] &aLa Mazmorra Verde'
 
 Establece el tipo de ubicación que utiliza la mazmorra.
 
-| Key         |      Values       | Default | Mandatory |
-|-------------|:-----------------:|:-------:|:---------:|
-| `dungeonLocationType` | `MUNDO` / `INSTANCIADO` |  ninguno   |    ✅      |
+| Clave         |        Valores         | Predeterminado | Obligatorio |
+|-------------|:---------------------:|:-------:|:---------:|
+| `dungeonLocationType` | `WORLD` / `INSTANCED` |  ninguno   |    ✅      |
 
 <details> 
 
@@ -117,7 +117,7 @@ Establece el tipo de ubicación que utiliza la mazmorra.
 <div align="left">
 
 ```yml
-dungeonLocationType: MUNDO
+dungeonLocationType: WORLD
 ```
 
 </div>
@@ -130,9 +130,9 @@ dungeonLocationType: MUNDO
 
 Establece el tipo de mazmorra.
 
-| Key         |      Values             | Default | Mandatory |
-|-------------|:----------------------:|:-------:|:---------:|
-| `contentType` | `MAZMORRA_ABIERTA` / `MAZMORRA_INSTANCIADA` / `CENTRAL` |  ninguno   |    ✅      |
+| Clave         |                    Valores                    | Predeterminado | Obligatorio |
+|-------------|:--------------------------------------------:|:-------:|:---------:|
+| `contentType` | `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` |  ninguno   |    ✅      |
 
 <details> 
 
@@ -141,8 +141,9 @@ Establece el tipo de mazmorra.
 <div align="left">
 
 ```yml
-contentType: MAZMORRA_INSTANCIADA
+contentType: INSTANCED_DUNGEON
 ```
+
 </div>
 
 </details>
@@ -151,11 +152,11 @@ contentType: MAZMORRA_INSTANCIADA
 
 ### customInfo
 
-Establece la información adicional que aparecerá en la pantalla `/em setup`. Solo para fines informativos. Soporta [Códigos de Color](#color_codes).
+Establece la información adicional que aparecerá en la pantalla `/em setup`. Solo para fines informativos. Admite [códigos de color](#códigos_de_color).
 
-| Llave         |           Valores            | Predeterminado | Obligatorio |
+| Clave         |           Valores            | Predeterminado | Obligatorio |
 |-------------|:---------------------------:|:-------:|:---------:|
-| `customInfo` | [Lista de cadenas](#string_list) |  ninguno   |    ✅      |
+| `customInfo` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |    ✅      |
 
 <details> 
 
@@ -165,8 +166,8 @@ Establece la información adicional que aparecerá en la pantalla `/em setup`. S
 
 ```yml
 customInfo:
-- '&aEl mejor calabozo.'
-- '&aCreado por: CoolPlayer'
+- '&aLa mejor mazmorra'.
+- '&aHecho por: CoolPlayer'
 ```
 
 <div align="center">
@@ -183,11 +184,11 @@ customInfo:
 
 ### downloadLink
 
-Establece el enlace de descarga cuando el contenido no se descarga. Solo para fines informativos.
+Establece el enlace de descarga cuando no se descarga el contenido. Solo para fines informativos.
 
-| Llave         |      Valores       | Predeterminado | Obligatorio |
+| Clave         |      Valores       | Predeterminado | Obligatorio |
 |-------------|:-----------------:|:-------:|:---------:|
-| `downloadLink` | [Cadena](#string) |  ninguno   |    ❌      |
+| `downloadLink` | [Texto](#texto) |  ninguno   |    ❌      |
 
 <details> 
 
@@ -196,7 +197,7 @@ Establece el enlace de descarga cuando el contenido no se descarga. Solo para fi
 <div align="left">
 
 ```yml
-downloadLink: http://www.ejemplo.org
+downloadLink: http://www.example.org
 ```
 
 <div align="center">
@@ -213,9 +214,9 @@ downloadLink: http://www.ejemplo.org
 
 ### dungeonSizeCategory
 
-Establece la categoría de tamaño del paquete de calabozo. Solo para fines informativos.
+Establece la categoría de tamaño del paquete de mazmorras. Solo para fines informativos.
 
-| Llave         |   valores    | Predeterminado | Obligatorio |
+| Clave         |   Valores    | Predeterminado | Obligatorio |
 |-------------|:-----------:|:-------:|:---------:|
 | `dungeonSizeCategory` | Especial [1] |  ninguno   |    ✅      |
 
@@ -243,22 +244,22 @@ dungeonSizeCategory: MINIDUNGEON
 
 <details> 
 
-<summary><b>Expandir Tabla</b></summary>
+<summary><b>Expandir tabla</b></summary>
 
 <div align="center">
 
-| Llave | Descripción                                                                                                                                         |
+| Clave | Descripción                                                                                                                                         |
 |-----|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `LAIR`    | Las guaridas son un tipo de calabozo pequeño que se enfoca en una gran pelea de jefes.  |
-| `SANCTUM` | Los sanctums son el equivalente de las guaridas instanciadas. Esto significa que se centran en una gran pelea de jefes. |
-| `MINIDUNGEON` | Los minidungeons son un tipo de calabozo de tamaño medio que generalmente contiene de 3 a 15 minibosses y un jefe grande, además de un montón de mobs "basura" que están destinados a ser "farmeados" por monedas y equipo por los jugadores. |
-| `DUNGEON` | Los calabozos son el equivalente de minidungeons instanciados. Este es el tipo de calabozo más tradicional de MMORPG, donde los jugadores se agrupan y atraviesan un gauntlet de mobs basura y minibosses para luchar contra un jefe final. |
-| `RAID` | ¡Próximamente! |
-| `ADVENTURE` | Las aventuras son mapas de aventura completos. Incluyen líneas de misiones, NPC, una gran cantidad de minibosses y jefes e incluso pueden contener sus propias arenas o calabozos dentro de ellos. |
-| `ARENA` | Las arenas son áreas de supervivencia basadas en olas en las que los jugadores son recompensados por derrotar olas. |
-| `OTHER` | Cualquier otra cosa que no caiga en las categorías anteriores. |
+| `LAIR`    | Las guaridas son un tipo de mazmorra pequeña que se centra en una gran pelea de jefes.  |
+| `SANCTUM`    | Los santuarios son el equivalente a las guaridas instanciadas. Esto significa que se centran en una gran pelea de jefes. |
+| `MINIDUNGEON`    | Las minidungeons son un tipo de mazmorra de tamaño mediano que generalmente contiene de 3 a 15 minijefes y un gran jefe, así como muchas turbas de "basura" que están destinadas a ser "farmeadas" por los jugadores para obtener monedas y equipo. |
+| `DUNGEON`    | Las mazmorras son el equivalente a las minidungeons instanciadas. Este es el tipo de mazmorra MMORPG más tradicional, donde los jugadores se unen y pasan por una serie de turbas de basura y minijefes para luchar contra un jefe final. |
+| `RAID`    | ¡Próximamente!|
+| `ADVENTURE`    | Las aventuras son mapas de aventuras completos. Incluyen líneas de misiones, npcs, grandes cantidades de minijefes y jefes e incluso pueden contener sus propias arenas o mazmorras dentro de ellos. |
+| `ARENA`    | Las arenas son áreas de supervivencia basadas en oleadas en las que los jugadores son recompensados ​​por derrotar oleadas. |
+| `OTHER`    | Cualquier otra cosa que ya no entre en las categorías anteriores. |
 
-Para descripciones más detalladas, vea [Calabozos]($language$/elitemobs/dungeons.md)
+Para descripciones más detalladas, consulta [Mazmorras]($language$/elitemobs/dungeons.md).
 
 </div>
 
@@ -268,11 +269,11 @@ Para descripciones más detalladas, vea [Calabozos]($language$/elitemobs/dungeon
 
 ### protect
 
-Establece si el paquete de calabozo debe estar protegido por WorldGuard.
+Establece si el paquete de mazmorras debe estar protegido por WorldGuard.
 
-| Llave         |      valores       | Predeterminado | Obligatorio |
+| Clave         |      Valores       | Predeterminado | Obligatorio |
 |-------------|:-----------------:|:-------:|:---------:|
-| `protect` | [Booleano](#boolean) |  `verdadero`   |    ❌      |
+| `protect` | [Booleano](#booleano) |  `true`   |    ❌      |
 
 <details> 
 
@@ -281,7 +282,7 @@ Establece si el paquete de calabozo debe estar protegido por WorldGuard.
 <div align="left">
 
 ```yml
-protect: verdadero
+protect: true
 ```
 
 </div>
@@ -292,11 +293,11 @@ protect: verdadero
 
 ### dungeonVersion
 
-Establece la versión del paquete de calabozo.
+Establece la versión del paquete de mazmorras.
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `dungeonVersion` | [Entero](#integer) |  ninguno   |    ✅      |
+| `dungeonVersion` | [Entero](#entero) |  ninguno   |    ✅      |
 
 <details> 
 
@@ -316,13 +317,13 @@ dungeonVersion: 1
 
 ### playerInfo
 
-Establece la info que aparece en el menú. Soporta [Códigos de Color](#colorcodes).
+Establece la información que aparece en el menú. Admite [códigos de color](#códigos_de_color).
 
-*Funciona solo cuando el `/em` está configurado en modo libro usando `/em alt`.*
+*Funciona solo cuando `/em` está configurado en modo libro usando `/em alt`.*
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `playerInfo` | [Cadena](#string) |  ninguno   |    ✅      |
+| `playerInfo` | [Texto](#texto) |  ninguno   |    ✅      |
 
 <details> 
 
@@ -331,7 +332,7 @@ Establece la info que aparece en el menú. Soporta [Códigos de Color](#colorcod
 <div align="left">
 
 ```yml
-playerInfo: 'Dificultad: ¡&a1-hombre contenido fácil!'
+playerInfo: 'Dificultad: &a¡Contenido fácil para 1 persona!'
 ```
 
 <div align="center">
@@ -348,11 +349,11 @@ playerInfo: 'Dificultad: ¡&a1-hombre contenido fácil!'
 
 ### regionEnterMessage
 
-Establece el mensaje que aparece cuando un jugador entra en la zona del calabozo. Soporta [Códigos de Color](#colorcodes).
+Establece el mensaje que aparece cuando un jugador entra en la zona de la mazmorra. Admite [códigos de color](#códigos_de_color).
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `regionEnterMessage` | [Cadena](#string) |  ninguno   |    ❌      |
+| `regionEnterMessage` | [Texto](#texto) |  ninguno   |    ❌      |
 
 <details> 
 
@@ -361,7 +362,7 @@ Establece el mensaje que aparece cuando un jugador entra en la zona del calabozo
 <div align="left">
 
 ```yml
-regionEnterMessage: '&a¡Has entrado al calabozo!'
+regionEnterMessage: '&a¡Has entrado en la mazmorra!'
 ```
 
 <div align="center">
@@ -378,11 +379,11 @@ regionEnterMessage: '&a¡Has entrado al calabozo!'
 
 ### regionLeaveMessage
 
-Establece el mensaje que aparece cuando un jugador sale de la zona del calabozo. Soporta [Códigos de Color](#colorcodes).
+Establece el mensaje que aparece cuando un jugador abandona la zona de la mazmorra. Admite [códigos de color](#códigos_de_color).
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `regionLeaveMessage` | [Cadena](#string) |  ninguno   |    ❌      |
+| `regionLeaveMessage` | [Texto](#texto) |  ninguno   |    ❌      |
 
 <details> 
 
@@ -391,7 +392,7 @@ Establece el mensaje que aparece cuando un jugador sale de la zona del calabozo.
 <div align="left">
 
 ```yml
-regionLeaveMessage: '&a¡Has salido del calabozo!'
+regionLeaveMessage: '&a¡Has salido de la mazmorra!'
 ```
 
 <div align="center">
@@ -408,11 +409,11 @@ regionLeaveMessage: '&a¡Has salido del calabozo!'
 
 ### hasCustomModels
 
-Establece si el paquete de calabozo tiene modelos personalizados (para ModelEngine / FreeMinecraftModels).
+Establece si el paquete de mazmorras tiene modelos personalizados (para ModelEngine o FreeMinecraftModels).
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `hasCustomModels` | [Booleano](#boolean) |  ninguno   |    ❌      |
+| `hasCustomModels` | [Booleano](#booleano) |  ninguno   |    ❌      |
 
 <details> 
 
@@ -421,7 +422,7 @@ Establece si el paquete de calabozo tiene modelos personalizados (para ModelEngi
 <div align="left">
 
 ```yml
-hasCustomModels: falso
+hasCustomModels: false
 ```
 
 </div>
@@ -432,13 +433,13 @@ hasCustomModels: falso
 
 ### dungeonConfigFolderName
 
-Establece el nombre de las carpetas usadas para los archivos asociados a este calabozo.
+Establece el nombre de las carpetas utilizadas para los archivos asociados a esta mazmorra.
 
-**¡Obligatorio para calabozos instanciados!**
+**¡Obligatorio para mazmorras instanciadas!**.
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `dungeonConfigFolderName` | [Cadena](#string) |  ninguno   |    ❌      |
+| `dungeonConfigFolderName` | [Texto](#texto) |  ninguno   |    ❌      |
 
 <details> 
 
@@ -447,7 +448,7 @@ Establece el nombre de las carpetas usadas para los archivos asociados a este ca
 <div align="left">
 
 ```yml
-dungeonConfigFolderName: mi_carpeta_calabozo
+dungeonConfigFolderName: mi_carpeta_de_mazmorras
 ```
 
 </div>
@@ -458,11 +459,11 @@ dungeonConfigFolderName: mi_carpeta_calabozo
 
 ### contentLevel
 
-Establece el nivel de contenido que debería mostrarse en el menú EM.
+Establece el nivel de contenido que la mazmorra debe mostrar en el menú EM.
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `contentLevel` | [Entero](#integer) |  ninguno   |    ❌      |
+| `contentLevel` | [Entero](#entero) |  ninguno   |    ❌      |
 
 <details> 
 
@@ -482,11 +483,11 @@ contentLevel: 20
 
 ### enchantmentChallenge
 
-Establece si el calabozo debería ser un calabozo de Desafío de Encantamiento.
+Establece si la mazmorra debe ser una mazmorra de desafío de encantamiento.
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `enchantmentChallenge` | [Booleano](#boolean) | `falso` |    ❌      |
+| `enchantmentChallenge` | [Booleano](#booleano) | `false` |    ❌      |
 
 <details> 
 
@@ -495,7 +496,7 @@ Establece si el calabozo debería ser un calabozo de Desafío de Encantamiento.
 <div align="left">
 
 ```yml
-enchantmentChallenge: falso
+enchantmentChallenge: false
 ```
 
 </div>
@@ -506,9 +507,9 @@ enchantmentChallenge: falso
 
 ***
 
-### Paquetes de calabozos basados en mundos
+### Paquetes de mazmorras basados ​​en el mundo
 
-Los siguientes valores solo se aplican a los calabozos basados en mundos.
+Los siguientes valores solo se aplican a las mazmorras basadas en el mundo.
 
 <div align="center">
 
@@ -516,11 +517,11 @@ Los siguientes valores solo se aplican a los calabozos basados en mundos.
 
 ### worldName
 
-Establece el nombre del mundo que debería ser empaquetado.
+Establece el nombre del mundo que se debe empaquetar.
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `worldName` | [Cadena](#string) |  ninguno   |    ✅      |
+| `worldName` | [Texto](#texto) |  ninguno   |    ✅      |
 
 <details> 
 
@@ -529,7 +530,7 @@ Establece el nombre del mundo que debería ser empaquetado.
 <div align="left">
 
 ```yml
-worldName: mi_mundo_minecraft
+worldName: mi_mundo_de_minecraft
 ```
 
 </div>
@@ -540,11 +541,11 @@ worldName: mi_mundo_minecraft
 
 ### womholeWorldName
 
-Esta función establece el nombre del mundo de agujero de gusano, que sirve como un segundo mundo vinculado al mundo principal. Se utiliza para características como los hubs de teletransporte o las cámaras únicas de los jefes.
+Esta función establece el nombre del mundo del agujero de gusano, que sirve como un mundo secundario vinculado al mundo principal. Se utiliza para funciones como centros de teletransporte o cámaras de jefe únicas.
 
-| Llave         |  Valores  | Predeterminado | Obligatorio |
+| Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `womholeWorldName` | [Cadena](#string) |  ninguno   |    ❌      |
+| `womholeWorldName` | [Texto](#texto) |  ninguno   |    ❌      |
 
 <details> 
 
@@ -553,7 +554,7 @@ Esta función establece el nombre del mundo de agujero de gusano, que sirve como
 <div align="left">
 
 ```yml
-womholeWorldName: mi_mundo_minecraft_gusano
+womholeWorldName: mi_mundo_de_minecraft_agujero_de_gusano
 ```
 
 </div>
@@ -562,13 +563,13 @@ womholeWorldName: mi_mundo_minecraft_gusano
 
 ***
 
-### ambiente
+### environment
 
-Establece el ambiente del mundo.
+Establece el entorno del mundo.
 
 | Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `ambiente` | [Ambiente](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) |  ninguno   |    ✅      |
+| `environment` | [Entorno](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) |  ninguno   |    ✅      |
 
 <details> 
 
@@ -577,7 +578,7 @@ Establece el ambiente del mundo.
 <div align="left">
 
 ```yml
-ambiente: NORMAL
+environment: NORMAL
 ```
 
 </div>
@@ -586,13 +587,13 @@ ambiente: NORMAL
 
 ***
 
-### ubicaciónTeletransporte
+### teleportLocation
 
-Establece la ubicación de teletransporte del paquete de mazmorra. Aquí es donde los jugadores serán teletransportados cuando entren a la mazmorra.
+Establece la ubicación de teletransporte del paquete de mazmorras. Aquí es donde los jugadores serán teletransportados al ingresar a la mazmorra.
 
 | Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `ubicaciónTeletransporte` | [String](#string) |  ninguno   |    ✅      |
+| `teleportLocation` | [Texto](#texto) |  ninguno   |    ✅      |
 
 <details> 
 
@@ -601,7 +602,31 @@ Establece la ubicación de teletransporte del paquete de mazmorra. Aquí es dond
 <div align="left">
 
 ```yml
-ubicaciónTeletransporte: mi_mundo_minecraft,-1.5,68,0.5,0.0,0.0
+teleportLocation: mi_mundo_de_minecraft,-1.5,68,0.5,0.0,0.0
+```
+
+</div>
+
+</details>
+
+***
+
+### allowExplosionBlockDamage
+
+Permite o evita que las explosiones dañen bloques en una mazmorra. Las explosiones se consideran explosiones de élite, por lo que cualquier daño a los bloques se regenerará en 2 minutos.
+
+| Clave         |  Valores  | Predeterminado | Obligatorio |
+|-------------|:--------:|:-------:|:---------:|
+| `allowExplosionBlockDamage` | [Booleano](#booleano) |  `false`   |    ❌      |
+
+<details> 
+
+<summary><b>Ejemplo</b></summary>
+
+<div align="left">
+
+```yml
+allowExplosionBlockDamage: true
 ```
 
 </div>
@@ -612,23 +637,23 @@ ubicaciónTeletransporte: mi_mundo_minecraft,-1.5,68,0.5,0.0,0.0
 
 #### Mazmorras instanciadas
 
-*Las mazmorras instanciadas crean un nuevo mundo cada vez que un grupo de jugadores quiere completar una mazmorra, y lo borran cuando terminan. Para que esto funcione correctamente, debes poner una carpeta siguiendo el `dungeonConfigFolderName` en la carpeta de configuración `world_blueprints` de EliteMobs.*
+*Las mazmorras instanciadas crean un nuevo mundo cada vez que un grupo de jugadores quiere completar una mazmorra y lo elimina cuando termina. Para que esto funcione correctamente, debes colocar una carpeta siguiendo `dungeonConfigFolderName` en la carpeta de configuración `world_blueprints` de EliteMobs.*
 
-*Entonces colocas el mundo que vas a usar dentro de la carpeta que creaste, asegurándote de que el archivo `session.lock` del mundo se borre.*
+*Luego, coloca el mundo que usarás dentro de la carpeta que creaste, asegurándote de que el archivo `session.lock` del mundo esté eliminado.*
 
-Los siguientes valores solo se aplican a mazmorras instanciadas. Tenga en cuenta que todas las mazmorras instanciadas son mazmorras del mundo, por lo que también utilizan los valores de las mazmorras del mundo.
+Los siguientes valores solo se aplican a las mazmorras instanciadas. Ten en cuenta que todas las mazmorras instanciadas son mazmorras del mundo, por lo que también usan los valores de las mazmorras del mundo.
 
 <div align="center">
 
 ***
 
-### ubicaciónInicio
+### startLocation
 
-Establece la ubicación de teletransporte del punto de inicio de la mazmorra instanciada. Aquí es donde los jugadores serán teletransportados cuando comiencen la mazmorra instanciada con `/em start`.
+Establece la ubicación de teletransporte del punto de inicio de la mazmorra instanciada. Aquí es donde los jugadores serán teletransportados al iniciar la mazmorra instanciada con `/em start`.
 
 | Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `ubicaciónInicio` | [String](#string) |  ninguno   |    ✅      |
+| `startLocation` | [Texto](#texto) |  ninguno   |    ✅      |
 
 <details> 
 
@@ -637,7 +662,7 @@ Establece la ubicación de teletransporte del punto de inicio de la mazmorra ins
 <div align="left">
 
 ```yml
-ubicaciónInicio: mi_mundo_minecraft,10.5,70,10.5,0.0,0.0
+startLocation: mi_mundo_de_minecraft,10.5,70,10.5,0.0,0.0
 ```
 
 </div>
@@ -646,13 +671,13 @@ ubicaciónInicio: mi_mundo_minecraft,10.5,70,10.5,0.0,0.0
 
 ***
 
-### permiso
+### permission
 
-Establece el permiso necesario para entrar en la instancia de la mazmorra.
+Establece el permiso requerido para ingresar a la instancia de la mazmorra.
 
 | Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `permiso` | [String](#string) |  ninguno   |    ❌      |
+| `permission` | [Texto](#texto) |  ninguno   |    ❌      |
 
 <details> 
 
@@ -661,7 +686,7 @@ Establece el permiso necesario para entrar en la instancia de la mazmorra.
 <div align="left">
 
 ```yml
-permiso: elitedungeon.mipermiso
+permission: elitedungeon.mipermiso
 ```
 
 </div>
@@ -670,13 +695,13 @@ permiso: elitedungeon.mipermiso
 
 ***
 
-### minimoJugadores
+### minPlayerCount
 
-Establece el conteo mínimo de jugadores requerido para comenzar una mazmorra.
+Establece el recuento mínimo de jugadores requerido para iniciar una mazmorra.
 
 | Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `minimoJugadores` | [Integer](#integer) |  `1`   |    ❌      |
+| `minPlayerCount` | [Entero](#entero) |  `1`   |    ❌      |
 
 <details> 
 
@@ -685,7 +710,7 @@ Establece el conteo mínimo de jugadores requerido para comenzar una mazmorra.
 <div align="left">
 
 ```yml
-minimoJugadores: 1
+minPlayerCount: 1
 ```
 
 </div>
@@ -694,13 +719,13 @@ minimoJugadores: 1
 
 ***
 
-### maximoJugadores
+### maxPlayerCount
 
-Establece el conteo máximo de jugadores requerido para comenzar una mazmorra.
+Establece el recuento mínimo de jugadores requerido para iniciar una mazmorra.
 
 | Clave         |  Valores  | Predeterminado | Obligatorio |
 |-------------|:--------:|:-------:|:---------:|
-| `maximoJugadores` | [Integer](#integer) |   `5`   |    ❌      |
+| `maxPlayerCount` | [Entero](#entero) |   `5`   |    ❌      |
 
 <details> 
 
@@ -709,7 +734,7 @@ Establece el conteo máximo de jugadores requerido para comenzar una mazmorra.
 <div align="left">
 
 ```yml
-maximoJugadores: 5
+maxPlayerCount: 5
 ```
 
 </div>
@@ -718,13 +743,13 @@ maximoJugadores: 5
 
 ***
 
-### objetivosMazmorra
+### dungeonObjectives
 
-Establece la lista de objetivos de la mazmorra requeridos para que se considere completada la mazmorra.
+Establece la lista de objetivos de la mazmorra necesarios para que la mazmorra se considere completada.
 
 | Clave         |           Valores            | Predeterminado | Obligatorio |
 |-------------|:---------------------------:|:-------:|:---------:|
-| `objetivosMazmorra` | [Lista de strings](#string_list) |  ninguno   |    ✅      |
+| `dungeonObjectives` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |    ✅      |
 
 <details> 
 
@@ -732,20 +757,20 @@ Establece la lista de objetivos de la mazmorra requeridos para que se considere 
 
 <div align="left">
 
-Actualmente existen dos tipos de objetivos de mazmorra:
+Actualmente hay dos tipos de objetivos de mazmorras:
 
-* Matar objetivo: `filename=boss.yml:amount=X`
+* Matar objetivo: `filename=jefe.yml:amount=X`
 * Matar porcentaje de mazmorra: `clearpercentage=X.Y`
 
 ```yml
-objetivosMazmorra:
-- filename=mazmorra_boss_final.yml
-- filename=mazmorra_miniboss_uno.yml
-- filename=mazmorra_miniboss_dos.yml
+dungeonObjectives:
+- filename=jefe_final_de_mazmorra.yml
+- filename=minijefe_uno_de_mazmorra.yml
+- filename=minijefe_dos_de_mazmorra.yml
 ```
 
 ```yml
-objetivosMazmorra: 
+dungeonObjectives: 
 - clearpercentage=0.8
 ```
 
@@ -755,7 +780,7 @@ objetivosMazmorra:
 
 ***
 
-### dificultades
+### difficulties
 
 Establece la lista de dificultades en la mazmorra instanciada.
 
@@ -763,7 +788,7 @@ Establece la lista de dificultades en la mazmorra instanciada.
 
 | Clave         |   Valores    | Predeterminado | Obligatorio |
 |-------------|:-----------:|:-------:|:---------:|
-| `dificultades` | Especial [1] |  ninguna   |    ❌      |
+| `difficulties` | Especial [1] |  ninguno   |    ❌      |
 
 <details> 
 
@@ -772,7 +797,7 @@ Establece la lista de dificultades en la mazmorra instanciada.
 <div align="left">
 
 ```yml
-dificultades:
+difficulties:
 - levelSync: 25
   id: 0
   name: normal
@@ -786,7 +811,7 @@ dificultades:
 
 <div align="center">
 
-![crear_paqueteador_dificultad.jpg](../../../img/wiki/create_packager_difficulty.jpg)
+![create_packager_difficulty.jpg](../../../img/wiki/create_packager_difficulty.jpg)
 
 </div>
 
@@ -798,21 +823,21 @@ dificultades:
 
 <details>
 
-<summary><b>Expande la tabla</b></summary>
+<summary><b>Expandir tabla</b></summary>
 
 <div align="center">
 
-Establecer las dificultades de las mazmorras instanciadas creará automáticamente diferentes opciones de dificultad al entrar a la mazmorra.
+Establecer las dificultades de las mazmorras instanciadas creará automáticamente diferentes opciones de dificultad al ingresar a la mazmorra.
 
-Los nombres de dificultad que se establezcan aquí serán los utilizados en la carpeta de jefes personalizados, donde podrá establecer qué poderes tienen los jefes basándose en la dificultad.
+Los nombres de dificultad establecidos aquí serán los que se utilicen en la carpeta de jefes personalizados, donde puedes establecer qué poderes tienen los jefes en función de la dificultad.
 
-Las dificultades están en un formato de lista que tienen los siguientes campos:
+Las dificultades están en un formato de lista que tiene los siguientes campos:
 
 |     Clave     | Descripción                                                                                                                                                                                                                                                    | Valores | Obligatorio |
-|:-----------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|:---------:|
-|   `nombre`    | Nombre de la dificultad para los jugadores.                                                                                                                                                                                                                    |[String](#string)        |     ✅     |
-|    `id`     | ID de la dificultad, utilizado en jefes personalizados y elementos personalizados para la funcionalidad basada en la dificultad.                                                                                                                 |[String](#string)        |     ✅     |
-| `sincronizacionNivel` | Establece el nivel de sincronización de nivel, si hay alguno. La sincronización de nivel hace que todo el equipo del jugador alcance el valor máximo establecido, lo que hace imposible que los jugadores se sobrenivele para una mazmorra y mantiene su relevancia para las carreras posteriores. Basado en el sistema de sincronización de nivel de Final Fantasy 14. |[Integer](#integer)        |     ❌     |
+|:-----------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|:---------:|
+|   `name`    | Nombre de la dificultad para los jugadores.                                                                                                                                                                                                                            |[Texto](#texto)        |     ✅     |
+|    `id`     | ID de la dificultad, utilizada en jefes personalizados y objetos personalizados para la función basada en la dificultad.                                                                                                                                                                 |[Texto](#texto)        |     ✅     |
+| `levelSync` | Establece el nivel de sincronización de nivel, si lo hay. La sincronización de nivel hace que todo el equipo del jugador alcance el valor establecido como máximo, lo que hace que sea imposible que los jugadores superen el nivel de una mazmorra y la mantenga relevante para carreras posteriores. Basado en el sistema de sincronización de nivel de Final Fantasy 14. |[Entero](#entero)        |     ❌     |
 
 
 </div>
@@ -823,191 +848,191 @@ Las dificultades están en un formato de lista que tienen los siguientes campos:
 
 ***
 
-# Valores recomendados para los Jefes
+# Valores de jefe recomendados
 
-## Crear un mob de mazmorra promedio
+## Creando una mafia de mazmorra promedio
 
-Recomendamos dejar la configuración de combate normalizado establecida en true. Esta configuración normaliza todos los mobs para escalar de manera igual con la salud y el daño, independientemente de su tipo de entidad.
+Recomendamos dejar la configuración `normalizedCombat` establecida en verdadero. Esta configuración normaliza a todas las turbas para que escalen por igual con salud y daño, independientemente de su tipo de entidad.
 
 ```yaml
-combateNormalizado: true
-multiplicadorSalud: 1.0 #4 golpes para derribar 
-multiplicadorDaño: 1.0 #1.5 corazones de daño
+normalizedCombat: true
+healthMultiplier: 1.0 #4 golpes para matar
+damageMultiplier: 1.0 #1.5 corazones de daño
 ```
 
-Aseguradamente, aquí está la versión modificada manteniendo la claridad y el formato:
+Ciertamente, aquí está la versión revisada con la claridad y el formato retenidos:
 
-**Nota: Dado que `1.0` es el valor predeterminado para la salud y el daño, simplemente puedes omitir la definición de `multiplicadorSalud` o `multiplicadorDaño` y establecer `combateNormalizado` en `true`.**
+**Nota: Dado que `1.0` es el valor predeterminado para la salud y el daño, puedes simplemente omitir la definición de `healthMultiplier` o `damageMultiplier` y establecer `normalizedCombat` en `true`.**
 
-## Crear packs de basura
+## Creando paquetes de basura
 
-Los packs de basura son numerosos pero no muy peligrosos:
+Los paquetes de basura son numerosos pero no muy peligrosos:
 
 ```yaml
-combateNormalizado: true
-multiplicadorSalud: 0.7 #3 golpes para derribar 
-multiplicadorDaño: 0.5 #0.5 corazones de daño
+normalizedCombat: true
+healthMultiplier: 0.7 #3 golpes para matar
+damageMultiplier: 0.5 #0.5 corazones de daño
 ```
 
-## Crear refuerzos
+## Creando refuerzos
 
-Los refuerzos deberían morir muy fácilmente, pero representar un peligro en términos de daño (estos valores se recomiendan para 4+ entidades cuerpo a cuerpo, el uso real puede variar):
+Los refuerzos deberían morir muy fácilmente, pero representan un peligro en términos de daño (estos valores se recomiendan para más de 4 entidades cuerpo a cuerpo, el uso real puede variar):
 
 ```yaml
-combateNormalizado: true
-multiplicadorSalud: 0.25 #1 golpe para derribar 
-multiplicadorDaño: 0.6 #1 corazon de daño
+normalizedCombat: true
+healthMultiplier: 0.25 #1 golpe para matar
+damageMultiplier: 0.6 #1 corazón de daño
 ```
 
-## Crear minibosses
+## Creando minijefes
 
-Los minibosses deberían resistir, y representar un desafío mecánico para los jugadores. Debería ser una prueba de habilidad que dure un rato, pero no algo extremadamente letal:
+Los minijefes deben mantenerse firmes y plantear un desafío mecánico a los jugadores. Debe ser una prueba de habilidad que dure un poco, pero no algo extremadamente mortal:
 
 ```yaml
-combateNormalizado: true
-multiplicadorSalud: 3.0 #10 golpes para derribar 
-multiplicadorDaño: 1.2 #2 corazones de daño
+normalizedCombat: true
+healthMultiplier: 3.0 #10 golpes para matar
+damageMultiplier: 1.2 #2 corazones de daño
 ```
 
 ## Creando jefes
 
-Los jefes son un verdadero desafío, la conclusión de una acumulación en una mazmorra y una verdadera prueba de habilidad con todo en juego. Los enfrentamientos deberían ser largos y la muerte debería ser una amenaza presente.
+Los jefes son un verdadero desafío, la conclusión de una acumulación en una mazmorra y una verdadera prueba de habilidad con todo en juego. Los encuentros deben ser largos y la muerte debe ser una amenaza presente.
 
 ```yaml
-combateNormalizado: true
-multiplicadorSalud: 7.0 #23 golpes para derribar 
-multiplicadorDaño: 1.4 #2.5 corazones de daño
+normalizedCombat: true
+healthMultiplier: 7.0 #23 golpes para matar
+damageMultiplier: 1.4 #2.5 corazones de daño
 ```
 
-**Estos valores recomendados son simplemente estimaciones aproximadas, y los valores finales deben ajustarse en función de los encuentros específicos.**
+**Estos valores recomendados son meras estimaciones aproximadas, y los valores finales deben ajustarse de acuerdo con los encuentros específicos.**
 
-**Esto es particularmente crucial para los jefes finales de la mazmorra; es posible que desee exceder significativamente el valor recomendado de 7.0 para el multiplicadorSalud para hacer que la última pelea tenga esa sensación épica.**
+**Esto es particularmente crucial para los jefes de mazmorras finales; es posible que desees superar significativamente el valor recomendado de 7,0 para healthMultiplier para darle a la última pelea esa sensación épica.**
 
 ***
 
-# Empaquetando contenido de EliteMobs para su distribución
+# Empaquetar contenido de EliteMobs para su distribución
 
-Finalmente, probablemente querrás empaquetar tu mazmorra para almacenarla o para su distribución.
+Finalmente, probablemente querrás empaquetar tu mazmorra para almacenarla o distribuirla.
 
 EliteMobs tiene un sistema de importación que permite a los administradores importar, instalar y desinstalar contenido rápidamente. [Puedes ver cómo funciona aquí.]($language$/elitemobs/setup.md)
 
-## Recortando Mundos
+## Recortar mundos
 
-Algunas veces, puede que necesites reducir el tamaño de tu mundo de Minecraft para hacerlo más ligero y, en consecuencia, más fácil de distribuir. Esto se puede conseguir mediante el uso del [plugin WorldBorder](https://www.spigotmc.org/resources/worldborder-1-15.80466/). A pesar de que el plugin se enumera como compatible solo con la versión de Minecraft 1.19, funciona sin problemas en la última versión de Minecraft al 25 de enero de 2024.
-
-<details>
-<summary>Consejo</summary>
-Si estás haciendo esto por primera vez puede que sea buena idea crear una copia de seguridad de tu mundo por si algo sale mal.
-</details>
-
-Una vez instalado el plugin, navega hasta el centro del mundo o el área específica que desees recortar. Luego, ejecuta el comando `/wb set x`, donde `x` representa el tamaño de radio aproximado que deseas para tu área.
+A veces, es posible que debas reducir el tamaño de tu mundo de Minecraft para que sea más ligero y, en consecuencia, más fácil de distribuir. Esto se puede lograr mediante el uso del [complemento WorldBorder](https://www.spigotmc.org/resources/worldborder-1-15.80466/). A pesar de que el complemento figura como compatible solo con MineCraft hasta la versión 1.19, funciona a la perfección en la última versión de MineCraft a partir del 25 de enero de 2024.
 
 <details>
 <summary>Consejo</summary>
-Si <code>/wb</code> no está funcionando para ti, prueba <code>/worldborder:wb</code>.
+Si lo haces por primera vez, puede ser una buena idea crear una copia de seguridad de tu mundo por si acaso algo sale mal.
 </details>
 
-Después de ejecutar este comando, vuela a los bordes de tu mundo para verificar que la frontera del mundo se haya establecido correctamente y cubra el tamaño deseado. Sabrás que has llegado al borde de la frontera del mundo cuando te empujan hacia atrás, acompañado por un mensaje en el chat.
+Una vez que el complemento está instalado, navega hasta la mitad del mundo o el área específica que deseas recortar. Luego, ejecuta el comando `/wb set x`, donde `x` representa el tamaño aproximado del radio que deseas para tu área.
 
-![recorte_imagen_1.jpg](../../../img/wiki/trim_pic_1.jpg)
+<details>
+<summary>Consejo</summary>
+Si <code>/wb</code> no funciona para ti, intenta <code>/worldborder:wb</code>.
+</details>
 
-En la imagen de arriba, intentamos recortar el mundo alrededor de los bloques púrpura, dejando solo unos pocos fragmentos a su alrededor. Para lograr esto, nos paramos en el medio del área púrpura en los cuadros rojos y ejecutamos `/wb set 50`, estableciendo la frontera del mundo un poco más allá del área púrpura.
+Después de ejecutar este comando, vuela hasta los bordes de tu mundo para verificar que el borde del mundo se haya establecido correctamente y cubra el tamaño deseado. Reconocerás que llegas al borde del mundo cuando seas empujado hacia atrás, acompañado de un mensaje en el chat.
 
-A continuación, utilizamos el comando `/wb trim [frecuencia] [revestimiento]`, con la frecuencia establecida en 200 y el revestimiento en 20. El revestimiento determina cuántos fragmentos deben quedar alrededor de la frontera del mundo (área púrpura), y la frecuencia determina cuántos fragmentos deben ser procesados por segundo. Después de ejecutar `/wb trim 200 20`, se nos solicitará que confirmemos ejecutando `/wb trim confirm`. Confirmamos la acción y, después de un tiempo, nuestro mundo será recortado, reduciendo su tamaño y haciendo que sea más conveniente para su distribución.
+![trim_pic_1.jpg](../../../img/wiki/trim_pic_1.jpg)
 
-Ahora puedes eliminar la frontera del mundo utilizando `/wb clear all` o simplemente dejarla si así lo deseas.
+En la imagen de arriba, nuestro objetivo es recortar el mundo alrededor de los bloques morados, dejando solo unos pocos fragmentos a su alrededor. Para lograr esto, nos paramos en medio del área púrpura en los cuadrados rojos y ejecutamos `/wb set 50`, estableciendo el borde del mundo justo más allá del área púrpura.
 
-## Recortando la carpeta del mundo
+Luego, usamos el comando `/wb trim [freq] [pad]`, con la frecuencia establecida en 200 y el relleno en 20. El relleno determina cuántos fragmentos deben dejarse alrededor del borde del mundo (el área púrpura) y la frecuencia determina cuántos fragmentos deben procesarse por segundo. Después de ejecutar `/wb trim 200 20`, se nos pedirá que confirmemos ejecutando `/wb trim confirm`. Confirmamos la acción, y después de un tiempo, nuestro mundo se recortará, reduciendo su tamaño y haciéndolo más conveniente para la distribución.
 
-Hay varios archivos y carpetas ubicados en la carpeta de tu mundo que podemos descartar ya que los plugins no los usan todos. Esto reducirá el tamaño de tu mundo y facilitará su distribución.
+Ahora puedes eliminar el borde del mundo usando `/wb clear all` o simplemente dejarlo si lo deseas.
 
-Para un ambiente de mundo NORMAL:
+## Recortar la carpeta del mundo
 
-Para preparar tu mundo, conserva los siguientes archivos y carpetas:
+Hay varios archivos y carpetas ubicados en la carpeta de tu mundo que podemos descartar, ya que los complementos no los utilizan todos. Esto reducirá el tamaño de tu mundo y facilitará la distribución.
 
-1. carpeta **region**
-2. archivo **raids.dat** de dentro de la carpeta **data** (asegúrate de que esté dentro de la carpeta **data** cuando lo copies)
-3. archivo **level.dat**
-
-Puedes eliminar todos los demás archivos y carpetas que se encuentran en la carpeta del mundo de manera segura. Esto configurará tu mundo correctamente para el ambiente NORMAL.
-
-Para los ambientes de mundo NETHER y THE_END:
+Para un entorno mundial NORMAL:
 
 Para preparar tu mundo, conserva los siguientes archivos y carpetas:
 
-1. carpeta **region** dentro de la carpeta **DIM-1** (asegúrate de que esté dentro de la carpeta **DIM-1** cuando lo copies)
-2. archivo **raids.dat** de dentro de la carpeta **data** (asegúrate de que esté dentro de la carpeta **data** cuando lo copies)
-3. archivo **level.dat**
+1. Carpeta **region**
+2. **raids.dat** desde dentro de la carpeta **data** (asegúrate de que esté colocado dentro de la carpeta **data** al copiar)
+3. Archivo **level.dat**
 
-Puedes eliminar todos los demás archivos y carpetas que se encuentran en la carpeta del mundo de manera segura. Esto configurará tu mundo correctamente para los ambientes NETHER y THE_END.
+Puedes eliminar de forma segura todos los demás archivos y carpetas ubicados en la carpeta del mundo. Esto configurará tu mundo correctamente para el entorno NORMAL.
+
+Para los entornos mundiales NETHER y THE_END:
+
+Para preparar tu mundo, conserva los siguientes archivos y carpetas:
+
+1. Carpeta **region** dentro de la carpeta **DIM-1** (asegúrate de que esté colocada dentro de la carpeta **DIM-1** al copiar)
+2. **raids.dat** desde dentro de la carpeta **data** (asegúrate de que esté colocado dentro de la carpeta **data** al copiar)
+3. Archivo **level.dat**
+
+Puedes eliminar de forma segura todos los demás archivos y carpetas ubicados en la carpeta del mundo. Esto configurará tu mundo correctamente para los entornos NETHER y THE_END.
 
 ## Ejecutando el comando de paquete
 
-EliteMobs tiene el comando **`/em package <nombreDungeon> <version>`**. Este comando recorre todas las carpetas de configuración de EliteMobs y automáticamente empaqueta todo el contenido en las carpetas que coinciden con el `nombreDungeon` en un archivo comprimido y una carpeta normal en la carpeta `exports` de EliteMobs.
+EliteMobs tiene el comando **`/em package <nombreDeLaMazmorra> <versión>`**. Este comando recorre todas las carpetas de configuración de EliteMobs y empaqueta automáticamente todo el contenido de las carpetas que coinciden con `nombreDeLaMazmorra` en un archivo comprimido y una carpeta normal en la carpeta `exports` de EliteMobs.
 
-***Por esta razón, se recomienda encarecidamente que mantenga el contenido que desea empaquetar en carpetas con el mismo nombre que el nombre de su paquete.*** De lo contrario, deberá recopilar y empaquetar manualmente los archivos en la estructura de archivos para distribución.
+***Por esta razón, es muy recomendable que mantengas el contenido que deseas empaquetar en carpetas con el mismo nombre que el nombre de tu paquete.*** De lo contrario, tendrás que recopilar y empaquetar manualmente los archivos en la estructura de archivos para su distribución.
 
-## Agregando el archivo de paquete de dungeon
+## Adición del archivo del paquete de mazmorras
 
-Si estás creando un dungeon, tendrás que agregar manualmente el archivo de paquete de dungeon en la carpeta recién generada en la carpeta de exports. El archivo de configuración de tu paquete de dungeon deberá seguir el formato descrito anteriormente y colocarse en una carpeta llamada `dungeonpackages`.
-[Consulte la estructura del archivo para más detalles.](#estructura-del-archivo).
+Si estás creando una mazmorra, deberás agregar manualmente el archivo del paquete de mazmorras a la carpeta recién generada en la carpeta de exportaciones. El archivo de configuración del paquete de tu mazmorra debe seguir el formato descrito anteriormente y colocarse en una carpeta llamada `dungeonpackages`. [Consulta la estructura de archivos para obtener más información al respecto.](#estructura-de-archivos).
 
-**¡Asegúrese de comprimir tu dungeon una vez hecho!**
+**¡Asegúrate de comprimir tu mazmorra una vez que hayas terminado!**
 
-## Estructura del archivo
+## Estructura de archivos
 
-Si hiciste todo correctamente, la estructura del archivo debería ser similar a este ejemplo, en el que nombramos al dungeon `mi_dungeon_genial`:
+Si hiciste todo correctamente, la estructura de archivos debería ser similar a este ejemplo, donde llamamos a la mazmorra `mi_mazmorra_genial`:
 
 <details>
-<summary>Ejemplo de estructura de archivos de mi_dungeon_genial</summary>
+<summary>Ejemplo de estructura de archivos de mi_mazmorra_genial</summary>
 
-- mi_dungeon_genial.zip
+- mi_mazmorra_genial.zip
     * dungeonpackages
-        * mi_dungeon_genial.yml <- Aquí es donde va tu archivo de configuración del paquete de dungeon
+        * mi_mazmorra_genial.yml <- Aquí es donde va el archivo de configuración del paquete de tu mazmorra.
     * worldcontainer
-        * [Aquí van las carpetas de tu mundo]
+        * [Tus carpetas del mundo van aquí]
     * wormholes
-        * mi_dungeon_genial
-            * [Aquí van tus agujeros de gusano]
+        * mi_mazmorra_genial
+            * [Tus agujeros de gusano van aquí]
     * npcs
-        * mi_dungeon_genial
-            * [Aquí van tus NPCs]
+        * mi_mazmorra_genial
+            * [Tus NPC van aquí]
     * customtreasurechests
-        * mi_dungeon_genial
-            * [Aquí van tus cofres del tesoro]
+        * mi_mazmorra_genial
+            * [Tus cofres del tesoro van aquí]
     * customquests
-        * mi_dungeon_genial
-            * [Aquí van tus misiones hechas a medida]
+        * mi_mazmorra_genial
+            * [Tus misiones van aquí]
     * customitems
-        * mi_dungeon_genial
-            * [Aquí van tus artículos personalizados]
+        * mi_mazmorra_genial
+            * [Tus objetos personalizados van aquí]
     * custombosses
-        * mi_dungeon_genial
-            * [Aquí van tus jefes personalizados]
+        * mi_mazmorra_genial
+            * [Tus jefes personalizados van aquí]
     * customarenas
-        * mi_dungeon_genial
-            * [Aquí van tus arenas personalizadas]
+        * mi_mazmorra_genial
+            * [Tus arenas personalizadas van aquí]
     * powers
-        * mi_dungeon_genial
-            * [Aquí van tus poderes personalizados]
+        * mi_mazmorra_genial
+            * [Tus poderes personalizados van aquí]
     * world_blueprints
-        * mi_dungeon_genial
-            * [Aquí va tu carpeta de mundo, usada para dungeons instanciados]
+        * mi_mazmorra_genial
+            * [Tu carpeta del mundo va aquí, utilizada para mazmorras instanciadas]
     * customevents
-        * mi_dungeon_genial
-            * [Aquí van tus eventos personalizados]
+        * mi_mazmorra_genial
+            * [Tus eventos personalizados van aquí]
     * customspawns
-        * mi_dungeon_genial
-            * [Aquí van tus spawns personalizados]
+        * mi_mazmorra_genial
+            * [Tus generaciones personalizadas van aquí]
     * models
-        * [Aquí van tus modelos en formato bbmodel de ModelEngine, acepta carpetas]
+        * [Tus modelos de formato bbmodel de ModelEngine van aquí, se aceptan carpetas]
 
 </details>
 
-Esto permite a la mayoría de los usuarios arrastrar y soltar archivos directamente en su servidor y tenerlo funcionando inmediatamente.
+Esto permite que la mayoría de los usuarios arrastren y suelten archivos directamente en su servidor y que funcione de inmediato.
 
-***Importante: Cuando empaquetes para distribución, asegúrate de DESINSTALAR EL MINIDUNGEON PRIMERO. No desea distribuir minidungeons instalados, ¡desea que los administradores los configuren en sus servidores!***
+***Importante: al empaquetar para la distribución, ¡asegúrate de DESINSTALAR LA MINIDUNGEON PRIMERO! ¡No quieres distribuir minidungeons instaladas, quieres que los administradores las configuren en sus servidores!***
 
-# Compartir paquetes Dungeon que has creado con la comunidad
+# Compartir paquetes de mazmorras que hayas creado con la comunidad
 
-Discord contiene una sección [#community_dungeons](https://discord.gg/7Pnd7EjdZq "#community_dungeons") donde las personas pueden compartir sus creaciones de MiniDungeon. ¡Siéntete libre de contribuir!
+Discord contiene una sección [#community_dungeons](https://discord.gg/7Pnd7EjdZq "#community_dungeons") donde las personas pueden compartir sus creaciones de Minidungeon. ¡Siéntete libre de contribuir!
+

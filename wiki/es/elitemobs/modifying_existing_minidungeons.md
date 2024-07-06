@@ -1,55 +1,55 @@
-# Modificando minidungeons existentes
+# Modificar minidungeons existentes
 
-Basándonos en las solicitudes populares, esta página cubre los fundamentos de modificar Minidungeons existentes. Esto no es una guía paso a paso, sino una visión más amplia de cómo deben modificarse los sistemas. Tendrás que leer las páginas de la wiki sobre [Jefes Personalizados]($language$/elitemobs/creando_bosses.md) y [Ítems Personalizados]($language$/elitemobs/creando_items.md) para modificar esos valores.
+Según la solicitud popular, esta página repasa los conceptos básicos de la modificación de minidungeons existentes. Esta no es una guía paso a paso, sino una visión más amplia de cómo se deben modificar los sistemas. Tendrás que leer las páginas wiki sobre [Jefes personalizados]($language$/elitemobs/creating_bosses.md) y [Objetos personalizados]($language$/elitemobs/creating_items.md) para modificar esos valores.
 
-### Modificando la dificultad del dungeon
+### Modificar la dificultad de la mazmorra
 
-Hay tres razones por las que puedes querer modificar la dificultad de los dungeons, y son las siguientes:
+Hay tres razones por las que puedes querer modificar la dificultad de las mazmorras, y son las siguientes:
 
-### Modificando los multiplicadores de daño/salud de los jefes
+### Modificar los multiplicadores de daño/salud de los jefes
 
-Esta es la modificación más fácil de hacer. Si piensas que los jefes infligen daño en exceso o en defecto, o que tienen demasiada o muy poca salud, puedes modificar los valores asociados a estos modificadores en los archivos de los jefes contenidos en el directorio `custombosses`.
+Esta es la modificación más fácil de hacer. Si crees que los jefes infligen demasiado poco o demasiado daño, o que tienen muy poca o demasiada salud, puedes modificar los valores asociados a estos modificadores en los archivos de jefe contenidos en la carpeta `custombosses`.
 
-Valores que podrías querer modificar:
+Ejemplo de valores que querrías modificar:
 ```yml
 healthMultiplier: 0.5
 damageMultiplier: 0.5
 ```
-Más sobre las estadísticas de los jefes [aquí]($language$/elitemobs/creando_bosses.md&section=healthmultiplier).
+Más sobre las estadísticas de los jefes [aquí]($language$/elitemobs/creating_bosses.md&section=healthmultiplier).
 
-Por favor ten en cuenta que para muchos poderes, el multiplicador de daño no modifica el daño aplicado por el poder. Consulta la siguiente sección sobre cómo modificar los poderes.
+Ten en cuenta que, para muchos poderes, el multiplicador de daño no modifica el daño aplicado por el poder. Consulta la siguiente sección sobre cómo modificar los poderes.
 
-### Modificando los poderes de los jefes
+### Modificar los poderes de los jefes
 
-La principal dificultad de EliteMobs es lidiar con los diversos poderes que los jefes pueden tener. Los jefes de nivel superior tienden a tener más y poderes más difíciles, y los jefes de nivel inferior tienden a tener menos y fácil poderes. Ciertos poderes usados juntos en el mismo jefe hacen las peleas más fáciles, y otros poderes juntos pueden hacer la pelea significativamente más difícil.
+La principal dificultad de EliteMobs es lidiar con los diversos poderes que pueden tener los jefes. Los jefes de nivel superior tienden a tener más y más poderes, y los jefes de nivel inferior tienden a tener menos y más fáciles poderes. Ciertos poderes utilizados juntos en el mismo jefe hacen que las peleas sean más fáciles, y otros poderes juntos pueden hacer que la pelea sea significativamente más difícil.
 
-Valores que podrías querer modificar:
+Ejemplo de valores que querrías modificar:
 ```yml
 powers:
 - invulnerability_fire.yml
 - invulnerability_arrow.yml
 ```
-Más acerca de los poderes de los jefes [aquí]($language$/elitemobs/creando_bosses.md&section=powers).
+Más sobre los poderes de los jefes [aquí]($language$/elitemobs/creating_bosses.md&section=powers).
 
-Como hay demasiadas combinaciones de poderes para enumerar aquí, tendrás que aprender cómo funcionan los poderes y jugar tus encuentros para encontrar el punto dulce para lo que piensas es un encuentro que no es ni muy duro ni muy fácil.
+Dado que hay demasiadas combinaciones de poderes para enumerar aquí, tendrás que aprender cómo funcionan los poderes y probar tus encuentros para encontrar el punto ideal para lo que crees que es un encuentro que no sea ni demasiado difícil ni demasiado fácil.
 
-### Modificando el nivel de los jefes
+### Modificar el nivel de los jefes
 
-Esta es la pregunta más frecuente, y aunque es posible hacerlo, se requieren algunos pasos para asegurar que estás escalando tus jefes adecuadamente hacia arriba o hacia abajo.
+Esta es la pregunta más frecuente y, si bien es posible hacerlo, se necesitan algunos pasos para asegurarte de que estás escalando adecuadamente a tus jefes hacia arriba o hacia abajo.
 
-Valores que podrías querer modificar:
+Ejemplo de valores que querrías modificar:
 ```yml
 level: 21
 ```
-Más acerca de los niveles de los jefes [aquí]($language$/elitemobs/creando_bosses.md&section=level).
+Más sobre los niveles de jefe [aquí]($language$/elitemobs/creating_bosses.md&section=level).
 
-Esto toma una combinación de ambos, lo que se dice acerca de los multiplicadores de daño / salud, ya que los jefes en niveles más bajos / altos puede necesitar ligeramente distintos multiplicadores de salud y daño para hacer que la pelea se sienta justa.
+Esto requiere una combinación de lo que se dice sobre los multiplicadores de daño/salud, ya que los jefes de niveles inferiores/superiores pueden necesitar multiplicadores de salud y daño ligeramente diferentes para que la pelea se sienta bien.
 
-Sin embargo, el aspecto más importante a considerar aquí son los poderes en el jefe. Jefes de nivel inferior y superior suelen tener conjuntos de poder bastante diferentes dependiendo de lo difícil que esté destinada a ser la pelea. Tener el mismo conjunto de poderes para un jefe de nivel 10 y un jefe de nivel 200 normalmente resulta en peleas cuya dificultad se siente drásticamente diferente. De nuevo, la única manera de realmente encontrar el punto dulce es aprender cómo funcionan los poderes del plugin y probarlos.
+Sin embargo, el aspecto más importante a considerar aquí son los poderes del jefe. Los jefes de nivel inferior y superior tienden a tener conjuntos de poderes bastante diferentes según lo difícil que se supone que debe ser la pelea. Tener el mismo conjunto de poderes para un jefe de nivel 10 y un jefe de nivel 200 generalmente da como resultado peleas cuya dificultad se siente drásticamente diferente. Una vez más, la única forma de encontrar realmente el punto ideal es aprender cómo funcionan los poderes del complemento y probarlos.
 
-Y por último, **¡pero no menos importante!** Probablemente querrás ajustar el botín personalizado. La mayoría de los jefes en EliteMobs tienen botín personalizado, y si estás cambiando el nivel del jefe, es probable que quieras cambiar la naturaleza de lo que éste suelta.
+Y por último, **¡pero no menos importante!** Probablemente querrás modificar el botín personalizado. La mayoría de los jefes en EliteMobs tienen botín personalizado, y si estás cambiando el nivel del jefe, es probable que quieras cambiar la naturaleza del botín que suelta.
 
-Valores que podrías querer modificar:
+Ejemplo de valores que querrías modificar:
 ```yml
 uniqueLootList:
   - filename: mob_drop_boots.yml
@@ -57,14 +57,17 @@ uniqueLootList:
 ```
 Más sobre las caídas de botín [aquí]($language$/elitemobs/loot_tables.md).
 
-### Acreditación / publicación de contenido modificado
+### Acreditar/publicar contenido modificado
 
-Bajo EliteMobs eres libre de publicar los dungeons que crees en los canales apropiados para hacerlo (Discord). Sin embargo, si tu creación es sólo una modificación de un dungeon existente, tu envío puede ser eliminado, especialmente si es sólo un pequeño ajuste o si contiene o se deriva de contenido premium (por razones obvias).
+En EliteMobs, eres libre de publicar las mazmorras que crees en los canales apropiados para hacerlo (Discord). Sin embargo, si tu creación es solo una modificación de una mazmorra existente, tu envío puede ser eliminado, especialmente si es solo un pequeño ajuste o si contiene o se deriva de contenido premium (por razones obvias).
 
-Eres libre y bienvenido de modificar cualquier contenido que hayas comprado o por otro medio descargado para ajustarlo a las necesidades de tu servidor para el uso dentro de tu propia red, sin embargo por razones obvias esto no te proporciona derechos de redistribución.
+Eres libre y bienvenido a modificar cualquier contenido que hayas comprado o descargado para ajustarlo a las necesidades de tu servidor para su uso dentro de tu propia red, sin embargo, por razones obvias, esto no te otorga derechos de redistribución.
 
-Nos reservamos el derecho de eliminar envíos de la comunidad por cualquier razón y en cualquier momento, aunque nos gustaría no tener que hacerlo.
+Nos reservamos el derecho de eliminar los envíos de la comunidad por cualquier motivo y en cualquier momento, aunque odiaríamos tener que hacerlo.
 
 ### Más información
 
-Si crees que esta página debería estar más desarrollada, deja una sugerencia en Discord diciendo qué debería agregarse a ella. Más información sobre los varios sistemas mencionados aquí están presentes en las otras páginas de la wiki.
+Si crees que esta página debe ampliarse, deja una sugerencia en Discord diciendo qué se debe agregar. Puedes encontrar más información sobre los distintos sistemas mencionados aquí en las otras páginas wiki.
+
+
+

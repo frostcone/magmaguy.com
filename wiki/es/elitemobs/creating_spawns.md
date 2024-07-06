@@ -1,16 +1,16 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# ¿Qué son los Spawns personalizados?
+# ¿Qué son las generaciones personalizadas?
 
-Los Spawns personalizados son utilizados por los eventos y refuerzos globales para establecer cómo, dónde y cuándo un evento debería generar el jefe para ese evento.
+Las generaciones personalizadas son utilizadas por eventos y refuerzos globales para establecer cómo, dónde y cuándo un evento debe generar el jefe para ese evento.
 
-Los eventos y refuerzos globales establecen qué spawn están utilizando escribiendo su nombre de archivo.
+Los eventos y los refuerzos globales establecen qué generación están utilizando anotando su nombre de archivo.
 
-# Creando Spawns Personalizados
+# Creando generaciones personalizadas
 
-Los Spawns personalizados se introducen en la carpeta `customspawns`. Un Spawn personalizado puede ser utilizado por varios eventos al mismo tiempo, por lo que no tienes que crear uno por evento.
+Las generaciones personalizadas van en la carpeta `customspawns`. Varios eventos pueden utilizar una generación personalizada al mismo tiempo, por lo que no tienes que crear una por evento.
 
-Aquí hay un ejemplo de Spawn personalizado:
+Aquí hay un ejemplo de generación personalizada:
 
 ```yaml
 isEnabled: true
@@ -21,16 +21,16 @@ bypassWorldGuard: false
 isSurfaceSpawn: true
 ```
 
-## Creando un Spawn que puede ocurrir En cualquier lugar
-Para crear un spawn que puede ocurrir **en cualquier lugar**, tu configuración debería parecerse a lo siguiente:
+## Hacer una generación en cualquier lugar
+Para hacer una generación que pueda ocurrir **en cualquier lugar**, tu configuración debe ser similar a la siguiente:
 
 ```yml
 isEnabled: true
 canSpawnInLight: true
 ```
-Esta configuración permite a los mobs spawnear en cualquier lugar, en cualquier mundo, en cualquier momento, y durante cualquier fase lunar.
+Esta configuración permite que las turbas aparezcan en cualquier ubicación, en cualquier mundo, en cualquier momento y durante cualquier fase lunar.
 
-Si estás interesado en crear un spawn más personalizado, sigue leyendo a continuación.
+Si estás interesado en crear una generación más personalizada, sigue leyendo a continuación.
 
 ## Valores
 
@@ -40,11 +40,11 @@ Si estás interesado en crear un spawn más personalizado, sigue leyendo a conti
 
 ### isEnabled
 
-Establecer si el spawn está habilitado.
+Establece si la generación está habilitada.
 
-| Clave     | Valores       |   Valor por defecto |
+| Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `isEnabled` | [Boolean](#boolean) | `true`  |
+| `isEnabled` | [Booleano](#booleano) | `true`  |
 
 <details> 
 
@@ -64,13 +64,13 @@ isEnabled: true
 
 ### lowestYLevel
 
-Establece el nivel de altura mínimo (altura del mapa) utilizado.
+Establece el nivel y más bajo (altura del mapa) utilizado.
 
-| Clave     | Valores       | Valor por defecto |
+| Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `lowestYLevel` | [Integer](#integer) |   `0`   |
+| `lowestYLevel` | [Entero](#entero) |   `0`   |
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -88,11 +88,11 @@ lowestYLevel: 0
 
 ### highestYLevel
 
-Establece el nivel de altura mínimo (altura del mapa) utilizado.
+Establece el nivel y más bajo (altura del mapa) utilizado.
 
-| Clave     | Valores       | Valor por defecto |
+| Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `highestYLevel` | [Integer](#integer) |  `320`  |
+| `highestYLevel` | [Entero](#entero) |  `320`  |
 
 <details> 
 
@@ -112,11 +112,11 @@ highestYLevel: 320
 
 ### validWorlds
 
-Establece la lista de los mundos donde el spawn personalizado puede ocurrir. Esta configuración se puede dejar fuera para permitir que **todos** tus mundos sean válidos.
+Establece la lista de mundos donde puede ocurrir la generación personalizada. Esta configuración se puede omitir para permitir que **todos** tus mundos sean válidos.
 
-| Clave     | Valores           | Valor por defecto |
+| Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `validWorlds` | [String List](#string_list) |  ninguno   |
+| `validWorlds` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |
 
 <details> 
 
@@ -130,7 +130,7 @@ validWorlds:
 - FUN_LAND
 ```
 
-*Si quieres que todos tus mundos sean válidos, puedes simplemente no usar la configuración o darle formato de esta manera:*
+*Si quieres que todos tus mundos sean válidos, simplemente no uses la configuración o formatéala así:*
 
 ```yml
 validWorlds: []
@@ -144,9 +144,9 @@ validWorlds: []
 
 ### validWorldEnvironments
 
-Establece la lista de entornos de mundo válidos en los que puede ocurrir el spawn personalizado. Esta configuración puede omitirse para permitir que **todos** los entornos sean válidos.
+Establece la lista de entornos mundiales válidos donde puede ocurrir la generación personalizada. Esta configuración se puede omitir para permitir que **todos** los entornos sean válidos.
 
-| Clave     | Valores            | Valor por defecto |
+| Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
 | `validWorldEnvironments` | [Lista de entornos](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html) |  ninguno   |
 
@@ -162,7 +162,7 @@ validWorldEnvironments:
 - LARGE_BIOMES
 ```
 
-*Si quieres que todos los entornos sean válidos, puedes simplemente no usar la configuración o darle formato de esta manera:*
+*Si quieres que todos los entornos sean válidos, simplemente no uses la configuración o formatéala así:*
 
 ```yml
 validWorldEnvironments: []
@@ -176,11 +176,11 @@ validWorldEnvironments: []
 
 ### validBiomes
 
-Establece la lista de biomas válidos en los que puede ocurrir el spawn personalizado. Esta configuración puede omitirse para permitir que **todos** los biomas sean válidos.
+Establece la lista de biomas válidos donde puede ocurrir la generación personalizada. Esta configuración se puede omitir para permitir que **todos** los biomas sean válidos.
 
-| Clave     | Valores       | Valor por defecto |
+| Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `validBiomes` | [Lista de Biomas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) |  ninguno   |
+| `validBiomes` | [Lista de biomas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) |  ninguno   |
 
 <details> 
 
@@ -194,7 +194,7 @@ validBiomes:
 - MUSHROOM_FIELDS
 ```
 
-*Si quieres que todos los biomas sean válidos, puedes simplemente no usar la configuración o darle formato de esta manera:*
+*Si quieres que todos los entornos sean válidos, simplemente no uses la configuración o formatéala así:*
 
 ```yml
 validBiomes: []
@@ -208,11 +208,11 @@ validBiomes: []
 
 ### earliestTime
 
-Establece la hora más temprana en el juego en la que puede ocurrir el spawn personalizado.
+Establece la hora más temprana del juego en la que puede ocurrir la generación personalizada.
 
-| Clave     | Valores       | Valor por defecto |
+| Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `earliestTime` | [Integer](#integer) |   `0`   |
+| `earliestTime` | [Entero](#entero) |   `0`   |
 
 <details> 
 
@@ -232,11 +232,11 @@ earliestTime: 0
 
 ### latestTime
 
-Establece la hora más temprana en el juego en la que puede ocurrir el spawn personalizado.
+Establece la hora más temprana del juego en la que puede ocurrir la generación personalizada.
 
-| Clave     | Valores       | Valor por defecto |
+| Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `latestTime` | [Integer](#integer) | `24000` |
+| `latestTime` | [Entero](#entero) | `24000` |
 
 <details> 
 
@@ -256,9 +256,9 @@ latestTime: 24000
 
 ### moonPhase
 
-Establece la hora más temprana en el juego en la que puede ocurrir el spawn personalizado.
+Establece la hora más temprana del juego en la que puede ocurrir la generación personalizada.
 
-| Clave     |   Valores    | Valor por defecto |
+| Clave       |   Valores    | Predeterminado |
 |-----------|:-----------:|:-------:|
 | `moonPhase` | Especial [1] | `24000` |
 
@@ -280,9 +280,9 @@ moonPhase: 24000
 
 <details> 
 
-<summary><b>Expandir Tabla</b></summary>
+<summary><b>Expandir tabla</b></summary>
 
-| Fase Lunar        | Vista previa  |
+| Fase lunar        | Vista previa  |
 |-------------------|:--------:|
 | `NEW_MOON`        |    🌑    |
 | `WAXING_CRESCENT` |    🌒    |
@@ -298,11 +298,11 @@ moonPhase: 24000
 
 ### bypassWorldGuard
 
-Establece si el spawn personalizado eludirá los sistemas de protección como WorldGuard.
+Establece si la generación personalizada omitirá los sistemas de protección como WorldGuard.
 
-| Clave     | Valores       | Valor por defecto |
+| Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `bypassWorldGuard` | [Boolean](#boolean) | `false` |
+| `bypassWorldGuard` | [Booleano](#booleano) | `false` |
 
 <details> 
 
@@ -322,11 +322,11 @@ bypassWorldGuard: false
 
 ### canSpawnInLight
 
-Especifica si el spawn personalizado puede ocurrir en bloques iluminados por fuentes de luz.
+Especifica si la generación personalizada puede ocurrir en bloques iluminados por fuentes de luz.
 
-| Clave     | Valores       | Valor por defecto |
+| Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `canSpawnInLight` | [Boolean](#boolean) | `false` |
+| `canSpawnInLight` | [Booleano](#booleano) | `false` |
 
 <details> 
 
@@ -346,11 +346,11 @@ canSpawnInLight: false
 
 ### isSurfaceSpawn
 
-Establece si el spawn personalizado solo puede ocurrir en la superficie de un mundo.
+Establece si la generación personalizada solo puede ocurrir en la superficie de un mundo.
 
-| Clave     | Valores       | Valor por defecto |
+| Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `isSurfaceSpawn` | [Boolean](#boolean) | `false` |
+| `isSurfaceSpawn` | [Booleano](#booleano) | `false` |
 
 <details> 
 
@@ -370,11 +370,11 @@ isSurfaceSpawn: false
 
 ### isUndergroundSpawn
 
-Establece si el spawn personalizado solo puede ocurrir bajo tierra.
+Establece si la generación personalizada solo puede ocurrir bajo tierra.
 
-| Clave     | Valores       | Valor por defecto |
+| Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `isUndergroundSpawn` | [Boolean](#boolean) | `false` |
+| `isUndergroundSpawn` | [Booleano](#booleano) | `false` |
 
 <details> 
 
@@ -391,3 +391,5 @@ isUndergroundSpawn: false
 </details>
 
 </div>
+
+

@@ -1,31 +1,31 @@
-# Acciones de guión Elite
+# Acciones de Elite Script
 
-Las acciones son el núcleo del guión. Estas determinan lo que el guión hace y te permiten establecer intervalos personalizados.
+Las acciones son el núcleo del script. Estas determinan qué hace el script y te permiten establecer intervalos personalizados.
 
-Las acciones siempre comienzan con el tipo de acción que vas a realizar. Diferentes tipos de acciones cumplen diferentes funciones. Además, todas las acciones tienen un objetivo o objetivos. Las acciones también pueden tener un temporizador de espera, para asegurar que las cosas sucedan con retrasos personalizables. Por último, las acciones también pueden tener varios otros campos específicos para el tipo de acción.
+Las acciones siempre comienzan con el tipo de acción que vas a realizar. Los diferentes tipos de acción tienen diferentes funciones. Además, todas las acciones tienen un objetivo o varios objetivos. Las acciones también pueden tener un temporizador de espera, para asegurarse de que las cosas sucedan con retrasos personalizables. Finalmente, las acciones también pueden tener otros campos específicos del tipo de acción.
 
 ## Atributos compartidos
 
-| Valores             |                                                                                 Detalles                                                                                  | Especial |
-|---------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
-| `Target`           |                                                      [Más información aquí]($language$/elitemobs/elitescript_targets.md)                                                       | ❌ |
-| `wait`             |                                                      Establece la cantidad de tiempo para esperar antes de ejecutar las acciones                                                      | ❌ |
-| `repeatEvery`      |        Establece las acciones para repetir cada cierta cantidad de ticks. Cualquier guión que tenga esto configurado pero no esté utilizando tiempos será terminado tras la muerte del mob para evitar el lag.         | ❌ |
-| `times`            |                                                            Establece la cantidad de veces que ocurrirá una acción                                                            | Requiere `repeatEvery` |
-| `scripts`          |                                                         Establece los guiones que se ejecutarán al final de la acción                                                          | ❌ |
-| `onlyRunOneScript` |                                                       Selecciona uno de los `scripts` al azar y solo ejecuta ese.                                                       | ❌ |
-| `offset`           | Esta opción va debajo de `Target`. Te permite desplazar la ubicación del objetivo. Offset no funciona con acciones que están apuntando a zonas con `ZONE_FULL` o `ZONE_BORDER`. | ❌ |
+| Valores             |                                                                                 Detalles                                                                                 | Especial |
+|--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
+| `Target`           |                                                     [Más información aquí]($language$/elitemobs/elitescript_targets.md)                                                      | ❌ |
+| `wait`             |                                                 Establece la cantidad de tiempo de espera (ticks) antes de ejecutar las acciones                                                | ❌ |
+| `repeatEvery`      |        Establece las acciones para que se repitan cada cantidad determinada de ticks. Cualquier script que tenga esto establecido pero no esté usando tiempos se terminará al morir la mafia para evitar el lag.         | ❌ |
+| `times`            |                                                             Establece la cantidad de veces que una acción ocurrirá                                                             | Requiere `repeatEvery` |
+| `scripts`          |                                                          Establece los scripts que se ejecutarán al final de la acción                                                         | ❌ |
+| `onlyRunOneScript` |                                                      Elige uno de los `scripts` al azar y solo ejecuta ese.                                                      | ❌ |
+| `offset`           | Esta opción va debajo de `Target`. Te permite compensar la ubicación del objetivo. El desplazamiento no funciona con acciones que apuntan a zonas con `ZONE_FULL` o `ZONE_BORDER`. | ❌ |
 
-## Tipos de acciones
+## Tipos de acción
 
 ### ACTION_BAR_MESSAGE
 
 Establece el mensaje de la barra de acción para los objetivos.
 
-| Valores |                           Detalles                             | Obligatorio | Especial |
-| --- |:--------------------------------------------------------------:| :-: | :-: |
+| Valores |                            Detalles                            | Obligatorio | Especial |
+| --- |:-------------------------------------------------------------:| :-: | :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
-| `sValue` |                            Mensaje                             | ✅ | Puede usar [Códigos de Color](#color_codes) con `&` |
+| `sValue` |                            Mensaje                            | ✅ | Puede usar [Códigos de color](#color_codes) con `&` |
 
 <div align="center">
 
@@ -37,15 +37,15 @@ Establece el mensaje de la barra de acción para los objetivos.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Acciones:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
     - action: ACTION_BAR_MESSAGE
       Target: 
-        targetType: JUGADORES_CERCANOS
+        targetType: NEARBY_PLAYERS
         range: 10
-      sValue: "&2¡Hola Mundo!"
+      sValue: "&2Hello World!"
 ```
 
 <div align="center">
@@ -54,7 +54,7 @@ eliteScript:
 
 </div>
 
-Establecerá la barra de acción para decir Hola Mundo a cualquier jugador que esté dentro de los 10 bloques del jefe.
+Establecerá la barra de acción para que diga Hello World a cualquier jugador que esté a menos de 10 bloques del jefe.
 
 </div>
 
@@ -66,12 +66,12 @@ Establecerá la barra de acción para decir Hola Mundo a cualquier jugador que e
 
 ### BOSS_BAR_MESSAGE
 
-Agrega una barra de jefe al/los objetivo(s).
+Agrega una barra de jefe a los objetivos.
 
 | Valores |                            Detalles                            | Obligatorio |                   Especial                    |
 | --- |:-------------------------------------------------------------:| :-: |:--------------------------------------------:|
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |                      ❌                       |
-| `sValue` |                            Mensaje                            | ✅ | Puede usar [Códigos de Color](#color_codes) con `&` |
+| `sValue` |                            Mensaje                            | ✅ | Puede usar [Códigos de color](#color_codes) con `&` |
 | `duration` |               Duración de la barra de jefe en ticks               | ✅ |                      ❌                       |
 
 <div align="center">
@@ -84,16 +84,16 @@ Agrega una barra de jefe al/los objetivo(s).
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Acciones:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
     - action: BOSS_BAR_MESSAGE
       Target: 
-        targetType: JUGADORES_CERCANOS
+        targetType: NEARBY_PLAYERS
         range: 10
-      duración: 120
-      sValue: "&2¡Hola Mundo!"
+      duration: 120
+      sValue: "&2Hello World!"
 ```
 
 <div align="center">
@@ -102,7 +102,7 @@ eliteScript:
 
 </div>
 
-Establecerá una barra de jefe diciendo Hola Mundo a cualquier jugador que esté dentro de los 10 bloques del jefe durante 1 segundo.
+Establecerá una barra de jefe que diga Hello World a cualquier jugador que esté a menos de 10 bloques del jefe durante 1 segundo.
 
 </div>
 
@@ -114,14 +114,14 @@ Establecerá una barra de jefe diciendo Hola Mundo a cualquier jugador que esté
 
 ### DAMAGE
 
-Esta es la forma de dañar entidades como otras entidades.
+Así es como puedes dañar entidades como otras entidades.
 
-_Nota: ¡esto usa nativamente el sistema de daño de EliteMobs! Esto significa que verás la reducción normal de la armadura de élite de los golpes. Más detalles en la sección de multiplicadores._
+_Nota: ¡esto usa de forma nativa el sistema de daño de EliteMobs! Esto significa que verás la reducción de armadura de élite normal de los golpes. Más sobre esto en la sección de multiplicadores._
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `multiplicador` |                      Multiplicador de daño                       | ✅ |
+| `multiplier` |                       Multiplicador de daño                       | ✅ |
 
 <div align="center">
 
@@ -133,18 +133,18 @@ _Nota: ¡esto usa nativamente el sistema de daño de EliteMobs! Esto significa q
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Acciones:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
     - action: DAMAGE
       Target: 
-        targetType: JUGADORES_CERCANOS
+        targetType: NEARBY_PLAYERS
         range: 10
-      multiplicador: 0.5
+      multiplier: 0.5
 ```
 
-Establece el daño a la mitad del daño base que el jefe haría al jugador, teniendo en cuenta las reducciones de daño.
+Establece el daño en la mitad de la cantidad de daño base que el jefe infligiría al jugador, teniendo en cuenta las reducciones de daño.
 
 </div>
 
@@ -152,25 +152,25 @@ Establece el daño a la mitad del daño base que el jefe haría al jugador, teni
 
 </div>
 
-#### multiplicador
+#### multiplier
 
 Establece el multiplicador de daño del jefe para el efecto.
 
-**Importante**: para que los poderes escalen fácil y automáticamente, el daño se aplica haciendo que el jefe golpee al jugador una vez y multiplicando el daño base del jefe con el multiplicador.
+**Importante**: para que los poderes se escalen de forma fácil y automática, el daño se aplica haciendo que el jefe golpee al jugador una vez y multiplicando el daño base del jefe por el multiplicador.
 
-Esto significa que un multiplicador de 1.0 es lo mismo que un golpe normal del jefe. 2.0 es un golpe 2x la fuerza normal, y 0.5 es 50% tan duro.
+Esto significa que un multiplicador de 1,0 es lo mismo que un golpe normal del jefe. 2,0 es un golpe 2 veces más fuerte de lo normal y 0,5 es un 50% más difícil.
 
 ---
 
 ### MAKE_INVULNERABLE
 
-Hace a un objetivo invulnerable.
+Hace que un objetivo sea invulnerable.
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `invulnerable` |               Establece si el jefe es invulnerable                | ✅ |
-| `duration` |       Establece la duración de la invulnerabilidad (ticks)        | ❌ |
+| `invulnerable` |               Establece si el jefe es invulnerable               | ✅ |
+| `duration` |      Establece la duración de la invulnerabilidad (ticks)      | ❌ |
 
 <div align="center">
 
@@ -182,17 +182,17 @@ Hace a un objetivo invulnerable.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Acciones:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
     - action: MAKE_INVULNERABLE
       Target:
-        targetType: YO
+        targetType: SELF
       duration: 60
 ```
 
-Hace a un jefe invulnerable por 60 ticks (3 segundos).
+Hace que un jefe sea invulnerable durante 60 ticks (3 segundos).
 
 </div>
 
@@ -204,15 +204,15 @@ Hace a un jefe invulnerable por 60 ticks (3 segundos).
 
 ### MODIFY_DAMAGE
 
-Modifica el daño infligido a un jefe o infligido a los jugadores por ese jefe. Esta es una acción especial con unos pocos requisitos especiales.
+Modifica el daño infligido a un jefe o infligido a los jugadores por ese jefe. Esta es una acción especial con algunos requisitos especiales.
 
 | Valores | Detalles | Obligatorio |
 | --- | :-: | :-: |
-| `multiplicador` | Multiplicador de daño. | ✅ |
+| `multiplier` | Multiplicador de daño. | ✅ |
 
-Esta acción es especial y debe estar en un guión que tenga un escuchador de eventos para un evento de daño. Los siguientes son eventos de daño válidos: `EliteMobDañadoPorEventoDeMobÉlite`, `EliteMobDañadoPorEventoDeJugador`, `EliteMobDañadoEvent` para eventos que reducen el daño infligido al jefe y `PlayerDamagedByEliteMobEvent` para eventos que reducen el daño infligido a los jugadores.
+Esta acción es especial y debe estar en un script que tenga un detector de eventos para un evento de daño. Los siguientes son eventos de daño válidos: `EliteMobDamagedByEliteMobEvent`, `EliteMobDamagedByPlayerEvent`, `EliteMobDamagedEvent` para eventos que reducen el daño infligido al jefe y `PlayerDamagedByEliteMobEvent` para eventos que reducen el daño infligido a los jugadores.
 
-Se recomienda encarecidamente que aprendas cómo funciona la condición `hasTag` para poder utilizar mejor esta acción. Si se usa correctamente, es posible hacer que el jefe resista temporalmente o sea más débil al daño, y esto puede estar asociado a los beneficios del jugador, la ubicación del jefe u muchos otros factores.
+Es muy recomendable que aprendas cómo funciona la condición `hasTag` para utilizar mejor esta acción. Cuando se usa correctamente, es posible hacer que el jefe resista temporalmente o sea más débil al daño, y esto puede estar asociado a las ventajas del jugador, la ubicación del jefe o muchos otros factores.
 
 <div align="center">
 
@@ -224,20 +224,20 @@ Se recomienda encarecidamente que aprendas cómo funciona la condición `hasTag`
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Acciones:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
     - action: MODIFY_DAMAGE
-      multiplicador: 2.0
-      Condiciones:
-        tieneTags:
-        - "JugadorGenial"
+      multiplier: 2.0
+      Conditions:
+        hasTags:
+        - "CoolPlayer"
         Target:
-          targetType: DESTINO_DIRECTO
+          targetType: DIRECT_TARGET
 ```
 
-Aumenta el daño infligido al jefe por los jugadores en 2x, pero solo si el jugador tiene una etiqueta llamada "JugadorGenial"
+Aumenta el daño infligido al jefe por los jugadores en 2x, pero solo si el jugador tiene una etiqueta llamada "CoolPlayer"
 
 </div>
 
@@ -249,12 +249,12 @@ Aumenta el daño infligido al jefe por los jugadores en 2x, pero solo si el juga
 
 ### MESSAGE
 
-Envía un mensaje al/los objetivo(s).
+Envía un mensaje a los objetivos.
 
 | Valores |                            Detalles                            | Obligatorio | Especial |
 | --- |:-------------------------------------------------------------:| :-: | :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
-| `sValue` |                            Mensaje                            | ✅ | Puede usar [Códigos de Color](#color_codes) con `&` |
+| `sValue` |                            Mensaje                            | ✅ | Puede usar [Códigos de color](#color_codes) con `&` |
 
 <div align="center">
 
@@ -266,15 +266,15 @@ Envía un mensaje al/los objetivo(s).
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Acciones:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
     - action: MESSAGE
       Target: 
-        targetType: JUGADORES_CERCANOS
+        targetType: NEARBY_PLAYERS
         range: 10
-      sValue: "&2¡Hola Mundo!"
+      sValue: "&2Hello World!"
 ```
 
 <div align="center">
@@ -283,7 +283,54 @@ eliteScript:
 
 </div>
 
-Enviar un mensaje chat a todos los jugadores que estén dentro de los 10 bloques del jefe.
+Enviará un mensaje de chat a todos los jugadores a menos de 10 bloques del jefe.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
+### NAVIGATE
+
+Hace que el jefe navegue (camine) hasta el objetivo especificado.
+
+| Valores |                            Detalles                            | Obligatorio | Especial |
+| --- |:-------------------------------------------------------------:| :-: | :-: |
+| `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
+| `FinalTarget` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ |
+| `velocity` | Establece la velocidad de navegación del jefe. `1.0` es el valor del jefe establecido en la configuración. | ❌ | ❌ |
+| `bValue` | Establece si el jefe debe ser teletransportado por la fuerza a `FinalTarget` si la navegación falla. | ❌ | ❌ |
+| `duration` | Cuánto tiempo debe intentar navegar el jefe antes de rendirse. Establecer en ticks. El valor predeterminado es 100 ticks. | ✅ | ❌ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Ejemplo</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: NAVIGATE
+      Target: 
+        targetType: SELF
+      FinalTarget:
+        targetType: NEARBY_PLAYERS
+        range: 50
+      velocity: 1.0
+      bValue: true
+      duration: 100
+```
+
+Hará que el jefe navegue hasta el lugar donde estaba parado el jugador cuando golpeó al jefe.
 
 </div>
 
@@ -295,13 +342,13 @@ Enviar un mensaje chat a todos los jugadores que estén dentro de los 10 bloques
 
 ### PLACE_BLOCK
 
-Coloca un bloque en la(s) ubicación(es) objetivo por la duración.
+Coloca un bloque en las ubicaciones objetivo durante la duración.
 
 | Valores |                                                         Detalles                                                         | Obligatorio |
 | --- |:-----------------------------------------------------------------------------------------------------------------------:| :-: |
 | `Target` |                              [Más información aquí]($language$/elitemobs/elitescript_targets.md)                              | ✅ |
 | `material` | [Material](#material) del bloque, [lista completa aquí](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | ✅ |
-| `duration` |                                              Duración del efecto, en ticks                                               | ❌ |
+| `duration` |                                            Duración del efecto, en ticks                                             | ❌ |
 
 <div align="center">
 
@@ -313,20 +360,20 @@ Coloca un bloque en la(s) ubicación(es) objetivo por la duración.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Zona:
-      shape: DOMO
-      radio: 3
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: DOME
+      radius: 3
       Target:
-        targetType: YO
-    Acciones:
+        targetType: SELF
+    Actions:
     - action: PLACE_BLOCK
       Target:
-        targetType: ZONA_LLENA
-      duración: 120
-      material: VIDRIO
+        targetType: ZONE_FULL
+      duration: 120
+      material: GLASS
 ```
 
 <div align="center">
@@ -335,9 +382,9 @@ eliteScript:
 
 </div>
 
-Coloca un domo de vidrio alrededor del jefe que durará 6 segundos.
+Coloca una cúpula de vidrio alrededor del jefe que durará 6 segundos.
 
-_Nota: Si no se define la duración, la colocación del bloque es permanente._
+_Nota: Si no se define ninguna duración, la colocación del bloque es permanente._
 
 </div>
 
@@ -349,12 +396,12 @@ _Nota: Si no se define la duración, la colocación del bloque es permanente._
 
 ### PLAY_ANIMATION
 
-Reproduce la animación especificada para un modelo personalizado usando el Motor de Modelos. Requiere Motor de Modelos y un modelo personalizado válido en el objetivo que ejecuta la animación.
+Reproduce la animación especificada para un modelo personalizado utilizando Model Engine. Requiere Model Engine y un modelo personalizado válido para estar en el objetivo que ejecuta la animación.
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `sValue` |                Establece el nombre de la animación                 | ✅ |
+| `sValue` |               Establece el nombre de la animación                | ✅ |
 
 <div align="center">
 
@@ -366,17 +413,17 @@ Reproduce la animación especificada para un modelo personalizado usando el Moto
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Acciones:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
     - action: PLAY_ANIMATION
       Target:
-        targetType: YO
-      sValue: "baile_fortnite"
+        targetType: SELF
+      sValue: "fortnite_dance"
 ```
 
-Hace que el jefe reproduzca la animación baile_fortnite. Requiere que el servidor tenga Motor de Modelos, que el jefe tenga un disfraz personalizado y que el disfraz personalizado tenga una animación llamada "baile\_fortnite".
+Establece que el jefe reproduzca la animación fortnite_dance. Requiere que el servidor tenga Model Engine, que el jefe tenga un disfraz personalizado y que el disfraz personalizado tenga una animación llamada "fortnite\_dance".
 
 </div>
 
@@ -388,16 +435,17 @@ Hace que el jefe reproduzca la animación baile_fortnite. Requiere que el servid
 
 ### PLAY_SOUND
 
-Reproduce un sonido del juego.
+Reproduce un sonido en el juego.
 
-| Valores  |                            Detalles                            | Obligatorio |
-|----------|:-------------------------------------------------------------:|:----------:|
-| `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) |    ✅     |
-| `sValue` |            Establece el nombre del sonido a reproducir            |    ✅     |
-| `pitch`  |           Establece el tono del sonido a reproducir            |    ❌     |
-| `volume` |           Establece el volumen del sonido a reproducir           |    ❌     |
+| Valores   |                            Detalles                            | Obligatorio |
+|----------|:-------------------------------------------------------------:|:---------:|
+| `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) |     ✅     |
+| `sValue` |            Establece el nombre del sonido que se reproducirá           |     ✅     |
+| `pitch`  |            Establece el tono del sonido que se reproducirá            |     ❌     |
+| `volume` |           Establece el volumen del sonido que se reproducirá            |     ❌     |
 
-[¡Aquí tienes una lista útil de todos los sonidos de Minecraft!](https://www.digminecraft.com/lists/sound_list_pc.php) Recuerda que esto también puede reproducir sonidos personalizados de packs de recursos.
+[¡Aquí hay una lista práctica de todos los sonidos de Minecraft!](https://www.digminecraft.com/lists/sound_list_pc.php) Recuerda que esto también puede reproducir sonidos personalizados de paquetes de recursos. 
+Cuando la acción apunta a una zona, la acción reproducirá un sonido por cada bloque de esa zona. Esto puede hacer que el sonido sea considerablemente más alto de lo normal, así que considera bajar el volumen si apuntas a una zona.
 
 <div align="center">
 
@@ -409,13 +457,13 @@ Reproduce un sonido del juego.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Acciones:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
     - action: PLAY_SOUND
       Target:
-        targetType: YO
+        targeType: SELF
       sValue: minecraft:block.bell.resonate
 ```
 
@@ -431,13 +479,13 @@ Reproduce el sonido de resonancia de las campanas de Minecraft en la ubicación 
 
 ### POTION_EFFECT
 
-Aplica un efecto de poción específico al/los objetivo(s).
+Aplica un efecto de poción específico a los objetivos.
 
 | Valores |                                                       Detalles                                                       | Obligatorio |
 | --- |:-------------------------------------------------------------------------------------------------------------------:| :-: |
 | `Target` |                            [Más información aquí]($language$/elitemobs/elitescript_targets.md)                            | ✅ |
 | `potionEffectType` | Tipo de efecto, [la lista válida está aquí](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html) | ✅ |
-| `amplifier` |                                          Nivel del efecto de poción (empieza en 0)                                          | ✅ |
+| `amplifier` |                                        Nivel de efecto de poción (comienza en 0)                                         | ✅ |
 | `duration` |                                           Duración del efecto (ticks)                                            | ✅ |
 
 <div align="center">
@@ -450,13 +498,13 @@ Aplica un efecto de poción específico al/los objetivo(s).
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDañadoPorEventoDeJugador
-    Acciones:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
     - action: POTION_EFFECT
       Target: 
-        targetType: JUGADORES_CERCANOS
+        targetType: NEARBY_PLAYERS
         range: 10
       potionEffectType: LEVITATION
       amplifier: 1
@@ -469,7 +517,7 @@ eliteScript:
 
 </div>
 
-Hace que cualquier jugador que esté dentro de los 10 bloques del jefe levite por 2 segundos (40 ticks).
+Esto hará que cualquier jugador a menos de 10 bloques del jefe levite durante 2 segundos (40 ticks).
 
 </div>
 
@@ -481,14 +529,14 @@ Hace que cualquier jugador que esté dentro de los 10 bloques del jefe levite po
 
 ### PUSH
 
-Empuja a un objetivo con un vector establecido.
+Empuja un objetivo por un vector establecido.
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `vValue` |       Establece el vector de la velocidad que se aplicará        | ✅ |
 
-*Nota: Esta acción también acepta vectores relativos. Aprende más sobre cómo usarlos [aquí]($language$/elitemobs/elitescript_relative_vectors.md).*
+*Nota: Esta acción también acepta vectores relativos. Obtén más información sobre cómo usarlos [aquí]($language$/elitemobs/elitescript_relative_vectors.md).*
 
 <div align="center">
 
@@ -500,18 +548,18 @@ Empuja a un objetivo con un vector establecido.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - accion: EMPUJAR
-      espera: 3
-      Objetivo: 
-        tipoObjetivo: JUGADORES_CERCANOS
-        alcance: 10
-      vValor: 0,0.3,0
-      veces: 10
-      repetirCada: 10
+    Actions:
+    - action: PUSH
+      wait: 3
+      Target: 
+        targetType: NEARBY_PLAYERS
+        range: 10
+      vValue: 0,0.3,0
+      times: 10
+      repeatEvery: 10
 ```
 
 <div align="center">
@@ -520,7 +568,7 @@ eliteScript:
 
 </div>
 
-Esto empujará a todos los jugadores en un área de 10 bloques del jefe hacia el aire con una fuerza de 0.3. Esta acción se repetirá 10 veces cada 0.5 segundos (10 ticks). En otras palabras, este efecto durará 5 segundos (10 veces x 10 ticks = 100 ticks).
+Esto empujará a todos los jugadores a menos de 10 bloques del jefe al aire usando una fuerza de 0.3. Esta acción se repetirá 10 veces cada 0.5 segundos (10 ticks). En otras palabras, eso hará que este efecto dure 5 segundos (10 veces x 10 ticks = 100 ticks).
 
 Esto hará que parezca que los jugadores están saltando.
 
@@ -532,21 +580,20 @@ Esto hará que parezca que los jugadores están saltando.
 
 #### vector
 
-Los vectores están definidos por `vValor: x,y,z`. Por ejemplo, si quieres que el objetivo sea empujado hacia arriba, puedes hacer `vValor: 0,0.3,0`.
+Los vectores se definen mediante `vValue: x,y,z`. Como ejemplo, si quieres que el objetivo sea empujado hacia arriba, puedes hacer `vValue: 0,0.3,0`.
 
 ---
 
-
-### CORRER_COMANDO_COMO_CONSOLA
+### RUN_COMMAND_AS_CONSOLE
 
 Ejecuta un comando como consola.
 
 | Valores |                             Detalles                             | Obligatorio |
 | --- |:---------------------------------------------------------------:| :-: |
-| `Objetivo` |  [Más información aquí]($language$/elitemobs/elitescript_targets.md)  | ✅ |
-| `sValor` |                    Comando que se ejecutará                      | ✅ |
+| `Target` |  [Más información aquí]($language$/elitemobs/elitescript_targets.md)  | ✅ |
+| `sValue` |                    Comando que se ejecutará                     | ✅ |
 
-**Nota: ¡hay marcadores de posición disponibles! Consulta CORRER_COMANDO_COMO_JUGADOR, son los mismos**
+**Nota: ¡hay marcadores de posición disponibles! Comprueba RUN_COMMAND_AS_PLAYER, son los mismos**
 
 <div align="center">
 
@@ -558,15 +605,15 @@ Ejecuta un comando como consola.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - accion: CORRER_COMANDO_COMO_CONSOLA
-      Objetivo:
-        tipoObjetivo: JUGADORES_CERCANOS
-        alcance: 10
-      sValor: decir Hola $nombreJefe mi nombre es $nombreJugador. ¿Cuál es tu nivel? $nombreJefe mi nivel es $nivelJefe.
+    Actions:
+    - action: RUN_COMMAND_AS_CONSOLE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 10
+      sValue: say Hello $bossName my name is $playerName. What is your level? $bossName my level is $bossLevel.
 ```
 
 <div align="center">
@@ -575,7 +622,7 @@ eliteScript:
 
 </div>
 
-Hace que la consola transmita el mensaje "Hola $nombreJefe mi nombre es $nombreJugador. ¿Cuál es tu nivel? $nombreJefe mi nivel es $nivelJefe"
+Hace que la consola transmita el mensaje "Hello $bossName my name is $playerName. What is your level? $bossName my level is $bossLevel"
 
 </div>
 
@@ -585,28 +632,28 @@ Hace que la consola transmita el mensaje "Hola $nombreJefe mi nombre es $nombreJ
 
 ---
 
-### CORRER_COMANDO_COMO_JUGADOR
+### RUN_COMMAND_AS_PLAYER
+`
+Ejecuta un comando como un `player. Requiere que el objetivo sea jugadores.
 
-Ejecuta un comando como `jugador`. Requiere que el objetivo sea un jugador.
+| Valores |                            Detalles                            | Obligatorio |
+| --- |:-------------------------------------------------------------:| :-: |
+| `target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `sValue` |                    Comando que se ejecutará                     | ✅ |
 
-| Valores |                     Detalles                     | Obligatorio |
-| --- |:--------------------------------------------------:| :-: |
-| `objetivo` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `sValor` |              Comando que se ejecutará              | ✅ |
-
-**Nota: CORRER_COMANDO_COMO_JUGADOR y CORRER_COMANDO_COMO_CONSOLA utilizan los siguientes marcadores de posición:**
+**Nota: RUN_COMMAND_AS_PLAYER y RUN_COMMAND_AS_CONSOLE usan los siguientes marcadores de posición:**
 
 | Marcador de posición | Detalles | Especial |
 | --- | :-: | :-: |
-| `$nombreJugador` | Nombre visible del jugador | El objetivo debe ser un jugador |
-| `$jugadorX` | Ubicación X del jugador | El objetivo debe ser un jugador |
-| `$jugadorY` | Ubicación Y del jugador | El objetivo debe ser un jugador |
-| `$jugadorZ` | Ubicación Z del jugador | El objetivo debe ser un jugador |
-| `$nombreJefe` | Nombre visible del jefe | El objetivo debe ser un jugador |
-| `$jefeX` | Ubicación X del jefe | ❌ |
-| `$jefeY` | Ubicación Y del jefe | ❌ |
-| `$jefeZ` | Ubicación Z del jefe | ❌ |
-| `$nivelJefe` | Nivel del jefe | ❌ |
+| `$playerName` | Nombre para mostrar del jugador | El objetivo debe ser un jugador |
+| `$playerX` | Ubicación X del jugador | El objetivo debe ser un jugador |
+| `$playerY` | Ubicación Y del jugador | El objetivo debe ser un jugador |
+| `$playerZ` | Ubicación Z del jugador | El objetivo debe ser un jugador |
+| `$bossName` | Nombre para mostrar del jugador | El objetivo debe ser un jugador |
+| `$bossX` | Ubicación X del jefe | ❌ |
+| `$bossY` | Ubicación Y del jefe | ❌ |
+| `$bossZ` | Ubicación Z del jefe | ❌ |
+| `$bossLevel` | Nivel del jefe | ❌ |
 
 <div align="center">
 
@@ -618,24 +665,26 @@ Ejecuta un comando como `jugador`. Requiere que el objetivo sea un jugador.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - accion: CORRER_COMANDO_COMO_JUGADOR
-      Objetivo:
-        tipoObjetivo: JUGADORES_CERCANOS
-        alcance: 10
-      sValor: decir Hola $nombreJefe mi nombre es $nombreJugador.
+    Actions:
+    - action: RUN_COMMAND_AS_PLAYER
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 10
+      sValue: say Hello $bossName my name is $playerName.
 ```
 
 <div align="center">
+
+
 
 ![elitescript_actions_commandplayer.jpg](../../../img/wiki/elitescript_actions_commandplayer.jpg)
 
 </div>
 
-Hace que el jugador ejecute el comando de decir con Hola $nombreJefe mi nombre es $nombreJugador., lo que significa que solo dirán "Hola $nombreJefe mi nombre es $nombreJugador."
+Hace que el jugador ejecute el comando say con Hello $bossName my name is $playerName., lo que significa que solo dice "Hello $bossName my name is $playerName."
 
 </div>
 
@@ -645,14 +694,15 @@ Hace que el jugador ejecute el comando de decir con Hola $nombreJefe mi nombre e
 
 ---
 
-### EJECUTAR_SCRIPT
+### RUN_SCRIPT
 
-Simplemente ejecuta los scripts definidos en `scripts`. Cualquier acción puede hacer esto, esta acción solo existe como una acción de conveniencia para cuando solo quieres hacer eso.
+Esto simplemente ejecuta los scripts definidos en `scripts`. Cualquier acción puede hacer esto, esta acción solo existe como una acción de conveniencia para cuando solo quieres hacer eso.
 
-| Valores |                    Detalles                    | Obligatorio |
-| --- |:------------------------------------------------:| :-: |
-| `Objetivo` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `scripts` |              Scripts que se ejecutarán              | ✅ |
+| Valores |                            Detalles                            | Obligatorio |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `scripts` |                   Scripts que se ejecutarán                    | ✅ |
+| `onlyRunOneScript` |         Ejecuta solo un script de la lista.           | ❌ |
 
 <div align="center">
 
@@ -664,28 +714,29 @@ Simplemente ejecuta los scripts definidos en `scripts`. Cualquier acción puede 
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - accion: EJECUTAR_SCRIPT
+    Actions:
+    - action: RUN_SCRIPT
+      onlyRunOneScript: false
       scripts:
-      - Ejemplo1
-      - Ejemplo2
-  Ejemplo1:
-    Acciones:
-    - accion: DAÑO
-      Objetivo:
-        tipoObjetivo: JUGADORES_CERCANOS
-        alcance: 10
-      multiplicador: 0.5
-  Ejemplo2:
-    Acciones:
-    - accion: MENSAJE
-      Objetivo:
-        tipoObjetivo: JUGADORES_CERCANOS
-        alcance: 10
-      sValor: "&cJefe genial!: &f¡Te tengo!"
+      - Example1
+      - Example2
+  Example1:
+    Actions:
+    - action: DAMAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 10
+      multiplier: 0.5
+  Example2:
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 10
+      sValue: "&cCool boss!: &fGotcha back!"
 ```
 
 <div align="center">
@@ -694,10 +745,10 @@ eliteScript:
 
 </div>
 
-Cuando un elitista recibe daño, ejecuta EJECUTAR_SCRIPT, que ejecuta las secuencias de script Ejemplo1 y Ejemplo2.
+Cuando una élite recibe daño, ejecuta RUN_SCRIPT, que ejecuta los scripts Example1 y Example2.
 
-La secuencia de script Ejemplo1 dañará a todos los jugadores en un radio de 10 bloques del jefe.
-<br>La secuencia de script Ejemplo2 enviará un mensaje a todos los jugadores en un área de 10 bloques del jefe con el mensaje "&cJefe genial: &f¡Te tengo!".
+El script Example1 dañará a todos los jugadores a menos de 10 bloques del jefe.
+<br>El script Example2 enviará un mensaje a todos los jugadores a menos de 10 bloques del jefe con el mensaje "&cCool boss!: &fGotcha back!".
 
 </div>
 
@@ -707,15 +758,15 @@ La secuencia de script Ejemplo1 dañará a todos los jugadores en un radio de 10
 
 ---
 
-### ESTABLECE_MOB_AI
+### SET_MOB_AI
 
-Establece si el mob tiene IA. En Minecraft, los mobs sin IA no se moverán ni atacarán. Aún pueden recibir daño, pero dañarlos no resultará en que sean repelidos.
+Establece si la mafia tiene IA. En Minecraft, las mafias sin IA no se moverán ni atacarán. Todavía pueden recibir daño, pero dañarlos no hará que sean derribados.
 
-| Valores |                    Detalles                    | Obligatorio |
-| --- |:-------------------------------------------------:| :-: |
-| `Objetivo` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `bValor` |              Establece si el jefe tiene IA              | ✅ |
-| `duración` |             Establece el valor establecido (ticks)             | ❌ |
+| Valores |                            Detalles                            | Obligatorio |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `bValue` |               Establece si el jefe tiene IA                | ✅ |
+| `duration` |              Establece el valor establecido (ticks)              | ❌ |
 
 <div align="center">
 
@@ -727,18 +778,18 @@ Establece si el mob tiene IA. En Minecraft, los mobs sin IA no se moverán ni at
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - accion: ESTABLECE_MOB_AI
-      Objetivo:
-        tipoObjetivo: AUTO
-      bValor: falso
-      duración: 40
+    Actions:
+    - action: SET_MOB_AI
+      Target:
+        targetType: SELF
+      bValue: false
+      duration: 40
 ```
 
-Establece que el jefe no tiene IA durante 2 segundos (40 ticks).
+Establece que el jefe no tenga IA durante 2 segundos (40 ticks).
 
 </div>
 
@@ -748,19 +799,19 @@ Establece que el jefe no tiene IA durante 2 segundos (40 ticks).
 
 ---
 
-### ESTABLECE_MOB_CONSCIENTE
+### SET_MOB_AWARE
 
-Establece si el mob está consciente. En Minecraft, los mobs que no están conscientes no se moverán a nuevas ubicaciones y no atacarán. Aún pueden recibir daño, y serán repelidos.
+Establece si la mafia está consciente. En Minecraft, las mafias que no están conscientes no se moverán a nuevas ubicaciones ni atacarán. Todavía pueden recibir daño y serán derribados.
 
-Como nota, si el mob ya se estaba moviendo a una ubicación cuando perdió la conciencia, terminará de llegar a esa ubicación antes de detenerse por completo y dejar de moverse.
+Como nota, si la mafia ya se estaba moviendo a una ubicación cuando pierde la conciencia, terminará de ir a esa ubicación antes de detenerse por completo y no moverse más.
 
-Esto significa que puedes usar mobs inconscientes para moverte a ubicaciones definidas, a diferencia de los mobs sin IA.
+Esto significa que puedes usar mafias inconscientes para moverlas a ubicaciones definidas, a diferencia de las mafias sin IA.
 
-| Valores |                    Detalles                    | Obligatorio |
-| --- |:------------------------------------------------:| :-: |
-| `Objetivo` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `bValor` |               Establece si está consciente               | ✅ |
-| `La duración` |             Establece el valor establecido (ticks)             | ❌ |
+| Valores |                            Detalles                            | Obligatorio |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `bValue` |                  Establece si está consciente                   | ✅ |
+| `duration` |              Establece el valor establecido (ticks)              | ❌ |
 
 <div align="center">
 
@@ -772,18 +823,18 @@ Esto significa que puedes usar mobs inconscientes para moverte a ubicaciones def
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - accion: ESTABLECE_MOB_CONSCIENTE
-      Objetivo:
-        tipoObjetivo: AUTO
-      bValor: falso
-      duración: 40
+    Actions:
+    - action: SET_MOB_AWARE
+      Target:
+        targetType: SELF
+      bValue: false
+      duration: 40
 ```
 
-Establece que el jefe no tiene conciencia durante 2 segundos (40 ticks).
+Establece que el jefe no tenga conciencia durante 2 segundos (40 ticks).
 
 </div>
 
@@ -793,14 +844,14 @@ Establece que el jefe no tiene conciencia durante 2 segundos (40 ticks).
 
 ---
 
-### ENCENDER_FUEGO
+### SET_ON_FIRE
 
-Enciende un objeto durante la duración.
+Prende fuego a una entidad durante la duración.
 
-| Valores |                    Detalles                    | Obligatorio |
-| --- |:------------------------------------------------:| :-: |
-| `Objetivo` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `duración` |            Duración del efecto, en tick             | ✅ |
+| Valores |                            Detalles                            | Obligatorio |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `duration` |                Duración del efecto, en ticks                 | ✅ |
 
 <div align="center">
 
@@ -812,15 +863,15 @@ Enciende un objeto durante la duración.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - accion: ENCENDER_FUEGO
-      Objetivo:
-        tipoObjetivo: JUGADORES_CERCANOS
-        alcance: 10
-      duración: 60
+    Actions:
+    - action: SET_ON_FIRE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 10
+      duration: 60
 ```
 
 <div align="center">
@@ -829,7 +880,7 @@ eliteScript:
 
 </div>
 
-Enciende a todos los jugadores en un radio de 10 bloques del jefe durante 3 segundos (60 ticks).
+Prende fuego a todos los jugadores a menos de 10 bloques del jefe durante 3 segundos (60 ticks).
 
 </div>
 
@@ -839,14 +890,14 @@ Enciende a todos los jugadores en un radio de 10 bloques del jefe durante 3 segu
 
 ---
 
-### ESTABLECE_TIEMPO
+### SET_TIME
 
-Establece el tiempo de juego del mundo en el que se encuentra el objetivo.
+Establece la hora del juego del mundo en el que se encuentra el objetivo.
 
-| Valores |                    Detalles                    | Obligatorio |
-| --- |:------------------------------------------------:| :-: |
-| `Objetivo` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `tiempo` |                        Establece el tiempo                        | ✅ |
+| Valores |                            Detalles                            | Obligatorio |
+| --- |:-------------------------------------------------------------:| :-: |
+| `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `time` |                         Establece la hora                         | ✅ |
 
 <div align="center">
 
@@ -858,14 +909,14 @@ Establece el tiempo de juego del mundo en el que se encuentra el objetivo.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - accion: ESTABLECE_TIEMPO
-      Objetivo:
-        tipoObjetivo: AUTO
-      tiempo: 10000
+    Actions:
+    - action: SET_TIME
+      Target:
+        targetType: SELF
+      time: 10000
 ```
 
 <div align="center">
@@ -874,7 +925,7 @@ eliteScript:
 
 </div>
 
-Cuando el jefe es golpeado, establecerá que el tiempo del mundo en el que se encuentra el jefe sea de 10000 tick.
+Cuando es golpeado, el jefe establecerá la hora del mundo en el que se encuentra el jefe en 10000 ticks.
 
 </div>
 
@@ -886,12 +937,12 @@ Cuando el jefe es golpeado, establecerá que el tiempo del mundo en el que se en
 
 ### SET_WEATHER
 
-Establece el clima del mundo en el que se encuentra el objetivo durante un tiempo determinado.
+Establece el clima del mundo en el que se encuentra el objetivo durante un período de tiempo determinado.
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `weather` |                     Establece el tipo de clima                     | ✅ |
+| `weather` |                      Establece el tipo de clima                     | ✅ |
 | `duration` |           Establece la duración del patrón climático            | ✅ |
 
 <div align="center">
@@ -904,11 +955,11 @@ Establece el clima del mundo en el que se encuentra el objetivo durante un tiemp
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - acción: SET_WEATHER
+    Actions:
+    - action: SET_WEATHER
       Target:
         targetType: SELF
       weather: PRECIPITATION
@@ -917,11 +968,11 @@ eliteScript:
 
 <div align="center">
 
-![elitescript_acciones_setweather.gif](../../../img/wiki/elitescript_acciones_setweather.gif)
+![elitescript_actions_setweather.gif](../../../img/wiki/elitescript_actions_setweather.gif)
 
 </div>
 
-Establece el clima del mundo en el que se encuentra el jefe para que llueva/nieve durante el próximo minuto.
+Establece que el clima del mundo en el que se encuentra el jefe llueva/nieve durante el próximo minuto.
 
 *Nota: El efecto tardará un tiempo en activarse.*
 
@@ -935,9 +986,9 @@ Establece el clima del mundo en el que se encuentra el jefe para que llueva/niev
 
 Los siguientes son patrones climáticos válidos:
 
-- `CLEAR` - Establece el clima como despejado
-- `PRECIPITATION` - Establece el clima a lluvia / nieve, dependiendo del bioma, la altura de la ubicación y otras consideraciones de Minecraft por defecto.
-- `THUNDER` - Establece el clima a tormenta
+- `CLEAR` - Establece el clima en despejado
+- `PRECIPITATION` - Establece el clima en lluvia/nieve, dependiendo del bioma, la altura de la ubicación y otras consideraciones de Minecraft vanilla.
+- `THUNDER` - Establece el clima en tormenta eléctrica
 
 ---
 
@@ -945,18 +996,18 @@ Los siguientes son patrones climáticos válidos:
 
 Genera fuegos artificiales.
 
-| Valores |                                                                                                            Detalles                                                                                                            | Obligatorio |
+| Valores |                                                                                                            Detalles                                                                                                             | Obligatorio |
 | --- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
-| `Target` |                                                                                 [Más información aquí]($language$/elitemobs/elitescript_targets.md)                                                                                 | ✅ |
-| `vValue` |                                                                                           Establece la velocidad del cohete de fuegos artificiales                                                                                           | ✅ |
-| `flicker` |                                                                                          Establece si las partículas de fuegos artificiales parpadearán                                                                                          | ❌ |
-| `withTrail` |                                                                                         Establece si el cohete de fuegos artificiales dejará un rastro                                                                                        | ❌ |
-| `power` |                                                                                                Establece la potencia de los fuegos artificiales                                                                                                | ❌ |
-| `fireworkEffects` |                                                                     Establece los efectos de los fuegos artificiales, relacionados con cuánto tiempo tardará antes de explotar                                                                     | ✅ |
-| `fireworkEffectType` |                                                 Establece la forma de los fuegos artificiales [de esta lista](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html)                                                 | ❌ |
-| `fireworkEffectTypes` | Establece las formas de los fuegos artificiales [de esta lista](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html) . Esta es una lista de formas - si quieres una lista de formas, no uses `fireworkEffectType`! [1] | ❌ |
+| `Target` |                                                                                [Más información aquí]($language$/elitemobs/elitescript_targets.md)                                                                                 | ✅ |
+| `vValue` |                                                                                          Establece la velocidad del cohete de fuegos artificiales                                                                                           | ✅ |
+| `flicker` |                                                                                         Establece si las partículas de fuegos artificiales parpadearán                                                                                         | ❌ |
+| `withTrail` |                                                                                        Establece si el cohete de fuegos artificiales dejará un rastro                                                                                        | ❌ |
+| `power` |                                                                                               Establece el poder de los fuegos artificiales                                                                                               | ❌ |
+| `fireworkEffects` |                                                                    Establece los efectos de los fuegos artificiales, en relación con el tiempo que tardará en explotar                                                                    | ✅ |
+| `fireworkEffectType` |                                                Establece la forma del fuego artificial [de esta lista](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html)                                                 | ❌ |
+| `fireworkEffectTypes` | Establece las formas del fuego artificial [de esta lista](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html). Esta es una lista de formas; si quieres una lista de formas, ¡no uses `fireworkEffectType`! [1] | ❌ |
 
-[1] Al usar múltiples formas para los fuegos artificiales, cada forma usará los colores de la lista de colores en la misma posición. Ver ejemplo a continuación.
+[1] Cuando se usan varias formas para los fuegos artificiales, cada forma usará los colores de la lista de colores en la misma posición. Comprueba el ejemplo a continuación.
 
 <div align="center">
 
@@ -969,10 +1020,10 @@ Genera fuegos artificiales.
 ```yaml
 eliteScript:
   fireworkShot1:
-    Eventos:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - acción: SPAWN_FIREWORKS
+    Actions:
+    - action: SPAWN_FIREWORKS
       Target:
         targetType: SELF
         offset: 1,1.5,0
@@ -990,13 +1041,13 @@ eliteScript:
 
 <div align="center">
 
-![elitescript_acciones_fuegos_artificiales.jpg](../../../img/wiki/elitescript_acciones_fuegos_artificiales.jpg)
+![elitescript_actions_fireworks.jpg](../../../img/wiki/elitescript_actions_fireworks.jpg)
 
 </div>
 
-Genera fuegos artificiales en la ubicación del jefe desplazada por x= 1, y= 1.5 y z = 0. Proporciona a los fuegos artificiales una velocidad de x=.5, y=-.35 y z=1. Los fuegos artificiales no parpadearán ni dejarán rastros; la potencia se establece en 2, por lo que la explosión de los fuegos artificiales se retrasará por esa cantidad.
+Genera fuegos artificiales en la ubicación del jefe desplazados por x= 1, y= 1.5 y z = 0. Da a los fuegos artificiales una velocidad de x=.5, y=-.35 y z=1. Los fuegos artificiales no parpadearán ni tendrán rastros; la potencia se establece en 2, por lo que la explosión de los fuegos artificiales se retrasará esa cantidad. 
 
-Finalmente, hay dos listas de listas de colores: la lista 1 es naranja & rojo y la lista 2 es amarillo & azul. Hay dos formas para los fuegos artificiales: BALL\_LARGE y STAR. Esto significa que BALL\_LARGE (elemento 1) utilizará los colores naranja & rojo (lista 1) y STAR (elemento 2) utilizará los colores amarillo & azul (lista 2).
+Finalmente, hay dos listas de listas de colores: la lista 1 es naranja y rojo y la lista 2 es amarillo y azul. Hay dos formas para los fuegos artificiales: BALL\_LARGE y STAR. Esto significa que BALL\_LARGE (elemento 1) usará colores naranja y rojo (lista 1) y STAR (elemento 2) usará colores amarillo y azul (lista 2).
 
 </div>
 
@@ -1014,7 +1065,7 @@ Estos son los efectos que mostrará el cohete de fuegos artificiales. Se requier
 
 ### STRIKE_LIGHTNING
 
-Golpea con un rayo. Este es un efecto visual, si quieres daño deberías añadir una acción de daño.
+Golpea un rayo. Este es un efecto visual, si quieres daño, debes agregar una acción de daño.
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
@@ -1030,11 +1081,11 @@ Golpea con un rayo. Este es un efecto visual, si quieres daño deberías añadir
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - acción: STRIKE_LIGHTNING
+    Actions:
+    - action: STRIKE_LIGHTNING
       Target:
         targetType: SELF
       repeatEvery: 5
@@ -1043,11 +1094,11 @@ eliteScript:
 
 <div align="center">
 
-![elitescript_acciones_golpe.jpg](../../../img/wiki/elitescript_acciones_golpe.jpg)
+![elitescript_actions_strike.jpg](../../../img/wiki/elitescript_actions_strike.jpg)
 
 </div>
 
-Golpea al jefe con un rayo cada 5 ticks durante 5 veces.
+Golpea un rayo al jefe cada 5 ticks durante 5 veces.
 
 </div>
 
@@ -1059,18 +1110,18 @@ Golpea al jefe con un rayo cada 5 ticks durante 5 veces.
 
 ### SPAWN_FALLING_BLOCK
 
-Genera un bloque que cae en el objetivo. Sólo visual, no coloca el bloque.
+Genera un bloque que cae sobre el objetivo. Solo visual, no coloca el bloque.
 
 | Valores           |                                                                                      Detalles                                                                                       | Obligatorio |
 |------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :-: |
 | `Target`         |                                                           [Más información aquí]($language$/elitemobs/elitescript_targets.md)                                                            | ✅ |
-| `material`       | Establece el [Material](#material) del bloque que cae. [Verifique los tipos válidos aquí](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) y asegúrese de que sean un material de bloque válido. | ✅ |
-| `landingScripts` |                                                            Establece la lista de scripts que se ejecutarán cuando el bloque caiga                                                             | ✅ |
-| `vValue`         | Establece la velocidad y dirección de un bloque que cae. | ✅ |
+| `material`       | Establece el [Material](#material) del bloque que cae. [Comprueba los tipos válidos aquí](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) y asegúrate de que sean un material de bloque válido. | ✅ |
+| `landingScripts` |                                                            Establece la lista de scripts que se ejecutarán cuando caiga el bloque                                                             | ✅ |
+| `vValue`         | Establece la velocidad y la dirección de un bloque que cae. | ✅ |
 
-`landingScripts` funciona de la misma forma que [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md&section=run_script) pero puede aceptar el tipo de objetivo especial `LANDING_LOCATION`.
+`landingScripts` funciona de la misma manera que [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md&section=run_script) pero puede aceptar el tipo de objetivo especial `LANDING_LOCATION`.
 
-*Nota: Esta acción también acepta vectores relativos. Aprenda más sobre cómo usarlos [aquí]($language$/elitemobs/elitescript_relative_vectors.md).*
+*Nota: Esta acción también acepta vectores relativos. Obtén más información sobre cómo usarlos [aquí]($language$/elitemobs/elitescript_relative_vectors.md).*
 
 <div align="center">
 
@@ -1082,11 +1133,11 @@ Genera un bloque que cae en el objetivo. Sólo visual, no coloca el bloque.
 
 ```yaml
 eliteScript:
-  Ejemplo:
-    Eventos:
+  Example:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
-    - acción: SPAWN_FALLING_BLOCK
+    Actions:
+    - action: SPAWN_FALLING_BLOCK
       Target:
         targetType: SELF
         offset: 3,10,0
@@ -1095,8 +1146,8 @@ eliteScript:
       landingScripts:
       - LandingScriptExample
   LandingScriptExample:
-    Acciones:
-    - acción: PLACE_BLOCK
+    Actions:
+    - action: PLACE_BLOCK
       Target:
         targetType: LANDING_LOCATION
       duration: 200
@@ -1105,13 +1156,13 @@ eliteScript:
 
 <div align="center">
 
-![elitescript_acciones_bloque.gif](../../../img/wiki/elitescript_acciones_bloque.gif)
+![elitescript_actions_block.gif](../../../img/wiki/elitescript_actions_block.gif)
 
 </div>
 
-Cuando el jefe es golpeado, este script generará un bloque de piedra que cae 10 bloques por encima y 3 bloques junto a la ubicación del jefe.
+Cuando el jefe es golpeado, este script generará un bloque de piedra que cae 10 bloques por encima y 3 bloques al lado de la ubicación del jefe.
 
-Una vez que el bloque cae, se ejecutará el script LandingScriptExample, que colocará un bloque de piedra en la ubicación donde aterrizó el bloque.
+Una vez que el bloque cae, ejecutará el script LandingScriptExample, que colocará un bloque de piedra en la ubicación donde cayó el bloque.
 El bloque permanecerá allí durante 10 segundos (200 ticks) antes de desaparecer.
 
 </div>
@@ -1126,25 +1177,25 @@ El bloque permanecerá allí durante 10 segundos (200 ticks) antes de desaparece
 
 Genera partículas en el objetivo.
 
-**Nota: Si la cobertura no está establecida, entonces la cobertura será establecida a 0.3 por defecto!**
+**Nota: ¡Si no se establece la cobertura, la cobertura se establecerá en 0.3 de forma predeterminada!**
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `particles` |           Lista las partículas que serán generadas            | ✅ |
+| `particles` |           Enumera las partículas que se generarán           | ✅ |
 
 #### particles
 
 Las partículas tienen su propia configuración especial, que es la siguiente:
 
-| Valores | Detalles | Por defecto | Especial |
+| Valores | Detalles | Predeterminado | Especial |
 | --- | :-: | :-: | :-: |
 | `x` | Establece el desplazamiento de X | 0.01 | (1) |
 | `y` | Establece el desplazamiento de Y | 0.01 | (1) |
 | `z` | Establece el desplazamiento de Z | 0.01 | (1) |
-| `amount` | Establece la cantidad de partículas a generar | 1 | (1) |
+| `amount` | Establece la cantidad de partículas generadas | 1 | (1) |
 | `speed` | Establece la velocidad de las partículas | 0.01 | ❌ |
-| `particle` | Establece el tipo de entidad | `FLAME` | [¡Seleccione de esta lista!](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) |
+| `particle` | Establece el tipo de entidad | `FLAME` | [¡Elige de esta lista!](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) |
 | `red` | Establece el valor rojo | `255` | (2) |
 | `green` | Establece el valor verde | `255` | (2) |
 | `blue` | Establece el valor azul | `255` | (2) |
@@ -1152,69 +1203,13 @@ Las partículas tienen su propia configuración especial, que es la siguiente:
 | `toGreen` | Establece el valor verde final | `255` | (3) |
 | `toBlue` | Establece el valor azul final | `255` | (3) |
 
-_(1) Si la `cantidad` está establecida a 0, `x`, `y` y `z` establecerán la velocidad de la partícula en lugar de ello._
+_(1) Si `amount` se establece en 0, `x`, `y` y `z` establecerán la velocidad de la partícula en su lugar._
 
-_(2) Sólo para las partículas `REDSTONE`, `DUST_COLOR_TRANSITION`, `SPELL_MOB` y `SPELL_MOB_AMBIENT`_
+_(2) Solo para las `particle`s `REDSTONE`, `DUST_COLOR_TRANSITION`, `SPELL_MOB` y `SPELL_MOB_AMBIENT`_
 
-_(3) Sólo para la partícula `DUST_COLOR_TRANSITION`_
+_(3) Solo para la `particle` `DUST_COLOR_TRANSITION`_
 
-Es importante notar que un guión SPAWN_PARTICLE puede generar varias partículas. Cada partícula puede tener sus propios campos de configuración dentro de la acción SPAWN_PARTICLE. Aquí hay un ejemplo:
-
-<div align="center">
-
-<details> 
-
-<summary><b>Ejemplo</b></summary>
-
-<div align="left">
-
-```yaml
-eliteScript:
-  Ejemplo:
-    Eventos:
-    - EliteMobDamagedByPlayerEvent
-    Zona:
-      shape: CYLINDER
-      radius: 4
-      borderRadius: 3
-      height: 30
-      Target:
-        targetType: DIRECT_TARGET
-      track: true
-    Acciones:
-    - acción: SPAWN_PARTICLE
-      Target:
-        targetType: ZONA_BORDER
-      particles:
-        - particle: FLAME
-          speed: 0.2
-        - particle: SMOKE_NORMAL
-          speed: 0.1
-      amount: 1
-      repeatEvery: 10
-```
-
-<div align="center">
-
-![elitescript_acciones_particula.jpg](../../../img/wiki/elitescript_acciones_particula.jpg)
-
-</div>
-
-Esto generará un cilindro hecho de partículas de llama y humo alrededor del jugador que dañó al jefe.
-
-</div>
-
-</details>
-
-</div>
-
-#### Moviendo una partícula:
-
-Es posible establecer una velocidad específica para una partícula, y funciona de la misma manera que la API de Spigot. Esto permite a los guionistas establecer una partícula para que vaya en una dirección específica a una velocidad específica. No es posible hacer que las partículas cambien de dirección a mitad de camino. Este efecto se utiliza en el encantamiento del lanzallamas y el poder del jefe.
-
-Para mover una partícula, establece `amount: 0`. Esto señalará a Minecraft que los valores `x`, `y` y `z` son en realidad un vector. Este vector establece la dirección hacia la cual irá tu partícula.
-
-Digamos que quieres que una partícula `FLAME` suba. Para hacer esto, quieres un valor `y` positivo, y nada más. Finalmente, querrás establecer la velocidad a la que quieres que sea la velocidad. Aquí hay un ejemplo completo:
+Es importante tener en cuenta que un script SPAWN_PARTICLE puede generar varias partículas. Cada partícula puede tener sus propios campos de configuración dentro de la acción SPAWN_PARTICLE. Aquí hay un ejemplo:
 
 <div align="center">
 
@@ -1228,7 +1223,7 @@ Digamos que quieres que una partícula `FLAME` suba. Para hacer esto, quieres un
 eliteScript:
   Example:
     Events:
-      - EliteMobEnterCombatEvent
+    - EliteMobDamagedByPlayerEvent
     Zone:
       shape: CYLINDER
       radius: 4
@@ -1238,27 +1233,83 @@ eliteScript:
         targetType: DIRECT_TARGET
       track: true
     Actions:
-      - action: SPAWN_PARTICLE
-        Target:
-          targetType: ZONE_BORDER
-        particles:
-          - particle: FLAME
-            amount: 0
-            x: 0
-            y: 1
-            z: 0
-            speed: 0.2
-          - particle: SMOKE_NORMAL
-            speed: 0.1
-            amount: 0
-            x: 0.5
-            y: 1
-            z: 0.5
-        amount: 3
-        repeatEvery: 10
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_BORDER
+      particles:
+        - particle: FLAME
+          speed: 0.2
+        - particle: SMOKE_NORMAL
+          speed: 0.1
+      amount: 1
+      repeatEvery: 10
 ```
 
-Esto generará una partícula de llama en la ubicación del jefe que subirá.
+<div align="center">
+
+![elitescript_actions_particle.jpg](../../../img/wiki/elitescript_actions_particle.jpg)
+
+</div>
+
+Esto generará un cilindro hecho de partículas de fuego y humo alrededor del jugador que dañó al jefe.
+
+</div>
+
+</details>
+
+</div>
+
+#### Mover una partícula:
+
+Es posible establecer una velocidad específica para una partícula, y funciona de la misma manera que lo hace la API de Spigot. Esto permite a los programadores de scripts configurar una partícula para que vaya en una dirección específica a una velocidad específica. No es posible hacer que las partículas cambien de dirección a mitad de camino. Este efecto se utiliza en el encantamiento lanzallamas y el poder del jefe.
+
+Para mover una partícula, establece `amount: 0`. Esto le indicará a Minecraft que los valores `x`, `y` y `z` son en realidad un vector. Este vector establece la dirección hacia la que irá tu partícula.
+
+Digamos que quieres que una partícula `FLAME` suba. Para hacer esto, quieres un valor `y` positivo, y nada más. Finalmente, querrás establecer la velocidad en lo que quieres que sea la velocidad. Aquí hay un ejemplo completo:
+
+<div align="center">
+
+<details> 
+
+<summary><b>Ejemplo</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobEnterCombatEvent
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      borderRadius: 3
+      height: 30
+      Target:
+        targetType: DIRECT_TARGET
+      track: true  
+    Actions:
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_BORDER
+      particles:
+        - particle: FLAME
+          amount: 0
+          x: 0
+          y: 1
+          z: 0
+          speed: 0.2
+        - particle: SMOKE_NORMAL
+          speed: 0.1
+          amount: 0
+          x: 0.5
+          y: 1
+          z: 0.5
+      amount: 3  
+      repeatEvery: 10
+```
+
+Esto generará una partícula de fuego en la ubicación del jefe que subirá.
 
 </div>
 
@@ -1270,13 +1321,13 @@ Esto generará una partícula de llama en la ubicación del jefe que subirá.
 
 ### SUMMON_REINFORCEMENT
 
-Convoca refuerzos de Jefes Personalizados de EliteMobs.
+Invoca refuerzos de los jefes personalizados de EliteMobs.
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `sValue` |      Establece el nombre del archivo del refuerzo del Jefe Personalizado       | ✅ |
-| `duration` |        Establece la duración del refuerzo (ticks)         | ❌ |
+| `sValue` |      Establece el nombre de archivo del refuerzo de jefe personalizado      | ✅ |
+| `duration` |         Establece la duración del refuerzo (ticks)         | ❌ |
 
 <div align="center">
 
@@ -1298,7 +1349,7 @@ eliteScript:
       sValue: your_boss_file.yml
 ```
 
-Genera el refuerzo con el nombre del archivo "your_boss_file.yml" en la ubicación del jefe.
+Genera el refuerzo con el nombre de archivo "your_boss_file.yml" en la ubicación del jefe.
 
 </div>
 
@@ -1310,14 +1361,16 @@ Genera el refuerzo con el nombre del archivo "your_boss_file.yml" en la ubicaci�
 
 ### SUMMON_ENTITY
 
-MAGMA POR FAVOR RELLENA ESTA SECCIÓN CON LA INFORMACIÓN CORRECTA,
+MAGMA POR FAVOR RELLENE ESTA SECCIÓN CON INFORMACIÓN CORRECTA,
+
+
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `sValue` |                Establece el                  | ✅ |
+| `sValue` |                Establece el tipo de entidad que se generará                 | ✅ |
 
-*Nota: Esta acción también acepta vectores relativos. Obtenga más información sobre cómo usarlos [aquí]($language$/elitemobs/elitescript_relative_vectors.md).*
+*Nota: Esta acción también acepta vectores relativos. Obtén más información sobre cómo usarlos [aquí]($language$/elitemobs/elitescript_relative_vectors.md).*
 
 <div align="center">
 
@@ -1329,16 +1382,17 @@ MAGMA POR FAVOR RELLENA ESTA SECCIÓN CON LA INFORMACIÓN CORRECTA,
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Events:
       - EliteMobEnterCombatEvent
     Actions:
       - action: SUMMON_ENTITY
         Target:
           targetType: DIRECT_TARGET
+        sValue: ZOMBIE
 ```
 
-Establece el jefe para .
+Establece al jefe para que genere un ZOMBIE en la ubicación del jefe.
 
 </div>
 
@@ -1350,13 +1404,13 @@ Establece el jefe para .
 
 ### TAG
 
-Añade etiquetas a los jefes o jugadores. Las etiquetas son simplemente Cadenas, o palabras, que los guionistas pueden definir. Estas se utilizan solo para realizar verificaciones de condiciones y no tienen ningún efecto directo en el juego fuera de lo que se utilizan en scripts.
+Agrega etiquetas a los jefes o jugadores. Las etiquetas son solo cadenas o palabras que los programadores de scripts pueden definir. Estas solo se utilizan para ejecutar comprobaciones de condición y no tienen un efecto directo en el juego fuera de para lo que se utilizan en los scripts.
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `tags` |                         Establece las etiquetas                         | ✅ |
-| `duration` |             Establece la duración de las etiquetas (ticks)             | ❌ |
+| `duration` |             Establece la duración de las etiquetas (ticks)              | ❌ |
 
 <div align="center">
 
@@ -1368,7 +1422,7 @@ Añade etiquetas a los jefes o jugadores. Las etiquetas son simplemente Cadenas,
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Events:
     - EliteMobSpawnEvent
     Actions:
@@ -1394,9 +1448,9 @@ eliteScript:
         - fireworks
 ```
 
-Etiquetas al jefe con la cadena "very_sus", que luego puede ser comprobada a través de condiciones de script.
+Etiqueta al jefe con la cadena "very_sus", que luego se puede verificar a través de las condiciones del script.
 
-**Importante:** Solo es posible etiquetar a los jugadores y a los mobs de élite.
+**Importante:** Solo es posible etiquetar jugadores y mafias de élite.
 
 </div>
 
@@ -1408,13 +1462,13 @@ Etiquetas al jefe con la cadena "very_sus", que luego puede ser comprobada a tra
 
 ### TELEPORT
 
-Teletransporta a los objetivos a la ubicación definida.
+Teletransporta el (los) objetivo (s) a la ubicación definida.
 
-| Valores |                                                    Detalles                                                     | Obligatorio |
+| Valores |                                                     Detalles                                                     | Obligatorio |
 | --- |:--------------------------------------------------------------------------------------------------------------:| :-: |
-| `Target` |    Establece _quién_ será teletransportado. [Aquí información general de destino!]($language$/elitemobs/elitescript_targets.md)    | ✅ |
-| `FinalTarget` | Establece _donde_ serán teletransportados. [Aquí información general de destino!]($language$/elitemobs/elitescript_targets.md) | ✅ |
-| `location` |                                               Ubicación del Teletransporte                                                | ✅ |
+| `Target` |   Establece _quién_ será teletransportado. [¡Información general del objetivo aquí!]($language$/elitemobs/elitescript_targets.md)   | ✅ |
+| `FinalTarget` | Establece _dónde_ serán teletransportados. [¡Información general del objetivo aquí!]($language$/elitemobs/elitescript_targets.md) | ✅ |
+| `location` |                                               Ubicación de teletransporte                                                | ✅ |
 
 <div align="center">
 
@@ -1426,7 +1480,7 @@ Teletransporta a los objetivos a la ubicación definida.
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Events:
     - EliteMobDamagedByPlayerEvent
     Actions:
@@ -1444,7 +1498,7 @@ eliteScript:
 
 </div>
 
-Esto teletransportaría a todos los jugadores que estén a 10 bloques del jefe a la ubicación de aparición del jefe.
+Esto teletransportaría a todos los jugadores que estén a menos de 10 bloques del jefe a la ubicación de generación del jefe.
 
 </div>
 
@@ -1454,7 +1508,7 @@ Esto teletransportaría a todos los jugadores que estén a 10 bloques del jefe a
 
 #### location
 
-Establece la ubicación a la que será teletransportado el jugador. El formato es el estándar `world_name,x,y,z,pitch,yaw` de EliteMobs.
+Establece la ubicación a la que se teletransportará al jugador. El formato es el EliteMobs estándar `world_name,x,y,z,pitch,yaw`.
 
 Ejemplo
 
@@ -1462,15 +1516,15 @@ Ejemplo
 location: world,0,64,0,0,0
 ```
 
-Esto tiene unos valores especiales:
+Esto tiene algunos valores especiales:
 
-- Si el nombre del mundo está establecido en `same_as_boss`, esto reemplazará el nombre del mundo con el nombre del mundo en el que se encuentra el jefe:
+- Si el nombre del mundo se establece en `same_as_boss`, reemplazará el nombre del mundo con el nombre del mundo en el que se encuentra actualmente el jefe:
 
 ```yaml
 location: same_as_boss,0,64,0,0,0
 ```
 
-- Si solo hay tres valores que coinciden con x, y y z, el teletransporte se realizará a una ubicación relativa a la ubicación del jefe. Si el jefe es un jefe regional, la ubicación será relativa al punto de aparición del jefe.
+- Si solo hay tres valores que coinciden con x, y y z, el teletransporte se realizará a una ubicación relativa a la ubicación del jefe. Si el jefe es un jefe regional, la ubicación será relativa al punto de generación del jefe.
 
 ---
 
@@ -1481,9 +1535,9 @@ Establece el mensaje de la barra de acción para los objetivos.
 | Valores |                            Detalles                            | Obligatorio | Especial | Predeterminado |
 | --- |:-------------------------------------------------------------:| :-: | :-: | :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ | ❌ | ❌ |
-| `title` |                    Establece el mensaje del título                     | ✅ | Can use [Códigos de color](#color_codes) with `&` | ❌ |
-| `subtitle` |                   Establece el mensaje del subtítulo                   | ✅ | Can use [Códigos de color](#color_codes) with `&` | ❌ |
-| `duration` |           Establece la duración del mensaje (ticks)            | ✅ | ❌ | `0` |
+| `title` |                     Establece el mensaje del título                     | ✅ | Puede usar [Códigos de color](#color_codes) con `&` | ❌ |
+| `subtitle` |                    Establece el mensaje del subtítulo                    | ✅ | Puede usar [Códigos de color](#color_codes) con `&` | ❌ |
+| `duration` |           Establece la duración del mensaje (ticks)           | ✅ | ❌ | `0` |
 | `fadeIn` |                   Establece el tiempo de fundido de entrada (ticks)                   | ❌ | ❌ | `0` |
 | `fadeOut` |                  Establece el tiempo de fundido de salida (ticks)                   | ❌ | ❌ | `0` |
 
@@ -1497,7 +1551,7 @@ Establece el mensaje de la barra de acción para los objetivos.
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Events:
     - EliteMobDamagedByPlayerEvent
     Actions:
@@ -1505,8 +1559,8 @@ eliteScript:
       Target: 
         targetType: NEARBY_PLAYERS
         range: 10
-      title: "&2Hola Mundo!"
-      subtitle: "&2¡Soy un subtítulo!"
+      title: "&2Hello World!"
+      subtitle: "&2I am a subtitle!"
       duration: 120
       fadeIn: 20
       fadeOut: 20
@@ -1518,9 +1572,9 @@ eliteScript:
 
 </div>
 
-Establecerá el mensaje del título para mostrar el título "&2Hola Mundo!" con el subtítulo "&2¡Soy un subtítulo!" a todos los jugadores que estén a 10 bloques del jefe.
+Establecerá el mensaje del título para mostrar el título "&2Hello World!" con el subtítulo "&2I am a subtitle!" a todos los jugadores que estén a menos de 10 bloques del jefe.
 
-El mensaje permanecerá en pantalla durante 8 segundos (120 + 20 + 20 = 160 ticks) incluyendo la animación de fundido de entrada y salida.
+El mensaje permanecerá en pantalla durante 8 segundos (120 + 20 + 20 = 160 ticks) incluida la animación de fundido de entrada y salida.
 
 </div>
 
@@ -1532,13 +1586,13 @@ El mensaje permanecerá en pantalla durante 8 segundos (120 + 20 + 20 = 160 tick
 
 ### UNTAG
 
-Elimina las etiquetas del jefe. Consulta `TAG` para ver cómo funcionan las etiquetas.
+Elimina etiquetas del jefe. Consulte `TAG` para ver cómo funcionan las etiquetas.
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `tags` |                         Establece las etiquetas                         | ✅ |
-| `duration` |      Establece la duración de la eliminación de las etiquetas (ticks)      | ❌ |
+| `duration` |      Establece la duración de la eliminación de las etiquetas (ticks)       | ❌ |
 
 <div align="center">
 
@@ -1550,7 +1604,7 @@ Elimina las etiquetas del jefe. Consulta `TAG` para ver cómo funcionan las etiq
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Events:
     - EliteMobSpawnEvent
     Actions:
@@ -1574,7 +1628,7 @@ eliteScript:
       Conditions:
         hasTags:
         - fireworks  
-  Example2:
+  Ejemplo2:
     Events:
     - EliteMobEnterCombatEvent
     Actions:
@@ -1585,7 +1639,7 @@ eliteScript:
       - fireworks
 ```
 
-Elimina la etiqueta "very_sus" del jefe, lo cual se puede comprobar posteriormente a través de las condiciones del script.
+Elimina la etiqueta "very_sus" del jefe, que luego se puede verificar a través de las condiciones del script.
 
 </div>
 
@@ -1597,13 +1651,14 @@ Elimina la etiqueta "very_sus" del jefe, lo cual se puede comprobar posteriormen
 
 ### VISUAL_FREEZE
 
-Da el efecto visual de congelado al jugador y hace su daño asociado. Esto debe combinarse con un guión repetitivo si no quieres que el efecto desaparezca de inmediato.
+Da el efecto visual congelado al jugador y hace el daño asociado. Esto debe combinarse con un script repetitivo si no quieres que el efecto se desvanezca inmediatamente.
 
 | Valores |                            Detalles                            | Obligatorio |
 | --- |:-------------------------------------------------------------:| :-: |
 | `Target` | [Más información aquí]($language$/elitemobs/elitescript_targets.md) | ✅ |
 | `duration` |                 Duración del efecto, en ticks                  | ✅ |
 
+<div align="center">
 <div align="center">
 
 <details> 
@@ -1614,7 +1669,7 @@ Da el efecto visual de congelado al jugador y hace su daño asociado. Esto debe 
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Events:
     - EliteMobDamagedByPlayerEvent
     Actions:
@@ -1629,11 +1684,11 @@ eliteScript:
 
 <div align="center">
 
-![elitescript_actions_freeze.jpg](../../../img/wiki/elitescript_actions_freeze.jpg) LA CONGELACIÓN VISUAL NO ESTÁ FUNCIONANDO ACTUALMENTE POR LO QUE NO SE PUDO TOMAR CAPTURA DE PANTALLA
+![elitescript_actions_freeze.jpg](../../../img/wiki/elitescript_actions_freeze.jpg) VISUAL FREEZE NO FUNCIONA ACTUALMENTE, POR LO QUE NO SE PUDO TOMAR UNA CAPTURA DE PANTALLA
 
 </div>
 
-Da a todos los jugadores dentro de los 10 bloques del jefe el aspecto visual de congelación durante 3 segundos (60 ticks).
+Da a todos los jugadores a menos de 10 bloques del jefe la imagen de congelación durante 3 segundos (60 ticks).
 
 </div>
 
@@ -1643,9 +1698,9 @@ Da a todos los jugadores dentro de los 10 bloques del jefe el aspecto visual de 
 
 ---
 
-# Acciones múltiples
+# Múltiples acciones
 
-A veces puedes querer hacer varias acciones todas de una vez cuando ocurre un evento, como enviar varios mensajes o hacer diferentes acciones secuencialmente. ¡Esto se hace fácilmente! Vamos a añadir una acción de efecto de poción a nuestro ejemplo:
+A veces, es posible que desees realizar varias acciones a la vez cuando ocurre un evento, como enviar varios mensajes o realizar diferentes acciones secuencialmente. ¡Esto se hace fácilmente! Agreguemos una acción de efecto de poción a nuestro ejemplo:
 
 <div align="center">
 
@@ -1668,7 +1723,7 @@ eliteScript:
     - action: MESSAGE
       Target:
         targetType: DIRECT_TARGET
-      message: ¡Estoy enviando mensajes al jugador que golpeó al jefe!
+      message: ¡Estoy enviando un mensaje al jugador que golpeó al jefe!
 ```
 
 </div>
@@ -1676,3 +1731,5 @@ eliteScript:
 </details>
 
 </div>
+
+

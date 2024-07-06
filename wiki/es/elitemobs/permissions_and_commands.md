@@ -1,254 +1,254 @@
 # Comandos de usuario
 
-*Nota: Todos los permisos del jugador están configurados para ser verdaderos por defecto. Esto significa que ya están configurados.*
+*Nota: Todos los permisos de los jugadores están configurados como verdaderos de forma predeterminada. Esto significa que ya están configurados.*
 
-*Si no quieres que los jugadores tengan acceso a una característica específica a través de los permisos, tendrás que denegarle al jugador el permiso!*
-
-| Comando |    Description    |
-|---------|:-----------------:|
-| `/elitemobs` / `/em` | Comando principal, condensa toda la información del jugador en un menú fácil de acceder. *Nota:* todos los demás comandos de usuario están en este comando principal. `/em menu` también es un comando válido para esto |
-| `/adventurersguild` / `/ag`     |En una configuración recomendada, teletransporta al jugador al mundo de la guild de aventureros donde interactúan con los diversos NPC de EliteMobs.|
-| `/shareitem`     |Enlaza un artículo en el chat para que otros jugadores puedan ver sus estadísticas.|
-| `/em help`     |Enumera todos los comandos. ¡Los comandos de usuario restantes suelen ser reemplazados por el uso de NPCs o la interfaz `/em`!|
-| `/em wallet`     |Muestra el dinero del jugador.|
-| `/em pay <username> <amount>`     |Permite a los jugadores pagarse entre sí. Las transacciones se gravan con una cantidad configurable.|
-| `/em updateitem`     |Actualiza la descripción de un artículo en caso de que se desincronice. Este comando está destinado a propósitos de depuración, y no es requerido en el juego normal.|
-| `/em spawntp`     |Teletransporta a un jugador a un spawn del servidor.|
-
-## Comandos NPC
-
-Estos comandos solo son útiles si no tienes instalado el Adventurer's Guild Hub con NPCs.
-
-Se recomienda que instales estos para ejecutar todos estos comandos a través de NPCs en lugar de que los jugadores recuerden cómo funcionan los comandos.
+*¡Si no deseas que los jugadores tengan acceso a una función específica a través de permisos, tendrás que denegarle ese permiso al jugador!*
 
 | Comando | Descripción |
 |---------|:-----------:|
-| `/em rank`     |     Abre el menú de rango o teletransporta a los jugadores al hub de la Adventurer's Guild.     |
-| `/em shop`     |     Accede a la tienda o teletransporta a los jugadores al hub de la Adventurer's Guild.     |
-| `/em customshop`     |     Accede a la tienda personalizada o teletransporta a los jugadores al hub de la Adventurer's Guild.     |
-| `/em repair`     |     Accede al menú de reparación o teletransporta a los jugadores al hub de la Adventurer's Guild.     |
-| `/em enchant`     |     Accede al menú de encantamientos o teletransporta a los jugadores al hub de la Adventurer's Guild.     |
-| `/em scrap`     |     Accede al menú de desguace o teletransporta a los jugadores al hub de la Adventurer's Guild.     |
-| `/em unbind`     |     Accede al menú de desvinculación o teletransporta a los jugadores al hub de la Adventurer's Guild.     |
+| `/elitemobs` / `/em` | Comando principal, condensa toda la información del jugador en el complemento en un menú de fácil acceso. *Nota:* todos los demás comandos de usuario están en este comando principal. `/em menu` también es un comando válido para esto. |
+| `/adventurersguild` / `/ag`     |En una configuración recomendada, teletransporta al jugador al mundo del gremio de aventureros donde interactúa con los diversos NPC de EliteMobs.|
+| `/shareitem`     |Vincula un objeto en el chat para que otros jugadores puedan ver sus estadísticas.|
+| `/em help`     |Enumera todos los comandos. ¡Los comandos de usuario restantes generalmente se reemplazan por el uso de NPC o la interfaz `/em`!|
+| `/em wallet`     |Muestra el dinero del jugador.|
+| `/em pay <nombredeusuario> <cantidad>`     |Permite a los jugadores pagarse entre sí. Las transacciones se gravan con una cantidad configurable.|
+| `/em updateitem`     |Actualiza la tradición de un objeto en caso de que se desincronice. Este comando está destinado a fines de depuración y no es necesario en el juego normal.|
+| `/em spawntp`     |Teletransporta a un jugador a un punto de generación del servidor.|
+
+## Comandos de NPC
+
+Estos comandos solo son útiles si no tienes instalado el centro del gremio de aventureros con NPC.
+
+Se recomienda que los instales para ejecutar todos estos comandos a través de NPC en lugar de que los jugadores recuerden cómo funcionan los comandos.
+
+| Comando | Descripción |
+|---------|:-----------:|
+| `/em rank`     |     Abre el menú de rango o teletransporta a los jugadores al centro del gremio de aventureros.     |
+| `/em shop`     |     Accede a la tienda o teletransporta a los jugadores al centro del gremio de aventureros.     |
+| `/em customshop`     |     Accede a la tienda personalizada o teletransporta a los jugadores al centro del gremio de aventureros.     |
+| `/em repair`     |     Accede al menú de reparación o teletransporta a los jugadores al centro del gremio de aventureros.     |
+| `/em enchant`     |     Accede al menú de encantamiento o teletransporta a los jugadores al centro del gremio de aventureros.     |
+| `/em scrap`     |     Accede al menú de chatarra o teletransporta a los jugadores al centro del gremio de aventureros.     |
+| `/em unbind`     |     Accede al menú de desvinculación o teletransporta a los jugadores al centro del gremio de aventureros.     |
 
 ## Comandos de usuario internos
 
-**Estos comandos están destinados a ser ejecutados desde menús en el juego como misiones del menú de misiones. Si no se escriben instrucciones sobre cómo obtener un ID, eso significa que no es posible obtener ese ID más que ejecutando el comando desde el menú del juego.** Para comodidad, estos se han dividido en las categorías identificables e inidentificables.
+**Estos comandos están destinados a ejecutarse desde menús del juego, como misiones del menú de misiones. Si no se escriben instrucciones sobre cómo obtener una identificación, significa que no es posible obtener esa identificación que no sea ejecutando el comando desde el menú del juego.** Para mayor comodidad, estos se han dividido en las categorías identificables y no identificables.
 
 ### Identificable
 
 | Comando | Descripción |
 |---------|-------------|
-|`/em dungeontp <dungeonid>`         |Teletransporta a un jugador a un calabozo.|
-*Nota: esto está destinado a ser ejecutado desde el menú `/em`, ya que es imposible para los jugadores adivinar los IDs de los calabozos. Los IDs de los calabozos son los mismos que los nombres de archivo .yml en `~/plugins/EliteMobs/dungeonpackages/`. <br/>Puedes ver los IDs en la consola cuando utilizas el comando `/em` y seleccionas un teletransporte de la página de Teleportes.*
+|`/em dungeontp <iddemazmorra>`         |Teletransporta a un jugador a una mazmorra.|
+*Nota: esto está destinado a ejecutarse desde el menú `/em`, ya que es imposible para los jugadores adivinar las ID de las mazmorras. Las ID de las mazmorras son las mismas que los nombres de archivo .yml en `~/plugins/EliteMobs/dungeonpackages/`. <br/>Puedes ver las ID en la consola cuando usas el comando `/em` y seleccionas un teletransporte de la página Teletransportes.*
 
-### Inidentificable
+### No identificable
 
 | Comando | Descripción |
 |---------|:-----------:|
-| `/em quest accept <questID>`     |     Acepta una misión.     |
-| `/em quest track <questID>`     |     Rastrea una misión.     |
-| `/em quest complete <questID>`     |     Completa una misión.     |
-| `/em quest leave <questID>`     |     Abandona una misión.     |
-| `/em trackcustomboss <uuid>`     |     Rastrea a un jefe personalizado. Nota: esto está destinado a ser ejecutado desde el menú `/em`, ya que es imposible para los jugadores adivinar los UUIDs de los jefes.     |
+| `/em quest accept <iddemision>`     |     Acepta una misión.     |
+| `/em quest track <iddemision>`     |     Rastrea una misión.     |
+| `/em quest complete <iddemision>`     |     Completa una misión.     |
+| `/em quest leave <iddemision>`     |     Abandona una misión.     |
+| `/em trackcustomboss <uuid>`     |     Rastrea a un jefe personalizado. Nota: esto está destinado a ejecutarse desde el menú `/em`, ya que es imposible para los jugadores adivinar los UUID de los jefes.     |
 
-# Comandos de admin
+# Comandos de administrador
 
 <div>
 
-**> > > `elitemobs.*` - ¡Permiso de administrador para EliteMobs para acceso total! < < <**
+**> > > `elitemobs.*` - ¡Permiso de administrador para EliteMobs para acceso completo! < < <**
 
 </div>
 
 | Comando | Descripción |
 |---------|:-----------:|
 | `/em setup`     |     Abre el menú de configuración principal.     |
-| `/em setup area <areaName>`     |     Protege un área utilizando WorldGuard, usado para Minidungeons y el mundo hub del Adventurer's World. Nota: No tienes que ejecutar esto manualmente cuando configuras cosas utilizando el método de configuración recomendado.     |
-| `/em spawnelite <entityType> <level> <power1> <power2> <power3>`     |     Engendra una élite basada en el tipo de entidad.     |
-| - `/em spawnlocationelite <entityType> <worldName> <x> <y> <z> <level> <power1> <power2> <power3>`     |     Engendra una élite basada en el tipo de entidad y ubicación.     |
-| `/em spawncustom <fileName>`     |     Engendra un jefe personalizado desde un archivo de configuración.     |
-| `/em spawncustomlevel <fileName> <level>`     |     Engendra un jefe personalizado desde un archivo de configuración y sobrescribe el nivel.     |
-| `/em spawnlocationcustom <filename> <worldName> <x> <y> <z>`     |     Engendra un jefe personalizado desde un archivo de configuración en una ubicación.     |
-| `/em spawnlocationcustomlevel <filename> <worldName> <x> <y> <z>`     |     Engendra un jefe personalizado desde un archivo de configuración en una ubicación y sobreescribe el nivel.     |
-| `/em spawnsuper <EntityType>`     |     Engendra a Super Mob basado en el tipo de entidad.     |
-| `/em addSpawnLocation <fileName>`     |     Agrega una ubicación de spawn a un jefe regional.     |
-| `/em addTreasureChest <fileName>`     |     Agrega un cofre del tesoro en la ubicación en la que se encuentra el jugador.     |
-| `/em setLeashRadius <fileName> <radius>`     |     Agregar una ubicación de spawn a un jefe regional.     |
-| `/em remove`     |     Elimina permanentemente una entidad de Elite Mob. Elite/Regional/Super/NPCs todos funcionan. Ejecute de nuevo para salir del modo de eliminación.     |
-| `/em debug <name>`     |     Elimina permanentemente una entidad de Elite Mob. Elite/Regional/Super/NPCs todos funcionan. Ejecute de nuevo para salir del modo de eliminación.     |
-| `/em debug <name>`     |     Abre una pantalla de depuración para jugadores o jefes regionales.     |
-| `/em event <eventName>`     |     Lanza un evento de tiempo personalizado.     |
-| `/em spawnnpc <npcFileName>`     |     Engendra a un NPC.     |
-| `/em stats`     |     Obtiene las estadísticas para las entidades EliteMobs y jugadores actualmente activos.     |
-| `/em getloot`     |     Abre un menú donde puedes obtener cualquier Botín Personalizado.     |
-| `/em getloot <filename>`     |     Obtén botín personalizado específico.     |
-| `/em giveloot <filename> <player>`     |     Dar botín personalizado específico a un jugador.     |
-| `/em simloot <level>`     |     Simula las caídas desde un Elite Mob del tier establecido.     |
-| `/em simloot <level> <times>`     |     Simula las caídas desde un Elite Mob del tier establecido un número de veces establecido.     |
-| `/em version`     |     Obtiene la versión del plugin.     |
-| `/em reload`     |     Recarga el plugin. Funciona casi todas las veces.     |
-| `/em killaggressive`     |     Mata a todos los Elite Mobs agresivos.     |
-| `/em killaggressive <radius>`     |     Mata a todos los Elite Mobs agresivos en un radio.     |
-| `/em killpassive`     |     Mata a todos los Super Mobs pasivos.     |
-| `/em killpassive <radius>`     |     Mata a todos los Super Mobs pasivos en un radio.     |
-| `/em killtype <entityType>`     |     Mata a todas las elites de un tipo específico.     |
-| `/em killtype <entityType> <radius>`     |     Mata a todas las elites de un tipo específico en un radio.     |
-| `/em gettier <tier>`     |     Obtiene elementos de depuración para fines de prueba.     |
-| `/em money add <username> <amount>`     |     Agrega una cantidad establecida de dinero a un jugador.     |
-| `/em money addall <amount>`     |     Agrega una cantidad establecida de dinero a todos los jugadores en línea.     |
-| `/em money remove <username> <amount>`     |     Quita una cantidad establecida de dinero a un jugador.     |
-| `/em money set <username> <amount>`     |     Establece el monto total de la divisa de un jugador.     |
-| `/em setrank <player> <prestigetier> <guildtier>`     |     Establece el rango de gremio de un jugador.     |
+| `/em setup area <nombredelarea>`     |     Protege un área usando WorldGuard, utilizado para minidungeons y el centro del mundo de aventureros. Nota: No tienes que ejecutar esto manualmente al configurar cosas usando el método de configuración recomendado.     |
+| `/em spawnelite <tipodeentidad> <nivel> <poder1> <poder2> <poder3>`     |     Genera una élite basada en el tipo de entidad.     |
+| - `/em spawnlocationelite <tipodeentidad> <nombredelmundo> <x> <y> <z> <nivel> <poder1> <poder2> <poder3>`     |     Genera una élite basada en el tipo de entidad y la ubicación.     |
+| `/em spawncustom <nombredearchivo>`     |     Genera un jefe personalizado desde un archivo de configuración.     |
+| `/em spawncustomlevel <nombredearchivo> <nivel>`     |     Genera un jefe personalizado desde un archivo de configuración y anula el nivel.     |
+| `/em spawnlocationcustom <nombredearchivo> <nombredelmundo> <x> <y> <z>`     |     Genera un jefe personalizado desde un archivo de configuración en una ubicación.     |
+| `/em spawnlocationcustomlevel <nombredearchivo> <nombredelmundo> <x> <y> <z>`     |     Genera un jefe personalizado desde un archivo de configuración en una ubicación y anula el nivel.     |
+| `/em spawnsuper <tipodeentidad>`     |     Genera una supermafia basada en el tipo de entidad.     |
+| `/em addSpawnLocation <nombredearchivo>`     |     Agrega una ubicación de generación a un jefe regional.     |
+| `/em addTreasureChest <nombredearchivo>`     |     Agrega un cofre del tesoro en la ubicación donde está parado el jugador.     |
+| `/em setLeashRadius <nombredearchivo> <radio>`     |     Agrega una ubicación de generación a un jefe regional.     |
+| `/em remove`     |     Elimina permanentemente una entidad de mafia de élite. Élite/Regional/Super/NPC, todos funcionan. Ejecuta de nuevo para salir del modo de eliminación.     |
+| `/em debug <nombre>`     |     Elimina permanentemente una entidad de mafia de élite. Élite/Regional/Super/NPC, todos funcionan. Ejecuta de nuevo para salir del modo de eliminación.     |
+| `/em debug <nombre>`     |     Abre una pantalla de depuración para jugadores o jefes regionales.     |
+| `/em event <nombreevento>`     |     Inicia un evento cronometrado personalizado.     |
+| `/em spawnnpc <nombredearchivodelnpc>`     |     Genera un NPC.     |
+| `/em stats`     |     Obtiene las estadísticas de las entidades y jugadores de EliteMobs actualmente activos.     |
+| `/em getloot`     |     Abre un menú donde puedes obtener cualquier botín personalizado.     |
+| `/em getloot <nombredearchivo>`     |     Obtén un botín personalizado específico.     |
+| `/em giveloot <nombredearchivo> <jugador>`     |     Dale un botín personalizado específico a un jugador.     |
+| `/em simloot <nivel>`     |     Simula caídas de una mafia de élite del nivel establecido.     |
+| `/em simloot <nivel> <veces>`     |     Simula caídas de una mafia de élite del nivel establecido una cantidad determinada de veces.     |
+| `/em version`     |     Obtiene la versión del complemento.     |
+| `/em reload`     |     Recarga el complemento. Funciona casi siempre.     |
+| `/em killaggressive`     |     Mata a todas las turbas de élite agresivas.     |
+| `/em killaggressive <radio>`     |     Mata a todas las turbas de élite agresivas en un radio.     |
+| `/em killpassive`     |     Mata a todas las supermafias pasivas.     |
+| `/em killpassive <radio>`     |     Mata a todas las supermafias pasivas en un radio.     |
+| `/em killtype <tipodeentidad>`     |     Mata a todas las élites de un tipo específico.     |
+| `/em killtype <tipodeentidad> <radio>`     |     Mata a todas las élites de un tipo específico en un radio.     |
+| `/em gettier <nivel>`     |     Obtiene objetos de depuración para fines de prueba.     |
+| `/em money add <nombredeusuario> <cantidad>`     |     Agrega una cantidad determinada de dinero a un jugador.     |
+| `/em money addall <cantidad>`     |     Agrega una cantidad determinada de dinero a todos los jugadores en línea.     |
+| `/em money remove <nombredeusuario> <cantidad>`     |     Elimina una cantidad determinada de dinero de un jugador.     |
+| `/em money set <nombredeusuario> <cantidad>`     |     Establece la cantidad total de moneda de un jugador.     |
+| `/em setrank <jugador> <niveldeprestigio> <niveldegremio>`     |     Establece el rango de gremio de un jugador.     |
 | `/em discord`     |     Obtiene el enlace para el servidor de soporte de Discord.     |
-| `/em discord <message>`     |     Publica un mensaje de depuración en Discord si DiscordSRV está configurado correctamente.     |
-| `/em forceunbind`     |     Desvincula un artículo ligado al alma que se tiene en la mano.     |
-| `/em relativecoords <minidungeon>`     |     Obtiene las coordenadas relativas a un calabozo instalado.     |
-| `/em wallet <player>`     |     Verifica la moneda de un jugador específico.     |
-| `/em fireball`     |     Engendra una bola de fuego para probar la regeneración de explosiones de elite.     |
-| `/em registerblocks <regional_boss_file.yml> <on_spawn/on_remove>`     |     Ver [Bloques Transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em registerblocksedit <regional_boss_file.yml> <on_spawn/on_remove>`     |     Ver [Bloques Transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em registerblocksarea <regional_boss_file.yml> <on_spawn/on_remove>`     |     Ver [Bloques Transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em registerblocksareaedit <regional_boss_file.yml> <on_spawn/on_remove>`     |     Ver [Bloques Transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em cancelblocks`     |     Ver [Bloques Transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em debugmode`     |     Activa el modo de depuración, mostrando el engendrado y desaparición de mobs en la consola y permitiendo el rastreo.     |
+| `/em discord <mensaje>`     |     Publica un mensaje de depuración en Discord si DiscordSRV está configurado correctamente.     |
+| `/em forceunbind`     |     Desvincula un objeto vinculado al alma sostenido.     |
+| `/em relativecoords <minidungeon>`     |     Obtiene las coordenadas relativas a una mazmorra instalada.     |
+| `/em wallet <jugador>`     |     Comprueba la moneda de un jugador específico.     |
+| `/em fireball`     |     Genera una bola de fuego para probar la regeneración de explosión de élite.     |
+| `/em registerblocks <archivo_de_jefe_regional.yml> <on_spawn/on_remove>`     |     Ver [Bloques transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em registerblocksedit <archivo_de_jefe_regional.yml> <on_spawn/on_remove>`     |     Ver [Bloques transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em registerblocksarea <archivo_de_jefe_regional.yml> <on_spawn/on_remove>`     |     Ver [Bloques transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em registerblocksareaedit <archivo_de_jefe_regional.yml> <on_spawn/on_remove>`     |     Ver [Bloques transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em cancelblocks`     |     Ver [Bloques transitivos]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em debugmode`     |     Activa el modo de depuración, mostrando la generación y desaparición de turbas en la consola y permitiendo el seguimiento.     |
 
 ## Comandos internos de administrador
 
-Estos comandos están destinados a ser ejecutados al interactuar con menús o texto interactivo en el chat, y no manualmente.
+Estos comandos están destinados a ejecutarse cuando se interactúa con menús o texto interactivo en el chat, y no manualmente.
 
 | Comando | Descripción |
 |---------|:-----------:|
-| `/em setup done`     |     Deja de mostrar mensajes en el inicio de sesión del administrador.     |
-| `/em setup minidungeon <nombreMinidungeon>`     |     Instala un Minidungeon.     |
-| `/em setup minidungeon <nombreMinidungeon>`     |     Desinstala un Minidungeon.     |
-| `/em setup unminidungeon <nombreMinidungeon> noPaste`     |     Desinstala un Minidungeon sin deshacer un pegado de WorldEdit.     |
-| `/em trace <uuid>`     |     Rastrea los spawns / despawn de un Jefe Personalizado. Requiere que el modo de depuración esté activado.     |
-| `/em debugtp <uuid>`     |     Teletransporta a la ubicación de un Jefe Personalizado rastreado. Requiere que el modo de depuración esté activado.     |
-| `/em generateresourcepack`     |     Genera un pack de recursos. Consulta la entrada de wiki sobre Modelos Personalizados sobre cómo usar esto.     |
-| `/em updateresourcepack`     |     Actualiza el SHA1 del pack de recursos en la configuración de server.properties. Consulta la entrada de wiki sobre Modelos Personalizados sobre cómo usar esto.     |
+| `/em setup done`     |     Deja de mostrar mensajes al iniciar sesión como administrador.     |
+| `/em setup minidungeon <nombredelaminidungeon>`     |     Instala una minidungeon.     |
+| `/em setup minidungeon <nombredelaminidungeon>`     |     Desinstala una minidungeon.     |
+| `/em trace <uuid>`     |     Rastrea las apariciones/desapariciones de un jefe personalizado. Requiere que el modo de depuración esté activado.     |
+| `/em debugtp <uuid>`     |     Teletransporta a la ubicación de un jefe personalizado rastreado. Requiere que el modo de depuración esté activado.     |
+| `/em generateresourcepack`     |     Genera un paquete de recursos. Consulta la entrada de la wiki sobre modelos personalizados sobre cómo utilizar esto.     |
+| `/em updateresourcepack`     |     Actualiza el SHA1 del paquete de recursos en la configuración server.properties. Consulta la entrada de la wiki sobre modelos personalizados sobre cómo utilizar esto.     |
 
-# Permisos en bruto:
+# Permisos sin procesar:
+```
+permissions:
+  elitemobs.*:
+    description: Da acceso a todos los comandos de elitemobs.
+    children:
+      elitemobs.stats: true
+      elitemobs.checktier.others: true
+      elitemobs.versionnotification: true
+      elitemobs.currency.check.others: true
+    default: op
+  elitemobs.stats:
+    description: Permite a los jugadores ejecutar /elitemobs stats
+    default: op
+  elitemobs.version:
+    description: Permite a los jugadores ejecutar /elitemobs version
+    default: true
+  elitemobs.shop.npc:
+    description: Permite a los jugadores interactuar con NPC para tiendas dinámicas.
+    default: true
+  elitemobs.shop.command:
+    description: Permite a los jugadores abrir el menú de la tienda dinámica a través de comandos.
+    default: true
+  elitemobs.customshop.npc:
+    description: Permite a los jugadores interactuar con NPC para tiendas dinámicas.
+    default: true
+  elitemobs.customshop.command:
+    description: Permite a los jugadores abrir el menú de la tienda dinámica a través de comandos.
+    default: true
+  elitemobs.currency.pay:
+    description: Permite a los jugadores ejecutar /elitemobs pay [nombredeusuario] [cantidad]
+    default: true
+  elitemobs.currency.check:
+    description: Permite a los jugadores ejecutar /elitemobs wallet
+    default: true
+  elitemobs.currency.check.others:
+    description: Permite a los jugadores ejecutar /elitemobs check [nombredeusuario]
+    default: op
+  elitemobs.events:
+    description: Permite a los jugadores iniciar todos los eventos.
+    default: true
+  elitemobs.checktier.others:
+    description: Permite a los jugadores ejecutar /elitemobs checktier [jugador]
+    default: op
+  elitemobs.gettier:
+    description: Permite a los jugadores ejecutar /elitemobs gettier [nivel]
+    default: op
+  elitemobs.versionnotification:
+    description: Permite a los jugadores recibir notificaciones sobre actualizaciones de complementos
+    default: op
+  elitemobs.adventurersguild.teleport:
+    description: Permite a los jugadores teletransportarse al centro del gremio de aventureros usando /ag
+    default: true
+  elitemobs.adventurersguild.command:
+    description: Permite a los jugadores clasificar el menú usando el comando /em adventurersguild
+    default: true
+  elitemobs.rank.command:
+    description: Permite a los jugadores abrir el menú de rango a través de /em rank
+    default: true
+  elitemobs.rank.npc:
+    description: Permite a los jugadores acceder al menú /em rank a través de NPC
+    default: true
+  elitemobs.quest.command:
+    description: Permite a los jugadores aceptar misiones a través de comandos
+    default: true
+  elitemobs.quest.npc:
+    description: Permite a los jugadores aceptar misiones a través de EliteMobs NPC
+    default: true
+  elitemobs.dungeontp:
+    description: Permite a los jugadores teletransportarse a una ubicación establecida por elitemobs
+    default: true
+  elitemobs.spawntp:
+    description: Permite a los jugadores teletransportarse a la ubicación de generación predeterminada del servidor.
+    default: true
+  elitemobs.back.npc:
+    description: Permite a los jugadores interactuar con un npc para volver a una ubicación anterior.
+    default: true
+  elitemobs.shareitem:
+    description: Comparte un objeto de élite sostenido en el chat.
+    default: true
+  elitemobs.scrap.npc:
+    description: Permite a los jugadores desechar objetos en un npc
+    default: true
+  elitemobs.scrap.command:
+    description: Permite a los jugadores desechar objetos usando un comando
+    default: true
+  elitemobs.smelt.command:
+    description: Permite a los jugadores fundir objetos usando un comando
+    default: true
+  elitemobs.smelt.npc:
+    description: Permite a los jugadores fundir objetos usando un npc
+    default: true
+  elitemobs.repair.command:
+    description: Permite a los jugadores usar el comando de reparación para abrir el menú para reparar objetos de élite.
+    default: true
+  elitemobs.repair.npc:
+    description: Permite a los jugadores interactuar con el NPC para reparar objetos.
+    default: true
+  elitemobs.refiner.command:
+    description: Permite a los jugadores usar el comando refinador para abrir el menú para mejorar el desecho de élite.
+    default: true
+  elitemobs.refiner.npc:
+    description: Permite a los jugadores interactuar con el NPC para mejorar el desecho de élite.
+    default: true
+  elitemobs.enhancer.command:
+    description: Permite a los jugadores usar el comando potenciador para abrir el menú para mejorar los objetos de élite.
+    default: true
+  elitemobs.enhancer.npc:
+    description: Permite a los jugadores interactuar con el NPC para mejorar los objetos de élite.
+    default: true
+  elitemobs.unbind.command:
+    description: Permite a los jugadores usar el comando desvincular para abrir el menú para desvincular objetos de élite.
+    default: true
+  elitemobs.unbind.npc:
+    description: Permite a los jugadores interactuar con el NPC desvinculador para desvincular objetos de élite.
+    default: true
+  elitemobs.soulbind.bypass:
+    description: Permite a los usuarios eludir las restricciones de vinculación del alma. ¡Solo recomendado para administradores!
+    default: false
+  elitequest.*:
+    description: Utilizado para permisos relacionados con misiones.
+    default: false
+    op: false
+```
 
-```
-permisos:
-elitemobs.*:
-descripción: Proporciona acceso a todos los comandos de elitemobs
-hijos:
-elitemobs.stats: verdadero
-elitemobs.checktier.others: verdadero
-elitemobs.versionnotification: verdadero
-elitemobs.currency.check.others: verdadero
-predeterminado: op
-elitemobs.stats:
-descripción: Permite a los jugadores ejecutar /elitemobs stats
-predeterminado: op
-elitemobs.version:
-descripción: Permite a los jugadores ejecutar /elitemobs version
-predeterminado: verdadero
-elitemobs.shop.npc:
-descripción: Permite a los jugadores interactuar con NPCs para tiendas dinámicas
-predeterminado: verdadero
-elitemobs.shop.command:
-descripción: Permite a los jugadores abrir el menú de la tienda dinámica a través de comandos
-predeterminado: verdadero
-elitemobs.customshop.npc:
-descripción: Permite a los jugadores interactuar con NPCs para tiendas dinámicas
-predeterminado: verdadero
-elitemobs.customshop.command:
-descripción: Permite a los jugadores abrir el menú de la tienda dinámica a través de comandos
-predeterminado: verdadero
-elitemobs.currency.pay:
-descripción: Permite a los jugadores ejecutar /elitemobs pay [nombreDeUsuario] [cantidad]
-predeterminado: verdadero
-elitemobs.currency.check:
-descripción: Permite a los jugadores ejecutar /elitemobs wallet
-predeterminado: verdadero
-elitemobs.currency.check.others:
-descripción: Permite a los jugadores ejecutar /elitemobs check [nombreDeUsuario]
-predeterminado: op
-elitemobs.events:
-descripción: Permite a los jugadores lanzar todos los eventos
-predeterminado: verdadero
-elitemobs.checktier.others:
-descripción: Permite a los jugadores ejecutar /elitemobs checktier [jugador]
-predeterminado: op
-elitemobs.gettier:
-descripción: Permite a los jugadores ejecutar /elitemobs gettier [tier]
-predeterminado: op
-elitemobs.versionnotification:
-descripción: Permite a los jugadores recibir notificaciones sobre actualizaciones de complementos
-predeterminado: op
-elitemobs.adventurersguild.teleport:
-descripción: Permite a los jugadores teletransportarse al centro de la guilda de aventureros usando /ag
-predeterminado: verdadero
-elitemobs.adventurersguild.command:
-descripción: Permite a los jugadores clasificar el menú usando el comando /em adventurersguild
-predeterminado: verdadero
-elitemobs.rank.command:
-descripción: Permite a los jugadores abrir el menú de rango a través /em rank
-predeterminado: verdadero
-elitemobs.rank.npc:
-descripción: Permite a los jugadores acceder al menú /em rank a través de NPCs
-predeterminado: verdadero
-elitemobs.quest.command:
-descripción: Permite a los jugadores emprender misiones a través de comandos
-predeterminado: verdadero
-elitemobs.quest.npc:
-descripción: Permite a los jugadores emprender misiones a través de EliteMobs NPC
-predeterminado: verdadero
-elitemobs.dungeontp:
-descripción: Permite a los jugadores teletransportarse a una ubicación establecida por elitemobs
-predeterminado: verdadero
-elitemobs.spawntp:
-descripción: Permite a los jugadores teletransportarse a la ubicación de spawn predeterminada del servidor.
-predeterminado: verdadero
-elitemobs.back.npc:
-descripción: Permite a los jugadores interactuar con un npc para volver a una ubicación anterior.
-predeterminado: verdadero
-elitemobs.shareitem:
-descripción: Comparte un Objeto Élite en el chat.
-predeterminado: verdadero
-elitemobs.scrap.npc:
-descripción: Permite a los jugadores deshacerse de objetos en un npc
-predeterminado: verdadero
-elitemobs.scrap.command:
-descripción: Permite a los jugadores deshacerse de los objetos usando un comando
-predeterminado: verdadero
-elitemobs.smelt.command:
-descripción: Permite a los jugadores fundir objetos usando un comando
-predeterminado: verdadero
-elitemobs.smelt.npc:
-descripción: Permite a los jugadores fundir objetos usando un npc
-predeterminado: verdadero
-elitemobs.repair.command:
-descripción: Permite a los jugadores usar el comando de reparación para abrir el menú de reparación de objetos élit
-predeterminado: verdadero
-elitemobs.repair.npc:
-descripción: Permite a los jugadores interactuar con el NPC para reparar objetos
-predeterminado: verdadero
-elitemobs.refiner.command:
-descripción: Permite a los jugadores usar el comando de refinador para abrir el menú de mejora de Elite Scrap
-predeterminado: verdadero
-elitemobs.refiner.npc:
-descripción: Permite a los jugadores interactuar con el NPC para mejorar Elite Scrap
-predeterminado: verdadero
-elitemobs.enhancer.command:
-descripción: Permite a los jugadores usar el comando de mejora para abrir el menú de mejora de Objetos Élite
-predeterminado: verdadero
-elitemobs.enhancer.npc:
-descripción: Permite a los jugadores interactuar con el NPC para mejorar Objetos Élite
-predeterminado: verdadero
-elitemobs.unbind.command:
-descripción: Permite a los jugadores usar el comando de desvinculación para abrir el menú de desvinculación de Objetos Élite
-predeterminado: verdadero
-elitemobs.unbind.npc:
-descripción: Permite a los jugadores interactuar con el NPC de desvinculación para desvincular Objetos Élite
-predeterminado: verdadero
-elitemobs.soulbind.bypass:
-descripción: Permite a los usuarios eludir las restricciones de soulbind. ¡Solo recomendado para administradores!
-predeterminado: falso
-elitequest.*:
-descripción: Usado para permisos relacionados con misiones
-predeterminado: falso
-op: falso
-```
+

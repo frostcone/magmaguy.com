@@ -2,7 +2,7 @@
 
 Actions are at the core of the script. These determine what the script does and allows you to set custom intervals.
 
-Actions always start with the type of action you are going to do. Different action types serve different functions. Additionally, all actions have a target or targets. Actions can also have a wait timer, to make sure that they things happen at customizable delays. Finally, actions can also have several other fields specific to the action type.
+Actions always start with the type of action you are going to do. Different action types serve different functions. Additionally, all actions have a target or targets. Actions can also have a wait timer, to make sure that things happen at customizable delays. Finally, actions can also have several other fields specific to the action type.
 
 ## Shared attributes
 

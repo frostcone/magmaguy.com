@@ -1,17 +1,17 @@
-# Configuración de vídeo
+# Video de configuración
 
 <div class="outer-container">
 <div class="iframe-container">
-  <iframe class="video-iframe" src="https://www.youtube.com/embed/boRg2X4qhw4?si=2aRLV_j9UzNz_VO0" title="Reproductor de vídeo de YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe class="video-iframe" src="https://www.youtube.com/embed/boRg2X4qhw4?si=2aRLV_j9UzNz_VO0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 
 ***
 
 
-*Esta guía asume que estás usando EliteMobs ***7.2.37*** o posterior.*
+*Esta guía asume que estás utilizando EliteMobs ***7.2.37*** o posterior.*
 
-# Primer inicio
+# Primer arranque
 
 Reinicia el servidor una vez.
 
@@ -19,7 +19,7 @@ Reinicia el servidor una vez.
 
 <summary><b>¿Por qué?</b></summary>
 
-EliteMobs incrementa la salud máxima de tu archivo de configuración spigot.yml la primera vez que se inicia el servidor. Esto es para que los mobs Elite puedan tener más de 2000 de salud. No altera la salud de ningún otro mob, por lo que no cambia los mobs de vanilla o del plugin.
+EliteMobs aumenta la salud máxima de tu archivo de configuración spigot.yml la primera vez que se inicia el servidor. Esto es para que las turbas de élite puedan tener más de 2000 de salud. No altera la salud de ninguna otra mafia, por lo que no cambia las mafias de vainilla o de complementos.
 
 Este cambio requiere un reinicio del servidor para que realmente funcione.
 
@@ -27,32 +27,15 @@ Este cambio requiere un reinicio del servidor para que realmente funcione.
 
 # Permisos
 
-Desde EliteMobs 7.2.23, todos los permisos recomendados ya están establecidos por defecto. Puedes ver más acerca de los permisos [aquí]($language$/elitemobs/permissions_and_commands.md).
+A partir de EliteMobs 7.2.23, todos los permisos recomendados ya están configurados de forma predeterminada. Puedes ver más sobre los permisos [aquí]($language$/elitemobs/permissions_and_commands.md).
 
-# Mazmorras y el mundo del hub de la Guilda de Aventureros
+# Mazmorras y mundo central del Gremio de aventureros
 
-Desde EliteMobs 7.2.35, ahora existe una carpeta `imports` en el directorio de EliteMobs. El proceso de instalación para las Mazmorras y el Mundo de la Guilda de Aventureros es el mismo:
+A partir de EliteMobs 7.2.35, ahora hay una carpeta `imports` en el directorio de EliteMobs. El proceso de instalación de las mazmorras y el mundo del Gremio de aventureros es el mismo:
 
-1) Descarga los archivos. Puedes hacer clic en el cristal rojo en `/em setup` para obtener los enlaces de descarga.
+1) Descarga los archivos. Puedes hacer clic en el cristal rojo en `/em setup` para obtener enlaces a las descargas.
 
-2) Sube/mueve los archivos al directorio `/plugins/EliteMobs/imports` de tu servidor. Asegúrate de que pones los archivos **ZIP** dentro de la carpeta `imports` sin modificarlos de ninguna manera. EliteMobs extraerá automáticamente los archivos y los moverá a las ubicaciones correctas.
-
-<div align="center">
-
-<detalles>
-
-<resumen>Ejemplo visual</resumen>
-
-<video autoplay loop muted controls>
-  <source src="../../../img/wiki/setup_import.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
-</video>
-
-</details>
-
-</div>
-
-3) Reinicia o haz `/em reload`. Después de unos segundos, cuando hagas `/em setup` los indicadores de las características que descargaste deberían ser de color amarillo.
+2) Carga/mueve los archivos a la carpeta `/plugins/EliteMobs/imports` de tu servidor. Asegúrate de colocar los archivos **COMPRIMIDOS** dentro de la carpeta `imports` sin modificarlos de ninguna manera, EliteMobs extraerá automáticamente los archivos y los moverá a las ubicaciones correctas.
 
 <div align="center">
 
@@ -61,17 +44,15 @@ Desde EliteMobs 7.2.35, ahora existe una carpeta `imports` en el directorio de E
 <summary>Ejemplo visual</summary>
 
 <video autoplay loop muted controls>
-  <source src="../../../img/wiki/setup_reload.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  <source src="../../../img/wiki/setup_import.webm" type="video/webm">
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </details>
 
 </div>
 
-**IMPORTANTE: [WORLDGUARD](https://dev.bukkit.org/projects/worldguard) Y [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (o [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) SON OBLIGATORIOS SI QUIERES INSTALAR ALGUNO DE LOS CONTENIDOS EN ELITEMOBS!**
-
-4) ¡Haz clic en el cristal amarillo en el menú `/em setup` para instalar las características!
+3) Reinicia o haz `/em reload`. Después de unos segundos, las mazmorras deberían instalarse automáticamente; cuando hagas `/em setup`, los indicadores de las mazmorras que descargaste deberían ser verdes e indicar que las mazmorras están correctamente instaladas y actualizadas. Si alguna mazmorra muestra un panel de vidrio amarillo, significa que hay una versión más reciente de la mazmorra y que debe actualizarse.
 
 <div align="center">
 
@@ -82,57 +63,49 @@ Desde EliteMobs 7.2.35, ahora existe una carpeta `imports` en el directorio de E
 
 <video autoplay loop muted controls>
   <source src="../../../img/wiki/setup_install.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Tu navegador no admite la etiqueta de video.
 </video>
 
 </details>
 
 </div>
 
-5) ***Si tus archivos de mazmorra tienen modelos personalizados***, opcionalmente puedes seguir los pasos de instalación listados [aquí]($language$/elitemobs/custom_models.md&section=importing-custom-models-from-dungeons) para instalarlos.
+4) ***Si tus archivos de mazmorra tienen modelos personalizados***, puedes seguir opcionalmente los pasos de instalación que se enumeran [aquí]($language$/elitemobs/custom_models.md&section=importing-custom-models-from-dungeons) para instalarlos.
 
-¡Eso es todo! **¡Puedes encontrar teletransportes a las mazmorras instaladas y la guilda de aventureros en /em, en la página de teletransportes!**
+¡Eso es todo! **¡Puedes encontrar teletransportes a las mazmorras instaladas y al gremio de aventureros en /em, en la página Teletransportes!**
 
-[¡Más información sobre la Guilda de Aventureros aquí!]($language$/elitemobs/adventurers_guild_world.md)
-<br>[¡Descarga el Mundo del Hub de la Guilda de Aventureros aquí!](https://magmaguy.itch.io/elitemobs-the-adventurers-guild)
+[¡Más información sobre el Gremio de aventureros aquí!]($language$/elitemobs/adventurers_guild_world.md)
+<br>[¡Descarga el mundo central del Gremio de aventureros aquí!](https://magmaguy.itch.io/elitemobs-the-adventurers-guild)
 
-# Plugins recomendados
+# Complementos recomendados
 
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard): Utilizado para configurar y proteger áreas. [Lista de flags de EliteMobs]($language$/elitemobs/worldguard_flags.md).
-- [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/): Utilizado para el flag anti-fly, útil de tener.
-- [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/): Utilizado para mostrar la información de EliteMobs en otros plugins, como para el chat. [Más información]($language$/elitemobs/placeholders.md).
-- [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/): Utilizado para enmascarar a los Jefes Personalizados como cualquier otra cosa. Los disfraces se usan mucho en nuestras mazmorras oficiales, por lo que se recomienda encarecidamente que instales este plugin. [Más información]($language$/elitemobs/libsdisguises.md).
-- [DiscordSRV]($language$/elitemobs/discordsrv.md): Utilizado para enlazar los anuncios de EliteMobs al chat de Discord. [Más información]($language$/elitemobs/discordsrv.md)
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard): Se utiliza para banderas. [Lista de banderas de EliteMobs]($language$/elitemobs/worldguard_flags.md).
+- [WorldGuardExtraFlags](https://www.spigotmc.org/resources/worldguard-extra-flags.4823/): Se utiliza para la bandera antivuelo, útil de tener.
+- [PlaceHolderAPI (PAPI)](https://www.spigotmc.org/resources/placeholderapi.6245/): Se utiliza para mostrar información de EliteMobs en otros complementos, como para el chat. [Más información]($language$/elitemobs/placeholders.md).
+- [LibsDisguises](https://www.spigotmc.org/resources/libs-disguises-free.81/): Se utiliza para disfrazar a los jefes personalizados como cualquier otra cosa. Los disfraces se utilizan mucho en nuestras mazmorras oficiales, por lo que es muy recomendable que instales este complemento. [Más información]($language$/elitemobs/libsdisguises.md).
+- [DiscordSRV]($language$/elitemobs/discordsrv.md): Se utiliza para vincular los anuncios de EliteMobs al chat de Discord. [Más información]($language$/elitemobs/discordsrv.md).
 
-# Actualizar contenido de la mazmorra
+# Actualización del contenido de la mazmorra
 
-Para actualizar el contenido de la mazmorra, simplemente repite los pasos de instalación anteriores. **NO tienes que borrar ningún archivo**, EliteMobs maneja eso cuando importas la actualización.
+Para actualizar el contenido de la mazmorra, simplemente repite los pasos de instalación anteriores. **No tienes que eliminar ningún archivo**, EliteMobs se encarga de eso cuando importas la actualización.
 
-# Preguntas Frecuentes (FAQ)
+# Preguntas frecuentes (FAQ)
 
-## EliteMobs dice que WorldGuard / WorldEdit no está instalado cuando sí lo está
-
-<details><summary>Respuesta</summary>
-
-Esto significa al 100% que estás usando la versión incorrecta de WorldGuard / WorldEdit en tu servidor. [Puedes conseguir la versión correcta en la sección de arriba.]($language$/elitemobs/setup.md&section=recommended-plugins)
-
-</details>
-
-## La mazmorra basada en el mundo es solo un terreno plano
+## La minidungeon es solo terreno plano
 
 <details><summary>Respuesta</summary>
 
-El 95% de las veces esto significa que no seguiste las instrucciones de configuración. Si descomprimiste cualquier archivo o cargaste cualquier mundo utilizando otros plugins, reinstala el contenido siguiendo los pasos listados arriba. No necesitas ningún otro plugin para cargar los mundos correctamente.
+El 95% de las veces, esto significa que no seguiste las instrucciones de configuración. Si descomprimiste algún archivo o cargaste algún mundo usando otros complementos, reinstala el contenido siguiendo los pasos enumerados anteriormente. No necesitas ningún otro complemento para cargar los mundos correctamente.
 
 </details>
 
-## El chat del NPC se ve raro / los agujeros de gusano no funcionan / otro comportamiento extraño después de instalar
+## El chat de NPC se ve raro/los agujeros de gusano no funcionan/otro comportamiento extraño después de la instalación.
 
 <details>
 
 <summary>Respuesta</summary>
 
-Ejecuta el comando `/em reload` después de configurar una mazmorra para asegurarte de que todos los valores se inicialicen completamente. Un reinicio es aún mejor, pero no debería ser necesario.
+Ejecuta el comando `/em reload` después de configurar una mazmorra para asegurarte de que todos los valores se inicialicen por completo. Un reinicio es aún mejor, pero no debería ser necesario.
 
 </details>
 
@@ -144,7 +117,7 @@ Ejecuta el comando `/em reload` después de configurar una mazmorra para asegura
 
 <summary>Respuesta</summary>
 
-Los jefes regionales tienen un tiempo de reaparición. Puedes verificar cuándo está programado que reaparezca el jefe yendo a su archivo de configuración y copiando los números después del `:` en la sección de ubicaciones de aparición.
+Los jefes regionales tienen un tiempo de reaparición. Puedes comprobar cuándo está programado que reaparezca el jefe yendo a su archivo de configuración y copiando los números después de `:` en la sección de ubicaciones de generación.
 
 Ejemplo:
 
@@ -153,37 +126,41 @@ spawnLocations:
 - em_primis,1100.5,22.5,526.5,0.0,0.0:1643259941451
 ```
 
-En este caso los números que buscas son `1643259941451`. Puedes usar [esta](https://www.unixtimestamp.com/index.php) página web para convertir eso a una fecha específica. Puedes borrar los números para forzar la reaparición del jefe, asegúrate de hacer `/em reload` después de borrarlos.
+En este caso, los números que estás buscando son `1643259941451`. Puedes usar [este](https://www.unixtimestamp.com/index.php) sitio web para convertir eso a una fecha específica. Puedes eliminar los números para forzar al jefe a reaparecer, asegúrate de hacer `/em reload` después de eliminarlos.
 
 </details>
 
-### ¡El jefe nunca estuvo apareciendo!
+### ¡El jefe nunca apareció!
 
 <details>
 
 <summary>Respuesta</summary>
 
-Comprueba las siguientes cosas:
+Comprueba lo siguiente:
 
-- ¿Tú u otra persona mataron al jefe, o se escapó mediante la función de tiempo límite? El jefe puede estar reapareciendo. Comprueba los enfriamientos, la información sobre eso está en la sección de arriba.
-- Ve si hay algún error en la consola, especialmente después de instalar la mazmorra o después de un `/em reload`. Los errores deberían decirte qué está mal.
-- Comprueba si tu región está protegida por algún otro plugin que impida la aparición de mobs
-- Comprueba la dificultad de tu mundo, los mobs no pueden aparecer en dificultad pacífica
-- Comprueba las marcas de WorldGuard, ve si la aparición de mobs está configurada para permitir
-- Comprueba si instalaste el contenido de la mazmorra sobre el área de aparición, eso está protegido por defecto
-- Muy, muy raramente, el problema puede tener que ver con el día que tu servidor cree que es. Asegúrate de que la fecha de la máquina de tu servidor es correcta, de lo contrario, el mecanismo de reaparición podría causar algunos problemas.
+- ¿Tú o alguien más mató al jefe, o escapó a través de la función de tiempo de espera? El jefe puede estar reapareciendo. Comprueba los tiempos de reutilización, la información al respecto está en la sección anterior.
+- Comprueba si hay errores en la consola, especialmente después de instalar la mazmorra o después de un `/em reload`. Los errores deberían decirte qué está mal.
+- Comprueba si tu región está protegida por algún otro complemento que impida la generación de turbas.
+- Comprueba la dificultad de tu mundo, las turbas no pueden aparecer en dificultad pacífica.
+- Comprueba las banderas de WorldGuard, comprueba si la generación de turbas está configurada como permitir.
+- Comprueba si instalaste el contenido de la mazmorra sobre el área de generación, eso está protegido de forma predeterminada.
+- Muy, muy raramente, el problema puede tener que ver con el día que tu servidor cree que es. Asegúrate de que la fecha de la máquina de tu servidor sea correcta; de lo contrario, la mecánica de reaparición podría causar algunos problemas.
 
 </details>
 
 
-## Algo está estropeado y simplemente no puedo arreglarlo
+## Algo está mal y no puedo arreglarlo
 
 <details>
 
 <summary>Respuesta</summary>
 
-Esto suele suceder después de intentar y no lograr modificar correctamente los archivos de manera que EliteMobs no pudiera autorepararse. Si estás atascado y no puedes averiguar cómo repararlo a partir de los mensajes de la consola en el inicio / instalación de la mazmorra, lo mejor que puedes hacer es una instalación limpia de EliteMobs.
+Esto suele suceder después de intentar y no modificar correctamente los archivos de una manera que EliteMobs no pudo autorreparar. Si estás atascado y no puedes averiguar cómo repararlo a partir de los mensajes de la consola al iniciar/instalar la mazmorra, lo mejor que puedes hacer es una instalación limpia de EliteMobs.
 
-Haz una copia de seguridad de tu carpeta `~/plugins/EliteMobs/data` para conservar los datos del jugador, luego borra la carpeta `~/plugins/EliteMobs/`. Inicia tu servidor, apágalo, restaura los contenidos de tu carpeta de datos respaldada **mientras el servidor está desconectado** y luego vuelve a iniciarlo. Ahora puedes continuar instalando contenido de EliteMobs.
+Haz una copia de seguridad de tu carpeta `~/plugins/EliteMobs/data` para guardar los datos del jugador, luego elimina la carpeta `~/plugins/EliteMobs/`. Inicia tu servidor, apágalo, restaura el contenido de tu carpeta de datos de respaldo **mientras el servidor está fuera de línea** y luego vuelve a iniciarlo. Ahora puedes reanudar la instalación del contenido de EliteMobs.
 
 </details>
+
+
+
+

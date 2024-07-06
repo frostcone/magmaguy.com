@@ -1,66 +1,70 @@
-Aquí encontrarás una descripción breve del ciclo de juego previsto para EliteMobs. Esta guía está dirigida a nuevos administradores que desean entender qué puede hacer EliteMobs.
+Aquí encontrarás descrito de la forma más breve posible el bucle de juego previsto para EliteMobs. Esta guía está dirigida a nuevos administradores que quieren comprender lo que puede hacer EliteMobs.
 
-# Paso 1: Primer encuentro del jugador
-Un jugador en tu servidor adquirirá armadura durante el juego normal. Una vez que tengan cualquier cosa a nivel de hierro o mejor, comenzarán a enfrentarse a Elite Mobs que aparecen naturalmente a su alrededor en función de la armadura que usan los jugadores.
+# Paso 1: el primer encuentro del jugador
+Un jugador en tu servidor adquirirá armadura durante el juego normal. Una vez que tengan algo a nivel de hierro o superior, comenzarán a enfrentarse a las turbas de élite que aparecen naturalmente a su alrededor según la armadura que lleven los jugadores.
 
 Los jugadores también pueden optar por no participar bajando su [Rango de gremio]($language$/elitemobs/adventurers_guild_world.md).
-<br>Estos Elite Mobs (cuando su nivel es suficientemente alto y el sistema antiexplotación no se activa) pueden soltar tres tipos de botín:
+<br>Estas turbas de élite (cuando su nivel es lo suficientemente alto y el sistema antiexploits no se activa) pueden soltar tres tipos de botín:
 
-* Botín generado de manera procedimental (el más común)
-* Botín personalizado（algo raro）
-* Monedas élite
+* Botín generado por procedimientos (el tipo más común)
+* Botín personalizado (algo raro)
+* Monedas de élite
 
-(Nota: Puedes leer más sobre la generación y las recompensas de Elite Mob [aquí]($language$/elitemobs/spawning_tiers_loot.md))
+(Nota: puedes leer más sobre la generación y las recompensas de las turbas de élite [aquí]($language$/elitemobs/spawning_tiers_loot.md))
 
-Al saquear, el plugin informará al jugador que las monedas se pueden utilizar y los objetos vendidos en la tienda en el [Guild de Aventureros]($language$/elitemobs/adventurers_guild_world.md).
+Al saquear, el complemento informará al jugador que las monedas se pueden usar y los objetos se pueden vender en la tienda del [Gremio de aventureros]($language$/elitemobs/adventurers_guild_world.md).
 
-# Paso 2: Descubrimiento de la economía
-Una vez que el jugador haya obtenido la información sobre la venta de objetos, se sentirán naturalmente inclinados a venderlos. Si el mundo está configurado, encontrarán los NPCs del Guild de Aventureros (detalles para la descarga y configuración del mundo en la publicación del recurso de spigot).
+# Paso 2: Descubriendo la economía
+Una vez que el jugador haya obtenido la información sobre la venta de objetos, naturalmente se sentirá atraído a venderlos. Si el mundo está configurado, entonces encontrarán los NPC del Gremio de aventureros (detalles para la descarga y configuración del mundo en la publicación de recursos de spigot).
 
-Descubrirán que EliteMobs usa su propia moneda, lo cual es necesario por razones de equilibrio. También descubrirán que pueden desbloquear rangos de gremio y más tarde descubrirán que esto es necesario si quieren progresar más allá de los mobs élite de nivel 10, ya que no obtendrán botín más allá del nivel 10 sin desbloquear más rangos.
+Descubrirán que EliteMobs usa su propia moneda, lo cual es necesario por razones de equilibrio. También descubrirán que pueden desbloquear rangos de gremio y luego descubrirán que esto es necesario si desean progresar más allá de las turbas de élite de nivel 10, ya que no obtendrán botín más allá del nivel 10 sin desbloquear más rangos.
 
-También podrán descubrir el sistema de misiones y comenzar a cumplir misiones para obtener moneda extra, lo que naturalmente los llevará a buscar oponentes que de otra manera evitarían. También pueden encontrar al Instructor de Combate NPC, que les dará consejos sobre el sistema de combate. En general, todos los NPC dan a los jugadores consejos importantes a medida que interactúan con ellos.
+También podrán obtener información sobre el sistema de misiones y comenzar a cumplir misiones para obtener moneda adicional, lo que naturalmente los llevará a buscar oponentes que de otro modo evitarían. También pueden encontrar el NPC Instructor de combate, que les dará consejos sobre el sistema de combate. Globalmente, todos los NPC brindan a los jugadores consejos importantes a medida que los jugadores interactúan con ellos.
 
 # Paso 3: Progresión
-Ahora que los jugadores tienen una idea de lo que les espera, lucharán contra Elite Mobs cada vez más fuertes a medida que avanzan a través de las categorías de objetos.
+Ahora que los jugadores tienen una idea de lo que les espera, lucharán contra turbas de élite cada vez más fuertes a medida que avanzan en los niveles de objetos.
 
-Para cuando lleguen al nivel de diamante, se encontrarán limitados por su rango de gremio, lo que debería alentarlos a desbloquear niveles adicionales.
-<br>Además, se encontrarán con eventos aleatorios que deberían aumentar su interés en las diferentes mecánicas que ofrece el plugin, especialmente en lo que respecta a [encantamientos personalizados]($language$/elitemobs/custom_enchantments_list.md) como el lanzallamas.
+Cuando lleguen al nivel de diamante, se encontrarán limitados por su rango de gremio, lo que debería animarlos a desbloquear más niveles.
+<br>Además, se encontrarán con eventos aleatorios que deberían aumentar su interés en las diversas mecánicas que ofrece el complemento, especialmente cuando se trata de [encantamientos personalizados]($language$/elitemobs/custom_enchantments_list.md) como el lanzallamas.
 
 # Paso 4: Niveles altos
-Una vez que el jugador ha progresado hasta alrededor del nivel de objeto 80 (o rango de gremio 8), comenzarán a maximizar la dificultad de los EliteMobs (por ahora). El combate de alto nivel requiere mucho más estrategia, planificación y ejecución de combate que los niveles más bajos, ya que los mobs tienen hasta 7 poderes diferentes en ese nivel.
+Una vez que el jugador haya progresado hasta alrededor del nivel de objeto 80 (o rango de gremio 8), comenzarán a maximizar la dificultad de EliteMobs (por ahora). El combate de alto nivel requiere mucha más estrategia, planificación y ejecución de combate que los niveles inferiores, ya que las turbas tienen hasta 7 poderes diferentes en esa etapa.
 
-Podrán identificar qué botín quieren mantener y cuál quieren descartar, y tendrán una buena idea de cuáles son sus objetos personalizados favoritos. Te recomiendo encarecidamente que crees muchos objetos personalizados ya que estos son actualmente el principal foco de los jugadores de nivel medio a alto de EliteMobs.
+Podrán saber qué botín quieren conservar y cuál quieren descartar, y tendrán una buena idea de cuáles son sus objetos personalizados favoritos. Te recomiendo que hagas muchos objetos personalizados, ya que estos son actualmente el enfoque principal de los jugadores de nivel medio a superior de EliteMobs.
 
-# (Mini)Invasión de mazmorras
-Suponiendo que instalaste las recomendadas [Minimazmorras & Guaridas]($language$/elitemobs/dungeons.md) en algún momento, posiblemente incluso bastante temprano, probablemente los jugadores se sentirán atraídos por desafiar a las Guaridas, Minimazmorras y Aventuras.
+# (Mini)Mazmorras
+Suponiendo que instalaste las [minidungeons y guaridas]($language$/elitemobs/dungeons.md) recomendadas en algún momento, posiblemente incluso desde el principio, los jugadores probablemente se sentirán atraídos a desafiar guaridas, minidungeons y aventuras.
 
-Estos son lugares donde los Jefes personalizados aparecen y, después de ser asesinados, renacen con un retraso, creando una ubicación centralizada donde los jugadores pueden desafiar a jefes difíciles de manera justa.
+Estos son lugares donde aparecen los jefes personalizados y, después de ser asesinados, reaparecen con un retraso, creando una ubicación centralizada donde los jugadores pueden desafiar a jefes duros de una manera justa.
 
-Aquí están los principales atractivos de las minimazmorras:
+Estos son los principales puntos de venta de las minidungeons:
 
-* Dado que el terreno está prehecho y protegido, al igual que los jefes, el combate no puede ser explotado.
-* Dado que centraliza el combate, puedes tener tasas de aparición más bajas para los mobs naturales y terminar con un impacto de rendimiento general más bajo.
-* Dado que el botín está prehecho, suele ser bastante especial y los jugadores aprenden a ir a ciertos lugares para buscar equipamiento específico que les pueda gustar.
-* Dado que los jefes están prehechos, las batallas están equilibradas manualmente y resultan en combates mucho más interesantes y desafiantes pero justos.
-* En el caso de las aventuras, estas son mapas de aventuras masivas con extensas líneas de misiones, misiones secundarias y a veces incluso arenas y mazmorras dentro de mazmorras!
-* Se ven geniales y a los jugadores les encanta pasar días en ellas.
+* Dado que el terreno está prefabricado y protegido, y también los jefes, el combate no se puede explotar.
+* Dado que centraliza el combate, puedes tener tasas de generación más bajas para las turbas naturales y terminar con un menor impacto general en el rendimiento.
+* Dado que el botín está prefabricado, generalmente es bastante especial y los jugadores aprenden a ir a ciertos lugares para farmear equipo específico que les pueda gustar.
+* Dado que los jefes están prefabricados, las batallas se equilibran manualmente y da como resultado peleas mucho más interesantes y desafiantes pero justas.
+* ¡En el caso de las aventuras, estos son mapas de aventuras masivos completos con vastas líneas de misiones, misiones secundarias y, a veces, incluso arenas y mazmorras dentro de mazmorras!
+* Se ve muy bien y a los jugadores les encanta pasar días en ellos.
 
-[Más sobre minimazmorras!]($language$/elitemobs/dungeons.md)
+[¡Más sobre minidungeons!]($language$/elitemobs/dungeons.md)
 
 # Mazmorras instanciadas
-Algunas mazmorras son desafíos instanciados. Esto significa que se crea un mundo cuando un grupo se une a la mazmorra, y una vez que el grupo comienza la mazmorra los jugadores no podrán unirse más que para verla.
-<br>Hay un sistema dedicado para reaparecer que da a los jugadores 3 muertes cada uno antes de ser eliminados.
+Algunas mazmorras son desafíos instanciados. Esto significa que se crea un mundo cuando un grupo se une a la mazmorra, y una vez que el grupo inicia la mazmorra, los jugadores no podrán unirse más que para verla.
+<br>Hay un sistema dedicado para reaparecer que les da a los jugadores 3 muertes cada uno antes de ser eliminados.
 
 Las mazmorras son el contenido más equilibrado y desarrollado en EliteMobs, ya que son significativamente más difíciles de explotar que cualquier otro contenido.
 
-Las mazmorras tienen dificultades que los jugadores pueden elegir, y las dificultades más altas son los desafíos más duros en EliteMobs ¡pero también los más gratificantes!
+¡Las mazmorras tienen dificultades que los jugadores pueden elegir, y las dificultades más altas son los desafíos más difíciles en EliteMobs, pero también las más gratificantes!
 
-[Más sobre mazmorras!]($language$/elitemobs/dungeons.md)
+[¡Más sobre mazmorras!]($language$/elitemobs/dungeons.md)
 
 # Arenas
-EliteMobs también tiene arenas a las que los jugadores pueden desafiar. Estos son desafíos basados en oleadas que los jugadores deben superar en una cantidad preestablecida de oleadas. Recompensan a los jugadores por alcanzar específicas oleadas de arena.
+EliteMobs también tiene arenas que los jugadores pueden desafiar. Estos son desafíos basados ​​en oleadas que los jugadores deben superar para una cantidad preestablecida de oleadas. Recompensan a los jugadores por alcanzar oleadas de arena específicas.
 
-Este contenido también está instanciado, y las limitaciones de unión y reanzamiento de la sección de Dungeoneering también se aplican aquí.
+Este contenido también está instanciado, y las limitaciones de unión y reaparición de la sección de mazmorras también se aplican aquí.
 
-Las arenas pueden ser bastante difíciles de vencer, por lo que representan un desafío divertido y gratificante!
+Las arenas pueden ser bastante difíciles de superar, ¡así que representan un desafío divertido y gratificante!
+
+
+
+

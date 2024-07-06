@@ -1,31 +1,31 @@
 # Introducción
 
-En esta página, descubrirás varios ejemplos de poderes de jefes personalizados creados con EliteScript y la [WebApp](https://magmaguy.com/webapp/webapp.html). Estos ejemplos simples ilustran cómo utilizar múltiples acciones y otras características para crear poderes de jefes únicos.
+En esta página, descubrirás varios ejemplos de poderes de jefe personalizados creados con EliteScript y la [WebApp](https://magmaguy.com/webapp/webapp.html). Estos ejemplos sencillos ilustran cómo utilizar múltiples acciones y otras funciones para crear poderes de jefe únicos.
 
-Además, cada ejemplo va acompañado de demostraciones visuales, por lo que es más fácil entender cómo funciona el script dentro del juego.
+Además, cada ejemplo va acompañado de demostraciones visuales, por lo que es más fácil comprender cómo funciona el script dentro del juego.
 
-No dudes en copiar cualquiera de los ejemplos y utilizarlos en tus propias mazmorras o mundos.
+Siéntete libre de copiar cualquiera de los ejemplos y usarlos en tus propias mazmorras o mundos.
 
-## Ejemplos de Poder
+## Ejemplos de poderes
 
-### Golpe descendente
+### Golpe hacia abajo
 
-Este script hará que el jefe se teletransporte 8 bloques por encima del jugador que le ha hecho daño, luego se golpeará en el suelo. Posteriormente, aplicará el efecto de poción lenta a los jugadores que se encuentren dentro de un radio de 3 bloques del jefe y mostrará el mensaje 'Aturdido' en pantalla durante 3 segundos.
+Este script hará que el jefe se teletransporte 8 bloques por encima del jugador que le infligió daño, y luego se golpee contra el suelo. Posteriormente, aplicará el efecto de poción de lentitud a cualquier jugador dentro de los 3 bloques del jefe y mostrará el mensaje "Aturdido" en la pantalla durante 3 segundos.
 
 <div align="center">
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   SlamDown:
-    Events:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Actions:
+    Acciones:
     - action: TELEPORT
       FinalTarget:
         targetType: DIRECT_TARGET
@@ -54,18 +54,16 @@ eliteScript:
         targetType: NEARBY_PLAYERS
         range: 3
       wait: 20
-    Cooldowns:
+    Enfriamientos:
       local: 180
       global: 80
 ```
-
-
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_slamdown.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -78,31 +76,31 @@ eliteScript:
 
 ***
 
-### Alejar
+### Empujar lejos
 
-Este script generará una cúpula de 4 bloques alrededor del jefe. Posteriormente, iniciará un efecto de partículas en el borde de la zona, que durará un segundo, luego otra acción empujará a los jugadores dentro de la zona. Debido a la configuración de desplazamiento para el empuje, los jugadores serán propulsados ligeramente hacia arriba. Finalmente, el script enviará un mensaje a los jugadores dentro de la zona.
+Este script generará una cúpula de 4 bloques alrededor del jefe. Posteriormente, iniciará un efecto de partículas en el borde de la zona, que durará un segundo, luego otra acción alejará a los jugadores dentro de la zona. Debido a la configuración de desplazamiento para el empujón, los jugadores serán propulsados ​​ligeramente hacia arriba. Finalmente, el script enviará un mensaje a los jugadores dentro de la zona.
 
 <div align="center">
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   PushAway:
-    Events:
+    Eventos:
     - EliteMobDamagedEvent
-    Zone:
+    Zona:
       shape: DOME
       radius: 4
       borderRadius: 3
       Target:
         targetType: SELF
         track: true
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: CLOUD
@@ -126,23 +124,21 @@ eliteScript:
       repeatEvery: 1
       times: 20
     - action: MESSAGE
-      sValue: "&cJefe genial!: &f¡FUERA!"
+      sValue: "&c¡Jefe genial!: &f¡FUERA DE AQUÍ!"
       Target:
         targetType: ZONE_FULL
       repeatEvery: 10
       times: 2
-    Cooldowns:
+    Enfriamientos:
       local: 140
       global: 80
 ```
-
-
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_pushaway.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -155,24 +151,24 @@ eliteScript:
 
 ***
 
-### Lluvia de Flechas
+### Lluvia de flechas
 
-Hace un script que dibujará un círculo en el suelo alrededor del jugador que dañó al mob, también muestra un mensaje en la pantalla diciéndole al jugador que salga del círculo. Luego, 2 segundos después, disparará flechas hacia abajo en la misma ubicación, pero desde 10 bloques más arriba.
+Crea un script que dibujará un círculo en el suelo alrededor del jugador que dañó a la mafia, también muestra un mensaje en la pantalla diciéndole al jugador que se mueva fuera del círculo. Luego, 2 segundos después, disparará flechas hacia abajo en la misma ubicación desde 10 bloques hacia arriba.
 
 <div align="center">
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   MakeCircle:
-    Events:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Zone:
+    Zona:
       shape: CYLINDER
       radius: 5
       borderRadius: 4
@@ -180,7 +176,7 @@ eliteScript:
       Target:
         targetType: DIRECT_TARGET
         track: false
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       Target:
         targetType: ZONE_BORDER
@@ -200,7 +196,7 @@ eliteScript:
     - action: RUN_SCRIPT
       scripts:
       - "ArrowRain"
-    Cooldowns:
+    Enfriamientos:
       local: 160
       global: 80
   ArrowRain:
@@ -213,7 +209,7 @@ eliteScript:
         targetType: DIRECT_TARGET
         track: false
         offset: 0,10,0
-    Actions:
+    Acciones:
     - action: SUMMON_ENTITY
       wait: 40
       sValue: ARROW
@@ -225,13 +221,11 @@ eliteScript:
       times: 4
 ```
 
-
-
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_arrowrain.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -244,33 +238,33 @@ eliteScript:
 
 ***
 
-### Aura de Fuego
+### Aura de fuego
 
-Esto creará un script que generará partículas alrededor del jefe usando la zona del cilindro, durará 6 segundos. Al jefe también se le dará la etiqueta `FireOn` durante 6 segundos.
+Esto creará un script que generará partículas alrededor del jefe usando la zona del cilindro, durará 6 segundos. El jefe también recibirá la etiqueta `FireOn` durante 6 segundos.
 
-Si los jugadores atacan al jefe mientras la etiqueta está activa, entonces los jugadores se encenderán durante 1 segundo. Esto se hace usando condiciones, el script `SetOnFire` sólo podrá ejecutarse si el jefe tiene la etiqueta correspondiente `FireOn`.
+Si los jugadores atacan al jefe mientras la etiqueta está activa, los jugadores se incendiarán durante 1 segundo. Esto se hace usando condiciones, el script `SetOnFire` solo podrá ejecutarse si el jefe tiene la etiqueta coincidente `FireOn`.
 
 <div align="center">
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   Visual:
-    Events:
+    Eventos:
     - PlayerDamagedByEliteMobEvent
-    Zone:
+    Zona:
       shape: CYLINDER
       radius: 2
       height: 3
       Target:
         targetType: SELF
         track: true
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: FLAME
@@ -286,18 +280,18 @@ eliteScript:
       duration: 120
       Target:
         targetType: SELF
-    Cooldowns:
+    Enfriamientos:
       local: 180
       global: 80
   SetOnFire:
-    Events:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Actions:
+    Acciones:
     - action: SET_ON_FIRE
       duration: 20
       Target:
         targetType: DIRECT_TARGET
-      Conditions:
+      Condiciones:
         Target:
           targetType: SELF
         conditionType: BLOCKING
@@ -305,13 +299,11 @@ eliteScript:
         - "FireOn"
 ```
 
-
-
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_fireaura.webm" type="video/webm">
-  Tu navegador no soporta la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -324,26 +316,26 @@ eliteScript:
 
 ***
 
-### Líneas de Veneno
+### Líneas de veneno
 
-Este script creará dos zonas cúbicas centradas en el jefe. La IA del jefe se desactiva durante 2 segundos. Las zonas cúbicas están configuradas de tal manera que formarán un símbolo de suma en el suelo.
+Este script creará dos zonas cuboides centradas en el jefe. La IA del jefe está configurada para estar desactivada durante 2 segundos. Las zonas cuboides están configuradas de tal manera que formarán un símbolo más en el suelo.
 
-El script luego hará partículas de nube durante 2 segundos en las zonas y luego hará partículas de humo y aplicará el efecto de poción de veneno a las zonas durante 3 segundos.
+Luego, el script creará partículas de nubes durante 2 segundos en las zonas y luego creará partículas de humo y aplicará el efecto de poción de veneno a las zonas durante 3 segundos.
 
 <div align="center">
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   PoisonLine1:
-    Events:
-      - EliteMobDamagedByPlayerEvent
-    Zone:
+    Eventos:
+    - EliteMobDamagedByPlayerEvent
+    Zona:
       shape: CUBOID
       x: 20
       y: 1
@@ -351,41 +343,41 @@ eliteScript:
       Target:
         targetType: SELF
         track: false
-    Actions:
-      - action: SET_MOB_AI
-        bValue: false
-        duration: 40
-        Target:
-          targetType: SELF
-        scripts:
-          - "PoisonLine2"
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: CLOUD
-        Target:
-          targetType: ZONE_FULL
-          coverage: 1
-        repeatEvery: 5
-        times: 8
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: SMOKE_NORMAL
-        Target:
-          targetType: ZONE_FULL
-          coverage: 1
-        wait: 40
-        repeatEvery: 5
-        times: 12
-      - action: POTION_EFFECT
-        potionEffectType: POISON
-        amplifier: 4
-        duration: 50
-        Target:
-          targetType: ZONE_FULL
-        wait: 40
-        repeatEvery: 5
-        times: 12
-    Cooldowns:
+    Acciones:
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 40
+      Target:
+        targetType: SELF
+      scripts:
+      - "PoisonLine2"
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1
+      repeatEvery: 5
+      times: 8
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1
+      wait: 40
+      repeatEvery: 5
+      times: 12
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 4
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      wait: 40
+      repeatEvery: 5
+      times: 12
+    Enfriamientos:
       local: 200
       global: 80
   PoisonLine2:
@@ -397,40 +389,40 @@ eliteScript:
       Target:
         targetType: SELF
         track: false
-    Actions:
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: CLOUD
-        Target:
-          targetType: ZONE_FULL
-          coverage: 1
-        repeatEvery: 5
-        times: 8
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: SMOKE_NORMAL
-        Target:
-          targetType: ZONE_FULL
-          coverage: 1
-        wait: 40
-        repeatEvery: 5
-        times: 12
-      - action: POTION_EFFECT
-        potionEffectType: POISON
-        amplifier: 4
-        duration: 50
-        Target:
-          targetType: ZONE_FULL
-        wait: 40
-        repeatEvery: 5
-        times: 12
+    Acciones:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1
+      repeatEvery: 5
+      times: 8
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1
+      wait: 40
+      repeatEvery: 5
+      times: 12
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 4
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      wait: 40
+      repeatEvery: 5
+      times: 12
 ```
 
 <div align="center">
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_poisonlines.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -447,29 +439,29 @@ eliteScript:
 
 Este script crea una zona cilíndrica de 10 bloques centrada en el jefe y luego aplica efectos de partículas y empuja a la zona durante 10 segundos.
 
-La acción de empujar empuja a los jugadores ligeramente hacia arriba a cada tick, creando la ilusión de que los jugadores están rebotando mientras están en la zona.
+La acción de empujar empuja a los jugadores ligeramente hacia arriba cada tick, creando la ilusión de que los jugadores están rebotando mientras están en la zona.
 
 <div align="center">
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   Bounce:
-    Events:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Zone:
+    Zona:
       shape: CYLINDER
       radius: 10
       height: 2
       Target:
         targetType: SELF
         track: false
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: EXPLOSION_NORMAL
@@ -485,7 +477,7 @@ eliteScript:
         targetType: ZONE_FULL
       repeatEvery: 1
       times: 200
-    Cooldowns:
+    Enfriamientos:
       local: 220
       global: 80
 ```
@@ -494,7 +486,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_bounce.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -509,31 +501,31 @@ eliteScript:
 
 ### Invocar
 
-Este guion creará una zona cilíndrica (situada 6 bloques por encima del jugador debido al desplazamiento aplicado) centrada alrededor del jugador que dañó al jefe. Además, mostrará un mensaje en pantalla a ese jugador.
+Este script creará una zona cilíndrica (colocada 6 bloques por encima del jugador debido al desplazamiento aplicado) centrada alrededor del jugador que dañó al jefe. Además, mostrará un mensaje en pantalla a ese jugador.
 
-Después de un retraso de 2 segundos, los refuerzos aparecerán en la zona designada. Sin embargo, solo una parte de la zona estará ocupada por refuerzos ya que usamos `coverage`. Si el jugador no logra eliminar todos los refuerzos, estos desaparecerán automáticamente después de 20 segundos (400 ticks).
+Después de un retraso de 2 segundos, los refuerzos aparecerán en la zona designada. Sin embargo, solo una parte de la zona estará ocupada por refuerzos ya que usamos `coverage`. Si el jugador no logra eliminar todos los refuerzos, desaparecerán automáticamente después de 20 segundos (400 ticks).
 
 <div align="center">
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   Summon:
-    Events:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Zone:
+    Zona:
       shape: CYLINDER
       radius: 3
       height: 1
       Target:
         targetType: DIRECT_TARGET
         offset: 0,6,0
-    Actions:
+    Acciones:
     - action: SUMMON_REINFORCEMENT
       sValue: "fc_boss.yml"
       duration: 400
@@ -548,7 +540,7 @@ eliteScript:
       fadeOut: 10
       Target:
         targetType: DIRECT_TARGET
-    Cooldowns:
+    Enfriamientos:
       local: 333
       global: 80
 ```
@@ -557,7 +549,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_summon.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -570,38 +562,38 @@ eliteScript:
 
 ***
 
-### Zonas de Pociones
+### Zonas de pociones
 
-Este guion se activa cuando un jugador daña al jefe. Luego ejecuta el script `PotionZoneBad` o `PotionZoneGood`.
+Este script se activa cuando un jugador daña al jefe. Luego ejecuta el script `PotionZoneBad` o `PotionZoneGood`.
 
-En el script `PotionZoneBad`, se genera una zona cilíndrica alrededor de los jugadores cercanos que están a menos de 20 bloques del jefe. Produce efectos de partículas de nube y humo grande con una cobertura especificada, inflige el efecto de poción de marchitamiento y envía un mensaje a los jugadores cercanos.
+En el script `PotionZoneBad`, se genera una zona cilíndrica alrededor de los jugadores cercanos que se encuentran dentro de los 20 bloques del jefe. Produce efectos de partículas de nube y humo grande con una cobertura especificada, inflige el efecto de poción de marchitamiento y envía un mensaje a los jugadores cercanos.
 
-En el script `PotionZoneGood`, se genera una zona cilíndrica alrededor de los jugadores que están a menos de 20 bloques del jefe. Los efectos de partículas para este script están invertidos. Este script aplica un efecto de poción de curación en lugar de marchitamiento y envía un mensaje a los jugadores cercanos.
+En el script `PotionZoneGood`, se genera una zona cilíndrica alrededor de los jugadores que se encuentran dentro de los 20 bloques del jefe. Los efectos de partículas para este script están invertidos. Este script aplica un efecto de poción de curación en lugar de marchitarse y envía un mensaje a los jugadores cercanos.
 
 <div align="center">
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   Trigger:
-    Events:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Actions:
+    Acciones:
     - action: RUN_SCRIPT
       scripts:
       - "PotionZoneBad"
       - "PotionZoneGood"
       onlyRunOneScript: true
-    Cooldowns:
+    Enfriamientos:
       local: 110
       global: 80
   PotionZoneBad:
-    Zone:
+    Zona:
       shape: CYLINDER
       height: 2
       radius: 5
@@ -609,7 +601,7 @@ eliteScript:
         targetType: NEARBY_PLAYERS
         range: 20
         track: false
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: CLOUD
@@ -640,12 +632,12 @@ eliteScript:
       repeatEvery: 10
       times: 6
     - action: MESSAGE
-      sValue: "&cJefe genial!: &fSiente el ardor!"
+      sValue: "&c¡Jefe genial!: &f¡Siente la quemadura!"
       Target:
         targetType: NEARBY_PLAYERS
         range: 20
   PotionZoneGood:
-    Zone:
+    Zona:
       shape: CYLINDER
       height: 2
       radius: 5
@@ -653,7 +645,7 @@ eliteScript:
         targetType: NEARBY_PLAYERS
         range: 20
         track: false
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: SMOKE_LARGE
@@ -684,7 +676,7 @@ eliteScript:
       repeatEvery: 10
       times: 6
     - action: MESSAGE
-      sValue: "&cJefe genial!: &fSiente el... Espera, este es el equivocado."
+      sValue: "&c¡Jefe genial!: &fSiente la... Espera, este es el equivocado".
       Target:
         targetType: NEARBY_PLAYERS
         range: 20
@@ -694,7 +686,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_potionzones.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -707,32 +699,32 @@ eliteScript:
 
 ***
 
-### Olas de Ceguera
+### Oleadas cegadoras
 
-Este guion inicia dos ondas de rayos de tierra proyectadas en ambas direcciones X positiva y negativa originadas del jefe.
+Este script inicia dos ondas de rayos terrestres proyectadas en direcciones X positivas y negativas que se originan en el jefe.
 
-Se utiliza el parámetro `offset` para determinar la longitud y el tamaño de los rayos, específicamente definiendo el valor Z. Además, especificamos la dirección de propagación de la onda estableciendo los valores X. (Esta es solo una explicación de cómo este guion específico usa estos valores, no tienes que hacer el tuyo exactamente igual a este)
+Utilizamos el parámetro `offset` para determinar la longitud y el tamaño de los rayos, específicamente definiendo el valor Z. Además, especificamos la dirección de propagación de la onda estableciendo los valores X. (Esta es solo una explicación de cómo este script específico usa estos valores, no tienes que hacer los tuyos exactamente así).
 
-Aunque es posible ajustar los valores Y para aumentar la altura de las olas de rayos, lo dejamos en 0 para permitir que los jugadores tengan la opción de saltar sobre los rayos.
+Si bien es posible ajustar los valores Y para aumentar la altura de las ondas de rayos, lo dejamos en 0 para permitir a los jugadores la opción de saltar sobre los rayos.
 
-El parámetro `animationDuration` especifica el tiempo que tardan las olas de rayos en viajar desde los objetivos hasta los objetivos finales. Reducir este valor haría que los rayos sean más rápidos y más difíciles de evitar.
+El parámetro `animationDuration` dicta el tiempo que tardan las ondas de rayos en viajar desde los objetivos hasta los objetivos finales. Reducir este valor haría que los rayos fueran más rápidos y más difíciles de evadir.
 
-Posteriormente, se aplican efectos de partículas y pócimas. Los jugadores que no logren evitar o saltar sobre las olas de los rayos serán cegados durante 5 segundos (100 ticks).
+Posteriormente, se aplican efectos de partículas y pociones. Los jugadores que no eviten o salten sobre las ondas de rayos quedarán cegados durante 5 segundos (100 ticks).
 
 <div align="center">
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   Blind:
-    Events:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Zone:
+    Zona:
       shape: TRANSLATING_RAY
       Target:
         targetType: SELF
@@ -752,7 +744,7 @@ eliteScript:
         track: false
       animationDuration: 100
       ignoresSolidBlocks: true
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: SMOKE_NORMAL
@@ -771,13 +763,14 @@ eliteScript:
         track: true
       repeatEvery: 1
       times: 100
-    Cooldowns:
+      scripts: "Blind2"
+    Enfriamientos:
       local: 200
       global: 80
   Blind2:
-    Events:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Zone:
+    Zona:
       shape: TRANSLATING_RAY
       Target:
         targetType: SELF
@@ -797,7 +790,7 @@ eliteScript:
         track: false
       animationDuration: 100
       ignoresSolidBlocks: true
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: SMOKE_NORMAL
@@ -822,7 +815,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_blindwaves.webm" type="video/webm">
-  Su navegador no soporta la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -835,11 +828,11 @@ eliteScript:
 
 ***
 
-### Muro Congelante
+### Muro de congelación
 
-Este script crea 3 rayos giratorios centrados en el jefe. Necesitamos 3 rayos giratorios diferentes ya que no podemos definir la altura del rayo, por lo que usamos varios scripts y `offset` para hacer que los rayos se apilen en altura y parezcan una *pared* giratoria singular.
+Este script crea 3 rayos giratorios centrados en el jefe. Necesitamos 3 rayos giratorios diferentes ya que no podemos definir la altura del rayo, por lo que usamos varios scripts y `offset` para hacer que los rayos se apilen en altura para que parezcan una sola *pared* giratoria.
 
-Los 3 scripts tienen zonas idénticas excepto que el `offset` es diferente. Están configurados para tener una longitud de 6 bloques comenzando desde el jefe y están configurados para hacer una rotación de guiñada de 360 grados en 10 segundos (200 ticks).
+Los 3 scripts tienen zonas idénticas excepto que el `offset` es diferente. Están configurados para tener 6 bloques de longitud a partir del jefe y están configurados para realizar una rotación de guiñada de 360 ​​grados en 10 segundos (200 ticks).
 
 Todos los scripts tienen efectos de partículas establecidos y aplicarán la acción `VISUAL_FREEZE` durante 5 segundos (100 ticks) a cualquier jugador que sea *golpeado* por las paredes de rayos.
 
@@ -847,26 +840,26 @@ Todos los scripts tienen efectos de partículas establecidos y aplicarán la acc
 
 <details>
 
-<summary><b>Expandir Ejemplo</b></summary>
+<summary><b>Expandir ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
 eliteScript:
   Trigger:
-    Events:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Actions:
+    Acciones:
     - action: RUN_SCRIPT
       scripts:
       - "FreezeWall"
       - "FreezeWall2"
       - "FreezeWall3"
-    Cooldowns:
+    Enfriamientos:
       local: 300
       global: 80      
   FreezeWall:
-    Zone:
+    Zona:
       shape: ROTATING_RAY
       Target:
         targetType: SELF
@@ -878,7 +871,7 @@ eliteScript:
       yawRotation: 360
       animationDuration: 200
       ignoresSolidBlocks: true
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: SNOWFLAKE
@@ -896,7 +889,7 @@ eliteScript:
       repeatEvery: 1
       times: 200
   FreezeWall2:
-    Zone:
+    Zona:
       shape: ROTATING_RAY
       Target:
         targetType: SELF
@@ -909,7 +902,7 @@ eliteScript:
       yawRotation: 360
       animationDuration: 200
       ignoresSolidBlocks: true
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: SNOWFLAKE
@@ -927,7 +920,7 @@ eliteScript:
       repeatEvery: 1
       times: 200
   FreezeWall3:
-    Zone:
+    Zona:
       shape: ROTATING_RAY
       Target:
         targetType: SELF
@@ -940,7 +933,7 @@ eliteScript:
       yawRotation: 360
       animationDuration: 200
       ignoresSolidBlocks: true
-    Actions:
+    Acciones:
     - action: SPAWN_PARTICLE
       particles:
       - particle: SNOWFLAKE
@@ -963,7 +956,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_freezewall.webm" type="video/webm">
-  Tu navegador no admite la etiqueta de video.
+  Su navegador no admite la etiqueta de video.
 </video>
 
 </div>
@@ -973,3 +966,5 @@ eliteScript:
 </details>
 
 </div>
+
+

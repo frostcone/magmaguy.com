@@ -1,152 +1,155 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# Sistema de scripts EliteMobs
+# Sistema de scripting de EliteMobs
 
-La siguiente página cubre cómo crear scripts Elite!
+¡La siguiente página cubre cómo crear scripts de élite!
 
-Esta es una característica avanzada y requiere algunos conocimientos en profundidad de EliteMobs.
+Esta es una función avanzada y requiere un conocimiento profundo de EliteMobs.
 
-**Nota: Los scripts Elite pueden ser añadidos como archivos de poder o a archivos de jefes personalizados!** Si se usan como archivos de poder, puedes añadirlos como poderes normales a los jefes usando la configuración de Personalizar Jefes [powers]($language$/elitemobs/creating_bosses.md&section=powers), como de costumbre.
+**Nota: ¡Los scripts de élite se pueden agregar como archivos de poder o a archivos de jefe personalizados!** Si se utilizan como archivos de poder, puedes agregarlos como poderes normales a los jefes utilizando la configuración de configuración de [poderes]($language$/elitemobs/creating_bosses.md&section=powers) de los jefes personalizados, como de costumbre.
 
-## Añadir un EliteScript
+## Agregar un EliteScript
 
-Para empezar a añadir un EliteScript a un jefe, añade la siguiente entrada al archivo del jefe:
+Para empezar a agregar un EliteScript a un jefe, agrega la siguiente entrada al archivo de jefe:
 
 ```yml
 eliteScript:
 ```
 
-**Nota: Lo siguiente es extremadamente sensible a mayúsculas y espacios! Asegúrate de que tus espacios, saltos de línea y formato en general coinciden con los ejemplos!**
+**Nota: ¡Lo siguiente es extremadamente sensible a mayúsculas y espacios! ¡Asegúrate de que tus espacios, saltos de línea y formato general coincidan con los ejemplos!**
 
-Ahora que tienes declarado el inicio de tu script, puedes añadir tu script específico. Para este ejemplo, vamos a crear un script llamado `Example`:
+Ahora que has declarado el inicio de tu script, puedes agregar tu script específico. Para este ejemplo, vamos a crear un script llamado `Ejemplo`:
 
 ```yml
 eliteScript:
-  Example:
+  Ejemplo:
 ```
 
-Los scripts Elite tienen 5 secciones diferentes: `Events`, `Conditions`, `Zones`, `Actions` y `Cooldowns`. Solo `Actions` son obligatorias.
+EliteScripts tiene 5 secciones diferentes: `Eventos`, `Condiciones`, `Zonas`, `Acciones` y `Enfriamientos`. Solo las `Acciones` son obligatorias.
 
 Echemos un vistazo a un ejemplo simple:
 
 ```yml
 eliteScript:
-  Example:
-    Events:
+  Ejemplo:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Actions:
+    Acciones:
     - action: PUSH
       Target:
         targetType: SELF
       vValue: 0,0.5,0
-    Cooldowns:
+    Enfriamientos:
       local: 60
       global: 20
 ```
 
-Este script hace que un elite sea empujado hacia arriba cuando es golpeado por un jugador, y no lo hará de nuevo durante 3 segundos (y evitará que otros poderes se activan durante 1 segundo debido a la configuración que hemos establecido en la sección de Cooldowns).
+Este script hace que una élite sea empujada hacia arriba cuando un jugador la golpea, y no lo volverá a hacer durante 3 segundos (y evitará que se activen otros poderes durante 1 segundo debido a la configuración que hemos establecido en la sección Enfriamientos).
 
-Ahora que conoces el formato general de cómo se estructuran los scripts, es hora de aprender qué puedes hacer con cada sección!
-
-----
-
-# Events
-
-[Events]($language$/elitemobs/elitescript_events.md)
-
-Haz clic en el enlace de arriba para aprender cómo usar eventos!
-
-# Targets
-
-[Targets]($language$/elitemobs/elitescript_targets.md)
-
-Haz clic en el enlace de arriba para aprender cómo usar objetivos!
-
-# Actions
-
-[Actions]($language$/elitemobs/elitescript_actions.md)
-
-Haz clic en el enlace de arriba para aprender cómo usar acciones!
-
-# Zones
-
-[Zones]($language$/elitemobs/elitescript_zones.md)
-
-Haz clic en el enlace de arriba para aprender cómo usar zonas!
-
-# Conditions
-
-[Conditions]($language$/elitemobs/elitescript_conditions.md)
-
-Haz clic en el enlace de arriba para aprender cómo usar condiciones!
-
-# Cooldowns
-
-[Cooldowns]($language$/elitemobs/elitescript_cooldowns.md)
-
-Haz clic en el enlace de arriba para aprender cómo usar enfriamientos!
+¡Ahora que conoces el formato general de cómo se estructuran los scripts, es hora de aprender lo que puedes hacer con cada sección!
 
 ----
 
-## Añadiendo múltiples EliteScripts
+# Eventos
 
-Puedes tener múltiples acciones en un evento, pero ¿qué pasa si quieres múltiples scripts en el mismo jefe? ¡Es tan simple como crear una nueva entrada de script! Vamos a ampliar el ejemplo anterior y añadir otro script a ello:
+[Eventos]($language$/elitemobs/elitescript_events.md)
+
+¡Haz clic en el enlace de arriba para aprender a usar eventos!
+
+# Objetivos
+
+[Objetivos]($language$/elitemobs/elitescript_targets.md)
+
+¡Haz clic en el enlace de arriba para aprender a usar objetivos!
+
+# Acciones
+
+[Acciones]($language$/elitemobs/elitescript_actions.md)
+
+¡Haz clic en el enlace de arriba para aprender a usar acciones!
+
+# Zonas
+
+[Zonas]($language$/elitemobs/elitescript_zones.md)
+
+¡Haz clic en el enlace de arriba para aprender a usar zonas!
+
+# Condiciones
+
+[Condiciones]($language$/elitemobs/elitescript_conditions.md)
+
+¡Haz clic en el enlace de arriba para aprender a usar condiciones!
+
+# Enfriamientos
+
+[Enfriamientos]($language$/elitemobs/elitescript_cooldowns.md)
+
+¡Haz clic en el enlace de arriba para aprender a usar enfriamientos!
+
+----
+
+## Agregar múltiples EliteScripts
+
+Puedes tener varias acciones en un evento, pero ¿qué sucede si quieres varios scripts en el mismo jefe? ¡Esto es tan simple como crear una nueva entrada de script! Ampliemos el ejemplo anterior y agreguémosle otro script:
 
 ```yml
 eliteScript:
-  Example:
-    Events:
+  Ejemplo:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Actions:
+    Acciones:
     - action: PUSH
       Target:
         targetType: SELF
       vValue: 0,0.5,0
-    Cooldowns:
+    Enfriamientos:
       local: 60
       global: 20
-  Example2:
-    Events:
+  Ejemplo2:
+    Eventos:
     - PlayerDamagedByEliteMobEvent
-    Actions:
+    Acciones:
     - action: SET_ON_FIRE
       Target:
         targetType: DIRECT_TARGET
-    Cooldowns:
+    Enfriamientos:
       local: 200
       global: 60
 ```
-En este ejemplo hemos añadido un segundo script llamado Example2. Example2 pondrá en llamas al jugador que sea dañado por el jefe, esto se debe a que targetType está configurado como [DIRECT_TARGET]($language$/elitemobs/elitescript_targets.md&section=target-types). </br> El enfriamiento para este script está configurado a 200 ticks, lo que significa que el jefe solo podrá prender fuego a los jugadores cada 10 segundos.
+En este ejemplo, hemos agregado un segundo script llamado Ejemplo2. El ejemplo 2 prenderá fuego al jugador que sea dañado por el jefe, esto se debe a que `targetType` está establecido en [DIRECT_TARGET]($language$/elitemobs/elitescript_targets.md&section=target-types). </br>El tiempo de reutilización de este script está establecido en 200 ticks, lo que significa que el jefe solo podrá prender fuego a los jugadores cada 10 segundos.
 
-## Haciendo poderes independientes
+## Hacer poderes independientes
 
-Los poderes independientes están casi enteramente compuestos por el script Elite. Solo hay dos campos que son opcionales. No olvides que para que los poderes independientes funcionen deben ser colocados en la carpeta `~plugins/EliteMobs/powers`. </br>Ejemplo de poder independiente:
+Los poderes independientes están compuestos casi en su totalidad por Elite Script. Solo hay dos campos que son opcionales. No olvides que para que los poderes independientes funcionen, deben colocarse en la carpeta `~plugins/EliteMobs/powers`. </br> Ejemplo de poder independiente:
 
 ```yml
 isEnabled: true
 powerType: UNIQUE
 eliteScript:
-  Example:
-    Events:
+  Ejemplo:
+    Eventos:
     - EliteMobDamagedByPlayerEvent
-    Actions:
+    Acciones:
     - action: PUSH
       Target:
         targetType: SELF
       vValue: 0,.3,0
-    Cooldowns:
+    Enfriamientos:
       local: 60
       global: 20
 ```
 
 ### isEnabled
 
-Al igual que en todos los demás lugares del plugin, establece si el poder está habilitado.
+Igual que en cualquier otro lugar del complemento, establece si el poder está habilitado.
 
 ### powerType
 
 El tipo de poder establece cómo se asigna el poder. Los valores son:
 
-- `UNIQUE`: El poder sólo se aplicará a los jefes personalizados que tengan el poder establecido en la sección de poderes.
-- `DEFENSIVE` / `MISCELLANEOUS` / `OFFENSIVE`: CUALQUIER elite podrá obtener estos poderes, y contarán para un subconjunto específico de poderes.
-- `MAJOR_ZOMBIE`, `MAJOR_SKELETON`, `MAJOR_BLAZE`, `MAJOR_ENDERMAN`, `MAJOR_GHAST`: Sólo las elites del tipo de entidad adecuado podrán aparecer naturalmente con estos poderes, y contarán hacia los poderes mayores.
+- `UNIQUE`: el poder solo se aplicará a los jefes personalizados que tengan el poder establecido en la sección de poderes.
+- `DEFENSIVE` / `MISCELLANEOUS` / `OFFENSIVE`: CUALQUIER élite podrá obtener estos poderes, y contarán para un subconjunto específico de poderes.
+- `MAJOR_ZOMBIE`, `MAJOR_SKELETON`, `MAJOR_BLAZE`, `MAJOR_ENDERMAN`, `MAJOR_GHAST`: Solo las élites del tipo de entidad adecuado podrán generar naturalmente con estos poderes, y contarán para los poderes principales.
+
+
+

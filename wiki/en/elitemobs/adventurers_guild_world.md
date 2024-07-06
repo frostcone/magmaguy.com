@@ -41,9 +41,6 @@ To install the Adventurer's Guild World do the following:
 
 3. Restart or do `/em reload`. After a few seconds, when you do `/em setup` the indicators for the features you downloaded should be yellow.
 
-
-   **IMPORTANT: [WORLDEDIT](https://dev.bukkit.org/projects/worldedit) (or [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)) ARE MANDATORY IF YOU WANT TO INSTALL SOME OF THE CONTENT IN ELITEMOBS!**
-
 4. Click on the yellow glass in the `/em setup` menu to install the imported features. If everything installed properly you should be in the Adventurer's Guild hub world. You can teleport to the Adventurer's Guild at any time by doing `/ag`.
 
 #### Configuring The Wormhole

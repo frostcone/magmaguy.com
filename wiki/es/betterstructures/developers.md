@@ -1,4 +1,4 @@
-# Repositorio Público
+# Repositorio público
 
 ## Maven
 ```xml
@@ -12,7 +12,7 @@
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>numeroDeVersion-SNAPSHOT</version>
+  <version>versionNumber-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -25,38 +25,39 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:numeroDeVersion-SNAPSHOT'
+    implementation 'com.magmaguy:BetterStructures:versionNumber-SNAPSHOT'
 }
 ```
 
-Nota: reemplaza `numeroDeVersion` con la versión actual del complemento.
+Nota: Reemplaza `versionNumber` con la versión actual del complemento.
 
 # Eventos
 
 **Nota: Los eventos están en com.magmaguy.betterstructures.api**
 
-## Evento de Ubicación de la Construcción (BuildPlaceEvent)
+## BuildPlaceEvent
 
-Se llama cuando se va a colocar una construcción. Expone datos sobre qué construcción se va a colocar y dónde, entre otras cosas, a través del objeto FitAnything.
+Se llama cuando una construcción está a punto de ser colocada. Expone datos sobre qué construcción se va a colocar y dónde, entre otras cosas, a través del objeto FitAnything.
 
-**¡No intentes modificar la construcción que se está colocando!** Puedes modificar cosas menores, pero cambiar la construcción completa probablemente resultará en una construcción con un ajuste deficiente.
+**¡No intentes modificar la construcción que se está colocando!** Puedes modificar cosas menores, pero cambiar toda la construcción probablemente resultará en una construcción con un ajuste deficiente.
 
-Este es cancelable.
+Esto es cancelable.
 
-## Evento de Llenado del Cofre (ChestFillEvent)
+## ChestFillEvent
 
-Se llama cuando un cofre se llena. Utiliza el inventario de instantáneas del contenedor para almacenar de manera segura los datos a aplicar.
+Se llama cuando se llena un cofre. Utiliza el inventario de instantáneas del contenedor para almacenar de forma segura los datos que se aplicarán.
 
-Las modificaciones al botín deberían hacerse al inventario de instantáneas a través del método Spigot de agregar o eliminar un artículo.
+Las modificaciones al botín deben realizarse en el inventario de instantáneas a través del método Spigot para agregar o eliminar elementos.
 
-Este es cancelable.
+Esto es cancelable.
 
-# Clases Clave
+# Clases clave
 
 ## FitAnything
 
-La clase FitAnything es la clase que se instancia cuando una construcción se pega y maneja cada aspecto de la pega, incluido llenar cofres y generar mobs.
+La clase FitAnything es la clase que se instancia cuando se pega una construcción y maneja todos los aspectos de la pasta, incluido el llenado de cofres y la generación de mobs.
 
 ## WorldGuard
 
-La clase WorldGuard maneja las protecciones de regiones de WorldGuard. El método de utilidad `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` se pone a disposición de los desarrolladores para facilitar la incorporación de un esquema personalizado de protección de región en BetterStructures. 
+La clase WorldGuard maneja las protecciones de la región WorldGuard. El método de utilidad `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` está disponible para que los desarrolladores conecten fácilmente un esquema de protección de región personalizado sobre BetterStructures.
+

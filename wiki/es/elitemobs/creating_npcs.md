@@ -1,6 +1,6 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# Configuración de ajustes
+# Ajustes de configuración
 
 <div align="center">
 
@@ -10,7 +10,7 @@ Establece si un NPC está habilitado.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `isEnabled` | [Boolean](#boolean) | `true`  |
+| `isEnabled` | [Booleano](#booleano) | `true`  |
 
 <details> 
 
@@ -19,7 +19,7 @@ Establece si un NPC está habilitado.
 <div align="left">
 
 ```yml
-isEnabled: verdadero
+isEnabled: true
 ```
 
 </div>
@@ -28,13 +28,13 @@ isEnabled: verdadero
 
 ***
 
-### nombre
+### name
 
-Establece el nombre para mostrar de un NPC. Soporta [Códigos de color](#color_codes).
+Establece el nombre para mostrar de un NPC. Admite [códigos de color](#códigos_de_color).
 
-| Clave      |       Valores        | Predeterminado |
+| Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `name` | [Cadena de caracteres](#string) |  ninguno   |
+| `name` | [Texto](#texto) |  ninguno   |
 
 <details> 
 
@@ -43,7 +43,7 @@ Establece el nombre para mostrar de un NPC. Soporta [Códigos de color](#color_c
 <div align="left">
 
 ```yml
-nombre: "&aEnn Peecee"
+name: "&aEnn Peecee"
 ```
 
 <div align="center">
@@ -60,11 +60,11 @@ nombre: "&aEnn Peecee"
 
 ### role
 
-Establece el rol del NPC, bajo el nombre. Sólo visual. Soporta [Códigos de color](#color_codes).
+Establece el rol del NPC, debajo del nombre. Solo visual. Admite [códigos de color](#códigos_de_color).
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `role` | [Cadena de caracteres](#string) |  ninguno   |
+| `role` | [Texto](#texto) |  ninguno   |
 
 <details> 
 
@@ -73,7 +73,7 @@ Establece el rol del NPC, bajo el nombre. Sólo visual. Soporta [Códigos de col
 <div align="left">
 
 ```yml
-role: "&c<Red Fellow>"
+role: "&c<Compañero rojo>"
 ```
 
 <div align="center">
@@ -90,7 +90,7 @@ role: "&c<Red Fellow>"
 
 ### profession
 
-Establece la profesión del NPC, lo que establece su apariencia cuando **no** se está utilizando un disfraz.
+Establece la profesión del NPC, que establece su piel cuando **no** se usa un disfraz.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
@@ -120,11 +120,11 @@ profession: NITWIT
 
 ### greetings
 
-Establece la lista de saludos que el NPC dice cuando un jugador se acerca.
+Establece la lista de saludos que dice el NPC cuando un jugador se acerca.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `greetings` | [Lista de Cadenas](#string_list) |  ninguno   |
+| `greetings` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |
 
 <details> 
 
@@ -134,8 +134,8 @@ Establece la lista de saludos que el NPC dice cuando un jugador se acerca.
 
 ```yml
 greetings:
-- ¡Hola!
-- Buen día. 
+- Hola!
+- Buenos días. 
 ```
 
 <div align="center">
@@ -152,11 +152,11 @@ greetings:
 
 ### dialog
 
-Establece el diálogo que el NPC dirá mientras un jugador está cerca (En caso de que `interactionType` sea `DIALOG`, este sería el diálogo).
+Establece el diálogo que dirá el NPC mientras un jugador está cerca (en el caso de `interactionType` `DIALOG`, este sería el diálogo).
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `dialog` | [Lista de Cadenas](#string_list) |  ninguno   |
+| `dialog` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |
 
 <details> 
 
@@ -167,7 +167,7 @@ Establece el diálogo que el NPC dirá mientras un jugador está cerca (En caso 
 ```yml
 dialog:
 - ¡Me gustan las manzanas!
-- Hace calor. 
+- Seguro que hace calor.
 ```
 
 <div align="center">
@@ -188,7 +188,7 @@ Establece el mensaje de despedida del NPC.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `farewell` | [Lista de Cadenas](#string_list) |  ninguno   |
+| `farewell` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |
 
 <details> 
 
@@ -220,7 +220,7 @@ Establece si el NPC puede hablar.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `canTalk` | [Booleano](#boolean) | `true`  |
+| `canTalk` | [Booleano](#booleano) | `true`  |
 
 <details> 
 
@@ -229,7 +229,7 @@ Establece si el NPC puede hablar.
 <div align="left">
 
 ```yml
-canTalk: verdadero
+canTalk: true
 ```
 
 </div>
@@ -240,11 +240,11 @@ canTalk: verdadero
 
 ### activationRadius
 
-Establece el radio al que un NPC puede detectar a un jugador que se acerca.
+Establece el radio en el que un NPC puede detectar a un jugador que se acerca.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `activationRadius` | [Doble](#double) |  `3.0`  |
+| `activationRadius` | [Doble](#doble) |  `3.0`  |
 
 <details> 
 
@@ -264,7 +264,7 @@ activationRadius: 3.0
 
 ### interactionType
 
-Define el tipo de interacción que realizará el NPC.
+Establece el tipo de interacción que realizará el NPC.
 
 | Clave       |      Valores       | Predeterminado |
 |-----------|:-----------------:|:-------:|
@@ -288,11 +288,11 @@ interactionType: TELEPORT_BACK
 
 ### noPreviousLocationMessage
 
-Cuando un NPC teletransportador no tiene una ubicación previa a la que puede teletransportar a un jugador, mostrará este mensaje. Acepta [Códigos de color](#color_codes)
+Cuando un NPC teletransportador no tiene una ubicación anterior a la que pueda teletransportar a un jugador, mostrará este mensaje. Acepta [códigos de color](#códigos_de_color)
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `noPreviousLocationMessage` | [Cadena de caracteres](#string) |  ninguno   |
+| `noPreviousLocationMessage` | [Texto](#texto) |  ninguno   |
 
 <details> 
 
@@ -301,7 +301,7 @@ Cuando un NPC teletransportador no tiene una ubicación previa a la que puede te
 <div align="left">
 
 ```yml
-noPreviousLocationMessage: '&8[EliteMobs] &cNo se pudo enviarte a tu ubicación anterior - ¡no se encontró ubicación anterior!'
+noPreviousLocationMessage: '&8[EliteMobs] &c¡No se te pudo enviar de regreso a tu ubicación anterior - no se encontró ninguna ubicación anterior!'
 ```
 
 <div align="center">
@@ -322,7 +322,7 @@ Establece la cantidad de tiempo, en minutos, antes de que un NPC desaparezca per
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `timeout` | [Entero](#integer) |  `0` (nunca)   |
+| `timeout` | [Entero](#entero) |  `0` (nunca)   |
 
 <details> 
 
@@ -346,7 +346,7 @@ Establece las misiones que da el NPC.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `questFileName` | [Lista de Cadenas](#string_list) |  ninguno   |
+| `questFileName` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |
 
 <details> 
 
@@ -356,8 +356,8 @@ Establece las misiones que da el NPC.
 
 ```yml
 questFileName:
-- mi_mision_uno.yml
-- mi_mision_dos.yml
+- mi_misión_uno.yml
+- mi_misión_dos.yml
 ```
 
 </div>
@@ -372,7 +372,7 @@ Establece el disfraz de LibsDisguises que tiene el NPC.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `disguise` | [Formato de LibsDisguises]($language$/elitemobs/libsdisguises.md) |  ninguno   |
+| `disguise` | [Formato LibsDisguises]($language$/elitemobs/libsdisguises.md) |  ninguno   |
 
 <details> 
 
@@ -381,7 +381,7 @@ Establece el disfraz de LibsDisguises que tiene el NPC.
 <div align="left">
 
 ```yml
-disguise: ESQUELETO
+disguise: SKELETON
 ```
 
 <div align="center">
@@ -402,7 +402,7 @@ Establece los datos para un disfraz personalizado de LibsDisguises.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `customDisguiseData` | [Formato de LibsDisguises]($language$/elitemobs/libsdisguises.md&section=how-can-i-disguise-an-entity-with-a-custom-disguise?) |  ninguno   |
+| `customDisguiseData` | [Formato LibsDisguises]($language$/elitemobs/libsdisguises.md&section=how-can-i-disguise-an-entity-with-a-custom-disguise?) |  ninguno   |
 
 <details> 
 
@@ -411,8 +411,8 @@ Establece los datos para un disfraz personalizado de LibsDisguises.
 <div align="left">
 
 ```yml
-disguise: custom:mi_cool_nombre_disfraz
-customDisguiseData: player mi_cool_disguise_name setskin {"id":"364acb6d-9050-46f7-b5fb-f8c3fd83a6fc","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYxMTk4ODA4Nzc1NSwKICAicHJvZmlsZUlkIiA6ICJkZGVkNTZlMWVmOGI0MGZlOGFkMTYyOTIwZjdhZWNkYSIsCiAgInByb2ZpbGVOYW1lIiA6ICJEaXNjb3JkQXBwIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzliYmVkODQzNWY4YmYyNzhhZmUyNmU2NGZkOTI2YjhiMzc3MzJkODhlMzM0ODk3ZGJkNTI3ZDU2ZmY5MTk5MGUiCiAgICB9CiAgfQp9","signature":"ujLq1joYVktuQAp1xpFKlxQFUVinSePiDBiVCAxxix/mA5vP86i/eAOfb1mtGjaAZ6sO0l2olbzvycnGXNBtbAxgqprguROXY4tpWiePVTDmy3iD4GdOCxHAkYLoyMV5qTT4SNsldUFFuND8GSEgbNMltKDLmhNKwzm08iCigPfpeuYpwljgJPxu6ka54PKNaQu4doI0ZDZXKqq4hPhR3Bs2Sz9MI0SmdmQWwcCzUz3DFdVno27fmQ6LwqmT+eSoOv0EttVG/XMaTYQ5lhBY61mqf6WlJyYVUSfjJk1AbYsctu7dWM+sbY8jFq5ljvXJGGr5TyKi+fs8vHy06Z2go20QgTYOw+caFxFijAS6fgm3oY57VEO/+/9OLHdD+Z9BrWqQWcIIrVeIfxjue/yt4pyeVv9jX59hjNFjhcPEwotkxJ+vZ96WlTLWDG4BiqauDr2VeGyLlVaygO9ZU0wwsN65iSh91GI3tMIA5wbDR0Hts/9ABvt9eafHbowS+4SZXN0i9mYnKg7op1eiB8nMEAGsPJg3DwsmUrh3ACAapQ6eYHiJpo59RXDqKlRcXwo7wsEFp//5LgQWbPj0NP3nxnywdpozqSAeq6236qlhE9BT9eiyJ41V9sMelYFEWMlUAltR40NdbIrHB0J3nmfuLJz44/sTwWf6P1khOy//XX0="}],"legacy":false}
+disguise: custom:nombre_de_mi_disfraz_genial
+customDisguiseData: player nombre_de_mi_disfraz_genial setskin {"id":"364acb6d-9050-46f7-b5fb-f8c3fd83a6fc","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYxMTk4ODA4Nzc1NSwKICAicHJvZmlsZUlkIiA6ICJkZGVkNTZlMWVmOGI0MGZlOGFkMTYyOTIwZjdhZWNkYSIsCiAgInByb2ZpbGVOYW1lIiA6ICJEaXNjb3JkQXBwIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzliYmVkODQzNWY4YmYyNzhhZmUyNmU2NGZkOTI2YjhiMzc3MzJkODhlMzM0ODk3ZGJkNTI3ZDU2ZmY5MTk5MGUiCiAgICB9CiAgfQp9","signature":"ujLq1joYVktuQAp1xpFKlxQFUVinSePiDBiVCAxxix/mA5vP86i/eAOfb1mtGjaAZ6sO0l2olbzvycnGXNBtbAxgqprguROXY4tpWiePVTDmy3iD4GdOCxHAkYLoyMV5qTT4SNsldUFFuND8GSEgbNMltKDLmhNKwzm08iCigPfpeuYpwljgJPxu6ka54PKNaQu4doI0ZDZXKqq4hPhR3Bs2Sz9MI0SmdmQWwcCzUz3DFdVno27fmQ6LwqmT+eSoOv0EttVG/XMaTYQ5lhBY61mqf6WlJyYVUSfjJk1AbYsctu7dWM+sbY8jFq5ljvXJGGr5TyKi+fs8vHy06Z2go20QgTYOw+caFxFijAS6fgm3oY57VEO/+/9OLHdD+Z9BrWqQWcIIrVeIfxjue/yt4pyeVv9jX59hjNFjhcPEwotkxJ+vZ96WlTLWDG4BiqauDr2VeGyLlVaygO9ZU0wwsN65iSh91GI3tMIA5wbDR0Hts/9ABvt9eafHbowS+4SZXN0i9mYnKg7op1eiB8nMEAGsPJg3DwsmUrh3ACAapQ6eYHiJpo59RXDqKlRcXwo7wsEFp//5LgQWbPj0NP3nxnywdpozqSAeq6236qlhE9BT9eiyJ41V9sMelYFEWMlUAltR40NdbIrHB0J3nmfuLJz44/sTwWf6P1khOy//XX0="}],"legacy":false}
 ```
 
 <div align="center">
@@ -433,7 +433,7 @@ Establece el modelo personalizado de ModelEngine que utilizará el NPC.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `customModel` | [Cadena de caracteres](#string) |  ninguno   |
+| `customModel` | [Texto](#texto) |  ninguno   |
 
 <details> 
 
@@ -453,11 +453,11 @@ customModel: MI_MODELO_UNO
 
 ### arena
 
-Establece el nombre del archivo de la arena para la que el NPC abrirá un menú (requiere el `ARENA_MASTER` interactionType).
+Establece el nombre de archivo de la arena para la que el NPC abrirá un menú (requiere el `interactionType` `ARENA_MASTER`).
 
 | Clave       |        Valores         | Predeterminado |
 |-----------|:---------------------:|:-------:|
-| `arena` | [Nombre del archivo](#filename) |  ninguno   |
+| `arena` | [Nombre de archivo](#nombre_de_archivo) |  ninguno   |
 
 <details> 
 
@@ -477,11 +477,11 @@ arena: mi_arena.yml
 
 ### command
 
-Establece el comando que ejecutará el NPC (requiere `interactionType` de `COMMAND`).
+Establece el comando que ejecutará el NPC (requiere el `interactionType` `COMMAND`).
 
 | Clave       |        Valores         | Predeterminado |
 |-----------|:---------------------:|:-------:|
-| `command` | [Cadena de caracteres](#string) |  ninguno   |
+| `command` | [Texto](#texto) |  ninguno   |
 
 <details> 
 
@@ -490,7 +490,7 @@ Establece el comando que ejecutará el NPC (requiere `interactionType` de `COMMA
 <div align="left">
 
 ```yml
-command: say Mira cómo ejecuto un comando, ¡qué genial!
+command: say ¡Mírame ejecutando un comando, qué genial!
 ```
 
 <div align="center">
@@ -507,11 +507,11 @@ command: say Mira cómo ejecuto un comando, ¡qué genial!
 
 ### spawnLocation
 
-Establece la ubicación de aparición de los NPCs. Debes establecer esto a través del comando `/em spawnnpc <npcfilename.yml>`.
+Establece la ubicación de generación de los NPC. Debes configurar esto a través del comando `/em spawnnpc <nombredearchivodelnpc.yml>`.
 
-| Clave          |        Valores       | Defecto |
-|-----------|:------------------:|:---------:|
-| `spawnLocation` | [String](#string) |  ninguno  |
+| Clave       |        Valores         | Predeterminado |
+|-----------|:---------------------:|:-------:|
+| `spawnLocation` | [Texto](#texto) |  ninguno   |
 
 <details> 
 
@@ -531,11 +531,11 @@ spawnLocation: mi_mundo,10,50,10,0,0
 
 ### spawnLocations
 
-Establece las ubicaciones de aparición de los NPCs. Debes establecer esto a través del comando `/em spawnnpc <npcfilename.yml>`.
+Establece las ubicaciones de generación de los NPC. Debes configurar esto a través del comando `/em spawnnpc <nombredearchivodelnpc.yml>`.
 
-| Clave             |           Valores            | Defecto |
-|-----------------|:--------------------------:|:--------:|
-| `spawnLocations` | [Lista de Strings](#string_list) |  ninguno |
+| Clave              |           Valores            | Predeterminado |
+|------------------|:---------------------------:|:-------:|
+| `spawnLocations` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |
 
 <details> 
 
@@ -557,9 +557,9 @@ spawnLocations:
 
 Establece si el NPC debe ser instanciado (para usar en mazmorras instanciadas).
 
-| Clave              |           Valores            | Defecto |
+| Clave              |           Valores            | Predeterminado |
 |------------------|:---------------------------:|:-------:|
-| `instanced` | [Booleano](#boolean) |  `false`   |
+| `instanced` | [Booleano](#booleano) |  `false`   |
 
 <details> 
 
@@ -581,18 +581,18 @@ instanced: false
 
 <details> 
 
-<summary align="center"><b>Ejemplo de Configuración de NPC</b></summary>
+<summary align="center"><b>Ejemplo de configuración de NPC</b></summary>
 
 <div align="left">
 
 ```yml
 isEnabled: true
-name: "&cRed Rubin"
-role: "&a<Generic NPC>"
+name: "&cRubí rojo"
+role: "&a<NPC genérico>"
 profession: NITWIT
 greetings:
 - ¡Hola!
-- ¡Saludos!
+- ¡Hola!
 dialog:
 - ¡Gran conversación!
 - ¡Un placer hablar contigo!
@@ -604,13 +604,13 @@ activationRadius: 4
 interactionType: CHAT
 timeout: 0
 questFileName: 
-- mi_mision.yml #npc interactionType debe establecerse a CUSTOM_QUEST_GIVER
+- mi_misión.yml # interactionType del npc debe establecerse en CUSTOM_QUEST_GIVER
 disguise: SKELETON
-customDisguiseData: #utilizado cuando se establece una personalización de libsdisguise
+customDisguiseData: # se usa cuando se establece un libsdisguise personalizado
 customModel: MODEL_ONE
-arena: mi_arena.yml #npc interactionType debe establecerse a ARENA_MASTER
-command: /say Hola Mundo! #npc interactionType debe establecerse a COMMAND
-spawnLocation: mi_mundo,584,55,127,90,10 #Recuerda que los NPCs usan pitch y yaw para establecer a dónde están mirando. Esto también se establece automáticamente al ejecutar el comando /em spawnnpc <npcfilename.yml>, así que asegúrate de ubicarte donde quieras que el NPC esté mirando al ejecutar el comando.
+arena: mi_arena.yml # interactionType del npc debe establecerse en ARENA_MASTER
+command: /say ¡Hola mundo! # interactionType del npc debe establecerse en COMMAND
+spawnLocation: mi_mundo,584,55,127,90,10 # recuerda que los NPC usan inclinación y guiñada para establecer hacia dónde miran. esto también se establece automáticamente cuando se ejecuta el comando /em spawnnpc <nombredearchivodelnpc.yml>, así que asegúrate de posar donde quieres que el NPC esté mirando cuando ejecutes el comando.
 ```
 
 <div align="center">
@@ -626,28 +626,27 @@ spawnLocation: mi_mundo,584,55,127,90,10 #Recuerda que los NPCs usan pitch y yaw
 ***
 
 ## Especial [1]
-La siguiente es la lista de tipos de interacción válidos para NPCs:
+La siguiente es la lista de tipos de interacción de NPC válidos:
 
 | Tipo                          |                                Descripción                                |
 |-------------------------------|:-------------------------------------------------------------------------:|
-| `GUILD_GREETER`               |                     Abre el menú del gremio de aventureros                      |
-| `CHAT`                        |                El clic derecho recorre el `dialog`                |
-| `CUSTOM_SHOP`                 |                        Abre el menú de la tienda personalizada                         |
-| `PROCEDURALLY_GENERATED_SHOP` |                   Abre la tienda generada por procedimiento                  |
-| `BAR`                         |                            Abre el menú del bar                             |
-| `ARENA`                       |                           Abre el menú de la arena                            |
-| `QUEST_GIVER`                 |               Abre el menú de misiones generadas por procedimiento               |
-| `CUSTOM_QUEST_GIVER`          |     Abre el menú de una misión específica establecida en `questFileName`      |
+| `GUILD_GREETER`               |                    Abrir el menú del gremio de aventureros                  |
+| `CHAT`                        |             Hacer clic con el botón derecho recorre el `diálogo`             |
+| `CUSTOM_SHOP`                 |                        Abre el menú de la tienda personalizada                       |
+| `PROCEDURALLY_GENERATED_SHOP` |                  Abre la tienda generada procedimentalmente                  |
+| `BAR`                         |                            Abre el menú de la barra                             |
+| `ARENA`                       |                            Abre el menú de la arena                            |
+| `QUEST_GIVER`                 |               Abre el menú de misiones generadas procedimentalmente               |
+| `CUSTOM_QUEST_GIVER`          |     Abre el menú de misiones para una misión específica establecida en `questFileName`      |
 | `NONE`                        |                              Sin interacciones                              |
 | `SELL`                        |                            Abre el menú de venta                            |
-| `TELEPORT_BACK`               | Teleporta a los jugadores a la última ubicación del mundo no-elitemobs donde estuvieron |
-| `SCRAPPER`                    |                           Abre el menú de desguace                            |
-| `REPAIRMAN`                   |                           Abre el menú de reparaciones                           |
-| `ENCHANTER`                   |                          Abre el menú de encantamientos                          |
-| `REFINER`                     |                          Abre el menú de refinado                           |
-| `UNBINDER`                    |                           Abre el menú de desvinculación                           |
-| `ARENA_MASTER`                |         Abre el menú de la arena de la arena establecida en `arenaFilename`         |
+| `TELEPORT_BACK`               | Teletransporta a los jugadores de regreso a la última ubicación mundial que no sea de elitemobs en la que estuvieron |
+| `SCRAPPER`                    |                            Abre el menú de chatarra                           |
+| `REPAIRMAN`                   |                           Abre el menú de reparación                           |
+| `ENCHANTER`                   |                          Abre el menú de encantamiento                          |
+| `REFINER`                     |                          Abre el menú del refinador                          |
+| `UNBINDER`                    |                           Abre el menú desvincular                           |
+| `ARENA_MASTER`                |         Abre el menú de la arena para la arena establecida en `arenaFilename`         |
 | `COMMAND`                     |                     Ejecuta el comando establecido en `command`                     |
 
-*Para más información sobre lo que hacen los tipos de interacción SCRAPPER y similares, haz clic [aquí]($language$/elitemobs/item_upgrade_system.md).*
-```
+*Para obtener más información sobre lo que hacen `SCRAPPER` y tipos de interacción similares, haz clic [aquí]($language$/elitemobs/item_upgrade_system.md).*

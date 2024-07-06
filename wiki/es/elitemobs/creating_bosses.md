@@ -2,31 +2,31 @@
 
 # Creando jefes personalizados
 
-# Antes de comenzar
+# Antes de que empieces
 
-## ¿Dónde deben colocarse los ficheros de jefes?
+## ¿Dónde van los archivos de los jefes?
 
-Los ficheros de los jefes deben colocarse en el directorio de configuración `~/plugins/EliteMobs/custombosses`.
+Los archivos de los jefes van en la carpeta de configuración `~/plugins/EliteMobs/custombosses`.
 
-Es posible crear subdirectorios, como `~/plugins/EliteMobs/custombosses/misjefes`. Esto es recomendable para mantener las cosas organizadas.
+Es posible crear subcarpetas, como `~/plugins/EliteMobs/custombosses/mybosses`. Esto es recomendable para mantener las cosas organizadas.
 
-Un fichero define un jefe, aunque es posible spawnear el mismo jefe varias veces e incluso establecer varias ubicaciones de spawn para el mismo fichero de jefe.
+Un archivo define un jefe, aunque es posible generar el mismo jefe varias veces e incluso establecer varias ubicaciones de generación para el mismo archivo de jefe.
 
-Es posible utilizar la [webapp](https://magmaguy.com/webapp/webapp.html) para crear de forma rápida y sencilla jefes personalizados y más.
+Es posible utilizar la [webapp](https://magmaguy.com/webapp/webapp.html) para crear de forma rápida y sencilla jefes personalizados y mucho más.
 
-## Configuración mínima possible
+## La configuración más pequeña posible
 
-**El fichero de configuración más pequeño posible para un jefe personalizado es:**
+**El archivo de configuración más pequeño posible para un Jefe Personalizado es:**
 ```yml
 ```
 
-Ten en cuenta que este es sólo un fichero vacío. Esto todavía spawneará un jefe zombie personalizado con un nombre personalizado, ya que esos son los valores predeterminados. **¡Todo en esta página es opcional!**
+Tenga en cuenta que se trata de un archivo vacío. Esto seguirá generando un jefe personalizado zombi con un nombre personalizado, ya que esos son los valores predeterminados. **¡Todo en esta página es opcional!**
 
-## Jefe de ejemplo
+## Ejemplo de jefe
 
 <div align="center">
 
-Echemos un vistazo a un ejemplo de cómo se ve un fichero de jefe.
+Veamos un ejemplo de cómo es un archivo de jefe.
 
 <details> 
 <summary><b>Ejemplo</b></summary>
@@ -51,9 +51,9 @@ offHand: SHIELD
 isBaby: false
 powers:
 - invulnerability_knockback.yml
-spawnMessage: ¡Un jefe de prueba ha sido spawnado!
+spawnMessage: ¡Se ha generado un jefe de prueba!
 deathMessage: ¡Un jefe de prueba ha sido asesinado por $players!
-escapeMessage: ¡Una entidad de jefe de prueba ha escapado!
+escapeMessage: ¡Una entidad jefe de prueba ha escapado!
 locationMessage: 'Entidad de prueba: $location'
 uniqueLootList:
 - magmaguys_toothpick.yml:1
@@ -80,9 +80,9 @@ onDamagedMessages:
 
 ### isEnabled
 
-Establece si el jefe está activado.
+Establece si el jefe está habilitado.
 
-| Llave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `isEnabled` | `true` / `false` | `true` |
 
@@ -106,9 +106,9 @@ isEnabled: true
 
 Establece el tipo de entidad del jefe.
 
-| Llave |                                                                                   Valores                                                                                    | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
-| `entityType` | [Seleccionar de aquí](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html). <br> El valor también debe estar presente en el directorio `~plugins/EliteMobs/mobproperties`. | `ZOMBIE`|
+| `entityType` | [Elegir de aquí](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html). <br> El valor también debe estar presente en la carpeta `~plugins/EliteMobs/mobproperties`. | `ZOMBIE`|
 
 <details> 
 
@@ -130,9 +130,9 @@ entityType: ZOMBIE
 
 Establece el nombre del jefe.
 
-| Llave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `name` | [Cadena de texto](#cadena), acepta [códigos de color](#color_codes)  y los placeholders listados por debajo | "Nombre predeterminado" |
+| `name` | [Cadena](#string), acepta [códigos de color](#color_codes) y los marcadores de posición que se enumeran a continuación | "Nombre predeterminado" |
 
 <details> 
 
@@ -141,7 +141,7 @@ Establece el nombre del jefe.
 <div align="left">
 
 ```yml
-name: "$normalLevel &c ¡Jefe genial!"
+name: "$normalLevel &c¡Jefe guay!"
 ```
 <div align="center">
 
@@ -154,16 +154,16 @@ name: "$normalLevel &c ¡Jefe genial!"
 
 </details>
 
-Si deseas incluir el nivel del jefe en su campo de nombre, simplemente usa uno de los placeholders siguientes.
+Si deseas incluir el nivel del jefe en su campo de nombre, simplemente utiliza uno de los siguientes marcadores de posición.
 
-| Placeholder | Descripción | Ejemplo | Salida (para un jefe de nivel 10) |
+| Marcador de posición | Descripción | Ejemplo |Salida (para un jefe de nivel 10) |
 |-|:-:|:-:|-|
-| `$level` | Se reemplaza por el nivel | "$level Jefe genial" | `10 Jefe genial` |
-| `$normalLevel` | Se reemplaza por el nivel, hecho para mobs normales | `"$normalLevel Jefe genial"` | `[10] Jefe genial` |
-| `$minibossLevel` | Se reemplaza por el nivel, hecho para minibosses | `"$minibossLevel Jefe genial"` | `〖10〗 Jefe genial` |
-| `$bossLevel` | Se reemplaza por el nivel, hecho para jefes | `"$bossLevel Jefe genial"` | `『10』 Jefe genial` |
-| `$reinforcementLevel` | Se reemplaza por el nivel, hecho para refuerzos | `"$reinforcementLevel Jefe genial"` | `〔10〕 Jefe genial` |
-| `$eventBossLevel` | Se reemplaza por el nivel, hecho para jefes de eventos | `"$eventBossLevel Jefe genial"` | `「10」 Jefe genial` |
+| `$level` | Reemplaza con el nivel | "$level Jefe guay" | `10 Jefe guay` |
+| `$normalLevel` | Reemplaza con el nivel, hecho para mobs normales | `"$normalLevel Jefe guay"` | `[10] Jefe guay` |
+| `$minibossLevel` | Reemplaza con el nivel, hecho para mini-jefes | `"$minibossLevel Jefe guay"` | `〖10〗 Jefe guay` |
+| `$bossLevel` | Reemplaza con el nivel, hecho para jefes | `"$bossLevel Jefe guay"` | `『10』 Jefe guay` |
+| `$reinforcementLevel` | Reemplaza con el nivel, hecho para refuerzos | `"$reinforcementLevel Jefe guay"` | `〔10〕 Jefe guay` |
+| `$eventBossLevel` | Reemplaza con el nivel, hecho para jefes de eventos | `"$eventBossLevel Jefe guay"` | `「10」 Jefe guay` |
 
 <details> 
 
@@ -172,7 +172,7 @@ Si deseas incluir el nivel del jefe en su campo de nombre, simplemente usa uno d
 <div align="left">
 
 ```yml
-name: "$normalLevel &c ¡Jefe genial!"
+name: "$normalLevel &c¡Jefe guay!"
 ```
 
 <div align="center">
@@ -191,11 +191,11 @@ name: "$normalLevel &c ¡Jefe genial!"
 
 Establece el nivel del jefe.
 
-| Llave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `level` | Números [enteros](#integer) positivos o `dynamic` | `dynamic` |
+| `entityType` | Números [enteros](#integer) positivos o `dynamic` | `dynamic` |
 
-`dynamic` se usa para eventos y se ajusta al nivel de los jugadores cercanos en el momento del spawn del jefe.
+`dynamic` se utiliza para eventos y se ajusta al nivel de los jugadores cercanos en el momento de la aparición del jefe.
 No se recomienda para jefes regionales.
 
 <details> 
@@ -218,9 +218,9 @@ level: 1
 
 Establece la salud del jefe.
 
-| Llave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `healthMultiplier` | [Multiplicador](#multiplicador) | `1.0` |
+| `healthMultiplier` | [Multiplicador](#multiplier) | `1.0` |
 
 <details> 
 
@@ -242,9 +242,9 @@ healthMultiplier: 1.5
 
 Establece el multiplicador de daño del jefe.
 
-| Llave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `damageMultiplier` | [Multiplicador](#multiplicador) | `1.0` |
+| `damageMultiplier` | [Multiplicador](#multiplier) | `1.0` |
 
 <details> 
 
@@ -264,8 +264,8 @@ damageMultiplier: 1.5
 
 ### isBaby
 
-Establece si el jefe utiliza la variante bebé del mob. Sólo puede ser aplicado a mobs con variantes de bebé.
-Si deseas [disfrazar]($language$/elitemobs/libsdisguises.md) al jefe pero también quieres que permanezca siendo un bebé mientras está disfrazado (asegúrate de que la entidad del disfraz también admite la variante bebé) puedes usar esta configuración:
+Establece si el jefe utiliza la variante bebé del mob. Sólo se puede aplicar a los mobs con variantes de bebé.
+Si quieres [disfrazar]($language$/elitemobs/libsdisguises.md) al jefe pero quieres que siga siendo un bebé mientras está disfrazado (asegúrate de que la entidad de disfraz también admite la variante de bebé) puedes usar esta configuración:
 <div align="left">
 
 ```yaml
@@ -273,7 +273,7 @@ disguise: HOGLIN:baby
 ```
 </div>
 
-| Llave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `isBaby` | `true` / `false` | `false` |
 
@@ -296,22 +296,22 @@ isBaby: true
 
 ### helmet/chestplate/leggings/boots/mainhand/offhand
 
-Establece la armadura del jefe. No todos los modelos de Minecraft son capaces de mostrar armadura. La armadura del jefe es puramente cosmética y no afecta al juego.
+Establece la armadura del jefe. No todos los modelos de minecraft son capaces de mostrar la armadura. La armadura del jefe es puramente cosmética y no afecta a la jugabilidad.
 
-| Llave |                                    Valores                                     | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-----------------------------------------------------------------------------:|-|
-| `helmet` |           [Material](#material), [UUID](https://minecraftuuid.com/)           | ninguno |
+| `helmet` | [Material](#material), [UUID](https://minecraftuuid.com/) | ninguno |
 | `chestplate` | [Material](#material) | ninguno |
 | `leggings` | [Material](#material) | ninguno |
 | `boots` | [Material](#material) | ninguno |
 | `mainHand` | [Material](#material) | ninguno |
 | `offHand` | [Material](#material) | ninguno |
 
-**Nota:** Este campo también permite establecer modelos personalizados para los items. Para establecer el ID del modelo personalizado, agrega el ID después del tipo de material siguiendo este formato: `TIPO_DE_MATERIAL:ID`. Ejemplo: `DIAMOND_SWORD:1` establece que el jefe lleve una espada de diamante con el modelo personalizado #1 en tu pack de texturas.
+**Nota:** Este campo también te permite establecer modelos personalizados para los objetos. Para establecer el ID del modelo personalizado, añade el ID después del tipo de material siguiendo este formato: `ITEM_MATERIAL:ID`. Ejemplo: `DIAMOND_SWORD:1` hace que el jefe lleve una espada de diamante con el modelo personalizado #1 en tu paquete de texturas.
 
-**Nota 2:** Este campo también permite establecer colores de cuero personalizados con el formato `TIPO_DE_MATERIAL:CODE` donde el code es la representación hexadecimal del color. Ejemplo: `LEATHER_LEGGINGS:ffa500` creará leggings naranjas. Puedes utilizar códigos hex, simplemente elimina el `#` del código hex. Puedes obtener códigos hex desde [aquí](https://www.w3schools.com/colors/colors_hexadecimal.asp).
+**Nota 2:** Este campo también te permite establecer colores de cuero personalizados con el formato `ITEM_MATERIAL:CODE` donde el código es la representación hexadecimal del color. Ejemplo: `LEATHER_LEGGINGS:ffa500` crearía leggings naranjas. Puedes usar códigos hexadecimales, sólo tienes que eliminar el `#` del código hexadecimal. Puedes obtener códigos hexadecimales [aquí](https://www.w3schools.com/colors/colors_hexadecimal.asp).
 
-**Nota 3:** El campo del casco también permite establecer cascos de mob para ser cabezas de jugadores. Simplemente obtén el UUID de la cabeza del jugador que te gustaría usar y escríbelo en el campo del casco. *El jugador necesita estar online para que esto funcione o la cabeza se quedará en una cabeza genérica de MineCraft.* Puedes obtener los UUID de los jugadores desde [aquí](https://minecraftuuid.com/) .
+**Nota 3:** El campo del casco también te permite establecer los cascos de la mafia para que sean cabezas de jugador. Simplemente obtenga el UUID de la cabeza del jugador que desea utilizar y escríbalo en el campo del casco. *El jugador necesita estar en línea para que esto funcione o la cabeza será por defecto una cabeza genérica de MineCraft.* Puedes obtener los UUID de los jugadores [aquí](https://minecraftuuid.com/).
 
 <details> 
 
@@ -342,11 +342,11 @@ offHand: SHIELD
 
 ### powers
 
-Establece los poderes del jefe.
+Establece los poderes que tiene el jefe.
 
-| Llave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `powers` | Consulta la lista a continuación | ninguno |
+| `powers` | Consulte la siguiente lista | ninguno |
 
 <details> 
 
@@ -364,50 +364,50 @@ powers:
 
 </details>
 
-*Nota: Puedes consultar [esta página]($language$/elitemobs/poderes_premezclados.md) si quieres ver una lista de poderes premezclados que puedes usar.*
+*Nota: Puedes consultar [esta página]($language$/elitemobs/premade_powers.md) si quieres ver una lista de poderes preestablecidos que puedes utilizar.*
 
 ***
 
-### Configuración intermedia - Spawnear refuerzos
+### Configuración intermedia - Generar refuerzos
 
-Los refuerzos también entran en la categoría de poderes, utilizando las siguientes configuraciones:
+Los refuerzos también entran en la categoría de poderes, utilizando los siguientes ajustes:
 
 <details> 
 
-<summary><b>Configuración de refuerzos</b></summary>
+<summary><b>Ajustes de refuerzo</b></summary>
 
-| Llave | Descripción |                                                                                                             Valores                                                                                                             | Predeterminado |
+| Clave | Descripción | Valores | Por defecto |
 |-|:-:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
-| `summonType` | Qué dispara el spawn de refuerzos. Obligatorio. |                                                                                                    Consulta la lista a continuación                                                                                                     | ninguno |
-| `filename` | Nombre del fichero del jefe que debe spawnear como refuerzo. Obligatorio. |                                                                                                       [Cadena de texto](#string)                                                                                                        | ninguno |
-| `chance` | Probabilidad de que aparezcan los refuerzos. Opcional. |                                                                                                       [Double](#double)                                                                                                        | `1.0` |
-| `amount` | Establece la cantidad de refuerzos para spawnear. Opcional. |                                                                                                      [Entero](#integer)                                                                                                       | `1` |
-| `inheritAggro` | Hace que el refuerzo herede el aggro del jefe. Opcional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `spawnNearby` | Hace que los refuerzos spawneen en un radio de 30 bloques desde el jefe. Opcional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `inheritLevel` | Hace que el refuerzo herede el nivel del jefe. Opcional |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `customSpawn` | Hace que el refuerzo spawnee utilizando el [sistema de spawn personalizado]($language$/elitemobs/crear_spawn.md). Solo se utiliza para `summonType: GLOBAL`
-| `location` | Localización de spawn. Opcional. | `world_name,x,y,z` o `x,y,z` para una ubicación relativa al jefe. El desplazamiento es relativo a la ubicación de spawn para los jefes regionales. También puedes usar `same_as_boss` para que los refuerzos spawneen en el mismo mundo que el jefe. | ninguno |
-| `lightningRod` | Configuración especial para `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Hace que los cristales de end spawnen rayos alrededor de ellos. Opcional. |                                                                                                        `true` / `false`                                                                                                        | ninguno |
+| `summonType` | Lo que desencadena la aparición del refuerzo. Obligatorio. | Consulte la siguiente lista | ninguno |
+| `filename` | Nombre del archivo del jefe para que aparezca como refuerzo. Obligatorio. | [Cadena](#string) | ninguno |
+| `chance` | Posibilidad de que aparezca el refuerzo. Opcional. | [Doble](#double) | `1.0` |
+| `amount` | Establece la cantidad de refuerzos que aparecerán. Opcional. | [Entero](#integer) | `1` |
+| `inheritAggro` | Hace que el refuerzo herede el aggro del jefe. Opcional. | `true` / `false` | `false` |
+| `spawnNearby` | Hace que los refuerzos aparezcan en un radio de 30 bloques del jefe. Opcional. | `true` / `false` | `false` |
+| `inheritLevel` | Hace que el refuerzo herede el nivel del jefe. Opcional | `true` / `false` | `false` |
+| `customSpawn` | Hace que el refuerzo aparezca utilizando el [sistema de aparición personalizado]($language$/elitemobs/creating_spawns.md). Sólo se utiliza para `summonType: GLOBAL`
+| `location` | Ubicación del spawn. Opcional. | `world_name,x,y,z` o `x,y,z` para una ubicación relativa al jefe. El desplazamiento es relativo a la ubicación de aparición de los jefes regionales. También puedes utilizar `same_as_boss` para que los refuerzos aparezcan en el mismo mundo que el jefe. | ninguno |
+| `lightningRod` | Ajuste especial para `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Hace que los cristales finales generen rayos a su alrededor. Opcional. | `true` / `false` | ninguno |
 
 </details>
 
-Los tipos de invocación establecen las condiciones para el spawn de refuerzos. La siguiente es una lista de los tipos de invocación válidos:
+Los tipos de invocación establecen las condiciones para que aparezcan los refuerzos. La siguiente es una lista de los tipos de invocación válidos:
 
 <details> 
 
 <summary><b>Tipos de invocación</b></summary>
 
-| Valor |                                                                         Descripción                                                                         |
+| Valor | Descripción |
 |-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `ONCE` |                                          Solo genera los refuerzos una vez, la primera vez que el jefe recibe daño.                                           |
-| `ON_HIT`  |                                                              Genera los refuerzos al recibir un golpe.                                                              |
-| `ON_COMBAT_ENTER` |                                                   Genera los refuerzos cuando el jefe entra en combate.                                                    |
-| `GLOBAL` | Genera un refuerzo para cada jugador en línea. Requiere que la clave `customSpawn` tenga un spawn [personalizado]($language$/elitemobs/creating_spawns.md) válido. |
-| `ON_COMBAT_ENTER_PLACE_CRYSTAL` |                                 Coloca refuerzos de ender crystal al entrar en combate, solamente para uso en peleas personalizadas con dragones.                                  |
+| `ONCE` | Sólo genera los refuerzos una vez, la primera vez que el jefe recibe daño. |
+| `ON_HIT`  | Genera los refuerzos al ser golpeado. |
+| `ON_COMBAT_ENTER` | Genera los refuerzos cuando el jefe entra en combate. |
+| `GLOBAL` | Genera un refuerzo para cada jugador en línea. Requiere que la clave `customSpawn` tenga un [spawn personalizado]($language$/elitemobs/creating_spawns.md) válido establecido. |
+| `ON_COMBAT_ENTER_PLACE_CRYSTAL` | Coloca cristales finales de refuerzo al entrar en combate, sólo para usar con combates de dragones personalizados. |
 
 </details>
 
-Nota que también es posible generar refuerzos a través de [Scripts de élite]($language$/elitemobs/creating_powers.md), por lo que hay más formas personalizables de generar refuerzos.
+Tenga en cuenta que también es posible generar refuerzos a través de [Elite Scripts]($language$/elitemobs/creating_powers.md), por lo que hay formas más personalizables de generar refuerzos.
 
 <details> 
 
@@ -433,30 +433,30 @@ powers:
 
 </details>
 
-### Configuración avanzada - Creación de tus propios poderes
+### Configuración experta - Creando tus propios poderes
 
-Es posible crear tus propios poderes, ya sea en el archivo del jefe o como un nuevo archivo de configuración en la carpeta de poderes. Puedes aprender más sobre eso [aquí]($language$/elitemobs/creating_powers.md).
+Es posible crear tus propios poderes, ya sea en el propio archivo del jefe o como un nuevo archivo de configuración en la carpeta de poderes. Puedes aprender más sobre esto [aquí]($language$/elitemobs/creating_powers.md).
 
-### Limitar los poderes en base a la dificultad del calabozo instanciado
+### Limitar los poderes en función de la dificultad de la mazmorra instanciada
 
-Los [calabozos instanciados]($language$/elitemobs/dungeons.md&section=instanced-dungeons) pueden tener configuraciones de dificultad, y es posible hacer que un poder específico solo esté habilitado para ciertas dificultades.
+Las [mazmorras instanciadas]($language$/elitemobs/dungeons.md&section=instanced-dungeons) pueden tener ajustes de dificultad, y es posible hacer que un poder específico sólo esté habilitado para dificultades específicas.
 
 <details> 
 
-<summary><b>Opciones de limitación de poder</b></summary>
+<summary><b>Opciones de limitación de potencia</b></summary>
 
 <div align="left">
 
-| Clave | Descripción | Valores | Predeterminado |
+| Clave | Descripción | Valores | Por defecto |
 |-|:-:|:-:|-|
-| `filename` | Nombre del archivo de poder. | [String](#string) | none |
-| `difficultyID` | Nombre de la dificultad, coincidente con el nombre de la dificultad en el paquete de calabozo. | [String](#string) | none |
+| `filename` | Nombre del archivo del poder. | [Cadena](#string) | ninguno |
+| `difficultyID` | Nombre de la dificultad, que coincide con el nombre de la dificultad en el paquete de la mazmorra. | [Cadena](#string) | ninguno |
 
 </div>
 
 </details>
 
-Esto solo se aplicará a calabozos instanciados.
+Esto sólo se aplicará a las mazmorras instanciadas.
 
 <details> 
 
@@ -468,9 +468,9 @@ Esto solo se aplicará a calabozos instanciados.
 powers:
 - filename: movement_speed.yml
   difficultyID:
-  - NombreDificultadMia1
-  - NombreDificultadMia2
-  - NombreDificultadMia3
+  - myDifficultyName1
+  - myDifficultyName2
+  - myDifficultyName3
 ```
 
 </div>
@@ -481,11 +481,11 @@ powers:
 
 ### spawnMessage
 
-Establece el mensaje a enviar cuando el jefe aparece. Requiere la configuración de la [prioridad de anuncio](#announcementPriority).
+Establece el mensaje que se enviará cuando aparezca el jefe. Requiere configurar la [prioridad del anuncio](#announcementPriority).
 
-| Key | Values | Default |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `spawnMessage` | [Strings](#string) y [Codigos de color](#color_codes) | none |
+| `spawnMessage` | [Cadenas](#string) y [códigos de color](#color_codes) | ninguno |
 
 <details> 
 
@@ -495,7 +495,7 @@ Establece el mensaje a enviar cuando el jefe aparece. Requiere la configuración
 
 ```yml
 announcementPriority: 3
-spawnMessage: ¡Resurgiré una vez más!
+spawnMessage: ¡Me levanto una vez más!
 ```
 
 <div align="center">
@@ -512,11 +512,11 @@ spawnMessage: ¡Resurgiré una vez más!
 
 ### deathMessages
 
-Establece la lista de mensajes a enviar cuando el jefe muere. Requiere la configuración de la [prioridad de anuncio](#announcementPriority).
+Establece la lista de mensajes que se enviarán cuando el jefe muera. Requiere configurar la [prioridad del anuncio](#announcementPriority).
 
-| Key | Values | Default |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `deathMessages` | [Strings](#string), [Codigos de color](#color_codes) y los placeholders mencionados abajo | none |
+| `deathMessages` | [Cadenas](#string), [códigos de color](#color_codes) y los marcadores de posición que se indican a continuación | ninguno |
 
 <details> 
 
@@ -528,10 +528,10 @@ Establece la lista de mensajes a enviar cuando el jefe muere. Requiere la config
 announcementPriority: 3
 deathMessages:
 - '&e&l---------------------------------------------'
-- '&4¡El Jefe de Prueba ha sido aniquilado!'
-- '&c&l    1er Daño: $damager1name &ccon $damager1damage de daño!'
-- '&6&l    2do Daño: $damager2name &6con $damager2damage de daño!'
-- '&e&l    3er Daño: $damager3name &econ $damager3damage de daño!'
+- '&4¡El Jefe de Prueba ha sido asesinado!'
+- '&c&l    1er Dañador: $damager1name &ccon $damager1damage de daño!'
+- '&6&l    2º Dañador: $damager2name &6con $damager2damage de daño!'
+- '&e&l    3er Dañador: $damager3name &econ $damager3damage de daño!'
 - '&4Asesinos: $players'
 - '&e&l---------------------------------------------'
 ```
@@ -546,31 +546,31 @@ deathMessages:
 
 </details>
 
-Los mensajes de muerte usan los siguientes placeholders:
+Los mensajes de muerte utilizan los siguientes marcadores de posición:
 
 <details> 
 
-<summary><b>Placeholders</b></summary>
+<summary><b>Marcadores de posición</b></summary>
 
 | Valor | Descripción |
 |-|:-:|
-| `$damager1name` | El nombre del que más daño ha hecho |
-| `$damager2name` | El nombre del segundo que más daño ha hecho |
-| `$damager3name` | El nombre del tercer que más daño ha hecho |
-| `$damager1damage` | La cantidad de daño del que más ha hecho |
-| `$damager2damage` | La cantidad de daño del segundo que más ha hecho |
-| `$damager3damage` | La cantidad de daño del tercer que más ha hecho |
-| `$players` | Muestra una lista de todos los jugadores que han hecho daño |
+| `$damager1name` | El nombre del mayor dañador |
+| `$damager2name` | El nombre del segundo mayor dañador |
+| `$damager3name` | El nombre del tercer mayor dañador |
+| `$damager1damage` | La cantidad de daño del mayor dañador |
+| `$damager2damage` | La cantidad de daño del segundo mayor dañador |
+| `$damager3damage` | La cantidad de daño del tercer mayor dañador |
+| `$players` | Muestra una lista de todos los dañadores |
 
 </details>
 
 ### onKillMessage
 
-Establece el mensaje a enviar cuando el jefe mata a un jugador. Requiere la configuración de la [prioridad de anuncio](#announcementPriority).
+Establece el mensaje que se enviará cuando el jefe mate a un jugador. Requiere configurar la [prioridad del anuncio](#announcementPriority).
 
-| Key | Values | Default |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `onKillMessage` | [Strings](#string) y [Codigos de color](#color_codes) | none |
+| `onKillMessage` | [Cadenas](#string) y [códigos de color](#color_codes) | ninguno |
 
 <details> 
 
@@ -599,13 +599,13 @@ onKillMessage: ¡Yo gano, tú pierdes!
 
 <div align="center">
 
-Establece el tamaño del jefe slime, pero sólo funciona para Slimes y Magmacubes.
+Establece el tamaño del jefe de limo, pero sólo funciona para Slimes y Magmacubes.
 
 </div>
 
-| Key | Values | Default |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `slimeSize` | [Integer](#integer) | `4` |
+| `slimeSize` | [Entero](#integer) | `4` |
 
 <details>
 
@@ -627,13 +627,13 @@ slimeSize: 5
 
 <div align="center">
 
-Establece si el jefe aparecerá como neutral o no. Esto sólo se aplica a tipos de entidades que pueden ser neutrales como Lobos o Golems de Hierro.
+Establece si el jefe aparecerá como neutral o no. Esto sólo se aplica a los tipos de entidad que pueden ser neutrales, como los lobos o los golems de hierro.
 
 </div>
 
-| Key | Values | Default |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `neutral` | [Boolean](#boolean) | `false` |
+| `neutral` | [Booleano](#boolean) | `false` |
 
 <details>
 
@@ -657,9 +657,9 @@ neutral: true
 
 Establece la cantidad de tiempo, en minutos, antes de que el Jefe Personalizado desaparezca.
 
-| Key | Values | Default |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `timeout` | Tiempo (en minutos) [Integer](#integer) | `0` |
+| `timeout` | Tiempo (en minutos) [Entero](#integer) | `0` |
 
 <details> 
 
@@ -670,8 +670,7 @@ Establece la cantidad de tiempo, en minutos, antes de que el Jefe Personalizado 
 ```yml
 timeout: 20
 ```
-
-Establece que el jefe se escape después de 20 minutos.
+Establece que el jefe escape después de 20 minutos.
 
 </div>
 
@@ -681,9 +680,9 @@ Establece que el jefe se escape después de 20 minutos.
 
 ### isPersistent
 
-Establece si el jefe puede sobrevivir a la descarga de un chunk. Solo se recomienda para jefes de eventos.
+Establece si el jefe puede sobrevivir a una descarga de chunk. Sólo se recomienda para los jefes de eventos.
 
-| Key | Values | Default |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `isPersistent` | `true` / `false` | `false` |
 
@@ -709,9 +708,9 @@ isPersistent: true
 
 Establece las armas contra las que los jefes pueden ser fuertes o débiles.
 
-| Key |        Values         | Default |
+| Clave | Valores | Por defecto |
 |-|:---------------------:|-|
-| `damageModifiers` | [Material](#material) | none |
+| `damageModifiers` | [Material](#material) | ninguno |
 
 <details> 
 
@@ -727,7 +726,7 @@ damageModifiers:
 
 </div>
 
-En este ejemplo, los jefes recibirán solo el 80% de daño de las espadas de diamante (o un 20% menos), pero recibirán el 200% de daño de los tridentes (o 2 veces más).
+En este ejemplo, los jefes sólo recibirán un 80% de daño de las espadas de diamante (o un 20% menos), pero recibirán un 200% de daño de los tridentes (o 2 veces más).
 
 </details>
 
@@ -735,9 +734,11 @@ En este ejemplo, los jefes recibirán solo el 80% de daño de las espadas de dia
 
 ### normalizedCombat
 
-Modifica el daño y la salud máxima del jefe para que coincidan con los valores de la entidad normalizada en `~/plugins/EliteMobs/mobproperties`. Esta es la opción predeterminada para los jefes regionales para garantizar una curva de dificultad suave.
 
-| Key | Values | Default |
+
+Modifica el daño y la salud máxima del jefe para que coincidan con los valores de la entidad normalizada en `~/plugins/EliteMobs/mobproperties`. Esta es la configuración predeterminada para los jefes regionales para garantizar una curva de dificultad fluida.
+
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `normalizedCombat` | `true` / `false` | `false` |
 
@@ -760,11 +761,11 @@ normalizedCombat: true
 
 ### escapeMessage
 
-Establece el mensaje que se transmite a los jugadores cuando el jefe escapa a través del mecanismo de [timeout](#timeout). Requiere que se configure [announcementPriority](#announcementPriority).
+Establece el mensaje que se transmite a los jugadores cuando el jefe escapa a través de la mecánica de [timeout](#timeout). Requiere que se configure [announcementPriority](#announcementPriority).
 
-| Key | Values | Default |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `escapeMessage` | [String](#string) | none |
+| `escapeMessage` | [String](#string) | ninguno |
 
 
 <details> 
@@ -795,16 +796,16 @@ escapeMessage: "¡Sayonara!"
 
 Establece el mensaje que se muestra en la barra de jefe. Esto se utiliza para rastrear tanto la salud del Jefe Personalizado como su ubicación en el servidor. Requiere que se configure [annoucementPriority](#annoucementPriority).
 
-| Key |                                      Values                                      | Default |
+| Clave | Valores | Por defecto |
 |-|:--------------------------------------------------------------------------------:|-|
-| `locationMessage` | [String](#string), [Codigos de color](#color_codes) y los placeholders listados a continuación | none |
+| `locationMessage` | [String](#string), [Color codes](#color_codes) y los marcadores de posición que se enumeran a continuación | ninguno |
 
-Placeholders:
+Marcadores de posición:
 
 | Valor | Descripción |
 |-|:-:|
-| `$distance` | Se sustituye por la distancia a la que el jugador se encuentra del Jefe Personalizado. Esta es la opción preferible. |
-| `$location` | Se sustituye por las coordenadas de localización x y z del Jefe Personalizado |
+| `$distance` | Se sustituye por la distancia a la que se encuentra el jugador del Jefe Personalizado. Esta es la opción preferible. |
+| `$location` | Se sustituye por las coordenadas de ubicación x y z del Jefe Personalizado |
 
 
 <details>
@@ -816,7 +817,7 @@ Placeholders:
 
 ```yml
 announcementPriority: 3
-locationMessage: "&4Cool boss: En $location a solo $distance bloques de distancia!"
+locationMessage: "&4¡Jefe guay: En $location a sólo $distance bloques de distancia!"
 ```
 
 <div align="center">
@@ -827,7 +828,7 @@ locationMessage: "&4Cool boss: En $location a solo $distance bloques de distanci
 
 </div>
 
-Esto mostraría algo como `Cool boss: En 414,55,347 a solo 10 bloques de distancia!`
+Esto mostraría algo como `¡Jefe guay: En 414,55,347 a sólo 10 bloques de distancia!`
 
 </details>
 
@@ -835,13 +836,13 @@ Esto mostraría algo como `Cool boss: En 414,55,347 a solo 10 bloques de distanc
 
 ### uniqueLootList
 
-Establece los [Items Personalizados]($language$/elitemobs/creating_items.md) que caen del jefe.
+Establece los [Objetos Personalizados]($language$/elitemobs/creating_items.md) que deja caer el jefe.
 
-| Key |        Values        | Default |
+| Clave | Valores | Por defecto |
 |-|:--------------------:|-|
-| `uniqueLootList` | [List](#string_list) | none |
+| `uniqueLootList` | [List](#string_list) | ninguno |
 
-Las entradas de botín en el botín personalizado siguen el formato de tabla de botín. [¡Información sobre eso aquí!]($language$/elitemobs/loot_tables.md) Toma nota de que algunos archivos antiguos podrían estar usando tablas de botín obsoletas que se ven diferentes que el ejemplo.
+Las entradas de botín en el Botín Personalizado siguen el formato de la Tabla de Botín. [¡Información sobre esto aquí!]($language$/elitemobs/loot_tables.md) Tenga en cuenta que algunos archivos antiguos pueden estar utilizando tablas de botín obsoletas que se ven diferentes al ejemplo.
 
 <details> 
 
@@ -867,13 +868,13 @@ uniqueLootList:
 
 ### dropsEliteMobsLoot
 
-Establece si el jefe dejará caer el botín de EliteMobs, excluyendo los elementos en [`uniqueLootList`](#uniqueLootList). Incluye monedas.
+Establece si el jefe dejará caer botín de EliteMobs, excluyendo los objetos en [`uniqueLootList`](#uniqueLootList). Incluye monedas.
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `dropsEliteMobsLoot` | `true` /  `false` | `true` |
 
-Se recomienda configurar en false para mobs de refuerzo.
+Se recomienda establecer en falso para los mobs de refuerzo.
 
 <details> 
 
@@ -894,9 +895,9 @@ dropsEliteMobsLoot: true
 
 ### dropsVanillaLoot
 
-Establece si el Jefe Personalizado dejará caer el botín vanilla normalmente asociado a su tipo de mob vanilla.
+Establece si el Jefe Personalizado dejará caer el botín de vanilla normalmente asociado a su tipo de mob de vanilla.
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `dropsVanillaLoot` | `true` /  `false` | `true` |
 
@@ -918,9 +919,9 @@ dropsVanillaLoot: true
 
 ### dropsRandomLoot
 
-Establece si el Jefe Personalizado dejará caer botín generado procedimentalmente de EliteMobs. No incluye monedas de élite.
+Establece si el Jefe Personalizado dejará caer botín generado por procedimientos de EliteMobs. No incluye las monedas de élite.
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `dropsRandomLoot` | `true` /  `false` | `true` |
 
@@ -942,11 +943,11 @@ dropsRandomLoot: true
 
 ### trails
 
-Establece el rastro que el jefe deja atrás al moverse.
+Establece el rastro que el jefe deja tras de sí al moverse.
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `trails` | [Partículas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) o [materiales de ítems](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | Ninguno |
+| `trails` | [Partículas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) o [materiales de objetos](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | ninguno |
 
 <details> 
 
@@ -967,11 +968,11 @@ trails:
 
 ### onDamageMessages
 
-Establece el mensaje que muestra el Mob Jefe cuando golpean a un jugador. Esta es una lista, y el que se usa se selecciona al azar de la lista.
+Establece el mensaje que muestra el Mob Jefe cuando golpea a un jugador. Se trata de una lista, y el que se utiliza se elige al azar de la misma.
 
-| Key |        Valores        | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:--------------------:|-|
-| `onDamageMessages` | [Lista](#string_list) | Ninguno |
+| `onDamageMessages` | [List](#string_list) | ninguno |
 
 <details> 
 
@@ -981,7 +982,7 @@ Establece el mensaje que muestra el Mob Jefe cuando golpean a un jugador. Esta e
 
 ```yml
 onDamageMessages:
-- "¡Te he golpeado!"
+- "¡Te golpeé!"
 - "¡Jaja te golpeé!"
 ```
 <div align="center">
@@ -998,11 +999,11 @@ onDamageMessages:
 
 ### onDamagedMessages
 
-Establece el mensaje que el Jefe Muestra cuando es dañado por un jugador. Esta es una lista, y el que se usa se selecciona al azar de la lista.
+Establece el mensaje que muestra el Mob Jefe cuando es dañado por un jugador. Se trata de una lista, y el que se utiliza se elige al azar de la misma.
 
-| Key |        Valores        | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:--------------------:|-|
-| `onDamagedMessages` | [Lista](#string_list) | Ninguno |
+| `onDamagedMessages` | [List](#string_list) | ninguno |
 
 <details> 
 
@@ -1013,7 +1014,7 @@ Establece el mensaje que el Jefe Muestra cuando es dañado por un jugador. Esta 
 ```yml
 onDamagedMessages:
 - "¡Me has golpeado!"
-- "¡He sido golpeado!"
+- "¡Me han golpeado!"
 ```
 <div align="center">
 
@@ -1031,9 +1032,9 @@ onDamagedMessages:
 
 Establece la entidad que el jefe montará y cabalgará.
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `onDamagedMessages` | [Nombre del archivo del jefe a montar](#filename) o [tipo de entidad](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) | Ninguno |
+| `onDamagedMessages` | [Nombre de archivo del jefe a montar](#filename) o [tipo de entidad](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) | ninguno |
 
 No intentes hacer que el jefe se monte a sí mismo.
 
@@ -1057,28 +1058,28 @@ mountedEntity: wild_wolf.yml
 
 </details>
 
-Nota: Los jefes regionales compartirán su correa con la entidad que están montando, lo que significa que ambos serán arrastrados de vuelta a la ubicación de aparición si exceden la distancia permitida por su correa.
+Nota: Los jefes regionales compartirán su correa con la entidad que estén montando, lo que significa que ambos serán arrastrados de vuelta a la ubicación de aparición si exceden la distancia permitida por su correa.
 
 ***
 
 ### announcementPriority
 
-Establece el nivel de prioridad para los anuncios. Las prioridades más bajas significan que no se realizan anuncios, las prioridades más altas pueden anunciar no solo en el chat sino también en discord si está configurado.
+Establece el nivel de prioridad de los anuncios. Las prioridades más bajas significan que no se hacen anuncios, las prioridades más altas pueden anunciar no sólo en el chat sino también en la discordia si está configurado.
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `announcementPriority` | [Integer](#integer) | `1` |
 
 Aquí hay una lista de lo que hacen las prioridades:
 
-| Valor |                                                                            Descripción                                                                            |
+| Valor | Descripción |
 |-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `0` |                                                   El jefe estará completamente en silencio, sin mensajes de anuncio.                                                   |
-| `1` |                                Este es el predeterminado. Los jefes pueden enviar mensajes de chat, mensajes de inicio, de muerte y de escape.                                |
-| `2` |                               Encima de las cosas en `1`, el jefe será rastreable por los jugadores a través del menú `/em`.                                |
-| `3` | Además de las cosas en `2`, los mensajes de transmisión se reflejarán en Discord si está configurado. [Información de configuración de Discord aquí.]($language$/elitemobs/discordsrv.md) |
+| `0` | El jefe estará completamente en silencio, sin mensajes de anuncio. |
+| `1` | Esta es la configuración predeterminada. Los jefes pueden enviar mensajes de chat, al aparecer, al morir y al escapar. |
+| `2` | Además de lo anterior en `1`, el jefe se configurará para que los jugadores puedan seguirlo a través del menú `/em`. |
+| `3` | Además de lo anterior en `2`, los mensajes de difusión se reflejarán en Discord si está configurado. [Información de configuración de Discord aquí.]($language$/elitemobs/discordsrv.md) |
 
-Aquí hay un ejemplo de un jefe que es rastreable, puede enviar mensajes de inicio/muerte/escape en el chat y en Discord:
+Aquí tienes un ejemplo de un jefe que se puede rastrear, que puede enviar mensajes de aparición/muerte/escape en el chat y en Discord:
 
 <details> 
 
@@ -1094,21 +1095,21 @@ announcementPriority: 3
 
 </details>
 
-**Nota**: Tendrá que configurar el spawnMessage, deathMessage/deathMessages, escapeMessage para anuncios de chat y discord y el locationMessage para la característica de seguimiento si desea usar el nivel de Prioridad de anuncio correspondiente.
+**Nota**: Tendrás que configurar spawnMessage, deathMessage/deathMessages, escapeMessage para los anuncios de chat y discordia y locationMessage para la función de seguimiento si deseas utilizar el nivel de prioridad de anuncio correspondiente.
 
 ***
 
 ### followDistance
 
-Establece la distancia a la que los jefes se enganchan y entran en combate.
+Establece la distancia a la que los jefes se agregan y entran en combate.
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `followDistance` | [Double](#double) | ninguno, usa los valores predeterminados de Minecraft |
+| `followDistance` | [Double](#double) | ninguno, utiliza los valores predeterminados de Minecraft |
 
-Nota 1: Los jefes regionales tienen la mitad del `followDistance` cuando están fuera de combate. Esto es para que no se enganchen desde demasiado lejos, lo que puede causar problemas de combate molestos debido a las restricciones de la correa.
+Nota 1: Los jefes regionales tienen la mitad de la `followDistance` cuando están fuera de combate. Esto es para que no se agreguen desde muy lejos, lo que puede causar molestos problemas de combate debido a las restricciones de la correa.
 
-Nota 2: Cuanto mayor sea el `followDistance`, más intenso será el jefe en la CPU del servidor. ¡Úsalo con cuidado y responsabilidad!
+Nota 2: Cuanto mayor sea la `followDistance`, más intensivo será el jefe para la CPU del servidor. ¡Utilícelo con cuidado y responsabilidad!
 
 <details> 
 
@@ -1122,7 +1123,7 @@ followDistance: 30
 
 </div>
 
-Establece un rango de 30 bloques donde si un jugador se acerca a esa distancia cerca del jefe, este empezará a perseguir/atacar al jugador.
+Establece un rango de 30 bloques donde si un jugador se acerca a esa distancia del jefe, éste comenzará a perseguirlo/atacarlo.
 
 </details>
 
@@ -1130,28 +1131,28 @@ Establece un rango de 30 bloques donde si un jugador se acerca a esa distancia c
 
 ### onDeathCommands
 
-Establece la lista de comandos a ejecutar en la muerte del jefe personalizado.
+Establece la lista de comandos que se ejecutarán al morir el jefe personalizado.
 
-| Key |        Valores        | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:--------------------:|-|
-| `onDeathCommands` | [Lista](#string_list) | Ninguno |
+| `onDeathCommands` | [List](#string_list) | ninguno |
 
 La lista admite los siguientes marcadores de posición:
 
 | Valor | Descripción |
 |-|:-:|
-| `$level` | Marcador de posición para el nivel de jefe. |
+| `$level` | Marcador de posición para el nivel del jefe. |
 | `$name` | Marcador de posición para el nombre del jefe. |
-| `$chance=x$` | Hace que un comando tenga una oportunidad de ejecutarse. |
-| `$players` | Hace que el comando se ejecute una vez para cada jugador en la lista de atacantes y lo reemplace cada vez con el nombre de usuario de un jugador diferente en esa lista. |
+| `$chance=x$` | Hace que un comando tenga la posibilidad de ejecutarse. |
+| `$players` | Hace que el comando se ejecute una vez por cada jugador en la lista de dañadores y lo reemplaza cada vez por el nombre de usuario de un jugador diferente en esa lista. |
 | `$locationX` | Coordenada X del jefe en el momento de la muerte. |
 | `$locationY` | Coordenada Y del jefe en el momento de la muerte. |
 | `$locationZ` | Coordenada Z del jefe en el momento de la muerte. |
-| `$damager1name` | Nombre de usuario del atacante principal |
-| `$damager2name` | Nombre de usuario del segundo atacante principal |
-| `$damager3name` | Nombre de usuario del tercer atacante principal |
+| `$damager1name` | Nombre de usuario del mayor dañador |
+| `$damager2name` | Nombre de usuario del segundo mayor dañador |
+| `$damager3name` | Nombre de usuario del tercer mayor dañador |
 
-Echa un vistazo al siguiente ejemplo para entender mejor cómo funcionan.
+Echa un vistazo al siguiente ejemplo para comprender mejor cómo funcionan.
 
 <details> 
 
@@ -1161,7 +1162,7 @@ Echa un vistazo al siguiente ejemplo para entender mejor cómo funcionan.
 
 ```yml
 onDeathCommands:
-- "say $players ha matado a $name! Eso fue nivel $level!"
+- "say $players ha matado a $name! ¡Ese era el nivel $level!"
 - "$chance=0.5$ say ¡Qué muerte!"
 ```
 
@@ -1173,19 +1174,19 @@ onDeathCommands:
 
 </div>
 
-Si Player1, Player2 y Player3 todos dañaron al jefe antes de matarlo, este es el resultado del comando de la consola:
+Si Jugador1, Jugador2 y Jugador3 dañaron al jefe antes de matarlo, esto es lo que la salida del comando será desde la consola:
 
 <div align="left">
 
 ```
-say Player1 ha matado a CustomBossName! Eso fue nivel X!
-say Player2 ha matado a CustomBossName! Eso fue nivel X!
-say Player3 ha matado a CustomBossName! Eso fue nivel X!
+say Jugador1 ha matado a NombreDelJefePersonalizado! ¡Ese era el nivel X!
+say Jugador2 ha matado a NombreDelJefePersonalizado! ¡Ese era el nivel X!
+say Jugador3 ha matado a NombreDelJefePersonalizado! ¡Ese era el nivel X!
 ```
 
 </div>
 
-Además, hay una probabilidad del 50% de que también se produzca la siguiente salida:
+Además, hay un 50% de posibilidades de que también se genere lo siguiente:
 
 <div align="left">
 
@@ -1201,13 +1202,13 @@ say ¡Qué muerte!
 
 ### onSpawnCommands
 
-Establece la lista de comandos que se ejecutarán al hacer spawn el jefe.
+Establece la lista de comandos que se ejecutarán al aparecer el jefe.
 
-| Key |        Valores        | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:--------------------:|-|
-| `onSpawnCommands` | [Lista](#string_list) | Ninguno |
+| `onSpawnCommands` | [List](#string_list) | ninguno |
 
-**¡Esto utiliza los mismos marcadores de posición que [onDeathCommands](#onDeathCommands)!** Los marcadores de posición de atacante no se aplicarán ya que no habrá atacantes en este momento.
+**¡Esto utiliza los mismos marcadores de posición que [onDeathCommands](#onDeathCommands)!** Los marcadores de posición de los dañadores no se aplicarán, ya que no habrá ningún dañador en este momento.
 
 <details> 
 
@@ -1217,7 +1218,7 @@ Establece la lista de comandos que se ejecutarán al hacer spawn el jefe.
 
 ```yml
 onSpawnCommands:
-- say ¡Se ha generado el jefe!
+- say ¡El jefe ha aparecido!
 ```
 
 <div align="center">
@@ -1236,11 +1237,11 @@ onSpawnCommands:
 
 Establece la lista de comandos que se ejecutarán cuando el jefe entre en combate.
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `onCombatEnterCommands` | [Lista](#string_list) | Ninguno |
+| `onCombatEnterCommands` | [List](#string_list) | ninguno |
 
-**¡Esto utiliza los mismos marcadores de posición que [onDeathCommands](#onDeathCommands)!** Los marcadores de posición de atacante no se aplicarán ya que no habrá atacantes en este momento.
+**¡Esto utiliza los mismos marcadores de posición que [onDeathCommands](#onDeathCommands)!** Los marcadores de posición de los dañadores no se aplicarán, ya que no habrá ningún dañador en este momento.
 
 <details> 
 
@@ -1267,11 +1268,11 @@ onCombatEnterCommands:
 
 ### onCombatLeaveCommands
 
-Establece la lista de comandos a ejecutar cuando el jefe abandone el combate.
+Establece la lista de comandos que se ejecutarán cuando el jefe abandone el combate.
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `onCombatLeaveCommands` | [Lista](#string_list) | Ninguno |
+| `onCombatLeaveCommands` | [List](#string_list) | ninguno |
 
 **¡Esto utiliza los mismos marcadores de posición que [onDeathCommands](#onDeathCommands)!**
 
@@ -1300,16 +1301,16 @@ onCombatLeaveCommands:
 
 ### disguise
 
-Establece la Disfraz de LibsDisguises si ese plugin está habilitado. [Más información aquí.]($language$/elitemobs/libsdisguises.md)
+Establece el disfraz de LibsDisguises si ese plugin está habilitado. [Más información aquí.]($language$/elitemobs/libsdisguises.md)
 
-| Key | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
-| `disguise` | [Cadena](#string) | Ninguno |
-| `customDisguiseData` | [Cadena](#string) | Ninguno |
+| `disguise` | [String](#string) | ninguno |
+| `customDisguiseData` | [String](#string) | ninguno |
 
 <details> 
 
-<summary><b>Ejemplo el disfraz</b></summary>
+<summary><b>Ejemplo de disfraz</b></summary>
 
 <div align="left">
 
@@ -1329,7 +1330,7 @@ disguise: CHICKEN
 
 <details> 
 
-<summary><b>El ejemplo personalizado disfraz</b></summary>
+<summary><b>Ejemplo de disfraz personalizado</b></summary>
 
 <div align="left">
 
@@ -1346,17 +1347,17 @@ customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8
 
 </div>
 
-Establece un disfraz personalizado desde skindex. [Consulta esta página]($idioma$/elitemobs/libsdisguises.md) para aprender cómo formatear correctamente estos datos.
+Establece un disfraz personalizado de skindex. [Consulta esta página]($language$/elitemobs/libsdisguises.md) para aprender a formatear correctamente estos datos.
 
 </details>
 
-*** 
+***
 
 ### customModel
 
-Establece el modelo personalizado a usar, si tienes un modelo personalizado y ModelEngine. [Más información aquí.]($idioma$/elitemobs/custom_models.md)
+Establece el modelo personalizado que se utilizará, si tiene un modelo personalizado y ModelEngine. [Más información aquí.]($language$/elitemobs/custom_models.md)
 
-| Clave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `customModel` | [String](#string) | ninguno |
 
@@ -1378,10 +1379,10 @@ customModel: tu_modelo
 
 ### frozen
 
-Establece si el jefe puede moverse. Los jefes congelados todavía pueden atacar.
+Establece si el jefe puede moverse. Los jefes congelados aún pueden atacar.
 </br>*Nota: esto podría no funcionar en algunas entidades.*
 
-| Clave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `frozen` | `true` / `false` | `false` |
 
@@ -1403,9 +1404,9 @@ frozen: true
 
 ### song
 
-Establece la música que reproducirá un jefe, empezando cuando aparece. Requiere el archivo .ogg de la canción en el paquete de recursos.
+Establece la música que reproducirá un jefe, comenzando cuando aparece. Requiere que el archivo .ogg de la canción esté en el paquete de recursos.
 
-| Clave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `song` | [String](#string) | ninguno |
 
@@ -1413,7 +1414,7 @@ Establece la música que reproducirá un jefe, empezando cuando aparece. Requier
 
 <summary><b>Ejemplo</b></summary>
 
-Hay dos formas de configurar las canciones. Aquí está la primera:
+Hay dos maneras de configurar las canciones. Aquí está la primera:
 
 <div align="left">
 
@@ -1423,7 +1424,7 @@ song: name=elitemobs:ice_queen.idle length=76370
 
 </div>
 
-Esto reproducirá la canción ice_queen.idle durante 76370 ticks y luego la repetirá. Ten en cuenta que la ubicación de la canción está determinada por el paquete de recursos.
+Esto reproducirá la canción ice_queen.idle durante 76370 ticks y luego la repetirá. Ten en cuenta que la ubicación de la canción viene determinada por el paquete de recursos.
 
 Aquí está la segunda forma de configurar las canciones:
 
@@ -1433,7 +1434,7 @@ Aquí está la segunda forma de configurar las canciones:
 song: name=elitemobs:ice_queen.end_transition length=14328->name=elitemobs:ice_queen.end_loop length=28657
 ```
 
-Esto reproducirá la canción ice_queen.end_transition durante 14328 ticks y luego pasará a ice_queen.end_loop durante 28657 ticks y repetirá el end_loop.
+Esto reproducirá la canción ice_queen.end_transition durante 14328 ticks y luego hará la transición a ice_queen.end_loop durante 28657 ticks y repetirá el end_loop.
 
 Esto permite que los jefes tengan una canción de "introducción" o "transición" y luego una pista principal que se repite.
 
@@ -1445,9 +1446,9 @@ Esto permite que los jefes tengan una canción de "introducción" o "transición
 
 ### cullReinforcements
 
-Establece si los refuerzos del jefe serán eliminados cuando el jefe muera.
+Establece si los refuerzos del jefe se eliminarán cuando éste muera.
 
-| Clave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `cullReinforcements` | `true` / `false` | `true` |
 
@@ -1470,9 +1471,9 @@ cullReinforcements: true
 ### movementSpeedAttribute
 
 Establece la velocidad de movimiento del jefe.
-</br>*Nota: cualquier cosa más allá de 0.36 podría ser demasiado rápida.*
+</br>*Nota: cualquier valor superior a 0,36 puede ser demasiado rápido.*
 
-| Clave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `movementSpeedAttribute` | [Double](#double) | ninguno |
 
@@ -1490,17 +1491,19 @@ movementSpeedAttribute: 0.3
 
 </details>
 
-## Fases del Jefe
+## Fases de jefe
 
 <div align="center">
 
-Los jefes pueden tener fases que cambian cuando el jefe alcanza un cierto porcentaje de salud. Cuando esto ocurre, el jefe comienza a usar un archivo de configuración diferente, lo que significa que todo sobre el jefe puede cambiar, incluyendo cosas como el tipo de entidad.
-</br>Para aprender más sobre las fases de los jefes haz clic [aquí]($idioma$/elitemobs/creating_boss_phases.md).
+Los jefes pueden tener fases que cambian cuando el jefe alcanza un cierto porcentaje de salud. Cuando esto sucede, el jefe comienza a usar un archivo de configuración diferente, lo que significa que todo sobre el jefe puede cambiar, incluyendo cosas como el tipo de entidad.
+</br>Para obtener más información sobre las fases del jefe, haz clic [aquí]($language$/elitemobs/creating_boss_phases.md).
 
-| Clave | Descripción | Valores | Predeterminado |
-|-|:-:|:-:|-|
-| `phases` | Establece las fases que tendrá el jefe. Obligatorio.  | [Lista](#string_list) | ninguno |
-| `phaseSpawnLocation` | Establece donde se generará el jefe de la fase. Opcional.  | [String](#string) | ninguno |
+
+| Clave | Descripción | Valores | Por defecto |
+|-|:-:|-|-|
+| `phases` | Establece las fases que tendrá el jefe. Obligatorio | [List](#string_list) | ninguno |
+| `phaseSpawnLocation` | Establece dónde aparece el jefe de fase. Opcional | [String](#string) | ninguno |
+
 
 <details> 
 
@@ -1513,7 +1516,7 @@ Para este ejemplo, vamos a mostrar tres archivos de configuración diferentes.
 Primer archivo de configuración del jefe: phase_1_boss.yml
 
 ```yml
-nombre: "Fase 1"
+name: "Fase 1"
 entityType: ZOMBIE
 phases:
 - phase_2_boss.yml:0.60
@@ -1523,14 +1526,14 @@ phases:
 Segundo archivo de configuración del jefe: phase_2_boss.yml
 
 ```yml
-nombre: "Fase 2"
+name: "Fase 2"
 entityType: SKELETON
 ```
 
 Tercer archivo de configuración del jefe: phase_3_boss.yml
 
 ```yml
-nombre: "Fase 3"
+name: "Fase 3"
 phaseSpawnLocation: same_as_boss,10,64,100,0,0
 entityType: RAVAGER
 ```
@@ -1539,24 +1542,24 @@ entityType: RAVAGER
 
 Este jefe cambiaría al archivo de configuración `phase_2_boss.yml` al 60% de salud, y al archivo de configuración `phase_3_boss.yml` al 30% de salud en el mismo mundo que la fase 2 y en las coordenadas x=10, y=64 y z=100. El tipo de entidad y el nombre del jefe también cambiarían.
 
-El formato para una entrada es `nombre_del_archivo:porcentajeDeSalud`.
+El formato de una entrada es `filename:healthPercentage`.
 
-phaseSpawnLocation es opcional, si no se establece, el jefe cambiará de fases donde esté parado.
+phaseSpawnLocation es opcional, si no se establece, el jefe cambiará de fase donde esté parado.
 
 </details>
 
-Las siguientes cosas son importantes para saber cuando se diseñe un jefe de fase:
+Las siguientes cosas son importantes a la hora de diseñar un jefe de fase:
 
 <div align="left">
 
-- El archivo de configuración para la primera fase establece todas las fases del jefe.
+- El archivo de configuración de la primera fase establece todas las fases del jefe.
 - La amenaza/daño contado se mantiene entre fases para los jugadores.
-- El cambio de fases se basa en el porcentaje de salud perdida, que se preserva al pasar a una fase diferente. Esto significa que aumentar o disminuir el multiplicador de salud entre fases no curará ni dañará al jefe, seguirá cambiando con el mismo porcentaje, pero tendrá más o menos salud para esa fase.
+- El cambio de fase se basa en el porcentaje de salud perdida, que se conserva al cambiar a una fase diferente. Esto significa que aumentar o disminuir el healthMultiplier entre fases no curará ni dañará al jefe, seguirá cambiando con el mismo porcentaje, pero tendrá más o menos salud para esa fase.
 - Los jefes de fase vuelven a la fase 1 si salen del combate.
-- Los jefes de fase que también son jefes regionales comparten el mismo radio de correa y mecanismo de tiempo de espera en todas las fases, y reaparecerán como el jefe de la fase 1 cuando el temporizador haya terminado.
-- El archivo de configuración para la última fase establece el botín para el jefe.
-- Las fases no pueden ser saltadas - el daño excesivo aún hará que el jefe cambie de fases en el porcentaje definido.
-- Los jefes de fase que tienen monturas dejan de estar montados al cambiar de fases.
+- Los jefes de fase que también son jefes regionales comparten el mismo radio de correa y el mismo tiempo de espera en todas las fases, y reaparecerán como el jefe de la fase 1 cuando se acabe el tiempo.
+- El archivo de configuración de la última fase establece el botín del jefe.
+- Las fases no se pueden saltar: el daño por exceso de muerte hará que el jefe cambie de fase en el porcentaje definido.
+- Los jefes de fase que tienen monturas dejan de estar montados cuando cambian de fase.
 
 </div>
 
@@ -1570,31 +1573,33 @@ Las siguientes cosas son importantes para saber cuando se diseñe un jefe de fas
 
 <div align="center">
 
-Los jefes regionales son un tipo específico de jefes personalizados que aparecen en una ubicación específica configurada y pueden reaparecer en esa ubicación después de un retraso. Además, pueden tener correas que aseguran que permanezcan en una zona específica, entre otras características.
 
-Estos son utilizados para todo el contenido de la mazmorra. Para aprender más sobre los jefes regionales haz clic [aquí]($idioma$/elitemobs/creating_world_bosses.md).
 
-| Clave | Descripción | Valores | Predeterminado |
+Los jefes regionales son un tipo específico de jefes personalizados que aparecen en una ubicación específica configurada y pueden reaparecer en esa ubicación después de un retraso. Además, pueden tener correas que aseguren que permanezcan en una zona específica, entre otras características.
+
+Estos se utilizan para todo el contenido de las mazmorras. Para obtener más información sobre los jefes regionales, haz clic [aquí]($language$/elitemobs/creating_world_bosses.md).
+
+| Clave | Descripción | Valores | Por defecto |
 |-|:-:|:-:|-|
-| `isRegionalBoss` | Establece si el jefe es regional. Debe ser verdadero si quieres un jefe regional.  | `true` / `false` | `false` |
-| `spawnLocation` | Establece las ubicaciones de aparición del jefe.  | ¡Añádelas a través del comando `/em addSpawnLocation [filename.yml]`! | ninguno |
-| `spawnCooldown` | Establece el tiempo de retraso para el reaparecimiento del jefe, en <b>minutos</b>. | [Integer](#integer) | `0` |
-| `leashRadius` | Establece la distancia a la que el jefe puede alejarse de su punto de aparición antes de ser regresado. | [Double](#double) | ninguno |
-| `onSpawnBlockStates` | Establece los bloques que el jefe modificará cuando aparezca. | Consulta los comandos abajo | ninguno |
-| `onRemoveBlockStates` | Establece los bloques que el jefe modificará cuando desaparezca. | Consulta los comandos abajo | ninguno |
+| `isRegionalBoss` | Establece si el jefe es regional. Debe ser verdadero si quieres un jefe regional.  | `true` /  `false` | `false` |
+| `spawnLocation` | Establece las ubicaciones de aparición del jefe.  | ¡Añádelas a través del comando `/em addSpawnLocation [nombredearchivo.yml]`! | ninguno |
+| `spawnCooldown` | Establece el tiempo de reutilización de reaparición del jefe, en **minutos**. | [Integer](#integer) | `0` |
+| `leashRadius` | Establece la distancia que el jefe puede alejarse de su punto de aparición antes de ser arrastrado de vuelta. | [Double](#double) | ninguno |
+| `onSpawnBlockStates` | Establece los bloques que el jefe modificará cuando aparezca. | Comprueba los comandos a continuación | ninguno |
+| `onRemoveBlockStates` | Establece los bloques que el jefe modificará cuando desaparezca. | Comprueba los comandos a continuación | ninguno |
 
-Como se ha indicado, los Jefes Regionales pueden tener `onSpawnBlockStates` y `onRemoveBlockStates`.
+Como se ha indicado, los jefes regionales pueden tener `onSpawnBlockStates` y `onRemoveBlockStates`.
 
-Esta es una característica muy útil para modificar las arenas de combate durante el combate, especialmente cuando se combina con los cambios de fase, ya que se hace posible abrir y cerrar las arenas de combate a través del cambio de estados de bloques.
+Esta es una característica muy útil para modificar las arenas de combate durante el combate, especialmente cuando se combina con los cambios de fase, ya que permite abrir y cerrar las arenas de combate a través del cambio de estado de los bloques.
 
-El formato para estos es demasiado complejo para escribirlo manualmente, por lo que existen algunos comandos para ayudarte a configurarlo:
+El formato de estos es demasiado complejo para escribirlo manualmente, por lo que existen algunos comandos que te ayudarán a configurarlos:
 
 | Comando | Descripción |
 |-|:-:|
-| /em registerblocks [regional_boss_file.yml] [on_spawn/on_remove] | Comienza a registrar selecciones manuales de bloques para los estados de bloques en la aparición o la remoción. |
-| /em registerblocksedit [regional_boss_file.yml] [on_spawn/on_remove] | Edita los estados de bloques en la aparición o la remoción. |
-| /em registerblocksarea [regional_boss_file.yml] [on_spawn/on_remove] | Permite a los administradores seleccionar grandes áreas de bloques para guardar como estados. |
-| /em registerblocksareaedit [regional_boss_file.yml] [on_spawn/on_remove] | Permite a los administradores editar grandes áreas de bloques para guardar como estados. |
+| /em registerblocks [archivo_jefe_regional.yml] [al_aparecer/al_eliminar] | Inicia el registro manual de selecciones de bloques para los estados de bloque al aparecer o al eliminar. |
+| /em registerblocksedit [archivo_jefe_regional.yml] [al_aparecer/al_eliminar] | Edita los estados de bloque al aparecer o al eliminar. |
+| /em registerblocksarea [archivo_jefe_regional.yml] [al_aparecer/al_eliminar] | Permite a los administradores seleccionar grandes áreas de bloques para guardarlos como estados. |
+| /em registerblocksareaedit [archivo_jefe_regional.yml] [al_aparecer/al_eliminar] | Permite a los administradores editar grandes áreas de bloques para guardarlos como estados. |
 
 <details> 
 
@@ -1602,27 +1607,27 @@ El formato para estos es demasiado complejo para escribirlo manualmente, por lo 
 
 <div align="left">
 
-Digamos que quieres hacer una pelea donde un jefe aparece en una arena que tiene una puerta abierta, y quieres hacer que la puerta se cierre cuando empieza la pelea y se vuelva a abrir cuando la pelea termine.
+Digamos que quieres hacer una pelea en la que un jefe aparece en una arena que tiene una puerta abierta, y quieres hacer que la puerta se cierre cuando la pelea comienza y se vuelva a abrir cuando termina.
 
-Para hacer esto, necesitarás dos fases de jefe y registrar tres conjuntos diferentes de estados de bloques. Para este ejemplo, voy a llamar a estas fases phase_1_boss.yml y phase_2_boss.yml respectivamente.
+Para ello, necesitarás dos fases de jefe y registrar tres conjuntos diferentes de estados de bloque. Para este ejemplo, voy a nombrar estas fases phase_1_boss.yml y phase_2_boss.yml respectivamente.
 
-1) Usa `/em registerblocks phase_1_boss.yml on_spawn` o `/em registerblocksedit phase_1_boss.yml on_spawn` para registrar los bloques de la puerta en su estado abierto.
+1) Utiliza `/em registerblocks phase_1_boss.yml on_spawn` o `/em registerblocksedit phase_1_boss.yml on_spawn` para registrar los bloques de la puerta en su estado abierto.
 
-Esto significa registrar los bloques de aire. Aquí se recomienza la selección de área.
+Esto significa registrar los bloques de aire. Se recomienda la selección de área aquí.
 
-Esto es necesario para asegurar que la puerta esté abierta cuando el jefe aparezca, así los jugadores tienen garantizada una forma de entrar.
+Esto es necesario para asegurarse de que la puerta está abierta cuando el jefe aparece, de modo que los jugadores tengan garantizado un camino de entrada.
 
-2) Usa `/em registerblocks phase_2_boss.yml on_spawn` o `/em registerblocksedit phase_2_boss.yml on_spawn` para registrar los bloques de la puerta en su estado cerrado.
+2) Utiliza `/em registerblocks phase_2_boss.yml on_spawn` o `/em registerblocksedit phase_2_boss.yml on_spawn` para registrar los bloques de la puerta en su estado cerrado.
 
 Esto significa registrar los bloques sólidos de la puerta que impedirían la salida del jugador.
 
-Esto es necesario para cambiar la puerta a ser sólida cuando el jefe entra en la fase 2, evitando que los jugadores salgan.
+Esto es necesario para cambiar la puerta a sólida cuando el jefe entra en la fase 2, impidiendo que los jugadores salgan.
 
-3) Usa `/em registerblocks phase_2_boss.yml on_remove` o `/em registerblocksedit phase_2_boss.yml on_remove` para registrar los bloques de la puerta en su estado abierto.
+3) Utiliza `/em registerblocks phase_2_boss.yml on_remove` o `/em registerblocksedit phase_2_boss.yml on_remove` para registrar los bloques de la puerta en su estado abierto.
 
-Esto significa registrar los mismos bloques del primer paso de nuevo (los bloques de aire).
+Esto significa registrar de nuevo los mismos bloques del primer paso (los bloques de aire).
 
-Esto es necesario para abrir la puerta cuando el jefe muera, permitiendo que los jugadores salgan de la arena.
+Esto es necesario para abrir la puerta cuando el jefe muere, permitiendo a los jugadores salir de la arena.
 
 </div>
 
@@ -1636,11 +1641,11 @@ Esto es necesario para abrir la puerta cuando el jefe muera, permitiendo que los
 
 <div align="center">
 
-Establece si el jefe está alerta. Por defecto, los jefes regionales se ralentizan y tienen una distancia de agresión más corta cuando están fuera de combate. Esta configuración evita que los jefes regionales se ralenticen y tengan una distancia de agresión más corta mientras están fuera de combate, por lo que siempre se comportarán de la misma manera dentro o fuera de combate.
+Establece si el jefe está alerta. Por defecto, los jefes regionales son más lentos y tienen una distancia de aggro más corta cuando están fuera de combate. Este ajuste evita que los jefes regionales sean más lentos y tengan una distancia de aggro más corta mientras están fuera de combate, por lo que siempre se comportarán de la misma manera dentro o fuera de combate.
 
 </div>
 
-| Clave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `alert` | [Boolean](#boolean) | `true` |
 
@@ -1664,11 +1669,11 @@ alert: true
 
 <div align="center">
 
-Establece si el jefe regional será borrado permanentemente después de ser asesinado. Esto es lo que utiliza BetterStructures para los santuarios, donde el jefe regional solo está diseñado para ser combatido una vez y luego nunca más en esa ubicación.
+Establece si el Jefe Regional se eliminará permanentemente después de ser asesinado. Esto es lo que BetterStructures utiliza para los Santuarios, donde el Jefe Regional sólo está diseñado para ser combatido una vez y nunca más en esa ubicación. 
 
 </div>
 
-| Clave | Valores | Predeterminado |
+| Clave | Valores | Por defecto |
 |-|:-:|-|
 | `removeAfterDeath` | [Boolean](#boolean) | `false` |
 
@@ -1692,13 +1697,14 @@ removeAfterDeath: true
 
 <div align="center">
 
-Los jefes instanciados son un subtipo de Jefes Regionales usados en Mazmorras Instanciadas.
+Los jefes instanciados son un subtipo de jefes regionales que se utilizan en las mazmorras instanciadas.
 
-| Clave | Descripción | Valores | Predeterminado |
+| Clave | Descripción | Valores | Por defecto |
 |-|:-:|-|-|
 | `instanced` | Hace que el jefe personalizado sea instanciado. Obligatorio. | `true` / `false` | `false` |
 
-Hacer que los jefes sean instanciados es obligatorio para que las mazmorras instanciadas funcionen correctamente. También recomendamos retirar las correas de cualquier jefe instanciado.
+
+Establecer los jefes como instanciados es obligatorio para que las mazmorras instanciadas funcionen correctamente. También recomendamos eliminar las correas para cualquier jefe instanciado.
 
 <details> 
 

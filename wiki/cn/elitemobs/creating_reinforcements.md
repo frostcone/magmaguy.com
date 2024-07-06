@@ -1,61 +1,61 @@
 # 创建自定义增援
 
-如果你有兴趣在战斗中召唤精英单位来增强boss，这个指南将详细覆盖这部分内容。
+如果您有兴趣在战斗期间召唤精英来增援 Boss，本指南将详细介绍这一点。
 
-## 创建自定义boss的步骤：
+## 创建自定义 Boss 的步骤：
 
-1. 创建你的主要自定义boss，它会召唤你的自定义boss
-2. 创建一个用于增援的自定义boss。请记住，自定义boss可以比原版怪物更强，但也可以更弱。
-3. 在配置文件中添加正确的增援行
+1. 创建您的主要自定义 Boss，它将召唤您的自定义 Boss
+2. 为增援创建自定义 Boss。请记住，自定义 Boss 可以比普通怪物更强，但它们也可以更弱。
+3. 将正确的增援行添加到配置文件中
 
 ## 创建增援行
 
-假设你有一个自定义boss，格式如下：
+假设您有一个具有以下格式的自定义 Boss：
 
 ```yaml
 isEnabled: true
 entityType: ENDER_DRAGON
-name: $eventBossLevel &eBinder of Worlds
+name: $eventBossLevel &e世界束缚者
 level: 200
 powers:
 - ender_dragon_arrow_bombardment.yml
 ```
 
-你想给它添加增援。以下是一个增援可能看起来的样子：
+并且您想向其中添加增援。以下是这种增援的样子：
 
 ```yaml
 - summonType:ON_COMBAT_ENTER
-  filename: binder_of_worlds_phase_1_parkour_reinforcement.yml
+  filename: 世界束缚者_阶段_1_跑酷_增援.yml
 ```
 
-为了使其有效，将其添加到powers列表中：
+要使其生效，请将其添加到力量列表中：
 
 ```yaml
 isEnabled: true
 entityType: ENDER_DRAGON
-name: $eventBossLevel &eBinder of Worlds
+name: $eventBossLevel &e世界束缚者
 level: 200
 powers:
 - ender_dragon_arrow_bombardment.yml
 - summonType: ON_COMBAT_ENTER
-  filename: binder_of_worlds_phase_1_parkour_reinforcement.yml
+  filename: 世界束缚者_阶段_1_跑酷_增援.yml
 ```
 
-增援现已添加到boss实体。然而，如你所见，这里有几个你可以定制的选项。让我们来讨论一下它们。
+增援现在已添加到 Boss 实体。但是，正如您所看到的，这里有几个选项可以自定义。让我们介绍一下它们。
 
 ## 所有自定义增援选项
 
-*提示：你也可以使用EliteScript来召唤增援，更多信息点击[这里]($language$/elitemobs/elitescript_actions.md&section=summon_reinforcement)。*
+*提示：您还可以使用 EliteScript 来召唤增援，更多信息请参阅 [此处]($language$/elitemobs/elitescript_actions.md&section=summon_reinforcement)。*
 
 <div align="center">
 
 ### summonType
 
-这是一个必填字段。它设置增援应该何时生成。
+这是一个必填字段。它设置了何时应该生成增援。
 
-| 键    |   值    | 默认  |
-|--------|:-----------:|:--------:|
-| `summonType` | 专用 [1] | `ON_HIT` |
+| 键         | 值           | 默认值    |
+|-------------|:------------:|-----------|
+| `summonType` | 特殊 [1]      | `ON_HIT` |
 
 <details> 
 
@@ -71,27 +71,27 @@ summonType: ON_HIT
 
 </details>
 
-#### 特别 [1]
+#### 特殊 [1]
 
-| 键 | 描述                                                                                       |
-|-----|---------------------------------------------------------------------------------------------------|
-|  `ONCE`   | 第一次击中boss时，增援会生成一次（依赖于一定的几率） |
-| `ON_HIT`  | 每次boss被击中时，增援都会生成（依赖于一定的几率）|
-| `ON_COMBAT_ENTER`    | 当boss进入战斗时生成增援（1）                                                                                                  |
-| `ON_COMBAT_ENTER_PLACE_CRYSTAL`    |  特别：这是专门为boss进入战斗时放置末影水晶的巨龙战斗设计的（1）                                                                                                 |
-| `GLOBAL`    |  对于与boss在同一个世界的所有玩家都会生成增援。增援会在玩家附近生成，无论他们离boss有多远。这需要设置`customSpawn`字段来工作！                                                                                                 |
+| 键   | 描述                                                                                                                      |
+|------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `ONCE`    | 在 Boss 第一次被击中时生成一次增援。（可以依赖 % 几率发生）                                                                        |
+| `ON_HIT`   | 每次 Boss 被击中时生成增援（可以依赖 % 几率发生）                                                                               |
+| `ON_COMBAT_ENTER`     | 当 Boss 进入战斗时生成增援 (1)                                                                                                        |
+| `ON_COMBAT_ENTER_PLACE_CRYSTAL`     | 特殊：这专门用于在 Boss 进入战斗 (1) 时为龙战斗放置末影水晶                                                                                                |
+| `GLOBAL`     | 为与 Boss 处于同一世界中的每个玩家生成增援。无论玩家距离 Boss 多远，增援都会在玩家附近生成。这需要设置 `customSpawn` 字段才能工作！                                                                                            |
 
-_(1)当boss被玩家击中，或者检测到一定范围内的玩家时，便会进入战斗。_
+_(1) Boss 在被玩家击中或检测到玩家在范围内时进入战斗。_
 
 ***
 
 ### filename
 
-这是一个必填字段，因为它设置应该生成哪一个增援。使用`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`设置时，这个字段是唯一的例外，因为末影水晶不是精英。
+这是一个必填字段，因为它设置了应该生成哪个增援。此字段为必填项的唯一例外是使用 `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` 设置时，因为末影水晶不是精英。
 
-| 键    |        值         | 默认 |
-|--------|:---------------------:|:-------:|
-| `filename` | [Filename](#filename) |  none   |
+| 键        | 值                  | 默认值 |
+|------------|:----------------------:|--------|
+| `filename` | [文件名](#文件名)      | 无      |
 
 <details> 
 
@@ -100,7 +100,7 @@ _(1)当boss被玩家击中，或者检测到一定范围内的玩家时，便会
 <div align="left">
 
 ```yml
-filename: test_boss.yml
+filename: 测试_Boss.yml
 ```
 
 </div>
@@ -111,9 +111,9 @@ filename: test_boss.yml
 
 ***
 
-**最小可行性**
+**最低可行性**
 
-`summonType: SUMMON_TYPE` 和 `filename: filename.yml` 自身足以创建一个自定义增援。以下示例将说明这一点。
+`summonType: SUMMON_TYPE` 和 `filename: filename.yml` 本身就足以创建自定义增援。以下示例演示了这一点。
 
 <div align="center">
 
@@ -126,15 +126,15 @@ filename: test_boss.yml
 ```yaml
 isEnabled: true
 entityType: ENDER_DRAGON
-name: $eventBossLevel &eBinder of Worlds
+name: $eventBossLevel &e世界束缚者
 level: 200
 powers:
 - ender_dragon_arrow_bombardment.yml
 - summonType: ON_COMBAT_ENTER
-  filename: binder_of_worlds_phase_1_parkour_reinforcement.yml
+  filename: 世界束缚者_阶段_1_跑酷_增援.yml
 ```
 
-*然而，如果你想要或者需要更复杂的配置，继续阅读下面的内容，看看你还能用这些选项做什么。*
+*但是，如果您想要或需要更复杂的东西，请继续阅读下面的内容，以了解您可以使用这些选项进行哪些其他操作。*
 
 </div>
 
@@ -148,11 +148,11 @@ powers:
 
 ### chance
 
-这是一个为`summonType`的`ONCE`和`ON_HIT`选项提供的可选配置字段。它表示当boss被击中时自定义增援生成的概率。
+这是一个可选的配置文件字段，用于补充 `summonType` `ONCE` 和 `ON_HIT` 选项。它表示 Boss 受到攻击时自定义增援生成的几率。
 
-| 键    |        值         | 默认 |
-|--------|:---------------------:|:-------:|
-| `chance` | [双精度浮点数](#double) |  none   |
+| 键      | 值                | 默认值 |
+|----------|:------------------:|--------|
+| `chance` | [双精度浮点数](#双精度浮点数) | 无      |
 
 <details> 
 
@@ -163,7 +163,7 @@ powers:
 ```yml
 chance: 0.5
 ```
-*表示有50%的概率生成一个自定义增援。*
+*表示有 50% 的几率生成自定义增援。*
 
 </div>
 
@@ -173,17 +173,19 @@ chance: 0.5
 
 ### location
 
-`location: x,y,z` 是一个可选的配置字段，允许管理员偏移增援的位置，其数值为块的数目。你需要了解这个选项的一些关键概念：
+`location: x,y,z` 是一个可选的配置文件字段，允许管理员将增援的位置偏移一定数量的方块。以下是您需要了解的有关此选项的关键概念：
 
-**偏移位置是相对的。** 这意味着`location: 0,10,0` 会在boss的上方精确地生成一个boss，而不是在世界坐标0,10,0。
+**偏移位置是相对的。**这意味着 `location: 0,10,0` 将在 Boss 正上方 10 个方块处生成一个 Boss，而不是在世界坐标 0,10,0 处。
 
-**对于区域boss，相对位置不同。** 区域boss总是将它们的生成点作为相对位置的起点，这意味着如果你知道boss的生成点，并且可以计算方块数，你可以在特定位置生成增援boss。Binder of Worlds的巢穴便依赖此规则，在极其特定的方块位置生成挑战塔boss，无论龙boss在何处。
 
-**如果你计算距离出错，boss会生成在方块里面。**
+**对于区域 Boss，相对位置是不同的。**区域 Boss 将始终使用其生成点作为相对位置的原点，这意味着如果您知道 Boss 的生成点在哪里并计算了方块数，则可以让增援 Boss 生成在特定位置。世界束缚者巢穴依赖于此功能，以在极其特定的方块位置生成挑战塔 Boss，而不管龙 Boss 在哪里。
 
-| 键    |      值       | 默认 |
-|--------|:-----------------:|:-------:|
-| `location` | [字符串](#string) |  none   |
+
+**如果您在测量距离时出错，Boss 会生成在方块内。**
+
+| 键       | 值              | 默认值 |
+|-----------|:-----------------|--------|
+| `location` | [字符串](#字符串) | 无      |
 
 <details> 
 
@@ -194,27 +196,27 @@ chance: 0.5
 ```yml
 location: 0,10,0
 ```
-*对于非区域的自定义boss，增援会在boss的上方精确的生成10个方块的位置，无论它在任何地方。*
+*对于非区域自定义 Boss，将在 Boss 正上方 10 个方块处生成增援，无论 Boss 在哪里。*
 
-*对于区域boss，增援会在boss的生成点的上方精确地生成10个方块的位置，无论boss在什么地方。*
+*对于区域自定义 Boss，将在区域 Boss 生成点正上方 10 个方块处生成增援，无论 Boss 在哪里。*
 
 </div>
 
 </details>
 
-_**重要提示：对于`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`，这是一个必填字段！**_
+_**重要说明：这对于 `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` 特别是必填字段！**_
 
 ***
 
 ### lightningRod
 
-这是一个仅对`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`有用的特殊设置。这使得末影水晶具有在延迟之后对地面进行惩击的能力。
+是一个特殊设置，仅对 `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` 有用。这使得末影水晶能够延迟地攻击其周围的地面。
 
-它不能和其他自定义增援一起使用，因为那些应该依赖于这些类型的能力的力量。
+它不能与其他自定义增援一起使用，因为那些增援应该依赖于力量来实现此类能力。
 
-| 键    |       值        | 默认 |
-|--------|:-------------------:|:-------:|
-| `lightningRod` | [布尔值](#boolean) | `false` |
+| 键            | 值              | 默认值  |
+|----------------|:-----------------|---------|
+| `lightningRod` | [布尔值](#布尔值) | `false` |
 
 <details> 
 
@@ -234,13 +236,13 @@ lightningRod: false
 
 ### inheritAggro
 
-这是一个可选的配置字段，使得自定义增援能够继承boss的威胁级别。
+是一个可选的配置文件字段，它使自定义增援继承 Boss 的威胁等级。
 
-这个功能在你希望生成的增援能够攻击造成最多伤害的玩家时尤其有用。
+当您希望生成的增援目标是造成最大伤害的玩家时，这尤其有用。
 
-| 键    |       值        | 默认 |
-|--------|:-------------------:|:-------:|
-| `inheritAggro` | [布尔值](#boolean) | `false` |
+| 键             | 值              | 默认值  |
+|----------------|:-----------------|---------|
+| `inheritAggro` | [布尔值](#布尔值) | `false` |
 
 <details> 
 
@@ -260,11 +262,11 @@ inheritAggro: false
 
 ### amount
 
-这是一个可选的配置字段，用于设置生成的增援的数量。
+是一个可选的配置文件字段，用于设置生成的增援数量。
 
-| 键    |       值        | 默认 |
-|--------|:-------------------:|:-------:|
-| `amount` | [整数](#integer) |   `1`   |
+| 键       | 值                | 默认值 |
+|-----------|:------------------:|--------|
+| `amount` | [整数](#整数)          | `1`    |
 
 <details> 
 
@@ -284,13 +286,13 @@ amount: 1
 
 ### spawnNearby
 
-这是一个可选的配置字段，它设置自定义增援是否应该在附近生成，而不是在boss的顶部或者特定的相对位置。
+是一个可选的配置文件字段，用于设置自定义增援应该在 Boss 附近生成，而不是在 Boss 上方或特定相对位置生成。
 
-这个方法应该正确地考虑地形的变化，不在墙内生成boss，尽管在一些设置中，如果战斗区域太小，可能会导致boss生成在墙后面。其半径约为30个方块。
+此方法应该正确地考虑地形变化，并且不会在墙壁内生成 Boss，尽管在某些设置中，如果战斗区域太小，可能会导致它们生成在墙壁后面。半径约为 30 个方块。
 
-| 键    |       值        | 默认 |
-|--------|:-------------------:|:-------:|
-| `spawnNearby` | [布尔值](#boolean) | `false` |
+| 键           | 值              | 默认值  |
+|---------------|:-----------------|---------|
+| `spawnNearby` | [布尔值](#布尔值) | `false` |
 
 <details> 
 
@@ -310,11 +312,11 @@ spawnNearby: false
 
 ### inheritLevel
 
-这是一个可选的配置字段，它设置自定义增援是否应该继承其正在增援的自定义boss的等级。
+是一个可选的配置文件字段，用于设置自定义增援是否应该继承它所增援的自定义 Boss 的等级。
 
-| 键    |       值        | 默认 |
-|--------|:-------------------:|:-------:|
-| `inheritLevel` | [布尔值](#boolean) | `false` |
+| 键             | 值              | 默认值  |
+|----------------|:-----------------|---------|
+| `inheritLevel` | [布尔值](#布尔值) | `false` |
 
 <details> 
 
@@ -334,13 +336,13 @@ inheritLevel: false
 
 ### customSpawn
 
-这是一个仅用于全球增援的配置字段。它使用自定义生成设置来设置增援将被生成的地方。
+是一个配置文件字段，仅用于全局增援。它使用自定义生成设置来设置增援能够生成的位置。
 
-通过使用它，可以使得增援能够在地表、光照处、特定的生物群系等地方生成。更多详情请查看[自定义生成]($language$/elitemobs/creating_spawns.md)的wiki页面。
+这可以用于使增援能够在地面上、有光的地方、特定的生物群系中等等生成。查看 [自定义生成]($language$/elitemobs/creating_spawns.md) 上的维基页面以获取更多详细信息
 
-| 键    |        值         | 默认 |
-|--------|:---------------------:|:-------:|
-| `customSpawn` | [Filename](#filename) |  none   |
+| 键           | 值                  | 默认值 |
+|---------------|:----------------------:|--------|
+| `customSpawn` | [文件名](#文件名)      | 无      |
 
 <details> 
 
@@ -349,7 +351,7 @@ inheritLevel: false
 <div align="left">
 
 ```yml
-customSpawn: normal_surface_spawn.yml
+customSpawn: 普通_地面_生成.yml
 ```
 
 </div>
@@ -358,26 +360,26 @@ customSpawn: normal_surface_spawn.yml
 
 </div>
 
-## 组装一个大增援
+## 将大型增援组合在一起
 
-让我们创建一个使用大多数前述字段的示例增援：
+让我们使用之前的大部分字段创建一个示例增援：
 
 ```yaml
 - summonType: ON_COMBAT_ENTER
-  filename: test_boss.yml
+  filename: 测试_Boss.yml
   spawnNearby: true
   inheritAggro: true
   inheritLevel: true
 ```
 
-这做了以下几件事：
+这将执行以下操作：
 
 - 创建一个自定义增援
-- 自定义增援会在自定义boss进入战斗时生成 (`summonType: ON_COMBAT_ENTER`)
-- 召唤的自定义增援会是`test_boss.yml`里的一个 (`filename: test_boss.yml`)
-- 自定义增援会在自定义boss当前位置的30个方块内生成 (`spawnNearby: true`)
-- 自定义增援会继承其正在增援的自定义boss的威胁级别，也就是说它会攻击造成最大伤害的玩家(`inheritAggro: true`)
-- 尽管设置在`test_boss.yml`中，自定义增援会和正在增援的自定义boss的等级一样 (`inheritLevel: true`)
+- 当自定义 Boss 进入战斗时，自定义增援将生成 (`summonType: ON_COMBAT_ENTER`)
+- 召唤的自定义增援将来自 `测试_Boss.yml` (`filename: 测试_Boss.yml`)
+- 自定义增援将在自定义 Boss 当前位置的 30 个方块内生成 (`spawnNearby: true`)
+- 自定义增援将继承它所增援的自定义 Boss 的仇恨，这意味着它将攻击造成最大伤害的玩家 (`inheritAggro: true`)
+- 无论 `测试_Boss.yml` 中的设置如何，自定义增援都将与其所增援的自定义 Boss 具有相同的等级 (`inheritLevel: true`)
 
 ```yaml
 - summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL
@@ -385,23 +387,23 @@ customSpawn: normal_surface_spawn.yml
   lightningRod: true
 ```
 
-这做了以下几件事：
+这将执行以下操作：
 
 - 创建一个自定义增援
-- 自定义增援会在战斗开始时生成一个放置的末影水晶 (`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`)
-- 末影水晶会在延时后对周围的地面进行惩击 (`lightningRod: true`)
+- 自定义增援将是一个末影水晶，它会在战斗开始时放置 (`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`)
+- 末影水晶将延迟地攻击其周围的地面 (`lightningRod: true`)
 
-现在将它应用到自定义boss：
+现在将其应用于自定义 Boss：
 
 ```yaml
 isEnabled: true
 entityType: ENDER_DRAGON
-name: $eventBossLevel &eBinder of Worlds
+name: $eventBossLevel &e世界束缚者
 level: 200
 powers:
 - ender_dragon_arrow_bombardment.yml
 - summonType: ON_COMBAT_ENTER
-  filename: test_boss.yml
+  filename: 测试_Boss.yml
   spawnNearby: true
   inheritAggro: true
   inheritLevel: true
@@ -410,7 +412,10 @@ powers:
   lightningRod: true
 ```
 
-你已经完成了！这里还有一些其他的提示：
+您完成了！以下是一些其他提示：
 
-- 字段可以按任何顺序设置，尽管建议总是首先设置`summonable`！
-- 这在老的增援系统上是一个大的改进，老的系统已经不再列出。现在不建议依赖它，因为它可能会在未来停止工作。
+- 字段可以按任何顺序设置，但建议始终将 `summonable` 放在第一位！
+- 这是对旧增援系统的重大改进，该系统不再列出。不建议在此阶段依赖它，因为它将来可能会停止工作。
+
+
+

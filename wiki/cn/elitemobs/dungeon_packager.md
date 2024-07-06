@@ -1,60 +1,60 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# 什么是地牢？
+# 什么是地下城？
 
-你可以在[这里]($language$/elitemobs/dungeons.md)找到关于地牢的信息，包括预设地牢的信息。
+您可以在[此处]($language$/elitemobs/dungeons.md)找到有关地下城的信息，包括有关预制地下城的信息。
 
 ***
 
-# 什么是地牢打包器？
+# 什么是地下城打包程序？
 
-地牢打包器允许管理员不仅可以创建和打包地牢，还可以打包任何类型的精英怪物内容。这包括事件包，模型包，竞技场，NPC包，物品包等等。
+地下城打包程序不仅允许管理员创建和打包地下城，还可以打包任何类型的 EliteMobs 内容。这包括事件包、模型包、竞技场、NPC 包、物品包等等。
 
 <details>
 
-<summary>为什么要使用地牢包？</summary>
+<summary>为什么要使用地下城包？</summary>
 
-- ***实例地牢！*** 实例地牢只能通过地牢包系统创建。
-- ***迷你地牢的安全备份！*** 如果你制作了地牢包，你将能够在任何时候，出于任何原因，在任何服务器上部署和重新部署它。
-- ***易于关闭和启用！*** 您总是可以执行`/em setup`并临时或永久地关闭和打开地牢包。
-- ***易于分享！*** 如果您希望分享您的创作，地牢包可以被压缩并发送给其他人。如果你有兴趣，我们有一个专门的Discord房间供社区创作分享！
-- ***传送！*** 地牢包会自动创建可以在`/em`菜单的传送页面中访问的传送位置，这在许多设置中可能非常有用。
+- ***副本地下城！*** 副本地下城只能通过地下城包系统创建。
+- ***小型地下城的安全备份！*** 如果您制作了地下城包，您将能够随时出于任何原因在您想要的任何服务器上部署和重新部署它。
+- ***易于打开和关闭！*** 您始终可以执行 `/em setup` 并临时或永久关闭和打开地下城包。
+- ***易于分享！*** 如果您想分享您的作品，只需将地下城包压缩并发送给其他人即可。如果您有兴趣，有一个专门用于社区创作的 Discord 房间！
+- ***传送！*** 地下城包会自动创建传送位置，这些位置可以在 `/em` 菜单的“传送”页面中访问，这在很多设置中都非常有用。
 
 </details>
 
-# 创建地牢
+# 创建地下城
 
-以下设置用于创建一个应该放入`dungeonpackages`文件夹的配置文件。这些设置用于专门创建地牢，如果你只是想使用地牢打包器分发非地牢内容，如物品包或事件包，就不需要这些设置。
+以下设置用于创建一个配置文件，该文件应放在 `dungeonpackages` 文件夹中。这些设置专门用于创建地下城，如果您只想使用地下城打包程序分发非地下城内容（例如一包物品或事件），则不需要这些设置。
 
-## 需要的插件
+## 必需的插件
 
-为了使用地牢打包器，你需要以下插件：
+要使用地下城打包程序，您将需要以下插件：
 
-[WorldGuard](https://dev.bukkit.org/projects/worldguard) - 保护迷你地牢
+[WorldGuard](https://dev.bukkit.org/projects/worldguard) - 保护小型地下城
 
-## 创建地牢，一步一步来
+## 创建地下城，一步一步
 
-EliteMobs 曾有两种主要类型的地牢：基于世界的和基于模式的。
+EliteMobs 以前有两种主要类型的地下城：基于世界的地下城和基于原理图的地下城。
 
-基于模式的地牢，与模式建筑相关联。他们现在已经被淘汰，不再受支持。
+基于原理图的地下城与原理图构建相关联。它们现在已逐步淘汰，不再受支持。
 
-所有EliteMobs地牢现在都是基于世界的。
+所有 EliteMobs 地下城现在都是基于世界的。
 
 ***
 
 ### 全局值
 
-以下值适用于所有地牢
+以下值适用于所有地下城
 
 <div align="center">
 
 ### isEnabled
 
-设置地牢包是否启用。
+设置地下城包是否启用。
 
-| 键         |      值       | 默认值 | 必填 |
-|-------------|:-----------------:|:-------:|:---------:|
-| `isEnabled` | [布尔](#boolean) | `false` |  ✅  |
+| 键        | 值              | 默认值  | 必填 |
+|------------|:-----------------|---------|:-----:|
+| `isEnabled` | [布尔值](#布尔值) | `false` | ✅   |
 
 <details> 
 
@@ -74,11 +74,11 @@ isEnabled: true
 
 ### name
 
-设置内容的名字。支持 [色彩代码](#color_codes)。
+设置内容的名称。支持 [颜色代码](#颜色代码)。
 
-| 键         |      值       | 默认值 | 必填 |
-|-------------|:-----------------:|:-------:|:---------:|
-| `name` | [字符串](#string) | `false` |   ✅  |
+| 键     | 值              | 默认值  | 必填 |
+|---------|:-----------------|---------|:-----:|
+| `name` | [字符串](#字符串) | `false` | ✅   |
 
 <details> 
 
@@ -87,7 +87,7 @@ isEnabled: true
 <div align="left">
 
 ```yml
-name: '&c[lvl 999] &aThe Green Dungeon'
+name: '&c[lvl 999] &a绿色地下城'
 ```
 
 <div align="center">
@@ -104,11 +104,11 @@ name: '&c[lvl 999] &aThe Green Dungeon'
 
 ### dungeonLocationType
 
-设置地牢使用的位置类型。
+设置地下城使用的位置类型。
 
-| 键         |        值         | 默认值 | 必填 |
-|-------------|:---------------------:|:-------:|:---------:|
-| `dungeonLocationType` | `WORLD` / `INSTANCED` |  无   |  ✅  |
+| 键                    | 值                  | 默认值 | 必填 |
+|------------------------|:----------------------:|--------|:-----:|
+| `dungeonLocationType` | `WORLD` / `INSTANCED` | 无      | ✅   |
 
 <details> 
 
@@ -128,11 +128,11 @@ dungeonLocationType: WORLD
 
 ### contentType
 
-设置地牢的类型。
+设置地下城的类型。
 
-| 键         |                    值                    | 默认值 | 必填 |
-|-------------|:--------------------------------------------:|:-------:|:---------:|
-| `contentType` | `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` |  无   |  ✅   |
+| 键          | 值                              | 默认值 | 必填 |
+|--------------|:---------------------------------:|--------|:-----:|
+| `contentType` | `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` | 无      | ✅   |
 
 <details> 
 
@@ -152,11 +152,11 @@ contentType: INSTANCED_DUNGEON
 
 ### customInfo
 
-设置将在 `/em setup` 屏幕中显示的额外信息。仅供信息查阅。支持 [色彩代码](#color_codes)。
+设置将出现在 `/em setup` 屏幕中的附加信息。仅供参考。支持 [颜色代码](#颜色代码)。
 
-| 键         |        值        | 默认值 | 必填 |
-|-------------|:-----------------:|:-------:|:---------:|
-| `customInfo` | [字符串列表](#string_list) |  无   |  ✅   |
+| 键           | 值                     | 默认值 | 必填 |
+|---------------|:------------------------:|--------|:-----:|
+| `customInfo` | [字符串列表](#字符串列表)      | 无      | ✅   |
 
 <details> 
 
@@ -166,8 +166,8 @@ contentType: INSTANCED_DUNGEON
 
 ```yml
 customInfo:
-- '&aThe best dungeon.'
-- '&aMade by: CoolPlayer'
+- '&a最好的地下城。'
+- '&a作者：酷玩家'
 ```
 
 <div align="center">
@@ -184,11 +184,11 @@ customInfo:
 
 ### downloadLink
 
-设置内容未下载时的下载链接。仅供信息查阅。
+设置内容未下载时的下载链接。仅供参考。
 
-| 键         |      值       | 默认值 | 必填 |
-|-------------|:-----------------:|:-------:|:---------:|
-| `downloadLink` | [字符串](#string) |  无   | ❌ |
+| 键            | 值              | 默认值 | 必填 |
+|----------------|:-----------------|--------|:-----:|
+| `downloadLink` | [字符串](#字符串) | 无      | ❌   |
 
 <details> 
 
@@ -212,14 +212,13 @@ downloadLink: http://www.example.org
 
 ***
 
-
 ### dungeonSizeCategory
 
-设置地牢包的大小类别。仅供信息 purposes.
+设置地下城包的尺寸类别。仅供参考。
 
-| 键         |   值    | 默认 | 必填 |
-|-------------|:-----------:|:-------:|:---------:|
-| `dungeonSizeCategory` | 特殊 [1] |  无   |    ✅      |
+| 键                    | 值           | 默认值 | 必填 |
+|------------------------|:------------:|--------|:-----:|
+| `dungeonSizeCategory` | 特殊 [1]      | 无      | ✅   |
 
 <details> 
 
@@ -249,18 +248,18 @@ dungeonSizeCategory: MINIDUNGEON
 
 <div align="center">
 
-| 键 | 描述 |
-|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `LAIR`    | Lairs 是一种小型地牢，主要关注一个大型boss战斗。|
-| `SANCTUM`    | Sanctuary 是Lairs的实例化，这意味着他们围绕一个大型boss 战斗。 |
-| `MINIDUNGEON` | Minidungeons 是一种中等大小的地牢，通常包含3-15个miniboss和一个大boss，以及大量的"trash" mobs,玩家经常去"农场"打金币和装备。|
-| `DUNGEON`    | Dungeons 是Minidungeons 的实例版本。这是最传统的 MMORPG 类型的地牢，玩家组队通过一组trash mobs 和minibosses挑战最后的boss。|
-| `RAID`    | 即将来临!|
-| `ADVENTURE`    | Adventure是完整的冒险地图。他们包括任务线，npcs，大量的minibosses和bosses ，甚至可以包含他们自己的竞技场或地牢。|
-| `ARENA`    | Arenas 是玩家在其中得到奖励的波浪式生存区。|
-| `OTHER`    | 任何其他不属于上述类别的内容。 |
+| 键             | 描述                                                                                                                                                                  |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `LAIR`          | 巢穴是一种小型地下城，专注于一场大型 Boss 战斗。                                                                                                                |
+| `SANCTUM`        | 圣殿相当于副本化的巢穴。这意味着它们专注于一场大型 Boss 战斗。                                                                                                          |
+| `MINIDUNGEON`   | 小型地下城是一种中等规模的地下城，通常包含 3-15 个小 Boss 和一个大 Boss，以及许多“垃圾”怪物，这些怪物 meant to be 被玩家“刷怪”以获取硬币和装备。                    |
+| `DUNGEON`       | 地下城相当于副本化的小型地下城。这是最传统的 MMORPG 类型的地下城，玩家组队并通过一系列垃圾怪物和小 Boss 的挑战，最终与最终 Boss 战斗。                                                               |
+| `RAID`          | 即将推出！                                                                                                                                                        |
+| `ADVENTURE`     | 冒险是完整的冒险地图。它们包括任务线、npc、大量小 Boss 和 Boss，甚至可以包含自己的竞技场或地下城。                                                                            |
+| `ARENA`         | 竞技场是基于波次的生存区域，玩家在击败波次后会获得奖励。                                                                                                                 |
+| `OTHER`         | 其他任何不属于先前类别的内容。                                                                                                                                         |
 
-有关详细描述，请参阅 [Dungeons]($language$/elitemobs/dungeons.md)
+有关更详细的描述，请参阅 [地下城]($language$/elitemobs/dungeons.md)
 
 </div>
 
@@ -270,11 +269,11 @@ dungeonSizeCategory: MINIDUNGEON
 
 ### protect
 
-设置是否应通过WorldGuard保护地牢包。
+设置地下城包是否应受 WorldGuard 保护。
 
-| 键         |      值       | 默认 | 必填 |
-|-------------|:-----------------:|:-------:|:---------:|
-| `protect` | [Boolean](#boolean) |  `true`   |    ❌      |
+| 键         | 值              | 默认值 | 必填 |
+|-------------|:-----------------|---------|:-----:|
+| `protect` | [布尔值](#布尔值) | `true`  | ❌   |
 
 <details> 
 
@@ -294,11 +293,11 @@ protect: true
 
 ### dungeonVersion
 
-设置地牢包的版本。
+设置地下城包的版本。
 
-| 键         |  值  | 默认 | 必填 |
-|-------------|:--------:|:-------:|:---------:|
-| `dungeonVersion` | [Integer](#integer) |  无   |    ✅      |
+| 键             | 值                | 默认值 | 必填 |
+|----------------|:------------------:|--------|:-----:|
+| `dungeonVersion` | [整数](#整数)          | 无      | ✅   |
 
 <details> 
 
@@ -318,13 +317,13 @@ dungeonVersion: 1
 
 ### playerInfo
 
-设置出现在菜单中的信息。支持 [Color Codes](#colorcodes).
+设置菜单中显示的信息。支持 [颜色代码](#颜色代码)。
 
-*只有在将“/em”设置为使用“/em alt”的书模式时才有效。*
+*仅当使用 `/em alt` 将 `/em` 设置为书籍模式时才有效。*
 
-| 键         |  值  | 默认 | 必填 |
-|-------------|:--------:|:-------:|:---------:|
-| `playerInfo` | [String](#string) |  无   |    ✅      |
+| 键            | 值              | 默认值 | 必填 |
+|----------------|:-----------------|--------|:-----:|
+| `playerInfo` | [字符串](#字符串) | 无      | ✅   |
 
 <details> 
 
@@ -333,7 +332,7 @@ dungeonVersion: 1
 <div align="left">
 
 ```yml
-playerInfo: 'Difficulty: &a1-man easy content!'
+playerInfo: '难度：&a1 人简单内容！'
 ```
 
 <div align="center">
@@ -350,11 +349,11 @@ playerInfo: 'Difficulty: &a1-man easy content!'
 
 ### regionEnterMessage
 
-设置玩家进入地牢区域时显示的消息。支持 [Color Codes](#colorcodes)。
+设置玩家进入地下城区域时出现的消息。支持 [颜色代码](#颜色代码)。
 
-| 键         |  值  | 默认 | 必填 |
-|-------------|:--------:|:-------:|:---------:|
-| `regionEnterMessage` | [String](#string) |  无   |    ❌      |
+| 键                   | 值              | 默认值 | 必填 |
+|-----------------------|:-----------------|--------|:-----:|
+| `regionEnterMessage` | [字符串](#字符串) | 无      | ❌   |
 
 <details> 
 
@@ -363,7 +362,7 @@ playerInfo: 'Difficulty: &a1-man easy content!'
 <div align="left">
 
 ```yml
-regionEnterMessage: '&aYou have entered the dungeon!'
+regionEnterMessage: '&a您已进入地下城！'
 ```
 
 <div align="center">
@@ -380,11 +379,11 @@ regionEnterMessage: '&aYou have entered the dungeon!'
 
 ### regionLeaveMessage
 
-设置玩家离开地牢区域时显示的消息。支持 [Color Codes](#colorcodes).
+设置玩家离开地下城区域时出现的消息。支持 [颜色代码](#颜色代码)。
 
-| 键   |  值  | 默认 | 必填 |
-|------|:----:|:-----:|:------:|
-| `regionLeaveMessage` | [String](#string) |  无  |   ❌   |
+| 键                   | 值              | 默认值 | 必填 |
+|-----------------------|:-----------------|--------|:-----:|
+| `regionLeaveMessage` | [字符串](#字符串) | 无      | ❌   |
 
 <details> 
 
@@ -393,7 +392,7 @@ regionEnterMessage: '&aYou have entered the dungeon!'
 <div align="left">
 
 ```yml
-regionLeaveMessage: '&aYou have left the dungeon!'
+regionLeaveMessage: '&a您已离开地下城！'
 ```
 
 <div align="center">
@@ -410,11 +409,11 @@ regionLeaveMessage: '&aYou have left the dungeon!'
 
 ### hasCustomModels
 
-设置地牢包是否有自定义模型（适用于ModelEngine/FreeMinecraftModels）。
+设置地下城包是否具有自定义模型（对于 ModelEngine 或 FreeMinecraftModels）。
 
-| 键   |  值  | 默认 | 必填 |
-|------|:----:|:-----:|:------:|
-| `hasCustomModels` | [Boolean](#boolean) |  无  |   ❌  |
+| 键                | 值              | 默认值 | 必填 |
+|--------------------|:-----------------|--------|:-----:|
+| `hasCustomModels` | [布尔值](#布尔值) | 无      | ❌   |
 
 <details> 
 
@@ -434,13 +433,13 @@ hasCustomModels: false
 
 ### dungeonConfigFolderName
 
-设置用于此地牢相关文件的文件夹的名称。
+设置用于与此地下城关联的文件的文件夹名称。
 
-**对于样本地牢是必需的!.**
+**对于副本地下城是必需的！**
 
-| 键   |  值  | 默认 | 必填 |
-|------|:----:|:-----:|:------:|
-| `dungeonConfigFolderName` | [String](#string) |  无  |   ❌  |
+| 键                       | 值              | 默认值 | 必填 |
+|---------------------------|:-----------------|--------|:-----:|
+| `dungeonConfigFolderName` | [字符串](#字符串) | 无      | ❌   |
 
 <details> 
 
@@ -449,7 +448,7 @@ hasCustomModels: false
 <div align="left">
 
 ```yml
-dungeonConfigFolderName: my_dungeon_folder
+dungeonConfigFolderName: 我的地下城_文件夹
 ```
 
 </div>
@@ -460,11 +459,11 @@ dungeonConfigFolderName: my_dungeon_folder
 
 ### contentLevel
 
-设置地牢应在EM菜单中显示的内容级别。
+设置地下城应在 EM 菜单中显示的内容等级。
 
-| 键   |  值  | 默认 | 必填 |
-|------|:----:|:-----:|:------:|
-| `contentLevel` | [Integer](#integer) |  无  |   ❌  |
+| 键              | 值                | 默认值 | 必填 |
+|-----------------|:------------------:|--------|:-----:|
+| `contentLevel` | [整数](#整数)          | 无      | ❌   |
 
 <details> 
 
@@ -484,11 +483,11 @@ contentLevel: 20
 
 ### enchantmentChallenge
 
-设置地牢是否应为附魔挑战地牢。
+设置地下城是否应该成为附魔挑战地下城。
 
-| 键   |  值  | 默认 | 必填 |
-|------|:----:|:-----:|:------:|
-| `enchantmentChallenge` | [Boolean](#boolean) | `false` |   ❌  |
+| 键                     | 值              | 默认值  | 必填 |
+|-------------------------|:-----------------|---------|:-----:|
+| `enchantmentChallenge` | [布尔值](#布尔值) | `false` | ❌   |
 
 <details> 
 
@@ -508,9 +507,9 @@ enchantmentChallenge: false
 
 ***
 
-### 基于世界的地牢包
+### 基于世界的地下城包
 
-以下值仅适用于基于世界的地牢。
+以下值仅适用于基于世界的地下城。
 
 <div align="center">
 
@@ -518,11 +517,11 @@ enchantmentChallenge: false
 
 ### worldName
 
-设置应打包的世界的名称。
+设置要打包的世界名称。
 
-| 键   |  值  | 默认 | 必填 |
-|------|:----:|:-----:|:------:|
-| `worldName` | [String](#string) |  无  |   ✅  |
+| 键         | 值              | 默认值 | 必填 |
+|-------------|:-----------------|--------|:-----:|
+| `worldName` | [字符串](#字符串) | 无      | ✅   |
 
 <details> 
 
@@ -531,7 +530,7 @@ enchantmentChallenge: false
 <div align="left">
 
 ```yml
-worldName: my_minecraft_world
+worldName: 我的 Minecraft 世界
 ```
 
 </div>
@@ -542,11 +541,11 @@ worldName: my_minecraft_world
 
 ### womholeWorldName
 
-此功能设置虫洞世界的名称，这是一个与主世界链接的二次世界。它用于传送枢或独特的 boss chambers 等功能。
+此函数设置虫洞世界的名称，该世界充当与主世界链接的次要世界。它用于传送中心或独特 Boss 房间等功能。
 
-| 键   |  值  | 默认 | 必填 |
-|------|:----:|:-----:|:------:|
-| `womholeWorldName` | [String](#string) |  无  |   ❌  |
+| 键                | 值              | 默认值 | 必填 |
+|--------------------|:-----------------|--------|:-----:|
+| `womholeWorldName` | [字符串](#字符串) | 无      | ❌   |
 
 <details> 
 
@@ -555,7 +554,7 @@ worldName: my_minecraft_world
 <div align="left">
 
 ```yml
-womholeWorldName: my_minecraft_world_wormhole
+womholeWorldName: 我的 Minecraft 世界_虫洞
 ```
 
 </div>
@@ -568,9 +567,9 @@ womholeWorldName: my_minecraft_world_wormhole
 
 设置世界的环境。
 
-| 键   |  值  | 默认 | 必填 |
-|------|:----:|:-----:|:------:|
-| `environment` | [环境](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) |  无  |   ✅  |
+| 键          | 值                                                                              | 默认值 | 必填 |
+|--------------|:----------------------------------------------------------------------------------:|--------|:-----:|
+| `environment` | [环境](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) | 无      | ✅   |
 
 <details> 
 
@@ -590,11 +589,11 @@ environment: NORMAL
 
 ### teleportLocation
 
-设置地牢包的传送位置。这是玩家在进入地牢时将被传送到的地方。
+设置地下城包的传送位置。这是玩家进入地下城时将被传送到的地方。
 
-| 键              |       值     | 默认值 | 必填 |
-|----------------|:--------:|:-------:|:----:|
-| `teleportLocation` | [字符串](#string) |  无     |  ✅   |
+| 键                  | 值              | 默认值 | 必填 |
+|----------------------|:-----------------|--------|:-----:|
+| `teleportLocation` | [字符串](#字符串) | 无      | ✅   |
 
 <details> 
 
@@ -603,7 +602,31 @@ environment: NORMAL
 <div align="left">
 
 ```yml
-teleportLocation: my_minecraft_world,-1.5,68,0.5,0.0,0.0
+teleportLocation: 我的 Minecraft 世界,-1.5,68,0.5,0.0,0.0
+```
+
+</div>
+
+</details>
+
+***
+
+### allowExplosionBlockDamage
+
+允许或禁止爆炸在地下城中损坏方块。爆炸被认为是精英爆炸，因此对积木的任何损坏将在 2 分钟内再生。
+
+| 键                          | 值              | 默认值  | 必填 |
+|-----------------------------|:-----------------|---------|:-----:|
+| `allowExplosionBlockDamage` | [布尔值](#布尔值) | `false` | ❌   |
+
+<details> 
+
+<summary><b>示例</b></summary>
+
+<div align="left">
+
+```yml
+allowExplosionBlockDamage: true
 ```
 
 </div>
@@ -612,13 +635,13 @@ teleportLocation: my_minecraft_world,-1.5,68,0.5,0.0,0.0
 
 </div>
 
-#### 实例化的地牢
+#### 副本地下城
 
-*实例化的地牢每次有一组玩家想完成一个地牢时都会创建一个新的世界，并在完成时删除它。为了正确的工作，你必须在`EliteMobs` 的 `world_blueprints` 配置文件夹里放入一个跟随 `dungeonConfigFolderName` 的文件夹。*
+*副本地下城每次都为想要完成地下城的一组玩家创建一个新的世界，并在完成后将其删除。为了使其正常工作，您必须在 EliteMobs 的 `world_blueprints` 配置文件夹中放置一个遵循 `dungeonConfigFolderName` 的文件夹。*
 
-*然后你把你将要使用的世界放在你创建的文件夹里面，确保世界的 `session.lock` 文件被删除。*
+*然后，将您要使用的世界放置在您创建的文件夹中，确保删除了世界的 `session.lock` 文件。*
 
-以下值仅适用于实例化的地牢。注意，所有的实例化地牢都是世界地牢，所以它们也使用来自世界地牢的值。
+以下值仅适用于副本地下城。请注意，所有副本地下城都是世界地下城，因此它们也使用来自世界地下城的值。
 
 <div align="center">
 
@@ -626,11 +649,11 @@ teleportLocation: my_minecraft_world,-1.5,68,0.5,0.0,0.0
 
 ### startLocation
 
-设置实例化地牢起点的传送位置。这是玩家在开始实例化地牢时将被传送到的地方。
+设置副本地下城起点的传送位置。这是玩家使用 `/em start` 启动副本地下城时将被传送到的地方。
 
-| 键           | 值   | 默认值 | 必填 |
-|-------------|:----:|:-----:|:---:|
-| `startLocation` | [字符串](#string) | 无 | ✅ |
+| 键              | 值              | 默认值 | 必填 |
+|-----------------|:-----------------|--------|:-----:|
+| `startLocation` | [字符串](#字符串) | 无      | ✅   |
 
 <details> 
 
@@ -639,7 +662,7 @@ teleportLocation: my_minecraft_world,-1.5,68,0.5,0.0,0.0
 <div align="left">
 
 ```yml
-startLocation: my_minecraft_world,10.5,70,10.5,0.0,0.0
+startLocation: 我的 Minecraft 世界,10.5,70,10.5,0.0,0.0
 ```
 
 </div>
@@ -650,11 +673,11 @@ startLocation: my_minecraft_world,10.5,70,10.5,0.0,0.0
 
 ### permission
 
-设置进入地牢实例所需要的权限。
+设置进入地下城副本所需的权限。
 
-| 键       | 值    | 默认值 | 必填 |
-|---------|:----:|:-----:|:---:|
-| `permission` | [字符串](#string) | 无 | ❌ |
+| 键          | 值              | 默认值 | 必填 |
+|--------------|:-----------------|--------|:-----:|
+| `permission` | [字符串](#字符串) | 无      | ❌   |
 
 <details> 
 
@@ -663,7 +686,7 @@ startLocation: my_minecraft_world,10.5,70,10.5,0.0,0.0
 <div align="left">
 
 ```yml
-permission: elitedungeon.mypermission
+permission: elitedungeon.我的权限
 ```
 
 </div>
@@ -674,11 +697,11 @@ permission: elitedungeon.mypermission
 
 ### minPlayerCount
 
-设置开始地牢所需的最少玩家数量。
+设置启动地下城所需的最小玩家数量。
 
-| 键      | 值   | 默认值 | 必填 |
-|---------|:---:|:-----:|:----:|
-| `minPlayerCount` | [整数](#integer) | `1` | ❌   |
+| 键              | 值                | 默认值 | 必填 |
+|-----------------|:------------------:|--------|:-----:|
+| `minPlayerCount` | [整数](#整数)          | `1`    | ❌   |
 
 <details> 
 
@@ -698,11 +721,11 @@ minPlayerCount: 1
 
 ### maxPlayerCount
 
-设置开始地牢所需的最大玩家数量。
+设置启动地下城所需的最小玩家数量。
 
-| 键      | 值   | 默认值 | 必填 |
-|---------|:---:|:-----:|:----:|
-| `maxPlayerCount` | [整数](#integer) | `5` | ❌   |
+| 键              | 值                | 默认值 | 必填 |
+|-----------------|:------------------:|--------|:-----:|
+| `maxPlayerCount` | [整数](#整数)          | `5`    | ❌   |
 
 <details> 
 
@@ -722,11 +745,11 @@ maxPlayerCount: 5
 
 ### dungeonObjectives
 
-设置地牢要达成的目标列表。
+设置将地下城视为已完成所需的地下城目标列表。
 
-| 键      | 值 | 默认值 | 必填 |
-|---------|:--:|:-----:|:---:|
-| `dungeonObjectives` | [字符串列表](#string_list) | 无 | ✅   |
+| 键                 | 值                     | 默认值 | 必填 |
+|---------------------|:------------------------:|--------|:-----:|
+| `dungeonObjectives` | [字符串列表](#字符串列表)      | 无      | ✅   |
 
 <details> 
 
@@ -734,16 +757,16 @@ maxPlayerCount: 5
 
 <div align="left">
 
-当前有两种地牢目标类型：
+当前有两种地下城目标类型：
 
 * 杀死目标：`filename=boss.yml:amount=X`
-* 清理地牢的百分比：`clearpercentage=X.Y`
+* 杀死地下城百分比的怪物：`clearpercentage=X.Y`
 
 ```yml
 dungeonObjectives:
-- filename=dungeon_final_boss.yml
-- filename=dungeon_miniboss_one.yml
-- filename=dungeon_miniboss_two.yml
+- filename=地下城_最终_Boss.yml
+- filename=地下城_小 Boss_一.yml
+- filename=地下城_小 Boss_二.yml
 ```
 
 ```yml
@@ -759,13 +782,13 @@ dungeonObjectives:
 
 ### difficulties
 
-设置实例化地牢的难度列表。
+设置副本地下城中的难度列表。
 
-**实例化地牢必须拥有此项！**
+**对于副本地下城是必需的！**
 
-| 键      | 值 | 默认值 | 必填 |
-|---------|:--:|:-----:|:---:|
-| `difficulties` | 特殊 [1] | 无 | ❌  |
+| 键           | 值           | 默认值 | 必填 |
+|---------------|:------------:|--------|:-----:|
+| `difficulties` | 特殊 [1]      | 无      | ❌   |
 
 <details> 
 
@@ -800,21 +823,21 @@ difficulties:
 
 <details>
 
-<summary><b>展开表</b></summary>
+<summary><b>展开表格</b></summary>
 
 <div align="center">
 
-设置实例化地牢的难度将会自动在进入地牢时创建不同的难度选择。
+设置副本地下城难度将在进入地下城时自动创建不同的难度选项。
 
-这里设置的难度名字将被用在自定义boss文件夹里，你可以设置基于难度的boss有哪些能力。
+此处设置的难度名称将是自定义 Boss 文件夹中使用的名称，您可以在其中根据难度设置 Boss 拥有的力量。
 
-难度是有以下字段的列表格式：
+难度采用列表格式，具有以下字段：
 
-|     键       | 描述   | 值 | 必填 |
-|:-----------:|-------|----|:--:|
-|   `name`    | 难度的名字，对玩家可见。|[字符串](#string)   |  ✅    |
-|    `id`     | 难度的ID，用于自定义boss和自定义物品的基于难度的特性。|[字符串](#string)   |  ✅    |
-| `levelSync` | 设置等级同步的等级（如果有的话）。等级同步会使所有玩家的装备在设定的值上达到最大值，使玩家无法因为等级过高而超过地牢等级，并保持地牢对后续运行的相关性。基于最终幻想14的等级同步系统。|[整数](#integer)   |  ❌    |
+| 键            | 描述                                                                                                                                                                                                                                                        | 值              | 必填 |
+|----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-----------------|--------|
+| `name`          | 玩家看到的难度名称。                                                                                                                                                                                                                                             | [字符串](#字符串) | ✅   |
+| `id`            | 难度的 ID，用于自定义 Boss 和自定义物品的基于难度的功能。                                                                                                                                                                                                          | [字符串](#字符串) | ✅   |
+| `levelSync`     | 设置等级同步的等级（如果有）。等级同步使所有玩家的装备最大值达到设定值，使玩家无法在地下城中获得过高的等级，并使其在以后的运行中保持相关性。基于最终幻想 14 等级同步系统。                                                                                          | [整数](#整数)          | ❌   |
 
 
 </div>
@@ -827,186 +850,191 @@ difficulties:
 
 # 推荐的 Boss 值
 
-## 创建一个普通的地牢小怪
+## 创建普通的地下城怪物
 
-我们建议保留设置normalizedCombat设为true。此设置会使所有小怪的健康和伤害等比例缩放，无论它们的实体类型是什么。
+我们建议将 normalizedCombat 设置保留为 true。此设置将所有怪物的生命值和伤害标准化为相同的比例，而不管它们的实体类型如何。
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 1.0 #击杀需要4次攻击 
-damageMultiplier: 1.0 #伤害为1.5颗心
+healthMultiplier: 1.0 #4 次攻击杀死
+damageMultiplier: 1.0 #1.5 颗心伤害
 ```
 
-当然，这里需要注意的是，由于 `1.0` 是健康和伤害的默认值，你可以简单地省略定义 `healthMultiplier` 或 `damageMultiplier` 并将 `normalizedCombat` 设置为 `true`。
+当然，以下是保留了清晰度和格式的修订版本：
 
-## 创建小怪群
+**注意：鉴于 `1.0` 是生命值和伤害的默认值，您可以简单地省略定义 `healthMultiplier` 或 `damageMultiplier` 并将 `normalizedCombat` 设置为 `true`。**
 
-小怪群数量众多，但并不非常危险:
+## 创建垃圾怪物群
+
+垃圾怪物群数量众多，但并不十分危险：
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 0.7 #击杀需要3次攻击 
-damageMultiplier: 0.5 #伤害为0.5颗心
+healthMultiplier: 0.7 #3 次攻击杀死
+damageMultiplier: 0.5 #0.5 颗心伤害
 ```
 
-## 创建援兵
+## 创建增援
 
-援兵应该很容易被杀，但是伤害方面却很危险（这些值适用于4+ 近战实体，实际使用可能会有所不同）：
+增援应该很容易被杀死，但在伤害方面构成威胁（这些值建议用于 4 个以上的近战实体，实际使用可能会有所不同）：
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 0.25 #击杀需要1次攻击 
-damageMultiplier: 0.6 #伤害为1颗心
+healthMultiplier: 0.25 #1 次攻击杀死
+damageMultiplier: 0.6 #1 颗心伤害
 ```
 
-## 创建小型 Boss
+## 创建小 Boss
 
-小型 Boss 应该能站稳脚跟，并对玩家构成机械挑战。它应该是一个考验技巧的小结，但不是非常危险的东西：
+小 Boss 应该站稳脚跟，并对玩家构成机制挑战。它应该是一项持续一段时间的技能考验，但不是极度致命的东西：
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 3.0 #击杀需要10次攻击 
-damageMultiplier: 1.2 #伤害为2颗心
+healthMultiplier: 3.0 #10 次攻击杀死
+damageMultiplier: 1.2 #2 颗心伤害
 ```
 
 ## 创建 Boss
 
-Boss 是一个真正的挑战，是地牢中建立起来的结论和对一切有风险的技巧的真正测试。战斗应该很长，死亡应该是一个常在的威胁。
+Boss 是一个真正的挑战，是地下城积累的高潮，也是一场真正的技能考验，一切都岌岌可危。遭遇战应该很长，死亡应该是一个现实的威胁。
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 7.0 #击杀需要23次攻击 
-damageMultiplier: 1.4 #伤害为2.5颗心
+healthMultiplier: 7.0 #23 次攻击杀死
+damageMultiplier: 1.4 #2.5 颗心伤害
 ```
 
-**这些推荐值仅是粗略的估计，最终值应根据具体的遇战情况进行调整。**
+**这些推荐值仅仅是粗略的估计，最终值应根据具体的遭遇战进行调整。**
 
-**这对于最终的地牢Boss尤其重要；你可能会希望显著超过推荐的7.0的健康乘数值，以给最后的战斗带来那种史诗般的感觉。**
+**这对于最终的地下城 Boss 尤其重要；您可能希望显着超过推荐的 7.0 的 healthMultiplier 值，以赋予最后一场战斗史诗般的感觉。**
 
 ***
 
-# 为 EliteMobs 内容打包以便分发
+# 打包 EliteMobs 内容以供分发
 
-最后，你可能想为了存储或分发而打包你的地牢。
+最后，您可能希望打包您的地下城以供存储或分发。
 
-EliteMobs 有一个导入系统，允许管理员快速导入，安装和卸载内容。[你可以在这里看到它是如何工作的。]($language$/elitemobs/setup.md)
+EliteMobs 有一个导入系统，允许管理员快速导入、安装和卸载内容。[您可以在此处查看其工作原理。]($language$/elitemobs/setup.md)
 
 ## 修剪世界
 
-有时，你可能需要减小你的 Minecraft 世界的尺寸，使其更轻，从而更容易分发。这可以通过使用 [WorldBorder 插件](https://www.spigotmc.org/resources/worldborder-1-15.80466/) 来实现。尽管该插件被列为只支持到 MineCraft 1.19 版本，但它在 2024 年 1 月 25 日的最新 MineCraft 版本上也能顺利运行。
+有时，您可能需要缩小 Minecraft 世界的大小，使其更轻，从而更易于分发。这可以通过使用 [WorldBorder 插件](https://www.spigotmc.org/resources/worldborder-1-15.80466/) 来实现。尽管该插件被列为仅支持 MineCraft 直至 1.19 版本，但截至 2024 年 1 月 25 日，它在最新的 MineCraft 版本上无缝运行。
 
 <details>
 <summary>提示</summary>
-如果你是第一次这么做，最好先备份你的世界，以防万一出错。
+如果您是第一次执行此操作，最好创建您的世界的备份，以防万一出现问题。
 </details>
 
-插件安装后，导航到你想修剪的世界的中心或特定区域。然后，执行命令 `/wb set x`，其中 `x` 代表你想要的区域的大致半径大小。
+安装插件后，导航到世界中心或您要修剪的特定区域。然后，执行命令 `/wb set x`，其中 `x` 表示您希望为您的区域设置的大致半径大小。
 
 <details>
 <summary>提示</summary>
-如果 <code>/wb</code> 对你不起作用，试试 <code>/worldborder:wb</code>。
+如果 <code>/wb</code> 对您不起作用，请尝试 <code>/worldborder:wb</code>。
 </details>
 
-执行此命令后，飞行到你的世界的边缘，以验证世界边界是否正确设置并覆盖了预期的大小。当你被推回时，你会认出你已经到达了世界边界的边缘，并在聊天中附带一条消息。
+执行此命令后，飞到您的世界的边缘，以验证世界边界是否已正确设置并覆盖了预期的大小。当您被推回时，您会识别到已到达世界边界边缘，并在聊天中收到一条消息。
 
 ![trim_pic_1.jpg](../../../img/wiki/trim_pic_1.jpg)
 
-在上图中，我们的目标是在紫色区域周围修剪世界，只留下紫色区域周围的几个区块。为了实现这个，我们站在红色方块上的紫色区域的中间，执行 `/wb set 50`，将世界边界设置在紫色区域的刚刚之外。
+在上图中，我们的目标是修剪紫色方块周围的世界，只留下它们周围的几个区块。为此，我们站在红色方块上紫色区域的中间，并执行 `/wb set 50`，将世界边界设置在紫色区域之外。
 
-接下来，我们使用 `/wb trim [freq] [pad]` 命令，频率设置为 200，垫片设置为 20。垫带决定了在世界边界（紫色区域）周围应该留下多少区块，频率决定了每秒应该处理多少个区块。执行 `/wb trim 200 20` 后，我们会被提示确认通过执行 `/wb trim confirm`。我们确认这个操作，过一段时间后，我们的世界会被修剪，减小了它的尺寸，使得分发更加方便。
+接下来，我们使用 `/wb trim [频率] [填充]` 命令，将频率设置为 200，填充设置为 20。填充确定应该在世界边界（紫色区域）周围留下多少个区块，频率确定每秒应该处理多少个区块。运行 `/wb trim 200 20` 后，系统将提示我们通过执行 `/wb trim confirm` 来确认。我们确认操作，一段时间后，我们的世界将被修剪，从而减小其大小并使其更易于分发。
 
-你现在可以使用 `/wb clear all` 删除世界边界，或者你希望的话就保留它。
+您现在可以使用 `/wb clear all` 删除世界边界，或者如果您愿意，也可以保留它。
 
 ## 修剪世界文件夹
 
-在你的世界文件夹中有几个文件和文件夹，我们可以丢弃，因为插件并不使用所有的它们。这将减小你的世界的尺寸，使其更易于分发。
+您的世界文件夹中有一些文件和文件夹我们可以丢弃，因为插件不会使用所有这些文件和文件夹。这将减少您的世界的大小，并使其更易于分发。
 
-对于 NORMAL 环境的世界：
+对于普通的世界环境：
 
-为了准备你的世界，保留以下文件和文件夹：
+要准备您的世界，请保留以下文件和文件夹：
 
-1. **region** 文件夹
-2. **data** 文件夹内的 **raids.dat**（复制的时候确保它放在 **data** 文件夹内）
-3. **level.dat** 文件
+1.  **region** 文件夹
+2.  **data** 文件夹中的 **raids.dat**（确保在复制时将其放在 **data** 文件夹中）
+3.  **level.dat** 文件
 
-你可以安全的删除位于世界文件夹内的所有其他文件和文件夹。这将正确的设置你的世界为 NORMAL 环境。
+您可以安全地删除世界文件夹中所有其他文件和文件夹。这将为普通环境正确设置您的世界。
 
-对于 NETHER 和 THE_END 环境的世界：
+对于地狱和末地世界环境：
 
-为了准备你的世界，保留以下文件和文件夹：
+要准备您的世界，请保留以下文件和文件夹：
 
-1. **DIM-1** 文件夹内的 **region** 文件夹（复制的时候确保它放在 **DIM-1** 文件夹内）
-2. **data** 文件夹内的 **raids.dat**（复制的时候确保它放在 **data** 文件夹内）
-3. **level.dat** 文件
+1.  **DIM-1** 文件夹中的 **region** 文件夹（确保在复制时将其放在 **DIM-1** 文件夹中）
+2.  **data** 文件夹中的 **raids.dat**（确保在复制时将其放在 **data** 文件夹中）
+3.  **level.dat** 文件
 
-你可以安全的删除位于世界文件夹内的所有其他文件和文件夹。这将正确的设置你的世界为 NETHER 和 THE_END 环境。
+您可以安全地删除世界文件夹中所有其他文件和文件夹。这将为地狱和末地环境正确设置您的世界。
 
 ## 运行打包命令
 
-EliteMobs 有 **`/em package <dungeonName> <version>`** 命令。这个命令会遍历 EliteMobs 的所有配置文件夹，并自动将所有与 `dungeonName` 匹配的文件夹中的内容打包成一个压缩文件和一个普通文件夹，在 EliteMobs 的 `exports` 文件夹中。
+EliteMobs 具有 **`/em package <dungeonName> <version>`** 命令。此命令会遍历 EliteMobs 的所有配置文件夹，并将文件夹中与 `dungeonName` 匹配的所有内容自动打包到 EliteMobs 的 `exports` 文件夹中的压缩文件和普通文件夹中。
 
-***因此，我们强烈建议你将你想要打包的内容放在与你的包名相同的文件夹中。*** 否则，你将必须手动收集并将文件打包成文件分发的文件结构。
+***因此，强烈建议您将要打包的内容放在与您的包名称相同的文件夹中。***否则，您将必须手动收集文件并将它们打包到文件结构中以供分发。
 
 ## 添加地下城包文件
 
-如果您正在创建地下城，则需要手动将地下城包文件添加到新生成的“exports”文件夹中。您的地下城包配置文件应遵循上述格式，并放置在一个名为`dungeonpackages`的文件夹中。您可以参考[文件结构部分了解更多](#file-structure)。
+如果您正在创建地下城，则需要将地下城包文件手动添加到导出文件夹中新生成的文件夹中。您的地下城包配置文件应遵循上述格式，并放在名为 `dungeonpackages` 的文件夹中。[有关更多信息，请查看文件结构。](#文件结构)。
 
-**请确定您在完成后对地下城进行压缩！**
+**确保在完成后压缩您的地下城！**
 
 ## 文件结构
 
-如果您的操作一切正常，则文件结构应类似于此示例，我们将地下城命名为`my_cool_dungeon`：
+如果您正确完成了所有操作，则文件结构应类似于此示例，我们将地下城命名为 `我的酷地下城`：
 
 <details>
-<summary>my_cool_dungeon的文件结构示例</summary>
+<summary>我的酷地下城 文件结构示例</summary>
 
-- my_cool_dungeon.zip
+- 我的酷地下城.zip
     * dungeonpackages
-        * my_cool_dungeon.yml <- Your dungeon package configuration file goes here
+        * 我的酷地下城.yml <- 这是您的地下城包配置文件所在的位置
     * worldcontainer
-        * [你的世界文件夹放在这里]
+        * [您的世界文件夹放在这里]
     * wormholes
-        * my_cool_dungeon
-            * [你的虫洞在这里]
+        * 我的酷地下城
+            * [您的虫洞放在这里]
     * npcs
-        * my_cool_dungeon
-            * [你的NPC在这里]
+        * 我的酷地下城
+            * [您的 NPC 放在这里]
     * customtreasurechests
-        * my_cool_dungeon
-            * [你的宝箱在这里]
+        * 我的酷地下城
+            * [您的宝箱放在这里]
     * customquests
-        * my_cool_dungeon
-            * [你的任务在这里]
+        * 我的酷地下城
+            * [您的任务放在这里]
     * customitems
-        * my_cool_dungeon
-            * [你的自定义物品在这里]
+        * 我的酷地下城
+            * [您的自定义物品放在这里]
     * custombosses
-        * my_cool_dungeon
-            * [你的自定义Boss萌在这里]
+        * 我的酷地下城
+            * [您的自定义 Boss 放在这里]
     * customarenas
-        * my_cool_dungeon
-            * [你的自定义竞技场在这里]
+        * 我的酷地下城
+            * [您的自定义竞技场放在这里]
     * powers
-        * my_cool_dungeon
-            * [你的自定义权限在这里]
+        * 我的酷地下城
+            * [您的自定义力量放在这里]
     * world_blueprints
-        * my_cool_dungeon
-            * [你的世界文件夹在这里，用于实例化的地下城]
+        * 我的酷地下城
+            * [您的世界文件夹放在这里，用于副本地下城]
     * customevents
-        * my_cool_dungeon
-            * [你的自定义事件在这里]
+        * 我的酷地下城
+            * [您的自定义事件放在这里]
     * customspawns
-        * my_cool_dungeon
-            * [你的自定义刷新点在这里]
+        * 我的酷地下城
+            * [您的自定义生成放在这里]
     * models
-        * [你的ModelEngine bbmodel格式的模型在这里，接受的文件夹]
+        * [您的 ModelEngine bbmodel 格式模型放在这里，接受文件夹]
 
 </details>
 
-这使大多数用户可以直接将文件拖放到他们的服务器上并立即运行。
+这允许大多数用户将文件直接拖放到他们的服务器上并立即使用它。
 
-***重要提示：打包供应链发放时，务必先卸载MINIDUNGEON！你不想派发已经安装的minidungeons，你希望管理员们在他们的服务器上进行设置！***
+***重要提示：在打包以供分发时，请确保先卸载小型地下城！您不想分发已安装的小型地下城，您希望管理员在他们的服务器上设置它们！***
 
-# 与社区分享你创建的Dungeon Packages
+# 与社区分享您创建的地下城包
 
-Discord有一个[#community_dungeons](https://discord.gg/7Pnd7EjdZq "#community_dungeons")部分，大家可以在那里分享他们的Minidungeon作品。欢迎你进行贡献！
+Discord 包含一个 [#community_dungeons](https://discord.gg/7Pnd7EjdZq "#community_dungeons") 部分，人们可以在其中分享他们的小型地下城作品。欢迎您贡献！
+
+
+

@@ -20,16 +20,14 @@ There are two different plugins that handle "Custom Models".
 
 </details>
 
-### Console / EliteMobs says I'm using the wrong WorldGuard / WorldEdit version
+### Console / EliteMobs says I'm using the wrong WorldGuard version
 
 <details>
 <summary>
 Info
 </summary>
 
-If WorldGuard or WorldEdit are reported by EliteMobs as not being installed, that is because you are using the wrong WorldGuard / WorldEdit version for your server platform. WorldGuard / WorldEdit are very sensitive about which version you are using, and have different version for server software.
-- You can download the WorldEdit version for Spigot / Paper from here: https://dev.bukkit.org/projects/worldedit - Make sure that it says it is compatible with your Minecraft version!
-
+If WorldGuard is reported by EliteMobs as not being installed, that is because you are using the wrong WorldGuard version for your server platform. WorldGuard is very sensitive about which version you are using, and have different version for server software.
 
 - You can download the WorldGuard version for Spigot / Paper from here: https://dev.bukkit.org/projects/worldguard - Make sure that it says it that it is compatible with your Minecraft version!
 

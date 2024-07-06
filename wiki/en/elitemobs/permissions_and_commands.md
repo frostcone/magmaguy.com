@@ -121,7 +121,6 @@ These commands are meant to be run when interacting with menus or interactable t
 | `/em setup done`     |     Stops showing messages on admin login.     |
 | `/em setup minidungeon <minidungeonName>`     |     Installs a Minidungeon.     |
 | `/em setup minidungeon <minidungeonName>`     |     Uninstalls a Minidungeon.     |
-| `/em setup unminidungeon <minidungeonName> noPaste`     |     Uninstalls a Minidungeon without undoing a WorldEdit paste.     |
 | `/em trace <uuid>`     |     Traces the spawns / despawns of a Custom Boss. Requires debug mode to be on.     |
 | `/em debugtp <uuid>`     |     Teleports to the location of a traced Custom Boss. Requires debug mode to be on.     |
 | `/em generateresourcepack`     |     Generates a resource pack. Check the wiki entry about Custom Models on how to use this.     |
