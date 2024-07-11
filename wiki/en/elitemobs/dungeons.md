@@ -367,8 +367,8 @@ This dungeon is part of the Story Mode Dungeon series. Players can embark on que
 EliteMobs Info: 
 Recommended Level[s]: 55 - Group recommended 
 Bosses: 27 Unique 
-Unique Items: 30 (coming soon)
-Custom powers: 15 (more coming soon)
+Unique Items: 30
+Custom powers: 15
 Difficulty: 3 different difficulties: Normal, Hard and Mythic!
 Map type: Instanced World 
 Encounter Type: Sanctum
