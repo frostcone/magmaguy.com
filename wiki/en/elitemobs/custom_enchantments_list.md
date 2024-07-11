@@ -1,3 +1,7 @@
+# Enchantment Level Cap
+
+To raise the cap of any enchantment, navigate to the `enchantments` configuration folder of EliteMobs and edit the `maxLevelV2` value of the desired enchantment.
+
 # Critical Strikes
 
 Critical Strikes give a chance to double the damage dealt to an Elite Mob.
