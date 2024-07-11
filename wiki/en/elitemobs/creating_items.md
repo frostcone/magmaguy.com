@@ -273,6 +273,8 @@ The format for potion effects is `potionEffectName,potionEffectLevel,affectedEnt
 
 EliteMobs also features custom items that function as charms. These items do nothing else but provide potion effects to the player when the item is being held or is equipped in a slot.
 
+WARNING: Using the INSTANT_DAMAGE potion effect will heal undead mobs upon impact, as this is a default mechanic in vanilla Minecraft.
+
 <details>
 
 <summary><b>Example</b></summary>
