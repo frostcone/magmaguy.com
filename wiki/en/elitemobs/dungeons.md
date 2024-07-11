@@ -65,7 +65,7 @@ Credits: Realm of Lotheridon & MagmaGuy
 <details>
 <summary>[Levels 10] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-theclimb">The Climb</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Undead have emerged from the mountain mines and launched a ruthless assault on a peaceful village!
   
 <pre>
 EliteMobs Info:
@@ -77,7 +77,7 @@ More info coming soon.
 <details>
 <summary>[Levels 15] [Instanced Lair] <a href="https://magmaguy.itch.io/elitemobs-thecave">The Cave</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. A formidable creation of magma and flame bars the entrance to the mountain mines!
   
 <pre>
 EliteMobs Info:
@@ -125,7 +125,7 @@ Credits: MagmaGuy
 <details>
 <summary>[Levels 20] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-themines">The Mines</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Descend into the mountain mines to uncover the source of the undead horde and the mysterious force driving them.
   
 <pre>
 EliteMobs Info:
@@ -176,7 +176,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 <details>
 <summary>[Levels 25] [Instanced Lair] <a href="https://magmaguy.itch.io/elitemobs-thebridge">The Bridge</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Beyond the mountain mines lies an ancient dwarven underground city. However, before reaching it, a formidable construct—a guardian that has protected a bridge for centuries—stands in the way.
   
 <pre>
 EliteMobs Info:
@@ -205,7 +205,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 <details>
 <summary>[Levels 30] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thebridge">The City</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Deep underground lies an ancient dwarven city, its once-dwarven inhabitants now shambling through the streets, driven mad by an unknown force. They have been granted eternal life, yet they are not undead. What lies behind this unsettling phenomenon?
   
 <pre>
 EliteMobs Info:
@@ -236,7 +236,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 <details>
 <summary>[Levels 35] [Instanced Lair] <a href="https://magmaguy.itch.io/elitemobs-thepalace">The Palace</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Deep within the dwarven city, within the palace, resides its mad monarch. Dark and unnatural power emanates from the monarch, accompanied by faint, eerie chimes echoing through the halls.
   
 <pre>
 EliteMobs Info:
@@ -267,7 +267,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 <details>
 <summary>[Level 40] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thequarry">The Quarry</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Amidst abundant ores and countless gems, the dwarves have delved deep into the earth in search of riches. Ride the lift down to explore how far this quarry extends and where it leads. Beware of the mad dwarven diggers, miners, and royal spellcasters who still wander these depths.
   
 <pre>
 EliteMobs Info:
@@ -299,7 +299,7 @@ Credits: Realm of Lotheridon, 69OzCanOfBepis
 <details>
 <summary>[Level 45] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thedeepmines">The Deep Mines</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. The quarry lift reaches its limit, but beyond lies the deep mines where the dwarves' greed has led them. These mines stretch into the Nether itself, where a powerful entity from the Nether realm prowls in the shadows.
   
 <pre>
 EliteMobs Info:
@@ -333,7 +333,7 @@ Credits: Dalio - Map, Agnet75 - Music, MagmaGuy
 <details>
 <summary>[Level 50] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thenetherwastes">The Nether Wastes</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. In the Nether Wastes, an unfamiliar realm to all, unknown nether creatures roam its desolate paths. From its heart, a haunting resonance echoes, punctuated by the eerie chime of a bell—an unnatural sound that unsettles all who hear it.
   
 <pre>
 EliteMobs Info:
@@ -361,7 +361,7 @@ Credits: Frostcone, MagmaGuy, Delio
 <details>
 <summary>[Level 55] [Instanced Sanctum] <a href="https://magmaguy.itch.io/elitemobs-thenetherbell">The Nether Bell</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
 
-This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline.
+This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Deep in the Nether, where no one should tread, lies a haunting scene of death and decay. Creatures from the void, unimaginable even in nightmares, prowl these forsaken lands. At the heart of this desolation stands a grotesque creation—born from the collapsing energies of the Nether over centuries—an abomination known as the Void Bell. Its incessant ringing and chimes weave a sinister promise into the minds of those who hear it, tempting them with unimaginable riches and powers. Its resonation echoes deep within, a haunting presence that refuses to be shaken.
   
 <pre>
 EliteMobs Info: 
