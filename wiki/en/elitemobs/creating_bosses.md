@@ -1409,6 +1409,8 @@ Sets the music a boss will play, starting when it spawns. Requires the .ogg file
 |-|:-:|-|
 | `song` | [String](#string) | none |
 
+**Note: The `song` setting requires `followDistance` to be set, as `followDistance` determines the range at which the song starts playing.**
+
 <details> 
 
 <summary><b>Example</b></summary>
