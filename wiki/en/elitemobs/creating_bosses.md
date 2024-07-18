@@ -1436,6 +1436,7 @@ Sets the music a boss will play, starting when it spawns. Requires the .ogg file
 | `song` | [String](#string) | none |
 
 **Note: The `song` setting requires `followDistance` to be set, as `followDistance` determines the range at which the song starts playing.**
+Check out the example on how to set the `length` (milliseconds) of the `song`.
 
 <details> 
 
@@ -1451,7 +1452,7 @@ song: name=elitemobs:ice_queen.idle length=76370
 
 </div>
 
-This will play the song ice_queen.idle for 76370 ticks and then loop it. Note that the location of the song is determined by the resource pack.
+This will play the song ice_queen.idle for 76370 milliseconds and then loop it. Note that the location of the song is determined by the resource pack.
 
 Here is the second way of setting up songs:
 
@@ -1461,7 +1462,7 @@ Here is the second way of setting up songs:
 song: name=elitemobs:ice_queen.end_transition length=14328->name=elitemobs:ice_queen.end_loop length=28657
 ```
 
-This will play the song ice_queen.end_transition for 14328 ticks and then transition to ice_queen.end_loop for 28657 ticks and loop the end_loop.
+This will play the song ice_queen.end_transition for 14328 milliseconds and then transition to ice_queen.end_loop for 28657 milliseconds and loop the end_loop.
 
 This allows bosses to have an "intro" or "transition" song and then a main track that loops.
 
