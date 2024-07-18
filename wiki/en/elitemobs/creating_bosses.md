@@ -194,7 +194,7 @@ Sets the level of the boss.
 
 | Key | Values | Default |
 |-|:-:|-|
-| `entityType` | Positive [integer](#integer) numbers or `dynamic` | `dynamic` |
+| `level` | Positive [integer](#integer) numbers or `dynamic` | `dynamic` |
 
 `dynamic` is used for events and adjusts to the level of nearby players at the time of the boss spawn.
 It is not recommended for regional bosses.
@@ -207,6 +207,32 @@ It is not recommended for regional bosses.
 
 ```yml
 level: 1
+```
+
+</div>
+
+</details>
+
+***
+
+### bossType
+
+Sets what type the boss is. This is used to display boss health bars and other features.
+
+| Key | Values | Default |
+|-|:-:|-|
+| `bossType` | `NORMAL`, `MINIBOSS`, `BOSS`, `EVENT` | `NORMAL` |
+
+`MINIBOSS`, `BOSS`, `EVENT` will make the plugin display health bars when players are fighting these boss types.
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+bossType: MINIBOSS
 ```
 
 </div>
