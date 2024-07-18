@@ -756,6 +756,53 @@ Example1 script will damage all players within 10 blocks from the boss.
 
 ---
 
+### SCALE
+
+Allows you to scale entities.
+
+| Values   |                            Details                            | Mandatory |
+|----------|:-------------------------------------------------------------:|:---------:|
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) |     ✅     |
+| `scale` |            Sets the scaling size                               |     ✅     |
+| `duration` |           Sets how long the scaling effect should last      |     ❌     |
+
+When scaling, 1.0 represents the default size. To make the entity larger, increase the value (e.g., `1.2`). To make the entity smaller, decrease the value (e.g., `0.8`).
+
+**Note: This can target players so please be careful with how you use it!**
+
+**Note: If you have already scaled the boss using the `scale` setting in the boss config, the duration setting will reset the boss back to the default size of `1.0`, regardless of the initial `scale` value in the config.**
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedEvent
+    Actions:
+    - action: SCALE
+      Target:
+        targetType: SELF
+      scale: 0.3
+      duration: 60
+```
+
+When the mob gets hit, it will shrink to a tiny size. After 60 ticks (3 seconds), it will revert back to its default size (`1.0`).
+
+</div>
+
+</details>
+
+</div>
+
+---
+
 ### SET_MOB_AI
 
 Sets if the mob has AI. In Minecraft, mobs with no AI will not move and will not attack. They can still get damaged, but damaging them will not result in them getting knocked back.
