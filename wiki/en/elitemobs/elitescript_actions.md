@@ -189,6 +189,7 @@ eliteScript:
     - action: MAKE_INVULNERABLE
       Target:
         targetType: SELF
+      invulnerable: true
       duration: 60
 ```
 
