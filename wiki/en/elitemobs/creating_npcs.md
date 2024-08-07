@@ -58,6 +58,32 @@ name: "&aEnn Peecee"
 
 ***
 
+### scale
+
+Sets the scale (size) of the NPC.
+
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `scale` | [Multiplier](#multiplier) | `1.0` |
+
+When scaling, `1.0` represents the default size. To make the entity larger, increase the value (e.g., `1.2`). To make the entity smaller, decrease the value (e.g., `0.8`).
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+scale: 1.2
+```
+
+</div>
+
+</details>
+
+***
+
 ### role
 
 Sets the role of the NPC, under the name. Only visual. Supports [Color Codes](#color_codes).

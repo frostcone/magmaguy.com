@@ -215,6 +215,32 @@ level: 1
 
 ***
 
+### scale
+
+Sets the scale (size) of the boss.
+
+| Key | Values | Default |
+|-|:-:|-|
+| `scale` | [Multiplier](#multiplier) | `1.0` |
+
+When scaling, `1.0` represents the default size. To make the entity larger, increase the value (e.g., `1.2`). To make the entity smaller, decrease the value (e.g., `0.8`).
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+scale: 1.2
+```
+
+</div>
+
+</details>
+
+***
+
 ### bossType
 
 Sets what type the boss is. This is used to display boss health bars and other features.
