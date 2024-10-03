@@ -15,6 +15,7 @@ Actions always start with the type of action you are going to do. Different acti
 | `scripts`          |                                                         Sets the scripts that will run at the end of the action                                                          | ❌ |
 | `onlyRunOneScript` |                                                       Picks one of the `scripts` at random and only runs that one.                                                       | ❌ |
 | `offset`           | This option goes under `Target`. Allows you to offset the target location. Offset does not work with actions that are targeting zones with `ZONE_FULL` or `ZONE_BORDER`. | ❌ |
+| `debug`           | This option goes under the action section of the script. When set to true it will display barrier icons in the area that the action is. | ❌ |
 
 ## Action types
 
