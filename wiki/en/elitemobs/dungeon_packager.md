@@ -24,7 +24,7 @@ The dungeon packager allows admins to not only create and package dungeons but a
 
 # Creating Dungeons
 
-The following settings are used to create a configuration file which should go into the `dungeonpackages` folder. These settings are used to create dungeons specifically, and are not required if you just want to use the dungeon packager to distribute non-dungeon content such as a pack of items or events.
+The following settings are used to create a configuration file which should go into the `content_packages` folder. These settings are used to create dungeons specifically, and are not required if you just want to use the dungeon packager to distribute non-dungeon content such as a pack of items or events.
 
 ## Required plugins
 
@@ -39,6 +39,10 @@ EliteMobs used to have two major kinds of dungeons: world-based and schematic-ba
 Schematic-based dungeons, were associated with a schematic build. They are now phased out and not supported anymore.
 
 All EliteMobs dungeons are now world based.
+
+## Required pack.meta file
+
+Your dungeon package should include a `pack.meta` file, which is simply a renamed `.txt` file with a `.meta` extension. This file should contain just one word, indicating which plugin the package is for (e.g., "elitemobs," written in lowercase). The `pack.meta` file must be located in the root directory of your package, alongside all the other folders.
 
 ***
 
@@ -974,7 +978,7 @@ EliteMobs has the **`/em package <dungeonName> <version>`** command. This comman
 
 ## Adding the dungeon package file
 
-If you are creating a dungeon, you will need to manually add the dungeon package file into the freshly generated folder in the exports folder. Your dungeon package configuration file should follow the format described above and be placed in a folder called `dungeonpackages`. [Check file structure for more on that.](#file-structure).
+If you are creating a dungeon, you will need to manually add the dungeon package file into the freshly generated folder in the exports folder. Your dungeon package configuration file should follow the format described above and be placed in a folder called `content_packages`. [Check file structure for more on that.](#file-structure).
 
 **Make sure you zip your dungeon once done!**
 
@@ -986,7 +990,7 @@ If you did everything correctly, the file structure should be similar to this ex
 <summary>my_cool_dungeon File Structure Example</summary>
 
 - my_cool_dungeon.zip
-    * dungeonpackages
+    * content_packages
         * my_cool_dungeon.yml <- This is where your dungeon package configuration file goes
     * worldcontainer
         * [Your world folders go here]
