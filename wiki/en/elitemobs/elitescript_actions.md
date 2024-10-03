@@ -1168,6 +1168,8 @@ Spawns a falling block at the target. Visual only, does not place the block.
 
 `landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md&section=run_script) but can accept the special target type `LANDING_LOCATION`.
 
+The `LANDING_LOCATION` is inherited by script runners, allowing for a landing location script to also function as a script runner. You can add a wait on the action that calls the scripts, followed by the subsequent script calls. The `LANDING_LOCATION` will always be the argument for the target, even when inherited, as it is assigned in a single specific way.
+
 *Note: This action also accepts relative vectors. Learn more about how to use those [here]($language$/elitemobs/elitescript_relative_vectors.md).*
 
 <div align="center">
