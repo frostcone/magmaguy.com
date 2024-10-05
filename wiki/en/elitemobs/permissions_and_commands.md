@@ -101,6 +101,7 @@ It is recommended you install these to run all of these commands through NPCs in
 | `/em /em transitiveBlocks registerArea <filename> <ON_SPAWN/ON_REMOVE>`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
 | `/em transitiveBlocks editArea <filename> <ON_SPAWN/ON_REMOVE>`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
 | `/em transitiveBlocks cancel`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em protection bypass`     |     Toggles dungeon protection. Also works for the Adventurer's Guild.     |
 
 ## Internal admin commands
 
