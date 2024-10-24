@@ -805,6 +805,65 @@ When the mob gets hit, it will shrink to a tiny size. After 60 ticks (3 seconds)
 
 ---
 
+### SET_FACING
+
+Makes the boss face a certain direction. Mostly used together with animations.
+
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `vValue` | Which direction should the boss face. X,Y,Z | ❌ |
+| `RelativeVector` |      Uses relative vectors to make the boss face a target.      | ❌ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobEnterCombatEvent
+    Actions:
+    - action: SET_FACING
+      vValue: 1,0,0
+```
+
+Will make the boss face East.
+
+</div>
+
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobEnterCombatEvent
+    Actions:
+    - action: SET_FACING
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          range: 20
+```
+
+Will make the boss face a player within 20 blocks range.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
 ### SET_MOB_AI
 
 Sets if the mob has AI. In Minecraft, mobs with no AI will not move and will not attack. They can still get damaged, but damaging them will not result in them getting knocked back.
