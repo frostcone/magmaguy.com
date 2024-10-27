@@ -120,7 +120,7 @@ procedurallyGeneratedItemSettings:
 |--------|:-----------------:|---------|
 | `mean` | [Double](#double) | `4`     |
 
-Set the `mean`. Read the details about that [here](#what-is-a-treasure-file).
+Set the `mean`. Read the details about that [here](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
@@ -130,7 +130,7 @@ Set the `mean`. Read the details about that [here](#what-is-a-treasure-file).
 |---------------------|:-----------------:|---------|
 | `standardDeviation` | [Double](#double) | `3`     |
 
-Set the `standardDeviation`. Read the details about that [here](#what-is-a-treasure-file).
+Set the `standardDeviation`. Read the details about that [here](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
@@ -176,7 +176,7 @@ By default:
 - `rare` has a default `weight` of 30
 - `epic` has a default `weight` of 10
 
-Making common items 6x more likely to drop than epic items. You can read more about [`weight`s here](#what-is-a-treasure-file)!
+Making common items 6x more likely to drop than epic items. You can read more about `weight`s [here](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)!
 
 Aside from the weight, each rarity table has its own list of `items`.
 
@@ -184,7 +184,7 @@ Aside from the weight, each rarity table has its own list of `items`.
 
 ### rarity items
 
-Rarity items are a [map list]($language$/global/configuration_file_guide.md&section=map_list) which lists all the items that the rarity table has.
+Rarity items are a [map list](https://magmaguy.com/wiki.html#lang=en&article=global+configuration_file_guide.md&section=map-list) which lists all the items that the rarity table has.
 
 There items have the following settings:
 
@@ -219,7 +219,7 @@ When using the lootify command, instead of a material lootify will provide a `se
 
 #### weight
 
-Sets the weight for the weighted chance. More about that [here](#what-is-a-treasure-file).
+Sets the weight for the weighted chance. More about that [here](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
