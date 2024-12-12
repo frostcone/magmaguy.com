@@ -80,6 +80,115 @@ Encounter design should be a priority when designing the combat area. Ideally yo
 
 If the bosses have a power that required running away from them, the area needs to be big enough to accommodate that. If there is a power where you must hide behind an obstacle, the structure needs that kind of obstacle. There's a lot of details that can go into building these arenas, and the more you take into account the better the encounter will be.
 
+## Modifying the EliteMobs Resource Pack
+
+As of Minecraft version 1.21.4 and EliteMobs version 9.1.13, the EliteMobs resource pack has been updated to align with Minecraft's new method for using custom models.  
+
+The updated EliteMobs resource pack structure is as follows:  
+
+**elitemobs_resource_pack**  
+- **assets**  
+  - **elitemobs**  
+    - **items**  
+      - This directory contains JSON files that define which custom models Minecraft can use. The actual models are stored in the `models` folder.  
+      - Subdirectories:  
+        - **coins**  
+        - **equipment**  
+        - **primis_map**  
+        - **ui**  
+    - **models**  
+      - This folder contains the actual model files as JSON files.  
+      - Subdirectories:  
+        - **coins**  
+        - **equipment**  
+        - **primis_map**  
+        - **ui**  
+    - **textures**  
+      - This folder stores all textures, including those used by the models.  
+      - Subdirectories:  
+        - **blocks**  
+        - **gui**  
+        - **items** (this is where model-specific textures are stored)  
+        - **primis_map**  
+        - **ui**  
+  - **minecraft**  
+    - **atlases**  
+    - **font**  
+    - **models**  
+      - **items** (contains JSON files that specify which items in Minecraft should use custom models)  
+    - **sounds**  
+      - **custom** (stores custom sound files)
+
+---
+
+Let's break down how a JSON file in the *.minecraft\resourcepacks\elitemobs_resource_pack\assets\elitemobs\items\coins\* folder is structured and what it does:
+
+```
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "elitemobs:coins/coin1"
+  }
+}
+```
+
+Purpose:
+This JSON file tells Minecraft that this is a model, specifies the type of model, and indicates the location of the model file.
+
+Key Fields:
+
+`type: minecraft:model`
+This specifies that the file represents a model type.
+`model: elitemobs:coins/coin1`
+This points to the location of the model within the resource pack.
+
+Path Details:
+
+`elitemobs:` instructs Minecraft to look in the elitemobs folder within the assets directory.
+`coins/coin1` specifies the subfolder and the model file name.
+
+The full path to the referenced model file is:
+`*.minecraft\resourcepacks\elitemobs_resource_pack\assets\elitemobs\models\coins\coin1.json`
+
+---
+
+A good way to test if your custom models are working correctly is to use the following command:
+
+/minecraft:give @p apple[item_model="elitemobs:coins/coin1"]
+
+How It Works:
+This command gives you an apple that uses the `elitemobs:coins/coin1` model. If the resource pack is set up correctly, you should see the custom coin model applied to the apple item.
+
+
+Testing Your Own Custom Model:
+If you’ve added your own custom model to the resource pack, follow these steps to test it:
+
+1. **Create the Model JSON**:  
+   Place your JSON file in the appropriate subfolder within the `items` directory.  
+   For example:  
+   `assets/elitemobs/items/mymodel/myawesomemodel.json`
+
+2. **Add the Model File**:  
+   Add the corresponding model file (`myawesomemodel.json`) to the `models` folder within the same subfolder.  
+   For example:  
+   `assets/elitemobs/models/mymodel/myawesomemodel.json`
+
+3. **Add the Texture**:  
+   Add the texture file for the model in the `textures` folder.  
+   For example:  
+   `assets/elitemobs/textures/items/myawesomemodel.png`
+
+---
+
+Once everything is set up, use the command below to test your model:
+
+`/minecraft:give @p apple[item_model="elitemobs:mymodel/myawesomemodel"]`
+
+If everything was done correctly, you’ll receive an apple in your hand, and it will display your custom model instead of the default apple model.
+
+
+
+
 ## Questions?
 
 [Ask on discord any time!](https://discord.gg/9f5QSka)
