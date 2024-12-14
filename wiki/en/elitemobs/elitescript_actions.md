@@ -15,6 +15,7 @@ Actions always start with the type of action you are going to do. Different acti
 | `scripts`          |                                                         Sets the scripts that will run at the end of the action                                                          | ❌ |
 | `onlyRunOneScript` |                                                       Picks one of the `scripts` at random and only runs that one.                                                       | ❌ |
 | `offset`           | This option goes under `Target`. Allows you to offset the target location. Offset does not work with actions that are targeting zones with `ZONE_FULL` or `ZONE_BORDER`. | ❌ |
+| `debug`           | This option goes under the action section of the script. When set to true it will display barrier icons in the area that the action is. | ❌ |
 
 ## Action types
 
@@ -189,6 +190,7 @@ eliteScript:
     - action: MAKE_INVULNERABLE
       Target:
         targetType: SELF
+      invulnerable: true
       duration: 60
 ```
 
@@ -756,6 +758,112 @@ Example1 script will damage all players within 10 blocks from the boss.
 
 ---
 
+### SCALE
+
+Allows you to scale entities.
+
+| Values   |                            Details                            | Mandatory |
+|----------|:-------------------------------------------------------------:|:---------:|
+| `Target` | [More info here]($language$/elitemobs/elitescript_targets.md) |     ✅     |
+| `scale` |            Sets the scaling size                               |     ✅     |
+| `duration` |           Sets how long the scaling effect should last      |     ❌     |
+
+When scaling, 1.0 represents the default size. To make the entity larger, increase the value (e.g., `1.2`). To make the entity smaller, decrease the value (e.g., `0.8`).
+
+**Note: This can target players so please be careful with how you use it!**
+
+**Note: If you have already scaled the boss using the `scale` setting in the boss config, the duration setting will reset the boss back to the default size of `1.0`, regardless of the initial `scale` value in the config.**
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedEvent
+    Actions:
+    - action: SCALE
+      Target:
+        targetType: SELF
+      scale: 0.3
+      duration: 60
+```
+
+When the mob gets hit, it will shrink to a tiny size. After 60 ticks (3 seconds), it will revert back to its default size (`1.0`).
+
+</div>
+
+</details>
+
+</div>
+
+---
+
+### SET_FACING
+
+Makes the boss face a certain direction. Mostly used together with animations.
+
+| Values |                            Details                            | Mandatory |
+| --- |:-------------------------------------------------------------:| :-: |
+| `vValue` | Which direction should the boss face. X,Y,Z | ❌ |
+| `RelativeVector` |      Uses relative vectors to make the boss face a target.      | ❌ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobEnterCombatEvent
+    Actions:
+    - action: SET_FACING
+      vValue: 1,0,0
+```
+
+Will make the boss face East.
+
+</div>
+
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobEnterCombatEvent
+    Actions:
+    - action: SET_FACING
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          range: 20
+```
+
+Will make the boss face a player within 20 blocks range.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
 ### SET_MOB_AI
 
 Sets if the mob has AI. In Minecraft, mobs with no AI will not move and will not attack. They can still get damaged, but damaging them will not result in them getting knocked back.
@@ -1118,6 +1226,8 @@ Spawns a falling block at the target. Visual only, does not place the block.
 | `vValue`         | Sets the velocity and direction of a falling block. | ✅ |
 
 `landingScripts` works the same way as [`RUN_SCRIPT`]($language$/elitemobs/elitescript_actions.md&section=run_script) but can accept the special target type `LANDING_LOCATION`.
+
+The `LANDING_LOCATION` is inherited by script runners, allowing for a landing location script to also function as a script runner. You can add a wait on the action that calls the scripts, followed by the subsequent script calls. The `LANDING_LOCATION` will always be the argument for the target, even when inherited, as it is assigned in a single specific way.
 
 *Note: This action also accepts relative vectors. Learn more about how to use those [here]($language$/elitemobs/elitescript_relative_vectors.md).*
 

@@ -290,3 +290,39 @@ Gives the condition a random chance to be valid.
 | `randomChance` | Chance that the condition will be valid. | Number between 0.0 and 1.0 |
 
 Note that this condition is special as it does not require a target.
+
+## Filter NEARBY with tags
+
+To filter `NEARBY_MOBS` or `NEARBY_PLAYERS` based on specific tags, use `ACTION_TARGET` as the condition's target (If the condition is applied to an action and not the script itself). This ensures that the script accurately filters only the mobs/players with the specified tags.
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Actions:
+    - action: SET_MOB_AI
+      Target:
+        targetType: NEARBY_MOBS
+        range: 40
+      bValue: false
+      Conditions:
+        hasTags:
+          - TurnOff
+        Target:
+          targetType: ACTION_TARGET
+```
+
+This script will look for any nearby mobs with the tag `TurnOff` and if they have the tag it will then turn off their AI.
+
+</div>
+
+</details>
+
+</div>

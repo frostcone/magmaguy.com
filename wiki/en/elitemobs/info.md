@@ -92,9 +92,9 @@ These encounters feature custom, unique Elites that pose a greater challenge and
 
 Players receive notifications in the chat when an event occurs, with the option to track the Elite's health and location via a clickable link. If the Elite is not defeated within a certain time frame, the event ends and the Elite despawns.
 
-You can disable all events by opening events.yml and setting the values actionEventsEnabled and timedEventsEnabled to false.
+You can disable all events by opening events.yml and setting the values `actionEventsEnabled` and `timedEventsEnabled` to `false`.
 
-If you would like to disable individual events you can go to ~plugins\EliteMobs\customevents. there you will find configs for each event and you can disable any event by opening its config and setting the value isEnabled to false.
+If you would like to disable individual events you can go to *~plugins\EliteMobs\customevents*. there you will find configs for each event and you can disable any event by opening its config and setting the value `isEnabled` to `false`.
 
 <div align="center">
 
@@ -190,7 +190,7 @@ All world dungeon have a set level and any players attempting the dungeons shoul
 
 You can get dungeons by going to: [Itch.io](https://magmaguy.itch.io/) or by subscribing on [Patreon](https://www.patreon.com/magmaguy). There are several free dungeons that you can download from [here](https://magmaguy.itch.io/em-free-content).
 
-You can disable individual dungeons by going to *~plugins\EliteMobs\dungeonpackages* and opening up the dungeon config for the dungeon you wish to disable and setting the `isEnabled` value to `false`.
+You can disable individual dungeons by going to *~plugins\EliteMobs\content_packages* and opening up the dungeon config for the dungeon you wish to disable and setting the `isEnabled` value to `false`.
 
 <div align="center">
 

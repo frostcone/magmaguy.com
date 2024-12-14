@@ -24,7 +24,7 @@ The dungeon packager allows admins to not only create and package dungeons but a
 
 # Creating Dungeons
 
-The following settings are used to create a configuration file which should go into the `dungeonpackages` folder. These settings are used to create dungeons specifically, and are not required if you just want to use the dungeon packager to distribute non-dungeon content such as a pack of items or events.
+The following settings are used to create a configuration file which should go into the `content_packages` folder. These settings are used to create dungeons specifically, and are not required if you just want to use the dungeon packager to distribute non-dungeon content such as a pack of items or events.
 
 ## Required plugins
 
@@ -39,6 +39,10 @@ EliteMobs used to have two major kinds of dungeons: world-based and schematic-ba
 Schematic-based dungeons, were associated with a schematic build. They are now phased out and not supported anymore.
 
 All EliteMobs dungeons are now world based.
+
+## Required pack.meta file
+
+Your dungeon package should include a `pack.meta` file, which is simply a renamed `.txt` file with a `.meta` extension. This file should contain just one word, indicating which plugin the package is for (e.g., "elitemobs," written in lowercase). The `pack.meta` file must be located in the root directory of your package, alongside all the other folders.
 
 ***
 
@@ -848,6 +852,59 @@ Difficulties are in a list format which have the following fields:
 
 ***
 
+## Using the meta_pack.yml dungeon package file for large dungeons.
+
+Sometimes, you may be working on a large dungeon that includes other, smaller dungeons within itself, allowing players to travel between them through the main dungeon world. A great example of this is the EliteMobs Adventure Dungeon Primis.
+
+Primis features a vast world where players can explore and complete quests, but it also includes two instanced dungeons within its world—one of which serves as the final boss fight. In cases like this, there will be multiple dungeon package files, even though they all belong to the same overarching dungeon.
+
+To manage this, we use a meta dungeon package file. This file acts as a central directory, specifying the primary dungeon and listing all additional dungeon content associated with it.
+
+Let’s take a closer look at how the Primis meta dungeon package is structured:
+
+```yaml
+isEnabled: true
+name: '&2[000-020] The Primis Adventure!'
+customInfo:
+- The tutorial adventure for players
+- new to EliteMobs!
+downloadLinkV2: https://discord.gg/9f5QSka
+dungeonSizeCategory: LAIR
+environment: NORMAL
+protect: true
+contentType: META_PACKAGE
+containedPackages:
+- primis_adventure.yml
+- primis_blood_temple_sanctum.yml
+- primis_gladius_invasion_dungeon.yml
+setupMenuDescription:
+- '&2A soft tutorial adventure for players between levels 0-20!'
+- '&2Adventures are massive maps with quests,'
+- '&2many bosses and npcs, among other things!'
+- '&2Also has custom models!'
+dungeonVersion: 21 #added dungeon meta package file
+```
+
+As you can see, the meta dungeon package file is very similar to a regular dungeon package, with a few key differences. The `contentType:` is set to `META_PACKAGE`, and there is an additional setting called `containedPackages:`. This setting lists all the other dungeon packages that are part of the larger dungeon.
+
+When creating your meta package, be sure to include the `containedPackages:` setting and list every dungeon package that is part of your larger dungeon. This ensures that everything is properly linked and organized within the overarching structure.
+
+When versioning your dungeon, all versioning should be managed through the meta package. This is because the meta package serves as the primary package that determines the version of the entire dungeon and is also the package used to display information in the `/em setup` menu.
+
+Keep in mind that individual dungeons listed in the meta package might still appear in the `/em teleport` menu. To prevent this, you’ll need to manually disable teleport options for each of those dungeons in their respective configuration files.
+
+For example, in the case of the Primis dungeon:
+
+Disable teleport entries in the menu for `primis_blood_temple_sanctum.yml` and `primis_gladius_invasion_dungeon.yml`.
+Leave teleport options enabled for `primis_adventure.yml`, as this serves as the main hub where players begin their journey and access the other dungeons.
+This setup ensures a smooth experience for players while maintaining proper structure and functionality for the dungeon system.
+
+When naming the file we recommend the following naming convention:
+
+`your_dungeon_name_meta_pack.yml`
+
+***
+
 # Recommended Boss Values
 
 ## Creating an average dungeon mob
@@ -974,7 +1031,7 @@ EliteMobs has the **`/em package <dungeonName> <version>`** command. This comman
 
 ## Adding the dungeon package file
 
-If you are creating a dungeon, you will need to manually add the dungeon package file into the freshly generated folder in the exports folder. Your dungeon package configuration file should follow the format described above and be placed in a folder called `dungeonpackages`. [Check file structure for more on that.](#file-structure).
+If you are creating a dungeon, you will need to manually add the dungeon package file into the freshly generated folder in the exports folder. Your dungeon package configuration file should follow the format described above and be placed in a folder called `content_packages`. [Check file structure for more on that.](#file-structure).
 
 **Make sure you zip your dungeon once done!**
 
@@ -986,7 +1043,7 @@ If you did everything correctly, the file structure should be similar to this ex
 <summary>my_cool_dungeon File Structure Example</summary>
 
 - my_cool_dungeon.zip
-    * dungeonpackages
+    * content_packages
         * my_cool_dungeon.yml <- This is where your dungeon package configuration file goes
     * worldcontainer
         * [Your world folders go here]

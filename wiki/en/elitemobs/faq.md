@@ -311,3 +311,14 @@ This setting is actually located in your `server.properties` file. You can usual
 ### How can I turn off events?
 
 If you would like to turn off events such as the weapons goblin, charms goblin etc. Then you can open up *~plugins\EliteMobs\events.yml* then locate the settings `actionEventsEnabled`, `timedEventsEnabled` and set them to `false`.
+
+### How can I edit a dungeon world or the Adventurer's Guild world?
+
+Starting with EliteMobs 9, EliteMobs no longer relies on WorldGuard for dungeon and content protection. To temporarily bypass this protection, use the command `/em protection bypass`.
+
+If you want to permanently disable protection for a specific dungeon, follow these steps:
+
+1. Navigate to *plugins/EliteMobs/content_packages/*.
+2. Find the *dungeon_config.yml* file for the dungeon you want to modify.
+3. Open the config file and locate the `protect:` setting.
+4. Change the value to `false` to disable protection.

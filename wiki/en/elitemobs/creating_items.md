@@ -273,6 +273,8 @@ The format for potion effects is `potionEffectName,potionEffectLevel,affectedEnt
 
 EliteMobs also features custom items that function as charms. These items do nothing else but provide potion effects to the player when the item is being held or is equipped in a slot.
 
+WARNING: Using the INSTANT_DAMAGE potion effect will heal undead mobs upon impact, as this is a default mechanic in vanilla Minecraft.
+
 <details>
 
 <summary><b>Example</b></summary>
@@ -438,6 +440,42 @@ customModelID: 1
 </div>
 
 This will use the custom texture 1 of diamonds swords from the resource pack the player is using. It is recommended you set your server up to give players resource packs on login if you want to use this feature correctly.
+
+</details>
+
+***
+
+### customModelV2
+
+Starting with Minecraft version 1.21.4 (EM 9.1.13), this is the new required setting for configuring custom item model IDs.
+Sets the texture of the item. Requires using a valid texture from the resource pack!
+
+| Key | Values | Default |
+|-|:-:|-|
+| `customModelV2` | [String](#string) | none |
+
+<details>
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+customModelV2: elitemobs:equipment/magmaguys_toothpick
+```
+
+This setting assigns a specific texture to an item. Here’s how it works:
+
+- `elitemobs:` is the main directory in the resource pack's `assets` folder.
+- `equipment` is a subdirectory inside `assets/elitemobs/models`.
+- `magmaguys_toothpick` is the model file located in `assets/elitemobs/models/equipment` in the resource pack.
+
+The full path to the model file in this example would be:
+`\.minecraft\resourcepacks\elitemobs_resource_pack\assets\elitemobs\models\equipment\magmaguys_toothpick.json`
+
+</div>
+
+This will use the custom texture `magmaguys_toothpick` from the EliteMobs resource pack the player is using. It is recommended you set your server up to give players resource packs on login if you want to use this feature correctly.
 
 </details>
 
