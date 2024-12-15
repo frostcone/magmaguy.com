@@ -1,17 +1,22 @@
-# Contenido prehecho actual de EliteMobs
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+
+# Contenido prefabricado actual de EliteMobs
 
 <details>
-<summary>[Niveles 0-20] [Aventura] <a href="https://magmaguy.itch.io/primis">Primis Adventure</a> / <a href="https://www.patreon.com/posts/adventure-primis-71274573">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 0-20] [Aventura] <a href="https://magmaguy.itch.io/primis">Aventura Primis</a> / <a href="https://www.patreon.com/posts/adventure-primis-71274573">patreon.com/magmaguy</a></summary>
+
+Este extenso mapa de aventuras está repleto de misiones, botín y una variedad de mobs desafiantes, diseñados para sumergir a los jugadores en el mundo de EliteMobs. A través de un juego atractivo, los jugadores aprenderán la mecánica y las características de EliteMobs de una manera emocionante e interactiva. Los fanáticos de los MMORPG encontrarán la experiencia familiar y cautivadora, con elementos que recuerdan a sus MMO favoritos.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 0 - 20- Contenido que se puede jugar en solitario
-Jefes: 957 regionales [200 únicos + refuerzos + fases + bloques transitivos]
-Modelos personalizados: 11 (algunos actualmente sin implementar, en progreso)
+Nivel(es) recomendados: 0 - 20- Contenido para un jugador
+Jefes: 957 Regionales [200 Únicos + Refuerzos + Fases + Bloques Transitivos]
+Modelos personalizados: 11 (algunos actualmente no implementados, WIP)
 Objetos únicos: 153
 Cofres del tesoro: 25 únicos
 Misiones: 98
 NPC: 255 únicos
-1 arena
+1 Arena
 Dificultad: Se recomiendan dos jugadores
 Tipo de mapa: Mundo
 Tipo de encuentro: Aventura
@@ -24,66 +29,78 @@ Versión de EliteMobs: 8.0.3+ Créditos: 69OzCanOfBepis, MagmaGuy, Matevagyok, D
 <details>
 <summary>[Niveles 0-50] [Gratis] [Arena] <a href="https://magmaguy.itch.io/em-free-content">Arena de la Liga de Madera</a></summary>
 
-Nota: La arena de la Liga de Madera está casi en su totalidad en el complemento predeterminado de EliteMobs, ¡solo necesitas descargar el centro del gremio de aventureros gratuito de [magmaguy.itch.io](https://magmaguy.itch.io/em-free-content) para obtener la construcción!
+Nota: la Arena de la Liga de Madera está casi por completo en el plugin predeterminado de EliteMobs, ¡solo necesita descargar el Centro de la Alianza de Aventureros gratuito de [magmaguy.itch.io](https://magmaguy.itch.io/em-free-content) para obtener la compilación!
 
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 0 - 50- Contenido que se puede jugar en solitario
+Nivel(es) recomendados: 0 - 50- Contenido para un jugador
 Jefes: 91 jefes únicos
 Objetos únicos: 27
-Oleadas: 50
+Olas: 50
 Compatibilidad:
 Versión de Minecraft: 1.18.1+
-Versión de EliteMobs: 8.0.3+ Créditos: 69OzCanOfBepis, MagmaGuy, Realm of Lotheridon
+Versión de EliteMobs: 8.0.3+ Créditos: 69OzCanOfBepis, MagmaGuy, Reino de Lotheridon
 </pre>
 </details>
 
 <details>
-<summary>[Nivel 10] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-catacombs">Las catacumbas</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 10] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-catacombs">Las Catacumbas</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 10 - Contenido grupal
-Jefes: 4 regionales [6 únicos + refuerzos + tesoro]
+Nivel(es) recomendados: 10 - Contenido grupal
+Jefes: 4 Regionales [6 Únicos + Refuerzos + Tesoro]
 Objetos únicos: 6
 Cofres del tesoro: 1
 Dificultad: Fácil
-Tipo de mapa: Esquemático
+Tipo de mapa: Mundo (antes era Esquema)
 Tipo de encuentro: Guarida
 Compatibilidad:
 Versión de Minecraft: 1.16.5+
 Versión de EliteMobs: 7.3.13+
-Créditos: Realm of Lotheridon y MagmaGuy
+Créditos: Reino de Lotheridon y MagmaGuy
 </pre>
 </details>
 
 <details>
-<summary>[Nivel 10] [Mazmorra instanciada] <a href="https://magmaguy.itch.io/elitemobs-theclimb">La escalada</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 10] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-theclimb">La Escalada</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. ¡Los no muertos han surgido de las minas de la montaña y han lanzado un asalto despiadado contra un pueblo pacífico!
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 10 - Contenido grupal
+Nivel(es) recomendados: 10 - Contenido grupal
 Más información próximamente.
 </pre>
 </details>
 
 <details>
-<summary>[Nivel 15] [Guarida] <a href="https://magmaguy.itch.io/elitemobs-thecave">La cueva</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 15] [Guarida de instancia] <a href="https://magmaguy.itch.io/elitemobs-thecave">La Cueva</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. ¡Una creación formidable de magma y llamas impide la entrada a las minas de la montaña!
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 15 - Contenido grupal
+Nivel(es) recomendados: 15 - Contenido grupal
 Más información próximamente.
 </pre>
 </details>
 
 <details>
-<summary>[Niveles 10-20] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-pirate-ship">El barco pirata</a> / <a href="https://www.patreon.com/posts/minidungeon-ship-62464429">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 10-20] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-pirate-ship">El Barco Pirata</a> / <a href="https://www.patreon.com/posts/minidungeon-ship-62464429">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 10-20 - Contenido en solitario/dúo
-Jefes: 28 regionales [15 únicos + refuerzos + fases]
+Nivel(es) recomendados: 10-20 - Contenido para un jugador/dúo
+Jefes: 28 Regionales [15 Únicos + Refuerzos + Fases]
 Objetos únicos: 36
 Dificultad: Media
-Tipo de mapa: Esquemático
-Tipo de encuentro: Minidungeon
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo de encuentro: Minimazmorra
 Compatibilidad:
 Versión de Minecraft: 1.16.5+
 Versión de EliteMobs: 7.3.13+
@@ -92,11 +109,11 @@ Créditos: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Nivel 20] [Gratis] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">Los fuegos artificiales</a></summary>
+<summary>[Niveles 20] [Gratis] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">Los Fuegos Artificiales</a></summary>
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 20 - Contenido grupal
-Jefes: 1 regional [5 únicos + refuerzos + fases]
+Nivel(es) recomendados: 20 - Contenido grupal
+Jefes: 1 Regional [5 Únicos + Refuerzos + Fases]
 Objetos personalizados: 3
 Dificultad: Difícil
 Tipo de mapa: Mundo
@@ -108,23 +125,29 @@ Créditos: MagmaGuy
 </details>
 
 <details>
-<summary>[Niveles 20] [Mazmorra instanciada] <a href="https://magmaguy.itch.io/elitemobs-themines">Las minas</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 20] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-themines">Las Minas</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. ¡Desciende a las minas de la montaña para descubrir la fuente de la horda de no muertos y la misteriosa fuerza que los impulsa!
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 20 - Contenido grupal
+Nivel(es) recomendados: 20 - Contenido grupal
 Más información próximamente.
 </pre>
 </details>
 
 <details>
-<summary>[Niveles 20-55] [Aventura] <a href="https://magmaguy.itch.io/elitemobs-oasis">El oasis</a> / <a href="https://www.patreon.com/posts/adventure-oasis-62464668">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 20-55] [Aventura] <a href="https://magmaguy.itch.io/elitemobs-oasis">El Oasis</a> / <a href="https://www.patreon.com/posts/adventure-oasis-62464668">patreon.com/magmaguy</a></summary>
+
+Para los jugadores que han completado el mapa de aventuras de Primis, El Oasis es el siguiente paso perfecto en su viaje. ¡Ofrece mobs aún más desafiantes, una plétora de misiones y una abundancia de botín increíble para descubrir!
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 20 - 55- Contenido que se puede jugar en solitario
-Jefes: 1495 regionales [96 únicos + refuerzos + fases + bloques transitivos]
+Nivel(es) recomendados: 20 - 55 - Contenido para un jugador
+Jefes: 1495 Regionales [96 Únicos + Refuerzos + Fases + Bloques Transitivos]
 Objetos únicos: 62
 Cofres del tesoro: 23 únicos
-Dificultad: Se puede jugar en solitario
+Dificultad: Para un jugador
 Tipo de mapa: Mundo
 Tipo de encuentro: Aventura
 Compatibilidad:
@@ -135,16 +158,16 @@ Créditos: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Niveles 20-35] [Gratis] [Minidungeon] <a href="https://magmaguy.itch.io/em-free-content">Las alcantarillas</a></summary>
+<summary>[Niveles 20-35] [Gratis] [Minimazmorra] <a href="https://magmaguy.itch.io/em-free-content">Las Cloacas</a></summary>
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 20 - 35 - Contenido en solitario/dúo
-Jefes: 280 regionales [29 únicos + refuerzos + tesoro]
+Nivel(es) recomendados: 20 - 35 - Contenido para un jugador/dúo
+Jefes: 280 Regionales [29 Únicos + Refuerzos + Tesoro]
 Objetos únicos: 10
 Cofres del tesoro: 2 únicos
 Dificultad: Media
 Tipo de mapa: Mundo
-Tipo de encuentro: Mini-mazmorra
+Tipo de encuentro: Minimazmorra
 Compatibilidad:
 Versión de Minecraft: 1.16.5+
 Versión de EliteMobs: 7.3.13+
@@ -153,10 +176,13 @@ Créditos: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Niveles 25] [Guarida] <a href="https://magmaguy.itch.io/elitemobs-thebridge">El puente</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 25] [Guarida de instancia] <a href="https://magmaguy.itch.io/elitemobs-thebridge">El Puente</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. Más allá de las minas de la montaña se encuentra una antigua ciudad enana subterránea. Sin embargo, antes de llegar a ella, una formidable construcción, un guardián que ha protegido un puente durante siglos, se interpone en el camino.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 25 - Contenido grupal
+Nivel(es) recomendados: 25 - Contenido grupal
 Más información próximamente.
 </pre>
 </details>
@@ -165,38 +191,43 @@ Más información próximamente.
 <summary>[Nivel 30] [Gratis] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">El Hallosseum</a></summary>
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 30 - Contenido grupal
-Jefes: 1 regional [12 únicos + refuerzos + fases]
+Nivel(es) recomendados: 30 - Contenido grupal
+Jefes: 1 Regional [12 Únicos + Refuerzos + Fases]
 Objetos únicos: 5
 Dificultad: Difícil
 Tipo de mapa: Mundo
 Tipo de encuentro: Guarida
-Compatibilidad:
-Versión de Minecraft: 1.16.5+
+Compatibilidad: Versión de Minecraft: 1.16.5+
 Versión de EliteMobs: 7.3.13+
 Créditos: 69OzCanOfBepis, MagmaGuy
 </pre>
 </details>
 
 <details>
-<summary>[Niveles 30] [Mazmorra instanciada] <a href="https://magmaguy.itch.io/elitemobs-thebridge">La ciudad</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 30] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-thecity">La Ciudad</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En las profundidades subterráneas se encuentra una antigua ciudad enana, cuyos habitantes, antes enanos, ahora se arrastran por las calles, enloquecidos por una fuerza desconocida. Se les ha concedido la vida eterna, pero no son no muertos. ¿Qué se esconde tras este inquietante fenómeno?
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 30 - Contenido grupal
+Nivel(es) recomendados: 30 - Contenido grupal
 Más información próximamente.
 </pre>
 </details>
 
 <details>
-<summary>[Niveles 35-45] [Gratis y premium] [Minidungeon] <a href="https://magmaguy.itch.io/the-invasion">La invasión</a> / <a href="https://www.patreon.com/posts/minidungeon-62491284">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 35-45] [Gratis y premium] [Minimazmorra] <a href="https://magmaguy.itch.io/the-invasion">La Invasión</a> / <a href="https://www.patreon.com/posts/minidungeon-62491284">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
 <pre>
 Información de EliteMobs (versión premium):
-Niveles recomendados: 35 - 45
-Jefes: 141 regionales [39 únicos + refuerzos + cofres del tesoro]
+Nivel(es) recomendados: 35 - 45
+Jefes: 141 Regionales [39 Únicos + Refuerzos + Cofres del Tesoro]
 Objetos únicos: 13
 Dificultad: Media
-Tipo de mapa: Encuentro esquemático
-Tipo: Mini-mazmorra
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo: Minimazmorra
 Compatibilidad: Versión de Minecraft: 1.17.1+
 Versión de EliteMobs: 7.3.13+
 Créditos: 69OzCanOfBepis, MagmaGuy
@@ -204,22 +235,29 @@ Créditos: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Niveles 35] [Guarida] <a href="https://magmaguy.itch.io/elitemobs-thepalace">El palacio</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 35] [Guarida de instancia] <a href="https://magmaguy.itch.io/elitemobs-thepalace">El Palacio</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En las profundidades de la ciudad enana, dentro del palacio, reside su monarca enloquecido. Un poder oscuro y antinatural emana del monarca, acompañado por débiles y espeluznantes campanadas que resuenan por los pasillos.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 35 - Contenido grupal
+Nivel(es) recomendados: 35 - Contenido grupal
 Más información próximamente.
 </pre>
 </details>
 
 <details>
-<summary>[Nivel 40] [Gratis] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">Catedral oscura</a></summary>
+<summary>[Nivel 40] [Gratis] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">Catedral Oscura</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 40 - Contenido grupal
-Jefes: 1 regional [2 únicos + refuerzos]
-Objetos únicos: 1 Dificultad: Difícil
-Tipo de mapa: Esquemático
+Nivel(es) recomendados: 40 - Contenido grupal
+Jefes: 1 Regional [2 Únicos + Refuerzos]
+Objetos únicos: 1
+Dificultad: Difícil
+Tipo de mapa: Mundo (antes era Esquema)
 Tipo de encuentro: Guarida
 Compatibilidad:
 Versión de Minecraft: 1.16.5+
@@ -229,41 +267,63 @@ Créditos: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Niveles 40] [Mazmorra instanciada] <a href="https://magmaguy.itch.io/elitemobs-thequarry">La cantera</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Nivel 40] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-thequarry">La Cantera</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En medio de abundantes menas e innumerables gemas, los enanos se han adentrado profundamente en la tierra en busca de riquezas. Suba por el ascensor para explorar hasta dónde se extiende esta cantera y a dónde conduce. Tenga cuidado con los excavadores, mineros y hechiceros reales enanos enloquecidos que todavía deambulan por estas profundidades.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 40 - Contenido grupal
+Nivel(es) recomendados: 40 - Contenido grupal
 Más información próximamente.
 </pre>
 </details>
 
 <details>
-<summary>[Niveles 45-55] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-airship">La aeronave</a> / <a href="https://www.patreon.com/posts/minidungeon-62491142">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 45-55] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-airship">El Dirigible</a> / <a href="https://www.patreon.com/posts/minidungeon-62491142">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 45 - 55
-Jefes: 67 regionales [13 únicos + refuerzos]
+Nivel(es) recomendados: 45 - 55
+Jefes: 67 Regionales [13 Únicos + Refuerzos]
 Objetos únicos: 15
 Dificultad: Media
-Tipo de mapa: Esquemático
-Tipo de encuentro: Mini-mazmorra
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo de encuentro: Minimazmorra
 Compatibilidad:
 Versión de Minecraft: 1.16.5+
 Versión de EliteMobs: 7.3.13+
-Créditos: Realm of Lotheridon, 69OzCanOfBepis
+Créditos: Reino de Lotheridon, 69OzCanOfBepis
 </pre>
 </details>
 
 <details>
-<summary>[Nivel 50] [Santuario] <a href="https://magmaguy.itch.io/frost-palace-sanctum">El palacio de hielo</a> / <a href="https://www.patreon.com/posts/72982655">patreon.com/magmaguy</a></summary>
+<summary>[Nivel 45] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-thedeepmines">Las Minas Profundas</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. El ascensor de la cantera alcanza su límite, pero más allá se encuentran las minas profundas donde la codicia de los enanos los ha llevado. Estas minas se extienden hasta el mismo Nether, donde una poderosa entidad del reino del Nether acecha en las sombras.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 50
-Jefes: 1 regional [11 únicos + refuerzos + fases]
+Nivel(es) recomendados: 45 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 50] [Santuario de instancia] <a href="https://magmaguy.itch.io/frost-palace-sanctum">El Palacio de Hielo</a> / <a href="https://www.patreon.com/posts/72982655">patreon.com/magmaguy</a></summary>
+
+Un desafío perfecto para un grupo de jugadores ansiosos por poner a prueba sus habilidades, ingenio y cualquier conocimiento de EliteMobs que hayan adquirido.
+¡Una pelea de jefes que no será fácil de olvidar!
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 50
+Jefes: 1 Regional [11 Únicos + Refuerzos + Fases]
 Objetos únicos: 36
 Poderes únicos: 6
 Modelos personalizados: 5 (3 jefes, 2 objetos)
-Dificultad: Normal + Difícil + Mítica
+Dificultad: Normal + Difícil + Mítico
 Tipo de mapa: Mundo
 Tipo de encuentro: Santuario
 Compatibilidad: Versión de Minecraft: 1.18.2+
@@ -273,11 +333,23 @@ Créditos: Dalio - Mapa, Agnet75 - Música, MagmaGuy
 </details>
 
 <details>
-<summary>[Niveles 50-100] [Arena] <a href="https://magmaguy.itch.io/arena-iron-league-arena">La arena de la Liga de Hierro</a> / <a href="https://www.patreon.com/posts/arena-iron-arena-76940965">patreon.com/magmaguy</a></summary>
+<summary>[Nivel 50] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-thenetherwastes">Los Baldíos del Nether</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En los Baldíos del Nether, un reino desconocido para todos, criaturas desconocidas del nether deambulan por sus desolados caminos. Desde su corazón, un eco inquietante resuena, salpicado por el misterioso tañido de una campana, un sonido antinatural que inquieta a todos los que lo escuchan.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 50 - 100- Se recomienda grupo
-Jefes: 91 únicos
+Nivel(es) recomendados: 50 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 50-100] [Arena] <a href="https://magmaguy.itch.io/arena-iron-league-arena">La Arena de la Liga de Hierro</a> / <a href="https://www.patreon.com/posts/arena-iron-arena-76940965">patreon.com/magmaguy</a></summary>
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 50 - 100 - Se recomienda contenido grupal
+Jefes: 91 Únicos
 Objetos únicos: 27
 Dificultad: Difícil
 Tipo de mapa: Mundo
@@ -289,15 +361,39 @@ Créditos: Frostcone, MagmaGuy, Delio
 </details>
 
 <details>
-<summary>[Niveles 55-60] [Gratis] [Minidungeon] <a href="https://magmaguy.itch.io/em-free-content">El Polo Norte</a></summary>
+<summary>[Nivel 55] [Santuario de instancia] <a href="https://magmaguy.itch.io/elitemobs-thenetherbell">La Campana del Nether</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En las profundidades del Nether, donde nadie debería adentrarse, yace una inquietante escena de muerte y decadencia. Criaturas del vacío, inimaginables incluso en las pesadillas, acechan estas tierras abandonadas. En el corazón de esta desolación se encuentra una creación grotesca, nacida de las energías colapsadas del Nether durante siglos, una abominación conocida como la Campana del Vacío. Su repique incesante y sus campanadas tejen una siniestra promesa en las mentes de quienes la escuchan, tentándolos con riquezas y poderes inimaginables. Su resonancia hace eco en lo profundo, una presencia inquietante que se niega a ser sacudida.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 55 - 60 - Contenido en solitario/dúo
-Jefes: 47 regionales [8 únicos + refuerzos + fases + tesoro]
+Nivel(es) recomendados: 55 - Se recomienda contenido grupal
+Jefes: 27 Únicos
+Objetos únicos: 30
+Poderes personalizados: 15
+Dificultad: 3 dificultades diferentes: ¡Normal, Difícil y Mítico!
+Tipo de mapa: Mundo de instancia
+Tipo de encuentro: Santuario
+Compatibilidad:
+Versión de Minecraft: 1.21+
+Versión de EliteMobs: 9.0.2+
+Créditos: Frostcone, MagmaGuy, Dali_
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 55-60] [Gratis] [Minimazmorra] <a href="https://magmaguy.itch.io/em-free-content">El Polo Norte</a></summary>
+
+Una mazmorra perfecta para agregar a su servidor para la temporada navideña, capturando el espíritu invernal y poniendo a todos en un ambiente festivo.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 55 - 60 - Contenido para un jugador/dúo
+Jefes: 47 Regionales [8 Únicos + Refuerzos + Fases + Tesoro]
 Objetos únicos: 7
 Dificultad: Media
 Tipo de mapa: Mundo
-Tipo de encuentro: Mini-mazmorra
+Tipo de encuentro: Minimazmorra
 Compatibilidad:
 Versión de Minecraft: 1.16.5+
 Versión de EliteMobs: 7.3.0+
@@ -306,13 +402,17 @@ Créditos: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Nivel 70] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-colosseum">El Coliseo</a> / <a href="https://www.patreon.com/posts/lair-colosseum-62465500">patreon.com/magmaguy</a></summary>
+<summary>[Nivel 70] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-colosseum">El Coliseo</a> / <a href="https://www.patreon.com/posts/lair-colosseum-62465500">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
 <pre>
-Niveles recomendados: 70 - Contenido grupal
-Jefes: 10 regionales [7 únicos + refuerzos + fases]
+Información de EliteMobs:
+Nivel(es) recomendados: 70 - Contenido grupal
+Jefes: 10 Regionales [7 Únicos + Refuerzos + Fases]
 Objetos únicos: 3
 Dificultad: Difícil
-Tipo de mapa: Esquemático
+Tipo de mapa: Mundo (antes era Esquema)
 Tipo de encuentro: Guarida
 Compatibilidad:
 Versión de Minecraft: 1.16.5+
@@ -322,11 +422,14 @@ Créditos: Maldini y MagmaGuy
 </details>
 
 <details>
-<summary>[Nivel 85] [Mazmorra] <a href="https://magmaguy.itch.io/dungeon-bone-monastery">El monasterio de huesos</a> / <a href="https://www.patreon.com/posts/dungeon-bone-76941562">patreon.com/magmaguy</a></summary>
+<summary>[Nivel 85] [Mazmorra] <a href="https://magmaguy.itch.io/dungeon-bone-monastery">El Monasterio de Hueso</a> / <a href="https://www.patreon.com/posts/dungeon-bone-76941562">patreon.com/magmaguy</a></summary>
+
+Algo terrible está sucediendo en el monasterio. ¡Los monjes han sido expulsados y hay rumores de despiadados no muertos y esqueletos que deambulan por los terrenos!
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 85
-Jefes: 29 únicos
+Nivel(es) recomendados: 85
+Jefes: 29 Únicos
 Objetos únicos: 87
 Dificultad: Difícil
 Tipo de mapa: Mundo
@@ -338,11 +441,14 @@ Créditos: Matevagyok, 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Nivel 95] [Guarida] <a href="#">El castillo del caballero</a></summary>
+<summary>[Nivel 95] [Guarida] <a href="#">El Castillo del Caballero</a></summary>
+
+¿Te atreves a desafiar a los caballeros y a su antiguo líder, Carlomagno?
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 95
-Jefes: 15 regionales [12 únicos + refuerzos + fases]
+Nivel(es) recomendados: 95
+Jefes: 15 Regionales [12 Únicos + Refuerzos + Fases]
 Objetos únicos: 6
 Dificultad: Difícil
 Tipo de mapa: Mundo
@@ -355,16 +461,19 @@ Créditos: MagmaGuy, FrostCone, Matevagyok
 </details>
 
 <details>
-<summary>[Niveles 100-120] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-the-dark-spire">La aguja oscura</a> / <a href="https://www.patreon.com/posts/minidungeon-dark-62465765">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 100-120] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-the-dark-spire">La Aguja Oscura</a> / <a href="https://www.patreon.com/posts/minidungeon-dark-62465765">patreon.com/magmaguy</a></summary>
+
+La Aguja Oscura espera en las profundidades del Nether. ¡Estos demonios no son mobs normales del Nether, tenga cuidado!
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 100 - 120
-Jefes: 184 regionales [27 únicos + refuerzos + fases + tesoro]
+Nivel(es) recomendados: 100 - 120
+Jefes: 184 Regionales [27 Únicos + Refuerzos + Fases + Tesoro]
 Objetos únicos: 12
 Cofres del tesoro: 17 únicos
 Dificultad: Difícil
 Tipo de mapa: Mundo
-Tipo de encuentro: Mini-mazmorra
+Tipo de encuentro: Minimazmorra
 Compatibilidad:
 Versión de Minecraft: 1.16.5+
 Versión de EliteMobs: 7.3.13+
@@ -373,24 +482,552 @@ Créditos: 69OzCanOfBepis
 </details>
 
 <details>
-<summary>[Niveles 100-150] [Arena] <a href="https://magmaguy.itch.io/elitemobs-diamondarena">La arena de la Liga Diamante</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 100-150] [Arena] <a href="https://magmaguy.itch.io/elitemobs-diamondarena">La Arena de la Liga de Diamante</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 100-150 - Contenido grupal
+Nivel(es) recomendados: 100-150 - Se recomienda contenido grupal
+Jefes: 91 Únicos
+Objetos únicos: 27
+Dificultad: Difícil
+Tipo de mapa: Mundo
+Tipo de encuentro: Arena
+Compatibilidad: Versión de Minecraft: 1.18.2+
+Versión de EliteMobs: 8.3.8+
+Créditos: Frostcone, MagmaGuy, Delio
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 120-140] [Minimazmorra] <a href="https://magmaguy.itch.io/the-vampire-manor">La Mansión de los Vampiros</a> / <a href="https://www.patreon.com/posts/minidungeon-62465872">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 120-140
+Jefes: 116 Regionales [55 Únicos + Refuerzos + Fases + Cofres del Tesoro]
+Objetos únicos: 11
+Dificultad: Media
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo de encuentro: Minimazmorra
+Compatibilidad:
+Versión de Minecraft: 1.17.1+
+Versión de EliteMobs: 7.3.13+
+Créditos: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+
+# Contenido prefabricado actual de EliteMobs
+
+<details>
+<summary>[Niveles 0-20] [Aventura] <a href="https://magmaguy.itch.io/primis">Aventura Primis</a> / <a href="https://www.patreon.com/posts/adventure-primis-71274573">patreon.com/magmaguy</a></summary>
+
+Este extenso mapa de aventuras está repleto de misiones, botín y una variedad de mobs desafiantes, diseñados para sumergir a los jugadores en el mundo de EliteMobs. A través de un juego atractivo, los jugadores aprenderán la mecánica y las características de EliteMobs de una manera emocionante e interactiva. Los fanáticos de los MMORPG encontrarán la experiencia familiar y cautivadora, con elementos que recuerdan a sus MMO favoritos.
+  
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 0 - 20- Contenido para un jugador
+Jefes: 957 Regionales [200 Únicos + Refuerzos + Fases + Bloques Transitivos]
+Modelos personalizados: 11 (algunos actualmente no implementados, WIP)
+Objetos únicos: 153
+Cofres del tesoro: 25 únicos
+Misiones: 98
+NPC: 255 únicos
+1 Arena
+Dificultad: Se recomiendan dos jugadores
+Tipo de mapa: Mundo
+Tipo de encuentro: Aventura
+Compatibilidad:
+Versión de Minecraft: 1.18.1+
+Versión de EliteMobs: 8.0.3+ Créditos: 69OzCanOfBepis, MagmaGuy, Matevagyok, Dalio, FrostCone
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 0-50] [Gratis] [Arena] <a href="https://magmaguy.itch.io/em-free-content">Arena de la Liga de Madera</a></summary>
+
+Nota: la Arena de la Liga de Madera está casi por completo en el plugin predeterminado de EliteMobs, ¡solo necesita descargar el Centro de la Alianza de Aventureros gratuito de [magmaguy.itch.io](https://magmaguy.itch.io/em-free-content) para obtener la compilación!
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 0 - 50- Contenido para un jugador
+Jefes: 91 jefes únicos
+Objetos únicos: 27
+Olas: 50
+Compatibilidad:
+Versión de Minecraft: 1.18.1+
+Versión de EliteMobs: 8.0.3+ Créditos: 69OzCanOfBepis, MagmaGuy, Reino de Lotheridon
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 10] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-catacombs">Las Catacumbas</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 10 - Contenido grupal
+Jefes: 4 Regionales [6 Únicos + Refuerzos + Tesoro]
+Objetos únicos: 6
+Cofres del tesoro: 1
+Dificultad: Fácil
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo de encuentro: Guarida
+Compatibilidad:
+Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: Reino de Lotheridon y MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 10] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-theclimb">La Escalada</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. ¡Los no muertos han surgido de las minas de la montaña y han lanzado un asalto despiadado contra un pueblo pacífico!
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 10 - Contenido grupal
 Más información próximamente.
 </pre>
 </details>
 
 <details>
-<summary>[Niveles 120-140] [Minidungeon] <a href="https://magmaguy.itch.io/the-vampire-manor">La mansión del vampiro</a> / <a href="https://www.patreon.com/posts/minidungeon-62465872">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 15] [Guarida de instancia] <a href="https://magmaguy.itch.io/elitemobs-thecave">La Cueva</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. ¡Una creación formidable de magma y llamas impide la entrada a las minas de la montaña!
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 120-140
-Jefes: 116 regionales [55 únicos + refuerzos + fases + cofres del tesoro]
+Nivel(es) recomendados: 15 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 10-20] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-pirate-ship">El Barco Pirata</a> / <a href="https://www.patreon.com/posts/minidungeon-ship-62464429">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 10-20 - Contenido para un jugador/dúo
+Jefes: 28 Regionales [15 Únicos + Refuerzos + Fases]
+Objetos únicos: 36
+Dificultad: Media
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo de encuentro: Minimazmorra
+Compatibilidad:
+Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 20] [Gratis] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">Los Fuegos Artificiales</a></summary>
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 20 - Contenido grupal
+Jefes: 1 Regional [5 Únicos + Refuerzos + Fases]
+Objetos personalizados: 3
+Dificultad: Difícil
+Tipo de mapa: Mundo
+Tipo de encuentro: Guarida
+Compatibilidad: Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 20] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-themines">Las Minas</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. ¡Desciende a las minas de la montaña para descubrir la fuente de la horda de no muertos y la misteriosa fuerza que los impulsa!
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 20 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 20-55] [Aventura] <a href="https://magmaguy.itch.io/elitemobs-oasis">El Oasis</a> / <a href="https://www.patreon.com/posts/adventure-oasis-62464668">patreon.com/magmaguy</a></summary>
+
+Para los jugadores que han completado el mapa de aventuras de Primis, El Oasis es el siguiente paso perfecto en su viaje. ¡Ofrece mobs aún más desafiantes, una plétora de misiones y una abundancia de botín increíble para descubrir!
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 20 - 55 - Contenido para un jugador
+Jefes: 1495 Regionales [96 Únicos + Refuerzos + Fases + Bloques Transitivos]
+Objetos únicos: 62
+Cofres del tesoro: 23 únicos
+Dificultad: Para un jugador
+Tipo de mapa: Mundo
+Tipo de encuentro: Aventura
+Compatibilidad:
+Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 20-35] [Gratis] [Minimazmorra] <a href="https://magmaguy.itch.io/em-free-content">Las Cloacas</a></summary>
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 20 - 35 - Contenido para un jugador/dúo
+Jefes: 280 Regionales [29 Únicos + Refuerzos + Tesoro]
+Objetos únicos: 10
+Cofres del tesoro: 2 únicos
+Dificultad: Media
+Tipo de mapa: Mundo
+Tipo de encuentro: Minimazmorra
+Compatibilidad:
+Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 25] [Guarida de instancia] <a href="https://magmaguy.itch.io/elitemobs-thebridge">El Puente</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. Más allá de las minas de la montaña se encuentra una antigua ciudad enana subterránea. Sin embargo, antes de llegar a ella, una formidable construcción, un guardián que ha protegido un puente durante siglos, se interpone en el camino.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 25 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 30] [Gratis] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">El Hallosseum</a></summary>
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 30 - Contenido grupal
+Jefes: 1 Regional [12 Únicos + Refuerzos + Fases]
+Objetos únicos: 5
+Dificultad: Difícil
+Tipo de mapa: Mundo
+Tipo de encuentro: Guarida
+Compatibilidad: Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 30] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-thecity">La Ciudad</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En las profundidades subterráneas se encuentra una antigua ciudad enana, cuyos habitantes, antes enanos, ahora se arrastran por las calles, enloquecidos por una fuerza desconocida. Se les ha concedido la vida eterna, pero no son no muertos. ¿Qué se esconde tras este inquietante fenómeno?
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 30 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 35-45] [Gratis y premium] [Minimazmorra] <a href="https://magmaguy.itch.io/the-invasion">La Invasión</a> / <a href="https://www.patreon.com/posts/minidungeon-62491284">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
+<pre>
+Información de EliteMobs (versión premium):
+Nivel(es) recomendados: 35 - 45
+Jefes: 141 Regionales [39 Únicos + Refuerzos + Cofres del Tesoro]
+Objetos únicos: 13
+Dificultad: Media
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo: Minimazmorra
+Compatibilidad: Versión de Minecraft: 1.17.1+
+Versión de EliteMobs: 7.3.13+
+Créditos: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 35] [Guarida de instancia] <a href="https://magmaguy.itch.io/elitemobs-thepalace">El Palacio</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En las profundidades de la ciudad enana, dentro del palacio, reside su monarca enloquecido. Un poder oscuro y antinatural emana del monarca, acompañado por débiles y espeluznantes campanadas que resuenan por los pasillos.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 35 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 40] [Gratis] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">Catedral Oscura</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 40 - Contenido grupal
+Jefes: 1 Regional [2 Únicos + Refuerzos]
+Objetos únicos: 1
+Dificultad: Difícil
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo de encuentro: Guarida
+Compatibilidad:
+Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 40] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-thequarry">La Cantera</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En medio de abundantes menas e innumerables gemas, los enanos se han adentrado profundamente en la tierra en busca de riquezas. Suba por el ascensor para explorar hasta dónde se extiende esta cantera y a dónde conduce. Tenga cuidado con los excavadores, mineros y hechiceros reales enanos enloquecidos que todavía deambulan por estas profundidades.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 40 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 45-55] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-airship">El Dirigible</a> / <a href="https://www.patreon.com/posts/minidungeon-62491142">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 45 - 55
+Jefes: 67 Regionales [13 Únicos + Refuerzos]
+Objetos únicos: 15
+Dificultad: Media
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo de encuentro: Minimazmorra
+Compatibilidad:
+Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: Reino de Lotheridon, 69OzCanOfBepis
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 45] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-thedeepmines">Las Minas Profundas</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. El ascensor de la cantera alcanza su límite, pero más allá se encuentran las minas profundas donde la codicia de los enanos los ha llevado. Estas minas se extienden hasta el mismo Nether, donde una poderosa entidad del reino del Nether merodea en las sombras.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 45 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 50] [Santuario de instancia] <a href="https://magmaguy.itch.io/frost-palace-sanctum">El Palacio de Hielo</a> / <a href="https://www.patreon.com/posts/72982655">patreon.com/magmaguy</a></summary>
+
+Un desafío perfecto para un grupo de jugadores ansiosos por poner a prueba sus habilidades, ingenio y cualquier conocimiento de EliteMobs que hayan adquirido.
+¡Una pelea de jefes que no será fácil de olvidar!
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 50
+Jefes: 1 Regional [11 Únicos + Refuerzos + Fases]
+Objetos únicos: 36
+Poderes únicos: 6
+Modelos personalizados: 5 (3 jefes, 2 objetos)
+Dificultad: Normal + Difícil + Mítico
+Tipo de mapa: Mundo
+Tipo de encuentro: Santuario
+Compatibilidad: Versión de Minecraft: 1.18.2+
+Versión de EliteMobs: 8.3.1+
+Créditos: Dalio - Mapa, Agnet75 - Música, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 50] [Mazmorra de instancia] <a href="https://magmaguy.itch.io/elitemobs-thenetherwastes">Los Baldíos del Nether</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En los Baldíos del Nether, un reino desconocido para todos, criaturas desconocidas del nether deambulan por sus desolados caminos. Desde su corazón, un eco inquietante resuena, salpicado por el misterioso tañido de una campana, un sonido antinatural que inquieta a todos los que lo escuchan.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 50 - Contenido grupal
+Más información próximamente.
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 50-100] [Arena] <a href="https://magmaguy.itch.io/arena-iron-league-arena">La Arena de la Liga de Hierro</a> / <a href="https://www.patreon.com/posts/arena-iron-arena-76940965">patreon.com/magmaguy</a></summary>
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 50 - 100 - Se recomienda contenido grupal
+Jefes: 91 Únicos
+Objetos únicos: 27
+Dificultad: Difícil
+Tipo de mapa: Mundo
+Tipo de encuentro: Arena
+Compatibilidad: Versión de Minecraft: 1.18.2+
+Versión de EliteMobs: 8.3.8+
+Créditos: Frostcone, MagmaGuy, Delio
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 55] [Santuario de instancia] <a href="https://magmaguy.itch.io/elitemobs-thenetherbell">La Campana del Nether</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+
+Esta mazmorra es parte de la serie de mazmorras del modo historia. Los jugadores pueden embarcarse en misiones que entrelazan una narrativa continua a través de las mazmorras, ofreciendo una historia cohesiva e inmersiva. En las profundidades del Nether, donde nadie debería pisar, yace una inquietante escena de muerte y decadencia. Criaturas del vacío, inimaginables incluso en las pesadillas, acechan estas tierras abandonadas. En el corazón de esta desolación se encuentra una grotesca creación, nacida de las energías colapsadas del Nether durante siglos, una abominación conocida como la Campana del Vacío. Su repique incesante y sus campanadas tejen una siniestra promesa en las mentes de quienes la escuchan, tentándolos con riquezas y poderes inimaginables. Su resonancia hace eco en lo profundo, una presencia inquietante que se niega a ser sacudida.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 55 - Se recomienda contenido grupal
+Jefes: 27 Únicos
+Objetos únicos: 30
+Poderes personalizados: 15
+Dificultad: 3 dificultades diferentes: ¡Normal, Difícil y Mítico!
+Tipo de mapa: Mundo de instancia
+Tipo de encuentro: Santuario
+Compatibilidad:
+Versión de Minecraft: 1.21+
+Versión de EliteMobs: 9.0.2+
+Créditos: Frostcone, MagmaGuy, Dali_
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 55-60] [Gratis] [Minimazmorra] <a href="https://magmaguy.itch.io/em-free-content">El Polo Norte</a></summary>
+
+Una mazmorra perfecta para agregar a su servidor para la temporada navideña, capturando el espíritu invernal y poniendo a todos en un ambiente festivo.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 55 - 60 - Contenido para un jugador/dúo
+Jefes: 47 Regionales [8 Únicos + Refuerzos + Fases + Tesoro]
+Objetos únicos: 7
+Dificultad: Media
+Tipo de mapa: Mundo
+Tipo de encuentro: Minimazmorra
+Compatibilidad:
+Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.0+
+Créditos: 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 70] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-colosseum">El Coliseo</a> / <a href="https://www.patreon.com/posts/lair-colosseum-62465500">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 70 - Contenido grupal
+Jefes: 10 Regionales [7 Únicos + Refuerzos + Fases]
+Objetos únicos: 3
+Dificultad: Difícil
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo de encuentro: Guarida
+Compatibilidad:
+Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: Maldini y MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 85] [Mazmorra] <a href="https://magmaguy.itch.io/dungeon-bone-monastery">El Monasterio de Hueso</a> / <a href="https://www.patreon.com/posts/dungeon-bone-76941562">patreon.com/magmaguy</a></summary>
+
+Algo terrible está sucediendo en el monasterio. ¡Los monjes han sido expulsados y hay rumores de despiadados no muertos y esqueletos que deambulan por los terrenos!
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 85
+Jefes: 29 Únicos
+Objetos únicos: 87
+Dificultad: Difícil
+Tipo de mapa: Mundo
+Tipo de encuentro: Mazmorra
+Compatibilidad: Versión de Minecraft: 1.18.2+
+Versión de EliteMobs: 8.3.8+
+Créditos: Matevagyok, 69OzCanOfBepis, MagmaGuy
+</pre>
+</details>
+
+<details>
+<summary>[Nivel 95] [Guarida] <a href="#">El Castillo del Caballero</a></summary>
+
+¿Te atreves a desafiar a los caballeros y a su antiguo líder, Carlomagno?
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 95
+Jefes: 15 Regionales [12 Únicos + Refuerzos + Fases]
+Objetos únicos: 6
+Dificultad: Difícil
+Tipo de mapa: Mundo
+Tipo de encuentro: Guarida
+Compatibilidad:
+Versión de Minecraft: 1.18.2+
+Versión de EliteMobs: 8.3.8+
+Créditos: MagmaGuy, FrostCone, Matevagyok
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 100-120] [Minimazmorra] <a href="https://magmaguy.itch.io/elitemobs-the-dark-spire">La Aguja Oscura</a> / <a href="https://www.patreon.com/posts/minidungeon-dark-62465765">patreon.com/magmaguy</a></summary>
+
+La Aguja Oscura espera en las profundidades del Nether. ¡Estos demonios no son mobs normales del Nether, tenga cuidado!
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 100 - 120
+Jefes: 184 Regionales [27 Únicos + Refuerzos + Fases + Tesoro]
+Objetos únicos: 12
+Cofres del tesoro: 17 únicos
+Dificultad: Difícil
+Tipo de mapa: Mundo
+Tipo de encuentro: Minimazmorra
+Compatibilidad:
+Versión de Minecraft: 1.16.5+
+Versión de EliteMobs: 7.3.13+
+Créditos: 69OzCanOfBepis
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 100-150] [Arena] <a href="https://magmaguy.itch.io/elitemobs-diamondarena">La Arena de la Liga de Diamante</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 100-150 - Se recomienda contenido grupal
+Jefes: 91 Únicos
+Objetos únicos: 27
+Dificultad: Difícil
+Tipo de mapa: Mundo
+Tipo de encuentro: Arena
+Compatibilidad: Versión de Minecraft: 1.18.2+
+Versión de EliteMobs: 8.3.8+
+Créditos: Frostcone, MagmaGuy, Delio
+</pre>
+</details>
+
+<details>
+<summary>[Niveles 120-140] [Minimazmorra] <a href="https://magmaguy.itch.io/the-vampire-manor">La Mansión de los Vampiros</a> / <a href="https://www.patreon.com/posts/minidungeon-62465872">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
+<pre>
+Información de EliteMobs:
+Nivel(es) recomendados: 120-140
+Jefes: 116 Regionales [55 Únicos + Refuerzos + Fases + Cofres del Tesoro]
 Objetos únicos: 11
 Dificultad: Media
-Tipo de mapa: Esquemático
-Tipo de encuentro: Minidungeon
+Tipo de mapa: Mundo (antes era Esquema)
+Tipo de encuentro: Minimazmorra
 Compatibilidad:
 Versión de Minecraft: 1.17.1+
 Versión de EliteMobs: 7.3.13+
@@ -399,10 +1036,13 @@ Créditos: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Nivel 130] [Guarida] <a href="https://magmaguy.itch.io/beasts-sanctuary">Santuario de las bestias</a> / <a href="https://www.patreon.com/posts/lair-beasts-74854707">patreon.com/magmaguy</a></summary>
+<summary>[Nivel 130] [Guarida] <a href="https://magmaguy.itch.io/beasts-sanctuary">Santuario de las Bestias</a> / <a href="https://www.patreon.com/posts/lair-beasts-74854707">patreon.com/magmaguy</a></summary>
+
+Una bestia monstruosa se ha refugiado en un pueblo cercano, transformando a sus residentes en cascarones sin sentido. ¿Es lo suficientemente valiente como para enfrentar a la criatura en la batalla y ahuyentarla?
+
 <pre>
-Niveles recomendados: 130 - Contenido grupal
-Jefes: 13 regionales [12 únicos + refuerzos + fases]
+Nivel(es) recomendados: 130 - Contenido grupal
+Jefes: 13 Regionales [12 Únicos + Refuerzos + Fases]
 Objetos únicos: 4
 Dificultad: Difícil
 Tipo de mapa: Mundo
@@ -414,11 +1054,14 @@ Créditos: Frostcone
 </details>
 
 <details>
-<summary>[Nivel 140] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">La fábrica de vapor</a></summary>
+<summary>[Nivel 140] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">La Fábrica de Vapor</a></summary>
+
+¿Qué son estas criaturas y qué han forjado? Han creado un ser de engranajes y metal, con una mente que puede pensar pero que nunca puede sentir. Se alza sobre la aguja del reloj, esperando el momento en que la vida despierte sus fríos ojos de acero.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 140
-Jefes: 8 regionales [11 únicos + refuerzos + fases]
+Nivel(es) recomendados: 140
+Jefes: 8 Regionales [11 Únicos + Refuerzos + Fases]
 Objetos únicos: 7
 Dificultad: Difícil
 Tipo de mapa: Mundo
@@ -431,135 +1074,11 @@ Créditos: MagmaGuy, FrostCone
 </details>
 
 <details>
-<summary>[Niveles 150] [Guarida] <a href="https://magmaguy.itch.io/the-ruins">Las ruinas</a> / <a href="https://www.patreon.com/posts/lair-ruins-62465993">patreon.com/magmaguy</a></summary>
+<summary>[Niveles 150] [Guarida] <a href="https://magmaguy.itch.io/the-ruins">Las Ruinas</a> / <a href="https://www.patreon.com/posts/lair-ruins-62465993">patreon.com/magmaguy</a></summary>
+
+A partir de EliteMobs 9.0.0, esta mazmorra se ha convertido en una mazmorra mundial.
+
 <pre>
 Información de EliteMobs:
-Niveles recomendados: 150
-Jefes: 1 regional [3 únicos + refuerzos + fases]
-Objetos únicos: 1
-Dificultad: Muy difícil
-Tipo de mapa: Esquemático
-Tipo de encuentro: Guarida
-Compatibilidad:
-Versión de Minecraft: 1.17.1+
-Versión de EliteMobs: 7.3.6+
-</pre>
-</details>
-
-<details>
-<summary>[Niveles 170] [Guarida] <a href="https://magmaguy.itch.io/under-grove">La arboleda inferior</a> / <a href="https://www.patreon.com/posts/lair-under-grove-74854772">patreon.com/magmaguy</a></summary>
-<pre>
-Niveles recomendados: 170 - Contenido grupal
-Jefes: 25 regionales [7 únicos + refuerzos + fases]
-Objetos únicos: 4
-Dificultad: Difícil
-Tipo de mapa: Mundo
-Tipo de encuentro: Guarida
-Compatibilidad: Versión de Minecraft: 1.18.1+
-Versión de EliteMobs: 8.3.1+
-Créditos: Frostcone
-</pre>
-</details>
-
-<details>
-<summary>[Nivel 200] [Gratis] [Guarida] <a href="https://magmaguy.itch.io/em-free-content">El Atador de mundos</a></summary>
-<pre>
-Información de EliteMobs:
-Niveles recomendados: 200
-Jefes: 1 regional [17 únicos + refuerzos + fases]
-Objetos únicos: 1
-Dificultad: Difícil
-Tipo de mapa: Mundo
-Tipo de encuentro: Guarida
-Compatibilidad:
-Versión de Minecraft: 1.16.5+
-Versión de EliteMobs: 7.3.13+
-Créditos: 69OzCanOfBepis, MagmaGuy
-</pre>
-</details>
-
-# patreon.com/magmaguy vs magmaguy.itch.io
-
-[magmaguy.itch.io](https://magmaguy.itch.io/) tiene una página para todo lo que he hecho, tanto gratis como premium. Además, las descargas premium también están disponibles en [patreon.com/magmaguy](https://www.patreon.com/magmaguy).
-
-Las compras premium en [magmaguy.itch.io](https://magmaguy.itch.io/) son permanentes; sin embargo, tienes que comprar todo individualmente.
-
-Los seguidores de [patreon.com/magmaguy](https://www.patreon.com/magmaguy) obtienen acceso temporal a mi contenido premium (según el nivel, a $15 incluye todo lo que he hecho) mientras mantengan activa la suscripción. Una vez que se cancela la suscripción, se detiene el acceso a los enlaces de descarga, las actualizaciones y el contenido futuro publicado en Patreon. Los patrocinadores pueden optar por reactivar su patrocinio en cualquier momento.
-
-# Tipos de mazmorras
-
-***Nota: lo siguiente describe el contenido prehecho de EliteMobs. Lo que haces en tu servidor se puede personalizar, y las funciones que se describen a continuación son simplemente una forma conveniente de agrupar diferentes tipos de contenido.*** El contenido que crees para tu servidor puede seguir formatos y reglas completamente diferentes.
-
-## Mazmorras abiertas
-
-Las mazmorras abiertas siempre están abiertas a todos los jugadores. Esto significa que cualquier cantidad de jugadores puede ingresar a la mazmorra en cualquier momento para luchar contra los mismos jefes. Esto es genial para agruparse casualmente y farmear, pero puede ser complicado debido a los temporizadores de reaparición.
-
-Para los fanáticos de WoW/FF14, este es el equivalente a las zonas de mundo abierto con jefes mundiales.
-
-### ¿Qué es una guarida?
-Las guaridas son un tipo de mazmorra pequeña que se centra en una gran pelea de jefes.
-
-La estructura: las guaridas generalmente están restringidas a una construcción alrededor de una gran arena de combate y son la categoría de tamaño más pequeño de EliteMobs.
-
-Las peleas: se espera que los jugadores se agrupen en grupos de 5 para desafiar al jefe, ya que generalmente son muy desafiantes.
-
-Para los fanáticos de FF14, este es el equivalente a los jefes mundiales.
-
-### ¿Qué es una minidungeon?
-Las minidungeons son un tipo de mazmorra de tamaño mediano que generalmente contiene de 3 a 15 minijefes y un gran jefe, así como muchas turbas de "basura" que están destinadas a ser "farmeadas" por los jugadores para obtener monedas y equipo.
-
-La estructura: las minidungeons más pequeñas tienen el tamaño de barcos grandes, y la minidungeon más grande puede ser mapas bastante extensos con cientos de turbas deambulando para peleas.
-
-Las peleas: las minidungeons pueden ser completadas en solitario por jugadores veteranos, pero se recomiendan grupos de 2 a 3 jugadores.
-
-Para los fanáticos de WoW/FF14, este es el equivalente a los jefes mundiales en zonas que son desafiantes pero gratificantes para farmear.
-
-### ¿Qué es una aventura?
-Las aventuras son mapas de aventuras completos. Incluyen líneas de misiones, npcs, grandes cantidades de minijefes y jefes e incluso pueden contener sus propias arenas o mazmorras dentro de ellos.
-
-La estructura: estos son siempre mapas muy grandes con docenas de construcciones grandes divididas en diferentes zonas. También pueden incluir mundos secundarios y terciarios por varias razones.
-
-Las peleas: las aventuras pueden ser completadas en solitario por jugadores veteranos, pero se recomienda agruparse con otro jugador.
-
-Para los fanáticos de WoW/FF14, esto es esencialmente todo el juego base de misiones y encontrar mazmorras y luchar contra jefes a lo largo de una línea de misiones.
-
-## Mazmorras instanciadas
-
-Las mazmorras instanciadas son mazmorras que crean mundos según sea necesario, lo que permite al servidor ejecutar tantas peleas simultáneas para tantos jugadores como sea necesario. Es la mejor opción para crear contenido difícil pero justo, y es el tipo de contenido menos explotable.
-
-Hay muchas funciones en las mazmorras instanciadas, que puedes leer [aquí]($language$/elitemobs/instanced_dungeon_difficulty.md&section=how-it-works).
-
-Para los fanáticos de WoW y FF14, este es el equivalente a las mazmorras/instancias de deberes.
-
-### Santuarios
-Los santuarios son el equivalente a las guaridas instanciadas. Esto significa que se centran en una gran pelea de jefes. Este es el tipo de contenido de EliteMobs más difícil, especialmente para las dificultades más difíciles.
-
-La estructura: estos suelen ser mapas pequeños, pero pueden tener arenas de combate muy dinámicas. Por lo general, se centran en una sola habitación grande.
-
-Las peleas: se supone que deben ser combatidas por 5 jugadores. En las dificultades más altas, este es el contenido de EliteMobs más difícil que existe.
-
-Para los fanáticos de FF14, este es el equivalente a las pruebas.
-
-### Mazmorras
-Las mazmorras son el equivalente a las minidungeons instanciadas. Este es el tipo de mazmorra MMORPG más tradicional, donde los jugadores se unen y pasan por una serie de turbas de basura y minijefes para luchar contra un jefe final.
-
-Para los fanáticos de WoW y FF14, este es el equivalente a las mazmorras.
-
-La estructura: estos suelen ser mapas de tamaño mediano, más grandes que las minidungeons pero mucho más pequeños que las aventuras.
-
-Las peleas: se supone que deben ser combatidas por grupos de 5, más difíciles que las mazmorras abiertas pero más fáciles que los santuarios.
-
-### Incursiones
-
-¡Próximamente!
-
-### Arenas
-
-Las arenas son áreas de supervivencia basadas en oleadas en las que los jugadores son recompensados ​​por derrotar oleadas. Las arenas suelen tener algo de historia a su alrededor.
-
-La estructura: del tamaño de una arena y con forma de arena.
-
-Las peleas: se pueden jugar en solitario, pero pueden ser desafiadas por hasta 5 jugadores.
-
-
-
+Nivel(es) recomendados: 150
+Jefes: 

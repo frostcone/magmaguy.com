@@ -1,502 +1,323 @@
-```markdown
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
-
-# カスタムアイテムの作成
-
-## カスタムアイテムとは？
-
-カスタムアイテムは、EliteMobs によって設定ファイルで定義されたアイテムです。これらのアイテムについて、レベル、エンチャント、名前、説明文、テクスチャなどをカスタマイズできます！
-
-## Webapp
-
-カスタム loot を簡単にすばやく作成できます [こちら](https://magmaguy.com/webapp/webapp.html)!
-
-## 開始前に
-
-### カスタムアイテムはどこに置くか？
-
-カスタムアイテムファイルは、`~/plugins/EliteMobs/customitems` という設定フォルダに置きます。
-
-`~/plugins/EliteMobs/customitems/myitems` などのサブフォルダを作成することもできます。これは、整理整頓のために推奨されます。
-
-ファイルは `.yml` ファイル形式で保存されます。設定作業には、[Notepad++](https://notepad-plus-plus.org/) が推奨されるファイル編集ソフトウェアです。1 つのファイルで 1 つのアイテムを定義しますが、同じアイテムを複数回スポーンしたり、同じアイテムファイルに複数のスポーン位置を設定したりすることもできます。
-
-[webapp](https://magmaguy.com/webapp/webapp.html) を使用すると、カスタムボスなどをすばやく簡単に作成できます。
-
-<div align="center">
-
-### 最小限の構成
-
-**カスタムアイテムの最小限の構成ファイルは次のとおりです。**
-
-```yml
+```yaml
+# Définit le nombre d'objets qui seront laissés tomber. Il est exprimé sous la forme d'une plage comme suit `amount : MIN-MAX`. Par exemple, pour laisser tomber entre 1 et 5
+# objets : `amount : 1-5`.
+  - amount: 1-1
+  # Définit le matériau à l'aide des [noms de l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) du
+  # objet à potentiellement laisser tomber.
+  material: STONE_PICKAXE
+ # Définit si l'objet doit être généré de façon procédurale en fonction des paramètres de configuration si
+ # `procedurallyGeneratedItemSettings`. Notez qu'en fonction des paramètres, cela pourrait entraîner la génération d'un objet sans enchantements.
+  procedurallyGenerateEnchantments: true
+  # Définit le poids pour la possibilité pondérée. Pour plus d'informations, consultez [ici](https://magmaguy.com/wiki.html#lang=fr&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+  weight: 1.0
+    - amount: 1-1
+      material: STONE_SHOVEL
+      procedurallyGenerateEnchantments: true
+      weight: 1.0
+  rare:
+    weight: 30
+    items:
+    - amount: 1-1
+      material: ANVIL
+      weight: 6.0
+    - amount: 1-6
+      material: BEETROOT
+      weight: 6.0
+  epic:
+    weight: 10
+    items:
+    - amount: 2-10
+      material: DIAMOND
+      weight: 1.0
+    - amount: 1-1
+      material: DIAMOND_AXE
+      weight: 6.0
+procedurallyGeneratedItemSettings:
+  golden_sword:
+    bane_of_arthropods:
+      minLevel: 1
+      maxLevel: 5
+      chance: 0.2
+    looting:
+      minLevel: 1
+      maxLevel: 3
+      chance: 0.2
 ```
 
-空のファイルであることに注意してください。これでも、デフォルトで「Default name」という名前の、木の剣が使用されます。**このページのすべてはオプションです！**
+</details>
 
-### アイテムの例
+***
 
-アイテムファイルの例を見てみましょう。
+# Qu'est-ce qu'un fichier de trésor ?
 
-<details> 
-<summary><b>例</b></summary>
+Les fichiers de trésor sont ce qui détermine les tables de butin pour les coffres de BetterStructures. Ils sont généralement attribués
+aux [générateurs]($language$/betterstructures/creating_generators.md&section=treasurefilename), mais ils peuvent également être définis au niveau d'une [configuration de construction individuelle]($language$/betterstructures/creating_structures.md&section=treasurefile).
 
-<div align="left">
+Ces tables de butin sont assez puissantes, mais nécessitent également la connaissance de quelques concepts statistiques de base pour les comprendre.
+
+<details>
+<summary>
+Lisez ces concepts ici, le reste de la page suppose que vous les comprenez !
+</summary>
+
+***Probabilité pondérée***
+
+BetterStructures et EliteMobs utilisent fréquemment le concept de probabilité pondérée. Il s'agit de résoudre un problème simple : comment pouvez-vous définir la probabilité de choisir un élément dans une liste d'éléments potentiellement infinie ?
+
+La probabilité pondérée résout ce problème en attribuant un poids à chaque élément. Si vous avez 100 éléments et que chacun a un poids de 1, alors ils ont tous une chance égale - 1 % - d'être choisis. Si vous ajoutez un élément de plus, portant le total à 101 éléments, et que vous donnez à ce dernier élément une chance de 1, tous les éléments ont toujours la même chance - ~0,99 % - d'être choisis. Si vous donnez au dernier élément un poids de 2, la chance qu'il soit choisi augmente : le nouveau poids total est de 102, le dernier élément a un poids de 2 et 100/102 = ~0,98 %, donc 0,98 %+ 0,98 % = 1,96 % de chances d'être choisi. Si vous donnez au dernier élément un poids de 100, le nouveau poids est de 200 et, comme la moitié de ce poids est votre nouvel élément, votre nouvel élément a 50 % de chances d'être choisi.
+
+Comme vous pouvez le voir, ceci est utile à utiliser lorsque vous pourriez avoir des listes de centaines de choses à choisir au hasard.
+
+***Distribution gaussienne***
+
+Une distribution gaussienne est une fonction mathématique en forme de cloche.
+
+<img src="http://sfonline.barnard.edu/wp-content/uploads/2015/12/gaussian-distribution.jpg">
+
+Vous vous demandez peut-être en quoi cela est pertinent pour le système de butin. L'une des choses que BetterStructures doit décider lors de la configuration du butin dans les coffres est la quantité de butin qui apparaît dans ces coffres. La quantité devrait être constamment autour d'un nombre spécifique, mais idéalement pas si prévisible que l'ouverture d'un coffre soit moins intéressante.
+
+Pour obtenir cet effet semi-aléatoire, la distribution gaussienne est utilisée pour randomiser *le nombre* d'objets sélectionnés. Une fois que cette quantité est choisie, la *probabilité pondérée* choisit un élément de la table de rareté au hasard et en tenant compte des poids.
+
+Alors, comment fonctionne la distribution gaussienne ?
+
+Heureusement, vous n'avez pas à vous soucier du fonctionnement des mathématiques derrière elle, et vous pouvez vous concentrer sur les deux paramètres qui la modifient : la moyenne et l'écart type.
+
+*Moyenne*
+
+Pour faire simple, `mean` définit le milieu de la courbe gaussienne, ce qui signifie qu'il définit la quantité d'objets la plus probable qui apparaîtra dans un coffre. Essentiellement, si vous voulez que vos coffres aient habituellement 5 objets, définissez votre moyenne sur 5.
+
+*Écart type*
+
+Imaginez que le nombre moyen d'objets dans un coffre soit de 5. La `standard deviation` permet de décider de combien ce nombre peut changer d'un coffre à l'autre.
+
+`Écart type` faible (p. ex., 1) : Cela signifie que la plupart des coffres auront des objets très proches de la moyenne, comme 4, 5 ou 6 objets. C'est une expérience plus prévisible. Par exemple, si un coffre a un écart type de 1, vous pouvez vous attendre à ce que presque tous les coffres aient entre 4 et 6 objets.
+
+`Écart type` moyen (p. ex., 2) : Ici, il y a plus de variété. Les coffres peuvent contenir de 3 à 7 objets. Bien que 5 objets soient toujours courants, il n'est pas inhabituel de trouver des coffres avec un peu plus ou un peu moins d'objets. Donc, avec un écart type de 2, vous pourriez occasionnellement trouver un coffre avec seulement 3 objets ou, si vous avez de la chance, un coffre avec 7 objets.
+
+`Écart type` élevé (p. ex., 3 ou plus) : Maintenant, les choses deviennent vraiment surprenantes ! Les coffres pourraient avoir aussi peu que 2 objets ou jusqu'à 8 objets ou plus. Cela signifie que vous pourriez trouver un coffre avec juste une paire d'objets, mais il y a aussi une chance de trouver un coffre rempli de friandises. Par exemple, avec un écart type de 3, un coffre pourrait avoir entre 2 et 8 objets, ce qui fait de chaque ouverture de coffre un pari passionnant.
+
+***La moyenne par défaut est de 4 et l'écart type par défaut est de 3.***
+
+</details>
+
+***
+
+# Format spécial
+
+Les fichiers de trésor ont un format spécial qui ressemble à ceci :
 
 ```yml
 isEnabled: true
-material: WOODEN_AXE
-name: '&4Test item'
-lore:
-- This is a cool item
-- It has cool lore
-enchantments:
-- DAMAGE_ALL,4
-- FLAMETHROWER,1
-potionEffects:
-- FAST_DIGGING,0,self,onHit
-- POISON,0,target,onHit
-- GLOWING,0,self,continuous
-dropWeight: dynamic
-scalability: scalable
-itemType: custom
+mean: 4.0
+standardDeviation: 3.0
+items:
+  common:
+    weight: 60
+    items:
+    - amount: 1-1
+      material: STONE_PICKAXE
+      procedurallyGenerateEnchantments: true
+      weight: 1.0
+    - amount: 1-1
+      material: STONE_SHOVEL
+      procedurallyGenerateEnchantments: true
+      weight: 1.0
+  rare:
+    weight: 30
+    items:
+    - amount: 1-1
+      material: ANVIL
+      weight: 6.0
+    - amount: 1-6
+      material: BEETROOT
+      weight: 6.0
+  epic:
+    weight: 10
+    items:
+    - amount: 2-10
+      material: DIAMOND
+      weight: 1.0
+    - amount: 1-1
+      material: DIAMOND_AXE
+      weight: 6.0
+procedurallyGeneratedItemSettings:
+  golden_sword:
+    bane_of_arthropods:
+      minLevel: 1
+      maxLevel: 5
+      chance: 0.2
+    looting:
+      minLevel: 1
+      maxLevel: 3
+      chance: 0.2
 ```
 
-</div>
+*Remarque : il s'agit d'une version très réduite du fichier, le fichier réel comporte 2 599 lignes, car il couvre beaucoup plus de butin et tous les enchantements possibles.*
 
-</details>
+# isEnabled
 
-</div>
-
-##  カスタムアイテムの設定
-
-以下は、カスタムアイテムで設定できる項目のリストです。
-
-<div align="center">
+| Clé |       Valeurs        | Par défaut |
+|---|:-------------------:|---|
+| `isEnabled` | [Booléen](#booleano) | `true` |
 
 ***
 
-### isEnabled
+# mean
 
-アイテムを有効にするかどうかを設定します。すでに生成されたアイテムには影響しません。
+| Clé    |      Valeurs       | Par défaut |
+|--------|:-----------------:|---------|
+| `mean` | [Nombre à virgule flottante double précision](#double) | `4`     |
 
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `isEnabled` | `true` / `false` | `true` |
-
-<details> 
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-isEnabled: true
-```
-
-</div>
-
-</details>
+Définissez la `moyenne`. Lisez les détails à ce sujet [ici](https://magmaguy.com/wiki.html#lang=fr&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
-### material
+# standardDeviation
 
-アイテムの素材を設定します。
+| Clé                 |      Valeurs       | Par défaut |
+|---------------------|:-----------------:|---------|
+| `standardDeviation` | [Nombre à virgule flottante double précision](#double) | `3`     |
 
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `material` | [こちらから選択！](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | `WOODEN_SWORD` |
-
-<details> 
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-material: DIAMOND_SWORD
-```
-
-</div>
-
-</details>
-
+Définissez l'`standardDeviation`. Lisez les détails à ce sujet [ici](https://magmaguy.com/wiki.html#lang=fr&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
-### level
+# items
 
-アイテムのレベルを設定します。
-
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `level` | [Integer](#integer) | `0` |
-
-アイテムの [`scalability`](#scalability) を `scalable` に設定した場合、この設定は関連しません。`limited` に設定した場合、これがアイテムの最高レベルになります。
-
-また、素材には最低レベルがあります。鉄素材はレベル6、ダイヤモンド素材はレベル7です。素材のレベルよりも低いレベルのアイテムを強制的に作成することはできません。
-
-<details> 
-
-<summary><b>例</b></summary>
-
-<div align="left">
+C'est là que cela devient délicat, car de nombreuses options peuvent être définies par les administrateurs. Examinons de plus près l'exemple de fichier de configuration précédent.
 
 ```yml
-level: 100
+items:
+  common:
+    weight: 60
+    items:
+    - amount: 1-1
+      material: STONE_PICKAXE
+      procedurallyGenerateEnchantments: true
+      weight: 1.0
+    - amount: 1-1
+      material: STONE_SHOVEL
+      procedurallyGenerateEnchantments: true
+      weight: 1.0
+  rare:
+    weight: 30
+    items:
+    - amount: 1-1
+      material: ANVIL
+      weight: 6.0
+    - amount: 1-6
+      material: BEETROOT
+      weight: 6.0
 ```
 
-</div>
+Ici, vous pouvez voir que sous la clé de configuration `items`, nous avons une carte avec `common` et `rare`. Ce sont des `raretés` !
+***
 
-</details>
+## raretés
 
+Les raretés n'ont pas de nom fixe. Vous pouvez les ajouter ou les supprimer et les personnaliser autant que vous le souhaitez, à condition d'utiliser le même format.
+
+Notez que ce qui rend ces tableaux de rareté plus ou moins rares est le `weight` de la table de butin !
+
+Par défaut :
+- `common` a un `weight` par défaut de 60
+- `rare` a un `weight` par défaut de 30
+- `epic` a un `weight` par défaut de 10
+
+Ce qui fait que les objets courants ont 6 fois plus de chances de tomber que les objets épiques. Vous pouvez en savoir plus sur les `weight`s [ici](https://magmaguy.com/wiki.html#lang=fr&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?) !
+
+En dehors du poids, chaque table de rareté a sa propre liste d'`items`.
 
 ***
 
-### name
+### items de rareté
 
-アイテムの表示名を設定します。
+Les items de rareté sont une [liste de cartes](https://magmaguy.com/wiki.html#lang=en&article=global+configuration_file_guide.md&section=map-list) qui répertorie tous les objets que possède la table de rareté.
 
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `material` | [String](#string) と [カラーコード](#color-codes) を使用 | "Default name" |
+Ces objets ont les paramètres suivants :
 
-<details> 
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-name: "&2Cool item"
-```
-
-<div align="center">
-
-![create_item_name.jpg](../../../img/wiki/create_item_name.jpg)
-
-</div>
-
-</div>
-
-</details>
+| Clé                                |           Valeurs            | Par défaut  |
+|------------------------------------|:---------------------------:|----------|
+| `amount`                           | min-max [Entier](#integer) | variable |
+| `material`                         |    [Matériau](#Material)    | variable |
+| `procedurallyGenerateEnchantments` |     [Booléen](#boolean)     | variable |
+| `weight`                           |      [Double](#double)      | variable |
 
 ***
 
-### lore
-
-アイテムの説明文を設定します。
-
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `lore` | [List](#list) と [カラーコード](#color-codes) を使用 | none |
-
-<details> 
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-lore:
-- "&2This is the coolest sword"
-- "&2of all time!"
-```
-
-<div align="center">
-
-![create_item_lore.jpg](../../../img/wiki/create_item_lore.jpg)
-
-</div>
-
-</div>
-
-</details>
+#### amount
 
 ***
 
-### enchantments
+Définit la quantité à laisser tomber. Ceci est exprimé sous la forme d'une plage comme suit `amount: MIN-MAX`. Par exemple, pour laisser tomber entre 1 et 5
+objets : `amount: 1-5`.
 
-アイテムのエンチャントを設定します。
+#### material
 
-| キー |                                                                                                       値                                                                                                        | デフォルト |
-|-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
-| `enchantments` | [List](#list) と [Minecraft のエンチャント](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) または [EliteMobs のカスタムエンチャント]($language$/elitemobs/custom_enchantments_list.md) を使用 | none |
-
-これらのエントリは、`enchantmentName:enchantmentLevel` 形式に従います。下記の例を確認してください。
-
-<details>
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-enchantments: 
-- "DAMAGE_UNDEAD,8"
-- "DURABILITY,4"
-- "DAMAGE_ALL,7"
-- "LOUD_STRIKES,3"
-```
-
-<div align="center">
-
-![create_item_enchantments.jpg](../../../img/wiki/create_item_enchantments.jpg)
-
-</div>
-
-</div>
-
-</details>
-
-また、シャープネスなどのエンチャントは、レベルが vanilla Minecraft の制限を超えると、デフォルトで Elite シャープネスになります。
+Définit le matériau à l'aide des [noms de l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) de
+l'objet à potentiellement laisser tomber.
 
 ***
 
-### potionEffects
+##### Cas spécial - sérialisé
 
-アイテムに与えるポーション効果を設定します。これらの効果は、プレイヤーに適用することも、プレイヤーによってダメージを受けたエンティティに適用することもできます。
-
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `potionEffects` | [List](#list) と [Minecraft のポーション効果](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html) を使用 | none |
-
-さらに、ポーション効果は、プレイヤーに適用される対象とタイミングを選択できる特定の形式を使用します。
-
-| 設定 | 説明 | 値 | デフォルト |
-|-|:-:|:-:|-|
-| ポーション効果レベル | ポーション効果のレベルを設定します。**ポーション効果はレベル 0 から始まります！** | [Integer](#integer) | none |
-| 影響を受けるエンティティ | ポーション効果の影響を受ける対象を設定します。 | `self`（プレイヤー）/ `target`（攻撃を受けたエンティティ） | none |
-| 適用方法 | ポーション効果が適用されるタイミングを設定します。 | `onHit` / `continuous`（継続的に再適用） | none |
-
-ポーション効果の形式は、`potionEffectName,potionEffectLevel,affectedEntity,applicationMethod` です。下記の例を確認してください。
-
-EliteMobs には、チャームとして機能するカスタムアイテムもあります。これらのアイテムは、プレイヤーがアイテムを所持している場合またはスロットに装備している場合に、プレイヤーにポーション効果を与える以外の効果はありません。
-
-<details>
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-potionEffects: 
-- "POISON,0,target,onHit"
-- "HEAL,1,self,onHit"
-- "NIGHT_VISION,0,self,continuous"
-```
-
-<div align="center">
-
-![create_item_potion_effects.jpg](../../../img/wiki/create_item_potion_effects.jpg)
-
-</div>
-
-</div>
-
-このポーション効果の設定で、次のことが起こります。
-
-攻撃時に、ポイズンポーション効果（レベル1）が攻撃を受けたエンティティに適用されます。また、プレイヤーにはレベル2の即時回復ポーション効果が適用されます。
-
-継続的に、プレイヤーにナイトビジョンが与えられます。これは、プレイヤーがアイテムを着用または所持している間、ナイトビジョンが有効になることを意味します。
-
-</details>
+Lors de l'utilisation de la commande lootify, au lieu d'un matériau, lootify fournira un paramètre `serialized`. Ceci est généré automatiquement par le plugin et ne doit pas être généré manuellement. Il est dans un format qui n'est pas lisible par l'homme.
 
 ***
 
-### scalability
+#### weight
 
-アイテムのレベルが、アイテムをドロップするボスのレベルとともにどのように成長するかを設定します。
-
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `scalability` | `fixed`、`limited`、または `scalable`。下記を確認してください！ | scalable |
-
-このリストを確認して、さまざまなオプションがどのように機能するかを理解してください。
-
-| 設定 | 説明 |
-|-|:-:|
-| `fixed` | アイテムのレベルは、常に設定ファイルで設定されたレベルになります。 |
-| `limited` | アイテムの最大レベルは、設定ファイルで設定されたレベルまたはボスのレベルのどちらか低い方のレベルになります。 |
-| `scalable` | アイテムのレベルは、アイテムをドロップするボスのレベルに完全に依存します。 |
-
-`dropWeight` が設定されているアイテムは、常に `fixed` スケーラビリティになります。
-
-<details>
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-scalability: "scalable"
-```
-
-</div>
-
-</details>
+Définit le poids pour la possibilité pondérée. Plus d'informations à ce sujet [ici](https://magmaguy.com/wiki.html#lang=fr&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
-### itemType
+#### procedurallyGenerateItems
 
-アイテムを入手できる場所を設定します。
+Définit si l'objet doit être généré de manière procédurale en fonction des paramètres de configuration si `procedurallyGeneratedItemSettings`. Notez qu'en fonction des paramètres, cela pourrait entraîner la génération d'un objet sans enchantements malgré tout.
 
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `itemType` | `custom` または `unique`。下記を確認してください！ | `custom` |
+# procedurallyGeneratedItemSettings
 
-アイテムタイプには 2 種類あります。
-
-| 設定 | 説明 |
-|-|:-:|
-| `custom` | アイテムは、loot をドロップできるすべての EliteMobs モブからドロップされ、カスタムショップに表示されます。 `
-| `unique` | アイテムは、どのボスからもドロップされず、カスタムショップには表示されません。アイテムを入手するには、カスタムボスで `uniqueLootTable` を設定して、アイテムをドロップするように構成する必要があります。 |
-
-<details>
-
-<summary><b>例</b></summary>
-
-<div align="left">
+Jetons un autre coup d'œil à notre exemple de fichier de configuration :
 
 ```yml
-itemType: "unique"
+procedurallyGeneratedItemSettings:
+  golden_sword:
+    bane_of_arthropods:
+      minLevel: 1
+      maxLevel: 5
+      chance: 0.2
+    looting:
+      minLevel: 1
+      maxLevel: 3
+      chance: 0.2
 ```
 
-</div>
+Comme vous pouvez le voir, ce fichier répertorie les types de matériaux, suivis des enchantements et ensuite suivis des niveaux minimum et maximum et d'une chance.
 
-</details>
+Notez que vous ne pouvez pas ajouter de matériaux personnalisés provenant d'autres plugins dans ces paramètres, et vous ne pouvez probablement pas ajouter d'enchantements personnalisés provenant d'autres plugins, sauf si leur auteur indique explicitement qu'il a rendu son système compatible.
+
+En ce qui concerne les paramètres d'enchantement :
+
+| Clé        |       Valeurs        | Par défaut  |
+|------------|:-------------------:|----------|
+| `minLevel` | [Entier](#integer) | variable |
+| `maxLevel` | [Entier](#integer) | variable |
+| `chance`   |  [Chance](#chance)  | variable |
 
 ***
 
-### dropWeight
+## minLevel
 
-アイテムが収まる loot table を設定します。
-
-| キー |                  値                  | デフォルト |
-|-|:----------------------------------------:|-|
-| `dropWeight` | `dynamic` または [Double](#double) 値 | `dynamic` |
-
-EliteMobs には、カスタムアイテム用の 5 つの loot table があります。これは、カスタムボスの `uniqueLootList` のように直接構成されているものを除きます。
-
-これらは次のとおりです。
-
-| loot table | 説明 | デフォルトの重み |
-|-|:-:|:-:|
-| 処理で生成されたアイテム | サーバー設定ファイルに基づいてランダムに生成されるアイテム | `90.0` |
-| 重み付けされたアイテム | `dynamic` 以外の重みを持つアイテム | `1.0` |
-| 固定アイテム | スケーラビリティが固定されているアイテム | `10.0` |
-| 制限付きアイテム | スケーラビリティが制限されているアイテム | `3.0` |
-| スケーラブルなアイテム | スケーラブルなアイテム | `6.0` |
-
-ボスが死亡すると、`ItemSettings.yml` 設定ファイルに基づいて、これらのテーブルから 1 つのアイテムが選択されます。重みのデフォルト値は上記に `Default weight` として示されています。重みが大きいほど、アイテムがドロップする確率が高くなります。
-
-`重み付けされたアイテム` は、`Default weight` が小さいため、あまりドロップしません。`dropWeight` が `dynamic` ではないアイテムは、レアアイテムとして設計されており、チャームボスがドロップするデフォルトアイテムでのみ使用されます。これは、戦闘に直接使用されるのではなく、プレイヤーにポーション効果を与えるために使用されるアイテムです。
-
-ここで設定する `dropWeight` は、`重み付けされたアイテム` のリストから、特定の `重み付けされたアイテム` がドロップされる確率を設定します。`重み付けされたアイテム` のドロップ率を高めるものではありません。
-
-**混乱している場合、武器やアーマーを作成するだけなら、この設定をスキップしてください。これは、正しくデフォルトで `dynamic` に設定されています。**
-
-`重み付けされたアイテム` は、通常、1.0 の重みを持っています。
-
-<details>
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-dropWeight: "dynamic"
-```
-
-</div>
-
-</details>
-
+Définit le niveau d'enchantement minimum.
 
 ***
 
-### customModelID
+## maxLevel
 
-アイテムのテクスチャを設定します。リソースパックから有効なテクスチャを使用する必要があります！
-
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `customModelID` | [Integer](#integer) | none |
-
-<details>
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-material: DIAMOND_SWORD
-customModelID: 1
-```
-
-</div>
-
-これは、プレイヤーが使用しているリソースパックから、ダイヤモンドの剣のカスタムテクスチャ 1 を使用します。この機能を正しく使用するには、サーバーを、ログイン時にプレイヤーにリソースパックを提供するように設定することをお勧めします。
-
-</details>
+Définit le niveau d'enchantement maximum.
 
 ***
 
-### permission
+## chance
 
-アイテムを入手するために必要な権限を設定します。
-
-| キー | 値 | デフォルト |
-|-|:-:|-|
-| `permission` | [String](#string) | none |
-
-権限をプレイヤーに付与するには、権限管理プラグインが必要です。これは、ソウルバインドエンチャントを無効にしていない場合にのみ正しく機能します。
-
-<details>
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-permission: "elitemobs.cool.permission"
-```
-
-</div>
-
-この設定では、`elitemobs.cool.permission` 権限を持つプレイヤーのみがアイテムを入手できます。
-
-</details>
-
-***
-
-### soulbound
-
-アイテムをドロップ時にソウルバインドするかどうかを設定します。
-
-| キー |       値        | デフォルト |
-|-|:-------------------:|---------|
-| `soulbound` | [Boolean](#boolean) | `true`  |
-
-<details>
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-soulbound: true
-```
-
-</div>
-
-</details>
-
-
-</div>
-
-
-```
-
+Définit la probabilité que l'enchantement se produise. Ceci n'utilise pas la probabilité pondérée, juste un jet de dés normal.

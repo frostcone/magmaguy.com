@@ -2,24 +2,24 @@
 
 # 示例任务
 
-EliteMobs 预装了一个 `测试任务.yml`，这里将对其进行分析，作为一个简单的任务格式供您参考。
+EliteMobs 预先打包了一个 `test_quest.yml`，此处将对其进行分析，作为要遵循的简单任务格式。
 
 _自定义任务位于 `~plugins/EliteMobs/customquests` 文件夹中！_
 
-`测试任务.yml`
+`test_quest.yml`
 
 ```yaml
 isEnabled: true
 customObjectives:
   Objective1:
     amount: '1'
-    filename: 测试_Boss.yml
+    filename: test_boss.yml
     objectiveType: KILL_CUSTOM
 customRewards:
 - filename=magmaguys_toothpick.yml:amount=1:chance=1
-name: "&a杀死测试 Boss"
-questLore: 
-- "&c结束测试 Boss 的恐怖统治！"
+name: "&a杀死测试首领"
+questLore:
+- "&c结束测试首领的恐怖统治！"
 ```
 
 <div align="center">
@@ -28,9 +28,9 @@ questLore:
 
 </div>
 
-*如果您的任务界面看起来不像这样，您可以使用 `/em alt` 将其更改为匹配。*
+*如果您的任务 UI 不是这样，您可以使用 `/em alt` 将其更改为匹配。*
 
-此示例任务将为玩家提供杀死 1 个测试_Boss.yml 的任务。（任务追踪器中显示的 Boss 的实际名称将是在测试_Boss.yml 中设置的 `name:`。）作为完成任务的奖励，他们将获得 1 个 Magmaguy 的牙签。
+此示例任务将为玩家提供杀死 1 个 test_boss.yml 的任务。（任务跟踪器中显示的实际首领名称将是 test_boss.yml 中设置的 `name:`。）并且作为完成任务的奖励，他们将获得 1 个 Magmaguy 的牙签。
 
 ## 创建自定义任务
 
@@ -40,13 +40,13 @@ questLore:
 
 设置任务目标。
 
-| 键                | 值           | 默认值 |
-|--------------------|:------------:|--------|
-| `customObjectives` | 特殊 [1]      | 无      |
+| 键        |   值    | 默认值 |
+|-----------|:-----------:|:------:|
+| `customObjectives` | 特殊 [1] |  无   |
 
-*注意：如果您使用多阶段 Boss 作为您的目标，则目标应该使用第一阶段作为目标。*
+*注意：如果您使用多阶段首领作为您的目标，则该目标应使用第一阶段作为目标。*
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -58,7 +58,7 @@ questLore:
 customObjectives:
   Objective1:
     amount: '1'
-    filename: 我的酷_Boss.yml
+    filename: my_cool_boss.yml
     objectiveType: KILL_CUSTOM
 ```
 
@@ -70,7 +70,7 @@ customObjectives:
     dialog:
     - "&a[对话 NPC] &f经常来这里吗？"
     - "&7&o我应该多吃苹果。"
-    filename: 对话_npc.yml
+    filename: dialog_npc.yml
     npcName: 对话 NPC
     location: 在对话位置。
     objectiveType: DIALOG
@@ -83,7 +83,7 @@ customObjectives:
   Objective1:
     amount: '99'
     itemName: 红苹果
-    filename: 我的任务_物品_红苹果.yml
+    filename: my_quest_item_red_apples.yml
     objectiveType: FETCH_ITEM
 ```
 
@@ -107,13 +107,13 @@ customObjectives:
 
 自定义目标使用以下值构建：
 
-| 键                      | 描述                                                                                                                   |
-|-------------------------|------------------------------------------------------------------------------------------------------------------------|
-| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | 用于设置此目标代表的目标类型。`KILL_CUSTOM` 表示任务涉及杀死特定的自定义 Boss，`FETCH_ITEM` 表示任务涉及获得特定的自定义物品，`DIALOG` 表示任务涉及与 NPC 交谈。 |
-| `filename`              | 用于设置玩家必须杀死/获得的自定义 Boss、自定义物品或他们必须与之交谈的 NPC 的文件名。                                                                      |
-| `amount`                | 用于设置必须杀死的自定义 Boss 数量或必须获得的物品数量。                                                                                        |
-| `dialog`                | 用于设置玩家与之交谈的 NPC 的对话。                                                                                               |
-| `name`                  | 用于设置任务目标的名称，无论是 NPC 还是自定义物品。仅用于视觉目的。                                                                               |
+| 键                                     | 描述 |
+|-----------------------------------------|-------------|
+| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | 用于设置此目标所表示的类型。 `KILL_CUSTOM` 表示该任务涉及杀死特定的自定义首领，`FETCH_ITEM` 表示该任务涉及获取特定的自定义物品，而 `DIALOG` 表示该任务涉及与 NPC 交谈。 |
+| `filename`                                    | 用于设置玩家必须杀死/获取的自定义首领、自定义物品或他们必须与之交谈的 NPC 的文件名。 |
+| `amount`                                      | 用于设置必须杀死的自定义首领数量或必须获得的物品数量。 |
+| `dialog`                                      | 用于设置玩家与之交谈的 NPC 的对话。 |
+| `name`                                        | 用于设置任务目标的名称，无论是 NPC 还是自定义物品。仅用于视觉目的。 |
 
 _请注意，每个自定义目标字段都用 `:` 分隔！_
 
@@ -127,11 +127,11 @@ _请注意，每个自定义目标字段都用 `:` 分隔！_
 
 设置任务奖励。
 
-| 键             | 值                                                                      | 默认值 |
-|----------------|:-------------------------------------------------------------------------:|--------|
-| `customRewards` | [通用 EliteMobs 战利品格式]($language$elitemobs/loot_tables.md) | 无      |
+| 键        |                                值                                 | 默认值 |
+|-----------|:---------------------------------------------------------------------:|:------:|
+| `customRewards` | [通用 EliteMobs 战利品格式]($language$elitemobs/loot_tables.md) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -158,20 +158,20 @@ customRewards:
 
 ### questAcceptPermission
 
-设置玩家接受任务必须拥有的权限。
+设置玩家必须具有的权限才能接受任务。
 
-| 键                    | 值              | 默认值 |
-|------------------------|:-----------------|--------|
-| `questAcceptPermission` | [字符串](#字符串) | 无      |
+| 键        |      值        | 默认值 |
+|-----------|:---------------:|:------:|
+| `questAcceptPermission` | [字符串](#string) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-questAcceptPermission: elitequest.我的权限
+questAcceptPermission: elitequest.my_permission
 ```
 
 </div>
@@ -182,22 +182,22 @@ questAcceptPermission: elitequest.我的权限
 
 ### questAcceptPermissions
 
-设置玩家接受任务必须拥有的权限。
+设置玩家必须具有的权限才能接受任务。
 
-| 键                       | 值                     | 默认值 |
-|---------------------------|:------------------------:|--------|
-| `questAcceptPermissions` | [字符串列表](#字符串列表)      | 无      |
+| 键        |   值    | 默认值 |
+|-----------|:-----------:|:------:|
+| `questAcceptPermissions` | [字符串列表](#string_list) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-questAcceptPermissions: 
-- elitequest.我的先前任务_一.yml
-- elitequest.我的先前任务_二.yml
+questAcceptPermissions:
+- elitequest.my_previous_quest_one.yml
+- elitequest.my_previous_quest_two.yml
 ```
 
 </div>
@@ -208,20 +208,20 @@ questAcceptPermissions:
 
 ### questLockoutPermission
 
-设置玩家在完成任务后将获得的权限，该权限将阻止他们再次执行任务（通常是您正在编辑的任务的 [文件名](#文件名)）。
+设置玩家在完成任务后将获得的权限，这将阻止他们再次执行该任务（通常是您正在编辑的任务的[文件名](#fielname)）。
 
-| 键                      | 值              | 默认值 |
-|--------------------------|:-----------------|--------|
-| `questLockoutPermission` | [字符串](#字符串) | 无      |
+| 键        |      值        | 默认值 |
+|-----------|:---------------:|:------:|
+| `questLockoutPermission` | [字符串](#string) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-questLockoutPermission: elitequest.我的任务.yml
+questLockoutPermission: elitequest.my_quest.yml
 ```
 
 </div>
@@ -232,13 +232,13 @@ questLockoutPermission: elitequest.我的任务.yml
 
 ### questLockoutMinutes
 
-设置玩家在可以再次执行任务之前必须等待的时间（以分钟为单位）（通过删除任务锁定权限来实现）。
+设置玩家在能够再次执行该任务之前必须等待多长时间（以分钟为单位）（通过删除任务锁定权限来工作）。
 
-| 键                   | 值                | 默认值                     |
-|-----------------------|:------------------:|------------------------------|
-| `questLockoutMinutes` | [整数](#整数)          | `-1`（将永远无法重复） |
+| 键        |      值        | 默认值 |
+|-----------|:---------------:|:------:|
+| `questLockoutMinutes` | [整数](#integer) |  `-1`（永不重复）   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -256,13 +256,13 @@ questLockoutMinutes: 60
 
 ### name
 
-设置任务名称。接受 [颜色代码](#颜色代码)。
+设置任务名称。接受[颜色代码](#color_codes)。
 
-| 键     | 值              | 默认值 |
-|---------|:-----------------|--------|
-| `name` | [字符串](#字符串) | 无      |
+| 键    |      值       | 默认值 |
+|--------|:---------------:|:------:|
+| `name` | [字符串](#string) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -280,13 +280,13 @@ name: "&a我的伟大任务名称"
 
 ### questLore
 
-设置将出现在游戏内任务菜单中的任务传说。
+设置将显示在游戏内任务菜单中的任务背景故事。
 
-| 键         | 值                     | 默认值 |
-|-------------|:------------------------:|--------|
-| `questLore` | [字符串列表](#字符串列表)      | 无      |
+| 键    |      值       | 默认值 |
+|--------|:---------------:|:------:|
+| `questLore` | [字符串列表](#string_list) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -294,8 +294,8 @@ name: "&a我的伟大任务名称"
 
 ```yml
 questLore:
-- "有趣的传说句子。"
-- "另一个有趣的传说句子。"
+- "有趣的背景故事句子。"
+- "另一个有趣的背景故事句子。"
 ```
 
 <div align="center">
@@ -312,15 +312,15 @@ questLore:
 
 ### temporaryPermissions
 
-设置分配给玩家的权限，直到他们完成任务。
+设置分配给玩家直到他们提交任务的权限。
 
-如果您使用此设置来确保只有在玩家激活了特定任务时才会掉落物品，则还需要在物品的配置文件中配置 [相同的权限]($language$/elitemobs/creating_items.md&section=permission)。
+如果您使用此设置来确保仅当玩家具有特定活动任务时才会掉落物品，则还需要在物品的配置文件中配置[相同权限]($language$/elitemobs/creating_items.md&section=permission)。
 
-| 键                     | 值                     | 默认值 |
-|-------------------------|:------------------------:|--------|
-| `temporaryPermissions` | [字符串列表](#字符串列表)      | 无      |
+| 键    |      值       | 默认值 |
+|--------|:---------------:|:------:|
+| `temporaryPermissions` | [字符串列表](#string_list) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -328,7 +328,7 @@ questLore:
 
 ```yml
 temporaryPermissions:
-- elitequest.任务期间应掉落的物品.yml
+- elitequest.item_that_should_drop_only_during_quest.yml
 ```
 
 </div>
@@ -341,11 +341,11 @@ temporaryPermissions:
 
 设置在接受任务时出现在聊天中的对话。
 
-| 键                  | 值                     | 默认值 |
-|----------------------|:------------------------:|--------|
-| `questAcceptDialog` | [字符串列表](#字符串列表)      | 无      |
+| 键    |      值       | 默认值 |
+|--------|:---------------:|:------:|
+| `questAcceptDialog` | [字符串列表](#string_list) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -353,8 +353,8 @@ temporaryPermissions:
 
 ```yml
 questAcceptDialog:
-- "我的英雄！你真是太有帮助了！"
-- "祝你好运！"
+- "我的英雄！你太有帮助了！"
+- "我祝你好运！"
 ```
 
 <div align="center">
@@ -371,13 +371,13 @@ questAcceptDialog:
 
 ### questCompleteMessage
 
-设置在完成任务（提交）时出现在聊天中的对话。
+设置在任务完成时出现在聊天中的对话。
 
-| 键                      | 值                     | 默认值 |
-|--------------------------|:------------------------:|--------|
-| `questCompleteMessage` | [字符串列表](#字符串列表)      | 无      |
+| 键    |      值       | 默认值 |
+|--------|:---------------:|:------:|
+| `questCompleteMessage` | [字符串列表](#string_list) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -385,7 +385,7 @@ questAcceptDialog:
 
 ```yml
 questCompleteMessage:
-- "我的英雄！你完成了我的困难任务！"
+- "我的英雄！你已经完成了我艰巨的任务！"
 - "作为奖励，你可以得到这条面包！"
 ```
 
@@ -403,13 +403,13 @@ questCompleteMessage:
 
 ### questCompleteCommands
 
-设置在完成任务时将运行的命令。
+设置将在任务完成时运行的命令。
 
-| 键                       | 值                     | 默认值 |
-|---------------------------|:------------------------:|--------|
-| `questCompleteCommands` | [字符串列表](#字符串列表)      | 无      |
+| 键    |      值       | 默认值 |
+|--------|:---------------:|:------:|
+| `questCompleteCommands` | [字符串列表](#string_list) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -417,7 +417,7 @@ questCompleteMessage:
 
 ```yml
 questCompleteCommands:
-- say $player 完成了任务！
+- say $player 完成了一个任务！
 ```
 
 <div align="center">
@@ -434,20 +434,20 @@ questCompleteCommands:
 
 ### turnInNPC
 
-设置玩家需要与之交谈/互动以完成任务的 NPC 的文件名。这**不**一定是发布任务的同一个 NPC。
+设置玩家需要与之交谈/互动的 NPC 的文件名才能完成任务。这**不**必是分发任务的同一 NPC。
 
-| 键          | 值                  | 默认值 |
-|--------------|:----------------------:|--------|
-| `turnInNPC` | [文件名](#文件名)      | 无      |
+| 键    |      值       | 默认值 |
+|--------|:---------------:|:------:|
+| `turnInNPC` | [文件名](#filename) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-turnInNPC: 我的酷任务_npc.yml
+turnInNPC: my_cool_quest_npc.yml
 ```
 
 </div>
@@ -458,13 +458,13 @@ turnInNPC: 我的酷任务_npc.yml
 
 ### trackable
 
-设置任务是否将使用任务追踪器。
+设置任务是否使用任务跟踪器。
 
-| 键         | 值              | 默认值 |
-|-------------|:-----------------|--------|
-| `trackable` | [布尔值](#布尔值) | `true` |
+| 键    |      值       | 默认值 |
+|--------|:---------------:|:------:|
+| `trackable` | [布尔值](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -482,13 +482,13 @@ trackable: true
 
 ### questLevel
 
-设置任务的等级。这只是一个视觉指南，因此玩家可以判断任务的难度。这**不**会以任何方式修改 Boss、物品或其他等级。
+设置任务的等级。这仅是一个视觉指南，以便玩家可以判断任务的难度。这**不**以任何方式修改首领、物品或其他等级。
 
-| 键          | 值                | 默认值 |
-|--------------|:------------------:|--------|
-| `questLevel` | [整数](#整数)          | `0`    |
+| 键    |      值       | 默认值 |
+|--------|:---------------:|:------:|
+| `questLevel` | [整数](#integer) | `0`  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -512,13 +512,13 @@ questLevel: 10
 
 ### questAcceptSound
 
-设置接受任务时播放的声音。可以同时播放 Minecraft 声音和资源包中的声音。
+设置接受任务时播放的声音。可以播放 Minecraft 的声音和资源包中的声音。
 
-| 键                  | 值              | 默认值 |
-|----------------------|:-----------------|--------|
-| `questAcceptSound` | [字符串](#字符串) | 无      |
+| 键                |      值       | 默认值 |
+|--------------------|:---------------:|:------:|
+| `questAcceptSound` | [字符串](#string) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -542,13 +542,13 @@ questAcceptSound: entity.experience_orb.pickup
 
 ### questCompleteSound
 
-设置完成任务（提交）时播放的声音。可以同时播放 Minecraft 声音和资源包中的声音。
+设置完成任务（交任务）时播放的声音。可以播放 Minecraft 的声音和资源包中的声音。
 
-| 键                     | 值              | 默认值 |
-|-------------------------|:-----------------|--------|
-| `questCompleteSound` | [字符串](#字符串) | 无      |
+| 键                |      值       | 默认值 |
+|--------------------|:---------------:|:------:|
+| `questCompleteSound` | [字符串](#string) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -570,41 +570,38 @@ questCompleteSound: entity.player.levelup
 
 ### 权限
 
-如上表所述，权限通常是 [字符串](#字符串) 或 [字符串列表](#字符串列表)。但让我们更详细地了解您将如何使用这些权限来锁定和解锁任务。
+如上表所述，权限通常是[字符串](#string)或[字符串列表](#string_list)。但是，让我们更详细地了解如何使用这些来锁定和解锁任务。
 
-假设您正在制作一系列任务中的任务_3，并且您不希望玩家在完成任务_2 之前能够接受任务_3。我们将按如下方式配置任务文件：
-
-```yml
-questAcceptPermission: elitequest.任务_2.yml
-questLockoutPermission: elitequest.任务_3.yml
-```
-通过将 `questAcceptPermissions` 设置为 `elitequest.任务_2.yml`，我们现在阻止了玩家在完成任务_2.yml 之前接受任务_3.yml。</br> 通过将 `questLockoutPermission` 设置为 `elitequest.任务_3.yml`，我们阻止了玩家在他们的追踪器中已经有该任务或他们已经完成了该任务的情况下再次接收该任务。这可以阻止玩家重复执行任务。
-
-如果您希望创建一个只有在玩家完成一系列任务后才会可用的任务，则您应该按如下方式配置任务文件：
+假设您正在制作一系列计划中的任务中的 quest_3，并且您不希望玩家在完成 quest_2 之前就能够接受 quest_3。我们将按如下方式配置任务文件：
 
 ```yml
-questAcceptPermissions: 
-- elitequest.任务_2.yml
-- elitequest.任务_3.yml
-- elitequest.任务_4.yml
+questAcceptPermission: elitequest.quest_2.yml
+questLockoutPermission: elitequest.quest_3.yml
+```
+通过将 `questAcceptPermissions` 设置为 `elitequest.quest_2.yml`，我们现在阻止玩家在完成 quest_2.yml 之前接受 quest_3.yml。</br>通过将 `questLockoutPermission` 设置为 `elitequest.quest_3.yml`，我们阻止了玩家在他们的跟踪器中已经有该任务或他们已经完成该任务的情况下接收该任务。这阻止了玩家重复该任务。
+
+如果您想制作一个仅在玩家完成一系列任务后才可用的任务，则可以按如下方式配置任务文件：
+
+```yml
+questAcceptPermissions:
+- elitequest.quest_2.yml
+- elitequest.quest_3.yml
+- elitequest.quest_4.yml
 ```
 
-如果您希望玩家只有在激活了正确的任务时才能拾取某些物品，我们可以通过使用 `temporaryPermissions` 来做到这一点。我们将在任务文件中使用 `temporaryPermissions` 创建一个权限，然后在物品文件中使用 `permission` 创建一个匹配的 [权限]($language$/elitemobs/creating_items.md&section=permission)。
+如果您希望玩家仅在具有正确活动任务时才能掠夺某些物品，那么我们可以通过使用 `temporaryPermissions` 来做到这一点。我们将在任务文件中使用 `temporaryPermissions` 创建一个权限，然后在物品文件中使用 `permission` 创建一个匹配的[权限]($language$/elitemobs/creating_items.md&section=permission)。
 
 例如，我们将打开我们的任务文件并添加以下内容：
 
 ```yml
-temporaryPermissions: 
-- elitequest.我的酷物品.yml
+temporaryPermissions:
+- elitequest.my_cool_item.yml
 ```
-然后，我们将打开物品文件，在本例中为 *我的酷物品.yml*，然后添加以下内容：
+然后，我们将打开物品文件，在本例中为 *my_cool_item.yml*，然后添加以下内容：
 
 ```yml
-permission: elitequest.我的酷物品.yml
+permission: elitequest.my_cool_item.yml
 ```
-现在，这两个文件都具有匹配的权限，这应该使我们的物品仅在玩家激活了正确的任务时才会掉落。
+现在，这两个文件都具有匹配的权限，这应该使我们的物品仅在玩家具有正确的活动任务时才掉落。
 
 </div>
-
-
-

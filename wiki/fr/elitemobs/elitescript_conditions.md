@@ -1,10 +1,10 @@
-# Conditions de script Elite
+# Actions du script Elite
 
-Les conditions permettent aux scripteurs de faire en sorte que les scripts et/ou les actions **ne soient pas** exécutés en fonction de conditions spécifiques.
+Les conditions permettent aux scénaristes de faire en sorte que les scripts et/ou les actions **ne** s'exécutent pas en fonction de conditions spécifiques.
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -12,7 +12,7 @@ Les conditions permettent aux scripteurs de faire en sorte que les scripts et/ou
 
 ```yaml
 eliteScript:
-  Example:
+  Exemple:
     Events:
     - EliteMobDamagedByPlayerEvent
     Conditions:
@@ -35,7 +35,7 @@ eliteScript:
       global: 20
 ```
 
-Dans cet exemple, le script `Example` ne s'exécutera que si l'élite est toujours en vie, et ne placera un bloc de terre 3 blocs au-dessus de l'emplacement de l'élite que si ce bloc est un bloc d'air. Les actions individuelles peuvent avoir des conditions individuelles.
+Dans cet exemple, le script `Exemple` ne s'exécutera que si l'élite est toujours en vie et ne placera un bloc de terre que 3 blocs au-dessus de l'emplacement de l'élite si ce bloc est un bloc d'air. Les actions individuelles peuvent avoir des conditions individuelles.
 
 </div>
 
@@ -45,7 +45,7 @@ Dans cet exemple, le script `Example` ne s'exécutera que si l'élite est toujou
 
 ## Cible
 
-Les conditions utilisent le système de [Cibles]($language$/elitemobs/elitescript_targets.md) pour cibler quelle entité ou quel emplacement est soumis aux conditions. Cela signifie que vous pouvez associer des conditions au boss, aux joueurs ou à toute autre chose que vous pouvez cibler.
+Les conditions utilisent le système [Cibles]($language$/elitemobs/elitescript_targets.md) pour cibler quelle entité ou emplacement est soumise aux conditions. Cela signifie que vous pouvez associer des conditions au boss ou aux joueurs ou à toute autre chose que vous pouvez cibler.
 
 ---
 
@@ -55,11 +55,11 @@ Les conditions utilisent le système de [Cibles]($language$/elitemobs/elitescrip
 | --- | :-: | :-: |
 | `conditionType` | Définit le type de condition | `BLOCKING` / `FILTERING` |
 
-Il existe deux types de conditions : `BLOCKING` et `FILTERING`. Les conditions `BLOCKING` empêchent l'exécution des scripts ou des actions. Les conditions `FILTERING` font que les actions ignorent les cibles qui ne remplissent pas la condition. Cela signifie que si vous voulez cibler uniquement les blocs qui ne sont pas de l'air, vous voudrez une condition `FILTERING`, mais si vous voulez arrêter une action si un joueur est mort, vous voudrez une condition `BLOCKING`.
+Il existe deux types de conditions : `BLOCKING` et `FILTERING`. Les conditions `BLOCKING` font que les scripts ou les actions cessent de s'exécuter. Les conditions `FILTERING` font que les actions ignorent les cibles qui ne répondent pas à la condition. Cela signifie que si vous souhaitez uniquement cibler des blocs qui ne sont pas de l'air, vous voudrez une condition `FILTERING`, mais si vous souhaitez arrêter une action si un joueur est mort, vous voudrez une condition `BLOCKING`.
 
-**Les conditions en dehors des actions sont toujours de type `BLOCKING`**. Les conditions à l'intérieur des actions peuvent être de type `BLOCKING` ou `FILTERING`.
+**Les conditions en dehors des actions sont toujours `BLOCKING`**. Les conditions à l'intérieur des actions peuvent être `BLOCKING` ou `FILTERING`.
 
-_**Remarque : si la cible est `SELF` (le boss) et que la vérification de la condition est `isAlive`, la vérification est toujours de type `BLOCKING` !**_ Elle peut être placée à l'intérieur d'une condition `FILTERING` et cette partie spécifique se comportera toujours comme `BLOCKING`.
+_**Remarque :** si la cible est `SELF` (le boss) et que la vérification de la condition est `isAlive`, la vérification est toujours `BLOCKING` !_ Cela peut être placé dans une condition `FILTERING` et fera toujours en sorte que cette partie spécifique se comporte comme `BLOCKING`.
 
 Les conditions à l'intérieur des actions sont définies sur `FILTERING` par défaut.
 
@@ -71,21 +71,21 @@ Les conditions à l'intérieur des actions sont définies sur `FILTERING` par d�
 
 Définit la condition pour savoir si l'emplacement de la cible est de l'air.
 
-| Clé | Détails |       Valeurs        |
+| Clé | Détails |        Valeurs         |
 | --- | :-: |:-------------------:|
-| `locationIsAir` | Définit si l'emplacement est un bloc d'air (ou l'inverse). | [Booléen](#boolean) |
+| `locationIsAir` | Définit la vérification pour savoir si l'emplacement est un bloc d'air (ou l'inverse). | [Booléen](#boolean) |
 
 <div align="center">
 
-<details> 
+<details>
 
-<summary><b>Exemple</b></summary>
+<summary><b>Ejemplo</b></summary>
 
 <div align="left">
 
 ```yaml
 eliteScript:
-  Example:
+  Exemple:
     Conditions:
       locationIsAir: true
       Target:
@@ -93,7 +93,7 @@ eliteScript:
         offset: "0,3,0"
 ```
 
-Vérifie si l'emplacement 2 blocs au-dessus de l'endroit où se trouve le boss est de l'air.
+Vérifie si l'emplacement 2 blocs au-dessus de l'endroit où se trouve le boss est de l'air.
 
 </div>
 
@@ -105,23 +105,23 @@ Vérifie si l'emplacement 2 blocs au-dessus de l'endroit où se trouve le boss e
 
 ### isOnFloor
 
-Vérifie si l'emplacement se trouve sur le sol. Cela signifie que le bloc à l'emplacement n'est pas solide, mais que le bloc en dessous est solide.
+Vérifie si l'emplacement est au sol. Cela signifie que le bloc à l'emplacement n'est pas solide, mais que le bloc en dessous l'est.
 
 | Clé | Détails | Valeurs |
 | --- | :-: | :-: |
-| `isOnFloor` | Définit s'il faut vérifier si l'emplacement est un emplacement au sol (ou l'inverse). | [Booléen](#boolean) |
+| `isOnFloor` | Définit la vérification pour savoir si l'emplacement est un emplacement au sol (ou l'inverse). | [Booléen](#boolean) |
 
 <div align="center">
 
-<details> 
+<details>
 
-<summary><b>Exemple</b></summary>
+<summary><b>Ejemplo</b></summary>
 
 <div align="left">
 
 ```yaml
 eliteScript:
-  Example:
+  Exemple:
     Conditions:
       isOnFloor: true
       Target:
@@ -142,26 +142,26 @@ Vérifie si l'emplacement sous la cible est un type de matériau correspondant.
 
 | Clé |                     Détails                     |        Valeurs         |
 | --- |:-----------------------------------------------:|:---------------------:|
-| `isStandingOnMaterial` | Définit le type de matériau à vérifier. | [Matériau](#material) |
+| `isStandingOnMaterial` | Définit le type de matériau qui doit être vérifié. | [Material](#material) |
 
 <div align="center">
 
-<details> 
+<details>
 
-<summary><b>Exemple</b></summary>
+<summary><b>Ejemplo</b></summary>
 
 <div align="left">
 
 ```yaml
 eliteScript:
-  Example:
+  Exemple:
     Conditions:
       isStandingOnMaterial: BIRCH_WOOD
       Target:
         targetType: SELF
 ```
 
-Ne s'exécutera que si le boss se trouve sur du BIRCH_WOOD.
+S'exécutera seulement si le boss se tient sur BIRCH_WOOD.
 
 </div>
 
@@ -169,7 +169,7 @@ Ne s'exécutera que si le boss se trouve sur du BIRCH_WOOD.
 
 </div>
 
-## Conditions basées sur les entités
+## Conditions basées sur l'entité
 
 ### isAlive
 
@@ -177,19 +177,19 @@ Définit la condition pour savoir si l'entité cible de la condition est en vie.
 
 | Clé | Détails | Valeurs |
 | --- | :-: | :-: |
-| `isAlive` | Définit s'il faut vérifier si l'entité est en vie (ou morte). | [Booléen](#boolean) |
+| `isAlive` | Définit la vérification pour savoir si l'entité est en vie (ou morte). | [Booléen](#booleano) |
 
 <div align="center">
 
-<details> 
+<details>
 
-<summary><b>Exemple</b></summary>
+<summary><b>Ejemplo</b></summary>
 
 <div align="left">
 
 ```yaml
 eliteScript:
-  Example:
+  Exemple:
     Conditions:
       isAlive: false
       Target:
@@ -208,23 +208,23 @@ Ne s'exécutera que si le boss est mort.
 
 ### hasTags
 
-Vérifie si l'entité cible possède des balises spécifiques. Les scripteurs peuvent attribuer et désattribuer n'importe quelle balise par le biais d'actions et les utiliser comme conditions pour un comportement ultérieur. Les balises sont simplement des chaînes de caractères (des mots) que vous pouvez attribuer à un boss.
+Vérifie si l'entité cible possède des balises spécifiques. Les scénaristes peuvent attribuer et annuler l'attribution de n'importe quelle balise par le biais d'actions et les utiliser comme conditions pour un comportement ultérieur. Les balises ne sont que des chaînes de caractères (mots) que vous pouvez attribuer à un boss.
 
 | Clé | Détails |           Valeurs            |
 | --- | :-: |:---------------------------:|
-| `hasTags` | Définit s'il faut vérifier si l'entité possède une liste de balises. | [Liste de chaînes de caractères](#string_list) |
+| `hasTags` | Définit la vérification pour savoir si l'entité a une liste de balises. | [Liste de chaînes de caractères](#string_list) |
 
 <div align="center">
 
-<details> 
+<details>
 
-<summary><b>Exemple</b></summary>
+<summary><b>Ejemplo</b></summary>
 
 <div align="left">
 
 ```yaml
 eliteScript:
-  Example:
+  Exemple:
     Conditions:
       hasTags:
       - isCool
@@ -233,7 +233,7 @@ eliteScript:
         targetType: SELF
 ```
 
-Ne s'exécutera que si le boss possède les balises "isCool" et "hasANiceBeard".
+Ne s'exécutera que si le boss a les balises "isCool" et "hasANiceBeard".
 
 </div>
 
@@ -241,28 +241,27 @@ Ne s'exécutera que si le boss possède les balises "isCool" et "hasANiceBeard".
 
 </div>
 
-
 ---
 
 ### doesNotHaveTags
 
-Identique à `hasTags`, mais vérifie si le boss ne possède pas ces valeurs.
+Identique à `hasTags`, mais vérifie si le boss n'a pas ces valeurs.
 
 | Clé | Détails | Valeurs |
 | --- | :-: | :-: |
-| `doesNotHaveTags` | Définit s'il faut vérifier si l'entité ne possède pas une liste de balises. | [Liste de chaînes de caractères](#string_list) |
+| `doesNotHaveTags` | Définit la vérification pour savoir si l'entité n'a pas une liste de balises. | [Liste de chaînes de caractères](#string_list) |
 
 <div align="center">
 
-<details> 
+<details>
 
-<summary><b>Exemple</b></summary>
+<summary><b>Ejemplo</b></summary>
 
 <div align="left">
 
 ```yaml
 eliteScript:
-  Example:
+  Exemple:
     Conditions:
       doesNotHaveTags:
       - isStinky
@@ -271,7 +270,7 @@ eliteScript:
         targetType: SELF
 ```
 
-Ne s'exécutera que si le boss ne possède pas les balises "isStinky" et "isSus".
+Ne s'exécutera que si le boss n'a pas les balises "isStinky" et "isSus".
 
 </div>
 
@@ -287,6 +286,42 @@ Donne à la condition une chance aléatoire d'être valide.
 
 | Clé | Détails | Valeurs |
 | --- | :-: | :-: |
-| `randomChance` | Chance que la condition soit valide. | Nombre entre 0.0 et 1.0 |
+| `randomChance` | Chance que la condition soit valide. | Nombre entre 0,0 et 1,0 |
 
 Notez que cette condition est spéciale car elle ne nécessite pas de cible.
+
+## Filtrer NEARBY avec des balises
+
+Pour filtrer `NEARBY_MOBS` ou `NEARBY_PLAYERS` en fonction de balises spécifiques, utilisez `ACTION_TARGET` comme cible de la condition (si la condition est appliquée à une action et non au script lui-même). Cela garantit que le script filtre avec précision uniquement les mobs/joueurs avec les balises spécifiées.
+
+<div align="center">
+
+<details>
+
+<summary><b>Ejemplo</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Actions:
+    - action: SET_MOB_AI
+      Target:
+        targetType: NEARBY_MOBS
+        range: 40
+      bValue: false
+      Conditions:
+        hasTags:
+          - TurnOff
+        Target:
+          targetType: ACTION_TARGET
+```
+
+Ce script recherchera tous les mobs proches avec la balise `TurnOff` et s'ils ont la balise, il désactivera leur IA.
+
+</div>
+
+</details>
+
+</div>

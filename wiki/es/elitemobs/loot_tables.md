@@ -1,18 +1,20 @@
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+
 # Tabla de botín personalizada
 
-Formato de botín universal. Utilizado por EliteMobs en varios lugares diferentes.
+Formato de botín universal. Utilizado por EliteMobs en varias ubicaciones diferentes.
 
-Tenga en cuenta que este es el formato más reciente y el que se recomienda utilizar, pero existen algunos formatos alternativos más antiguos.
+Tenga en cuenta que este es el formato más reciente y el que se recomienda usar, pero existen algunos formatos antiguos alternativos.
 
-Asegúrate de comenzar tus tablas de botín con `uniqueLootList:` antes de agregar cualquier configuración; de lo contrario, la configuración .yml dará error.
+Asegúrese de comenzar sus tablas de botín con `uniqueLootList:` antes de agregar cualquier configuración, de lo contrario, la configuración .yml generará un error.
 
-### Soltar objetos de élite:
+### Dejar caer objetos de élite:
 
 | Clave | Detalles | Valores                | Predeterminado |
 | --- | :-: |-----------------------| --- |
-| `filename` | Establece el nombre del archivo del objeto personalizado que se utilizará. | [Nombre de archivo](#nombre_de_archivo) | ninguno |
+| `filename` | Establece el nombre de archivo del objeto personalizado que se va a utilizar. | [Nombre de archivo](#filename) | ninguno |
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo</b></summary>
 
@@ -20,24 +22,24 @@ Asegúrate de comenzar tus tablas de botín con `uniqueLootList:` antes de agreg
 
 ```yml
 uniqueLootList:
-  - filename: palillo_de_magmaguys.yml
+  - filename: magmaguys_toothpick.yml
 ```
 
-Esto hará que la mafia suelte 1 *palillo de dientes de MagmaGuy* con un 100% de probabilidad de soltarlo.
+Esto hará que el mob deje caer 1 *Palillo de dientes de MagmaGuy* con una posibilidad de caída del 100 %.
 
 </div>
 
 </details>
 
-### Configuración general:
+### Configuraciones generales:
 
 | Clave | Detalles | Valores              | Predeterminado |
 | --- | :-: |---------------------| --- |
-| `chance` | Establece la posibilidad de que caiga el botín. | [Doble](#doble)   | `1.0` |
-| `amount` | Establece la cantidad de esta entrada de botín que se soltará | [Entero](#entero) | `1` |
-| `ignorePlayerLevel` | Hace que la caída de botín ignore el limitador de botín del jugador | [Booleano](#booleano) | `false` |
+| `chance` | Establece la posibilidad de que el botín caiga. | [Doble](#double)   | `1.0` |
+| `amount` | Establece la cantidad de esta entrada de botín que se va a dejar caer | [Entero](#integer) | `1` |
+| `ignorePlayerLevel` | Hace que el botín que caiga ignore el limitador de botín del jugador | [Booleano](#booleano) | `false` |
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo</b></summary>
 
@@ -45,25 +47,25 @@ Esto hará que la mafia suelte 1 *palillo de dientes de MagmaGuy* con un 100% de
 
 ```yml
 uniqueLootList:
-  - filename: palillo_de_magmaguys.yml
+  - filename: magmaguys_toothpick.yml
     chance: 0.5
     amount: 10
     ignorePlayerLevel: true
 ```
 
-Esto hará que la mafia suelte 10 *palillos de dientes de MagmaGuy* con un 50% de probabilidad de soltarlo mientras ignora el nivel del jugador.
+Esto hará que el mob deje caer 10 *Palillos de dientes de MagmaGuy* con una posibilidad de caída del 50 % ignorando el nivel del jugador.
 
 </div>
 
 </details>
 
-### Soltar monedas de élite:
+### Dejar caer monedas de élite:
 
 | Clave | Detalles | Valores              | Predeterminado |
 | --- | :-: |---------------------| --- |
-| `currencyAmount` | Establece la cantidad de monedas que se soltarán. | [Entero](#entero) | ninguno |
+| `currencyAmount` | Establece la cantidad de monedas que se dejarán caer. | [Entero](#integer) | ninguno |
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo</b></summary>
 
@@ -74,19 +76,19 @@ uniqueLootList:
   - currencyAmount: 344
     chance: 0.5
 ```
-Esto hará que la mafia suelte 344 *monedas de élite* con un 50% de probabilidad de soltarlo.
+Esto hará que el mob deje caer 344 *Monedas de Élite* con una posibilidad de caída del 50 %.
 
 </div>
 
 </details>
 
-### Soltar objetos de vainilla:
+### Dejar caer objetos de vainilla:
 
 | Clave | Detalles | Valores                | Predeterminado |
 | --- | :-: |-----------------------| --- |
-| `material` | Establece el material del objeto que se soltará. | [Material](#material) | ninguno |
+| `material` | Establece el material del objeto que se deja caer. | [Material](#material) | ninguno |
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo</b></summary>
 
@@ -98,21 +100,21 @@ uniqueLootList:
     chance: 0.3
     amount: 5
 ```
-Esto hará que la mafia suelte 5 *manzanas* con un 30% de probabilidad de soltarlo.
+Esto hará que el mob deje caer 5 *Manzanas* con una posibilidad de caída del 30 %.
 
 </div>
 
 </details>
 
-### Arenas: TRABAJO EN PROGRESO (no funciona actualmente)
-Al hacer tablas de botín de arena, asegúrate de comenzar tu tabla de botín con `rawArenaReward:` en lugar de `uniqueLootList:`.
+### Arenas: EN PROCESO (No funciona actualmente)
+Cuando cree tablas de botín de arenas, asegúrese de comenzar su tabla de botín con `rawArenaReward:` en lugar de `uniqueLootList:`.
 
 | Clave | Detalles | Valores              | Predeterminado |
 | --- | :-: |---------------------| --- |
-| `wave` | Establece la oleada en la que caerá esta entrada de botín. Solo para uso en arenas. | [Entero](#entero) | ninguno |
-| `level` | Establece el nivel de la caída de botín. Solo para uso en arenas. | [Entero](#entero) | ninguno |
+| `wave` | Establece la ola en la que caerá esta entrada de botín. Solo para uso en arenas. | [Entero](#integer) | ninguno |
+| `level` | Establece el nivel del botín que se deja caer. Solo para uso en arenas. | [Entero](#integer) | ninguno |
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo</b></summary>
 
@@ -124,23 +126,23 @@ rawArenaReward:
     wave: 1
     amount: 10
     chance: 0.5
-  - filename: palillo_de_magmaguys.yml
+  - filename: magmaguys_toothpick.yml
     wave: 1
     level: 2
 ```
-Cuando los jugadores superen la primera oleada, esto hará que la arena suelte 10 *panes* con un 50% de probabilidad de soltarlo y 1 *palillo de dientes de MagmaGuy* de nivel 2 con un 100% de probabilidad de soltarlo.
+Cuando los jugadores superen la primera oleada, esto hará que la arena deje caer 10 *Panes* con una posibilidad de caída del 50 % y 1 *Palillo de dientes de MagmaGuy* de nivel 2 con una posibilidad de caída del 100 %.
 
 </div>
 
 </details>
 
-### Mazmorras instanciadas:
+### Mazmorras de instancia:
 
 | Clave | Detalles | Valores            | Predeterminado |
 | --- | :-: |-------------------| --- |
-| `difficultyID` | Establece la lista de dificultades de mazmorras instanciadas para las que caerá este botín. Solo para uso en mazmorras instanciadas. | [Texto](#texto) | ninguno |
+| `difficultyID` | Establece la lista de dificultades de mazmorras de instancia para las que caerá este botín. Solo para uso en mazmorras de instancia. | [Cadena](#string) | ninguno |
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo</b></summary>
 
@@ -148,19 +150,14 @@ Cuando los jugadores superen la primera oleada, esto hará que la arena suelte 1
 
 ```yml
 uniqueLootList:
-  - filename: palillo_de_magmaguys.yml
+  - filename: magmaguys_toothpick.yml
     chance: 0.5
     difficultyID:
     - 1
     - 2
 ```
-Esto hará que la mafia suelte 1 *palillo de dientes de MagmaGuy* con un 50% de probabilidad de soltarlo si los jugadores derrotaron al jefe en dificultad 1 o 2.
+Esto hará que el mob deje caer 1 *Palillo de dientes de MagmaGuy* con una posibilidad de caída del 50 % si los jugadores vencieron al jefe en la dificultad 1 o 2.
 
 </div>
 
 </details>
-
-
-
-
-

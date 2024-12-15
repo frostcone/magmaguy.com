@@ -1,59 +1,61 @@
-# Arquivo de Tesouro
+# Что такое файл сокровищ?
 
-Os arquivos de tesouro são o que determina as tabelas de loot para os baús do BetterStructures. Eles geralmente são atribuídos aos [geradores]($language$/betterstructures/creating_generators.md&section=treasurefilename), mas também podem ser definidos no nível de uma [configuração de construção individual]($language$/betterstructures/creating_structures.md&section=treasurefile).
+Файлы сокровищ определяют таблицы добычи для сундуков BetterStructures. Обычно они назначаются
+[генераторам]($language$/betterstructures/creating_generators.md&section=treasurefilename), но также могут быть установлены на уровне
+[индивидуальной конфигурации сборки]($language$/betterstructures/creating_structures.md&section=treasurefile).
 
-Essas tabelas de loot são bem poderosas, mas também exigem conhecimento de alguns conceitos básicos de estatística para serem compreendidas.
+Эти таблицы добычи довольно мощные, но для их понимания также требуются знания некоторых основных статистических концепций.
 
 <details>
 <summary>
-Leia sobre esses conceitos aqui, o restante da página pressupõe que você os entende!
+Прочтите об этих понятиях здесь, остальная часть страницы предполагает, что вы их понимаете!
 </summary>
 
-***Probabilidade ponderada***
+***Взвешенная вероятность***
 
-O BetterStructures e o EliteMobs usam frequentemente o conceito de probabilidade ponderada. Isso é para resolver um problema simples: como você pode definir a chance de escolher um item de uma lista de itens potencialmente infinitos?
+BetterStructures и EliteMobs часто используют понятие взвешенной вероятности. Это решает простую проблему: как установить шанс выбора одного элемента из списка потенциально бесконечных элементов?
 
-A probabilidade ponderada resolve esse problema atribuindo um peso a cada item. Se você tiver 100 itens e cada um tiver um peso de 1, então todos eles têm a mesma chance - 1% - de serem escolhidos. Se você adicionar mais um item, elevando o total para 101 itens, e dar a esse último item uma chance de 1, todos os itens ainda têm a mesma chance - ~0.99% - de serem escolhidos. Se você der ao último item um peso de 2, a chance de ele ser escolhido aumenta - o novo peso total é 102, o último elemento tem um peso de 2 e 100/102 = ~0.98%, então 0.98%+0.98% = 1.96% de chance de ser escolhido. Se você der ao último item um peso de 100, o novo peso é 200, e como metade desse peso é seu novo item, seu novo item tem 50% de chance de ser escolhido.
+Взвешенная вероятность решает эту проблему, присваивая каждому элементу вес. Если у вас есть 100 элементов, и каждый имеет вес 1, то у всех одинаковый шанс - 1% - быть выбранным. Если вы добавите еще один элемент, доведя общее количество до 101 элемента, и присвоите этому последнему элементу шанс 1, у всех элементов по-прежнему будет одинаковый шанс - ~0,99% - быть выбранным. Если вы присвоите последнему элементу вес 2, вероятность его выбора увеличится - новый общий вес будет 102, последний элемент имеет вес 2 и 100/102 = ~0,98%, поэтому 0,98%+0,98% = 1,96% шанс быть выбранным. Если вы присвоите последнему элементу вес 100, новый вес будет 200, и поскольку половина этого веса приходится на ваш новый элемент, у вашего нового элемента есть 50% шанс быть выбранным.
 
-Como você pode ver, isso é bom para usar quando você pode ter listas de centenas de coisas para randomizar.
+Как видите, это удобно использовать, когда у вас могут быть списки из сотен вещей для рандомизации.
 
-***Distribuição Gaussiana***
+***Гауссово распределение***
 
-Uma distribuição gaussiana é uma função matemática em forma de sino.
+Гауссово распределение - это колоколообразная математическая функция.
 
 <img src="http://sfonline.barnard.edu/wp-content/uploads/2015/12/gaussian-distribution.jpg">
 
-Você pode estar se perguntando como isso é relevante para o sistema de loot. Uma coisa que o BetterStructures precisa decidir ao definir loot em baús é quão loot aparece nesses baús. A quantidade deve ser consistentemente em torno de um número específico, mas idealmente não tão previsível a ponto de abrir um baú se tornar menos emocionante.
+Вы можете задаться вопросом, какое отношение это имеет к системе добычи. Одна из вещей, которую BetterStructures должен решить при установке добычи в сундуках, - это сколько именно добычи появляется в этих сундуках. Количество должно быть постоянно около определенного числа, но в идеале не настолько предсказуемым, чтобы открытие сундука могло стать менее захватывающим.
 
-Para atingir esse efeito semi-aleatório, a distribuição gaussiana é usada para randomizar *quantos* itens são escolhidos. Uma vez que essa quantidade é escolhida, a *probabilidade ponderada* escolhe um elemento da tabela de raridade aleatoriamente e levando em consideração os pesos.
+Для достижения этого полуслучайного эффекта гауссово распределение используется для рандомизации *количества* выбираемых элементов. После того, как это количество выбрано, *взвешенная вероятность* выбирает один элемент из таблицы редкости случайным образом с учетом весов.
 
-Então, como a distribuição gaussiana funciona?
+Итак, как работает гауссово распределение?
 
-Felizmente, você não precisa se preocupar com como a matemática por trás disso funciona e pode, em vez disso, se concentrar nas duas configurações que a modificam: média e desvio padrão.
+К счастью, вам не нужно беспокоиться о том, как работает математика, и вместо этого вы можете сосредоточиться на двух настройках, которые ее изменяют: среднем значении и стандартном отклонении.
 
-*Média*
+*Среднее значение*
 
-Para simplificar, `mean` define o meio da curva gaussiana, o que significa que define a quantidade mais provável de itens que aparecerão em um baú. Essencialmente, se você quiser que seus baús geralmente tenham 5 itens, defina sua média como 5.
+Проще говоря, `среднее значение` устанавливает середину гауссовой кривой, что означает, что оно устанавливает наиболее вероятное количество элементов, которые появятся в сундуке. По сути, если вы хотите, чтобы в ваших сундуках обычно было 5 предметов, установите среднее значение равным 5.
 
-*Desvio padrão*
+*Стандартное отклонение*
 
-Imagine que a quantidade média de itens em um baú é 5. O `desvio padrão` ajuda a decidir quanto esse número pode mudar de um baú para outro.
+Представьте, что среднее количество предметов в сундуке равно 5. `Стандартное отклонение` помогает определить, насколько это число может изменяться от одного сундука к другому.
 
-Pequeno `Desvio Padrão` (por exemplo, 1): Isso significa que a maioria dos baús terá itens muito próximos da média, como 4, 5 ou 6 itens. É uma experiência mais previsível. Por exemplo, se um baú tiver um desvio padrão de 1, você pode esperar que quase todos os baús tenham entre 4 e 6 itens.
+Небольшое `стандартное отклонение` (например, 1): это означает, что в большинстве сундуков будут предметы, очень близкие к среднему значению, например, 4, 5 или 6 предметов. Это более предсказуемый опыт. Например, если стандартное отклонение сундука равно 1, вы можете ожидать, что почти во всех сундуках будет от 4 до 6 предметов.
 
-Médio `Desvio Padrão` (por exemplo, 2): Aqui, há mais variedade. Os baús podem ter de 3 a 7 itens. Embora 5 itens ainda sejam comuns, não é incomum encontrar baús com um pouco mais ou menos. Portanto, com um desvio padrão de 2, você pode ocasionalmente encontrar um baú com apenas 3 itens, ou se tiver sorte, um com 7 itens.
+Среднее `стандартное отклонение` (например, 2): здесь больше разнообразия. В сундуках может быть от 3 до 7 предметов. Хотя 5 предметов по-прежнему являются обычными, нередки случаи, когда в сундуках немного больше или меньше. Итак, со стандартным отклонением 2 вы можете иногда найти сундук только с 3 предметами, или, если вам повезет, сундук с 7 предметами.
 
-Grande `Desvio Padrão` (por exemplo, 3 ou mais): Agora as coisas ficam realmente surpreendentes! Os baús podem ter apenas 2 itens ou até 8 ou mais. Isso significa que você pode encontrar um baú com apenas alguns itens, mas também há uma chance de encontrar um baú carregado de coisas boas. Por exemplo, com um desvio padrão de 3, um baú pode ter de 2 a 8 itens, tornando a abertura de cada baú um jogo emocionante.
+Большое `стандартное отклонение` (например, 3 или больше): теперь все становится действительно неожиданным! В сундуках может быть всего 2 предмета или целых 8 или более. Это означает, что вы можете найти сундук всего с парой предметов, но также есть шанс найти сундук, полный вкусностей. Например, со стандартным отклонением 3 в сундуке может быть от 2 до 8 предметов, что делает каждое открытие сундука захватывающей азартной игрой.
 
-***A média padrão é 4 e o desvio padrão padrão é 3.***
+***Среднее значение по умолчанию равно 4, а стандартное отклонение по умолчанию равно 3.***
 
 </details>
 
 ***
 
-# Formato especial
+# Специальный формат
 
-Os arquivos de tesouro possuem um formato especial que se parece com isso:
+Файлы сокровищ имеют специальный формат, который выглядит следующим образом:
 
 ```yml
 isEnabled: true
@@ -102,39 +104,39 @@ procedurallyGeneratedItemSettings:
 
 ```
 
-*Observação: esta é uma versão muito reduzida do arquivo, o arquivo real tem 2599 linhas, pois cobre muito mais loot e todos os encantamentos possíveis.*
+*Примечание: это очень урезанная версия файла, фактический файл состоит из 2599 строк, поскольку он охватывает гораздо больше добычи и каждое возможное зачарование.*
 
 # isEnabled
 
-| Chave |       Valores        | Padrão |
-|-|:-------------------:|-|
-| `isEnabled` | [Booleano](#boolean) | `true` |
+| Ключ        | Значения              | По умолчанию |
+|-------------|:---------------------:|-------------:|
+| `isEnabled` | [Булево](#boolean)  | `true`       |
 
 ***
 
 # mean
 
-| Chave    |      Valores       | Padrão |
-|--------|:-----------------:|---------|
-| `mean` | [Double](#double) | `4`     |
+| Ключ   | Значения           | По умолчанию |
+|--------|:------------------:|-------------:|
+| `mean` | [Double](#double) | `4`          |
 
-Define a `mean`. Leia mais sobre isso [aqui](#what-is-a-treasure-file).
+Установите `среднее значение`. Подробности об этом читайте [здесь](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # standardDeviation
 
-| Chave                 |      Valores       | Padrão |
-|---------------------|:-----------------:|---------|
-| `standardDeviation` | [Double](#double) | `3`     |
+| Ключ                | Значения           | По умолчанию |
+|---------------------|:------------------:|-------------:|
+| `standardDeviation` | [Double](#double) | `3`          |
 
-Define o `standardDeviation`. Leia mais sobre isso [aqui](#what-is-a-treasure-file).
+Установите `standardDeviation`. Подробности об этом читайте [здесь](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # items
 
-É aqui que as coisas ficam complicadas, pois muitas das opções podem ser definidas pelos administradores. Vamos dar uma olhada no exemplo de arquivo de configuração anterior.
+Вот тут становится сложно, так как многие параметры могут быть установлены администраторами. Давайте поближе рассмотрим пример файла конфигурации из предыдущего раздела.
 
 ```yml
 items:
@@ -160,38 +162,38 @@ items:
       weight: 6.0
 ```
 
-Aqui, você pode ver que abaixo da chave de configuração `items`, temos um map com `common` e `rare`. Essas são as `rarities`!
+Здесь вы можете увидеть, что в разделе конфигурации `items` у нас есть карта с `common` и `rare`. Это `редкости`!
 ***
 
 ## rarities
 
-As raridades não possuem um nome fixo. Você pode adicionar ou remover elas e personalizá-las como quiser, contanto que use o mesmo formato.
+У редкостей нет фиксированного названия. Вы можете добавлять или удалять их и настраивать их так, как вам хочется, если вы используете один и тот же формат.
 
-Observe que o que torna essas tabelas de raridade mais ou menos raras é o `weight` da tabela de loot!
+Обратите внимание, что то, что делает эти таблицы редкости более или менее редкими, - это `вес` таблицы добычи!
 
-Por padrão:
-- `common` tem um `weight` padrão de 60
-- `rare` tem um `weight` padrão de 30
-- `epic` tem um `weight` padrão de 10
+По умолчанию:
+- `common` имеет вес по умолчанию `60`
+- `rare` имеет вес по умолчанию `30`
+- `epic` имеет вес по умолчанию `10`
 
-Tornando os itens comuns 6x mais propensos a cair do que os itens épicos. Você pode ler mais sobre [`weight`s aqui](#what-is-a-treasure-file)!
+Делает обычные предметы в 6 раз более вероятными, чем эпические предметы. Вы можете прочитать больше о `весах` [здесь](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)!
 
-Além do peso, cada tabela de raridade tem sua própria lista de `items`.
+Помимо веса, у каждой таблицы редкости есть свой собственный список `items`.
 
 ***
 
-### itens de raridade
+### rarity items
 
-Os itens de raridade são uma [lista de mapeamento]($language$/global/configuration_file_guide.md&section=map_list) que lista todos os itens que a tabela de raridade possui.
+Элементы редкости - это [список карт](https://magmaguy.com/wiki.html#lang=en&article=global+configuration_file_guide.md&section=map-list), в котором перечислены все элементы, которые есть в таблице редкости.
 
-Esses itens possuem as seguintes configurações:
+Эти элементы имеют следующие настройки:
 
-| Chave                                |           Valores            | Padrão  |
-|------------------------------------|:---------------------------:|----------|
-| `amount`                           | min-max [Integer](#integer) | variable |
-| `material`                         |    [Material](#Material)    | variable |
-| `procedurallyGenerateEnchantments` |     [Boolean](#boolean)     | variable |
-| `weight`                           |      [Double](#double)      | variable |
+| Ключ                                | Значения                    | По умолчанию |
+|------------------------------------|:---------------------------:|-------------:|
+| `amount`                           | min-max [Целое](#integer)   | переменная   |
+| `material`                         | [Материал](#Material)       | переменная   |
+| `procedurallyGenerateEnchantments` | [Булево](#boolean)          | переменная   |
+| `weight`                           | [Double](#double) | переменная   |
 
 ***
 
@@ -199,34 +201,35 @@ Esses itens possuem as seguintes configurações:
 
 ***
 
-Define a quantidade a ser deixada cair. Isso é expresso como um intervalo da seguinte forma `amount: MIN-MAX`. Como exemplo, para deixar cair entre 1 e 5 itens: `amount: 1-5`.
+Устанавливает количество для выпадения. Это выражается как диапазон следующим образом: `amount: MIN-MAX`. Например, чтобы выпало от 1 до 5
+предметов: `amount: 1-5`.
 
 #### material
 
-Define o material usando os [nomes de material da API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) do item que pode ser deixado cair.
+Устанавливает материал, используя [названия Spigot API](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)
+элемента для потенциального выпадения.
 
 ***
 
-##### Caso Especial - Serializado
+##### Особый случай - сериализованный
 
-Ao usar o comando lootify, em vez de um material, lootify fornecerá uma configuração `serialized`. Isso é gerado automaticamente pelo plugin e não deve ser gerado manualmente. Está em um formato que não é legível por humanos.
+При использовании команды lootify вместо материала lootify предоставит параметр `serialized`. Он автоматически генерируется плагином и не должен генерироваться вручную. Он имеет формат, который не читается человеком.
 
 ***
 
 #### weight
 
-Define o peso para a chance ponderada. Mais informações sobre isso [aqui](#what-is-a-treasure-file).
+Устанавливает вес для взвешенной вероятности. Подробнее об этом [здесь](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 #### procedurallyGenerateItems
 
-Define se o item deve ser gerado proceduralmente com base nas configurações de configuração se `procedurallyGeneratedItemSettings`. Observe que, com base nas configurações, isso pode resultar na geração de um item sem encantamentos, independentemente de qualquer coisa.
-
+Устанавливает, должен ли элемент генерироваться процедурно на основе настроек конфигурации, если `procedurallyGeneratedItemSettings`. Обратите внимание, что в зависимости от настроек это может привести к тому, что элемент будет генерироваться без зачарований.
 
 # procedurallyGeneratedItemSettings
 
-Vamos dar outra olhada no exemplo de nosso arquivo de configuração:
+Давайте еще раз посмотрим на пример нашего файла конфигурации:
 
 ```yml
 procedurallyGeneratedItemSettings:
@@ -241,34 +244,32 @@ procedurallyGeneratedItemSettings:
       chance: 0.2
 ```
 
-Como você pode ver, este arquivo lista os tipos de material, seguido por encantamentos e, em seguida, por níveis mínimo e máximo, e uma chance.
+Как видите, в этом файле перечислены типы материалов, за которыми следуют зачарования, а затем минимальные и максимальные уровни и шанс.
 
-Observe que você não pode adicionar materiais personalizados de outros plugins nessas configurações e provavelmente não será capaz de adicionar encantamentos personalizados de outros plugins, a menos que o autor deles diga explicitamente que tornou seu sistema compatível.
+Обратите внимание, что вы не можете добавлять пользовательские материалы из других плагинов в эти настройки, и вы, вероятно, не сможете добавлять пользовательские зачарования из других плагинов, если их автор явно не заявляет, что они сделали свою систему совместимой.
 
-Quanto às configurações de encantamento:
+Что касается настроек зачарования:
 
-| Chave        |       Valores        | Padrão  |
-|------------|:-------------------:|----------|
-| `minLevel` | [Integer](#integer) | variable |
-| `maxLevel` | [Integer](#integer) | variable |
-| `chance`   |  [Chance](#chance)  | variable |
+| Ключ        | Значения          | По умолчанию |
+|------------|:-----------------:|-------------:|
+| `minLevel` | [Целое](#integer) | переменная   |
+| `maxLevel` | [Целое](#integer) | переменная   |
+| `chance`   | [Шанс](#chance)   | переменная   |
 
 ***
 
 ## minLevel
 
-Define o nível mínimo de encantamento.
+Устанавливает минимальный уровень зачарования.
 
 ***
 
 ## maxLevel
 
-Define o nível máximo de encantamento.
+Устанавливает максимальный уровень зачарования.
 
 ***
 
 ## chance
 
-Define a chance do encantamento acontecer. Isso não usa probabilidade ponderada, apenas um lançamento de dados normal.
-
-
+Устанавливает шанс срабатывания зачарования. Здесь не используется взвешенная вероятность, а просто нормальный бросок кубика.

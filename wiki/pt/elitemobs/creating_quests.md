@@ -2,9 +2,9 @@
 
 # Exemplo de Missão
 
-O EliteMobs vem pré-empacotado com um `test_quest.yml`, que será analisado aqui como um formato de missão simples a seguir.
+O EliteMobs vem pré-instalado com um `test_quest.yml`, que será analisado aqui como um formato de missão simples a seguir.
 
-_Missões Personalizadas ficam na pasta `~plugins/EliteMobs/customquests`!_
+_Missões personalizadas estão na pasta `~plugins/EliteMobs/customquests`!_
 
 `test_quest.yml`
 
@@ -17,9 +17,9 @@ customObjectives:
     objectiveType: KILL_CUSTOM
 customRewards:
 - filename=magmaguys_toothpick.yml:amount=1:chance=1
-name: "&aKill the Test Boss"
+name: "&aMata o Boss de Teste"
 questLore: 
-- "&cEnd the test boss'' reign of terror!"
+- "&cAcaba com o reinado de terror do boss de teste!"
 ```
 
 <div align="center">
@@ -28,11 +28,11 @@ questLore:
 
 </div>
 
-*Se sua interface de usuário de missão não estiver assim, você pode alterá-la para que corresponda usando `/em alt`.*
+*Se a tua interface de missão não for igual a esta, podes alterá-la para corresponder usando `/em alt`.*
 
-Este exemplo de missão dará aos jogadores a tarefa de eliminar 1 test_boss.yml. (O nome real do chefe exibido no rastreador de missões será o `name:` definido em test_boss.yml.) E como recompensa por completar a missão, eles serão recompensados com 1 Palito de Dente do Magmaguy.
+Esta missão de exemplo dará aos jogadores a tarefa de matar 1 test_boss.yml. (O nome real do boss exibido no rastreador de missões será o `name:` definido em test_boss.yml.) E como recompensa por completar a missão, eles serão recompensados com 1 Palito de Dentes do Magmaguy.
 
-## Criando Missões Personalizadas
+## Criar Missões Personalizadas
 
 <div align="center">
 
@@ -42,9 +42,9 @@ Define os objetivos da missão.
 
 | Chave       |   Valores    | Padrão |
 |-----------|:-----------:|:-------:|
-| `customObjectives` | Especial [1] |  nenhum   |
+| `customObjectives` | Especial [1] |  nenhum  |
 
-*Observação: Se você estiver usando um chefe multifásico como seu objetivo, então o objetivo deve estar usando a primeira fase como alvo.*
+*Nota: Se estiveres a usar um boss de múltiplas fases como teu objetivo, então o objetivo deve usar a primeira fase como alvo.*
 
 <details> 
 
@@ -68,11 +68,11 @@ customObjectives:
 customObjectives:
   Objective1:
     dialog:
-    - "&a[Dialog NPC] &fCome here often?"
-    - "&7&oI should eat more apples."
+    - "&a[NPC de Diálogo] &fVens cá muitas vezes?"
+    - "&7&oDevia comer mais maçãs."
     filename: dialog_npc.yml
-    npcName: Dialog NPC
-    location: at dialog location.
+    npcName: NPC de Diálogo
+    location: na localização de diálogo.
     objectiveType: DIALOG
 ```
 
@@ -82,7 +82,7 @@ customObjectives:
 customObjectives:
   Objective1:
     amount: '99'
-    itemName: Red Apples
+    itemName: Maçãs Vermelhas
     filename: my_quest_item_red_apples.yml
     objectiveType: FETCH_ITEM
 ```
@@ -109,13 +109,13 @@ Os Objetivos Personalizados são construídos usando os seguintes valores:
 
 | Chave                                     | Descrição |
 |-----------------------------------------|-------------|
-| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | Usado para definir o tipo de objetivo que isso representa. `KILL_CUSTOM` indica que a missão envolve matar um Chefe Personalizado específico, `FETCH_ITEM` indica que a missão envolve obter um Item Personalizado específico e `DIALOG` indica que a missão envolve falar com um NPC.            |
-| `filename`                                    | Usado para definir o nome do arquivo do Chefe Personalizado, o Item Personalizado que o jogador tem que matar / obter ou o NPC com quem ele tem que falar.            |
-| `amount`                                      | Usado para definir a quantidade de Chefes Personalizados que devem ser mortos ou itens que devem ser obtidos.            |
-| `dialog`                                      | Usado para definir o diálogo do NPC com quem o jogador fala.            |
-| `name`                                        | Usado para definir o nome do objetivo da missão, seja um NPC ou um item personalizado. Apenas para fins visuais.            |
+| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | Usado para definir o tipo de objetivo que isto representa. `KILL_CUSTOM` indica que a missão envolve matar um Boss Personalizado específico, `FETCH_ITEM` indica que a missão envolve obter um Item Personalizado específico e `DIALOG` indica que a missão envolve falar com um NPC.            |
+| `filename`                                    | Usado para definir o nome do ficheiro do Boss Personalizado, do Item Personalizado que o jogador tem de matar / obter ou do NPC com quem tem de falar.           |
+| `amount`                                      | Usado para definir a quantidade de Bosses Personalizados que devem ser mortos ou itens que devem ser obtidos.            |
+| `dialog`                                      | Usado para definir o diálogo do NPC com quem o jogador fala.           |
+| `name`                                        | Usado para definir o nome do objetivo da missão, seja um NPC ou um item personalizado. Apenas para fins visuais.           |
 
-_Por favor, observe que cada campo do Objetivo Personalizado é separado por um `:` !_
+_Por favor, note que cada campo de Objetivo Personalizado é separado por um `!`_
 
 </div>
 
@@ -129,7 +129,7 @@ Define as recompensas da missão.
 
 | Chave       |                                Valores                                 | Padrão |
 |-----------|:---------------------------------------------------------------------:|:-------:|
-| `customRewards` | [Formato universal de loot do EliteMobs]($language$elitemobs/loot_tables.md) |  nenhum   |
+| `customRewards` | [Formato Universal de Saque do EliteMobs]($language$elitemobs/loot_tables.md) |  nenhum  |
 
 <details> 
 
@@ -162,7 +162,7 @@ Define a permissão que o jogador deve ter para aceitar a missão.
 
 | Chave       |      Valores       | Padrão |
 |-----------|:-----------------:|:-------:|
-| `questAcceptPermission` | [String](#string) |  nenhum   |
+| `questAcceptPermission` | [String](#string) |  nenhum  |
 
 <details> 
 
@@ -208,7 +208,7 @@ questAcceptPermissions:
 
 ### questLockoutPermission
 
-Define a permissão que o jogador receberá ao concluir a missão, que o bloqueará de fazer a missão novamente (geralmente o [Nome do Arquivo](#fielname) da missão que você está editando).
+Define a permissão que o jogador receberá ao completar a missão, o que o impedirá de fazer a missão novamente (Geralmente o [Nome do Ficheiro](#fielname) da missão que estás a editar).
 
 | Chave       |      Valores       | Padrão |
 |-----------|:-----------------:|:-------:|
@@ -232,11 +232,11 @@ questLockoutPermission: elitequest.my_quest.yml
 
 ### questLockoutMinutes
 
-Define quanto tempo, em minutos, o jogador terá que esperar antes de poder fazer a missão novamente (funciona removendo a permissão de bloqueio da missão).
+Define quanto tempo, em minutos, o jogador terá de esperar antes de poder fazer a missão novamente (funciona removendo a permissão de bloqueio da missão).
 
 | Chave       |      Valores       | Padrão |
 |-----------|:-----------------:|:-------:|
-| `questLockoutMinutes` | [Integer](#integer) |  `-1`(nunca se repetirá)   |
+| `questLockoutMinutes` | [Número Inteiro](#integer) |  `-1` (nunca se repete)   |
 
 <details> 
 
@@ -256,11 +256,11 @@ questLockoutMinutes: 60
 
 ### name
 
-Define o nome da missão. Aceita [Códigos de Cor](#color_codes).
+Define o nome da missão. Aceita [Códigos de Cores](#color_codes).
 
 | Chave    |      Valores       | Padrão |
 |--------|:-----------------:|:-------:|
-| `name` | [String](#string) |  nenhum   |
+| `name` | [String](#string) |  nenhum  |
 
 <details> 
 
@@ -269,7 +269,7 @@ Define o nome da missão. Aceita [Códigos de Cor](#color_codes).
 <div align="left">
 
 ```yml
-name: "&aMy Great Quest Name"
+name: "&aO Meu Grande Nome de Missão"
 ```
 
 </div>
@@ -280,7 +280,7 @@ name: "&aMy Great Quest Name"
 
 ### questLore
 
-Define a descrição da missão que aparecerá no menu de missões do jogo.
+Define a história da missão que aparecerá no menu de missões do jogo.
 
 | Chave    |      Valores       | Padrão |
 |--------|:-----------------:|:-------:|
@@ -294,8 +294,8 @@ Define a descrição da missão que aparecerá no menu de missões do jogo.
 
 ```yml
 questLore:
-- "Interesting lore sentence."
-- "Yet another interesting lore sentence."
+- "Frase interessante da história."
+- "Mais uma frase interessante da história."
 ```
 
 <div align="center">
@@ -314,7 +314,7 @@ questLore:
 
 Define as permissões atribuídas ao jogador até que ele entregue a missão.
 
-Se você estiver usando esta configuração para garantir que um item só caia quando os jogadores tiverem uma missão específica ativa, também precisará configurar a [Mesma Permissão]($language$/elitemobs/creating_items.md&section=permission) no arquivo de configuração do item.
+Se estiveres a usar esta configuração para garantir que um item só é largado quando os jogadores têm uma missão específica ativa, também terás de configurar a [Mesma Permissão]($language$/elitemobs/creating_items.md&section=permission) no ficheiro de configuração do item.
 
 | Chave    |      Valores       | Padrão |
 |--------|:-----------------:|:-------:|
@@ -339,7 +339,7 @@ temporaryPermissions:
 
 ### questAcceptDialog
 
-Define o diálogo que aparece no bate-papo ao aceitar a missão.
+Define o diálogo que aparece no chat ao aceitar a missão.
 
 | Chave    |      Valores       | Padrão |
 |--------|:-----------------:|:-------:|
@@ -353,8 +353,8 @@ Define o diálogo que aparece no bate-papo ao aceitar a missão.
 
 ```yml
 questAcceptDialog:
-- "My hero! You are so helpful!"
-- "I wish you the best of luck!"
+- "Meu herói! És tão prestável!"
+- "Desejo-te a maior das sortes!"
 ```
 
 <div align="center">
@@ -371,7 +371,7 @@ questAcceptDialog:
 
 ### questCompleteMessage
 
-Define o diálogo que aparece no bate-papo ao concluir a missão.
+Define o diálogo que aparece no chat ao concluir a missão.
 
 | Chave    |      Valores       | Padrão |
 |--------|:-----------------:|:-------:|
@@ -385,8 +385,8 @@ Define o diálogo que aparece no bate-papo ao concluir a missão.
 
 ```yml
 questCompleteMessage:
-- "My hero! You have completed my difficult quest!"
-- "As a reward you can have this loaf of bread!"
+- "Meu herói! Concluíste a minha difícil missão!"
+- "Como recompensa podes ficar com este pão!"
 ```
 
 <div align="center">
@@ -417,7 +417,7 @@ Define os comandos que serão executados ao concluir a missão.
 
 ```yml
 questCompleteCommands:
-- say $player has finished a quest!
+- say $player terminou uma missão!
 ```
 
 <div align="center">
@@ -434,11 +434,11 @@ questCompleteCommands:
 
 ### turnInNPC
 
-Define o nome do arquivo do NPC com quem os jogadores precisam falar/interagir para completar a missão. Este **não** precisa ser o mesmo NPC que distribuiu a missão.
+Define o nome do ficheiro do NPC com quem os jogadores precisam de falar/interagir para concluir a missão. Este **não** tem de ser o mesmo NPC que entregou a missão.
 
 | Chave    |      Valores       | Padrão |
 |--------|:-----------------:|:-------:|
-| `turnInNPC` | [Nome do Arquivo](#filename) |  nenhum   |
+| `turnInNPC` | [Nome do Ficheiro](#filename) |  nenhum   |
 
 <details> 
 
@@ -482,11 +482,11 @@ trackable: true
 
 ### questLevel
 
-Define o nível da missão. Isso é apenas um guia visual para que os jogadores possam saber o quão desafiadora a missão será. Isso **não** modifica de forma alguma o chefe, item ou outros níveis.
+Define o nível da missão. Este é apenas um guia visual para que os jogadores possam saber o quão desafiadora será a missão. Isto **não** modifica de forma alguma os níveis do boss, item ou outros níveis.
 
 | Chave    |      Valores       | Padrão |
 |--------|:-----------------:|:-------:|
-| `questLevel` | [Integer](#integer) | `0`  |
+| `questLevel` | [Número Inteiro](#integer) | `0`  |
 
 <details> 
 
@@ -512,7 +512,7 @@ questLevel: 10
 
 ### questAcceptSound
 
-Define o som que é reproduzido quando uma missão é aceita. É possível reproduzir sons do Minecraft e sons de um pacote de recursos.
+Define o som que é reproduzido quando uma missão é aceite. É possível reproduzir sons do Minecraft e sons de um pacote de recursos.
 
 | Chave                |      Valores       | Padrão |
 |--------------------|:-----------------:|:-------:|
@@ -570,17 +570,17 @@ questCompleteSound: entity.player.levelup
 
 ### Permissões
 
-Como mencionado nas tabelas acima, as permissões são geralmente [Strings](#string) ou [Listas de Strings](#string_list). Mas vamos entrar em mais detalhes sobre como você usará essas permissões para bloquear e desbloquear missões. 
+Como mencionado nas tabelas acima, as permissões são geralmente [Strings](#string) ou [Listas de Strings](#string_list). Mas vamos analisar com mais detalhes como as vais usar para bloquear e desbloquear missões.
 
-Digamos que você esteja criando a quest_3 em uma série de missões que você planejou e não quer que os jogadores consigam pegar a quest_3 antes de terminarem a quest_2. Configuraríamos o arquivo de missão assim:
+Digamos que estás a fazer a missão_3 numa série de missões que planeaste e não queres que os jogadores possam aceitar a missão_3 antes de terminarem a missão_2. Configuraríamos o ficheiro da missão assim:
 
 ```yml
 questAcceptPermission: elitequest.quest_2.yml
 questLockoutPermission: elitequest.quest_3.yml
 ```
-Ao definir `questAcceptPermissions` como `elitequest.quest_2.yml`, impedimos que os jogadores pegassem a quest_3.yml antes de terminarem a quest_2.yml. </br> Ao definir `questLockoutPermission` como `elitequest.quest_3.yml`, impedimos que os jogadores consigam receber essa missão enquanto eles já tiverem essa missão em seu rastreador ou se eles já tiverem concluído essa missão. Isso impede que os jogadores consigam repetir a missão.
+Ao definir as `questAcceptPermissions` para `elitequest.quest_2.yml`, agora impedimos que os jogadores aceitem a missão_3.yml antes de terminarem a missão_2.yml. </br> Ao definir `questLockoutPermission` para `elitequest.quest_3.yml`, impedimos que os jogadores recebam essa missão, desde que já tenham essa missão no seu rastreador ou se já tiverem terminado essa missão. Isto impede que os jogadores possam repetir a missão.
 
-Se você quiser criar uma missão que só fica disponível depois que os jogadores tiverem concluído uma série de missões, então você configuraria o arquivo de missão assim:
+Caso pretendas fazer uma missão que só fique disponível depois de os jogadores terem concluído uma série de missões, então configurarias o ficheiro da missão assim:
 
 ```yml
 questAcceptPermissions: 
@@ -589,20 +589,19 @@ questAcceptPermissions:
 - elitequest.quest_4.yml
 ```
 
-Se você quiser que os jogadores só consigam lootar certos itens quando tiverem a missão correta ativa, então podemos fazer isso usando `temporaryPermissions`. Criaríamos uma permissão no arquivo de missão usando `temporaryPermissions` e então criaríamos uma [permissão]($language$/elitemobs/creating_items.md&section=permission) correspondente no arquivo de item usando `permission`.
+Se quiseres que os jogadores só possam obter certos itens quando tiverem a missão correta ativa, podemos fazer isso usando `temporaryPermissions`. Criaríamos uma permissão no ficheiro da missão usando `temporaryPermissions` e, em seguida, faríamos uma [permissão] correspondente ($language$/elitemobs/creating_items.md&section=permission) no ficheiro do item usando `permission`.
 
-Por exemplo, abriríamos nosso arquivo de missão e adicionaríamos o seguinte:
+Por exemplo, abriríamos o nosso ficheiro da missão e adicionaríamos o seguinte:
 
 ```yml
 temporaryPermissions: 
 - elitequest.my_cool_item.yml
 ```
-Então abriríamos o arquivo de item, em nosso caso *my_cool_item.yml* e adicionaríamos o seguinte:
+Depois, abriríamos o ficheiro do item, no nosso caso *my_cool_item.yml* e adicionaríamos o seguinte:
 
 ```yml
 permission: elitequest.my_cool_item.yml
 ```
-Ambos os arquivos agora têm permissões correspondentes, o que deve fazer com que nosso item só seja deixado cair quando os jogadores tiverem a missão correta ativa.
+Ambos os ficheiros têm agora permissões correspondentes, o que deve fazer com que o nosso item só seja largado quando os jogadores tiverem a missão correta ativa.
 
 </div>
-

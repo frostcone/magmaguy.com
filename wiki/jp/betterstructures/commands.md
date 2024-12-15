@@ -1,58 +1,55 @@
-# BetterStructures コマンド
+# BetterStructures のコマンド
 
-以下は、BetterStructures プラグインで使用できるコマンドの包括的なリストと、それぞれの必要な権限です。
+以下は、BetterStructures プラグインで使用可能なコマンドの包括的なリストと、それらに対応する必要な権限です。
 
-## リロードコマンド
+## リロード コマンド
 
 **コマンド:** `/betterstructures reload`
 
 **権限:** `betterstructures.*`
 
-**説明:** プラグインをリロードします。また、インポートする必要がある構造をインポートします。
+**説明:** プラグインを再読み込みします。また、インポートが必要な構造もインポートします。
 
 ## Lootify コマンド
 
-**コマンド:** `/betterstructures lootify <宝のファイル名> <レアリティ> <最小量> <最大量> <ウェイト>`
+**コマンド:** `/betterstructures lootify <treasure filename> <rarity> <minAmount> <maxAmount> <weight>`
 
 **権限:** `betterstructures.*`
 
-**説明:** 現在保持しているアイテムを、特定の `ジェネレーター` の特定の `レアリティ` テーブルに追加します。チェストで見つかるアイテムの量は `最小量` と `最大量` の間でランダム化され、`ウェイト` が指定されます。
+**説明:** 現在保持しているアイテムを特定の `ジェネレーター` の特定の `rarity` テーブルに追加し、`minAmount`
+と `maxAmount` の間でチェストで見つけられるアイテムの量をランダム化し、指定された `weight` を使用します。
 
-これは非常に特殊なシステムです。これらの値がどのように機能するかについての詳細は、[このページ]($language$/betterstructures/creating_structures.md)をご覧ください。
+これは非常に特殊なシステムであり、これらの値の仕組みの詳細については、[このページ]($language$/betterstructures/creating_structures.md)
+を参照してください。
 
-## 配置コマンド
+## Place コマンド
 
-**コマンド:** `/betterstructures place <構造ファイル名> <ジェネレータータイプ>`
+**コマンド:** `/betterstructures place <structure filename> <generator type>`
 
 **権限:** `betterstructures.*`
 
-**説明:** 選択した構造を、現在地の場所に強制的に配置します。
+**説明:** 選択した構造を現在地に強制的に配置します。
 
 ## Teleportcoords コマンド
 
-**コマンド:** `/betterstructures teleporttocoords <ワールド名> <x> <y> <z>`
+**コマンド:** `/betterstructures teleporttocoords <worldName> <x> <y> <z>`
 
 **権限:** `betterstructures.*`
 
-**説明:** 直接使用するためのものではなく、管理者が構造にテレポートできるようにするチャット警告をクリックしたときに実行されるコマンドです。
+**説明:** 直接使用することを意図したものではありません。これは、管理者が構造体にテレポートできるチャット警告をクリックしたときに実行されるコマンドです。
 
-## バージョンコマンド
+## Version コマンド
 
 **コマンド:** `/betterstructures version`
 
 **権限:** `betterstructures.*`
 
-**説明:** チャットにプラグインのバージョンを出力します。
+**説明:** プラグインのバージョンをチャットに出力します。
 
-## サイレントコマンド
+## Silent コマンド
 
 **コマンド:** `/betterstructures silent`
 
 **権限:** `betterstructures.*`
 
-**説明:** サーバーオペレーターに表示される構造生成に関するチャット警告をサイレントにしたり、サイレントを解除したりします。
-
-```
-
-
-
+**説明:** サーバーオペレーターがサーバーで生成されている構造に関するチャットに表示される警告をミュートまたはミュート解除します。

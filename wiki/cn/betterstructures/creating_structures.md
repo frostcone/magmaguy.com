@@ -4,43 +4,43 @@
 
 ## 创建建筑
 
-BetterStructures 对你可以建造的内容没有限制，虽然建议为了世界整体的契合度和性能，将结构的大小控制在 100x100x100 个方块以内。也就是说，它可以轻松处理更大的结构。
+对于 BetterStructures，您可以构建任何东西，没有任何限制，但出于一般的世界契合度和性能原因，建议将结构的大小保持在 100x100x100 个方块以下。话虽如此，它可以轻松处理更大的结构。
 
 ***
 
 ### 特殊方块
 
-BetterStructures 有两个特殊方块：屏障和基岩。WorldEdit / FAWE 可以粘贴的任何其他方块都会正常粘贴，但屏障和基岩方块除外。这些方块不会被粘贴，而是被以下自定义行为替换：
+BetterStructures 有两个特殊方块：屏障和基岩。WorldEdit / FAWE 可以粘贴的任何其他方块都将正常粘贴，但屏障和基岩方块是例外。这些方块不会被粘贴，而是会被替换为以下自定义行为：
 
 ***
 
 #### 屏障
 
-屏障方块使插件在该位置不放置任何方块。这意味着在普通世界生成中原本存在的任何方块都将保留在那里。
+屏障方块使插件不会在该位置放置任何方块。这意味着正常世界生成中原来存在的任何方块都将保留在那里。
 
-建造者可以使用它来圆化粘贴的边缘，使其看起来更自然，或者将墙壁模塑到一个潜在的洞穴，以及其他技巧。
+建造者可以使用它来使粘贴的边缘圆润，使其看起来更自然，或者将墙壁塑造成潜在的洞穴，以及其他技巧。
 
 ***
 
 #### 基岩
 
-基岩方块使插件保证在该位置有一个实体方块。这意味着，如果在默认世界生成中已经存在实体方块，则该方块不会被修改；但是，如果方块为空气或液体，它将被 [基座](#pedestalmaterial) 中的实体方块替换。
+基岩方块使插件保证在该位置存在一个固体方块。这意味着如果默认世界生成中已经存在一个固体方块，则该方块将不会被修改；但是，如果该方块是空气或液体，则它将被[基座](#pedestalmaterial)中的固体方块替换。
 
-建造者可以使用它来创建带有功能的地板，例如矿车轨道的轨道地板，或保证地板存在，而不会覆盖世界中该位置可能已经存在的实体方块，使建筑看起来更自然。
+建造者可以使用它来创建具有诸如矿车轨道地板之类的特征的地板，或者保证存在地板而不会覆盖世界中该位置可能已经存在的固体方块，从而使建筑物看起来更有机。
 
 ***
 
 ### 生成标志
 
-BetterStructures 可以使用带有特定文本的标志在建筑的特定位置生成生物，甚至从 EliteMobs 和 MythicMobs 生成 Boss。
+BetterStructures 可以使用带有特定文本的标志，以在建筑的特定位置生成来自 EliteMobs 和 MythicMobs 的生物甚至首领。
 
 ***
 
-##### 生成普通生物
+##### 生成原版生物
 
-如果你拿一个普通标志并将其放置在某个地方，然后确保第一行写着 `[spawn]` 并且第二行写着 [实体类型名称，遵循 Spigot API](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html)，你将在你指定类型的位置生成一个持久实体。
+如果您取一个普通的标志并将其放置在某处，然后确保第一行显示 `[spawn]`，第二行具有[遵循 Spigot API 的实体类型名称](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html)，您将在指定类型的位置生成一个持久实体。
 
-例如，如果你有一个标志，第一行写着 `[spawn]`，第二行写着 `ZOMBIE`，那么你在放置建筑物时会在那个位置生成一个僵尸。这也可以用于非生物实体，例如盔甲架或末影水晶。
+例如，如果您的标志第一行写着 `[spawn]`，第二行写着 `ZOMBIE`，则在放置建筑物时，您将在该位置生成一个僵尸。这也可以用于非生物实体，例如盔甲架或末影水晶。
 
 <div class="minecraft-sign"> 
 <p>[spawn]</p>
@@ -51,15 +51,15 @@ BetterStructures 可以使用带有特定文本的标志在建筑的特定位置
 
 ***
 
-##### 生成 Elite Mobs（推荐的 Boss 插件）
+##### 生成精英生物（推荐首领插件）
 
-BetterStructures 还拥有高级的 EliteMobs 集成，它允许根据建筑和生成标志创建 Boss 竞技场。
+BetterStructures 还具有高级的 EliteMobs 集成，这使其能够基于建筑物和生成标志创建首领竞技场。
 
-如果你拿一个普通标志并将其放置在某个地方，在第一行写着 `[elitemobs]`，然后你可以使用所有其他行来表示要使用哪个 Boss 文件。
+如果您取一个普通的标志并将其放置在某处，并在第一行写上 `[elitemobs]`，则可以使用所有其他行来说明要使用哪个首领文件。
 
-例如，如果你在第一行写着 `[elitemobs]`，然后在第二行写着 `test_boss.yml`，你将生成测试 Boss。如果你有一个很长的文件名，例如 `boss_with_very_long_filename.yml`，你可以将其分成多行，因此让第二行是 `boss_with_very_`，然后让第三行是 `long_filename.yml`，这样就可以工作了。
+例如，如果您在第一行执行 `[elitemobs]`，然后在第二行执行 `test_boss.yml`，则将生成测试首领。如果您有一个非常长的文件名，例如 boss_with_very_long_filename.yml，则可以将其分成多行，因此将第 2 行设为 `boss_with_very_`，然后将第 3 行设为 `long_filename.yml`，这将起作用。
 
-提醒一下，如果你的服务器使用 WorldGuard，默认情况下战斗竞技场将被保护，直到玩家杀死建筑中的所有 Boss。
+提醒一下，如果您的服务器正在使用 WorldGuard，则默认情况下，战斗竞技场将受到保护，直到玩家杀死建筑物中的所有首领。
 
 <div class="minecraft-sign"> 
 <p>[elitemobs]</p>
@@ -70,9 +70,9 @@ BetterStructures 还拥有高级的 EliteMobs 集成，它允许根据建筑和�
 
 ***
 
-##### 生成 Mythic Mobs
+##### 生成神话生物
 
-BetterStructures 还拥有简单的 MythicMobs 集成，它允许你从 MythicMobs 生成一个生物到建筑中。在普通标志的第一行写着 `[mythicmobs]`，然后在第二行使用要识别的生物。你可以在第三行使用数字来设置生物的等级。
+BetterStructures 还具有简单的 MythicMobs 集成，这使其能够从 MythicMobs 将生物生成到建筑物中。在普通标志的第一行写上 `[mythicmobs]`，然后在第二行使用生物标识符。您可以在第三行使用数字来设置生物的等级。
 
 <div class="minecraft-sign"> 
 <p>[mythicmobs]</p>
@@ -83,59 +83,59 @@ BetterStructures 还拥有简单的 MythicMobs 集成，它允许你从 MythicMo
 
 ***
 
-## Schematic
+## 原理图
 
-Schematic 是 WorldEdit 或 FastAsyncWorldEdit 生成的文件，其中包含 BetterStructures 将使用的建筑的方块。
+原理图是由 WorldEdit 或 FastAsyncWorldEdit 生成的文件，其中包含 BetterStructures 将使用的建筑物的方块。
 
-这里没有详细说明如何制作 Schematic，因为它们在 WorldEdit 和 FastAsyncWorldEdit 文档中都有详细介绍，但一般来说是通过以下步骤完成的：
+此处未包含有关如何制作原理图的详细说明，因为它们在 WorldEdit 和 FastAsyncWorldEdit 文档中有详细说明，但通常是通过以下方式完成的：
 
-1) 选择建筑的一个角，并使用命令 `//pos1`
-2) 选择对角线相对的角，并使用命令 `//pos2`
+1) 选择建筑物的角，然后使用命令 `//pos1`
+2) 选择对角线上的角，然后使用命令 `//pos2`
 3) 使用 `//copy` 命令
-4) 使用命令 `/schem save <schematicname>`，其中 `<schematicName>` 是你想要用于 Schematic 的文件名。
+4) 使用命令 `/schem save <原理图名称>`，其中 `<原理图名称>` 是您要用于原理图的文件名。
 
-<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="worldedit documentation image from their docs">
+<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="来自其文档的 worldedit 文档图像">
 
-*确保你在点 1 上运行命令 `//pos1`，在点 2 上运行命令 `//pos2`!*
+*确保在点 1 上运行命令 `//pos1`，在点 2 上运行命令 `//pos2`！*
 
 ***
 
 #### 锚点
 
-锚点是你运行 `//copy` 命令来创建 Schematic 的地方。当简单地粘贴 Schematic 时，这些点是你相对于建筑物的位置。
+锚点是您为原理图运行 `//copy` 命令的位置。当简单地粘贴原理图时，这些位置是您相对于建筑物所站的位置。
 
-锚点对于 Schematic 正确运行非常重要。
+锚点对于使原理图正常工作非常重要。
 
-* 对于 _地表建筑_，建议你在复制建筑物时站在地板的最低点。
-* 对于 _地下建筑_，建议你在建筑物顶部站立。
-* 对于 _液体建筑_，建议你在水面上站立。
-* 对于 _空中建筑_，建议你在建筑物顶部站立。
+* 对于_地表建筑物_，建议您在复制建筑物时站在地板的最低点。
+* 对于_地下建筑物_，建议您站在建筑物的顶部。
+* 对于_液体建筑物_，建议您站在水面上。
+* 对于_空中建筑物_，建议您站在建筑物的顶部。
 
-**请注意，你在复制时应该始终非常靠近或直接位于建筑物顶部 - 你离建筑物越远，建筑物需要粘贴时延迟就越大。**
+**请注意，复制时您应该始终非常靠近或直接位于建筑物的顶部 - 您离得越远，在需要粘贴建筑物时就会越卡顿。**
 
 ***
 
-# Schematic 配置
+# 原理图配置
 
-每个 Schematic 文件都有一个 Schematic 配置。如果刚刚将 Schematic 文件添加到服务器，则在重启后或在运行 `/betterstructures reload` 后，将生成配置。
+每个原理图文件都有一个原理图配置。如果原理图文件刚添加到服务器，则会在重新启动后或在 `/betterstructures reload` 之后生成配置。
 
-这些配置允许你为 Schematic 粘贴设置以下设置：
+这些配置允许您为原理图粘贴设置以下设置：
 
 ***
 
 ## isEnabled
 
-设置 Schematic 是否启用。如果禁用，它将不会被放置在任何地方。
+设置是否启用原理图。如果禁用，则不会将其放置在任何位置。
 
 ***
 
 ## weight
 
-Weight 设置 Schematic 的权重，表示它被选中的可能性。
+权重设置原理图被选中的可能性。
 
-默认值为 `1.0`。如果你将一个建筑物的权重设置为 `2.0`，它被选中的可能性将是其他建筑物的 2 倍。如果你将其设置为 `0.5`，它被选中的可能性将减半。
+默认值为 `1.0`。如果您使建筑物的权重为 `2.0`，则它被选中的可能性是其他建筑物的 2 倍。如果您将其设为 `0.5`，则它被选中的几率将减少一半。
 
-_**注意：**请记住，特定建筑被选中的概率会根据与竞争同一个位置的建筑总数而发生很大变化！_
+_**注意：** 请记住，特定建筑物被选中的几率会根据总共有多少建筑物在竞争将获得结构的特定位置而发生巨大变化！_
 
 ***
 
@@ -143,28 +143,27 @@ _**注意：**请记住，特定建筑被选中的概率会根据与竞争同一
 
 **重要：可选字段！**
 
-基座材质使用 [Spigot API 材质名称](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) 设置基座方块的材质类型 - 使用它们，否则它将无法工作！
+基座材质使用[spigot api 材质名称](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)设置基座方块的材质类型 - 使用它们，否则它将无法工作！
 
-基座是在地表和地下建筑下方放置的方块，用于填充任何气隙，并改善建筑物与世界的契合度。这些方块也是替换 Schematic 中基岩方块的方块。
+基座是放置在地表和地下建筑物下方的方块，以适应任何气隙并改善建筑物与世界的契合度。这些也是替换原理图中基岩方块的相同方块。
 
-当配置中没有定义任何内容时，将分析粘贴位置下方的方块，并选择最适合的方块作为材质，以实现最佳的集成外观。
+当配置中未定义任何内容时，将分析粘贴位置下方的方块，并选择最合适的方块作为最佳集成外观的材质。
 
 ***
 
 ## generatorConfigFilename
 
-此选项使用文件名设置 Schematic 将使用的配置文件的名称，包括末尾的 `.yml` 扩展名。例如，`generatorConfigFilename: generator_surface_global.yml` 是正确选项，如果你想使用 `generator_surface_global.yml` 中定义的生成器，你可以在生成器配置文件夹中找到它。
+此选项按文件名设置原理图将使用的配置文件的名称。这需要完整的文件名，包括末尾的 `.yml` 扩展名。例如，如果您想使用在 `generator_surface_global.yml` 中定义的生成器，您可以在生成器配置文件夹中找到它，则 `generatorConfigFilename: generator_surface_global.yml` 将是正确的选项。
 
 ***
 
 ## treasureFile
 
-设置 [宝藏文件]($language$/betterstructures/creating_treasure.md)，该文件将由此结构使用，覆盖由结构的 [生成器]($language$/betterstructures/creating_generators.md) 设置的宝藏文件。除非是用于非常特殊的建筑，否则一般不建议这样做。通常最好修改或创建生成器来实现此目的。
+设置此结构将使用的[宝藏文件]($language$/betterstructures/creating_treasure.md)，覆盖结构的[生成器]($language$/betterstructures/creating_generators.md)设置的宝藏文件。除非是用于非常特殊的构建，否则通常不建议这样做。通常最好为此目的修改或创建生成器。
 
 
 # 自定义内容
 
-BetterStructures 中分发的所有内容都是可编辑的。你可以随意修改任何 Schematic 文件和生成器设置。
+BetterStructures 中分发的所有内容都是可编辑的。您可以根据自己的喜好修改任何原理图文件和生成器设置。
 
-上面的内容创建指南也是一个可以帮助你编辑现有内容的指南。
-
+上面的内容创建指南也是一个可以帮助您编辑现有内容的指南。

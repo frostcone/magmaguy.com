@@ -1,5 +1,3 @@
-## Fluxo de Missões do Oásis
+Consulte esta folha para o fluxo da missão Oásis.
 
-Consulte esta planilha para o fluxo de missões do Oásis.
-
-<img src="../../../img/wiki/oasis_info.png"> 
+<img src="../../../img/wiki/oasis_info.png">

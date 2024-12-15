@@ -1,62 +1,59 @@
-# Sistema de Itens do EliteMobs
-
-A partir do EliteMobs 7.3.0, os jogadores podem interagir com Itens Elite de várias maneiras exclusivas. Esta página destina-se a ajudar jogadores e administradores a entender como os sistemas funcionam e, posteriormente, explicar o equilíbrio do sistema para os administradores.
-
+A partir do EliteMobs 7.3.0, é possível que os jogadores interajam com Itens de Elite de várias formas únicas. Esta página tem como objetivo ajudar os jogadores e administradores a perceberem como os sistemas funcionam e, posteriormente, explicar o equilíbrio do sistema para os administradores.
 
 ***
 
-# Desvinculando Itens
+# Desvincular Itens
 
-Se você tiver um pergaminho de desvinculação de itens, poderá usar o NPC Desvinculador para combinar 1 pergaminho com 1 item para desvinculá-lo.
+Se tiver um pergaminho de desvinculação de item, poderá usar o NPC Desvinculador para combinar 1 pergaminho com 1 item para o desvincular.
 
-***Observação: no momento da escrita deste artigo, não há como os jogadores obterem o pergaminho sem que ele seja dado a eles ou adicionado a um chefe específico. O pergaminho será deixado cair da luta contra o Dragão Ender, que será lançada este mês.***
+***Nota: ao escrever isto, não há forma de os jogadores obterem o pergaminho sem que este seja dado ou adicionado como um boss específico. O pergaminho será largado na luta contra o Ender Dragon, que será lançada este mês.***
 
-O pergaminho só pode ser usado uma vez. Uma vez desvinculado, os itens podem ser vendidos ou dados a outros jogadores, ou podem ser usados após um prestígio.
-
-***
-
-# Descartando Itens
-
-Itens Elite podem ser descartados no NPC Descartador. Ao descartar itens, dependendo do nível do item, você receberá o seguinte sucata:
-
-- Nível 0-50: Sucata Pequena.
-- Nível 50-100: Sucata Média.
-- Nível 100-150: Sucata Grande.
-- Nível 150-200: Sucata Enorme.
-
-A sucata é a base para o resto do Sistema de Itens.
+O pergaminho só pode ser usado uma vez. Uma vez desvinculados, os itens podem ser vendidos ou entregues a outros jogadores, ou serem usados após um prestígio.
 
 ***
 
-# Reparando Itens Elite
+# Desmantelar Itens
 
-Itens Elite podem ser reparados no NPC Reparador usando sucata. A extensão do dano ao seu item determina a quantidade e o tamanho da sucata necessária para consertá-lo.
+Itens de Elite podem ser desmantelados no NPC Desmantelador. Ao desmantelar itens, dependendo do nível do item, receberá os seguintes materiais:
+
+- Nível 0-50: Materiais Pequenos.
+- Nível 50-100: Materiais Médios.
+- Nível 100-150: Materiais Grandes.
+- Nível 150-200: Materiais Enormes.
+
+Os materiais são a base para o resto do Sistema de Itens.
 
 ***
 
-# Encantando Itens Elite
+# Reparar Itens de Elite
 
-Antes de prosseguirmos com a descrição de como encantar itens, é aconselhável familiarizar-se com os itens necessários para encantar e entender suas funções.
+Itens de Elite podem ser reparados no NPC Reparador usando materiais. A extensão dos danos ao seu item determina a quantidade e o tamanho dos materiais necessários para o consertar.
 
-**Item Elite**
-</br>Um item elite abrange qualquer loot disponível nas lojas do EliteMobs, deixado cair por Mobs Elite, ou recebido como recompensa por concluir uma missão, entre outras fontes.
+***
+
+# Encantar Itens de Elite
+
+Antes de prosseguirmos para descrever como encantar itens, é aconselhável familiarizar-se com os itens necessários para encantar e entender as suas funções.
+
+**Item de Elite**
+</br>Um item de elite abrange qualquer saque disponível nas lojas EliteMobs, largado por Mobs de Elite ou recebido como recompensa por completar uma missão, entre outras fontes.
 
 **Livros Encantados**
-</br>Os livros encantados geralmente são deixados cair por Mobs Elite ou concedidos aos jogadores como recompensas em Arenas ou Missões. Eles contêm encantamentos que os jogadores podem transferir para os itens desejados.
+</br>Livros encantados são normalmente largados por Mobs de Elite ou concedidos aos jogadores como recompensas em Arenas ou Missões. Eles contêm encantamentos que os jogadores podem transferir para os seus itens desejados.
 
 **Bilhetes da Sorte**
-</br>Os bilhetes da sorte, geralmente obtidos de Mobs Elite ou como recompensas em Arenas ou Missões, permitem que os jogadores dobrem suas chances de sucesso ao encantar itens.
+</br>Bilhetes da sorte, geralmente obtidos de Mobs de Elite ou como recompensas em Arenas ou Missões, permitem que os jogadores dupliquem as suas hipóteses de sucesso ao encantar itens.
 
-Os jogadores podem acessar o menu de encantamento visitando o NPC Encantador na [Guilda de Aventureiros]($language$/elitemobs/adventurers_guild_world.md) ou usando o menu `/em`.
- 
-Com um Item Elite e um Livro Encantado, os jogadores podem tentar adicionar o encantamento armazenado no livro ao seu item. Cada tentativa custará aos jogadores algumas Moedas Elite. Eles também podem dobrar suas chances usando um Bilhete da Sorte, se tiverem um.
+Os jogadores podem aceder ao menu de encantamento ao visitar o NPC Encantador na [Guilda dos Aventureiros]($language$/elitemobs/adventurers_guild_world.md) ou usando o menu `/em`.
 
-Para começar o encantamento, os jogadores colocariam um Item Elite, um Livro Encantado e um Bilhete da Sorte (se tiverem um) na janela de Encantamento e, em seguida, tentariam encantar seu item. Depois disso, eles seriam recebidos com um dos seguintes resultados: 
+Com um Item de Elite e um Livro Encantado, os jogadores podem tentar adicionar o encantamento armazenado no livro ao seu item. Cada tentativa custará aos jogadores algumas Moedas de Elite. Eles também podem duplicar as suas hipóteses usando um Bilhete da Sorte, se tiverem um.
+
+Para começar o encantamento, os jogadores colocariam um Item de Elite, um Livro Encantado e um Bilhete da Sorte (se tiverem um) na janela de Encantamento e, em seguida, tentariam encantar o seu item. Depois disso, eles obteriam um dos seguintes resultados:
 
 - **Sucesso:** O encantamento é adicionado com sucesso ao item.
-- **Falha:** Tentativa malsucedida, resultando na perda do Livro Encantado e das Moedas Elite.
-- **Falha Crítica:** Uma falha mais grave, levando à perda do Livro Encantado, Moedas Elite e do próprio Item Elite.
-- **Desafio:** Enfrente uma Batalha de Chefe com 10% de chance de falha crítica ao perder. O item é encantado se os jogadores vencerem.
+- **Falha:** Tentativa malsucedida, resultando na perda do Livro Encantado e das Moedas de Elite.
+- **Falha Crítica:** Uma falha mais grave, levando à perda do Livro Encantado, das Moedas de Elite e do próprio Item de Elite.
+- **Desafio:** Envolva-se numa Batalha de Boss com 10% de hipóteses de falha crítica ao perder. O item é encantado se os jogadores vencerem.
 
 <details>
 
@@ -66,7 +63,7 @@ Para começar o encantamento, os jogadores colocariam um Item Elite, um Livro En
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/enchant_example.webm" type="video/webm">
-  Your browser does not support the video tag.
+  O seu navegador não suporta a etiqueta de vídeo.
 </video>
 
 </div>
@@ -76,7 +73,7 @@ Para começar o encantamento, os jogadores colocariam um Item Elite, um Livro En
 ***
 
 <details>
-  <summary>Vídeo do MagmaGuy explicando alguns dos sistemas.</summary>
+  <summary>Vídeo do MagmaGuy a explicar alguns dos sistemas.</summary>
 
   <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/MtfeS6fq0Pw" frameborder="0" allowfullscreen></iframe>
@@ -84,9 +81,9 @@ Para começar o encantamento, os jogadores colocariam um Item Elite, um Livro En
 
 </details>
 
-## Crie seus próprios Livros Encantados
+## Crie os seus próprios Livros Encantados
 
-Aqui está um breve guia que explica como você pode criar seus próprios Livros Encantados.
+Aqui está um pequeno guia que explica como pode criar os seus próprios Livros Encantados.
 
 <div align="center">
 
@@ -94,13 +91,13 @@ Aqui está um breve guia que explica como você pode criar seus próprios Livros
 
 ### isEnabled
 
-Define se o item está habilitado.
+Define se o item está ativado.
 
-| Chave         |      Valores       | Padrão |
+| Chave        | Valores        | Padrão |
 |-------------|:-----------------:|:-------:|
-| `isEnabled` | [Booleano](#boolean) | `true`  |
+| `isEnabled` | [Boolean](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -118,20 +115,20 @@ isEnabled: true
 
 ### name
 
-Define o nome do item. Suporta [Códigos de Cor](#color_codes).
+Define o nome do item. Suporta [Códigos de Cores](#color_codes).
 
-| Chave         |      Valores       | Padrão |
+| Chave        | Valores        | Padrão |
 |-------------|:-----------------:|:-------:|
-| `name` | [String](#string) |  nenhum   |
+| `name` | [String](#string) |  nenhum  |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
-name: '&aElite Custom Enchanted Book'
+name: '&aLivro Encantado Personalizado de Elite'
 ```
 
 <div align="center">
@@ -148,13 +145,13 @@ name: '&aElite Custom Enchanted Book'
 
 ### lore
 
-Define a descrição do item. Suporta [Códigos de Cor](#color_codes).
+Define a descrição do item. Suporta [Códigos de Cores](#color_codes).
 
-| Chave         |           Valores            | Padrão |
+| Chave        |           Valores            | Padrão |
 |-------------|:---------------------------:|:-------:|
 | `lore` | [Lista de Strings](#string_list) |  nenhum   |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -162,8 +159,8 @@ Define a descrição do item. Suporta [Códigos de Cor](#color_codes).
 
 ```yml
 lore:
-- '&2Use this custom book to'
-- '&2enchant items at the enchanter!'
+- '&2Use este livro personalizado para'
+- '&2encantar itens no encantador!'
 ```
 
 <div align="center">
@@ -182,11 +179,11 @@ lore:
 
 Define qual material do MineCraft o item deve ser.
 
-| Chave         |      Valores       | Padrão |
+| Chave        | Valores        | Padrão |
 |-------------|:-----------------:|:-------:|
 | `material` | [Material](#material) | `BOOK`  |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -210,13 +207,13 @@ material: BOOK
 
 ### enchantments
 
-Define quais encantamentos o item deve conter.
+Define quais encantamentos o item deve ter.
 
-| Chave         |    Valores    | Padrão |
+| Chave        |    Valores    | Padrão |
 |-------------|:------------:|:-------:|
-| `enchantments` | [Encantamentos do MineCraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) ou [Encantamentos do EliteMobs]($language$/elitemobs/custom_enchantments_list.md) |  nenhum   |
+| `enchantments` | [Encantamentos do MineCraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) ou [Encantamentos EliteMobs]($language$/elitemobs/custom_enchantments_list.md) |  nenhum   |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -242,15 +239,15 @@ enchantments:
 
 ### itemType
 
-Define de onde você pode obter o item. Você pode definir isso como `custom` se quiser que seu livro seja deixado cair por elites aleatórias e vendido em lojas. 
+Define onde pode obter o item. Pode definir isto como `custom` se quiser que o seu livro seja largado por elites aleatórios e vendido em lojas.
 
-Caso contrário, você pode defini-lo como `unique` para que ele só caia de tabelas de loot configuradas.
+Caso contrário, pode defini-lo como `unique` para que seja largado apenas em tabelas de saque configuradas.
 
-| Chave         |    Valores    | Padrão |
+| Chave        |    Valores    | Padrão |
 |-------------|:------------:|:-------:|
 | `itemType` | [Valores]($language$/elitemobs/creating_items.md&section=itemtype) |  nenhum   |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -268,13 +265,13 @@ itemType: custom
 
 ### soulbound
 
-Define se eles podem ser negociados com outros jogadores.
+Define se eles podem ser trocados com outros jogadores.
 
-| Chave         |    Valores    | Padrão |
+| Chave        |    Valores    | Padrão |
 |-------------|:------------:|:-------:|
-| `soulbound` | [Booleano](#boolean) | `true`  |
+| `soulbound` | [Boolean](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -294,18 +291,18 @@ soulbound: true
 
 <div align="center">
 
-<details> 
+<details>
 
-<summary><b>Exemplo de Configuração do Livro Encantado</b></summary>
+<summary><b>Exemplo de Configuração de Livro Encantado</b></summary>
 
 <div align="left">
 
 ```yml
 isEnabled: true
 material: BOOK
-name: '&5Excellent Mining Enchanted Book'
+name: '&5Excelente Livro Encantado de Mineração'
 lore:
-- '&2Used to enchant items at the enchanter!'
+- '&2Usado para encantar itens no encantador!'
 enchantments:
 - MENDING,1
 - DRILLING,1
@@ -313,15 +310,14 @@ itemType: UNIQUE
 soulbound: false
 ```
 
-Como você pode ver, criar seus Livros Encantados não é tão complicado. A maioria das configurações são configurações regulares que você usaria ao criar um [item]($language$/elitemobs/creating_items.md).
+Como pode ver, criar os seus Livros Encantados não é tão complicado. A maioria das configurações são configurações regulares que usaria ao criar um [item]($language$/elitemobs/creating_items.md).
 
-Exceto que, é claro, nosso foco principal seria a seção `enchantments`. Nosso livro de exemplo possui um encantamento do MineCraft `MENDING` e um encantamento do EliteMobs `DRILLING`.
+Exceto, claro, que aqui o nosso foco principal seria a secção `enchantments`. O nosso livro de exemplo tem um encantamento do MineCraft `MENDING` e um encantamento do EliteMobs `DRILLING`.
 
-Isso faria com que nosso livro de exemplo fosse um livro excelente que você gostaria de usar em uma picareta.
+Isto faria do nosso livro de exemplo um excelente livro que gostaria de usar numa picareta.
 
 </div>
 
 </details>
 
 </div>
-

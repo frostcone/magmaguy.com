@@ -1,105 +1,101 @@
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+A partir do EliteMobs 7.3.12, Modelos Personalizados foram adicionados ao EliteMobs através do [Model Engine](https://mythiccraft.io/index.php?resources/model-engine%E2%80%94ultimate-entity-model-manager-1-16-5-1-20-4.389/) e do [FreeMineCraftModels](https://www.spigotmc.org/resources/free-minecraft-models.111660/).
 
-# Modelos Personalizados
+# Prefácio
 
-A partir do EliteMobs 7.3.12, Modelos Personalizados foram adicionados ao EliteMobs por meio do [Model Engine](https://mythiccraft.io/index.php?resources/model-engine%E2%80%94ultimate-entity-model-manager-1-16-5-1-20-4.389/) e do [FreeMineCraftModels](https://www.spigotmc.org/resources/free-minecraft-models.111660/).
+De uma perspetiva do EliteMobs, o sistema de Modelos Personalizados é muito simples, já que a única coisa que os administradores têm de fazer é adicionar uma linha ao ficheiro de configuração de um NPC ou Boss Personalizado, indicando qual o Modelo Personalizado a utilizar. No entanto, é necessário dar os passos corretos com o Model Engine e o Minecraft para que este sistema fique totalmente funcional, e estes não são tão fáceis de iniciar.
 
-# Introdução
-
-Do ponto de vista do EliteMobs, o sistema de Modelo Personalizado é muito simples, pois a única coisa que os administradores precisam fazer é adicionar uma linha a um arquivo de configuração de NPC ou Chefe Personalizado dizendo qual Modelo Personalizado usar. No entanto, é necessário tomar as etapas corretas com o Model Engine e o Minecraft para que esse sistema funcione completamente, e essas não são tão fáceis de entender.
-
-Este guia detalhará a interação com o Model Engine e o Minecraft. Ele não dirá como usar o Blockbench para criar chefes personalizados, nem entrará em detalhes sobre como o Model Engine funciona. Já existem muitos guias sobre como fazer isso em outros lugares, e se você quiser aprender mais sobre esses sistemas, é melhor consultar diretamente sua documentação.
+Este guia vai detalhar a fundo a interação com o Model Engine e o Minecraft. Não vai explicar como usar o Blockbench para criar bosses personalizados, nem vai detalhar como funciona o Model Engine. Já existem muitos guias sobre como fazer isso noutros locais e, se quiser aprender mais sobre esses sistemas, é melhor consultar diretamente a respetiva documentação.
 
 ## FreeMineCraft Models
 
-Se você quiser aprender como usar o FMM para fazer seus modelos funcionarem, pode conferir esta página wiki [esta]($language$/freeminecraftmodels/info.md) para saber mais.
+Se quiser aprender como usar o FMM para que os seus modelos funcionem, pode consultar [esta]($language$/freeminecraftmodels/info.md) página wiki para saber mais.
 
-# Requisitos Mínimos
+# Requisitos mínimos
 
-EliteMobs 7.3.12 ou posterior, Model Engine R2.2.0\* ou posterior, Blockbench\*\*, um Pacote de Recursos do Minecraft em uso.
+EliteMobs 7.3.12 ou posterior, Model Engine R2.2.0\* ou posterior, Blockbench\*\*, um pacote de recursos do Minecraft em utilização.
 
-\* Este plugin pode ter outras dependências. Verifique a documentação deles.  
-\*\* Necessário para criar e editar Modelos Personalizados. Não necessário se você estiver apenas procurando instalar conteúdo sem modificá-lo.
+\* Este plugin pode ter outras dependências. Consulte a documentação no seu lado.  
+\*\* Necessário para criar e editar Modelos Personalizados. Não é necessário se estiver apenas à procura de instalar conteúdo sem o modificar.
 
-# Definindo manualmente um Modelo Personalizado
+# Configurar manualmente um Modelo Personalizado
 
-Observação: Este guia assume que você já possui um Modelo Personalizado válido. Esses modelos vêm em formatos de arquivo Blockbench (`.bbmodel`).
+Nota: Este guia pressupõe que já tem um Modelo Personalizado válido. Estes vêm em formatos de ficheiro do Blockbench (`.bbmodel`).
 
-O EliteMobs é capaz de usar Modelos Personalizados para NPCs e Chefes Personalizados. O processo para fazer isso é o mesmo para ambos e é o seguinte:
+O EliteMobs consegue usar Modelos Personalizados para NPCs e Bosses Personalizados. O processo para fazer isso é o mesmo para ambos, e é o seguinte:
 
-## Etapa 1. Definindo a configuração do EliteMobs
+## Passo 1. Configurar o EliteMobs
 
-Vá para o arquivo de configuração do Chefe Personalizado ou NPC que você deseja modificar e adicione a seguinte linha:
+Vá ao ficheiro de configuração do Boss Personalizado ou NPC que quer modificar e adicione a seguinte linha:
 
 ```yaml
-customModel: modelname
+customModel: nomedomodelo
 ```
 
-Substitua `modelname` pelo nome do seu modelo. O nome é o nome do arquivo do Modelo Personalizado que você está usando. Como exemplo, o arquivo do Modelo Personalizado do Chefe de Teste é `showcase_boss.bbmodel`. Assim, a opção de configuração deve ser
+Substitua `nomedomodelo` pelo nome do seu modelo. O nome é o nome do ficheiro do Modelo Personalizado que está a utilizar. Por exemplo, o ficheiro de Modelo Personalizado do Test Boss é `showcase_boss.bbmodel`. Como tal, a opção de configuração deve ser
 
 ```yaml
 customModel: showcase_boss
 ```
 
-E é isso para o EliteMobs! Agora fica um pouco mais complicado.
+E isso é tudo para o EliteMobs! Agora é que fica um pouco mais complicado.
 
-## Etapa 2. Gerando os dados do Model Engine
+## Passo 2. Gerar os dados do Model Engine
 
-[_Observação: Em caso de dúvidas ou problemas, consulte o wiki do Model Engine aqui._](https://github.com/Ticxo/Model-Engine-Wiki/wiki/Importing-and-Exporting#importing)
+[_Nota: Em caso de dúvida ou problemas, consulte a wiki do Model Engine aqui._](https://github.com/Ticxo/Model-Engine-Wiki/wiki/Importing-and-Exporting#importing)
 
-1.  Coloque seu arquivo Blockbench do Modelo Personalizado (`.bbmodel`) no diretório `(yourServer)/plugins/ModelEngine/blueprints`.
-2.  Execute o comando `/meg reload`. Se tudo funcionar corretamente, você deve receber uma mensagem dizendo `[Model Engine] X modelos carregados`, onde `x` é a quantidade de modelos que você registrou.
+1. Coloque o seu ficheiro Blockbench do Modelo Personalizado (`.bbmodel`) no diretório `(oseuServidor)/plugins/ModelEngine/blueprints` .
+2. Execute o comando `/meg reload` . Se tudo funcionou corretamente, deverá receber uma mensagem a dizer `[Model Engine] X models loaded` , onde `x` é a quantidade de modelos que registou.
 
-## Etapa 3. Gerando o Pacote de Recursos
+## Passo 3. Gerar o Pacote de Recursos
 
-[**Observação: agora existe uma maneira alternativa e mais simples de fazer essa etapa neste link.**]($language$/elitemobs/custom_models.md&section=step-2.-generating-the-resource-pack) No entanto, é um pouco menos flexível do que o que está listado aqui.
+[**Nota: existe agora uma forma alternativa e mais simples de fazer este passo neste link.**]($language$/elitemobs/custom_models.md&section=step-2.-generating-the-resource-pack) No entanto, é um pouco menos flexível do que o indicado aqui.
 
-Esta é provavelmente a parte mais complicada se você estiver procurando fazer com que seu servidor gerencie os downloads. **Tente verificar se o sistema funciona quando você tiver o pacote de recursos em seu cliente antes de procurar distribuí-lo automaticamente!**
+Esta é possivelmente a parte mais complicada se estiver a tentar fazer com que o seu servidor gestione os downloads. **Tente verificar se o sistema funciona quando tem o pacote de recursos no seu cliente antes de procurar distribuí-lo automaticamente!**
 
-1.  Vá para o diretório `(yourServer)/plugins/ModelEngine/resource pack` e crie um pacote de recursos usando esses dados ou adicione a pasta `assets` lá ao seu `assets` do pacote de recursos.
-    1.  Se você estiver criando um novo pacote de recursos, pode colocar os arquivos em `resource pack` em um arquivo zipado, e isso será um pacote de recursos válido que você pode distribuir. [Mais informações](https://github.com/Ticxo/Model-Engine-Wiki/wiki/Importing-and-Exporting#preexisting-resource-pack).
-    2.  Se você já tiver um pacote de recursos, certifique-se de não estar sobrescrevendo acidentalmente modelos existentes. [Mais informações](https://github.com/Ticxo/Model-Engine-Wiki/wiki/Importing-and-Exporting#preexisting-resource-pack).
-2.  Distribua seu pacote de recursos para seus jogadores. **Apenas os jogadores que tiverem o pacote de recursos poderão ver os Modelos Personalizados**, e ficará muito estranho e quebrado para todos os outros. Se você pretende fazer uso intensivo disso, pode querer forçar o uso do pacote de recursos.
-    1.  (Opcional) Para permitir que os jogadores baixem um pacote de recursos ao fazer login, você precisará hospedar o arquivo em algum lugar online e alterar o campo `resource-pack=` do server.properties para apontar para esse endereço.**\***
-    2.  (Opcional) Se você estiver modificando os pacotes de recursos, precisará usar a opção `resource-pack-sha1=` para que o servidor possa verificar se o pacote de recursos do jogador precisa ser atualizado. Para gerar esse valor, carregue seu pacote de recursos para [http://onlinemd5.com/](http://onlinemd5.com/) e certifique-se de escolher a opção SHA1. Você terá que fazer isso a cada vez que atualizar seu Pacote de Recursos, caso contrário, seus usuários não receberão a atualização.**\***
-    3.  (Opcional) Para forçar os jogadores a usar pacotes de recursos, use a opção `require-resource-pack=true` no server.properties.**\***
+1. Vá ao diretório `(oseuServidor)/plugins/ModelEngine/resource pack` e crie um pacote de recursos utilizando esses dados ou adicione a pasta `assets` lá ao `assets` do seu pacote de recursos
+    1. Se estiver a criar um novo pacote de recursos, pode colocar os ficheiros em `resource pack` num ficheiro zipado, e esse será um pacote de recursos válido que poderá distribuir. [Mais informações](https://github.com/Ticxo/Model-Engine-Wiki/wiki/Importing-and-Exporting#preexisting-resource-pack).
+    2. Se já tiver um pacote de recursos, certifique-se de que não está a substituir acidentalmente os modelos existentes. [Mais informações](https://github.com/Ticxo/Model-Engine-Wiki/wiki/Importing-and-Exporting#preexisting-resource-pack).
+2. Distribua o seu pacote de recursos aos seus jogadores. **Apenas os jogadores que tiverem o pacote de recursos conseguirão ver os Modelos Personalizados**, e parecerá muito estranho e quebrado para todos os outros. Se pretender fazer uso intensivo destes, pode querer forçar a utilização do pacote de recursos.
+    1. (Opcional) Para permitir que os jogadores descarreguem um pacote de recursos ao iniciar a sessão, terá de alojar o ficheiro algures online e alterar o campo `resource-pack=` de server.properties para apontar para esse endereço.**\***
+    2. (Opcional) Se estiver a modificar os pacotes de recursos, vai querer utilizar a opção `resource-pack-sha1=` para que o servidor possa verificar se o pacote de recursos do jogador precisa de ser atualizado. Para gerar este valor, carregue o seu pacote de recursos em [http://onlinemd5.com/](http://onlinemd5.com/) e certifique-se de que seleciona a opção SHA1. Terá de fazer isto sempre que atualizar o seu Pacote de Recursos, caso contrário os seus utilizadores não receberão a atualização.**\***
+    3. (Opcional) Para forçar os jogadores a utilizar pacotes de recursos, utilize a opção `require-resource-pack=true` em server.properties.**\***
 
-**Se você modificou o server.properties, você precisará reiniciar!**
+**Se modificou o server.properties, terá de reiniciar!**
 
-**\*** Observação: Existem muitos guias online que podem ajudar você a fazer isso funcionar se essas instruções não estiverem ajudando.
+**\*** Nota: Existem muitos guias online que o podem ajudar a fazer isto funcionar se estas instruções não o estiverem a ajudar.
 
-### Mesclar pacotes de recursos
+### Juntar pacotes de recursos
 
-Se você precisar mesclar seus pacotes de recursos, pode fazê-lo manualmente. Mas recomendamos usar uma ferramenta online, como [merge.elmakers](https://merge.elmakers.com/), para mesclar seus pacotes de recursos.
+Se precisar de juntar os seus pacotes de recursos, pode fazê-lo manualmente. Mas recomendamos que utilize uma ferramenta online como [merge.elmakers](https://merge.elmakers.com/) para juntar os seus pacotes de recursos.
 
-## Etapa 4. Esperançosamente funciona
+## Passo 4. Esperar que funcione
 
-Supondo que tudo tenha sido feito corretamente, você agora deve conseguir ver o Modelo Personalizado no seu chefe ou NPC. Você pode gerá-los por meio dos comandos:
+Assumindo que tudo foi feito corretamente, agora deverá conseguir ver o Modelo Personalizado no seu boss ou NPC. Pode spawná-los através dos comandos:
 
-*   Chefe Personalizado: `/em spawncustom filename.yml`
-*   NPC: `/em spawnnpc filename.yml`
+* Boss Personalizado: `/em spawncustom nomedoficheiro.yml`
+* NPC: `/em spawnnpc nomedoficheiro.yml`
 
-Você pode então removê-los por meio do comando `/em remove`.
+Pode então removê-los através do comando `/em remove`.
 
-# Criando e adaptando Modelos Personalizados para o EliteMobs
+# Criar e adaptar Modelos Personalizados para EliteMobs
 
-O EliteMobs é capaz de usar qualquer modelo considerado válido pelo Model Engine, o que significa que não há muito que não possa ser feito com ele.
+O EliteMobs consegue usar qualquer modelo considerado válido pelo Model Engine, o que significa que não há muito que não se possa fazer com ele.
 
-No entanto, quando se trata de animações, o uso de nomes específicos para as animações é necessário para garantir que os chefes possam usar as animações.
+No entanto, no que toca a animações, é necessário utilizar nomes específicos para as animações para garantir que os bosses conseguem usar as animações.
 
-Esses nomes de animação são os que estão definidos no Blockbench na guia de animações. Você pode renomeá-los a qualquer momento, o que significa que você pode adaptar qualquer modelo existente para funcionar com o EliteMobs.
+Estes nomes de animação são os definidos no Blockbench no separador de animações. Pode renomeá-los em qualquer altura, o que significa que pode adaptar quaisquer modelos existentes para funcionarem com o EliteMobs.
 
 ## Animações
 
-Observe que esta seção ainda está em expansão, pois esse sistema ainda é muito recente. Mais informações serão adicionadas à medida que as solicitações de recursos forem enviadas.
+Tenha em atenção que esta secção ainda está em expansão, uma vez que este sistema é ainda muito recente. Mais será adicionado à medida que os pedidos de funcionalidades forem surgindo.
 
 ### idle
 
-`idle` é o nome de animação correto para entidades que não estão em combate e não estão se movendo. O EliteMobs não modifica o sistema de animação idle padrão que o Model Engine usa.
+`idle` é o nome correto da animação para entidades que não estão em combate e não se estão a mover. O EliteMobs não modifica o sistema de animação idle predefinido que o Model Engine utiliza.
 
 ### walk
 
-`walk` é o nome de animação correto para entidades que estão se movendo. O EliteMobs não modifica o sistema de animação idle padrão que o Model Engine usa.
+`walk` é o nome correto da animação para entidades que se estão a mover. O EliteMobs não modifica o sistema de animação idle predefinido que o Model Engine utiliza.
 
 ### attack
 
@@ -107,57 +103,56 @@ Existem três tipos de animações de ataque:
 
 #### attack
 
-`attack` é o nome de animação genérico correto para quando um chefe ataca.
+`attack` é o nome genérico correto da animação para quando um boss ataca.
 
 #### attack_melee
 
-`attack_melee` é o nome de animação correto para ataques feitos quando um Chefe Personalizado ataca uma entidade usando um ataque corpo a corpo do vanilla Minecraft. Sobrescreve `attack`. Observe que a animação é reproduzida **após** o dano ser causado. Infelizmente, esta é uma limitação por enquanto. Como tal, tente tornar a animação muito rápida.
+`attack_melee` é o nome correto da animação para ataques efetuados quando um Boss Personalizado ataca uma entidade usando um ataque corpo a corpo padrão do Minecraft. Substitui `attack` . Tenha em atenção que a animação é reproduzida **depois** do dano ser causado. Infelizmente, esta é uma limitação por agora. Como tal, tente fazer com que a animação seja muito rápida.
 
 #### attack_ranged
 
-`attack_ranged` é o nome de animação correto para ataques feitos quando um Chefe Personalizado gera uma entidade projetil. Sobrescreve `attack`. Observe que a animação é reproduzida **após** o projétil ser disparado. Infelizmente, esta é uma limitação por enquanto. Como tal, tente tornar a animação muito rápida.
+`attack_ranged` é o nome correto da animação para ataques efetuados quando um Boss Personalizado gera uma entidade de projétil. Substitui `attack`. Tenha em atenção que a animação é reproduzida **depois** de o projétil ser disparado. Infelizmente, esta é uma limitação por agora. Como tal, tente fazer com que a animação seja muito rápida.
 
 ### damaged
 
-`damaged` é o nome de animação correto para a animação de dano que um Chefe Personalizado reproduz quando é danificado.
+`damaged` é o nome correto da animação para a animação de dano que um Boss Personalizado reproduz quando é atingido.
 
 ### death
 
-`death` é o nome de animação correto para a animação de morte. O EliteMobs não modifica o sistema de animação idle padrão que o Model Engine usa.
+`death` é o nome correto da animação para a animação de morte. O EliteMobs não modifica o sistema de animação idle predefinido que o Model Engine utiliza.
 
 ### powers
 
-Observação: este segmento ainda está em desenvolvimento. O seguinte são os recursos como estão planejados.
+Nota: este segmento ainda está em desenvolvimento. As seguintes são as funcionalidades tal como estão planeadas.
 
-Cada poder no EliteMobs pode ter uma animação atribuída a ele. A animação sempre começa quando o poder é acionado e nenhum outro acionador é fornecido atualmente durante o uso do poder. Alguns poderes, como as invulnerabilidades, não farão nada, pois não têm acionadores e são apenas propriedades passivas dos chefes.
+Cada poder no EliteMobs pode ter uma animação atribuída. A animação começa sempre quando o poder é acionado e, atualmente, não são fornecidos mais acionadores durante a utilização do poder. Alguns poderes, como as invulnerabilidades, não farão nada porque não têm acionadores e são apenas propriedades passivas dos bosses.
 
-Para atribuir uma animação a um poder, a animação deve ter o mesmo nome do arquivo de poder do elitemobs.
+Para atribuir uma animação a um poder, a animação tem de ter o mesmo nome do ficheiro de poder do elitemobs.
 
-Como exemplo, para adicionar uma animação ao poder do necronomicon zumbi, a animação deve ser chamada de `zombie_necronomicon.yml`. Ela começará a ser reproduzida assim que o poder for acionado e terminará quando a animação terminar, se não estiver definida para ser um loop, ou quando o poder terminar.
+Por exemplo, para adicionar uma animação ao poder zombie necronomicon, a animação deverá chamar-se `zombie_necronomicon.yml` . Começará a ser reproduzida assim que o poder for acionado e terminará quando a animação terminar se não estiver definida para repetir ou quando o poder terminar.
 
-# Importando Modelos Personalizados de masmorras
+# Importar Modelos Personalizados de dungeons
 
-## Etapa 1. Importação normal
+## Passo 1. Importação normal
 
-Ao importar uma pasta zipada de empacotador de masmorras que contém Modelos Personalizados, os Modelos Personalizados são movidos automaticamente para `(yourServer)/plugins/ModelEngine/blueprints` e o Model Engine é recarregado automaticamente para gerar o pacote de recursos e os arquivos do Model Engine relevantes.
+Ao importar uma pasta zipada do empacotador de dungeons que contenha Modelos Personalizados, os Modelos Personalizados são automaticamente movidos para `(oseuServidor)/plugins/ModelEngine/blueprints` e o Model Engine é recarregado automaticamente para gerar o pacote de recursos relevante e os ficheiros do Model Engine.
 
-## Etapa 2. Gerando o Pacote de Recursos
+## Passo 2. Gerar o Pacote de Recursos
 
-Se você estiver online quando recarregar o EliteMobs para importar arquivos, o EliteMobs postará automaticamente uma mensagem no bate-papo na qual você pode clicar para gerar o pacote de recursos do EliteMobs. Alternativamente, você pode executar o comando `/em generateresourcepack` para gerá-lo.
+Se estiver online quando recarregar o EliteMobs para importar ficheiros, o EliteMobs publicará automaticamente uma mensagem no chat na qual pode clicar para gerar o pacote de recursos do EliteMobs. Em alternativa, pode executar o comando `/em generateresourcepack` para o gerar.
 
-Executar este comando copia todos os arquivos do pacote de recursos para a pasta `exports` do EliteMobs de forma não destrutiva. Isso significa que se você descompactar um pacote de recursos na pasta `exports` usando o nome do pacote de recursos `elitemobs_resource_pack` para sua pasta do pacote de recursos, o EliteMobs não excluirá nenhum dos arquivos lá, a menos que um arquivo com o mesmo nome seja obtido do Model Engine (exceto pack.meta e pack.png). Dessa forma, você pode atualizar seu pacote de recursos sem perder os modelos que você colocou nele anteriormente.
+A execução deste comando copia todos os ficheiros do pacote de recursos para a pasta `exports` do EliteMobs de forma não destrutiva. Isto significa que, se descompactar um pacote de recursos para a pasta exports utilizando o nome de pacote de recursos `elitemobs_resource_pack` para a sua pasta de pacote de recursos, o EliteMobs não eliminará nenhum dos ficheiros lá existentes, a menos que um ficheiro com o mesmo nome seja obtido do ModelEngine (exceto pack.meta e pack.png). Desta forma, consegue atualizar o seu pacote de recursos sem perder os modelos que colocou anteriormente.
 
-Por fim, o EliteMobs compacta o pacote de recursos na pasta `exports`, e este arquivo está pronto para distribuição.
+Finalmente, o EliteMobs zipa o pacote de recursos na pasta `exports` e este ficheiro está pronto para distribuição
 
-Depois que isso for feito, o EliteMobs também sugere atualizar o código SHA1 para seu pacote de recursos.
+Depois de isto estar concluído, o EliteMobs também sugere que atualize o código SHA1 para o seu pacote de recursos.
 
-### Etapa 2.5. Atualizando o SHA1
+### Passo 2.5. Atualizar o SHA1
 
-O código SHA1 no arquivo `server.properties` é usado para informar aos clientes se seu pacote de recursos está desatualizado e faz com que eles o atualizem se necessário. Este código pode ser gerado pelo EliteMobs clicando na opção no bate-papo que aparece após a etapa 2, ou executando o comando `/em updateresourcepack`
+O código SHA1 no ficheiro `server.properties` é utilizado para informar os clientes se o seu pacote de recursos está desatualizado e faz com que o atualizem se necessário. Este código pode ser gerado através do EliteMobs ao clicar na opção no chat que aparece após o passo 2 ou ao executar o comando `/em updateresourcepack`
 
-**Lembre-se de que isso atualiza seu arquivo server.properties com o código SHA1 correto para o pacote de recursos compactado na pasta `exports`.** Se você excluí-lo ou modificar o arquivo compactado após executar o comando, ele não funcionará.
+**Tenha em atenção que isto atualiza o seu ficheiro server.properties com o código SHA1 correto para o pacote de recursos zipado na pasta `exports`.** Se o eliminar ou modificar o ficheiro zipado depois de executar o comando, não funcionará.
 
-## Etapa 3. Torne o arquivo publicamente disponível
+## Passo 3. Tornar o ficheiro publicamente disponível
 
-Hospede o arquivo em um local de sua escolha. Algumas pessoas usam Google Drive ou Dropbox para isso. É melhor hospedar esse arquivo você mesmo, se você tiver a capacidade de fazer isso. Alguns plugins por aí também podem ajudá-lo a hospedá-lo diretamente em seu servidor Minecraft. Se você encontrar um plugin assim que funciona, avise o MagmaGuy no Discord e esta postagem será atualizada com essas informações.
-
+Aloje o ficheiro num local à sua escolha. Algumas pessoas utilizam o Google Drive ou o Dropbox para isto. É melhor alojar este ficheiro você mesmo, se tiver essa capacidade. Alguns plugins podem também ajudá-lo a alojá-lo diretamente a partir do seu servidor Minecraft. Se encontrar um plugin como esse que funcione, informe o MagmaGuy no Discord e este artigo será atualizado com essa informação.

@@ -1,24 +1,24 @@
-## Geradores
+## Генераторы
 
-Os geradores são a parte mais poderosa do sistema de configuração do BetterStructures. Por padrão, existem 27 geradores que coletivamente gerenciam mais de 200 construções atualmente distribuídas pelo BetterStructures, e embora você possa criar seus próprios geradores, você também pode usar os existentes como um atalho.
+Генераторы - самая мощная часть системы конфигурации BetterStructures. По умолчанию существует 27 генераторов, которые в совокупности управляют более чем 200 постройками, распространяемыми BetterStructures в настоящее время, и, хотя вы можете создавать свои собственные генераторы, вы также можете использовать существующие в качестве ярлыка.
 
-Os geradores informam ao plugin onde exatamente as coisas devem ser geradas e definem tabelas de loot. Os geradores padrão também são nomeados de maneiras que devem ser muito fáceis de adivinhar o que eles fazem.
+Генераторы сообщают плагину, где именно должны появляться объекты, и определяют таблицы добычи. Названия генераторов по умолчанию также выбраны таким образом, чтобы было очень легко догадаться, что они делают.
 
-O único campo obrigatório para geradores é a configuração `structureType`, que informa ao plugin se a construção é destinada a ser gerada no céu, no subsolo raso, no subsolo profundo, na superfície ou na superfície líquida.
+Единственным обязательным полем для генераторов является параметр `structureType`, который указывает плагину, предназначено ли здание для появления в небе, на небольшой глубине под землей, на большой глубине под землей, на поверхности или на поверхности жидкости.
 
 ***
 
 ### isEnabled
 
-Define se o gerador está habilitado.
+Устанавливает, включен ли генератор.
 
 ***
 
 ### structureType
 
-Define qual tipo de estrutura é a construção. **Observe que você pode criar uma lista de vários tipos!** 
+Устанавливает, какой тип структуры имеет постройка. **Обратите внимание, что вы можете создать список из нескольких типов!**
 
-Os seguintes são valores válidos para o tipo de estrutura:
+Допустимыми значениями типа структуры являются:
 
 ***
 
@@ -29,7 +29,7 @@ structureType:
 - SURFACE
 ```
 
-As estruturas de superfície são geradas na superfície do mundo. A única exceção é o ambiente Nether, onde ele é gerado em pontos que o plugin considera suficientemente semelhantes à superfície.
+Наземные структуры появляются на поверхности мира. Единственным исключением является Нижний мир, где они появляются в точках, которые плагин считает достаточно похожими на поверхность.
 
 ***
 
@@ -40,7 +40,7 @@ structureType:
 - SKY
 ```
 
-As estruturas do céu são geradas entre 80 e 120 blocos acima do ar, configurável em config.yml. A única exceção é o ambiente Nether, onde ele é gerado em pontos que o plugin considera suficientemente semelhantes ao ar.
+Небесные структуры появляются на высоте от 80 до 120 блоков над воздухом, что настраивается в config.yml. Единственным исключением является Нижний мир, где они появляются в точках, которые плагин считает достаточно похожими на воздух.
 
 ***
 
@@ -51,9 +51,9 @@ structureType:
 - UNDERGROUND_SHALLOW
 ```
 
-As estruturas subterrâneas rasas são geradas entre y=0 e y=60 no mundo superior, y=60 e y=120 no Nether e qualquer altura subterrânea válida no End.
+Мелкие подземные структуры появляются между y=0 и y=60 в обычном мире, между y=60 и y=120 в Нижнем мире и на любой допустимой подземной высоте в Крае.
 
-_**Observação: ** Você notará que existem duas configurações subterrâneas. Isso ocorre porque ter apenas uma resulta em um subsolo muito esparso, pois o Minecraft tem muito espaço subterrâneo e os jogadores muitas vezes perderão estruturas subterrâneas simplesmente porque não as mineraram. Isso também garante que haja uma distribuição uniforme entre diferentes profundidades._
+_**Примечание:** Вы заметите, что есть два подземных параметра. Это связано с тем, что наличие только одного параметра приводит к очень редкому появлению подземных структур, поскольку в Minecraft много подземного пространства, и игроки часто упускают подземные структуры просто потому, что не прокопали к ним._ Это также гарантирует равномерное распределение по разным глубинам._
 
 ***
 
@@ -64,7 +64,7 @@ structureType:
 - UNDERGROUND_DEEP
 ```
 
-As estruturas subterrâneas profundas são geradas entre y=-64 e y=0 no mundo superior, y=0 e y=60 no Nether e não são geradas no End.
+Глубокие подземные структуры появляются между y=-64 и y=0 в обычном мире, между y=0 и y=60 в Нижнем мире и не появляются в Крае.
 
 ***
 
@@ -75,43 +75,42 @@ structureType:
 - LIQUID_SURFACE
 ```
 
-As estruturas da superfície líquida serão geradas em líquidos. No caso do mundo superior, elas serão geradas na água e quase sempre nos oceanos. No caso do Nether, elas serão geradas nos lagos de lava. Elas não serão geradas no End.
+Структуры на поверхности жидкости будут появляться на жидкостях. В случае обычного мира они будут появляться на воде и почти всегда в океанах. В случае Нижнего мира они будут появляться в лавовых озерах. Они не будут появляться в Крае.
 
 ***
 
 ### lowestYLevel
 
-Define o nível Y mais baixo (altitude) em que a estrutura será gerada.
+Устанавливает самый низкий уровень Y (высоту), на котором будет появляться структура.
 
 ***
 
 ### highestYLevel
 
-Define o nível Y mais alto (altitude) em que a estrutura será gerada.
+Устанавливает самый высокий уровень Y (высоту), на котором будет появляться структура.
 
 ***
 
 ### validWorlds
 
-Define a lista de mundos em que a estrutura será gerada. **Se nenhuma lista estiver presente, ela usará todos os mundos permitidos pelo plugin**, a menos que seja limitada de outra forma (como pelo tipo de ambiente ou biomas).
+Устанавливает список миров, в которых будет появляться структура. **Если список отсутствует, он будет использовать все миры, разрешенные плагином**, если иное не ограничено (например, типом окружения или биомами).
 
 ***
 
 ### validWorldEnvironments
 
-Define a lista de ambientes de mundo em que a estrutura será gerada. **Se nenhuma lista estiver presente, ela usará todos os ambientes de mundo permitidos pelo plugin**. Valores válidos: `NORMAL`, `NETHER`, `END` e `CUSTOM`.
+Устанавливает список типов миров, в которых будет появляться структура. **Если список отсутствует, он будет использовать все типы миров, разрешенные плагином**. Допустимые значения: `NORMAL`, `NETHER`, `END` и `CUSTOM`.
 
 ***
 
 ### validBiomes
 
-Define a lista de biomas válidos em que a estrutura será gerada. **Se nenhuma lista for definida, ela assumirá que todos os biomas são válidos!**.
+Устанавливает список допустимых биомов, в которых будет появляться структура. **Если список не определен, предполагается, что каждый биом допустим!**.
 
-Isso requer o uso da lista de biomas conforme definido pela [API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html).
+Для этого необходимо использовать список биомов, как определено в [Spigot API](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html).
 
 ***
 
 ### treasureFilename
 
-Define o arquivo de tesouro que o gerador usará. Isso define o que gera nos baús para todas as construções que usam esse gerador, a menos que um valor diferente seja definido na configuração [treasureFile]($language$/betterstructures/creating_structures.md&section=treasurefile) de uma configuração esquemática.
-
+Устанавливает файл сокровищ, который будет использовать генератор. Это определяет, что появляется в сундуках для всех построек, использующих этот генератор, если другое значение не установлено в [параметре `treasureFile` конфигурации схемы]($language$/betterstructures/creating_structures.md&section=treasurefile).

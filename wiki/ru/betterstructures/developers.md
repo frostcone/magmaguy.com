@@ -1,31 +1,34 @@
-# Публичный репозиторий
+# Публичный Репозиторий
 
 ## Maven
 ```xml
 <repositories>
     <repository>
-        <id>oss-sonatype</id>
-        <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+        <id>magmaguy-repo-releases</id>
+        <name>Репозиторий MagmaGuy</name>
+        <url>https://repo.magmaguy.com/releases</url>
     </repository>
 </repositories>
 
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>versionNumber-SNAPSHOT</version>
+  <version>Проверьте, какая последняя версия!</version>
+  <scope>provided</scope>
 </dependency>
 ```
 
 # Gradle
 ```kt
 repositories {
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots'
-    }
+  maven {
+    name = "magmaguyRepoReleases"
+    url = uri("https://repo.magmaguy.com/releases")
+  }
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:versionNumber-SNAPSHOT'
+    implementation 'com.magmaguy:BetterStructures:Проверьте, какая последняя версия!'
 }
 ```
 
@@ -37,17 +40,17 @@ dependencies {
 
 ## BuildPlaceEvent
 
-Вызывается, когда структура должна быть размещена. Предоставляет данные о том, какая структура будет размещена и где, а также другую информацию через объект FitAnything.
+Вызывается, когда сборка собирается быть размещена. Предоставляет данные о том, какая сборка будет размещена и где, среди прочего, через объект FitAnything.
 
-**Не пытайтесь изменять структуру, которая будет размещена!** Вы можете изменять мелкие вещи, но изменение всей структуры, вероятно, приведет к структуре с плохой посадкой.
+**Не пытайтесь изменять размещаемую сборку!** Вы можете изменять незначительные вещи, но изменение всей сборки, вероятно, приведет к сборке с плохой подгонкой.
 
 Это событие можно отменить.
 
 ## ChestFillEvent
 
-Вызывается, когда сундук заполняется. Использует инвентарь снимка контейнера для безопасного хранения данных, которые должны быть применены.
+Вызывается, когда сундук заполняется. Использует снимок инвентаря контейнера для безопасного хранения данных, которые нужно применить.
 
-Изменения в loot должны быть внесены в инвентарь снимка через метод добавления или удаления предмета Spigot.
+Изменения лута следует вносить в снимок инвентаря через метод Spigot для добавления или удаления предмета.
 
 Это событие можно отменить.
 
@@ -55,10 +58,8 @@ dependencies {
 
 ## FitAnything
 
-Класс FitAnything - это класс, который создается при вставке структуры и обрабатывает все аспекты вставки, включая заполнение сундуков и генерацию мобов.
+Класс FitAnything — это класс, который создается при вставке сборки и обрабатывает каждый аспект вставки, включая заполнение сундуков и спавн мобов.
 
 ## WorldGuard
 
-Класс WorldGuard обрабатывает защиту регионов WorldGuard. Метод утилиты `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` доступен разработчикам, чтобы они могли легко подключить схему защиты региона на основе BetterStructures.
-
-
+Класс WorldGuard обрабатывает защиты регионов WorldGuard. Вспомогательный метод `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` предоставляется разработчикам для легкого подключения пользовательской схемы защиты регионов поверх BetterStructures.

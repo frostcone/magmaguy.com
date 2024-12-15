@@ -1,60 +1,60 @@
-# Criando um Mapa Personalizado para EternalTD
+# Como Criar um Mapa Personalizado para o EternalTD
 
-## Criando o arquivo level.yml para seu mapa
+## Criar o ficheiro level.yml para o seu mapa
 
-Comece seu mapa criando um arquivo de configuração de nível seguindo estas etapas simples:
+Comece a criar o seu mapa criando um ficheiro de configuração de nível seguindo estes passos simples:
 
-1. Comece criando um novo documento de texto e dando a ele um nome como *your_level_name.yml* (substitua "your_level_name" pelo nome real do seu nível/mapa).
+1. Comece por criar um novo documento de texto e dê-lhe um nome como *o_nome_do_seu_nível.yml* (substitua "o_nome_do_seu_nível" pelo nome real do seu nível/mapa).
 
-2. Abra o arquivo no seu editor de texto favorito.
+2. Abra o ficheiro no seu editor de texto favorito.
 
-3. Vamos começar com a parte divertida! Adicione o nome do seu nível usando esta configuração:
+3. Vamos começar com a parte divertida! Adicione o nome do seu nível usando esta definição:
 ```yaml
-levelName: "&aMy Awesome Level"
+levelName: "&aO Meu Nível Incrível"
 ```
-Sinta-se à vontade para dar um toque especial com algumas cores do Minecraft ou outros modificadores de texto.
+Sinta-se à vontade para adicionar algum brilho com as cores do Minecraft ou outros modificadores de texto.
 
-4. Agora, dê ao seu nível algum caráter com uma descrição legal:
+4. Agora, dê ao seu nível alguma personalidade com uma descrição fixe:
 ```yaml
 levelDescription:
-- "&aMy level is pretty cool."
-- "&aHope you enjoy!"
+- "&aO meu nível é muito fixe."
+- "&aEspero que goste!"
 ```
-Você pode adicionar mais linhas à descrição, mas mantê-la breve é uma boa ideia.
+Pode adicionar mais linhas à descrição, mas é boa ideia que seja breve.
 
-5. Hora das ondas! Especifique quais ondas do EternalTD seu nível deve usar:
+5. Hora das ondas! Especifique quais as ondas do EternalTD que o seu nível deve usar:
 ```yaml
-wavesConfigFile: my_waves.yml
+wavesConfigFile: minhas_ondas.yml
 ```
-Lembre-se de usar o nome real do seu arquivo de ondas. Uma onda por nível!
+Apenas se lembre de usar o nome real do seu ficheiro de ondas. Uma onda por nível!
 
-6. Defina o mundo (construção) que seu nível usará:
+6. Defina o mundo (construção) que o seu nível vai usar:
 ```yaml
-worldName: my_world_folder_name
+worldName: o_nome_da_pasta_do_meu_mundo
 ```
-Use o nome real do mundo encontrado dentro da pasta *worlds* do EternalTD.
+Use o nome real do mundo que se encontra dentro da pasta *worlds* do EternalTD.
 
-7. Por fim, mas não menos importante, escolha o ambiente perfeito para a configuração do seu nível:
+7. Por último, mas não menos importante, escolha o ambiente perfeito para o cenário do seu nível:
 ```yaml
 environment: NORMAL
 ```
-Você pode escolher entre NORMAL, NETHER ou THE_END. Faça sua escolha.
+Pode escolher entre NORMAL, NETHER, ou THE_END. Escolha o seu.
 
-Seu arquivo de configuração de nível está pronto! O restante do arquivo será preenchido por comandos do EternalTD que usaremos nas próximas etapas ao mapear a construção.
+O seu ficheiro de configuração de nível está pronto! O resto do ficheiro será preenchido pelos comandos do EternalTD que vamos usar nos próximos passos quando mapearmos a construção.
 
-## Preparando sua construção
-Antes de mapear sua construção para uso com o EternalTD, é essencial configurá-la da seguinte forma:
+## Preparar a sua construção
+Antes de mapear a sua construção para usar com o EternalTD, é essencial configurá-la da seguinte forma:
 
-- Defina-o em um mundo do Void. Se estiver usando o multiverse, você pode usar o comando:
+- Configure-a num mundo Vazio. Se usar o Multiverse, pode usar o comando:
   ```
-  /mvcreate yourworldnamehere NORMAL -g VoidGen:.
+  /mvcreate seu_nomedomundoaqui NORMAL -g VoidGen:.
   ```
-- Tenha uma borda de mundo estreita ao redor da construção.
-- Crie um cilindro de barreira alguns blocos abaixo da construção com uma altura de um bloco e um raio grande o suficiente para atingir a borda do mundo (raio de 200 blocos recomendado). Usando o WorldEdit, você pode executar:
+- Tenha uma borda de mundo estreita à volta da construção.
+- Crie um cilindro de barreira alguns blocos abaixo da construção com uma altura de um bloco e um raio grande o suficiente para atingir a borda do mundo (raio de 200 blocos recomendado). Usando o WorldEdit, pode executar:
   ```
   //cyl barrier 200 1
   ```
-- Defina o ponto de geração para estar no centro da construção em um local seguro.
+- Defina o ponto de surgimento para ficar no centro da construção num lugar seguro.
 - Aplique as seguintes regras:
     - /gamerule doWeatherCycle false
     - /gamerule doDaylightCycle false
@@ -64,34 +64,30 @@ Antes de mapear sua construção para uso com o EternalTD, é essencial configur
     - /gamerule mobGriefing false
     - /gamerule disableRaids true
     - /gamerule announceAdvancements false
-- A área de jogo do mapa precisa estar no mesmo nível Y. Qualquer coisa que esteja mais alta ou mais baixa será ignorada quando iniciarmos o processo de mapeamento.
+- A área de jogo do mapa precisa de estar no mesmo nível Y. Tudo o que estiver mais alto ou mais baixo será ignorado quando começarmos o processo de mapeamento.
 
-## Mapeamento da construção para uso com o EternalTD
-Para mapear a área de jogo da sua construção para uso com o EternalTD, siga estas etapas:
+## Mapear a construção para usar com o EternalTD
+Para mapear a área de jogo da sua construção para usar com o EternalTD, siga estes passos:
 
-1. Meça manualmente a construção, certificando-se de incluir apenas a área de jogo e nada mais. Anote as coordenadas conforme você mede.
-<br>A área de jogo deve incluir as seções de início (geração de monstros) e fim do mapa. O início geralmente é construído usando blocos verdes e com blocos vermelhos para o fim.
+1. Meça manualmente a construção, certificando-se de incluir apenas a área de jogo e mais nada. Anote as coordenadas à medida que mede.
+<br>A área de jogo deve incluir as seções de início (surgimento de monstros) e fim do mapa. O início é normalmente construído usando blocos verdes e com blocos vermelhos para o fim.
 
+2. Comece por medir os eixos X, Y e Z da construção. Fique num canto da área de jogo do seu mapa no eixo X e anote a coordenada reportada (pode usar as coordenadas do bloco para isto). Mova-se para o lado oposto do eixo X e anote essa coordenada.
 
-2. Comece medindo os eixos X, Y e Z da construção. Fique em um canto da área de jogo do seu mapa no eixo X e anote a coordenada relatada (você pode usar as coordenadas de bloco para isso). Mova-se para o lado oposto do eixo X e anote essa coordenada.
+3. Para o eixo Y, fique na **área de jogo** e anote a coordenada reportada.
 
+4. Repita o mesmo processo que fez para o eixo X para medir o eixo Z. Pode dar uma olhadela a esta imagem de exemplo para o ajudar a perceber o que estamos a tentar fazer aqui:
+   ![Exemplo de Mapeamento](https://i.imgur.com/IZfh2Nt.jpeg)
+   Repare como estamos apenas a medir as coordenadas onde queremos que a nossa área de jogo esteja e a ignorar o resto. Tal como no exemplo, por favor, certifique-se de que inclui o início e o fim ao medir a área de jogo. <br>Se a área de jogo que está a medir for mais larga numa ponta e mais estreita na outra, deve medir a seção mais larga.
 
-3. Para o eixo Y, fique na **área de jogo** e anote a coordenada relatada.
-
-
-4. Repita o mesmo processo realizado para o eixo X para medir o eixo Z. Você pode dar uma olhada nesta imagem de exemplo para entender o que estamos tentando realizar aqui:
-   ![Mapping Example](https://i.imgur.com/IZfh2Nt.jpeg)
-   Observe como estamos apenas medindo as coordenadas onde queremos que nossa área de jogo esteja e ignorando o resto. Como no exemplo, certifique-se de incluir o início e o fim ao medir a área de jogo. <br>Se a área de jogo que você está medindo for mais larga em uma extremidade e mais estreita na outra, você deve medir a seção mais larga.
-
-
-5. Depois de completar as medições, você deve ter algo parecido com isso:
+5. Após concluir as medições, deve ter algo como isto:
    ```
    Eixo X: -57, 56
    Eixo Y: 65
    Eixo Z: 34, -34
    ```
 
-6. Rearranje esses números do maior para o menor para obter dois conjuntos completos de coordenadas XYZ:
+6. Reorganize estes números do mais alto para o mais baixo para obter dois conjuntos completos de coordenadas XYZ:
    ```
    56 65 34 (valores XYZ mais altos)
    -57 65 -34 (valores XYZ mais baixos)
@@ -99,52 +95,45 @@ Para mapear a área de jogo da sua construção para uso com o EternalTD, siga e
 
 7. Use o seguinte comando para selecionar as coordenadas:
    ```
-   /etd selectfloorcoordinate Xhigh Y Zhigh Xlow Y Zlow
+   /etd selectfloorcoordinate Xalto Y Zalto Xbaixo Y Zbaixo
    Exemplo: /etd selectfloorcoordinate 56 65 34 -57 65 -34
    ```
 
-8. As coordenadas foram selecionadas e estão na memória. Se você receber um erro, sua medição estava incorreta ou a área de jogo não foi construída corretamente. Para verificar se mapeamos a área de jogo corretamente, execute o seguinte comando:
+8. As coordenadas foram agora selecionadas e estão na memória. Se obtiver um erro, então a sua medição estava incorreta ou a área de jogo não foi construída corretamente. Para verificar se mapeamos a área de jogo corretamente, execute o seguinte comando:
    ```
-   /etd register your_level_name.yml test
+   /etd register o_nome_do_seu_nível.yml teste
    ```
-   Substitua "your_level_name" pelo nome real do nível/mapa que você está tentando criar. Se tudo estiver correto, você deve ver barreiras marcando cada ladrilho na sua área de jogo.
+   Substitua "o_nome_do_seu_nível" pelo nome real do nível/mapa que está a tentar criar. Se tudo foi feito corretamente, deve ver barreiras a marcar todos os blocos na sua área de jogo.
 
+9. Passe pela área de jogo e certifique-se de que tudo parece estar como deve e, em seguida, execute o comando novamente, mas desta vez sem o *teste* no final.
+   ```
+   /etd register o_nome_do_seu_nível.yml
+   ```
+   Isto irá agora guardar a área de jogo no seu ficheiro de nível e o seu ficheiro de nível deverá estar agora pronto para ser usado.
 
-9. Passe pela área de jogo e certifique-se de que tudo parece estar como deveria e, em seguida, execute o comando novamente, mas desta vez sem o *test* no final.
-   ````
-   /etd register your_level_name.yml
-   ````
-   Isso agora salvará a área de jogo no seu arquivo de nível e seu arquivo de nível deve estar pronto para uso.
+## Reduzir a pasta do mundo
+Existem vários ficheiros e pastas localizados na sua pasta do mundo que podemos descartar uma vez que o EternalTD não os usa todos. Isto irá reduzir o tamanho do seu mundo e torná-lo mais fácil de distribuir.
 
-## Cortando a pasta do mundo
-Existem vários arquivos e pastas localizados na pasta do seu mundo que podemos descartar, pois o EternalTD não usa todos eles. Isso reduzirá o tamanho do seu mundo e facilitará a distribuição.
+Para o Ambiente NORMAL:
 
-Para o ambiente NORMAL:
+Para preparar o seu mundo, **mantenha** os seguintes ficheiros e pastas:
 
-Para preparar seu mundo, **mantenha** os seguintes arquivos e pastas:
+1. Pasta **region**
 
-1.  pasta **region**
+2. **raids.dat** de dentro da pasta **data** (certifique-se de que está dentro da pasta **data** ao copiar)
 
+3. Ficheiro **level.dat**
 
-2.  **raids.dat** de dentro da pasta **data** (certifique-se de que ele seja colocado dentro da pasta **data** ao copiar)
+Pode apagar com segurança todos os outros ficheiros e pastas localizados na pasta do mundo. Isto irá configurar corretamente o seu mundo para o ambiente NORMAL.
 
+Para o Ambiente NETHER e THE_END:
 
-3.  arquivo **level.dat**
+Para preparar o seu mundo, mantenha os seguintes ficheiros e pastas:
 
-Você pode excluir com segurança todos os outros arquivos e pastas localizados na pasta do mundo. Isso configurará seu mundo corretamente para o ambiente NORMAL.
+1. Pasta **region** dentro da pasta **DIM-1** (certifique-se de que está dentro da pasta **DIM-1** ao copiar)
 
-Para o ambiente NETHER e THE_END:
+2. **raids.dat** de dentro da pasta **data** (certifique-se de que está dentro da pasta **data** ao copiar)
 
-Para preparar seu mundo, mantenha os seguintes arquivos e pastas:
+3. Ficheiro **level.dat**
 
-1.  pasta **region** dentro da pasta **DIM-1** (certifique-se de que ele seja colocado dentro da pasta **DIM-1** ao copiar)
-
-
-2.  **raids.dat** de dentro da pasta **data** (certifique-se de que ele seja colocado dentro da pasta **data** ao copiar)
-
-
-3.  arquivo **level.dat**
-
-Você pode excluir com segurança todos os outros arquivos e pastas localizados na pasta do mundo. Isso configurará seu mundo corretamente para os ambientes NETHER e THE_END.
-
-
+Pode apagar com segurança todos os outros ficheiros e pastas localizados na pasta do mundo. Isto irá configurar corretamente o seu mundo para os ambientes NETHER e THE_END.

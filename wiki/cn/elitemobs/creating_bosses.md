@@ -1,32 +1,34 @@
-## 创建自定义Boss
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-## 开始之前
+# 创建自定义首领
 
-### Boss文件放在哪里？
+# 开始之前
 
-Boss文件位于配置文件 `~/plugins/EliteMobs/custombosses` 文件夹中。
+## 首领文件放在哪里？
 
-可以创建子文件夹，例如 `~/plugins/EliteMobs/custombosses/mybosses`。建议这样做以保持条理性。
+首领文件放在配置文件夹 `~/plugins/EliteMobs/custombosses` 中。
 
-一个文件定义一个Boss，但可以多次生成同一个Boss，甚至可以为同一个Boss文件设置多个生成位置。
+可以创建子文件夹，例如 `~/plugins/EliteMobs/custombosses/mybosses`。建议这样做以保持井然有序。
 
-可以使用[网页应用程序](https://magmaguy.com/webapp/webapp.html) 快速轻松地创建自定义Boss等等。
+一个文件定义一个首领，尽管可以多次生成同一个首领，甚至可以为同一个首领文件设置多个生成位置。
 
-### 最精简的配置
+可以使用 [webapp](https://magmaguy.com/webapp/webapp.html) 快速轻松地创建自定义首领等。
 
-**自定义Boss的最精简配置文件如下：**
+## 最小可能的配置
+
+**自定义首领的最小可能配置文件为：**
 ```yml
 ```
 
-请注意，这只是一个空文件。但这仍然会生成一个带有自定义名称的僵尸自定义Boss，因为这些是默认值。 **本页面中的所有内容都是可选的！**
+请注意，这只是一个空文件。这将仍然生成一个具有自定义名称的僵尸自定义首领，因为这些是默认值。**此页面中的所有内容都是可选的！**
 
-## 示例Boss
+## 示例首领
 
 <div align="center">
 
-让我们看一下Boss文件示例。
+让我们看一下首领文件的示例。
 
-<details> 
+<details>
 <summary><b>示例</b></summary>
 
 <div align="left">
@@ -34,7 +36,7 @@ Boss文件位于配置文件 `~/plugins/EliteMobs/custombosses` 文件夹中。
 ```yml
 isEnabled: true
 entityType: ZOMBIE
-name: '&e测试Boss'
+name: '&e测试首领'
 level: dynamic
 timeout: 10
 isPersistent: false
@@ -49,10 +51,10 @@ offHand: SHIELD
 isBaby: false
 powers:
 - invulnerability_knockback.yml
-spawnMessage: 测试Boss已生成！
-deathMessage: 测试Boss已被 $players 击杀！
-escapeMessage: 测试Boss实体已逃脱！
-locationMessage: '测试实体： $location'
+spawnMessage: 测试首领已生成！
+deathMessage: 测试首领已被 $players 击杀！
+escapeMessage: 测试首领实体已逃脱！
+locationMessage: '测试实体：$location'
 uniqueLootList:
 - magmaguys_toothpick.yml:1
 dropsEliteMobsLoot: true
@@ -71,20 +73,19 @@ onDamagedMessages:
 
 </div>
 
-
 ## 基本设置
 
 <div align="center">
 
 ### isEnabled
 
-设置Boss是否启用。
+设置是否启用首领。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `isEnabled` | `true` / `false` | `true` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -102,13 +103,13 @@ isEnabled: true
 
 ### entityType
 
-设置Boss的实体类型。
+设置首领的实体类型。
 
-| 键 |                                                                                   值                                                                                    | 默认值 |
+| 键 |                                                                                   值                                                                                   | 默认值 |
 |-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
-| `entityType` | [从此处选择](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html)。 <br>  `~plugins/EliteMobs/mobproperties` 文件夹中也必须存在该值。 | `ZOMBIE`|
+| `entityType` | [从此处选择](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html)。<br> 该值也必须存在于文件夹 `~/plugins/EliteMobs/mobproperties` 中。 | `ZOMBIE` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -126,20 +127,20 @@ entityType: ZOMBIE
 
 ### name
 
-设置Boss的名称。
+设置首领的名称。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `name` | [字符串](#string)，接受[颜色代码](#color_codes) 和下面列出的占位符 | "默认名称" |
+| `name` | [字符串](#string)，接受[颜色代码](#color_codes)和下面列出的占位符 | "默认名称" |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-name: "$normalLevel &c酷炫Boss！"
+name: "$normalLevel &c酷炫首领！"
 ```
 <div align="center">
 
@@ -147,30 +148,29 @@ name: "$normalLevel &c酷炫Boss！"
 
 </div>
 
-
 </div>
 
 </details>
 
-如果希望在名称字段中包含Boss等级，只需使用以下占位符之一。
+如果您希望在首领名称字段中包含首领等级，只需使用以下占位符之一。
 
-| 占位符 | 说明 | 示例 | 输出（对于10级Boss） |
+| 占位符 | 描述 | 示例 | 输出（对于 10 级首领） |
 |-|:-:|:-:|-|
-| `$level` | 替换为等级 | "$level 酷炫Boss" | `10 酷炫Boss` |
-| `$normalLevel` | 替换为等级，用于普通怪物 | `"$normalLevel 酷炫Boss"` | `[10] 酷炫Boss` |
-| `$minibossLevel` | 替换为等级，用于迷你Boss | `"$minibossLevel 酷炫Boss"` | `〖10〗 酷炫Boss` |
-| `$bossLevel` | 替换为等级，用于Boss | `"$bossLevel 酷炫Boss"` | `『10』 酷炫Boss` |
-| `$reinforcementLevel` | 替换为等级，用于增援 | `"$reinforcementLevel 酷炫Boss"` | `〔10〕 酷炫Boss` |
-| `$eventBossLevel` | 替换为等级，用于事件Boss | `"$eventBossLevel 酷炫Boss"` | `「10」 酷炫Boss` |
+| `$level` | 替换为等级 | "$level 酷炫首领" | `10 酷炫首领` |
+| `$normalLevel` | 替换为等级，为普通生物制作 | `"$normalLevel 酷炫首领"` | `[10] 酷炫首领` |
+| `$minibossLevel` | 替换为等级，为迷你首领制作 | `"$minibossLevel 酷炫首领"` | `〖10〗 酷炫首领` |
+| `$bossLevel` | 替换为等级，为首领制作 | `"$bossLevel 酷炫首领"` | `『10』 酷炫首领` |
+| `$reinforcementLevel` | 替换为等级，为增援制作 | `"$reinforcementLevel 酷炫首领"` | `〔10〕 酷炫首领` |
+| `$eventBossLevel` | 替换为等级，为活动首领制作 | `"$eventBossLevel 酷炫首领"` | `「10」 酷炫首领` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-name: "$normalLevel &c酷炫Boss！"
+name: "$normalLevel &c酷炫首领！"
 ```
 
 <div align="center">
@@ -187,16 +187,15 @@ name: "$normalLevel &c酷炫Boss！"
 
 ### level
 
-设置Boss的等级。
+设置首领的等级。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `entityType` | 正[整数](#integer) 或 `dynamic` | `dynamic` |
+| `level` | 正[整数](#integer)或 `dynamic` | `dynamic` |
 
-`dynamic` 用于事件，并根据Boss生成时附近玩家的等级进行调整。
-不建议用于区域Boss。
+`dynamic` 用于事件，并在首领生成时根据附近玩家的等级进行调整。不建议用于区域首领。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -212,15 +211,67 @@ level: 1
 
 ***
 
+### scale
+
+设置首领的比例（大小）。
+
+| 键 | 值 | 默认值 |
+|-|:-:|-|
+| `scale` | [乘数](#multiplier) | `1.0` |
+
+缩放时，`1.0` 表示默认大小。要使实体更大，请增加值（例如，`1.2`）。要使实体更小，请减小值（例如，`0.8`）。
+
+<details>
+
+<summary><b>示例</b></summary>
+
+<div align="left">
+
+```yml
+scale: 1.2
+```
+
+</div>
+
+</details>
+
+***
+
+### bossType
+
+设置首领的类型。这用于显示首领血条和其他功能。
+
+| 键 | 值 | 默认值 |
+|-|:-:|-|
+| `bossType` | `NORMAL`、`MINIBOSS`、`BOSS`、`EVENT` | `NORMAL` |
+
+`MINIBOSS`、`BOSS`、`EVENT` 将使插件在玩家与这些首领类型战斗时显示血条。
+
+<details>
+
+<summary><b>示例</b></summary>
+
+<div align="left">
+
+```yml
+bossType: MINIBOSS
+```
+
+</div>
+
+</details>
+
+***
+
 ### healthMultiplier
 
-设置Boss的生命值。
+设置首领的生命值。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `healthMultiplier` | [乘数](#multiplier) | `1.0` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -238,13 +289,13 @@ healthMultiplier: 1.5
 
 ### damageMultiplier
 
-设置Boss的伤害倍数。
+设置首领的伤害乘数。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `damageMultiplier` | [乘数](#multiplier) | `1.0` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -262,8 +313,8 @@ damageMultiplier: 1.5
 
 ### isBaby
 
-设置Boss是否使用怪物的幼年形态。只能应用于具有幼年形态的怪物。
-如果您想[伪装]($language$/elitemobs/libsdisguises.md) Boss，但又希望它在伪装时保持幼年形态（确保伪装实体也支持幼年形态），则可以使用以下设置：
+设置首领是否使用生物的幼体变体。只能应用于具有幼体变体的生物。
+如果您想[伪装]($language$/elitemobs/libsdisguises.md)首领，但也希望它在伪装时仍然是幼体（确保伪装实体也支持幼体变体），您可以使用此设置：
 <div align="left">
 
 ```yaml
@@ -275,7 +326,7 @@ disguise: HOGLIN:baby
 |-|:-:|-|
 | `isBaby` | `true` / `false` | `false` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -289,29 +340,28 @@ isBaby: true
 
 </details>
 
-
 ***
 
 ### helmet/chestplate/leggings/boots/mainhand/offhand
 
-设置Boss的盔甲。并非所有 Minecraft 模型都能显示盔甲。Boss 盔甲纯粹是装饰性的，不会影响游戏玩法。
+设置首领的盔甲。并非所有 minecraft 模型都能显示盔甲。首领盔甲纯粹是装饰性的，不会影响游戏玩法。
 
-| 键 |                                    值                                     | 默认值 |
+| 键 |                                    值                                    | 默认值 |
 |-|:-----------------------------------------------------------------------------:|-|
-| `helmet` |           [材质](#material), [UUID](https://minecraftuuid.com/)           | 无 |
+| `helmet` |           [材质](#material)、[UUID](https://minecraftuuid.com/)           | 无 |
 | `chestplate` | [材质](#material) | 无 |
 | `leggings` | [材质](#material) | 无 |
 | `boots` | [材质](#material) | 无 |
 | `mainHand` | [材质](#material) | 无 |
 | `offHand` | [材质](#material) | 无 |
 
-**注意：** 此字段还允许您为物品设置自定义模型。要设置自定义模型 ID，请按照以下格式在材质类型后添加 ID：`ITEM_MATERIAL:ID`。例如：`DIAMOND_SWORD:1` 将 Boss 设置为佩戴纹理包中自定义模型 #1 的钻石剑。
+**注意：** 此字段还允许您为物品设置自定义模型。要设置自定义模型 ID，请按照以下格式在材质类型后添加 ID：`ITEM_MATERIAL:ID`。示例：`DIAMOND_SWORD:1` 将首领设置为佩戴材质包中自定义模型 #1 的钻石剑。
 
-**注意 2：** 此字段还允许您使用 `ITEM_MATERIAL:CODE` 格式设置自定义皮革颜色，其中代码是颜色的十六进制表示。例如：`LEATHER_LEGGINGS:ffa500` 将创建橙色护腿。您可以使用十六进制代码，只需从十六进制代码中删除 `#`。您可以从 [此处](https://www.w3schools.com/colors/colors_hexadecimal.asp) 获取十六进制代码。
+**注意 2：** 此字段还允许您使用格式 `ITEM_MATERIAL:CODE` 设置自定义皮革颜色，其中代码是颜色的十六进制表示形式。示例：`LEATHER_LEGGINGS:ffa500` 将创建橙色护腿。您可以使用十六进制代码，只需从十六进制代码中删除 `#` 即可。您可以从[此处](https://www.w3schools.com/colors/colors_hexadecimal.asp)获取十六进制代码。
 
-**注意 3：** 头盔字段还允许您将生物头盔设置为玩家头像。只需获取您要使用的玩家头像的 UUID，然后将其输入到头盔字段中即可。 *玩家需要在线才能使其正常工作，否则头像将默认为通用的 Minecraft 头像。* 您可以从 [此处](https://minecraftuuid.com/) 获取玩家 UUID。
+**注意 3：** 头盔字段还允许您将生物头盔设置为玩家头颅。只需获取您要使用的玩家头颅的 UUID，然后将其输入到头盔字段中即可。*玩家需要在线才能使其正常工作，否则头颅将默认为通用的 MineCraft 头颅。*您可以从[此处](https://minecraftuuid.com/)获取玩家 UUID。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -340,13 +390,13 @@ offHand: SHIELD
 
 ### powers
 
-设置Boss拥有的能力。
+设置首领拥有的能力。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `powers` | 请参阅下面的列表 | 无 |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -362,7 +412,7 @@ powers:
 
 </details>
 
-*注意：如果您想查看可以使用的一系列预制能力，可以查看[此页面]($language$/elitemobs/premade_powers.md)。*
+*注意：如果您想查看您可以使用的预制能力列表，可以查看[此页面]($language$/elitemobs/premade_powers.md)。*
 
 ***
 
@@ -370,43 +420,44 @@ powers:
 
 增援也属于能力类别，使用以下设置：
 
-<details> 
+<details>
 
 <summary><b>增援设置</b></summary>
 
-| 键 | 说明 |                                                                                                             值                                                                                                             | 默认值 |
+| 键 | 描述 |                                                                                                             值                                                                                                              | 默认值 |
 |-|:-:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
-| `summonType` | 触发增援生成的条件。必填。 |                                                                                                    请参阅下面的列表                                                                                                     | 无 |
-| `filename` | 要作为增援生成的Boss的文件名。必填。 |                                                                                                       [字符串](#string)                                                                                                        | 无 |
+| `summonType` | 触发增援生成的原因。必需。 |                                                                                                    请参阅下面的列表                                                                                                     | 无 |
+| `filename` | 作为增援生成首领的文件名。必需。 |                                                                                                       [字符串](#string)                                                                                                        | 无 |
 | `chance` | 增援生成的几率。可选。 |                                                                                                       [双精度浮点数](#double)                                                                                                        | `1.0` |
 | `amount` | 设置要生成的增援数量。可选。 |                                                                                                      [整数](#integer)                                                                                                       | `1` |
-| `inheritAggro` | 使增援继承Boss的仇恨值。可选。 |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `spawnNearby` | 使增援在Boss周围30个方块半径内生成。可选。 |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `inheritLevel` | 使增援继承Boss的等级。可选 |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `customSpawn` | 使增援使用[自定义生成系统]($language$/elitemobs/creating_spawns.md) 生成。仅用于 `summonType: GLOBAL` | `world_name,x,y,z` 或 `x,y,z` 表示相对于Boss的位置。偏移量是相对于区域Boss的生成位置的。您也可以使用 `same_as_boss` 使增援与Boss在同一个世界生成。 | 无 |
-| `lightningRod` | `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` 的特殊设置。使末影水晶周围生成闪电。可选。 |                                                                                                        `true` / `false`                                                                                                        | 无 |
+| `inheritAggro` | 使增援继承首领的仇恨。可选。 |                                                                                                        `true` / `false`                                                                                                        | `false` |
+| `spawnNearby` | 使增援在首领 30 个方块的半径内生成。可选。 |                                                                                                        `true` / `false`                                                                                                        | `false` |
+| `inheritLevel` | 使增援继承首领的等级。可选。 |                                                                                                        `true` / `false`                                                                                                        | `false` |
+| `customSpawn` | 使用[自定义生成系统]($language$/elitemobs/creating_spawns.md)使增援生成。仅用于 `summonType: GLOBAL` |
+| `location` | 生成位置。可选。 | `world_name,x,y,z` 或 `x,y,z` 用于相对于首领的位置。偏移量相对于区域首领的生成位置。您还可以使用 `same_as_boss` 使增援在与首领相同的世界中生成。 | 无 |
+| `lightningRod` | `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` 的特殊设置。使末影水晶在它们周围产生闪电。可选。 |                                                                                                        `true` / `false`                                                                                                        | 无 |
 
 </details>
 
-召唤类型设置增援生成的条件。以下是有效召唤类型的列表：
+召唤类型设置增援生成的条件。以下是有效的召唤类型列表：
 
-<details> 
+<details>
 
 <summary><b>召唤类型</b></summary>
 
-| 值 |                                                                         说明                                                                         |
+| 值 |                                                                         描述                                                                         |
 |-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `ONCE` |                                          仅在Boss首次受到伤害时生成一次增援。                                           |
-| `ON_HIT`  |                                                              Boss每次受到攻击时生成增援。                                                              |
-| `ON_COMBAT_ENTER` |                                                   Boss进入战斗状态时生成增援。                                                    |
-| `GLOBAL` | 为每个在线玩家生成一个增援。需要 `customSpawn` 键设置有效的[自定义生成点]($language$/elitemobs/creating_spawns.md)。 |
-| `ON_COMBAT_ENTER_PLACE_CRYSTAL` |                                 进入战斗状态时放置末影水晶增援，仅用于自定义龙战斗。                                  |
+| `ONCE` |                                          仅生成一次增援，首次首领受到伤害时。                                           |
+| `ON_HIT` |                                                              在被击中时生成增援。                                                              |
+| `ON_COMBAT_ENTER` |                                                   当首领进入战斗时生成增援。                                                    |
+| `GLOBAL` | 为每个在线玩家生成一个增援。需要 `customSpawn` 键来设置有效的[自定义生成]($language$/elitemobs/creating_spawns.md)。 |
+| `ON_COMBAT_ENTER_PLACE_CRYSTAL` |                                 在进入战斗时放置末影水晶增援，仅用于自定义龙战。                                  |
 
 </details>
 
-请注意，也可以通过[精英脚本]($language$/elitemobs/creating_powers.md) 生成增援，因此还有更多可定制的增援生成方式。
+请注意，也可以通过 [Elite Scripts]($language$/elitemobs/creating_powers.md) 生成增援，因此有更多可自定义的方式来生成增援。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -430,32 +481,32 @@ powers:
 
 </details>
 
-### 专家配置 - 创建您自己的能力
+### 专业配置 - 创建您自己的能力
 
-您可以在Boss文件本身或在powers文件夹中创建一个新的配置文件来创建您自己的能力。您可以[在此处]($language$/elitemobs/creating_powers.md) 了解更多信息。
+可以在首领文件本身中或在能力文件夹中创建新配置文件来创建自己的能力。您可以在[此处]($language$/elitemobs/creating_powers.md)了解更多信息。
 
 ### 根据实例地牢难度限制能力
 
-[实例地牢]($language$/elitemobs/dungeons.md&section=instanced-dungeons) 可以有难度设置，并且可以设置为仅针对特定难度启用特定能力。
+[实例地牢]($language$/elitemobs/dungeons.md&section=instanced-dungeons) 可以具有难度设置，并且可以使特定能力仅对特定难度启用。
 
-<details> 
+<details>
 
 <summary><b>限制能力选项</b></summary>
 
 <div align="left">
 
-| 键 | 说明 | 值 | 默认值 |
+| 键 | 描述 | 值 | 默认值 |
 |-|:-:|:-:|-|
 | `filename` | 能力的文件名。 | [字符串](#string) | 无 |
-| `difficultyID` | 难度名称，与地牢包中难度的名称相匹配。 | [字符串](#string) | 无 |
+| `difficultyID` | 难度名称，与地牢包中的难度名称匹配。 | [字符串](#string) | 无 |
 
 </div>
 
 </details>
 
-这将仅适用于实例地牢。
+这仅适用于实例地牢。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -465,9 +516,9 @@ powers:
 powers:
 - filename: movement_speed.yml
   difficultyID:
-  - 我的难度名称1
-  - 我的难度名称2
-  - 我的难度名称3
+  - myDifficultyName1
+  - myDifficultyName2
+  - myDifficultyName3
 ```
 
 </div>
@@ -478,13 +529,13 @@ powers:
 
 ### spawnMessage
 
-设置Boss生成时发送的消息。需要设置[公告优先级](#announcementPriority)。
+设置首领生成时发送的消息。需要设置 [announcementPriority](#announcementPriority)。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `spawnMessage` | [字符串](#string) 和 [颜色代码](#color_codes) | 无 |
+| `spawnMessage` | [字符串](#string)和[颜色代码](#color_codes) | 无 |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -492,7 +543,7 @@ powers:
 
 ```yml
 announcementPriority: 3
-spawnMessage: 我又回来了！
+spawnMessage: 我再次崛起！
 ```
 
 <div align="center">
@@ -509,13 +560,13 @@ spawnMessage: 我又回来了！
 
 ### deathMessages
 
-设置Boss死亡时发送的消息列表。需要设置[公告优先级](#announcementPriority)。
+设置首领死亡时发送的消息列表。需要设置 [announcementPriority](#announcementPriority)。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `deathMessages` | [字符串](#string)、[颜色代码](#color_codes) 和下面的占位符 | 无 |
+| `deathMessages` | [字符串](#string)、[颜色代码](#color_codes)和下面的占位符 | 无 |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -525,11 +576,11 @@ spawnMessage: 我又回来了！
 announcementPriority: 3
 deathMessages:
 - '&e&l---------------------------------------------'
-- '&4测试Boss已被击杀！'
-- '&c&l    最高伤害： $damager1name &c造成 $damager1damage 点伤害！'
-- '&6&l    第二高伤害： $damager2name &6造成 $damager2damage 点伤害！'
-- '&e&l    第三高伤害： $damager3name &e造成 $damager3damage 点伤害！'
-- '&4击杀者： $players'
+- '&4测试首领已被击杀！'
+- '&c&l    1st Damager: $damager1name &c造成了 $damager1damage 伤害！'
+- '&6&l    2nd Damager: $damager2name &6造成了 $damager2damage 伤害！'
+- '&e&l    3rd Damager: $damager3name &e造成了 $damager3damage 伤害！'
+- '&4击杀者：$players'
 - '&e&l---------------------------------------------'
 ```
 
@@ -545,31 +596,31 @@ deathMessages:
 
 死亡消息使用以下占位符：
 
-<details> 
+<details>
 
 <summary><b>占位符</b></summary>
 
-| 值 | 说明 |
+| 值 | 描述 |
 |-|:-:|
-| `$damager1name` | 最高伤害者的名称 |
-| `$damager2name` | 第二高伤害者的名称 |
-| `$damager3name` | 第三高伤害者的名称 |
-| `$damager1damage` | 最高伤害者的伤害值 |
-| `$damager2damage` | 第二高伤害者的伤害值 |
-| `$damager3damage` | 第三高伤害者的伤害值 |
+| `$damager1name` | 顶级伤害者的姓名 |
+| `$damager2name` | 第二顶级伤害者的姓名 |
+| `$damager3name` | 第三顶级伤害者的姓名 |
+| `$damager1damage` | 顶级伤害者的伤害量 |
+| `$damager2damage` | 第二顶级伤害者的伤害量 |
+| `$damager3damage` | 第三顶级伤害者的伤害量 |
 | `$players` | 显示所有伤害者的列表 |
 
 </details>
 
 ### onKillMessage
 
-设置Boss击杀玩家时发送的消息。需要设置[公告优先级](#announcementPriority)。
+设置首领杀死玩家时发送的消息。需要设置 [announcementPriority](#announcementPriority)。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `onKillMessage` | [字符串](#string) 和 [颜色代码](#color_codes) | 无 |
+| `onKillMessage` | [字符串](#string)和[颜色代码](#color_codes) | 无 |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -596,7 +647,7 @@ onKillMessage: 我赢了，你输了！
 
 <div align="center">
 
-设置史莱姆Boss的大小，但仅适用于史莱姆和岩浆怪。
+设置史莱姆首领的大小，但仅适用于史莱姆和岩浆怪。
 
 </div>
 
@@ -624,7 +675,7 @@ slimeSize: 5
 
 <div align="center">
 
-设置Boss是否作为中立生物生成。这仅适用于可以是中立生物的实体类型，例如狼或铁傀儡。
+设置首领是否以中立状态生成。这仅适用于可以中立的实体类型，例如狼或铁傀儡。
 
 </div>
 
@@ -652,13 +703,13 @@ neutral: true
 
 ### timeout
 
-设置自定义Boss在消失之前的分钟数。
+设置自定义首领消失之前的时长（以分钟为单位）。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `timeout` | 时间（以分钟为单位）[整数](#integer) | `0` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -667,7 +718,7 @@ neutral: true
 ```yml
 timeout: 20
 ```
-设置Boss在 20 分钟后逃脱。
+将首领设置为在 20 分钟后逃脱。
 
 </div>
 
@@ -677,20 +728,18 @@ timeout: 20
 
 ### isPersistent
 
-设置Boss是否可以在区块卸载后存活。仅建议用于事件Boss。
+设置首领是否能在区块卸载后生存。仅建议用于活动首领。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `isPersistent` | `true` / `false` | `false` |
 
-<details> 
-
-<summary><b>示例</b></summary>
+<details>
+<summary><b>Example</b></summary>
 
 <div align="left">
 
 示例：
-
 ```yml
 isPersistent: true
 ```
@@ -703,13 +752,13 @@ isPersistent: true
 
 ### damageModifiers
 
-设置Boss对哪些武器强或弱。
+设置首领可以对其造成强弱影响的武器。
 
 | 键 |        值         | 默认值 |
 |-|:---------------------:|-|
 | `damageModifiers` | [材质](#material) | 无 |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -723,7 +772,7 @@ damageModifiers:
 
 </div>
 
-在这个例子中，Boss只受到钻石剑 80% 的伤害（或减少 20%），但受到三叉戟 200% 的伤害（或增加 2 倍）。
+在此示例中，首领只会受到钻石剑 80% 的伤害（或减少 20%），但会受到三叉戟 200% 的伤害（或增加 2 倍）。
 
 </details>
 
@@ -731,15 +780,13 @@ damageModifiers:
 
 ### normalizedCombat
 
-
-
-将Boss的伤害和最大生命值修改为 `~/plugins/EliteMobs/mobproperties` 中标准化实体的值。这是区域Boss的默认设置，以确保平滑的难度曲线。
+修改首领的伤害和最大生命值，以匹配 `~/plugins/EliteMobs/mobproperties` 中规范化实体的值。这是区域首领的默认设置，以保证平滑的难度曲线。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `normalizedCombat` | `true` / `false` | `false` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -758,14 +805,13 @@ normalizedCombat: true
 
 ### escapeMessage
 
-设置当Boss通过 [timeout](#timeout) 机制逃脱时，向玩家广播的消息。需要配置 [announcementPriority](#announcementPriority)。
+设置当首领通过 [timeout](#timeout) 机制逃脱时广播给玩家的消息。需要配置 [announcementPriority](#announcementPriority)。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `escapeMessage` | [字符串](#string) | 无 |
 
-
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -791,22 +837,20 @@ escapeMessage: "再见！"
 
 ### locationMessage
 
-设置Boss血条中显示的消息。这用于跟踪自定义Boss的生命值及其在服务器中的位置。需要配置 [annoucementPriority](#annoucementPriority)。
+设置在首领栏中显示的消息。这用于跟踪自定义首领的生命值及其在服务器中的位置。需要配置 [annoucementPriority](#annoucementPriority)。
 
 | 键 |                                      值                                      | 默认值 |
 |-|:--------------------------------------------------------------------------------:|-|
-| `locationMessage` | [字符串](#string)、[颜色代码](#color_codes) 和下面列出的占位符 | 无 |
+| `locationMessage` | [字符串](#string)、[颜色代码](#color_codes)和下面列出的占位符 | 无 |
 
 占位符：
 
-| 值 | 说明 |
+| 值 | 描述 |
 |-|:-:|
-| `$distance` | 替换为玩家与自定义Boss之间的距离。这是首选选项。 |
-| `$location` | 替换为自定义Boss的 x y z 位置坐标 |
-
+| `$distance` | 替换为玩家与自定义首领之间的距离。这是首选选项。 |
+| `$location` | 替换为自定义首领的 x y z 位置坐标 |
 
 <details>
-
 
 <summary><b>示例</b></summary>
 
@@ -814,7 +858,7 @@ escapeMessage: "再见！"
 
 ```yml
 announcementPriority: 3
-locationMessage: "&4酷炫Boss：位于 $location，距离 $distance 个方块！"
+locationMessage: "&4酷炫首领：在 $location 处，仅 $distance 个方块之遥！"
 ```
 
 <div align="center">
@@ -825,7 +869,7 @@ locationMessage: "&4酷炫Boss：位于 $location，距离 $distance 个方块�
 
 </div>
 
-这将显示类似于 `酷炫Boss：位于 414,55,347，距离 10 个方块！` 的内容
+这将显示类似于 `酷炫首领：在 414,55,347 处，仅 10 个方块之遥！` 的内容
 
 </details>
 
@@ -833,15 +877,15 @@ locationMessage: "&4酷炫Boss：位于 $location，距离 $distance 个方块�
 
 ### uniqueLootList
 
-设置Boss掉落的[自定义物品]($language$/elitemobs/creating_items.md)。
+设置从首领掉落的[自定义物品]($language$/elitemobs/creating_items.md)。
 
 | 键 |        值        | 默认值 |
 |-|:--------------------:|-|
 | `uniqueLootList` | [列表](#string_list) | 无 |
 
-自定义战利品中的战利品条目遵循战利品表格式。[相关信息请点击此处！]($language$/elitemobs/loot_tables.md) 请注意，一些较旧的文件可能使用过旧的战利品表，这些战利品表的外观与示例不同。
+自定义战利品中的战利品条目遵循战利品表格式。[有关信息请参见此处！]($language$/elitemobs/loot_tables.md) 请注意，某些较旧的文件可能正在使用与示例不同的过时战利品表。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -865,20 +909,19 @@ uniqueLootList:
 
 ### dropsEliteMobsLoot
 
-设置Boss是否会掉落精英怪物战利品，不包括 [`uniqueLootList`](#uniqueLootList) 中的物品。包括硬币。
+设置首领是否会掉落 EliteMobs 战利品，不包括 [`uniqueLootList`](#uniqueLootList) 中的物品。包括硬币。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `dropsEliteMobsLoot` | `true` /  `false` | `true` |
+| `dropsEliteMobsLoot` | `true` / `false` | `true` |
 
-建议对增援怪物设置为 false。
+建议对增援生物设置为 false。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
-
 
 ```yml
 dropsEliteMobsLoot: true
@@ -892,13 +935,13 @@ dropsEliteMobsLoot: true
 
 ### dropsVanillaLoot
 
-设置自定义Boss是否会掉落与其普通怪物类型相关的普通战利品。
+设置自定义首领是否会掉落通常与其原版生物类型相关的原版战利品。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `dropsVanillaLoot` | `true` /  `false` | `true` |
+| `dropsVanillaLoot` | `true` / `false` | `true` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -916,13 +959,13 @@ dropsVanillaLoot: true
 
 ### dropsRandomLoot
 
-设置自定义Boss是否会掉落精英怪物程序生成的战利品。不包括精英硬币。
+设置自定义首领是否会掉落 EliteMobs 程序化生成的战利品。不包括精英币。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `dropsRandomLoot` | `true` /  `false` | `true` |
+| `dropsRandomLoot` | `true` / `false` | `true` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -940,13 +983,13 @@ dropsRandomLoot: true
 
 ### trails
 
-设置Boss移动时留下的轨迹。
+设置首领移动时留下的轨迹。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `trails` | [粒子](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) 或 [物品材质](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | 无 |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -965,13 +1008,13 @@ trails:
 
 ### onDamageMessages
 
-设置Boss怪物击中玩家时显示的消息。这是一个列表，使用的是从列表中随机选择的消息。
+设置首领生物在击中玩家时显示的消息。这是一个列表，使用的消息是从列表中随机选择的。
 
 | 键 |        值        | 默认值 |
 |-|:--------------------:|-|
 | `onDamageMessages` | [列表](#string_list) | 无 |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -996,13 +1039,13 @@ onDamageMessages:
 
 ### onDamagedMessages
 
-设置Boss怪物受到玩家伤害时显示的消息。这是一个列表，使用的是从列表中随机选择的消息。
+设置首领生物在被玩家伤害时显示的消息。这是一个列表，使用的消息是从列表中随机选择的。
 
 | 键 |        值        | 默认值 |
 |-|:--------------------:|-|
 | `onDamagedMessages` | [列表](#string_list) | 无 |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1027,15 +1070,15 @@ onDamagedMessages:
 
 ### mountedEntity
 
-设置Boss将骑乘的实体。
+设置首领将坐骑并骑乘的实体。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `onDamagedMessages` | [要骑乘的Boss的文件名](#filename) 或 [实体类型](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) | 无 |
+| `onDamagedMessages` | [要坐骑的首领的文件名](#filename) 或 [实体类型](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) | 无 |
 
-不要试图让Boss骑乘自己。
+不要尝试让首领自己坐骑。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1055,30 +1098,30 @@ mountedEntity: wild_wolf.yml
 
 </details>
 
-注意：区域Boss将与其骑乘的实体共享其牵引绳，这意味着如果它们超过其牵引绳允许的距离，它们都将被拖回生成位置。
+注意：区域首领将与他们坐骑的实体共享其束缚，这意味着如果他们超过其束缚允许的距离，他们都会被拖回到生成位置。
 
 ***
 
 ### announcementPriority
 
-设置公告的优先级。较低的优先级意味着不进行公告，较高的优先级不仅可以在聊天中公告，还可以在配置的情况下在 Discord 上公告。
+设置公告的优先级。较低的优先级意味着不进行公告，较高的优先级不仅可以在聊天中宣布，还可以在配置后在 discord 上宣布。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `announcementPriority` | [整数](#integer) | `1` |
 
-以下是优先级列表及其作用：
+以下是优先级的作用列表：
 
-| 值 |                                                                            说明                                                                            |
+| 值 |                                                                            描述                                                                            |
 |-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `0` |                                                   Boss 将完全静默，没有任何公告消息。                                                   |
-| `1` |                                这是默认值。Boss 可以发送聊天消息、生成消息、死亡和逃脱消息。                                |
-| `2` |                               除了 `1` 中的内容外，Boss 还将被设置为可供玩家通过 `/em` 菜单跟踪。                                |
-| `3` | 除了 `2` 中的内容外，如果配置了 Discord，广播消息将在 Discord 上镜像。[Discord 配置信息请点击此处。]($language$/elitemobs/discordsrv.md) |
+| `0` |                                                   首领将完全静默，不发送任何公告消息。                                                   |
+| `1` |                                这是默认设置。首领可以发送聊天消息、生成消息、死亡消息和逃脱消息。                                |
+| `2` |                               在 `1` 中的内容之上，首领将被设置为可通过 `/em` 菜单被玩家跟踪。                                |
+| `3` | 在 `2` 中的内容之上，如果已配置，广播消息将在 Discord 上镜像。[Discord 配置信息在此处。]($language$/elitemobs/discordsrv.md) |
 
-以下是可跟踪的Boss示例，能够在聊天和 Discord 上发送生成/死亡/逃脱消息：
+以下是一个可以跟踪、可以在聊天和 Discord 上发送生成/死亡/逃脱消息的首领示例：
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1092,23 +1135,23 @@ announcementPriority: 3
 
 </details>
 
-**注意**：如果您希望使用相应的公告优先级，则必须为聊天和 Discord 公告配置 spawnMessage、deathMessage/deathMessages、escapeMessage，以及为跟踪功能配置 locationMessage。
+**注意**：如果您希望使用相应的公告优先级，则必须为聊天和 discord 公告配置 spawnMessage、deathMessage/deathMessages、escapeMessage 以及为跟踪功能配置 locationMessage。
 
 ***
 
 ### followDistance
 
-设置Boss仇恨并进入战斗的距离。
+设置首领发起攻击并进入战斗的距离。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
-| `followDistance` | [双精度浮点数](#double) | 无，使用 Minecraft 的默认值 |
+| `followDistance` | [双精度浮点数](#double) | 无，使用 Minecraft 中的默认值 |
 
-注意 1：区域Boss在非战斗状态下的 `followDistance` 为一半。这是为了防止它们从太远的地方仇恨，因为牵引绳的限制，这可能会导致恼人的战斗问题。
+注意 1：区域首领在非战斗状态下的 `followDistance` 减半。这是为了防止它们从太远的地方发起攻击，这可能会由于束缚约束而导致恼人的战斗问题。
 
-注意 2：`followDistance` 越高，Boss 对服务器 CPU 的占用就越大。请谨慎使用！
+注意 2：`followDistance` 越高，首领在服务器 CPU 上的负担就越大。请谨慎负责地使用！
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1120,7 +1163,7 @@ followDistance: 30
 
 </div>
 
-设置一个 30 个方块的范围，如果玩家进入该范围靠近Boss，它将开始追逐/攻击玩家。
+设置 30 个方块的范围，如果玩家进入该距离附近的首领，它将开始追逐/攻击该玩家。
 
 </details>
 
@@ -1128,7 +1171,7 @@ followDistance: 30
 
 ### onDeathCommands
 
-设置自定义Boss死亡时运行的命令列表。
+设置在自定义首领死亡时运行的命令列表。
 
 | 键 |        值        | 默认值 |
 |-|:--------------------:|-|
@@ -1136,22 +1179,22 @@ followDistance: 30
 
 该列表支持以下占位符：
 
-| 值 | 说明 |
+| 值 | 描述 |
 |-|:-:|
-| `$level` | Boss 等级的占位符。 |
-| `$name` | Boss 名称的占位符。 |
-| `$chance=x$` | 使命令有几率运行。 |
-| `$players` | 使命令对伤害者列表中的每个玩家运行一次，并每次替换为该列表中不同玩家的用户名。 |
-| `$locationX` | Boss 死亡时的 X 坐标。 |
-| `$locationY` | Boss 死亡时的 Y 坐标。 |
-| `$locationZ` | Boss 死亡时的 Z 坐标。 |
-| `$damager1name` | 最高伤害者的用户名 |
-| `$damager2name` | 第二高伤害者的用户名 |
-| `$damager3name` | 第三高伤害者的用户名 |
+| `$level` | 首领等级的占位符。 |
+| `$name` | 首领名称的占位符。 |
+| `$chance=x$` | 使命令有机会运行。 |
+| `$players` | 使该命令对伤害者列表中的每个玩家运行一次，并每次替换为该列表中不同玩家的用户名。 |
+| `$locationX` | 死亡时首领的 X 坐标。 |
+| `$locationY` | 死亡时首领的 Y 坐标。 |
+| `$locationZ` | 死亡时首领的 Z 坐标。 |
+| `$damager1name` | 顶级伤害者的用户名 |
+| `$damager2name` | 第二顶级伤害者的用户名 |
+| `$damager3name` | 第三顶级伤害者的用户名 |
 
-请查看下面的示例，以更好地理解这些占位符是如何工作的。
+请查看下面的示例，以便更好地了解它们的工作方式。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1159,8 +1202,8 @@ followDistance: 30
 
 ```yml
 onDeathCommands:
-- "say $players 击杀了 $name! 它的等级为 $level！"
-- "$chance=0.5$ say 多么精彩的击杀！"
+- "say $players 已经杀死了 $name！等级是 $level！"
+- "$chance=0.5$ say 杀得漂亮！"
 ```
 
 <div align="center">
@@ -1171,43 +1214,43 @@ onDeathCommands:
 
 </div>
 
-如果玩家 1、玩家 2 和玩家 3 都在击杀Boss之前对其造成了伤害，则控制台的命令输出如下：
+如果 Player1、Player2 和 Player3 在杀死首领之前都对其造成了伤害，则控制台的命令输出将如下所示：
 
 <div align="left">
 
 ```
-say 玩家 1 击杀了 自定义Boss名称! 它的等级为 X!
-say 玩家 2 击杀了 自定义Boss名称! 它的等级为 X!
-say 玩家 3 击杀了 自定义Boss名称! 它的等级为 X!
+say Player1 已经杀死了 CustomBossName！等级是 X！
+say Player2 已经杀死了 CustomBossName！等级是 X！
+say Player3 已经杀死了 CustomBossName！等级是 X！
 ```
 
 </div>
 
-此外，还有 50% 的几率还会输出以下内容：
+此外，还有 50% 的几率也会输出以下内容：
 
 <div align="left">
 
 ```
-say 多么精彩的击杀！
+say 杀得漂亮！
 ```
 
 </div>
 
-</details> 
+</details>
 
 ***
 
 ### onSpawnCommands
 
-设置Boss生成时运行的命令列表。
+设置将在首领生成时运行的命令列表。
 
 | 键 |        值        | 默认值 |
 |-|:--------------------:|-|
 | `onSpawnCommands` | [列表](#string_list) | 无 |
 
-**这使用与 [onDeathCommands](#onDeathCommands) 相同的占位符！** 伤害者占位符不适用，因为此时还没有任何伤害者。
+**这使用与 [onDeathCommands](#onDeathCommands) 相同的占位符！** 伤害者占位符将不适用，因为此时不会有任何伤害者。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1215,7 +1258,7 @@ say 多么精彩的击杀！
 
 ```yml
 onSpawnCommands:
-- say Boss 已生成！
+- say 首领已生成！
 ```
 
 <div align="center">
@@ -1232,15 +1275,15 @@ onSpawnCommands:
 
 ### onCombatEnterCommands
 
-设置Boss进入战斗状态时运行的命令列表。
+设置当首领进入战斗时将运行的命令列表。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `onCombatEnterCommands` | [列表](#string_list) | 无 |
 
-**这使用与 [onDeathCommands](#onDeathCommands) 相同的占位符！** 伤害者占位符不适用，因为此时还没有任何伤害者。
+**这使用与 [onDeathCommands](#onDeathCommands) 相同的占位符！** 伤害者占位符将不适用，因为此时不会有任何伤害者。
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1248,7 +1291,7 @@ onSpawnCommands:
 
 ```yml
 onCombatEnterCommands:
-- say Boss 已进入战斗状态！
+- say 首领已进入战斗！
 ```
 
 <div align="center">
@@ -1265,7 +1308,7 @@ onCombatEnterCommands:
 
 ### onCombatLeaveCommands
 
-设置Boss离开战斗状态时运行的命令列表。
+设置当首领离开战斗时运行的命令列表。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
@@ -1273,7 +1316,7 @@ onCombatEnterCommands:
 
 **这使用与 [onDeathCommands](#onDeathCommands) 相同的占位符！**
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1281,7 +1324,7 @@ onCombatEnterCommands:
 
 ```yml
 onCombatLeaveCommands:
-- say Boss 已离开战斗状态！
+- say 首领已离开战斗！
 ```
 
 <div align="center">
@@ -1298,16 +1341,16 @@ onCombatLeaveCommands:
 
 ### disguise
 
-如果启用了 LibsDisguises 插件，则设置 LibsDisguises 伪装。[更多信息请点击此处。]($language$/elitemobs/libsdisguises.md)
+如果启用了该插件，则设置 LibsDisguises 伪装。[更多信息请参见此处。]($language$/elitemobs/libsdisguises.md)
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `disguise` | [字符串](#string) | 无 |
 | `customDisguiseData` | [字符串](#string) | 无 |
 
-<details> 
+<details>
 
-<summary><b>伪装示例</b></summary>
+<summary><b>示例伪装</b></summary>
 
 <div align="left">
 
@@ -1325,15 +1368,15 @@ disguise: CHICKEN
 
 </details>
 
-<details> 
+<details>
 
-<summary><b>自定义伪装示例</b></summary>
+<summary><b>示例自定义伪装</b></summary>
 
 <div align="left">
 
 ```yml
 disguise: custom:the_beast_sanctuary_beast
-customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8d-4e48-873b-fae7afed36e4","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY2NjcwNjYwODA1MCwKICAicHJvZmlsZUlkIiA6ICI3MmY5MTdjNWQyNDU0OTk0YjlmYzQ1YjVhM2YyMjIzMCIsCiAgInByb2ZpbGVOYW1lIiA6ICJUaGF0X0d1eV9Jc19NZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS82YmYyMTY4NmM1MGQ1ODhmZmExMDZhZDdjNmViZTk1ZWZiMjE2NDU1ODRjZDFjZWYwODkzNDc4NzMzNmI2YTI3IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=","signature":"jSsQvpUeWVtyqjtnydPadormkrZLVihetiX4dFQb3+BF/1x6wOgsNKRnnwj6J1mfu2im79LYEJbL+fQ9p1SJIW1uZ6hV7vPSAGUopyXGHNibNXorfV/dGjM77S0t86Jls50XWgJAnLn5RdhQcHahDAHHZ8to6K0HW5gvKKSalR5X/myaiV0E5ujJ+LUFWIiuDmtsmyxTX1zsohyYrVMo/4sD0DpBN+as95wO476gLb5fDTDV569QwExlDOt60W8qSzPw6ncYsOKJIiRE3EddspUm3/NrfDiKApUh8UbzVtwu1XlVAxWNgYN3PkqhWKuE4kvORQuoSJzOgSHkiqdXsQOED2HXfOKdfsnpZUwjepIU5A+/mu0gc3mPQPToKSss2bC1nXn//0bOZZSuQRgTS6PkKDHIQ1nClSZQZlJIsiLmaaN2k1tIHTIlDquKN6G1Ta9c3t6G5kugjqRo78ebbt7l3e0Z3BcdOkuO2WbvBjIg5Uiqyf+cYDZedJ+OEOqL/U6VVlsmbw0rd5deHrbnPn9cRzmWGjrXnxIlAszl+0Uqabj/BrkWcbBCwZJEPaV1hHpC4nJX1m5xvKZHB2Bw0AYWaQ3f3tRBbCA/xqwCS0Px1QohzV0nvtiMbjB38ziT1M5DgLtAVLcHPio7THZMxXAi4IjEIMac9ODbh5OxthA="}],"legacy":false}
+customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8d-4e48-873b-fae7afed36e4","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY2NjcwNjYwODA1MCwKICAicHJvZmlsZUlkIiA6ICI3MmY5MTdjNWQyNDU0OTk0YjlmYzQ1YjVhM2YyMjIzMCIsCiAgInByb2ZpbGVOYW1lIiA6ICJUaGF0X0d1eV9Jc19NZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS82YmYyMTY4NmM1MGQ1ODhmZmExMDZhZDdjNmViZTk1ZWZiMjE2NDU5ODRjZDFjZWYwODkzNDc4NzMzNmI2YTI3IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=","signature":"jSsQvpUeWVtyqjtnydPadormkrZLVihetiX4dFQb3+BF/1x6wOgsNKRnnwj6J1mfu2im79LYEJbL+fQ9p1SJIW1uZ6hV7vPSAGUopyXGHNibNXorfV/dGjM77S0t86Jls50XWgJAnLn5RdhQcHahDAHHZ8to6K0HW5gvKKSalR5X/myaiV0E5ujJ+LUFWIiuDmtsmyxTX1zsohyYrVMo/4sD0DpBN+as95wO476gLb5fDTDV569QwExlDOt60W8qSzPw6ncYsOKJIiRE3EddspUm3/NrfDiKApUh8UbzVtwu1XlVAxWNgYN3PkqhWKuE4kvORQuoSJzOgSHkiqdXsQOED2HXfOKdfsnpZUwjepIU5A+/mu0gc3mPQPToKSss2bC1nXn//0bOZZSuQRgTS6PkKDHIQ1nClSZQZlJIsiLmaaN2k1tIHTIlDquKN6G1Ta9c3t6G5kugjqRo78ebbt7l3e0Z3BcdOkuO2WbvBjIg5Uiqyf+cYDZedJ+OEOqL/U6VVlsmbw0rd5deHrbnPn9cRzmWGjrXnxIlAszl+0Uqabj/BrkWcbBCwZJEPaV1hHpC4nJX1m5xvKZHB2Bw0AYWaQ3f3tRBbCA/xqwCS0Px1QohzV0nvtiMbjB38ziT1M5DgLtAVLcHPio7THZMxXAi4IjEIMac9ODbh5OxthA="}],"legacy":false}
 ```
 
 <div align="center">
@@ -1344,7 +1387,7 @@ customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8
 
 </div>
 
-设置来自 skindex 的自定义伪装。[查看此页面]($language$/elitemobs/libsdisguises.md) 了解如何正确格式化此数据。
+从 skindex 设置自定义伪装。[查看此页面]($language$/elitemobs/libsdisguises.md)以了解如何正确格式化此数据。
 
 </details>
 
@@ -1352,20 +1395,20 @@ customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8
 
 ### customModel
 
-设置要使用的自定义模型（如果您有自定义模型和 ModelEngine）。[更多信息请点击此处。]($language$/elitemobs/custom_models.md)
+如果您有自定义模型和 ModelEngine，则设置要使用的自定义模型。[更多信息请参见此处。]($language$/elitemobs/custom_models.md)
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `customModel` | [字符串](#string) | 无 |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-customModel: 您的模型
+customModel: your_model
 ```
 
 </div>
@@ -1376,14 +1419,14 @@ customModel: 您的模型
 
 ### frozen
 
-设置Boss是否可以移动。冻结的Boss仍然可以攻击。
+设置首领是否可以移动。冻结的首领仍然可以攻击。
 </br>*注意：这可能不适用于某些实体。*
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `frozen` | `true` / `false` | `false` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1401,17 +1444,20 @@ frozen: true
 
 ### song
 
-设置Boss将播放的音乐，从它生成时开始。需要将歌曲的 .ogg 文件放在资源包中。
+设置首领将播放的音乐，从生成时开始。需要歌曲的 .ogg 文件位于资源包中。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
 | `song` | [字符串](#string) | 无 |
 
-<details> 
+**注意：`song` 设置需要设置 `followDistance`，因为 `followDistance` 决定了歌曲开始播放的范围。**
+查看有关如何设置 `song` 的 `length`（毫秒）的示例。
+
+<details>
 
 <summary><b>示例</b></summary>
 
-有两种方法可以设置歌曲。以下是第一种方法：
+有两种设置歌曲的方法。这是第一种：
 
 <div align="left">
 
@@ -1421,7 +1467,7 @@ song: name=elitemobs:ice_queen.idle length=76370
 
 </div>
 
-这将播放歌曲 ice_queen.idle 76370 个游戏刻，然后循环播放。请注意，歌曲的位置由资源包决定。
+这将播放歌曲 ice_queen.idle 76370 毫秒，然后循环播放。请注意，歌曲的位置由资源包决定。
 
 以下是设置歌曲的第二种方法：
 
@@ -1431,9 +1477,9 @@ song: name=elitemobs:ice_queen.idle length=76370
 song: name=elitemobs:ice_queen.end_transition length=14328->name=elitemobs:ice_queen.end_loop length=28657
 ```
 
-这将播放歌曲 ice_queen.end_transition 14328 个游戏刻，然后转换为 ice_queen.end_loop 并播放 28657 个游戏刻，然后循环播放 end_loop。
+这将播放歌曲 ice_queen.end_transition 14328 毫秒，然后转换为 ice_queen.end_loop 28657 毫秒，并循环播放 end_loop。
 
-这允许Boss拥有一首“介绍”或“过渡”歌曲，然后是一首循环播放的主曲目。
+这允许首领具有“intro”或“transition”歌曲，然后是循环播放的主曲目。
 
 </div>
 
@@ -1443,7 +1489,7 @@ song: name=elitemobs:ice_queen.end_transition length=14328->name=elitemobs:ice_q
 
 ### cullReinforcements
 
-设置当Boss死亡时，是否移除Boss的增援。
+设置当首领死亡时是否删除首领的增援。
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
@@ -1467,8 +1513,8 @@ cullReinforcements: true
 
 ### movementSpeedAttribute
 
-设置Boss的移动速度。
-</br>*注意：超过 0.36 的速度可能太快。*
+设置首领的移动速度。
+</br>*注意：任何超过 0.36 的值都可能太快。*
 
 | 键 | 值 | 默认值 |
 |-|:-:|-|
@@ -1488,29 +1534,27 @@ movementSpeedAttribute: 0.3
 
 </details>
 
-## Boss 阶段
+## 首领阶段
 
 <div align="center">
 
-Boss 可以有多个阶段，这些阶段会在Boss的生命值达到一定百分比时发生变化。发生这种情况时，Boss 开始使用不同的配置文件，这意味着Boss的所有内容都可以改变，包括实体类型等。
-</br>要了解更多关于Boss阶段的信息，请点击[此处]($language$/elitemobs/creating_boss_phases.md)。
+当首领达到一定百分比的生命值时，首领可以具有发生变化的阶段。发生这种情况时，首领开始使用不同的配置文件，这意味着有关首领的一切都可以改变，包括诸如实体类型之类的内容。
+</br>要了解有关首领阶段的更多信息，请单击[此处]($language$/elitemobs/creating_boss_phases.md)。
 
+| 键 | 描述 | 值 | 默认值 |
+|-|:-:|:-:|:-:|
+| `phases` | 设置首领将具有的阶段。必需 | [列表](#string_list) | 无 |
+| `phaseSpawnLocation` | 设置阶段首领的生成位置。可选 | [字符串](#string) | 无 |
 
-| 键 | 说明 | 值 | 默认值 |
-|-|:-:|-|-|
-| `phases` | 设置Boss将拥有的阶段。必填 | [列表](#string_list) | 无 |
-| `phaseSpawnLocation` | 设置阶段Boss的生成位置。可选 | [字符串](#string) | 无 |
-
-
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
-在本例中，我们将展示三个不同的配置文件。
+在此示例中，我们将显示三个不同的配置文件。
 
-第一个Boss配置文件：phase_1_boss.yml
+第一个首领配置文件：phase_1_boss.yml
 
 ```yml
 name: "阶段 1"
@@ -1520,14 +1564,14 @@ phases:
 - phase_3_boss.yml:0.30
 ```
 
-第二个Boss配置文件：phase_2_boss.yml
+第二个首领配置文件：phase_2_boss.yml
 
 ```yml
 name: "阶段 2"
 entityType: SKELETON
 ```
 
-第三个Boss配置文件：phase_3_boss.yml
+第三个首领配置文件：phase_3_boss.yml
 
 ```yml
 name: "阶段 3"
@@ -1537,26 +1581,26 @@ entityType: RAVAGER
 
 </div>
 
-这个Boss将在生命值达到 60% 时切换到配置文件 `phase_2_boss.yml`，并在生命值达到 30% 时切换到配置文件 `phase_3_boss.yml`，与阶段 2 位于同一个世界，坐标为 x=10、y=64 和 z=100。Boss 的实体类型和名称也会发生变化。
+此首领将在生命值达到 60% 时更改为配置文件 `phase_2_boss.yml`，在生命值达到 30% 时在与阶段 2 相同的世界中以坐标 x=10、y=64 和 z=100 更改为配置文件 `phase_3_boss.yml`。首领的实体类型和名称也将改变。
 
-条目的格式为 `文件名：生命值百分比`。
+条目的格式为 `filename:healthPercentage`。
 
-phaseSpawnLocation 是可选的，如果没有设置，Boss 将在其所在的位置切换阶段。
+phaseSpawnLocation 是可选的，如果未设置，则首领将在其所在的位置更改阶段。
 
 </details>
 
-在设计阶段Boss时，以下几点需要注意：
+设计阶段首领时，了解以下事项非常重要：
 
 <div align="left">
 
-- 第一阶段的配置文件设置Boss的所有阶段。
-- 玩家造成的威胁/伤害值会在各个阶段之间保留。
-- 切换阶段的依据是损失的生命值百分比，该百分比在切换到不同阶段时会保留。这意味着在阶段之间增加或减少 healthMultiplier 不会治愈或伤害Boss，它仍然会以相同的百分比切换，但该阶段的生命值会更多或更少。
-- 阶段Boss在退出战斗状态时会恢复到阶段 1。
-- 也是区域Boss的阶段Boss，其所有阶段都共享相同的牵引绳半径和超时机制，并且在计时器结束后将作为阶段 1 Boss重生。
-- 最后一个阶段的配置文件设置Boss的战利品。
-- 阶段不能跳过 - 超杀伤害仍然会使Boss在定义的百分比切换阶段。
-- 拥有坐骑的阶段Boss在切换阶段时会停止骑乘。
+- 第一阶段的配置文件设置首领的所有阶段。
+- 玩家在阶段之间保持威胁/伤害计数。
+- 切换阶段是基于失去的生命值百分比，该百分比在切换到不同阶段时会保留。这意味着增加或减少阶段之间的 healthMultiplier 不会治疗或伤害首领，它仍然会以相同的百分比切换，但该阶段的生命值会更多或更少。
+- 如果阶段首领退出战斗，则会恢复到第 1 阶段。
+- 同样是区域首领的阶段首领在所有阶段中共享相同的束缚半径和超时机制，并且当计时器结束时，将作为第 1 阶段首领重生。
+- 最后一阶段的配置文件设置首领的战利品。
+- 阶段无法跳过 - 过度伤害仍然会使首领在定义的百分比处切换阶段。
+- 具有坐骑的阶段首领在切换阶段时会停止坐骑。
 
 </div>
 
@@ -1566,67 +1610,63 @@ phaseSpawnLocation 是可选的，如果没有设置，Boss 将在其所在的�
 
 ***
 
-## 区域Boss
+## 区域首领
 
 <div align="center">
 
+区域首领是一种特定类型的自定义首领，它们在特定的配置位置生成，并且能够在延迟后在该位置重生。此外，它们还可以具有束缚，以确保它们停留在特定区域内，以及其他功能。
 
+这些用于所有地牢内容。要了解有关区域首领的更多信息，请单击[此处]($language$/elitemobs/creating_world_bosses.md)。
 
-## 区域Boss
+| 键 | 描述 | 值 | 默认值 |
+|-|:-:|:-:|:-:|
+| `isRegionalBoss` | 设置首领是否为区域首领。如果想要区域首领，则应为 true。 | `true` / `false` | `false` |
+| `spawnLocation` | 设置首领的生成位置。 | 通过 `/em addSpawnLocation [filename.yml]` 命令添加这些！ | 无 |
+| `spawnCooldown` | 设置首领的重生冷却时间，以<b>分钟</b>为单位。 | [整数](#integer) | `0` |
+| `leashRadius` | 设置首领在被拉回之前可以从其生成点移动的距离。 | [双精度浮点数](#double) | 无 |
+| `onSpawnBlockStates` | 设置首领在生成时将修改的方块。 | 检查下面的命令 | 无 |
+| `onRemoveBlockStates` | 设置首领在消失时将修改的方块。 | 检查下面的命令 | 无 |
 
-区域Boss是一种特定类型的自定义Boss，它们会在特定配置的位置生成，并且能够在延迟后在该位置重生。此外，它们可以有牵引绳，以确保它们停留在特定区域内，以及其他功能。
+如前所述，区域首领可以具有 `onSpawnBlockStates` 和 `onRemoveBlockStates`。
 
-这些用于所有地牢内容。要了解更多关于区域Boss的信息，请点击[此处]($language$/elitemobs/creating_world_bosses.md)。
+这是一个非常有用的功能，可以在战斗期间修改战斗竞技场，尤其是与阶段切换结合使用时，可以通过更改方块状态来打开和关闭战斗竞技场。
 
-| 键 | 说明 | 值 | 默认值 |
-|-|:-:|:-:|-|
-| `isRegionalBoss` | 设置Boss是否是区域Boss。如果您想要一个区域Boss，则应设置为 true。  | `true` /  `false` | `false` |
-| `spawnLocation` | 设置Boss的生成位置。  | 通过 `/em addSpawnLocation [filename.yml]` 命令添加！ | 无 |
-| `spawnCooldown` | 设置Boss的重生冷却时间，以**分钟**为单位。 | [整数](#integer) | `0` |
-| `leashRadius` | 设置Boss在被拉回之前可以离开其生成点的距离。 | [双精度浮点数](#double) | 无 |
-| `onSpawnBlockStates` | 设置Boss生成时将修改的方块。 | 查看下面的命令 | 无 |
-| `onRemoveBlockStates` | 设置Boss消失时将修改的方块。 | 查看下面的命令 | 无 |
+这些格式太复杂而无法手动编写，因此存在一些命令来帮助您设置它们：
 
-如上所述，区域Boss可以有 `onSpawnBlockStates` 和 `onRemoveBlockStates`。
-
-这是一个在战斗中修改战斗竞技场的非常有用的功能，尤其是与阶段切换结合使用时，因为它可以通过更改方块状态来打开和关闭战斗竞技场。
-
-这些格式过于复杂，无法手动编写，因此有一些命令可以帮助您进行设置：
-
-| 命令 | 说明 |
+| 命令 | 描述 |
 |-|:-:|
-| /em registerblocks [regional_boss_file.yml] [on_spawn/on_remove] | 开始为生成时或移除时的方块状态注册手动选择的方块。 |
-| /em registerblocksedit [regional_boss_file.yml] [on_spawn/on_remove] | 编辑生成时或移除时的方块状态。 |
-| /em registerblocksarea [regional_boss_file.yml] [on_spawn/on_remove] | 允许管理员选择大面积的方块并将其保存为状态。 |
-| /em registerblocksareaedit [regional_boss_file.yml] [on_spawn/on_remove] | 允许管理员编辑大面积的方块并将其保存为状态。 |
+| /em registerblocks [区域_首领_文件.yml] [on_spawn/on_remove] | 开始注册手动方块选择，以用于在生成时或删除时的方块状态。 |
+| /em registerblocksedit [区域_首领_文件.yml] [on_spawn/on_remove] | 编辑在生成时或删除时的方块状态。 |
+| /em registerblocksarea [区域_首领_文件.yml] [on_spawn/on_remove] | 允许管理员选择要保存为状态的大面积方块。 |
+| /em registerblocksareaedit [区域_首领_文件.yml] [on_spawn/on_remove] | 允许管理员编辑要保存为状态的大面积方块。 |
 
-<details> 
+<details>
 
-<summary><b>使用示例：</b></summary>
+<summary><b>示例用法：</b></summary>
 
 <div align="left">
 
-假设您想创建一个战斗场景，其中一个Boss生成在一个竞技场中，竞技场中有一扇打开的门，您想让这扇门在战斗开始时关闭，在战斗结束后重新打开。
+假设您想进行一场战斗，首领在一个门打开的竞技场中生成，并且您想使门在战斗开始时关闭并在战斗结束时重新打开。
 
-为此，您需要两个Boss阶段，并注册三组不同的方块状态。在本例中，我将这两个阶段分别命名为 phase_1_boss.yml 和 phase_2_boss.yml。
+为此，您将需要两个首领阶段，并注册三组不同的方块状态。对于此示例，我将分别将这些阶段命名为 phase_1_boss.yml 和 phase_2_boss.yml。
 
-1) 使用 `/em registerblocks phase_1_boss.yml on_spawn` 或 `/em registerblocksedit phase_1_boss.yml on_spawn` 来注册处于打开状态的门方块。
+1) 使用 `/em registerblocks phase_1_boss.yml on_spawn` 或 `/em registerblocksedit phase_1_boss.yml on_spawn` 注册处于打开状态的门方块。
 
-这意味着注册空气方块。建议在此处使用区域选择。
+这意味着注册空气方块。建议在此处进行区域选择。
 
-这是为了确保Boss生成时门是打开的，以便玩家 гарантированно 能够进入。
+这是为了确保首领生成时门是打开的，以便保证玩家有进入的方式。
 
-2) 使用 `/em registerblocks phase_2_boss.yml on_spawn` 或 `/em registerblocksedit phase_2_boss.yml on_spawn` 来注册处于关闭状态的门方块。
+2) 使用 `/em registerblocks phase_2_boss.yml on_spawn` 或 `/em registerblocksedit phase_2_boss.yml on_spawn` 注册处于关闭状态的门方块。
 
-这意味着注册门的实体方块，这些方块将阻止玩家离开。
+这意味着注册门的固体方块，这些方块将阻止玩家离开。
 
-这是为了在Boss进入阶段 2 时将门更改为实体，以防止玩家离开。
+这是为了在首领进入第 2 阶段时将门更改为实体的，以阻止玩家离开。
 
-3) 使用 `/em registerblocks phase_2_boss.yml on_remove` 或 `/em registerblocksedit phase_2_boss.yml on_remove` 来注册处于打开状态的门方块。
+3) 使用 `/em registerblocks phase_2_boss.yml on_remove` 或 `/em registerblocksedit phase_2_boss.yml on_remove` 注册处于打开状态的门方块。
 
 这意味着再次注册第一步中的相同方块（空气方块）。
 
-这是为了在Boss死亡时打开门，让玩家离开竞技场。
+这是为了在首领死亡时打开门，允许玩家离开竞技场。
 
 </div>
 
@@ -1640,7 +1680,7 @@ phaseSpawnLocation 是可选的，如果没有设置，Boss 将在其所在的�
 
 <div align="center">
 
-设置Boss是否处于警戒状态。默认情况下，区域Boss在非战斗状态下会减速并缩短仇恨距离。此设置可防止区域Boss在非战斗状态下减速并缩短仇恨距离，因此它们在战斗中和战斗外的行为始终相同。
+设置首领是否处于警惕状态。默认情况下，区域首领在非战斗状态时会减速，并且具有较短的攻击距离。此设置可防止区域首领在非战斗状态时减速并具有较短的攻击距离，因此它们在战斗中或非战斗状态下的行为方式始终相同。
 
 </div>
 
@@ -1668,7 +1708,7 @@ alert: true
 
 <div align="center">
 
-设置区域Boss在被击杀后是否会被永久删除。BetterStructures 将其用于神殿，其中区域Boss仅设计为在该位置战斗一次，之后就不会再出现。
+设置区域首领在被杀死后是否会被永久删除。这是 BetterStructures 用于圣殿的设置，在该圣殿中，区域首领仅设计为战斗一次，然后在该位置不再战斗。
 
 </div>
 
@@ -1692,20 +1732,19 @@ removeAfterDeath: true
 
 ***
 
-## 实例Boss
+## 实例首领
 
 <div align="center">
 
-实例Boss是用于实例地牢的区域Boss的子类型。
+实例首领是在实例地牢中使用的区域首领的子类型。
 
-| 键 | 说明 | 值 | 默认值 |
-|-|:-:|-|-|
-| `instanced` | 使自定义Boss成为实例Boss。必填。 | `true` / `false` | `false` |
+| 键 | 描述 | 值 | 默认值 |
+|-|:-:|:-:|:-:|
+| `instanced` | 使自定义首领实例化。必需。 | `true` / `false` | `false` |
 
+将首领设置为实例化对于实例地牢的正常工作至关重要。我们还建议删除任何实例化首领的束缚。
 
-要使实例地牢正常工作，必须将Boss设置为实例Boss。我们还建议移除所有实例Boss的牵引绳。
-
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -1720,4 +1759,3 @@ instanced: true
 </details>
 
 </div>
-

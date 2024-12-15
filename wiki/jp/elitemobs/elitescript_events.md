@@ -1,34 +1,31 @@
-```markdown
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+# Elite Script イベント
 
-# Elite スクリプトイベント
-
-Elite スクリプトはイベントベースです。つまり、特定のイベントがトリガーされると起動されます。現在有効なイベントを以下に示します。
+EliteScript はイベントベースです。つまり、特定のイベントがトリガーされたときに起動します。現在有効なイベントは以下のとおりです。
 
 | イベント | 詳細 | 直接ターゲット [[?]($language$/elitemobs/elitescript_targets.md)] |
 | --- | :-: |:----------------------------------------------------------------:|
-| EliteMobDamagedByEliteMobEvent | エリートが別のエリートからダメージを受けた |                                ❌                                 |
-| EliteMobDamagedByPlayerEvent | エリートがプレイヤーからダメージを受けた |                         ダメージを与えたプレイヤー                          |
-| EliteMobDamagedEvent | エリートが何かからダメージを受けた |                                ❌                                 |
-| EliteMobDeathEvent | エリートが死亡した |                                ❌                                 |
-| EliteMobEnterCombatEvent | エリートがプレイヤーと戦闘状態になった |                         戦闘を開始したプレイヤー                          |
-| EliteMobExitCombatEvent | エリートが戦闘状態から外れた |                                ❌                                 |
+| EliteMobDamagedByEliteMobEvent | エリートが別のエリートによってダメージを受けた |                                ❌                                 |
+| EliteMobDamagedByPlayerEvent | エリートがプレイヤーによってダメージを受けた |                         ダメージを与えたプレイヤー                          |
+| EliteMobDamagedEvent | エリートが何らかの要因によってダメージを受けた |                                ❌                                 |
+| EliteMobDeathEvent | エリートの死亡 |                                ❌                                 |
+| EliteMobEnterCombatEvent | エリートがプレイヤーと戦闘を開始した |                         交戦中のプレイヤー                          |
+| EliteMobExitCombatEvent | エリートが戦闘を終了した |                                ❌                                 |
 | EliteMobHealEvent | エリートが完全に回復した |                                ❌                                 |
-| EliteMobSpawnEvent | エリートがスポーンした |                                ❌                                 |
-| EliteMobTargetPlayerEvent | エリートがプレイヤーをターゲットにした |                         ターゲットにされたプレイヤー                          |
+| EliteMobSpawnEvent | エリートのスポーン |                                ❌                                 |
+| EliteMobTargetPlayerEvent | エリートがプレイヤーをターゲットにした |                         ターゲットされたプレイヤー                          |
 | PlayerDamagedByEliteMobEvent | エリートがプレイヤーにダメージを与えた |                          ダメージを受けたプレイヤー                          |
-| ElitePhaseSwitchEvent | ボスのフェーズが切り替わったときにボスがスポーン |                                ❌                                 |
-| ZoneEnterEvent | エンティティがゾーンに入った。ゾーンが設定されている必要があります！ | ゾーンに入ったエンティティ                                 |
-| ZoneLeaveEvent | エンティティがゾーンから出た。ゾーンが設定されている必要があります！ | ゾーンから出たエンティティ                                 |
+| ElitePhaseSwitchEvent | フェーズ切り替えからのボススポーン |                                ❌                                 |
+| ZoneEnterEvent | エンティティがゾーンに入った。ゾーンの設定が必要！ | ゾーンに入ったエンティティ                                 |
+| ZoneLeaveEvent | エンティティがゾーンから出た。ゾーンの設定が必要！ | ゾーンから出たエンティティ                                 |
 
-**注意: 「エリート」とは、援軍、ボスなどにかかわらず、プラグインによってスポーンされた攻撃的なエンティティを指します。**
-**注意: ZoneEnterEvent と ZoneLeaveEvent は、実行コストが高いため、控えめに使用してください！**
+**注：「エリート」とは、リインフォースメント、ボスなど、プラグインによってスポーンされたすべてのアグレッシブなエンティティを指します。**
+**注：ZoneEnterEventとZoneLeaveEventは計算コストが高いため、使用は控えめにしてください！**
 
-`Direct Target` は、スクリプトターゲットで使用されます。詳細はこちらをご覧ください。[こちら]($language$/elitemobs/elitescript_targets.md).
+`直接ターゲット`はスクリプトターゲットによって使用されます。詳細については[こちら]($language$/elitemobs/elitescript_targets.md)をご覧ください。
 
-`ZoneEnterEvent` と `ZoneLeaveEvent` は、スクリプトで設定されたゾーンに入ったり出たりしたエンティティに基づいてアクションをトリガーできる特別なイベントです。ZoneEnterEvent と ZoneLeaveEvent の DIRECT\_TARGET は、ゾーンに出入りしたエンティティです（つまり、直接ターゲットをゾーンのターゲットとして使用することはできません）。また、内部ロジックの仕組み上、ゾーンに出入りするスキャンには、絶対ポイント（特定の座標）とボスを基準としたポイントのみを使用できます（プレイヤーをターゲットにするゾーンは使用できません）。
+`ZoneEnterEvent`と`ZoneLeaveEvent`は、スクリプトで設定されたゾーンへのエンティティの出入りに基づいてアクションをトリガーできる特別なイベントです。ZoneEnterEventとZoneLeaveEventのDIRECT_TARGETは、出入りしたエンティティです（これは、ゾーンのターゲットとして直接ターゲットを使用できないことを意味します）。また、内部ロジックの仕組み上、絶対座標（特定の座標）とボスからの相対座標のみを使用して、出入りのスキャンを行うことができます（プレイヤーをターゲットにするゾーンは使用できません）。
 
-スクリプトごとに、[イベント]($language$/elitemobs/elitescript_events.md) セクションは 1 つしか設定できません。ただし、複数のイベントをスクリプトのトリガーとして設定できます。
+スクリプトごとに[Event]($language$/elitemobs/elitescript_events.md)セクションは1つしか存在できません。ただし、1つのスクリプトのトリガーとして複数のイベントを設定できます。
 
 <div align="center">
 
@@ -54,14 +51,10 @@ eliteScript:
       global: 20
 ```
 
-このスクリプトにより、エリートは、プレイヤーから攻撃を受けた場合、またはプレイヤーをターゲットにした場合にジャンプします。
+このスクリプトでは、エリートがプレイヤーに攻撃されたとき、またはプレイヤーをターゲットにしたときにジャンプします。
 
 </div>
 
 </details>
 
 </div>
-
-
-```
-

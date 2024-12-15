@@ -1,90 +1,93 @@
-# Ataques Críticos
+# Limite do Nível de Encantamento
 
-Ataques Críticos dão uma chance de dobrar o dano causado a um Mob Elite.
+Para aumentar o limite de qualquer encantamento, navegue até à pasta de configuração `enchantments` do EliteMobs e edite o valor `maxLevelV2` do encantamento desejado.
 
-Cada nível de Ataque Crítico aumenta a chance de ataque crítico em 10% (10% para o nível 1, 20% para o nível 2).
+# Golpes Críticos
 
-Os itens gerados proceduralmente têm um limite de nível 2 por padrão.
+Golpes Críticos dão uma chance de duplicar o dano causado a um Elite Mob.
+
+Cada nível de Golpe Crítico aumenta a chance de golpe crítico em 10% (10% para o nível 1, 20% para o nível 2).
+
+Itens gerados processualmente têm um limite de nível 2 por padrão.
 
 # Perfuração
 
-O encantamento de perfuração é um encantamento para picaretas. Ele permite que picaretas e pás que o usam minem blocos em um raio ao redor do bloco que está sendo minado. Quanto maior o nível dos encantamentos, maior o raio dos blocos afetados.
+O encantamento Perfuração é um encantamento para picaretas. Permite que picaretas e pás que o utilizem, minem blocos num raio em relação ao bloco que está a ser minado. Quanto maior o nível dos encantamentos, maior o raio de blocos afetados.
 
-Os níveis variam entre 1 e 5, com 1 bloco adicional sendo minado no nível 1 e 9 blocos adicionais sendo minados no nível 5. Somente blocos do mesmo tipo serão minados nesse raio.
+Os níveis variam entre 1 e 5, sendo que 1 bloco adicional é minerado no nível 1 e 9 blocos adicionais são minerados no nível 5. Apenas blocos do mesmo tipo serão minerados nesse raio.
 
 [Assista a este vídeo para uma representação visual de como isso funciona.](https://youtu.be/CM78o_-Aa0s)
 
-# Proteção Elite/Nitidez/Poder/Maldição de Artrópodes/Golpear/...
+# Proteção Elite/Afiada/Poder/Maldição dos Artrópodes/Punição/...
 
-Proteção Elite/Nitidez/Poder/Maldição de Artrópodes/Golpear/... aumenta o nível de um encantamento do vanilla, mas só aplica esse valor especial ao lutar contra elites.
+Proteção Elite/Afiada/Poder/Maldição dos Artrópodes/Punição/... aumenta o nível de um encantamento vanilla, mas aplica este valor especial apenas quando luta contra elites.
 
-**Os itens só começam a ganhar encantamentos Elite quando ultrapassam os limites do vanilla do nível de encantamento (como exemplo, a proteção do vanilla tem um limite de nível 4). Todos os níveis subsequentes são aumentados em 1, o que significa que um item com proteção 5 e proteção elite 10 contará como uma armadura de proteção 15 para Mobs Elite, mas só contará como uma armadura de proteção 5 para qualquer outro mob.**
+**Os itens só começam a ganhar encantamentos Elite quando ultrapassam os limites vanilla do nível de encantamento (por exemplo, a proteção vanilla tem um limite de nível 4). Todos os níveis subsequentes são aumentados em 1, o que significa que um item com proteção 5 e proteção elite 10 contará como uma armadura de proteção 15 para Elite Mobs, mas contará apenas como uma armadura de proteção 5 para qualquer outro mob.**
 
-Esses encantamentos só se aplicam ao lutar contra mobs do EliteMobs e não se aplicam em PvP ou ao lutar contra outros mobs.
+Estes encantamentos só se aplicam quando luta contra mobs do EliteMobs e não se aplicam em pvp ou ao lutar contra outros mobs.
 
-# Lança-Chamas
+# Lança-chamas
 
-Qualquer item com o encantamento Lança-Chamas é capaz de lançar um jato de chamas para danificar mobs na direção em que foi lançado.
+Qualquer item com o encantamento Lança-chamas é capaz de disparar um jato de chamas para danificar os mobs na direção em que foi disparado.
 
-Ao clicar com o botão direito para ativar esse encantamento, o jogador fica impossibilitado de se mover durante a duração do efeito.
+Ao clicar com o botão direito para ativar este encantamento, o jogador fica incapaz de se mover durante a duração do efeito.
 
-Usar o encantamento Lança-Chamas gasta a durabilidade do item.
+Usar o encantamento Lança-chamas gasta a durabilidade do item.
 
-Esse encantamento personalizado nunca pode causar dano aos jogadores por motivos de balanceamento.
+Este encantamento personalizado nunca pode danificar jogadores por razões de equilíbrio.
 
 # Caçador
 
-O encantamento Caçador aumenta a porcentagem de mobs ao redor de um jogador com esse encantamento que são convertidos em Mobs Elite, aumentando efetivamente a quantidade de Mobs Elite que geram ao redor de um jogador.
+O encantamento Caçador aumenta a percentagem de mobs ao redor de um jogador com esse encantamento que são convertidos em Elite Mobs, aumentando efetivamente a quantidade de Elite Mobs que surgem ao redor de um jogador.
 
-A taxa de conversão por nível é configurável e cada nível subsequente aumentará a taxa de conversão por essa quantia. O nível máximo de encantamento para o encantamento Caçador é o nível 3.
+A taxa de conversão por nível é configurável e cada nível subsequente aumentará a taxa de conversão por esse valor. O nível máximo de encantamento para o encantamento caçador é o nível 3.
 
-# Quebra-Gelo
+# Quebra-gelo
 
-O encantamento Quebra-Gelo permite que qualquer item congele água ao ser atingido. É recomendável que você o adicione apenas a picaretas.
+O encantamento Quebra-gelo permite que qualquer item congele a água ao atingir. Recomenda-se que o adicione apenas a picaretas.
 
-O encantamento Quebra-Gelo pode ter até dois níveis. No primeiro nível, a picareta só congelará o bloco atingido. No segundo, ele congelará e os blocos imediatamente adjacentes.
+O encantamento Quebra-gelo pode ter até dois níveis. No primeiro nível, a picareta congelará apenas o bloco atingido. No segundo, ele congelará e os blocos imediatamente adjacentes.
 
-O encantamento de segundo nível pode ser usado para criar túneis sob o oceano.
+O encantamento do segundo nível pode ser usado para criar túneis sob o oceano.
 
-[Assista a este vídeo se quiser ver em ação.](https://youtu.be/k206wfEBCqs)
+[Assista a este vídeo se quiser vê-lo em ação.](https://youtu.be/k206wfEBCqs)
 
 # Terremoto
 
-O encantamento Terremoto faz com que um jogador dê um grande salto ao se agachar duas vezes enquanto estiver usando as botas e derruba os mobs para trás quando o jogador pousa.
+O encantamento Terremoto faz com que um jogador dê um grande salto ao se agachar duas vezes enquanto usa as botas, e empurra os mobs para trás quando o jogador aterra.
 
-# Gancho de Arremesso
+# Gancho de Agarre
 
-O encantamento Gancho de Arremesso, quando aplicado a arcos, permite que os jogadores se agarrem a [blocos de alvo](https://minecraft.fandom.com/wiki/Target) ao atirar qualquer tipo de flecha.
+O encantamento Gancho de Agarre quando aplicado a arcos permite que os jogadores se agarrem a [blocos de alvo](https://minecraft.fandom.com/wiki/Target) ao disparar qualquer tipo de flecha.
 
 # Relâmpago
 
-O encantamento Relâmpago funciona de forma semelhante ao encantamento de ataques críticos, mas causa 2.5x o dano em um diâmetro de 2.5 blocos e gera um raio. A chance de um encantamento de relâmpago ser acionado é muito baixa.
+O encantamento Relâmpago funciona de forma semelhante ao encantamento de golpes críticos, mas causa 2,5x de dano num diâmetro de 2,5 blocos e gera um relâmpago. A chance de um encantamento de relâmpago ser ativado é muito baixa.
 
-# Golpes Fortes
+# Golpes Altos
 
-O encantamento Golpes Fortes aumenta o aggro ao ser atingido para entidades geradas pelo EliteMobs. Elites e chefes geralmente têm como alvo o jogador que causou mais dano, mas esse encantamento permite que tanques mantenham a atenção do mob, mesmo que não sejam o maior causador de dano. Isso é usado para papéis tradicionais de tanque de MMORPG. Esse encantamento é principalmente usado para [Masmorras Instanciadas]($language$/EliteMobs/building_for_elitemobs.md&section=instanced-dungeons) e é encontrado no loot que cai dessas masmorras.
+O encantamento Golpes Altos aumenta o aggro ao atingir entidades geradas pelo EliteMobs. Elites e bosses geralmente têm como alvo o jogador que causou mais dano, mas este encantamento permite que os tanks mantenham a atenção do mob mesmo que não sejam os de maior dano. Isto é usado para funções tradicionais de tanking MMORPG. Este encantamento é usado principalmente para [Masmorras Instanciadas]($language$/EliteMobs/building_for_elitemobs.md&section=instanced-dungeons) e é encontrado em loot que cai dessas masmorras.
 
 # Botas de Plasma
 
-O encantamento Botas de Plasma, ao se deslocar duas vezes, faz com que os jogadores dêem um pequeno salto e então gerem partículas verdes em todas as direções que causam dano às entidades se forem atingidas por elas. Isso gasta a durabilidade das botas.
+O encantamento Botas de Plasma, quando se agacha duas vezes, faz com que os jogadores façam um pequeno salto e então gera partículas verdes em todas as direções que danificam as entidades se forem atingidas por elas. Isso gasta a durabilidade das botas.
 
 # Invocar Mercador
 
-O encantamento Invocar Mercador invoca Jeeves. Isso é feito clicando com o botão direito do mouse no item (geralmente apenas um papel), ou dizendo "Jeeves!" no chat. Invocar Jeeves usa o item com o encantamento.
+O encantamento Invocar Mercador invoca Jeeves. Isto é feito ao clicar com o botão direito no item (geralmente é apenas um papel), ou ao dizer "Jeeves!" no chat. Invocar Jeeves gasta o item com o encantamento.
 
 # Invocar Lobo
 
-O encantamento Invocar Lobo invoca um lobo amigável ao *Shift + Clicar com o botão direito do mouse* no chão com o item na mão. O lobo tem um nível calculado com base no equipamento do jogador e desaparece após 2 minutos. Ele não pode ser domado.
+O encantamento Invocar Lobo invoca um lobo amigável quando *Shift + Clicar com o Botão Direito* no chão com o item na mão. O lobo tem um nível calculado com base no equipamento do jogador e desaparece após 2 minutos. Não pode ser domado.
 
-Existe uma chance de 1/1000 de gerar Snoopy ao invocar um lobo. Snoopy é muito mais poderoso do que lobos normais.
+Existe uma chance de 1/1000 de gerar o Snoopy ao invocar um lobo. O Snoopy é muito mais poderoso do que os lobos normais.
 
 Usar o encantamento Invocar Lobo gasta o item usado para a invocação.
 
 # Desvincular
 
-O encantamento Desvincular é usado no pergaminho Desvincular como o encantamento necessário para o menu / npc de desvinculação. Verifique a seção [Soulbind](#Soulbind) para mais detalhes.
+O encantamento Desvincular é usado no pergaminho Desvincular como o encantamento necessário para o menu / npc de desvinculação. Consulte a seção [Vinculação de Alma](#Soulbind) para obter mais detalhes.
 
-# Soulbind
+# Vinculação de Alma
 
-Soulbind é um encantamento muito especial e [pode ser verificado nesta página]($language$/elitemobs/soulbind.md).
-
+Vinculação de Alma é um encantamento muito especial e [pode ser verificado nesta página]($language$/elitemobs/soulbind.md).

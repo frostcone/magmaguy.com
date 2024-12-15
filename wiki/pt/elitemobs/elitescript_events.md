@@ -1,6 +1,6 @@
-# Eventos do Script Elite
+# Eventos de Script Elite
 
-Os Scripts Elite são baseados em eventos. Isso significa que eles são iniciados quando um evento específico é acionado. Os seguintes são os eventos atualmente válidos:
+EliteScripts são baseados em eventos. Isto significa que são lançados quando um evento específico é acionado. Os seguintes são os eventos válidos atualmente:
 
 | Evento | Detalhes | Alvo Direto [[?]($language$/elitemobs/elitescript_targets.md)] |
 | --- | :-: |:----------------------------------------------------------------:|
@@ -8,22 +8,22 @@ Os Scripts Elite são baseados em eventos. Isso significa que eles são iniciado
 | EliteMobDamagedByPlayerEvent | Elite danificado por um jogador |                         Jogador que causou dano                          |
 | EliteMobDamagedEvent | Elite danificado por qualquer coisa |                                ❌                                 |
 | EliteMobDeathEvent | Morte de elite |                                ❌                                 |
-| EliteMobEnterCombatEvent | Elite entra em combate com o jogador |                         Jogador que está interagindo                          |
-| EliteMobExitCombatEvent | Elite sai do combate |                                ❌                                 |
-| EliteMobHealEvent | Elite totalmente curado |                                ❌                                 |
-| EliteMobSpawnEvent | Elite é gerado |                                ❌                                 |
-| EliteMobTargetPlayerEvent | Elite mira no jogador |                         Jogador que está sendo mirado                          |
-| PlayerDamagedByEliteMobEvent | Elite causa dano ao jogador |                          Jogador que sofreu dano                          |
-| ElitePhaseSwitchEvent | Chefe é gerado pela mudança de fase |                                ❌                                 |
-| ZoneEnterEvent | Entidade entra na zona. Requer que uma zona seja definida! | Entidade que entrou na zona                                 |
-| ZoneLeaveEvent | Entidade deixa a zona. Requer que uma zona seja definida! | Entidade que deixou a zona                                 |
+| EliteMobEnterCombatEvent | Elite entra em combate com jogador |                         Jogador que iniciou o combate                         |
+| EliteMobExitCombatEvent | Elite sai de combate |                                ❌                                 |
+| EliteMobHealEvent | Elite cura totalmente |                                ❌                                 |
+| EliteMobSpawnEvent | Elite aparece |                                ❌                                 |
+| EliteMobTargetPlayerEvent | Elite mira jogador |                         Jogador alvo                          |
+| PlayerDamagedByEliteMobEvent | Elite causa dano a jogador |                          Jogador que sofreu dano                          |
+| ElitePhaseSwitchEvent | Chefe aparece devido a mudança de fase |                                ❌                                 |
+| ZoneEnterEvent | Entidade entra numa zona. Requer que uma zona seja definida! | Entidade que entrou na zona                                 |
+| ZoneLeaveEvent | Entidade sai de uma zona. Requer que uma zona seja definida! | Entidade que saiu da zona                                 |
 
-**Observação: "Elite" se refere a qualquer entidade agressiva gerada pelo plugin, não importa se é um reforço, um chefe ou qualquer outra coisa.**
-**Observação: ZoneEnterEvent e ZoneLeaveEvent são computacionalmente caros para serem executados, então use-os com moderação!**
+**Nota: "Elite" refere-se a qualquer entidade agressiva gerada pelo plugin, independentemente de ser um reforço, um chefe ou qualquer outra coisa.**
+**Nota: ZoneEnterEvent e ZoneLeaveEvent são computacionalmente dispendiosos para executar, por favor use-os com moderação!**
 
-`Alvo Direto` é usado pelos Alvos do Script, mais sobre isso [aqui]($language$/elitemobs/elitescript_targets.md).
+`Alvo Direto` é usado pelos Alvos de Script, mais sobre isso [aqui]($language$/elitemobs/elitescript_targets.md).
 
-`ZoneEnterEvent` e `ZoneLeaveEvent` são eventos especiais que permitem que os scripters acionem ações com base em entidades entrando e saindo de zonas definidas em scripts. O DIRECT_TARGET de ZoneEnterEvent e ZoneLeaveEvent é a entidade que entrou ou saiu (isso significa que você não pode usar o alvo direto como alvo da zona), e devido à forma como a lógica interna funciona, apenas pontos absolutos (coordenadas específicas) e pontos relativos ao chefe podem ser usados para escanear entrada e saída (não pode usar zonas que tenham como alvo os jogadores).
+`ZoneEnterEvent` e `ZoneLeaveEvent` são eventos especiais que permitem aos criadores de scripts acionar ações com base em entidades que entram e saem de zonas definidas em scripts. O ALVO_DIRETO de ZoneEnterEvent e ZoneLeaveEvent é a entidade que entrou ou saiu (isto significa que não pode usar o alvo direto como o alvo da zona), e devido à forma como a lógica interna funciona apenas pontos absolutos (coordenadas específicas) e pontos relativos ao chefe podem ser usados para verificar entradas e saídas (não pode usar zonas que tenham jogadores como alvo).
 
 Só pode haver uma seção [Evento]($language$/elitemobs/elitescript_events.md) por script. No entanto, vários eventos podem ser definidos como gatilhos para um script:
 
@@ -51,14 +51,10 @@ eliteScript:
       global: 20
 ```
 
-Este script faria com que a elite pulasse quando atingida por um jogador ou quando tivesse como alvo um jogador.
+Este script faria o elite saltar quando atingido por um jogador ou quando mira um jogador.
 
 </div>
 
 </details>
 
 </div>
-
-
-
-

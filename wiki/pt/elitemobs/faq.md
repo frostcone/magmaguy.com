@@ -1,6 +1,4 @@
-## Perguntas Frequentes sobre Configuração e Instalação
-
-Se você tiver uma pergunta que não está listada aqui, ***consulte a barra lateral*** para ver se ela tem uma página dedicada a ela no wiki!
+Se tiver alguma questão que não esteja listada aqui, ***dê uma olhada na barra lateral*** para ver se existe uma página dedicada a ela no wiki!
 
 # Perguntas Frequentes sobre Configuração e Instalação
 
@@ -8,80 +6,77 @@ Se você tiver uma pergunta que não está listada aqui, ***consulte a barra lat
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Existem dois plugins diferentes que gerenciam "Modelos Personalizados".
+Existem dois plugins diferentes que lidam com "Modelos Personalizados".
 
-- O LibsDisguises (incluindo a edição gratuita) permite disfarçar mobs como outros mobs ou como skins de jogadores personalizadas. Se você vir um Chefe Personalizado com um disfarce de jogador, ele está usando o LibsDisguises para o disfarce. Você terá que baixar o LibsDisguises para que esse recurso específico funcione.
+- LibsDisguises (incluindo a edição gratuita) permite disfarçar mobs como outros mobs ou como skins de jogador personalizadas. Se vir um Boss Personalizado com um disfarce de jogador, está a usar o LibsDisguises para o disfarce. Terá de baixar o LibsDisguises para que esta funcionalidade específica funcione.
 
-
-- O FreeMinecraftModels (e o ModelEngine R3, embora o ModelEngine não seja mais recomendado) permite disfarçar mobs como qualquer Modelo Personalizado, com muito poucas limitações. O FreeMinecraftModels permite que você faça isso gratuitamente e é recomendado. Você terá que usar o FreeMinecraftModels ou o ModelEngine R3 (não o R4) para que os Modelos Personalizados funcionem. O FreeMinecraftModels pode ser executado junto com o Model Engine, então você também pode executar ambos.
-<br>Se você instalou o FreeMinecraftModels/ModelEngine e os Modelos Personalizados ainda não estão funcionando, você pode ter instalado o conteúdo antes de instalar o plugin de modelo. Para garantir que isso não seja um problema, reimporta o conteúdo do EliteMobs com os Disfarces Personalizados e instale-o novamente.
+- FreeMinecraftModels (e ModelEngine R3, embora o ModelEngine já não seja recomendado) permite disfarçar mobs como qualquer Modelo Personalizado, com muito poucas limitações. O FreeMinecraftModels permite que faça isso gratuitamente e é recomendado. Terá de usar o FreeMinecraftModels ou o ModelEngine R3 (não o R4) para que os Modelos Personalizados funcionem. O FreeMinecraftModels pode ser executado juntamente com o ModelEngine, pelo que também pode simplesmente executar ambos.
+<br>Se tiver instalado o FreeMinecraftModels/ModelEngine e os Modelos Personalizados ainda não estiverem a funcionar, poderá ter instalado o conteúdo antes de instalar o plugin de modelo. Para ter a certeza de que este não é o problema, reimporte o conteúdo do EliteMobs com os Disfarces Personalizados e instale-o novamente.
 
 </details>
 
-### O console / EliteMobs diz que estou usando a versão errada do WorldGuard
+### A consola/EliteMobs diz que estou a usar a versão errada do WorldGuard
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Se o WorldGuard for relatado pelo EliteMobs como não instalado, isso ocorre porque você está usando a versão errada do WorldGuard para sua plataforma de servidor. O WorldGuard é muito sensível em relação à versão que você está usando e possui versões diferentes para software de servidor.
+Se o WorldGuard for reportado pelo EliteMobs como não instalado, é porque está a usar a versão errada do WorldGuard para a sua plataforma de servidor. O WorldGuard é muito sensível quanto à versão que está a usar e tem versões diferentes para software de servidor.
 
-- Você pode baixar a versão do WorldGuard para Spigot / Paper aqui: https://dev.bukkit.org/projects/worldguard - Certifique-se de que ele diz que é compatível com sua versão do Minecraft!
+- Pode baixar a versão do WorldGuard para Spigot / Paper aqui: https://dev.bukkit.org/projects/worldguard - Certifique-se de que diz que é compatível com a sua versão do Minecraft!
 
 </details>
 
-### Buracos de Minhoca / Arenas / NPCs não parecem estar funcionando corretamente imediatamente após a instalação
+### Wormholes / Arenas / NPCs não parecem estar a funcionar corretamente imediatamente após a instalação
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Se os buracos de minhoca / arenas / NPCs não parecerem estar funcionando corretamente imediatamente após a instalação do conteúdo, você deve executar `/em reload`. É sempre bom executá-lo após instalar o conteúdo do EliteMobs.
+Se wormholes / arenas / NPCs não parecem estar a funcionar corretamente imediatamente após a instalação do conteúdo, deve executar `/em reload`. É sempre bom executá-lo após a instalação do conteúdo do EliteMobs.
 
 </details>
 
-### Os chefes da masmorra não estão reaparecendo depois de matá-los
+### Os Bosses de Dungeon não estão a reaparecer depois de os matar
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Na maioria das vezes, isso ocorre porque alguns chefes têm longos tempos de reabastecimento. A Sombra do Vinculador de Mundos tem o tempo de reabastecimento mais longo de 1 semana na vida real. Os chefes do Covil geralmente têm um tempo de reabastecimento de 4 horas. Tudo o mais tende a ter um tempo de reabastecimento de 5 a 30 minutos. Você pode editar o tempo de reabastecimento de um Chefe Personalizado em seu arquivo de configuração na pasta `~/plugins/EliteMobs/custombosses`.
+Na maioria das vezes, isso acontece porque alguns bosses têm longos tempos de respawn. A Sombra do Ligador de Mundos tem o maior temporizador de respawn de 1 semana da vida real. Os bosses de covil costumam ter um temporizador de respawn de 4 horas. Todo o resto tende a ter um temporizador de respawn de 5 a 30 minutos. Pode editar o temporizador de respawn de um Boss Personalizado no seu ficheiro de configuração na pasta `~/plugins/EliteMobs/custombosses`.
 
 </details>
 
-### Os chefes da masmorra nunca apareceram após a instalação
+### Os Bosses de Dungeon nunca apareceram após a instalação
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
 Isso é quase certamente devido à interferência de um plugin de terceiros. Verifique o seguinte:
-- Seu mundo está na dificuldade Pacífica? Mobs não geram na dificuldade Pacífica
+- O seu mundo está na dificuldade Pacífica? Os mobs não aparecem na dificuldade Pacífica.
 
+- A sua região está protegida contra o aparecimento? As dungeons do EliteMobs lidam com a sua própria proteção de região através do WorldGuard, não precisa de proteger os mundos de dungeon do EliteMobs, fazê-lo pode impedir o aparecimento se forem usadas as flags erradas.
 
-- Sua região é protegida contra geração? As masmorras do EliteMobs gerenciam sua própria proteção de região por meio do WorldGuard, você não precisa proteger os mundos da masmorra do EliteMobs, na verdade, fazer isso pode impedir a geração se as flags erradas forem usadas.
-
-
-- Há outro plugin impedindo que os chefes do EliteMobs sejam gerados ou os removendo? Esses conflitos geralmente aparecem no console, então verifique seus logs do console.
+- Existe outro plugin a impedir que os bosses do EliteMobs apareçam ou a removê-los? Esses conflitos costumam aparecer na consola, portanto, verifique os logs da sua consola.
 
 </details>
 
-### O plugin não está completando automaticamente comandos para o conteúdo que acabei de instalar
+### O plugin não está a completar automaticamente os comandos para o conteúdo que acabei de instalar
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-As sugestões automáticas em comandos são gerenciadas pelo CloudCommandFramework e apenas atualizam as sugestões de comando **após uma reinicialização do servidor**. Infelizmente, não há nada que eu possa fazer sobre isso.
+As sugestões automáticas nos comandos são tratadas pelo CloudCommandFramework e só atualizam as sugestões de comandos **após o reinício do servidor**. Infelizmente, não há nada que eu possa fazer quanto a isso.
 
 </details>
 
@@ -89,170 +84,168 @@ As sugestões automáticas em comandos são gerenciadas pelo CloudCommandFramewo
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Você pode alterar o idioma do EliteMob executando `/em language <languagename>.yml` para usar a tradução padrão do plugin criada e gerenciada pela comunidade do EliteMobs.
+Pode alterar o idioma do EliteMob executando o `/em language <nome do idioma>.yml`. para usar a tradução padrão do plugin criada e gerida pela comunidade EliteMobs
 
-Para adicionar um idioma que não está no plugin ou para personalizar o idioma existente, é recomendável usar `custom_language.yml`.
+Para adicionar um idioma que não esteja no plugin ou para personalizar o idioma existente, é recomendado que use o `custom_language.yml`.
 
-Os arquivos de idioma só geram seu conteúdo quando você muda o idioma!
+Os ficheiros de idioma só geram o seu conteúdo quando muda o idioma!
 
-Se você quebrar a formatação do arquivo yml, o que é muito fácil de fazer por engano, ele redefinirá o arquivo! ***Certifique-se de manter um backup local da sua tradução se estiver traduzindo manualmente o conteúdo!***
+Se quebrar a formatação do ficheiro yml, o que é muito fácil de fazer por engano, ele vai repor o ficheiro! ***Certifique-se de manter um backup local da sua tradução se estiver a traduzir manualmente o conteúdo!***
 
-É mais fácil traduzir o arquivo de idioma no site de tradução da comunidade, pois isso gerencia a formatação para você! Ele também sugere traduções automaticamente. Você pode encontrar isso aqui: https://crowdin.com/project/elitemobs
+É mais fácil traduzir o ficheiro de idioma no website de tradução da comunidade, pois este trata da formatação por si! Também sugere traduções automaticamente. Pode encontrá-lo aqui: https://crowdin.com/project/elitemobs
 
-Como lembrete, se você estiver traduzindo, se usar caracteres especiais como `&` para iniciar um valor de configuração, deve colocar esse valor entre aspas, como \"&cCool value\"! Caso contrário, o arquivo será corrompido e redefinirá seu progresso. Você pode usar um linter para verificar a validade do arquivo yml - basta colar o conteúdo do seu yml aqui: <https://www.yamllint.com/>
+Como lembrete, se estiver a traduzir, se usar caracteres especiais como `&` para iniciar um valor de configuração, deve colocar esse valor entre aspas como \"&cValor fixe\"! Caso contrário, o ficheiro será quebrado e vai repor o seu progresso. Pode usar um linter para verificar a validade do ficheiro yml - basta colar o conteúdo do seu yml aqui: <https://www.yamllint.com/>
 
 </details>
 
-# Perguntas Frequentes sobre Compatibilidade do EliteMobs com o BetterStructures
+# Perguntas Frequentes sobre Compatibilidade do EliteMobs e BetterStructures
 
-### Posso obter estruturas no BetterStructure com chefes do EliteMobs nelas?
+### Posso obter estruturas em BetterStructure com bosses do EliteMobs nelas?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Sim, os pacotes de santuários do BetterStructures são exatamente esse tipo de conteúdo. Você pode baixar os pacotes de santuários do [itch.io](https://magmaguy.itch.io/).
+Sim, os pacotes de santuário do BetterStructures são exatamente esse tipo de conteúdo. Pode baixar os pacotes de santuário de [itch.io](https://magmaguy.itch.io/).
 
 </details>
 
-### Por que os santuários são protegidos com WorldGuard e como posso evitar isso
+### Por que razão os santuários estão protegidos com o WorldGuard e como posso impedir isso?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-As estruturas de santuário do EliteMobs são protegidas com WorldGuard por padrão para garantir que os jogadores não construam engenhocas para abusar do sistema de combate do Minecraft dentro da área de luta.
+As estruturas de santuário do EliteMobs são protegidas com o WorldGuard por padrão para garantir que os jogadores não construam engenhocas para abusar do sistema de combate do Minecraft dentro da área de combate.
 
-As proteções são excluídas automaticamente quando o chefe é derrotado.
+As proteções são eliminadas automaticamente assim que o boss é derrotado.
 
-Cada santuário possui pontos de entrada que os jogadores devem cavar para encontrar se estiverem no subsolo.
+Cada santuário tem pontos de entrada que os jogadores devem escavar para encontrar se estiverem no subsolo.
 
-Se você não deseja usar as proteções do WorldGuard, pode desabilitá-las no arquivo de configuração config.yml do BetterStructures.
+Se não quiser usar as proteções do WorldGuard, pode desativá-las no ficheiro de configuração config.yml do BetterStructures.
 
 </details>
 
-### Por que os santuários estão gerando sem elites neles?
+### Por que razão os santuários estão a aparecer sem elites neles?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Isso pode acontecer se você instalar os santuários do BetterStructures antes de instalar o EliteMobs. Para corrigir isso, reimporta e reinstala os santuários em seu servidor **após** o EliteMobs ser instalado.
+Isso pode acontecer se instalar os santuários do BetterStructures antes de instalar o EliteMobs. Para corrigir isso, reimporte e reinstale os santuários no seu servidor **depois** de o EliteMobs estar instalado.
 
 </details>
 
-### Posso usar os santuários sem usar o EliteMobs
+### Posso usar os santuários sem usar o EliteMobs?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Os santuários foram feitos especificamente para combater os chefes que estão neles, mas se você só quiser as arenas de combate pela estética, pode executar os pacotes de santuários sem ter o EliteMobs instalado.
+Os santuários foram feitos especificamente para combater os bosses que estão neles, mas se quiser apenas as arenas de combate para a estética, pode simplesmente executar os pacotes de santuário sem ter o EliteMobs instalado.
 
 </details>
 
-# Perguntas Frequentes sobre Compatibilidade do EliteMobs com o FreeMinecraftModels
+# Perguntas Frequentes sobre Compatibilidade do EliteMobs e FreeMinecraftModels
 
 ### O FreeMinecraftModels é compatível com o EliteMobs?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
 Sim. O plugin FreeMinecraftModels foi feito especificamente para o EliteMobs e o EternalTD.
 
 </details>
 
-### Como instalo modelos personalizados do EliteMobs?
+### Como instalo os modelos personalizados do EliteMobs?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Você pode baixar os modelos personalizados para o EliteMobs de https://www.patreon.com/magmaguy e https://magmaguy.itch.io/. Depois de instalá-los, **você terá que mesclar o pacote de recursos** gerado pelo FreeMinecraftModels em sua pasta de saída com o pacote de recursos oficial do EliteMobs se você quiser usar o pacote de recursos oficial e distribuí-lo aos jogadores hospedando-o online.
+Pode baixar os modelos personalizados para o EliteMobs de https://www.patreon.com/magmaguy e https://magmaguy.itch.io/. Depois de os ter instalado, **terá de unir o pacote de recursos** gerado pelo FreeMinecraftModels na sua pasta de saída com o pacote de recursos oficial do EliteMobs se quiser usar o pacote de recursos oficial e distribuí-lo aos jogadores, alojando-o online.
 
 </details>
 
-### Como instalo modelos personalizados do EliteMobs?
+### Como instalo os modelos personalizados do EliteMobs?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Você pode baixar os modelos personalizados para o EliteMobs de https://www.patreon.com/magmaguy e https://magmaguy.itch.io/. Depois de instalá-los, **você terá que mesclar o pacote de recursos** gerado pelo FreeMinecraftModels em sua pasta de saída com o pacote de recursos oficial do EliteMobs se você quiser usar o pacote de recursos oficial e distribuí-lo aos jogadores hospedando-o online.
+Pode baixar os modelos personalizados para o EliteMobs de https://www.patreon.com/magmaguy e https://magmaguy.itch.io/. Depois de os ter instalado, **terá de unir o pacote de recursos** gerado pelo FreeMinecraftModels na sua pasta de saída com o pacote de recursos oficial do EliteMobs se quiser usar o pacote de recursos oficial e distribuí-lo aos jogadores, alojando-o online.
 
 </details>
 
-
-# Perguntas Frequentes sobre Compatibilidade do EliteMobs com o ResurrectionChest
+# Perguntas Frequentes sobre Compatibilidade do EliteMobs e ResurrectionChest
 
 ### O EliteMobs funciona com o ResurrectionChest?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
 Sim. O ResurrectionChest foi feito especificamente para o conteúdo do EliteMobs e é totalmente compatível.
 
 </details>
 
-# Perguntas Frequentes sobre Compatibilidade com Outros Plugins
+# Perguntas Frequentes sobre Compatibilidade com outros plugins
 
-### Posso usar o EliteMobs com um plugin semelhante ao MCMMO ou AureliumSkills
+### Posso usar o EliteMobs com um plugin semelhante ao MCMMO ou AureliumSkills?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Sim. Dito isso, você pode querer desabilitar a saúde adicional do sistema de prestígio do EliteMobs.
+Sim. Dito isto, poderá querer desativar a saúde bónus do sistema de prestígio do EliteMobs.
 
 </details>
 
-### Posso usar o EliteMobs com outro plugin de itens personalizados
+### Posso usar o EliteMobs com outro plugin de itens personalizados?
 
 <details>
 <summary>
-Informações
+Informação
 </summary>
 
-Sim. Se você quiser que os chefes deixem cair itens específicos daquele plugin, configure comandos ao morrer para executar e dar aos jogadores itens dessa forma. No entanto, não há uma maneira real de equilibrar o EliteMobs com qualquer sistema de itens que você esteja usando. As elites passam de 7 pontos de saúde para centenas de milhares de pontos de saúde e, como tal, outros plugins de itens serão extremamente poderosos ou incrivelmente fracos. O EliteMobs já possui um sistema de itens integrado e não requer nenhum plugin de itens externo.
+Sim. Se quiser que os bosses deixem cair itens específicos desse plugin, defina comandos na morte para executar e dar itens aos jogadores dessa forma. No entanto, não há uma forma real de equilibrar o EliteMobs com qualquer sistema de itens que esteja a usar. Os elites passam de ter 7 pontos de saúde para centenas de milhares de pontos de saúde e, como tal, outros plugins de itens serão extremamente poderosos ou incrivelmente fracos. O EliteMobs já tem um sistema de itens integrado e não requer nenhum plugin de itens externos.
 
 </details>
 
 # Outras Perguntas Frequentes
 
-### Executar um comando na morte de um Mob Elite ou dar loot/recompensas de outros plugins na morte de um Mob Elite?
+### Executar um comando na morte de um Elite Mob ou dar saque/recompensas de outros plugins na morte de um Elite Mob?
 
 [Informações disponíveis aqui.]($language$/elitemobs/creating_bosses.md&section=ondeathcommands)
 
-### Suporte ao Vault?
+### Suporte Vault?
 
 [Informações disponíveis aqui.]($language$/elitemobs/vault.md)
 
-### Marcadores do PlaceholderAPI?
+### Placeholders do PlaceholderAPI?
 
 [Informações disponíveis aqui.]($language$/elitemobs/placeholders.md)
 
-### Usar flags do WorldGuard para permitir o EliteMobs em alguns lugares, mas não em outros?
+### Usar flags do WorldGuard para permitir o EliteMobs em alguns lugares, mas não noutros?
 
 [Informações disponíveis aqui.]($language$/elitemobs/worldguard_flags.md)
 
-### Posso fazer com que 100% dos mobs que geram sejam Mobs Elite?
+### Posso fazer com que 100% dos mobs que aparecem sejam Elite Mobs?
 
-Esta é uma ideia terrível, mas você pode acessar o arquivo de configuração `MobCombatSettings.yml` e
-editar `eliteMobsSpawnPercentage` para definir a porcentagem de geração de Mobs Elite.
+Esta é uma péssima ideia, mas pode aceder ao ficheiro de configuração `MobCombatSettings.yml` e editar `eliteMobsSpawnPercentage` para definir a percentagem de aparecimento dos Elite Mobs.
 
 ### Posso criar poderes personalizados?
 
@@ -260,19 +253,17 @@ editar `eliteMobsSpawnPercentage` para definir a porcentagem de geração de Mob
 
 ### Posso criar encantamentos personalizados?
 
-Isso está na nossa lista de tarefas e deve estar disponível em breve, mas atualmente não é possível.
+Isso está na nossa lista de tarefas e deve chegar em breve, mas atualmente não é possível.
 
 ### Posso criar efeitos de poção personalizados?
 
-A única maneira de fazer isso é aprender Java e escrevê-los você mesmo. Nesse ponto, você também pode modificar o
-código-fonte do EliteMobs.
+A única maneira de fazer isso é aprender Java e escrevê-los sozinho. Nesse ponto, também pode modificar o código fonte do EliteMobs.
 
-### Como posso desabilitar as partículas do buraco de minhoca?
+### Como posso desativar as partículas de wormhole?
 
-Para desabilitar as partículas do buraco de minhoca, navegue até *~plugins\EliteMobs\Wormholes.yml* e, em seguida, localize `noParticlesMode` e
-altere o valor para `false`.
+Para desativar as partículas de wormhole, navegue para *~plugins\EliteMobs\Wormholes.yml* e depois encontre `noParticlesMode` e altere o valor para `false`.
 
-### Como posso editar o buraco de minhoca na geração do AG para teletransportar os jogadores para onde eu quiser?
+### Como posso editar o wormhole no AG spawn para teletransportar jogadores para onde eu quero?
 
 <div align="center">
 
@@ -280,36 +271,45 @@ altere o valor para `false`.
 
 </div>
 
-Você pode fazer isso abrindo *plugins\EliteMobs\wormholes\adventurers_guild_wormhole.yml*.
+Pode fazê-lo abrindo o *plugins\EliteMobs\wormholes\adventurers_guild_wormhole.yml*.
 
 Em seguida, encontre a seguinte configuração
-`location2: your_world_here,0.5,64,0.5,0,0`
-e altere os valores para sua localização preferida.
+`location2: o_seu_mundo_aqui,0.5,64,0.5,0,0`
+e altere os valores para a sua localização preferida.
+
+Lembre-se de fazer `/em reload` para que as alterações tenham efeito.
 
 ### Como posso desvincular itens?
 
-A única maneira de remover o soulbind de itens é usar Pergaminhos de Desvinculação. Leia mais sobre
-isso [aqui]($language$/elitemobs/soulbind.md).
+A única maneira de remover o soulbound dos itens é usar Desvincular Pergaminhos. Leia mais sobre isso [aqui]($language$/elitemobs/soulbind.md).
 
-### Como posso mesclar pacotes de recursos?
+### Como posso unir pacotes de recursos?
 
-É possível mesclar pacotes de recursos manualmente, mas recomendamos usar uma ferramenta online como [merge.elmakers](https://merge.elmakers.com/) para mesclar seus pacotes de recursos.
+É possível unir os pacotes de recursos manualmente, mas recomendamos o uso de uma ferramenta online como o [merge.elmakers](https://merge.elmakers.com/) para unir os seus pacotes de recursos.
 
-### Quais são os marcadores de comando do EliteMobs?
+### Quais são os placeholders de comando do EliteMobs?
 
-| Marcador |          Detalhes           |
+| Placeholder |          Detalhes           |
 | --- |:--------------------------:|
-| `$player` | Display name of the player |
-| `$bossName` |  Display name of the boss  |
-| `$bossLevel` |     Level of the boss      |
+| `$player` | Nome de exibição do jogador |
+| `$bossName` |  Nome de exibição do boss  |
+| `$bossLevel` |     Nível do boss      |
 
-### O que devo fazer para desabilitar o recurso de pacote de recursos obrigatório?
+### O que devo fazer para desativar o pacote de recursos forçado?
 
-Esta configuração está realmente localizada no seu arquivo `server.properties`. Normalmente, você encontra este arquivo no diretório raiz do seu servidor. Depois de abrir o arquivo, localize a configuração `require-resource-pack` e altere o valor para `false` para desabilitar o recurso de pacote de recursos obrigatório.
+Esta configuração está realmente localizada no seu ficheiro `server.properties`. Normalmente, pode encontrar este ficheiro no diretório raiz dos seus servidores. Depois de abrir o ficheiro, encontre a configuração `require-resource-pack` e altere o valor para `false` para desativar o pacote de recursos forçado.
 
-### Como posso desabilitar eventos?
+### Como posso desativar os eventos?
 
-Se você deseja desabilitar eventos como o goblin de armas, o goblin de amuletos etc., pode abrir *~plugins\EliteMobs\events.yml* e, em seguida, localizar as configurações `actionEventsEnabled`, `timedEventsEnabled` e defini-las como `false`.
+Se quiser desativar eventos como o goblin de armas, goblin de amuletos, etc., pode abrir *~plugins\EliteMobs\events.yml*, em seguida, encontrar as configurações `actionEventsEnabled`, `timedEventsEnabled` e defini-las como `false`.
 
+### Como posso editar um mundo de dungeon ou o mundo da Guilda dos Aventureiros?
 
+A partir do EliteMobs 9, o EliteMobs já não depende do WorldGuard para proteção de dungeons e conteúdo. Para contornar temporariamente essa proteção, use o comando `/em protection bypass`.
 
+Se quiser desativar permanentemente a proteção para uma dungeon específica, siga estes passos:
+
+1. Navegue até *plugins/EliteMobs/content_packages/*.
+2. Encontre o ficheiro *dungeon_config.yml* para a dungeon que deseja modificar.
+3. Abra o ficheiro de configuração e encontre a configuração `protect:`.
+4. Altere o valor para `false` para desativar a proteção.

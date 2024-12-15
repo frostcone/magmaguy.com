@@ -1,21 +1,20 @@
-```markdown
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# アリーナの作成
+# Criar arenas
 
 <div align="center">
 
 ### isEnabled
 
-アリーナを有効にするかどうかを設定します。
+Define se a arena está ativa.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-|`isEnabled`| [Boolean](#boolean) | `true`    |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+|`isEnabled`   | [Booleano](#boolean) | `true`    |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -32,20 +31,20 @@ isEnabled: true
 ### arenaName
 
 
-アリーナの名称を設定します。
+Define o nome da arena.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-|`arenaName`| [String](#string) | none    |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+|`arenaName`   | [String](#string) | nenhum  |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
-arenaName: Bedrock Arena
+arenaName: Arena Bedrock
 ```
 
 <div align="center">
@@ -62,15 +61,15 @@ arenaName: Bedrock Arena
 
 ### corner1
 
-アリーナの最初のコーナーを設定します。
+Define o primeiro canto da arena.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-|`corner1`| [Location](#serialized_location) | none    |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+|`corner1`   | [Localização](#serialized_location) | nenhum  |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -80,7 +79,7 @@ corner1: my_arena_world,10,50,-10,0,0
 
 <div align="center">
 
-この画像では、`corner1` は*緑色の羊毛*で、`corner2` は*赤い羊毛*で示されています。この設定では、その間の領域がアリーナとして指定され、*黄色の羊毛*で示されています。
+Nesta imagem, `corner1` é representado por *lã verde* e `corner2` é representado por *lã vermelha*. Esta configuração designa a área entre eles como a arena, representada por *lã amarela*.
 
 ![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
 
@@ -94,15 +93,15 @@ corner1: my_arena_world,10,50,-10,0,0
 
 ### corner2
 
-アリーナの2番目のコーナーを設定します。`corner1` とは対角線上にある必要があります。
+Define o segundo canto da arena, que deve ser diametralmente oposto a `corner1`.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `corner2` | [Location](#serialized_location) | none    |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `corner2`  | [Localização](#serialized_location) | nenhum  |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -112,7 +111,7 @@ corner2: my_arena_world,-10,50,10,0,0
 
 <div align="center">
 
-この画像では、`corner1` は*緑色の羊毛*で、`corner2` は*赤い羊毛*で示されています。この設定では、その間の領域がアリーナとして指定され、*黄色の羊毛*で示されています。
+Nesta imagem, `corner1` é representado por *lã verde* e `corner2` é representado por *lã vermelha*. Esta configuração designa a área entre eles como a arena, representada por *lã amarela*.
 
 ![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
 
@@ -126,15 +125,15 @@ corner2: my_arena_world,-10,50,10,0,0
 
 ### startLocation
 
-アリーナの開始位置を設定します。
+Define a localização de início da arena.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `startLocation` | [Location](#serialized_location) | none    |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `startLocation` | [Localização](#serialized_location) | nenhum  |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -150,15 +149,15 @@ startLocation: my_arena_world,1,50,1,0,0
 
 ### exitLocation
 
-アリーナの終了位置を設定します。
+Define a localização de saída da arena.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `exitLocation` | [Location](#serialized_location) | none    |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `exitLocation` | [Localização](#serialized_location) | nenhum  |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -174,15 +173,15 @@ exitLocation: my_world,1,50,1,0,0
 
 ### waveCount
 
-アリーナのウェーブ数を設定します。
+Define a quantidade de ondas que a arena tem.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `waveCount` | [Integer](#integer) | none    |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `waveCount` | [Inteiro](#integer) | nenhum |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -198,15 +197,15 @@ waveCount: 10
 
 ### delayBetweenWaves
 
-ウェーブ間の遅延時間（秒）を設定します。
+Define o atraso, em segundos, entre as ondas.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `delayBetweenWaves` | [Integer](#integer) | `0`    |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `delayBetweenWaves` | [Inteiro](#integer) | `0`    |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -222,25 +221,25 @@ delayBetweenWaves: 5
 
 ### spawnPoints
 
-アリーナボスがスポーンする位置を設定します。
+Define as localizações de surgimento dos chefes da arena.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `spawnPoints` | [String List](#string_list) [1] |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `spawnPoints` | [Lista de Strings](#string_list) [1] |  nenhum  |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
 spawnPoints:
-- name=north:location=my_arena_world,219.5,71,273.5
-- name=south:location=my_arena_world,219.5,71,316.5
-- name=west:location=my_arena_world,197.5,71,295.5
-- name=east:location=my_arena_world,240.5,71,295.5
-- name=center:location=my_arena_world,219.5,71,295.5
+- name=norte:location=my_arena_world,219.5,71,273.5
+- name=sul:location=my_arena_world,219.5,71,316.5
+- name=oeste:location=my_arena_world,197.5,71,295.5
+- name=este:location=my_arena_world,240.5,71,295.5
+- name=centro:location=my_arena_world,219.5,71,295.5
 ```
 
 </div>
@@ -251,28 +250,28 @@ spawnPoints:
 
 ### bossList
 
-アリーナのウェーブ中に登場するボスのリストを設定します。EliteMobsアリーナでは、Mythic Mobsのアリーナ内でのスポーンもサポートされています。
+Define a lista de chefes que aparecem durante as ondas da arena. As Arenas do EliteMobs suportam o surgimento de Mythic Mobs nas arenas.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `bossList` | [String List](#string_list) [2] |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `bossList` | [Lista de Strings](#string_list) [2] |  nenhum   |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
 bossList:
-- wave=1:spawnPoint=north:boss=my_boss_wave_1.yml
-- wave=1:spawnPoint=south:boss=my_boss_wave_1.yml
-- wave=2:spawnPoint=center:boss=my_mythicmobs_boss:mythicmob=true:level=10
+- wave=1:spawnPoint=norte:boss=my_boss_wave_1.yml
+- wave=1:spawnPoint=sul:boss=my_boss_wave_1.yml
+- wave=2:spawnPoint=centro:boss=my_mythicmobs_boss:mythicmob=true:level=10
 ```
 
-この例では、ウェーブ1で、北のスポーンポイントにボスが1体、南のスポーンポイントにボスが1体スポーンします。次に、ウェーブ2で、レベル10のミシックボスが、中央のポイントにスポーンします。
+Neste exemplo, a onda 1 fará surgir um chefe no ponto de surgimento norte e um chefe no ponto de surgimento sul. Então, na onda 2, um chefe mítico surgirá, no nível 10, no ponto central.
 
-EliteMobsボスのレベルも強制的に設定できますが、設定ファイルでレベルを設定することをお勧めします。
+Observe que também pode forçar um nível para os chefes do EliteMobs, mas recomenda-se que defina o seu nível no ficheiro de configuração.
 
 </div>
 
@@ -282,15 +281,15 @@ EliteMobsボスのレベルも強制的に設定できますが、設定ファ�
 
 ### rawArenaReward
 
-ウェーブの最後に与えられる報酬を設定します。
+Define as recompensas dadas no final das ondas.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `rawArenaReward` | [ユニバーサルEliteMobs loot table]($language$/elitemobs/loot_tables.md) |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `rawArenaReward` | [Tabela de saque universal do EliteMobs]($language$/elitemobs/loot_tables.md) |  nenhum   |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -311,15 +310,15 @@ rawArenaReward:
 
 ### minimumPlayerCount
 
-アリーナを開始するまでに必要なプレイヤーの最小数を設定します。
+Define a quantidade mínima de jogadores que uma arena deve ter antes de iniciar.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `minimumPlayerCount` | [Integer](#integer) |   `1`   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `minimumPlayerCount` | [Inteiro](#integer) |   `1`   |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -335,15 +334,15 @@ minimumPlayerCount: 1
 
 ### maximumPlayerCount
 
-アリーナに参加できるプレイヤーの最大数を設定します。
+Define a quantidade máxima de jogadores que uma arena pode ter.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `maximumPlayerCount` | [Integer](#integer) |  `100`  |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `maximumPlayerCount` | [Inteiro](#integer) |  `100`  |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -359,22 +358,22 @@ maximumPlayerCount: 100
 
 ### arenaMessages
 
-ウェーブ間で実行されるメッセージを設定します。
+Define as mensagens que são exibidas entre as ondas.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `arenaMessages` | Special [3] |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `arenaMessages` | Especial [3] |  nenhum   |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
 arenaMessages:
-- wave=1:message="&a[Arena Announcer] &fTime for wave one!"
-- wave=2:message="&a[Arena Announcer] &fWow, wave two already."
+- wave=1:message="&a[Anunciador da Arena] &fHora da onda um!"
+- wave=2:message="&a[Anunciador da Arena] &fUau, já na onda dois."
 ```
 
 <div align="center">
@@ -391,15 +390,15 @@ arenaMessages:
 
 ### cylindricalArena
 
-アリーナが円柱形を使用するかどうかを設定します（デフォルトは直方体です）。
+Define se a arena utiliza uma forma cilíndrica (o padrão é cuboide).
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `cylindricalArena` | [Boolean](#boolean) |  `false`   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `cylindricalArena` | [Booleano](#boolean) |  `false`   |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -415,15 +414,15 @@ cylindricalArena: false
 
 ### permission
 
-アリーナを使用するために必要な権限を設定します。
+Define a permissão necessária para utilizar a arena.
 
-| キー       |      値       | デフォルト |
-|-----------|:-----------------:|:-------:|
-| `permission` | [String](#integer) |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `permission` | [String](#integer) |  nenhum   |
 
 <details> 
 
-<summary><b>例</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -440,24 +439,24 @@ permission: mypermission.arena
 </div>
 
 
-## Special [1] 
-Spawn points: Uses the following format: `name=pointName:location=world_name,x,y,z`.
+## Especial [1] 
+Pontos de surgimento: utiliza o seguinte formato: `name=nomeDoPonto:location=nome_do_mundo,x,y,z`.
 
-## Special [2] 
-Boss list: Uses the following format: `wave=x:spawnPoint=Y:boss=bossfilename.yml`.
+## Especial [2] 
+Lista de chefes: utiliza o seguinte formato: `wave=x:spawnPoint=Y:boss=nomeDoFicheiroDoChefe.yml`.
 
-## Special [3] 
-Arena messages: Uses the following format: `wave=X:message=your message here`.
+## Especial [3] 
+Mensagens da arena: utiliza o seguinte formato: `wave=X:message=sua mensagem aqui`.
 
 <details> 
 
-<summary align="center"><b>Arena Config Example</b></summary>
+<summary align="center"><b>Exemplo de Configuração da Arena</b></summary>
 
 <div align="left">
 
 ```yml
 isEnabled: true
-arenaName: Example Arena
+arenaName: Arena de Exemplo
 corner1: my_arena_world,0,0,0,0,0
 corner2: my_arena_world,50,50,50,0,0
 startLocation: my_arena_world,25,0,25,0,0
@@ -465,23 +464,23 @@ exitLocation: my_minecraft_world,234,44,245,0,0
 waveCount: 5
 delayBetweenWaves: 5
 spawnPoints:
-  - name=north:location=my_arena_world,40.5,0,0
-  - name=south:location=my_arena_world,10.5,0,0
-  - name=west:location=my_arena_world,0,0,40.5
-  - name=east:location=my_arena_world,0,0,10.5
-  - name=center:location=my_arena_world,25.5,0,25.5
+  - name=norte:location=my_arena_world,40.5,0,0
+  - name=sul:location=my_arena_world,10.5,0,0
+  - name=oeste:location=my_arena_world,0,0,40.5
+  - name=este:location=my_arena_world,0,0,10.5
+  - name=centro:location=my_arena_world,25.5,0,25.5
 bossList:
-  - wave=1:spawnPoint=north:boss=example_arena_wave_1_mob.yml
-  - wave=1:spawnPoint=center:boss=example_arena_wave_1_mob.yml
-  - wave=1:spawnPoint=south:boss=example_arena_wave_1_mob.yml
-  - wave=2:spawnPoint=center:boss=example_arena_wave_2_mob.yml
-  - wave=3:spawnPoint=east:boss=example_arena_wave_3_mob.yml
-  - wave=3:spawnPoint=west:boss=example_arena_wave_3_mob.yml
-  - wave=4:spawnPoint=center:boss=example_arena_wave_4_mob.yml
-  - wave=4:spawnPoint=center:boss=example_arena_wave_4_mob.yml
-  - wave=5:spawnPoint=center:boss=example_arena_wave_5_mob.yml
-  - wave=5:spawnPoint=south:boss=example_arena_wave_5_mob.yml
-  - wave=5:spawnPoint=west:boss=example_arena_wave_5_mob.yml
+  - wave=1:spawnPoint=norte:boss=example_arena_wave_1_mob.yml
+  - wave=1:spawnPoint=centro:boss=example_arena_wave_1_mob.yml
+  - wave=1:spawnPoint=sul:boss=example_arena_wave_1_mob.yml
+  - wave=2:spawnPoint=centro:boss=example_arena_wave_2_mob.yml
+  - wave=3:spawnPoint=este:boss=example_arena_wave_3_mob.yml
+  - wave=3:spawnPoint=oeste:boss=example_arena_wave_3_mob.yml
+  - wave=4:spawnPoint=centro:boss=example_arena_wave_4_mob.yml
+  - wave=4:spawnPoint=centro:boss=example_arena_wave_4_mob.yml
+  - wave=5:spawnPoint=centro:boss=example_arena_wave_5_mob.yml
+  - wave=5:spawnPoint=sul:boss=example_arena_wave_5_mob.yml
+  - wave=5:spawnPoint=oeste:boss=example_arena_wave_5_mob.yml
 rawArenaReward:
   - currencyAmount=5:wave=1
   - currencyAmount=10:wave=2
@@ -492,11 +491,11 @@ rawArenaReward:
 minimumPlayerCount: 1
 maximumPlayerCount: 3
 arenaMessages:
-  - wave=1:message=&d[Arena NPC] &fWow! Wave 1!
-  - wave=2:message=&d[Arena NPC] &fAmazing it is wave 2!
-  - wave=3:message=&d[Arena NPC] &fWave 3 is now on!
-  - wave=4:message=&d[Arena NPC] &fWave 4 already!
-  - wave=5:message=&d[Arena NPC] &fWell it is all over after this one.
+  - wave=1:message=&d[NPC da Arena] &fUau! Onda 1!
+  - wave=2:message=&d[NPC da Arena] &fIncrível, já é a onda 2!
+  - wave=3:message=&d[NPC da Arena] &fOnda 3 já começou!
+  - wave=4:message=&d[NPC da Arena] &fJá na onda 4!
+  - wave=5:message=&d[NPC da Arena] &fBem, já está tudo acabado depois desta.
 cylindricalArena: false
 permission: arena.mypermission
 ```
@@ -506,51 +505,51 @@ permission: arena.mypermission
 
 <details> 
 
-<summary align="center"><b>Breakdown of the example</b></summary>
+<summary align="center"><b>Análise do exemplo</b></summary>
 
 <div align="left">
 
-Let us go over this example from the top and explain what this arena configuration does.
+Vamos analisar este exemplo de cima para baixo e explicar o que esta configuração da arena faz.
 
-First the arena is enabled with `isEnabled`, and we can see that it is called Example Arena using the `arenaName` setting. The name will be shown when you interact with the arena NPC (we talk about how to make an arena NPC further down) that will allow players to join the arena. corner1 and corner2 define the arena size. These corners should be at the opposite sides of each other in the area that you plan to use for the arena.
+Primeiro, a arena está ativa com `isEnabled`, e podemos ver que se chama Arena de Exemplo através da configuração `arenaName`. O nome será mostrado quando interagir com o NPC da arena (falaremos sobre como fazer um NPC da arena mais abaixo) que permitirá aos jogadores juntar-se à arena. corner1 e corner2 definem o tamanho da arena. Estes cantos devem estar nos lados opostos um do outro na área que planeia utilizar para a arena.
 
-`startLocation` is where the players will spawn in when joining the arena, in the example that would be in the center of the arena in the world my_arena_world. `exitLocation` is where the players will be teleported after they fail or finish the arena. In this case it would be the world my_minecraft_world and the coordinates in the example.
+`startLocation` é onde os jogadores surgirão ao juntar-se à arena, no exemplo seria no centro da arena no mundo my_arena_world. `exitLocation` é para onde os jogadores serão teletransportados após falharem ou concluírem a arena. Neste caso seria para o mundo my_minecraft_world e as coordenadas no exemplo.
 
-`waveCount` simply sets the amount of waves that the arena will last for. In this case that would be 5 waves. If they players manage to survive all 5 waves they have managed to survive the arena. `delayBetweenWaves` will set the amount of seconds before the next wave starts. In our example players would have 5 seconds to prepare before the next wave starts.
+`waveCount` simplesmente define a quantidade de ondas que a arena durará. Neste caso seriam 5 ondas. Se os jogadores conseguirem sobreviver a todas as 5 ondas, conseguiram sobreviver à arena. `delayBetweenWaves` irá definir a quantidade de segundos antes do início da próxima onda. No nosso exemplo, os jogadores teriam 5 segundos para se prepararem antes do início da próxima onda.
 
-`spawnPoints` set the locations where we can have our mobs spawn. We can make as many as we want and name them as we want. In the example we have decided to make 5 spawn points and name them north, south, center, east and west.
+`spawnPoints` define as localizações onde podemos ter os nossos mobs a surgir. Podemos fazer quantos quisermos e dar-lhes o nome que quisermos. No exemplo, decidimos criar 5 pontos de surgimento e dar-lhes os nomes norte, sul, centro, este e oeste.
 
-`bossList` is where we define which boss should spawn at what wave and at which location. In the example wave 1 will have 3 bosses spawning from the spawn locations that we named north, center and south. All three are set to use the same boss file but we could have used different boss files for each one.
+`bossList` é onde definimos qual chefe deve surgir em qual onda e em qual localização. No exemplo, a onda 1 terá 3 chefes a surgir das localizações de surgimento que nomeámos norte, centro e sul. Todos os três estão definidos para utilizar o mesmo ficheiro de chefe, mas podíamos ter utilizado ficheiros de chefe diferentes para cada um.
 
-`rawArenaReward` sets the rewards that will be handed out after a player manages to survive/beat a wave. As we can see in the example beating wave 1 will reward the player with 5 elite coins. If they manage to survive the rest of the waves and then beat wave 5, they will be rewarded with 25 elite coins and a 50% chance to get a level 5 MagmaGuy's Toothpick.
+`rawArenaReward` define as recompensas que serão entregues depois de um jogador conseguir sobreviver/derrotar uma onda. Como podemos ver no exemplo, derrotar a onda 1 irá recompensar o jogador com 5 moedas de elite. Se conseguirem sobreviver ao resto das ondas e depois derrotarem a onda 5, serão recompensados com 25 moedas de elite e 50% de hipóteses de obterem uma Picareta do MagmaGuy de nível 5.
 
-`minimumPlayerCount` sets the minimum required amount of players needed before the arena will start. In our example this setting is set to 1, so only one player is needed for the arena to starts. `maximumPlayerCount` sets the maximum amount of players that can participate in the arena. In our example this setting is set to 3, meaning that if more than 3 players try to participate in the arena then the arena will not start until there are 3 players or less.
+`minimumPlayerCount` define a quantidade mínima necessária de jogadores antes do início da arena. No nosso exemplo, esta configuração está definida como 1, portanto, apenas um jogador é necessário para o início da arena. `maximumPlayerCount` define a quantidade máxima de jogadores que podem participar na arena. No nosso exemplo, esta configuração está definida como 3, o que significa que se mais de 3 jogadores tentarem participar na arena, a arena não começará até haver 3 jogadores ou menos.
 
-`arenaMessages` lets you add some flavor text that will be displayed in the chat at the start of the defined waves. In our example we have decided to display a short message at the start of each wave. We have also decided to include the NPC name at the start of each message giving the illusion that the text is spoken dialogue by the announcer (arena master).
+`arenaMessages` permite-lhe adicionar algum texto de apresentação que será exibido no chat no início das ondas definidas. No nosso exemplo, decidimos exibir uma pequena mensagem no início de cada onda. Também decidimos incluir o nome do NPC no início de cada mensagem, dando a ilusão de que o texto é um diálogo falado pelo anunciador (mestre da arena).
 
-`cylindricalArena` this setting will let us toggle if the defined area that we have set with `corner1` and `corner2` should be a cylindrical shape instead of a cuboid one. In our example we have set this to `false` meaning that the example arena is a cuboid shape.
+`cylindricalArena` esta configuração irá permitir-nos alternar se a área definida que definimos com `corner1` e `corner2` deve ser uma forma cilíndrica em vez de um cuboide. No nosso exemplo, definimos isto como `false`, o que significa que a arena de exemplo é uma forma cuboide.
 
-`permission` lets us set a permission that the players will need to have to be able to join/start the arena. In our example the players will need the `arena.mypermission` permission to be able to use the arena.
+`permission` permite-nos definir uma permissão que os jogadores precisarão de ter para poderem juntar-se/iniciar a arena. No nosso exemplo, os jogadores precisarão da permissão `arena.mypermission` para poderem utilizar a arena.
 
 </div>
 
 </details>
 
-## Creating the Arena NPC
+## Criar o NPC da Arena
 
 <div align="center">
 
 ### isEnabled
 
-Sets if the NPC is enabled.
+Define se o NPC está ativo.
 
-| Key       |      Values       | Default |
-|-----------|:-----------------:|:-------:|
-| `isEnabled` | [Boolean](#boolean) | `true`  |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `isEnabled` | [Booleano](#boolean) | `true`  |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -566,15 +565,15 @@ isEnabled: true
 
 ### name
 
-Sets the display name of the NPC.
+Define o nome de exibição do NPC.
 
-| Key       |      Values       | Default |
-|-----------|:-----------------:|:-------:|
-| `name` | [String](#string) |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `name` | [String](#string) |  nenhum  |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -596,20 +595,20 @@ name: "&aGladius"
 
 ### role
 
-Sets role display under the NPC name.
+Define a função exibida por baixo do nome do NPC.
 
-| Key       |      Values       | Default |
-|-----------|:-----------------:|:-------:|
-| `role` | [String](#string) |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `role` | [String](#string) |  nenhum   |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
-role: "&c<Arena Master>"
+role: "&c<Mestre da Arena>"
 ```
 <div align="center">
 
@@ -625,15 +624,15 @@ role: "&c<Arena Master>"
 
 ### profession
 
-Sets the MineCraft profession of the NPC.
+Define a profissão do NPC no MineCraft.
 
-| Key       |      Values       | Default |
-|-----------|:-----------------:|:-------:|
-| `profession` | [Profession](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `profession` | [Profissão](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) |  nenhum   |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -644,7 +643,7 @@ profession: ARMORER
 <div align="center">
 
 
-*Will be overridden if a `diguise` is used.*
+*Será substituído se for utilizado um `disfarce`.*
 
 ![create_arena_npc_profession.jpg](../../../img/wiki/create_arena_npc_profession.jpg)
 
@@ -658,15 +657,15 @@ profession: ARMORER
 
 ### spawnLocation
 
-Sets the spawn location of the NPC.
+Define a localização de surgimento do NPC.
 
-| Key       |      Values       | Default |
-|-----------|:-----------------:|:-------:|
-| `spawnLocation` | [Location](#serialized_location) |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `spawnLocation` | [Localização](#serialized_location) |  nenhum   |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -682,22 +681,22 @@ spawnLocation: my_world,1.5,50,1.5,-108,0
 
 ### greetings
 
-Sets greeting dialog for the NPC.
+Define o diálogo de saudação do NPC.
 
-| Key       |      Values       | Default |
-|-----------|:-----------------:|:-------:|
-| `greetings` | [String List](#string_list) |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `greetings` | [Lista de Strings](#string_list) |  nenhum   |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
 greetings:
-- Welcome to the Arena!
-- The Arena welcomes you!
+- Bem-vindo à Arena!
+- A Arena dá-lhe as boas-vindas!
 ```
 
 <div align="center">
@@ -714,22 +713,22 @@ greetings:
 
 ### dialog
 
-Sets dialog when the players interact with the NPC.
+Define o diálogo quando os jogadores interagem com o NPC.
 
-| Key       |      Values       | Default |
-|-----------|:-----------------:|:-------:|
-| `dialog` | [String List](#string_list) |  none   |
+| Chave        |      Valores       | Padrão |
+|--------------|:-----------------:|:-------:|
+| `dialog` | [Lista de Strings](#string_list) |  nenhum   |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
 dialog:
-- Ready for a challenge?
-- Face the Arena?
+- Pronto para um desafio?
+- Enfrentar a Arena?
 ```
 
 <div align="center">
@@ -746,22 +745,22 @@ dialog:
 
 ### farewell
 
-Sets the goodbye dialog for the NPC.
+Define o diálogo de despedida do NPC.
 
-| Key       |           Values            | Default |
-|-----------|:---------------------------:|:-------:|
-| `farewell` | [String List](#string_list) |  none   |
+| Chave        |           Valores            | Padrão |
+|--------------|:---------------------------:|:-------:|
+| `farewell` | [Lista de Strings](#string_list) |  nenhum   |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
 farewell:
-- Bye.
-- Return with your shield, or on it!
+- Adeus.
+- Volte com o seu escudo, ou sobre ele!
 ```
 
 <div align="center">
@@ -770,14 +769,14 @@ farewell:
 
 <div align="center">
 
-*If a string is too long you can use \n to separate the string into multiples lines.*
+*Se uma string for demasiado longa, pode utilizar \n para separar a string em várias linhas.*
 
 <div align="left">
 
 ```yml
 farewell:
-- Bye.
-- Return with your\nshield, or on it!
+- Adeus.
+- Volte com o seu\nescudo, ou sobre ele!
 ```
 </div>
 
@@ -795,15 +794,15 @@ farewell:
 
 ### canTalk
 
-Sets the goodbye dialog for the NPC.
+Define o diálogo de despedida do NPC.
 
-| Key       |           Values            | Default |
-|-----------|:---------------------------:|:-------:|
-| `canTalk` | [Boolean](#boolean) | `true`  |
+| Chave        |           Valores            | Padrão |
+|--------------|:---------------------------:|:-------:|
+| `canTalk` | [Booleano](#boolean) | `true`  |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -819,15 +818,15 @@ canTalk: true
 
 ### activationRadius
 
-Sets the radius when the NPC should start talking.
+Define o raio quando o NPC deve começar a falar.
 
-| Key       |           Values            | Default |
-|-----------|:---------------------------:|:-------:|
-| `activationRadius` | [Double](#double) |  `3.0`  |
+| Chave        |           Valores            | Padrão |
+|--------------|:---------------------------:|:-------:|
+| `activationRadius` | [Duplo](#double) |  `3.0`  |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -843,15 +842,15 @@ activationRadius: 3.0
 
 ### interactionType
 
-Sets the type of interaction the NPC will do.
+Define o tipo de interação que o NPC fará.
 
-| Key       |           Values            | Default |
-|-----------|:---------------------------:|:-------:|
-| `interactionType` | Special [4] |  `ARENA_MASTER`  |
+| Chave        |           Valores            | Padrão |
+|--------------|:---------------------------:|:-------:|
+| `interactionType` | Especial [4] |  `ARENA_MASTER`  |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -867,15 +866,15 @@ interactionType: ARENA_MASTER
 
 ### disguise
 
-Sets the custom NPC disguise.
+Define o disfarce personalizado do NPC.
 
-| Key       |           Values            | Default |
-|-----------|:---------------------------:|:-------:|
-| `disguise` | [Disguise]($language$/elitemobs/libsdisguises.md) |  none   |
+| Chave        |           Valores            | Padrão |
+|--------------|:---------------------------:|:-------:|
+| `disguise` | [Disfarce]($language$/elitemobs/libsdisguises.md) |  nenhum   |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -897,15 +896,15 @@ disguise: ZOMBIE
 
 ### arena
 
-Sets which arena the players will be teleported to.
+Define para qual arena os jogadores serão teletransportados.
 
-| Key       |           Values            | Default |
-|-----------|:---------------------------:|:-------:|
-| `arena` | [Filename](#filename) |  none   |
+| Chave        |           Valores            | Padrão |
+|--------------|:---------------------------:|:-------:|
+| `arena` | [Nome de Ficheiro](#filename) |  nenhum   |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -921,15 +920,15 @@ arena: my_arena.yml
 
 ### teleportLocation
 
-Sets where the players should be teleported after interacting with the NPC. This setting is usually used to teleport players to a dedicated lobby type area of the arena where they can start the arena challenge or wait for other players to finish going through the arena. 
+Define para onde os jogadores devem ser teletransportados após interagirem com o NPC. Esta configuração é normalmente utilizada para teletransportar jogadores para uma área dedicada do tipo lobby da arena, onde podem iniciar o desafio da arena ou esperar que outros jogadores terminem de passar pela arena. 
 
-| Key       |        Values         | Default |
-|-----------|:---------------------:|:-------:|
-| `teleportLocation` | [Location](#location) |  none   |
+| Chave        |        Valores         | Padrão |
+|--------------|:---------------------:|:-------:|
+| `teleportLocation` | [Localização](#location) |  nenhum   |
 
 <details> 
 
-<summary><b>Example</b></summary>
+<summary><b>Exemplo</b></summary>
 
 <div align="left">
 
@@ -947,62 +946,57 @@ teleportLocation: my_arena_world,10,50,10,0,0
 
 <details>
 
-<summary align="center"><b>Arena Config Example</b></summary>
+<summary align="center"><b>Exemplo de Configuração da Arena</b></summary>
 
 <div align="left">
 
 ```yml
 isEnabled: true
-name: Example NPC
-role: <Arena Master>
+name: NPC de Exemplo
+role: <Mestre da Arena>
 profession: ARMORER
 spawnLocation: my_minecraft_world,233,44,245,0,0
 greetings:
-  - Welcome to the Arena!
+  - Bem-vindo à Arena!
 dialog:
-  - Ready to enter the Arena?
+```
+```yml
+- Pronto para entrar na Arena?
 farewell:
-  - Bye!
+  - Adeus!
 canTalk: true
 activationRadius: 3.0
 interactionType: ARENA_MASTER
 disguise: ZOMBIE
 arena: example_arena.yml
 ```
-This example shows a basic Arena NPC that will spawn in my_minecraft_world with a zombie disguise. Players can interact with this NPC to challenge the Example Arena.
+Este exemplo mostra um NPC básico da Arena que surgirá em my_minecraft_world com um disfarce de zombie. Os jogadores podem interagir com este NPC para desafiar a Arena de Exemplo.
 
 </div>
 
 </details>
 
-## Special [4] 
-The following is the list of valid NPC interaction types:
+## Especial [4] 
+A seguir, está a lista de tipos de interação válidos do NPC:
 
-| Type | Description |
+| Tipo | Descrição |
 | --- | :-: |
-| `GUILD_GREETER` | Open the adventurer's guild menu |
-| `CHAT` | Right-clicking cycles through the `dialog` |
-| `CUSTOM_SHOP` | Opens the custom shop menu |
-| `PROCEDURALLY_GENERATED_SHOP` | Opens the procedurally generated shop |
-| `BAR` | Opens the bar menu |
-| `ARENA` | Opens the arena menu |
-| `QUEST_GIVER` | Opens the procedurally generated quests menu |
-| `CUSTOM_QUEST_GIVER` | Opens the quest menu for a specific quest set in `questFilenames` |
-| `NONE` | No interactions |
-| `SELL` | Opens the sell menu |
-| `TELEPORT_BACK` | Teleports players back to the last non-elitemobs world location they were |
-| `SCRAPPER` | Opens the scrap menu |
-| `SMELTER` | Opens the smelt menu |
-| `REPAIRMAN` | Opens the repair menu |
-| `ENHANCER` | Opens the item enhancements menu |
-| `REFINER` | Opens the refiner menu |
-| `UNBINDER` | Opens the unbind menu |
-| `ARENA_MASTER` | Opens the arena menu for the arena set in `arenaFilename` |
-| `COMMAND` | Runs the command set in `command` |
-
-*For more information on what the SCRAPPER and similar interaction types do click [here]($language$/elitemobs/item_upgrade_system.md).*
-
-```
-
-
-
+| `GUILD_GREETER` | Abre o menu da guilda dos aventureiros |
+| `CHAT` | Clicar com o botão direito do rato percorre o `dialog` |
+| `CUSTOM_SHOP` | Abre o menu da loja personalizada |
+| `PROCEDURALLY_GENERATED_SHOP` | Abre a loja gerada proceduralmente |
+| `BAR` | Abre o menu do bar |
+| `ARENA` | Abre o menu da arena |
+| `QUEST_GIVER` | Abre o menu de missões geradas proceduralmente |
+| `CUSTOM_QUEST_GIVER` | Abre o menu de missões para um conjunto de missões específico definido em `questFilenames` |
+| `NONE` | Sem interações |
+| `SELL` | Abre o menu de venda |
+| `TELEPORT_BACK` | Teletransporta os jogadores de volta para a última localização do mundo que não era do elitemobs em que estavam |
+| `SCRAPPER` | Abre o menu de sucata |
+| `SMELTER` | Abre o menu de fundição |
+| `REPAIRMAN` | Abre o menu de reparação |
+| `ENHANCER` | Abre o menu de melhorias de itens |
+| `REFINER` | Abre o menu de refinador |
+| `UNBINDER` | Abre o menu de desvinculação |
+| `ARENA_MASTER` | Abre o menu da arena para a arena definida em `arenaFilename` |
+| `COMMAND` | Executa o comando definido em `command` |

@@ -1,32 +1,33 @@
+```markdown
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# Criar Bosses Personalizados
+# Criar bosses personalizados
 
 # Antes de começar
 
-## Para onde vão os arquivos de boss?
+## Onde é que os ficheiros de boss ficam guardados?
 
-Os arquivos de boss vão para a pasta de configuração `~/plugins/EliteMobs/custombosses`.
+Os ficheiros de boss são guardados na pasta de configuração `~/plugins/EliteMobs/custombosses`.
 
-É possível criar subpastas, como `~/plugins/EliteMobs/custombosses/mybosses`. Isso é recomendado para manter as coisas organizadas.
+É possível criar subpastas, como `~/plugins/EliteMobs/custombosses/meusbosses`. Isto é recomendado para manter as coisas organizadas.
 
-Um arquivo define um boss, embora seja possível gerar o mesmo boss várias vezes e até definir vários locais de geração para o mesmo arquivo de boss.
+Um ficheiro define um boss, embora seja possível fazer spawn do mesmo boss várias vezes e até definir várias localizações de spawn para o mesmo ficheiro de boss.
 
-É possível usar o [webapp](https://magmaguy.com/webapp/webapp.html) para criar bosses personalizados de forma rápida e fácil, e muito mais.
+É possível usar a [webapp](https://magmaguy.com/webapp/webapp.html) para criar bosses personalizados e mais de forma rápida e fácil.
 
-## Menor configuração possível
+## Configuração mínima possível
 
-**O menor arquivo de configuração possível para um Boss Personalizado é:**
+**O ficheiro de configuração mínimo possível para um Boss Personalizado é:**
 ```yml
 ```
 
-Observe que este é apenas um arquivo vazio. Isso ainda irá gerar um boss personalizado zumbi com um nome personalizado, pois esses são os padrões. **Tudo nesta página é opcional!**
+Repare como isto é apenas um ficheiro vazio. Isto ainda vai fazer spawn de um boss personalizado zombie com um nome personalizado, já que esses são os valores por defeito. **Tudo nesta página é opcional!**
 
-## Exemplo de boss
+## Boss de exemplo
 
 <div align="center">
 
-Vamos dar uma olhada em um exemplo de como é um arquivo de boss.
+Vamos dar uma vista de olhos a um exemplo de como é um ficheiro de boss.
 
 <details> 
 <summary><b>Exemplo</b></summary>
@@ -51,9 +52,9 @@ offHand: SHIELD
 isBaby: false
 powers:
 - invulnerability_knockback.yml
-spawnMessage: Um boss de teste foi gerado!
+spawnMessage: Um boss de teste fez spawn!
 deathMessage: Um boss de teste foi morto por $players!
-escapeMessage: Uma entidade de boss de teste escapou!
+escapeMessage: Um boss fugiu!
 locationMessage: 'Entidade de teste: $location'
 uniqueLootList:
 - magmaguys_toothpick.yml:1
@@ -62,7 +63,7 @@ dropsVanillaLoot: true
 trails:
 - BARRIER
 onDamageMessages:
-- "Acertei em você!"
+- "Eu atingi-te!"
 onDamagedMessages:
 - "Fui atingido!"
 ```
@@ -108,7 +109,7 @@ Define o tipo de entidade do boss.
 
 | Chave |                                                                                   Valores                                                                                    | Padrão |
 |-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
-| `entityType` | [Escolha aqui](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html). <br> O valor também deve estar presente na pasta `~plugins/EliteMobs/mobproperties`. | `ZOMBIE`|
+| `entityType` | [Escolha daqui](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html). <br> O valor também tem de estar presente na pasta `~plugins/EliteMobs/mobproperties`. | `ZOMBIE`|
 
 <details> 
 
@@ -132,7 +133,7 @@ Define o nome do boss.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `name` | [String](#string), aceita [códigos de cores](#color_codes) e os espaços reservados listados abaixo | "Nome Padrão" |
+| `name` | [String](#string), aceita [códigos de cor](#color_codes) e os placeholders listados abaixo | "Nome Padrão" |
 
 <details> 
 
@@ -141,7 +142,7 @@ Define o nome do boss.
 <div align="left">
 
 ```yml
-name: "$normalLevel &cBoss legal!"
+name: "$normalLevel &cBoss fixe!"
 ```
 <div align="center">
 
@@ -154,16 +155,16 @@ name: "$normalLevel &cBoss legal!"
 
 </details>
 
-Se você deseja incluir o nível do boss no campo de nome, basta usar um dos seguintes espaços reservados.
+Se quiser incluir o nível do boss no campo do nome, simplesmente use um dos seguintes placeholders.
 
-| Espaço reservado | Descrição | Exemplo |Saída (para um boss de nível 10) |
+| Placeholder | Descrição | Exemplo | Output (para um boss de nível 10) |
 |-|:-:|:-:|-|
-| `$level` | Substitui pelo nível | "$level Boss legal" | `10 Boss legal` |
-| `$normalLevel` | Substitui pelo nível, feito para mobs normais | `"$normalLevel Boss legal"` | `[10] Boss legal` |
-| `$minibossLevel` | Substitui pelo nível, feito para minibosses | `"$minibossLevel Boss legal"` | `〖10〗 Boss legal` |
-| `$bossLevel` | Substitui pelo nível, feito para bosses | `"$bossLevel Boss legal"` | `『10』 Boss legal` |
-| `$reinforcementLevel` | Substitui pelo nível, feito para reforços | `"$reinforcementLevel Boss legal"` | `〔10〕 Boss legal` |
-| `$eventBossLevel` | Substitui pelo nível, feito para bosses de eventos | `"$eventBossLevel Boss legal"` | `「10」 Boss legal` |
+| `$level` | Substitui pelo nível | "$level Boss fixe" | `10 Boss fixe` |
+| `$normalLevel` | Substitui pelo nível, feito para mobs normais | `"$normalLevel Boss fixe"` | `[10] Boss fixe` |
+| `$minibossLevel` | Substitui pelo nível, feito para minibosses | `"$minibossLevel Boss fixe"` | `〖10〗 Boss fixe` |
+| `$bossLevel` | Substitui pelo nível, feito para bosses | `"$bossLevel Boss fixe"` | `『10』 Boss fixe` |
+| `$reinforcementLevel` | Substitui pelo nível, feito para reforços | `"$reinforcementLevel Boss fixe"` | `〔10〕 Boss fixe` |
+| `$eventBossLevel` | Substitui pelo nível, feito para bosses de evento | `"$eventBossLevel Boss fixe"` | `「10」 Boss fixe` |
 
 <details> 
 
@@ -172,7 +173,7 @@ Se você deseja incluir o nível do boss no campo de nome, basta usar um dos seg
 <div align="left">
 
 ```yml
-name: "$normalLevel &cBoss legal!"
+name: "$normalLevel &cBoss fixe!"
 ```
 
 <div align="center">
@@ -193,9 +194,9 @@ Define o nível do boss.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `entityType` | Números [inteiros](#integer) positivos ou `dynamic` | `dynamic` |
+| `level` | Números [inteiros](#integer) positivos ou `dynamic` | `dynamic` |
 
-`dynamic` é usado para eventos e se ajusta ao nível dos jogadores próximos no momento da geração do boss.
+`dynamic` é usado para eventos e ajusta-se ao nível dos jogadores próximos no momento em que o boss faz spawn.
 Não é recomendado para bosses regionais.
 
 <details> 
@@ -214,9 +215,61 @@ level: 1
 
 ***
 
+### scale
+
+Define a escala (tamanho) do boss.
+
+| Chave | Valores | Padrão |
+|-|:-:|-|
+| `scale` | [Multiplicador](#multiplier) | `1.0` |
+
+Ao escalar, `1.0` representa o tamanho padrão. Para aumentar o tamanho da entidade, aumente o valor (ex: `1.2`). Para diminuir o tamanho da entidade, diminua o valor (ex: `0.8`).
+
+<details> 
+
+<summary><b>Exemplo</b></summary>
+
+<div align="left">
+
+```yml
+scale: 1.2
+```
+
+</div>
+
+</details>
+
+***
+
+### bossType
+
+Define que tipo de boss é. Isto é usado para mostrar barras de vida de boss e outras funcionalidades.
+
+| Chave | Valores | Padrão |
+|-|:-:|-|
+| `bossType` | `NORMAL`, `MINIBOSS`, `BOSS`, `EVENT` | `NORMAL` |
+
+`MINIBOSS`, `BOSS`, `EVENT` farão com que o plugin mostre barras de vida quando os jogadores estiverem a lutar contra estes tipos de boss.
+
+<details> 
+
+<summary><b>Exemplo</b></summary>
+
+<div align="left">
+
+```yml
+bossType: MINIBOSS
+```
+
+</div>
+
+</details>
+
+***
+
 ### healthMultiplier
 
-Define a saúde do boss.
+Define a vida do boss.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -264,8 +317,8 @@ damageMultiplier: 1.5
 
 ### isBaby
 
-Define se o boss usa a variante bebê do mob. Só pode ser aplicado a mobs com variantes de bebês.
-Se você gostaria de [disfarçar]($language$/elitemobs/libsdisguises.md) o boss, mas gostaria que ele também permanecesse um bebê enquanto disfarçado (certifique-se de que a entidade de disfarce também suporte a variante bebê), você pode usar esta configuração:
+Define se o boss usa a variante bebé do mob. Só pode ser aplicado a mobs com variantes bebé.
+Se quiser [disfarçar]($language$/elitemobs/libsdisguises.md) o boss mas quiser que ele continue um bebé enquanto disfarçado (certifique-se que a entidade do disfarce também suporta a variante bebé) pode usar esta configuração:
 <div align="left">
 
 ```yaml
@@ -296,7 +349,7 @@ isBaby: true
 
 ### helmet/chestplate/leggings/boots/mainhand/offhand
 
-Define a armadura do boss. Nem todos os modelos do Minecraft são capazes de mostrar armadura. A armadura do boss é puramente cosmética e não afeta a jogabilidade.
+Define a armadura do boss. Nem todos os modelos de minecraft conseguem mostrar armadura. A armadura do boss é puramente cosmética e não afeta o jogo.
 
 | Chave |                                    Valores                                     | Padrão |
 |-|:-----------------------------------------------------------------------------:|-|
@@ -307,11 +360,11 @@ Define a armadura do boss. Nem todos os modelos do Minecraft são capazes de mos
 | `mainHand` | [Material](#material) | nenhum |
 | `offHand` | [Material](#material) | nenhum |
 
-**Nota:** Este campo também permite definir modelos personalizados para itens. Para definir o ID do modelo personalizado, adicione o ID após o tipo de material seguindo este formato: `ITEM_MATERIAL:ID`. Exemplo: `DIAMOND_SWORD:1` define que o boss use uma espada de diamante com o modelo personalizado nº 1 no seu pacote de textura.
+**Nota:** Este campo também permite que defina modelos personalizados para itens. Para definir o ID do modelo personalizado, adicione o ID depois do tipo de material seguindo este formato: `ITEM_MATERIAL:ID`. Exemplo: `DIAMOND_SWORD:1` faz com que o boss use uma espada de diamante com o modelo personalizado #1 no seu pacote de texturas.
 
-**Nota 2:** Este campo também permite definir cores de couro personalizadas com o formato `ITEM_MATERIAL:CODE`, onde o código é a representação hexadecimal da cor. Exemplo: `LEATHER_LEGGINGS:ffa500` criaria leggings laranja. Você pode usar códigos hexadecimais, basta remover o `#` do código hexadecimal. Você pode obter códigos hexadecimais [aqui](https://www.w3schools.com/colors/colors_hexadecimal.asp).
+**Nota 2:** Este campo também permite que defina cores de couro personalizadas com o formato `ITEM_MATERIAL:CÓDIGO` onde o código é a representação hexadecimal da cor. Exemplo: `LEATHER_LEGGINGS:ffa500` criaria leggings laranjas. Pode usar códigos hex, apenas remova o `#` do código hex. Pode obter códigos hex [aqui](https://www.w3schools.com/colors/colors_hexadecimal.asp).
 
-**Nota 3:** O campo do capacete também permite definir capacetes de mob como cabeças de jogador. Basta obter o UUID da cabeça do jogador que você gostaria de usar e digitá-lo no campo do capacete. *O jogador precisa estar online para que isso funcione ou a cabeça será definida como uma cabeça genérica do Minecraft.* Você pode obter UUIDs de jogadores [aqui](https://minecraftuuid.com/).
+**Nota 3:** O campo de capacete também permite que defina capacetes de mob para serem cabeças de jogador. Simplesmente obtenha o UUID da cabeça de jogador que gostaria de usar e escreva-o no campo de capacete. *O jogador precisa de estar online para que isto funcione ou a cabeça será por defeito uma cabeça MineCraft genérica.* Pode obter os UUIDs de jogador [aqui](https://minecraftuuid.com/).
 
 <details> 
 
@@ -342,7 +395,7 @@ offHand: SHIELD
 
 ### powers
 
-Define os poderes que o boss possui.
+Define os poderes que o boss tem.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -364,11 +417,11 @@ powers:
 
 </details>
 
-*Nota: Você pode conferir [esta página]($language$/elitemobs/premade_powers.md) se quiser ver uma lista de poderes pré-fabricados que você pode usar.*
+*Nota: Pode consultar [esta página]($language$/elitemobs/premade_powers.md) se quiser ver uma lista de poderes predefinidos que pode usar.*
 
 ***
 
-### Configuração intermediária - Gerando reforços
+### Configuração intermédia - Fazer spawn de reforços
 
 Os reforços também vão para a categoria de poderes, usando as seguintes configurações:
 
@@ -378,36 +431,36 @@ Os reforços também vão para a categoria de poderes, usando as seguintes confi
 
 | Chave | Descrição |                                                                                                             Valores                                                                                                             | Padrão |
 |-|:-:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
-| `summonType` | O que desencadeia a geração de reforços. Obrigatório. |                                                                                                    Consulte a lista abaixo                                                                                                     | nenhum |
-| `filename` | Nome do arquivo do boss para gerar como reforço. Obrigatório. |                                                                                                       [String](#string)                                                                                                        | nenhum |
-| `chance` | Chance de geração do reforço. Opcional. |                                                                                                       [Double](#double)                                                                                                        | `1.0` |
-| `amount` | Define a quantidade de reforços a serem gerados. Opcional. |                                                                                                      [Inteiro](#integer)                                                                                                       | `1` |
-| `inheritAggro` | Faz o reforço herdar o aggro do boss. Opcional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `spawnNearby` | Faz os reforços gerarem em um raio de 30 blocos do boss. Opcional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `inheritLevel` | Faz o reforço herdar o nível do boss. Opcional |                                                                                                        `true` / `false`                                                                                                        | `false` |
-| `customSpawn` | Faz o reforço gerar usando o [sistema de geração personalizado]($language$/elitemobs/creating_spawns.md). Usado apenas para `summonType: GLOBAL`
-| `location` | Local de geração. Opcional. | `world_name,x,y,z` ou `x,y,z` para um local relativo ao boss. O deslocamento é relativo ao local de geração para bosses regionais. Você também pode usar `same_as_boss` para fazer os reforços gerarem no mesmo mundo que o boss. | nenhum |
-| `lightningRod` | Configuração especial para `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Faz com que cristais finais gerem raios ao redor deles. Opcional. |                                                                                                        `true` / `false`                                                                                                        | nenhum |
+| `summonType` | O que ativa o spawn do reforço. Obrigatório. |                                                                                                    Consulte a lista abaixo                                                                                                     | nenhum |
+| `filename` | Nome do ficheiro do boss para fazer spawn como reforço. Obrigatório. |                                                                                                       [String](#string)                                                                                                        | nenhum |
+| `chance` | Probabilidade de o reforço fazer spawn. Opcional. |                                                                                                       [Double](#double)                                                                                                        | `1.0` |
+| `amount` | Define a quantidade de reforços para fazer spawn. Opcional. |                                                                                                      [Integer](#integer)                                                                                                       | `1` |
+| `inheritAggro` | Faz com que o reforço herde o aggro do boss. Opcional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
+| `spawnNearby` | Faz com que os reforços façam spawn num raio de 30 blocos do boss. Opcional. |                                                                                                        `true` / `false`                                                                                                        | `false` |
+| `inheritLevel` | Faz com que o reforço herde o nível do boss. Opcional |                                                                                                        `true` / `false`                                                                                                        | `false` |
+| `customSpawn` | Faz com que o reforço faça spawn usando o [sistema de spawn personalizado]($language$/elitemobs/creating_spawns.md). Só usado para `summonType: GLOBAL`
+| `location` | Localização do spawn. Opcional. | `nome_do_mundo,x,y,z` ou `x,y,z` para uma localização relativa ao boss. O offset é relativo à localização do spawn para bosses regionais. Também pode usar `same_as_boss` para fazer com que os reforços façam spawn no mesmo mundo que o boss. | nenhum |
+| `lightningRod` | Configuração especial para `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Faz com que os cristais do end façam spawn de raios à sua volta. Opcional. |                                                                                                        `true` / `false`                                                                                                        | nenhum |
 
 </details>
 
-Os tipos de invocação definem as condições para a geração de reforços. A seguir está uma lista dos tipos de invocação válidos:
+Os tipos de summon definem as condições para o spawn dos reforços. Segue-se uma lista dos tipos de summon válidos:
 
 <details> 
 
-<summary><b>Tipos de invocação</b></summary>
+<summary><b>Tipos de summon</b></summary>
 
 | Valor |                                                                         Descrição                                                                         |
 |-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `ONCE` |                                          Gera os reforços apenas uma vez, na primeira vez que o boss for danificado.                                           |
-| `ON_HIT`  |                                                              Gera os reforços ao ser atingido.                                                              |
-| `ON_COMBAT_ENTER` |                                                   Gera os reforços quando o boss entra em combate.                                                    |
-| `GLOBAL` | Gera um reforço para cada jogador online. Requer que a chave `customSpawn` tenha um [local de geração personalizado]($language$/elitemobs/creating_spawns.md) válido definido. |
-| `ON_COMBAT_ENTER_PLACE_CRYSTAL` |                                 Coloca reforços de cristal final na entrada de combate, apenas para uso com lutas de dragão personalizadas.                                  |
+| `ONCE` |                                          Só faz spawn dos reforços uma vez, na primeira vez que o boss é atingido.                                           |
+| `ON_HIT`  |                                                              Faz spawn dos reforços ao ser atingido.                                                              |
+| `ON_COMBAT_ENTER` |                                                   Faz spawn dos reforços quando o boss entra em combate.                                                    |
+| `GLOBAL` | Faz spawn de um reforço para cada jogador online. Requer que a chave `customSpawn` tenha um [spawn personalizado]($language$/elitemobs/creating_spawns.md) válido definido. |
+| `ON_COMBAT_ENTER_PLACE_CRYSTAL` |                                 Coloca reforços de cristal do end ao entrar em combate, só para uso com combates de dragão personalizados.                                  |
 
 </details>
 
-Observe que também é possível gerar reforços através de [Elite Scripts]($language$/elitemobs/creating_powers.md), então existem maneiras mais personalizáveis de gerar reforços.
+Note que também é possível fazer spawn de reforços através de [Elite Scripts]($language$/elitemobs/creating_powers.md), portanto existem formas mais personalizáveis de fazer spawn de reforços.
 
 <details> 
 
@@ -433,30 +486,30 @@ powers:
 
 </details>
 
-### Configuração avançada - Criando seus próprios poderes
+### Configuração avançada - Criar os seus próprios poderes
 
-É possível criar seus próprios poderes, seja no próprio arquivo do boss ou como um novo arquivo de configuração na pasta de poderes. Você pode aprender mais sobre isso [aqui]($language$/elitemobs/creating_powers.md).
+É possível criar os seus próprios poderes, seja no próprio ficheiro de boss ou como um novo ficheiro de configuração na pasta de poderes. Pode aprender mais sobre isso [aqui]($language$/elitemobs/creating_powers.md).
 
-### Limitando poderes com base na dificuldade da masmorra instanciada
+### Limitar poderes com base na dificuldade de dungeons em instâncias
 
-[Masmorras instanciadas]($language$/elitemobs/dungeons.md&section=instanced-dungeons) podem ter configurações de dificuldade, e é possível fazer com que um poder específico só seja ativado para dificuldades específicas.
+[Dungeons em instâncias]($language$/elitemobs/dungeons.md&section=instanced-dungeons) podem ter configurações de dificuldade, e é possível fazer com que um poder específico só esteja ativado para dificuldades específicas.
 
 <details> 
 
-<summary><b>Opções de limitação de poder</b></summary>
+<summary><b>Opções para limitar poderes</b></summary>
 
 <div align="left">
 
 | Chave | Descrição | Valores | Padrão |
 |-|:-:|:-:|-|
-| `filename` | Nome do arquivo do poder. | [String](#string) | nenhum |
-| `difficultyID` | Nome da dificuldade, correspondendo ao nome da dificuldade no pacote da masmorra. | [String](#string) | nenhum |
+| `filename` | Nome do ficheiro do poder. | [String](#string) | nenhum |
+| `difficultyID` | Nome da dificuldade, que corresponde ao nome da dificuldade no pacote da dungeon. | [String](#string) | nenhum |
 
 </div>
 
 </details>
 
-Isso só se aplicará a masmorras instanciadas.
+Isto só se aplica a dungeons em instâncias.
 
 <details> 
 
@@ -468,9 +521,9 @@ Isso só se aplicará a masmorras instanciadas.
 powers:
 - filename: movement_speed.yml
   difficultyID:
-  - myDifficultyName1
-  - myDifficultyName2
-  - myDifficultyName3
+  - nomeDaMinhaDificuldade1
+  - nomeDaMinhaDificuldade2
+  - nomeDaMinhaDificuldade3
 ```
 
 </div>
@@ -481,11 +534,11 @@ powers:
 
 ### spawnMessage
 
-Define a mensagem a ser enviada quando o boss é gerado. Requer a configuração da [announcementPriority](#announcementPriority).
+Define a mensagem a enviar quando o boss faz spawn. Requer a configuração da [announcementPriority](#announcementPriority).
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `spawnMessage` | [Strings](#string) e [códigos de cores](#color_codes) | nenhum |
+| `spawnMessage` | [Strings](#string) e [códigos de cor](#color_codes) | nenhum |
 
 <details> 
 
@@ -495,7 +548,7 @@ Define a mensagem a ser enviada quando o boss é gerado. Requer a configuração
 
 ```yml
 announcementPriority: 3
-spawnMessage: Eu me levanto mais uma vez!
+spawnMessage: Eu levanto-me mais uma vez!
 ```
 
 <div align="center">
@@ -512,11 +565,11 @@ spawnMessage: Eu me levanto mais uma vez!
 
 ### deathMessages
 
-Define a lista de mensagens a serem enviadas quando o boss morre. Requer a configuração da [announcementPriority](#announcementPriority).
+Define a lista de mensagens a enviar quando o boss morre. Requer a configuração da [announcementPriority](#announcementPriority).
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `deathMessages` | [Strings](#string), [códigos de cores](#color_codes) e os espaços reservados abaixo | nenhum |
+| `deathMessages` | [Strings](#string), [códigos de cor](#color_codes) e os placeholders abaixo | nenhum |
 
 <details> 
 
@@ -529,10 +582,10 @@ announcementPriority: 3
 deathMessages:
 - '&e&l---------------------------------------------'
 - '&4O Boss de Teste foi morto!'
-- '&c&l    1º Atacante: $damager1name &ccom $damager1damage de dano!'
-- '&6&l    2º Atacante: $damager2name &6com $damager2damage de dano!'
-- '&e&l    3º Atacante: $damager3name &ecom $damager3damage de dano!'
-- '&4Assassinos: $players'
+- '&c&l    1º Dador de dano: $damager1name &ccom $damager1damage de dano!'
+- '&6&l    2º Dador de dano: $damager2name &6com $damager2damage de dano!'
+- '&e&l    3º Dador de dano: $damager3name &ecom $damager3damage de dano!'
+- '&4Matadores: $players'
 - '&e&l---------------------------------------------'
 ```
 
@@ -546,31 +599,31 @@ deathMessages:
 
 </details>
 
-As mensagens de morte usam os seguintes espaços reservados:
+As mensagens de morte usam os seguintes placeholders:
 
 <details> 
 
-<summary><b>Espaços reservados</b></summary>
+<summary><b>Placeholders</b></summary>
 
 | Valor | Descrição |
 |-|:-:|
-| `$damager1name` | O nome do maior atacante |
-| `$damager2name` | O nome do segundo maior atacante |
-| `$damager3name` | O nome do terceiro maior atacante |
-| `$damager1damage` | A quantidade de dano do maior atacante |
-| `$damager2damage` | A quantidade de dano do segundo maior atacante |
-| `$damager3damage` | A quantidade de dano do terceiro maior atacante |
-| `$players` | Exibe uma lista de todos os atacantes |
+| `$damager1name` | O nome do jogador que deu mais dano |
+| `$damager2name` | O nome do segundo jogador que deu mais dano |
+| `$damager3name` | O nome do terceiro jogador que deu mais dano |
+| `$damager1damage` | A quantidade de dano do jogador que deu mais dano |
+| `$damager2damage` | A quantidade de dano do segundo jogador que deu mais dano |
+| `$damager3damage` | A quantidade de dano do terceiro jogador que deu mais dano |
+| `$players` | Mostra uma lista de todos os jogadores que deram dano |
 
 </details>
 
 ### onKillMessage
 
-Define a mensagem a ser enviada quando o boss mata um jogador. Requer a configuração da [announcementPriority](#announcementPriority).
+Define a mensagem a enviar quando o boss mata um jogador. Requer a configuração da [announcementPriority](#announcementPriority).
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `onKillMessage` | [Strings](#string) e [códigos de cores](#color_codes) | nenhum |
+| `onKillMessage` | [Strings](#string) e [códigos de cor](#color_codes) | nenhum |
 
 <details> 
 
@@ -580,7 +633,7 @@ Define a mensagem a ser enviada quando o boss mata um jogador. Requer a configur
 
 ```yml
 announcementPriority: 3
-onKillMessage: Eu ganhei, você perdeu!
+onKillMessage: Eu ganho, vocês perdem!
 ```
 
 <div align="center">
@@ -599,13 +652,13 @@ onKillMessage: Eu ganhei, você perdeu!
 
 <div align="center">
 
-Define o tamanho do boss slime, mas funciona apenas para Slimes e Magmacubes.
+Define o tamanho do boss slime, mas só funciona para slimes e magmacubes.
 
 </div>
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `slimeSize` | [Inteiro](#integer) | `4` |
+| `slimeSize` | [Integer](#integer) | `4` |
 
 <details>
 
@@ -627,13 +680,13 @@ slimeSize: 5
 
 <div align="center">
 
-Define se o boss será gerado como neutro ou não. Isso se aplica apenas a tipos de entidade que podem ser neutras, como Lobos ou Golems de Ferro.
+Define se o boss fará spawn como neutro ou não. Isto só se aplica a tipos de entidade que podem ser neutros como Lobos ou Golems de Ferro.
 
 </div>
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `neutral` | [Booleano](#boolean) | `false` |
+| `neutral` | [Boolean](#boolean) | `false` |
 
 <details>
 
@@ -655,11 +708,11 @@ neutral: true
 
 ### timeout
 
-Define a quantidade de tempo, em minutos, antes que o Boss Personalizado desapareça.
+Define a quantidade de tempo, em minutos, antes de o Boss Personalizado desaparecer.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `timeout` | Tempo (em minutos) [Inteiro](#integer) | `0` |
+| `timeout` | Tempo (em minutos) [Integer](#integer) | `0` |
 
 <details> 
 
@@ -670,7 +723,7 @@ Define a quantidade de tempo, em minutos, antes que o Boss Personalizado desapar
 ```yml
 timeout: 20
 ```
-Define que o boss escape após 20 minutos.
+Faz com que o boss fuja após 20 minutos.
 
 </div>
 
@@ -680,12 +733,13 @@ Define que o boss escape após 20 minutos.
 
 ### isPersistent
 
-Define se o boss pode sobreviver a um descarregamento de pedaço. Recomendado apenas para bosses de eventos.
+Define se o boss pode sobreviver a um unload de chunk. Só recomendado para bosses de evento.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
 | `isPersistent` | `true` / `false` | `false` |
-
+```
+```markdown
 <details> 
 
 <summary><b>Exemplo</b></summary>
@@ -726,7 +780,7 @@ damageModifiers:
 
 </div>
 
-Neste exemplo, os bosses receberão apenas 80% de dano de espadas de diamante (ou 20% menos), mas receberão 200% de dano de tridentes (ou 2x mais).
+Neste exemplo, os bosses só receberão 80% de dano de espadas de diamante (ou 20% menos), mas receberão 200% de dano de tridentes (ou 2x mais).
 
 </details>
 
@@ -734,11 +788,7 @@ Neste exemplo, os bosses receberão apenas 80% de dano de espadas de diamante (o
 
 ### normalizedCombat
 
-
-
-
-
-Modifica o dano e a saúde máxima do boss para corresponder aos valores da entidade normalizada em `~/plugins/EliteMobs/mobproperties`. Este é o padrão para bosses regionais para garantir uma curva de dificuldade suave.
+Modifica o dano e a vida máxima do boss para corresponder aos valores da entidade normalizada em `~/plugins/EliteMobs/mobproperties`. Este é o padrão para bosses regionais para garantir uma curva de dificuldade suave.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -763,7 +813,7 @@ normalizedCombat: true
 
 ### escapeMessage
 
-Define a mensagem que é transmitida aos jogadores quando o boss escapa através da mecânica de [timeout](#timeout). Requer que [announcementPriority](#announcementPriority) seja configurado.
+Define a mensagem que é transmitida aos jogadores quando o boss foge através da mecânica de [timeout](#timeout). Requer que [announcementPriority](#announcementPriority) seja configurado.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -796,13 +846,13 @@ escapeMessage: "Sayonara!"
 
 ### locationMessage
 
-Define a mensagem que é mostrada na barra de boss. Isso é usado para rastrear a saúde do Boss Personalizado e sua localização no servidor. Requer que [annoucementPriority](#annoucementPriority) seja configurado.
+Define a mensagem mostrada na barra de boss. Isto é usado para rastrear tanto a vida do Boss Personalizado como a sua localização no servidor. Requer que [annoucementPriority](#annoucementPriority) seja configurado.
 
 | Chave |                                      Valores                                      | Padrão |
 |-|:--------------------------------------------------------------------------------:|-|
-| `locationMessage` | [String](#string), [Códigos de cores](#color_codes) e os espaços reservados listados abaixo | nenhum |
+| `locationMessage` | [String](#string), [Códigos de cor](#color_codes) e os placeholders listados abaixo | nenhum |
 
-Espaços reservados:
+Placeholders:
 
 | Valor | Descrição |
 |-|:-:|
@@ -819,7 +869,7 @@ Espaços reservados:
 
 ```yml
 announcementPriority: 3
-locationMessage: "&4Boss legal: Em $location a apenas $distance blocos de distância!"
+locationMessage: "&4Boss fixe: A $location apenas a $distance blocos de distância!"
 ```
 
 <div align="center">
@@ -830,7 +880,7 @@ locationMessage: "&4Boss legal: Em $location a apenas $distance blocos de distâ
 
 </div>
 
-Isso mostraria algo como `Boss legal: Em 414,55,347 a apenas 10 blocos de distância!`
+Isto mostraria algo como `Boss fixe: A 414,55,347 apenas a 10 blocos de distância!`
 
 </details>
 
@@ -838,13 +888,13 @@ Isso mostraria algo como `Boss legal: Em 414,55,347 a apenas 10 blocos de distâ
 
 ### uniqueLootList
 
-Define os [Itens Personalizados]($language$/elitemobs/creating_items.md) que caem do boss.
+Define os [Itens Personalizados]($language$/elitemobs/creating_items.md) que dropam do boss.
 
 | Chave |        Valores        | Padrão |
 |-|:--------------------:|-|
 | `uniqueLootList` | [Lista](#string_list) | nenhum |
 
-As entradas de loot no Loot Personalizado seguem o formato da Tabela de Loot. [Informações sobre isso aqui!]($language$/elitemobs/loot_tables.md) Observe que alguns arquivos mais antigos podem estar usando tabelas de loot desatualizadas que parecem diferentes do exemplo.
+As entradas de loot no Loot Personalizado seguem o formato de Tabela de Loot. [Informação sobre isso aqui!]($language$/elitemobs/loot_tables.md) Note que alguns ficheiros antigos podem estar a usar tabelas de loot desatualizadas que parecem diferentes do exemplo.
 
 <details> 
 
@@ -870,13 +920,13 @@ uniqueLootList:
 
 ### dropsEliteMobsLoot
 
-Define se o boss irá dropar loot do EliteMobs, excluindo itens em [`uniqueLootList`](#uniqueLootList). Inclui moedas.
+Define se o boss vai dropar loot EliteMobs, excluindo itens em [`uniqueLootList`](#uniqueLootList). Inclui moedas.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
 | `dropsEliteMobsLoot` | `true` /  `false` | `true` |
 
-Recomendado definir como falso para mobs de reforço.
+Recomendado definir como false para mobs de reforço.
 
 <details> 
 
@@ -897,7 +947,7 @@ dropsEliteMobsLoot: true
 
 ### dropsVanillaLoot
 
-Define se o Boss Personalizado irá dropar o loot vanilla normalmente associado ao seu tipo de mob vanilla.
+Define se o Boss Personalizado vai dropar o loot vanilla normalmente associado ao seu tipo de mob vanilla.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -921,7 +971,7 @@ dropsVanillaLoot: true
 
 ### dropsRandomLoot
 
-Define se o Boss Personalizado irá dropar loot gerado processualmente do EliteMobs. Não inclui moedas de elite.
+Define se o Boss Personalizado vai dropar loot gerado proceduralmente de EliteMobs. Não inclui moedas elite.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -945,11 +995,11 @@ dropsRandomLoot: true
 
 ### trails
 
-Define a trilha que o boss deixa para trás ao se mover.
+Define o rasto que o boss deixa para trás ao mover-se.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `trails` | [Partículas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) ou [materiais de itens](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | nenhum |
+| `trails` | [Partículas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) ou [materiais de item](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | nenhum |
 
 <details> 
 
@@ -970,7 +1020,7 @@ trails:
 
 ### onDamageMessages
 
-Define a mensagem que o Mob Boss exibe quando atinge um jogador. Esta é uma lista, e a usada é escolhida aleatoriamente da lista.
+Define a mensagem que o Mob Boss mostra quando atinge um jogador. Isto é uma lista, e a usada é aleatória a partir da lista.
 
 | Chave |        Valores        | Padrão |
 |-|:--------------------:|-|
@@ -984,8 +1034,8 @@ Define a mensagem que o Mob Boss exibe quando atinge um jogador. Esta é uma lis
 
 ```yml
 onDamageMessages:
-- "Acertei em você!"
-- "Haha, acertei em você!"
+- "Eu atingi-te!"
+- "Haha eu atingi-te!"
 ```
 <div align="center">
 
@@ -1001,10 +1051,10 @@ onDamageMessages:
 
 ### onDamagedMessages
 
-Define a mensagem que o Mob Boss exibe quando é danificado por um jogador. Esta é uma lista, e a usada é escolhida aleatoriamente da lista.
+Define a mensagem que o Mob Boss mostra quando é atingido por um jogador. Isto é uma lista, e a usada é aleatória a partir da lista.
 
 | Chave |        Valores        | Padrão |
-|-|:-:|-|
+|-|:--------------------:|-|
 | `onDamagedMessages` | [Lista](#string_list) | nenhum |
 
 <details> 
@@ -1015,7 +1065,7 @@ Define a mensagem que o Mob Boss exibe quando é danificado por um jogador. Esta
 
 ```yml
 onDamagedMessages:
-- "Você me acertou!"
+- "Tu atingiste-me!"
 - "Fui atingido!"
 ```
 <div align="center">
@@ -1032,13 +1082,13 @@ onDamagedMessages:
 
 ### mountedEntity
 
-Define a entidade que o boss irá montar e cavalgar.
+Define a entidade que o boss vai montar e andar.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `onDamagedMessages` | [Nome do arquivo do boss para montar](#filename) ou [tipo de entidade](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) | nenhum |
+| `onDamagedMessages` | [Nome do ficheiro do boss para montar](#filename) ou [tipo de entidade](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) | nenhum |
 
-Não tente fazer o boss montar em si mesmo.
+Não tente fazer com que o boss se monte a si próprio.
 
 <details> 
 
@@ -1060,28 +1110,28 @@ mountedEntity: wild_wolf.yml
 
 </details>
 
-Nota: Bosses regionais irão compartilhar sua guia com a entidade que estão montando, o que significa que ambos serão arrastados de volta para o local de geração se excederem a distância permitida por sua guia.
+Nota: Os bosses regionais vão partilhar a sua trela com a entidade que estão a montar, o que significa que ambos serão arrastados de volta para a localização do spawn se excederem a distância permitida pela sua trela.
 
 ***
 
 ### announcementPriority
 
-Define o nível de prioridade para anúncios. Prioridades mais baixas significam que nenhum anúncio é feito, prioridades mais altas podem anunciar não apenas no chat, mas também no Discord, se configurado.
+Define o nível de prioridade para anúncios. Prioridades mais baixas significam que nenhum anúncio é feito, prioridades mais altas podem anunciar não só no chat mas também no discord se configurado.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `announcementPriority` | [Inteiro](#integer) | `1` |
+| `announcementPriority` | [Integer](#integer) | `1` |
 
-Aqui está uma lista do que as prioridades fazem:
+Segue-se uma lista do que as prioridades fazem:
 
 | Valor |                                                                            Descrição                                                                            |
 |-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `0` |                                                   O boss ficará totalmente silencioso, sem mensagens de anúncio.                                                   |
-| `1` |                                Este é o padrão. Os bosses podem enviar mensagens de chat, na mensagem de geração, nas mensagens de morte e fuga.                                |
-| `2` |                               Além das coisas em `1`, o boss será definido para ser rastreável pelos jogadores através do menu `/em`.                                |
-| `3` | Além das coisas em `2`, as mensagens de transmissão serão espelhadas no Discord, se configurado. [Informações de configuração do Discord aqui.]($language$/elitemobs/discordsrv.md) |
+| `0` |                                                   O boss estará totalmente silencioso, sem mensagens de anúncio.                                                   |
+| `1` |                                 Este é o padrão. Os bosses podem enviar mensagens no chat, mensagens ao spawn, à morte e de fuga.                                |
+| `2` |                               Para além das coisas em `1`, o boss estará definido para ser rastreável pelos jogadores através do menu `/em`.                                |
+| `3` | Para além das coisas em `2`, mensagens transmitidas serão espelhadas no Discord se configurado. [Informação de configuração de Discord aqui.]($language$/elitemobs/discordsrv.md) |
 
-Aqui está um exemplo de um boss que é rastreável, é capaz de enviar mensagens de geração/morte/fuga no chat e no Discord:
+Aqui está um exemplo de um boss que é rastreável, consegue enviar mensagens de spawn/morte/fuga no chat e no Discord:
 
 <details> 
 
@@ -1097,21 +1147,21 @@ announcementPriority: 3
 
 </details>
 
-**Nota**: Você terá que configurar spawnMessage, deathMessage/deathMessages, escapeMessage para anúncios de chat e Discord e locationMessage para o recurso de rastreamento se desejar usar o nível de prioridade de anúncio correspondente.
+**Nota**: Terá de configurar o spawnMessage, deathMessage/deathMessages, escapeMessage para anúncios no chat e discord e o locationMessage para a funcionalidade de rastreamento se quiser usar o nível de Prioridade de Anúncio correspondente.
 
 ***
 
 ### followDistance
 
-Define a distância em que os bosses se aggro e entram em combate.
+Define a distância à qual os bosses fazem aggro e entram em combate.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `followDistance` | [Double](#double) | nenhum, usa os padrões do Minecraft |
+| `followDistance` | [Double](#double) | nenhum, usa os valores por defeito do Minecraft |
 
-Nota 1: Bosses regionais têm metade do `followDistance` quando fora de combate. Isso ocorre para que eles não se aggro de muito longe, o que pode causar problemas de combate irritantes devido a restrições de guia.
+Nota 1: Os bosses regionais têm metade do `followDistance` quando estão fora de combate. Isto é para que não façam aggro de muito longe, o que pode causar problemas de combate irritantes devido às restrições de trela.
 
-Nota 2: Quanto maior o `followDistance`, mais intensivo o boss se torna na CPU do servidor. Use com cuidado e responsabilidade!
+Nota 2: Quanto maior o `followDistance`, mais intensivo o boss se torna para o CPU do servidor. Use com cuidado e responsabilidade!
 
 <details> 
 
@@ -1125,7 +1175,7 @@ followDistance: 30
 
 </div>
 
-Define um intervalo de 30 blocos onde, se um jogador chegar a essa distância perto do boss, ele começará a perseguir/atacar o jogador.
+Define um alcance de 30 blocos onde se um jogador se aproximar dessa distância do boss, este começará a perseguir/atacar o jogador.
 
 </details>
 
@@ -1133,28 +1183,28 @@ Define um intervalo de 30 blocos onde, se um jogador chegar a essa distância pe
 
 ### onDeathCommands
 
-Define a lista de comandos a serem executados na morte do boss personalizado.
+Define a lista de comandos a executar na morte de um boss personalizado.
 
 | Chave |        Valores        | Padrão |
 |-|:--------------------:|-|
 | `onDeathCommands` | [Lista](#string_list) | nenhum |
 
-A lista suporta os seguintes espaços reservados:
+A lista suporta os seguintes placeholders:
 
 | Valor | Descrição |
 |-|:-:|
-| `$level` | Espaço reservado para o nível do boss. |
-| `$name` | Espaço reservado para o nome do boss. |
-| `$chance=x$` | Faz com que um comando tenha a chance de ser executado. |
-| `$players` | Faz o comando ser executado uma vez para cada jogador na lista de atacantes e substitui a cada vez pelo nome de usuário de um jogador diferente nessa lista. |
+| `$level` | Placeholder para o nível do boss. |
+| `$name` | Placeholder para o nome do boss. |
+| `$chance=x$` | Faz com que um comando tenha uma probabilidade de ser executado. |
+| `$players` | Faz com que o comando seja executado uma vez para cada jogador na lista de dadores de dano e substitui cada vez pelo nome de utilizador de um jogador diferente nessa lista. |
 | `$locationX` | Coordenada X do boss no momento da morte. |
 | `$locationY` | Coordenada Y do boss no momento da morte. |
 | `$locationZ` | Coordenada Z do boss no momento da morte. |
-| `$damager1name` | Nome de usuário do maior atacante |
-| `$damager2name` | Nome de usuário do segundo maior atacante |
-| `$damager3name` | Nome de usuário do terceiro maior atacante |
+| `$damager1name` | Nome de utilizador do jogador que deu mais dano |
+| `$damager2name` | Nome de utilizador do segundo jogador que deu mais dano |
+| `$damager3name` | Nome de utilizador do terceiro jogador que deu mais dano |
 
-Dê uma olhada no exemplo abaixo para entender melhor como eles funcionam.
+Veja o exemplo abaixo para obter uma melhor compreensão de como estes funcionam.
 
 <details> 
 
@@ -1164,7 +1214,7 @@ Dê uma olhada no exemplo abaixo para entender melhor como eles funcionam.
 
 ```yml
 onDeathCommands:
-- "say $players matou $name! Esse era o nível $level!"
+- "say $players matou $name! Era de nível $level!"
 - "$chance=0.5$ say Que morte!"
 ```
 
@@ -1176,19 +1226,19 @@ onDeathCommands:
 
 </div>
 
-Se Player1, Player2 e Player3 danificaram o boss antes de matá-lo, esta será a saída do comando no console:
+Se o Jogador1, Jogador2 e Jogador3 tiverem dado dano ao boss antes de o matar, esta é a saída de comando que será obtida da consola:
 
 <div align="left">
 
 ```
-say Player1 matou CustomBossName! Esse era o nível X!
-say Player2 matou CustomBossName! Esse era o nível X!
-say Player3 matou CustomBossName! Esse era o nível X!
+say Jogador1 matou CustomBossName! Era de nível X!
+say Jogador2 matou CustomBossName! Era de nível X!
+say Jogador3 matou CustomBossName! Era de nível X!
 ```
 
 </div>
 
-Além disso, há 50% de chance de que o seguinte também seja exibido:
+Além disso, existe uma probabilidade de 50% de que o seguinte também seja obtido:
 
 <div align="left">
 
@@ -1204,13 +1254,13 @@ say Que morte!
 
 ### onSpawnCommands
 
-Define a lista de comandos que serão executados na geração do boss.
+Define a lista de comandos que serão executados no spawn do boss.
 
 | Chave |        Valores        | Padrão |
 |-|:--------------------:|-|
 | `onSpawnCommands` | [Lista](#string_list) | nenhum |
 
-**Isso usa os mesmos espaços reservados que [onDeathCommands](#onDeathCommands)!** Espaços reservados para atacantes não serão aplicados, pois não haverá atacantes neste momento.
+**Isto usa os mesmos placeholders que [onDeathCommands](#onDeathCommands)!** Os placeholders de dadores de dano não se aplicam, uma vez que não haverá nenhum dador de dano nesta altura.
 
 <details> 
 
@@ -1220,7 +1270,7 @@ Define a lista de comandos que serão executados na geração do boss.
 
 ```yml
 onSpawnCommands:
-- say O boss foi gerado!
+- say O boss fez spawn!
 ```
 
 <div align="center">
@@ -1237,13 +1287,13 @@ onSpawnCommands:
 
 ### onCombatEnterCommands
 
-Define a lista de comandos que serão executados quando o boss entrar em combate.
+Define a lista de comandos que serão executados quando o boss entra em combate.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
 | `onCombatEnterCommands` | [Lista](#string_list) | nenhum |
 
-**Isso usa os mesmos espaços reservados que [onDeathCommands](#onDeathCommands)!** Espaços reservados para atacantes não serão aplicados, pois não haverá atacantes neste momento.
+**Isto usa os mesmos placeholders que [onDeathCommands](#onDeathCommands)!** Os placeholders de dadores de dano não se aplicam, uma vez que não haverá nenhum dador de dano nesta altura.
 
 <details> 
 
@@ -1270,13 +1320,13 @@ onCombatEnterCommands:
 
 ### onCombatLeaveCommands
 
-Define a lista de comandos a serem executados quando o boss sair do combate.
+Define a lista de comandos a executar quando o boss sai de combate.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
 | `onCombatLeaveCommands` | [Lista](#string_list) | nenhum |
 
-**Isso usa os mesmos espaços reservados que [onDeathCommands](#onDeathCommands)!**
+**Isto usa os mesmos placeholders que [onDeathCommands](#onDeathCommands)!**
 
 <details> 
 
@@ -1286,7 +1336,7 @@ Define a lista de comandos a serem executados quando o boss sair do combate.
 
 ```yml
 onCombatLeaveCommands:
-- say O boss saiu do combate!
+- say O boss saiu de combate!
 ```
 
 <div align="center">
@@ -1303,7 +1353,7 @@ onCombatLeaveCommands:
 
 ### disguise
 
-Define o disfarce do LibsDisguises se esse plugin estiver ativado. [Mais informações aqui.]($language$/elitemobs/libsdisguises.md)
+Define o disfarce de LibsDisguises se esse plugin estiver ativado. [Mais informação aqui.]($language$/elitemobs/libsdisguises.md)
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -1337,8 +1387,8 @@ disguise: CHICKEN
 <div align="left">
 
 ```yml
-disguise: custom:the_beast_sanctuary_beast
-customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8d-4e48-873b-fae7afed36e4","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY2NjcwNjYwODA1MCwKICAicHJvZmlsZUlkIiA6ICI3MmY5MTdjNWQyNDU0OTk0YjlmYzQ1YjVhM2YyMjIzMCIsCiAgInByb2ZpbGVOYW1lIiA6ICJUaGF0X0d1eV9Jc19NZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS82YmYyMTY4NmM1MGQ1ODhmZmExMDZhZDdjNmViZTk1ZWZiMjE2NDU5ODRjZDFjZWYwODkzNDc4NzMzNmI2YTI3IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=","signature":"jSsQvpUeWVtyqjtnydPadormkrZLVihetiX4dFQb3+BF/1x6wOgsNKRnnwj6J1mfu2im79LYEJbL+fQ9p1SJIW1uZ6hV7vPSAGUopyXGHNibNXorfV/dGjM77S0t86Jls50XWgJAnLn5RdhQcHahDAHHZ8to6K0HW5gvKKSalR5X/myaiV0E5ujJ+LUFWIiuDmtsmyxTX1zsohyYrVMo/4sD0DpBN+as95wO476gLb5fDTDV569QwExlDOt60W8qSzPw6ncYsOKJIiRE3EddspUm3/NrfDiKApUh8UbzVtwu1XlVAxWNgYN3PkqhWKuE4kvORQuoSJzOgSHkiqdXsQOED2HXfOKdfsnpZUwjepIU5A+/mu0gc3mPQPToKSss2bC1nXn//0bOZZSuQRgTS6PkKDHIQ1nClSZQZlJIsiLmaaN2k1tIHTIlDquKN6G1Ta9c3t6G5kugjqRo78ebbt7l3e0Z3BcdOkuO2WbvBjIg5Uiqyf+cYDZedJ+OEOqL/U6VVlsmbw0rd5deHrbnPn9cRzmWGjrXnxIlAszl+0Uqabj/BrkWcbBCwZJEPaV1hHpC4nJX1m5xvKZHB2Bw0AYWaQ3f3tRBbCA/xqwCS0Px1QohzV0nvtiMbjB38ziT1M5DgLtAVLcHPio7THZMxXAi4IjEIMac9ODbh5OxthA="}],"legacy":false}
+disguise: custom:a_fera_santuario_da_fera
+customDisguiseData: player a_fera_santuario_da_fera setskin {"id":"44e6d42b-bd8d-4e48-873b-fae7afed36e4","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY2NjcwNjYwODA1MCwKICAicHJvZmlsZUlkIiA6ICI3MmY5MTdjNWQyNDU0OTk0YjlmYzQ1YjVhM2YyMjIzMCIsCiAgInByb2ZpbGVOYW1lIiA6ICJUaGF0X0d1eV9Jc19NZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS82YmYyMTY4NmM1MGQ1ODhmZmExMDZhZDdjNmViZTk1ZWZiMjE2NDU5ODRjZDFjZWYwODkzNDc4NzMzNmI2YTI3IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=","signature":"jSsQvpUeWVtyqjtnydPadormkrZLVihetiX4dFQb3+BF/1x6wOgsNKRnnwj6J1mfu2im79LYEJbL+fQ9p1SJIW1uZ6hV7vPSAGUopyXGHNibNXorfV/dGjM77S0t86Jls50XWgJAnLn5RdhQcHahDAHHZ8to6K0HW5gvKKSalR5X/myaiV0E5ujJ+LUFWIiuDmtsmyxTX1zsohyYrVMo/4sD0DpBN+as95wO476gLb5fDTDV569QwExlDOt60W8qSzPw6ncYsOKJIiRE3EddspUm3/NrfDiKApUh8UbzVtwu1XlVAxWNgYN3PkqhWKuE4kvORQuoSJzOgSHkiqdXsQOED2HXfOKdfsnpZUwjepIU5A+/mu0gc3mPQPToKSss2bC1nXn//0bOZZSuQRgTS6PkKDHIQ1nClSZQZlJIsiLmaaN2k1tIHTIlDquKN6G1Ta9c3t6G5kugjqRo78ebbt7l3e0Z3BcdOkuO2WbvBjIg5Uiqyf+cYDZedJ+OEOqL/U6VVlsmbw0rd5deHrbnPn9cRzmWGjrXnxIlAszl+0Uqabj/BrkWcbBCwZJEPaV1hHpC4nJX1m5xvKZHB2Bw0AYWaQ3f3tRBbCA/xqwCS0Px1QohzV0nvtiMbjB38ziT1M5DgLtAVLcHPio7THZMxXAi4IjEIMac9ODbh5OxthA="}],"legacy":false}
 ```
 
 <div align="center">
@@ -1349,7 +1399,7 @@ customDisguiseData: player the_beast_sanctuary_beast setskin {"id":"44e6d42b-bd8
 
 </div>
 
-Define um disfarce personalizado do skindex. [Confira esta página]($language$/elitemobs/libsdisguises.md) para saber como formatar esses dados corretamente.
+Define um disfarce personalizado a partir do skindex. [Consulte esta página]($language$/elitemobs/libsdisguises.md) para aprender como formatar corretamente estes dados.
 
 </details>
 
@@ -1357,7 +1407,7 @@ Define um disfarce personalizado do skindex. [Confira esta página]($language$/e
 
 ### customModel
 
-Define o modelo personalizado a ser usado, se você tiver um modelo personalizado e ModelEngine. [Mais informações aqui.]($language$/elitemobs/custom_models.md)
+Define o modelo personalizado a usar, se tiver um modelo personalizado e ModelEngine. [Mais informação aqui.]($language$/elitemobs/custom_models.md)
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -1370,7 +1420,7 @@ Define o modelo personalizado a ser usado, se você tiver um modelo personalizad
 <div align="left">
 
 ```yml
-customModel: your_model
+customModel: seu_modelo
 ```
 
 </div>
@@ -1381,8 +1431,8 @@ customModel: your_model
 
 ### frozen
 
-Define se o boss pode se mover. Bosses congelados ainda podem atacar.
-</br>*Nota: isso pode não funcionar em algumas entidades.*
+Define se o boss se pode mover. Os bosses congelados ainda podem atacar.
+</br>*Nota: isto pode não funcionar em algumas entidades.*
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -1406,17 +1456,20 @@ frozen: true
 
 ### song
 
-Define a música que um boss irá tocar, começando quando ele é gerado. Requer que o arquivo .ogg da música esteja no pacote de recursos.
+Define a música que um boss irá tocar, começando quando faz spawn. Requer que o ficheiro .ogg para a música esteja no pacote de recursos.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
 | `song` | [String](#string) | nenhum |
 
+**Nota: A configuração `song` requer que `followDistance` seja definida, já que `followDistance` determina o alcance a que a música começa a tocar.**
+Veja o exemplo de como definir a `length` (milissegundos) da `song`.
+
 <details> 
 
 <summary><b>Exemplo</b></summary>
 
-Existem duas maneiras de configurar músicas. Aqui está a primeira:
+Existem duas formas de configurar músicas. Aqui está a primeira:
 
 <div align="left">
 
@@ -1426,9 +1479,9 @@ song: name=elitemobs:ice_queen.idle length=76370
 
 </div>
 
-Isso irá tocar a música ice_queen.idle por 76370 ticks e, em seguida, reproduzi-la em loop. Observe que o local da música é determinado pelo pacote de recursos.
+Isto irá tocar a música ice_queen.idle durante 76370 milissegundos e depois colocá-la em loop. Note que a localização da música é determinada pelo pacote de recursos.
 
-Aqui está a segunda maneira de configurar músicas:
+Aqui está a segunda forma de configurar músicas:
 
 <div align="left">
 
@@ -1436,9 +1489,9 @@ Aqui está a segunda maneira de configurar músicas:
 song: name=elitemobs:ice_queen.end_transition length=14328->name=elitemobs:ice_queen.end_loop length=28657
 ```
 
-Isso irá tocar a música ice_queen.end_transition por 14328 ticks e, em seguida, fazer a transição para ice_queen.end_loop por 28657 ticks e reproduzir end_loop em loop.
+Isto irá tocar a música ice_queen.end_transition durante 14328 milissegundos e depois fará a transição para ice_queen.end_loop durante 28657 milissegundos e colocará o end_loop em loop.
 
-Isso permite que os bosses tenham uma música de "introdução" ou "transição" e, em seguida, uma faixa principal que é reproduzida em loop.
+Isto permite que os bosses tenham uma música de "introdução" ou "transição" e depois uma faixa principal que entra em loop.
 
 </div>
 
@@ -1473,7 +1526,7 @@ cullReinforcements: true
 ### movementSpeedAttribute
 
 Define a velocidade de movimento do boss.
-</br>*Nota: qualquer coisa além de 0,36 pode ser muito rápido.*
+</br>*Nota: qualquer coisa acima de 0.36 pode ser demasiado rápido.*
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -1493,18 +1546,18 @@ movementSpeedAttribute: 0.3
 
 </details>
 
-## Fases do Boss
+## Fases de boss
 
 <div align="center">
 
-Os bosses podem ter fases que mudam quando o boss atinge uma certa porcentagem de saúde. Quando isso acontece, o boss começa a usar um arquivo de configuração diferente, o que significa que tudo sobre o boss pode mudar, incluindo coisas como o tipo de entidade.
-</br>Para saber mais sobre as fases do boss, clique [aqui]($language$/elitemobs/creating_boss_phases.md).
+Os bosses podem ter fases que mudam quando o boss atinge uma certa percentagem de vida. Quando isto acontece, o boss começa a usar um ficheiro de configuração diferente, o que significa que tudo sobre o boss pode mudar, incluindo coisas como o tipo de entidade.
+</br>Para saber mais sobre fases de boss clique [aqui]($language$/elitemobs/creating_boss_phases.md).
 
 
 | Chave | Descrição | Valores | Padrão |
 |-|:-:|-|-|
 | `phases` | Define as fases que o boss terá. Obrigatório | [Lista](#string_list) | nenhum |
-| `phaseSpawnLocation` | Define onde o boss da fase é gerado. Opcional | [String](#string) | nenhum |
+| `phaseSpawnLocation` | Define onde o boss da fase faz spawn. Opcional | [String](#string) | nenhum |
 
 
 <details> 
@@ -1513,9 +1566,9 @@ Os bosses podem ter fases que mudam quando o boss atinge uma certa porcentagem d
 
 <div align="left">
 
-Para este exemplo, vamos mostrar três arquivos de configuração diferentes.
+Para este exemplo, vamos mostrar três ficheiros de configuração diferentes.
 
-Primeiro arquivo de configuração do boss: phase_1_boss.yml
+Primeiro ficheiro de configuração de boss: phase_1_boss.yml
 
 ```yml
 name: "Fase 1"
@@ -1525,14 +1578,14 @@ phases:
 - phase_3_boss.yml:0.30
 ```
 
-Segundo arquivo de configuração do boss: phase_2_boss.yml
+Segundo ficheiro de configuração de boss: phase_2_boss.yml
 
 ```yml
 name: "Fase 2"
 entityType: SKELETON
 ```
 
-Terceiro arquivo de configuração do boss: phase_3_boss.yml
+Terceiro ficheiro de configuração de boss: phase_3_boss.yml
 
 ```yml
 name: "Fase 3"
@@ -1542,26 +1595,27 @@ entityType: RAVAGER
 
 </div>
 
-Este boss mudaria para o arquivo de configuração `phase_2_boss.yml` com 60% de saúde e para o arquivo de configuração `phase_3_boss.yml` com 30% de saúde no mesmo mundo da fase 2 e nas coordenadas x=10, y=64 e z=100. O tipo de entidade e o nome do boss também mudariam.
+Este boss mudaria para o ficheiro de configuração `phase_2_boss.yml` a 60% de vida, e para o ficheiro de configuração `phase_3_boss.yml` a 30% de vida no mesmo mundo que a fase 2 e nas coordenadas x=10, y=64 e z=100. O tipo de entidade e o nome do boss também mudariam.
 
-O formato para uma entrada é `filename:healthPercentage`.
+O formato para uma entrada é `nomeDoFicheiro:percentagemDeVida`.
 
-phaseSpawnLocation é opcional, se não for definido, o boss mudará de fase onde estiver.
+phaseSpawnLocation é opcional, se não estiver definido o boss mudará de fase onde está.
 
 </details>
 
-As seguintes coisas são importantes para saber ao projetar um boss de fase:
+As seguintes coisas são importantes de saber ao criar um boss de fases:
 
 <div align="left">
 
-- O arquivo de configuração da primeira fase define todas as fases do boss.
-- A ameaça/dano contado é mantido entre as fases para os jogadores.
-- A troca de fases é baseada na porcentagem de saúde perdida, que é preservada ao trocar para uma fase diferente. Isso significa que aumentar ou diminuir o healthMultiplier entre as fases não irá curar ou danificar o boss, ele ainda irá trocar com a mesma porcentagem, mas terá mais ou menos saúde para essa fase.
-- Bosses de fase revertem para a fase 1 se saírem do combate.
-- Bosses de fase que também são bosses regionais compartilham o mesmo raio de guia e mecânica de timeout em todas as fases, e irão reaparecer como o boss da fase 1 quando o timer terminar.
-- O arquivo de configuração da última fase define o loot para o boss.
-- As fases não podem ser ignoradas - o dano overkill ainda fará com que o boss mude de fase na porcentagem definida.
-- Bosses de fase que têm montarias deixam de ser montados ao trocar de fases.
+- O ficheiro de configuração para a primeira fase define todas as fases do boss.
+```
+- A ameaça/dano contado é mantido entre fases para os jogadores.
+- A mudança de fases é baseada na percentagem de vida perdida, que é preservada quando se muda para uma fase diferente. Isto significa que aumentar ou diminuir o healthMultiplier entre fases não curará nem danificará o boss, este continuará a mudar com a mesma percentagem, mas terá mais ou menos vida para essa fase.
+- Os bosses de fase revertem para a fase 1 se saírem de combate.
+- Os bosses de fase que também são bosses regionais partilham o mesmo raio de trela e mecânica de timeout em todas as fases e irão fazer respawn como o boss da fase 1 quando o temporizador terminar.
+- O ficheiro de configuração para a última fase define o loot para o boss.
+- As fases não podem ser ignoradas - o dano excessivo ainda fará com que o boss mude de fase na percentagem definida.
+- Os bosses de fase que têm montadas deixam de estar montados ao mudar de fase.
 
 </div>
 
@@ -1575,33 +1629,31 @@ As seguintes coisas são importantes para saber ao projetar um boss de fase:
 
 <div align="center">
 
+Os bosses regionais são um tipo específico de Bosses Personalizados que fazem spawn numa localização específica configurada e são capazes de fazer respawn nessa localização após um atraso. Além disso, podem ter trelas que garantem que permanecem numa zona específica, entre outras funcionalidades.
 
-
-Os bosses regionais são um tipo específico de Bosses Personalizados que aparecem em um local configurado específico e são capazes de reaparecer nesse local após um atraso. Além disso, eles podem ter trelas que garantem que eles permaneçam em uma zona específica, entre outros recursos.
-
-Eles são usados para todo o conteúdo da masmorra. Para saber mais sobre os chefes regionais, clique [aqui]($language$/elitemobs/creating_world_bosses.md).
+Estes são usados para todo o conteúdo de dungeon. Para saber mais sobre bosses regionais clique [aqui]($language$/elitemobs/creating_world_bosses.md).
 
 | Chave | Descrição | Valores | Padrão |
 |-|:-:|:-:|-|
-| `isRegionalBoss` | Define se o boss é regional. Deve ser verdadeiro se você quiser um boss regional.  | `true` /  `false` | `false` |
-| `spawnLocation` | Define os locais de spawn do boss.  | Adicione-os através do comando `/em addSpawnLocation [filename.yml]`! | nenhum |
-| `spawnCooldown` | Define o tempo de espera para respawn do boss, em <b>minutos</b>. | [Integer](#integer) | `0` |
-| `leashRadius` | Define a distância que o boss pode ir de seu ponto de spawn antes de ser puxado de volta. | [Double](#double) | nenhum |
-| `onSpawnBlockStates` | Define os blocos que o boss irá modificar quando aparecer. | Verifique os comandos abaixo | nenhum |
-| `onRemoveBlockStates` | Define os blocos que o boss irá modificar quando desaparecer. | Verifique os comandos abaixo | nenhum |
+| `isRegionalBoss` | Define se o boss é regional. Deve ser true se quiser um boss regional.  | `true` /  `false` | `false` |
+| `spawnLocation` | Define as localizações de spawn do boss.  | Adicione-as através do comando `/em addSpawnLocation [ficheiro.yml]`! | nenhum |
+| `spawnCooldown` | Define o cooldown de respawn do boss, em <b>minutos</b>. | [Integer](#integer) | `0` |
+| `leashRadius` | Define a distância que o boss pode ir do seu ponto de spawn antes de ser puxado para trás. | [Double](#double) | nenhum |
+| `onSpawnBlockStates` | Define os blocos que o boss modificará quando faz spawn. | Verifique os comandos abaixo | nenhum |
+| `onRemoveBlockStates` | Define os blocos que o boss modificará quando desaparece. | Verifique os comandos abaixo | nenhum |
 
 Como indicado, os Bosses Regionais podem ter `onSpawnBlockStates` e `onRemoveBlockStates`.
 
-Este é um recurso muito útil para modificar arenas de combate durante o combate, especialmente quando combinado com mudanças de fase, pois torna-se possível abrir e fechar arenas de combate alterando os estados dos blocos.
+Esta é uma funcionalidade muito útil para modificar arenas de combate durante o combate, especialmente quando combinado com mudanças de fase, pois torna-se possível abrir e fechar arenas de combate através da mudança de estados de bloco.
 
-O formato para estes é muito complexo para escrever manualmente, então existem alguns comandos para ajudá-lo a configurá-los:
+O formato para isto é demasiado complexo para escrever manualmente, por isso existem alguns comandos para ajudar a configurá-los:
 
 | Comando | Descrição |
 |-|:-:|
-| /em registerblocks [regional_boss_file.yml] [on_spawn/on_remove] | Começa a registrar seleções manuais de blocos para estados de bloco no spawn ou na remoção. |
-| /em registerblocksedit [regional_boss_file.yml] [on_spawn/on_remove] | Edita os estados de bloco no spawn ou na remoção. |
-| /em registerblocksarea [regional_boss_file.yml] [on_spawn/on_remove] | Permite que os administradores selecionem grandes áreas de blocos para salvar como estados. |
-| /em registerblocksareaedit [regional_boss_file.yml] [on_spawn/on_remove] | Permite que os administradores editem grandes áreas de blocos para salvar como estados. |
+| /em registerblocks [regional_boss_file.yml] [on_spawn/on_remove] | Começa a registar seleções manuais de blocos para estados de bloco ao fazer spawn ou ao remover. |
+| /em registerblocksedit [regional_boss_file.yml] [on_spawn/on_remove] | Edita os estados de bloco ao fazer spawn ou ao remover. |
+| /em registerblocksarea [regional_boss_file.yml] [on_spawn/on_remove] | Permite que os administradores selecionem grandes áreas de blocos para guardar como estados. |
+| /em registerblocksareaedit [regional_boss_file.yml] [on_spawn/on_remove] | Permite que os administradores editem grandes áreas de blocos para guardar como estados. |
 
 <details> 
 
@@ -1609,27 +1661,27 @@ O formato para estes é muito complexo para escrever manualmente, então existem
 
 <div align="left">
 
-Digamos que você queira fazer uma luta onde um boss aparece em uma arena que tem uma porta aberta, e você quer fazer com que a porta feche quando a luta começar e reabra quando a luta terminar.
+Digamos que quer criar uma luta onde um boss faz spawn numa arena que tem uma porta aberta, e quer fazer com que a porta se feche quando a luta começa e reabra quando a luta termina.
 
-Para fazer isso, você precisará de duas fases de boss e registrar três conjuntos diferentes de estados de bloco. Para este exemplo, vou nomear essas fases como phase_1_boss.yml e phase_2_boss.yml, respectivamente.
+Para fazer isto, precisará de duas fases de boss e registar três conjuntos diferentes de estados de bloco. Para este exemplo, vou nomear estas fases phase_1_boss.yml e phase_2_boss.yml respetivamente.
 
-1) Use `/em registerblocks phase_1_boss.yml on_spawn` ou `/em registerblocksedit phase_1_boss.yml on_spawn` para registrar os blocos da porta em seu estado aberto.
+1) Use `/em registerblocks phase_1_boss.yml on_spawn` ou `/em registerblocksedit phase_1_boss.yml on_spawn` para registar os blocos de porta no seu estado aberto.
 
-Isso significa registrar os blocos de ar. A seleção de área é recomendada aqui.
+Isto significa registar os blocos de ar. A seleção de área é recomendada aqui.
 
-Isso é necessário para garantir que a porta esteja aberta quando o boss aparecer, para que os jogadores tenham a garantia de uma entrada.
+Isto é necessário para garantir que a porta está aberta quando o boss faz spawn, para que os jogadores tenham garantia de ter uma forma de entrar.
 
-2) Use `/em registerblocks phase_2_boss.yml on_spawn` ou `/em registerblocksedit phase_2_boss.yml on_spawn` para registrar os blocos da porta em seu estado fechado.
+2) Use `/em registerblocks phase_2_boss.yml on_spawn` ou `/em registerblocksedit phase_2_boss.yml on_spawn` para registar os blocos de porta no seu estado fechado.
 
-Isso significa registrar os blocos sólidos da porta que impediriam o jogador de sair.
+Isto significa registar os blocos sólidos da porta que impediriam o jogador de sair.
 
-Isso é necessário para mudar a porta para ser sólida quando o boss entrar na fase 2, impedindo que os jogadores saiam.
+Isto é necessário para mudar a porta para ser sólida quando o boss entra na fase 2, impedindo que os jogadores saiam.
 
-3) Use `/em registerblocks phase_2_boss.yml on_remove` ou `/em registerblocksedit phase_2_boss.yml on_remove` para registrar os blocos da porta em seu estado aberto.
+3) Use `/em registerblocks phase_2_boss.yml on_remove` ou `/em registerblocksedit phase_2_boss.yml on_remove` para registar os blocos de porta no seu estado aberto.
 
-Isso significa registrar os mesmos blocos da primeira etapa novamente (os blocos de ar).
+Isto significa registar os mesmos blocos do primeiro passo novamente (os blocos de ar).
 
-Isso é necessário para abrir a porta quando o boss morrer, permitindo que os jogadores saiam da arena.
+Isto é necessário para abrir a porta quando o boss morre, permitindo que os jogadores saiam da arena.
 
 </div>
 
@@ -1643,7 +1695,7 @@ Isso é necessário para abrir a porta quando o boss morrer, permitindo que os j
 
 <div align="center">
 
-Define se o boss está em alerta. Por padrão, os Bosses Regionais são mais lentos e têm uma distância de aggro menor quando estão fora de combate. Essa configuração impede que os Bosses Regionais sejam mais lentos e tenham uma distância de aggro menor quando estiverem fora de combate, para que eles sempre se comportem da mesma forma dentro ou fora de combate.
+Define se o boss está alerta. Por defeito, os Bosses Regionais são abrandados e têm uma distância de aggro mais curta quando estão fora de combate. Esta configuração impede que os Bosses Regionais sejam abrandados e tenham uma distância de aggro mais curta enquanto estão fora de combate, pelo que se comportarão sempre da mesma forma dentro ou fora de combate.
 
 </div>
 
@@ -1671,7 +1723,7 @@ alert: true
 
 <div align="center">
 
-Define se o Boss Regional será excluído permanentemente após ser morto. É isso que o BetterStructures usa para Santuários, onde o Boss Regional é projetado para ser combatido apenas uma vez e nunca mais naquele local.
+Define se o Boss Regional será permanentemente apagado após ser morto. Isto é o que BetterStructures usa para Santuários, onde o Boss Regional só é projetado para ser combatido uma vez e depois nunca mais nessa localização. 
 
 </div>
 
@@ -1695,18 +1747,18 @@ removeAfterDeath: true
 
 ***
 
-## Bosses instanciados
+## Bosses em instâncias
 
 <div align="center">
 
-Bosses instanciados são um subtipo de Bosses Regionais usados em Masmorras Instanciadas.
+Os bosses em instâncias são um subtipo de Bosses Regionais usados em Dungeons em Instâncias.
 
 | Chave | Descrição | Valores | Padrão |
-|-|:-:|:-:|-|
-| `instanced` | Torna o boss personalizado instanciado. Obrigatório. | `true` / `false` | `false` |
+|-|:-:|-|-|
+| `instanced` | Faz com que o boss personalizado seja em instância. Obrigatório. | `true` / `false` | `false` |
 
 
-Definir os bosses como instanciados é obrigatório para que as masmorras instanciadas funcionem corretamente. Também recomendamos remover as trelas de quaisquer bosses instanciados.
+Definir os bosses como instanciados é obrigatório para que as dungeons em instâncias funcionem corretamente. Também recomendamos remover as trelas para quaisquer bosses em instâncias.
 
 <details> 
 
@@ -1723,3 +1775,4 @@ instanced: true
 </details>
 
 </div>
+```

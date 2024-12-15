@@ -1,4 +1,4 @@
-# セットアップビデオ
+# セットアップ動画
 
 <div class="outer-container">
 <div class="iframe-container">
@@ -6,29 +6,26 @@
 </div>
 </div>
 
-# 必要なプラグイン
+# 必須プラグイン
 
 - [WorldEdit](https://dev.bukkit.org/projects/worldedit) ***または*** [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)
 
 # 推奨プラグイン
 
-- [EliteMobs](https://www.spigotmc.org/resources/%E2%9A%94elitemobs%E2%9A%94.40090/) ボス戦のある構造物用
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard) EliteMobs ボスアリーナを保護するため
+- ボス戦のある構造の場合 : [EliteMobs](https://www.spigotmc.org/resources/%E2%9A%94elitemobs%E2%9A%94.40090/)
+- EliteMobs ボスアリーナを保護するための [WorldGuard](https://dev.bukkit.org/projects/worldguard)
 
 # コンテンツのインストール
 
-独自のコンテンツを作成することもできますので、この手順は必須ではありませんが、数百ある事前作成済みの公式 BetterStructures ビルドをインストールする場合は、次の手順に従うことができます。
+独自のコンテンツを作成できるため、この手順は必須ではありませんが、何百もの既製の公式 BetterStructures ビルドをインストールする場合は、次の手順に従うことができます。
 
 1) [magmaguy.itch.io](https://magmaguy.itch.io/) または [patreon.com/magmaguy](https://www.patreon.com/magmaguy) にアクセスします。
-2) 必要なコンテンツをダウンロードします。
-3) ダウンロードしたままのコンテンツを、`~plugins/BetterStructures/imports` フォルダーに入れます。
-4) コマンド `/bs reload` を実行します。
+2) 必要なコンテンツをダウンロードします
+3) ダウンロードしたままの状態で、コンテンツを `~plugins/BetterStructures/imports` フォルダーに入れます。
+4) コマンド `/bs reload` を実行します
 
-これで完了です！構造物は、***新しいチャンク*** にスポーンし始めます。*サーバーがすでに生成したチャンクには、構造物を配置できません！*
+完了です! 構造が***新しいチャンク***で生成を開始します。*サーバーがすでに生成したチャンクは、構造を取得できません!*
 
 # FAQ
 
-問題や質問はありますか？ [FAQ]($language$/betterstructures/faq.md) を確認してください！
-
-```
-
+問題や質問がありますか？[FAQ]($language$/betterstructures/faq.md)を確認してください!

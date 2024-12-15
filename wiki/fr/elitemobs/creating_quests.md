@@ -1,611 +1,139 @@
-```
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+# Cómo crear un mapa personalizado de EternalTD
 
-# Quête d'exemple
+## Para crear el archivo level.yml para su mapa
 
-EliteMobs est livré avec un `test_quest.yml`, qui sera analysé ici comme un format de quête simple à suivre.
+Comience a crear su mapa creando un archivo de configuración de nivel siguiendo estos sencillos pasos:
 
-_Les quêtes personnalisées se trouvent dans le dossier `~plugins/EliteMobs/customquests` !_
+1. Comience creando un nuevo documento de texto y asignándole un nombre como *nombre_de_su_nivel.yml* (reemplace "nombre_de_su_nivel" con el nombre real de su nivel/mapa).
 
-`test_quest.yml`
+2. Abra el archivo en su editor de texto favorito.
 
+3. ¡Comencemos con la parte divertida! Agregue el nombre de su nivel usando esta configuración:
 ```yaml
-isEnabled: true
-customObjectives:
-  Objective1:
-    amount: '1'
-    filename: test_boss.yml
-    objectiveType: KILL_CUSTOM
-customRewards:
-- filename=magmaguys_toothpick.yml:amount=1:chance=1
-name: "&aKill the Test Boss"
-questLore: 
-- "&cEnd the test boss'' reign of terror!"
+levelName: "&aMi nivel increíble"
 ```
+Siéntase libre de darle vida con algunos colores de Minecraft u otros modificadores de texto.
 
-<div align="center">
-
-![create_quest_quest.jpg](../../../img/wiki/create_quest_quest.jpg)
-
-</div>
-
-*Si votre interface utilisateur de quête ne ressemble pas à cela, vous pouvez la modifier pour qu'elle corresponde à l'aide de `/em alt`.*
-
-Cette quête d'exemple donnera aux joueurs la tâche de tuer 1 test_boss.yml. (Le nom réel du boss affiché dans le suivi de quête sera le `name:` défini dans test_boss.yml.) Et en récompense de la réalisation de la quête, ils seront récompensés avec 1 cure-dent de Magmaguy.
-
-## Création de quêtes personnalisées
-
-<div align="center">
-
-### customObjectives
-
-Définit les objectifs de la quête.
-
-| Clé       |   Valeurs    | Par défaut |
-|-----------|:-----------:|:-------:|
-| `customObjectives` | Spécial [1] |  none   |
-
-*Remarque : Si vous utilisez un boss multiphases comme objectif, l'objectif doit utiliser la première phase comme cible.*
-
-<details> 
-
-<summary><b>Exemples</b></summary>
-
-<div align="left">
-
-`KILL_CUSTOM`:
-
-```yml
-customObjectives:
-  Objective1:
-    amount: '1'
-    filename: my_cool_boss.yml
-    objectiveType: KILL_CUSTOM
+4. Ahora, dele a su nivel algo de personalidad con una descripción genial:
+```yaml
+levelDescription:
+- "&aMi nivel es bastante genial."
+- "&a¡Espero que lo disfrutes!"
 ```
+Puede agregar más líneas a la descripción, pero mantenerla breve es una buena idea.
 
-`DIALOG`:
-
-```yml
-customObjectives:
-  Objective1:
-    dialog:
-    - "&a[Dialog NPC] &fCome here often?"
-    - "&7&oI should eat more apples."
-    filename: dialog_npc.yml
-    npcName: Dialog NPC
-    location: at dialog location.
-    objectiveType: DIALOG
+5. ¡Es hora de establecer oleadas! Especifique qué oleadas de EternalTD debe usar su nivel:
+```yaml
+wavesConfigFile: my_waves.yml
 ```
+Solo recuerde usar el nombre real de su archivo de oleadas. ¡Una oleada por nivel!
 
-`FETCH_ITEM`:
-
-```yml
-customObjectives:
-  Objective1:
-    amount: '99'
-    itemName: Red Apples
-    filename: my_quest_item_red_apples.yml
-    objectiveType: FETCH_ITEM
+6. Establezca el mundo (construcción) que usará su nivel:
+```yaml
+worldName: my_world_folder_name
 ```
+Utilice el nombre del mundo real que se encuentra dentro de la carpeta *worlds* de EternalTD.
 
-<div align="center">
-
-![create_quest_objective.jpg](../../../img/wiki/create_quest_objective.jpg)
-
-</div>
-
-</div>
-
-</details>
-
-**Spécial [1]**
-
-<details>
-
-<summary><b>Développer le tableau</b></summary>
-
-<div align="center">
-
-Les objectifs personnalisés sont construits à l'aide des valeurs suivantes :
-
-| Clé                                     | Description |
-|-----------------------------------------|-------------|
-| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | Utilisé pour définir le type d'objectif que cela représente. `KILL_CUSTOM` indique que la quête implique de tuer un boss personnalisé spécifique, `FETCH_ITEM` indique que la quête implique d'obtenir un objet personnalisé spécifique et `DIALOG` indique que la quête implique de parler à un PNJ.            |
-| `filename`                                    | Utilisé pour définir le nom de fichier du boss personnalisé, de l'objet personnalisé que le joueur doit tuer/obtenir ou du PNJ à qui il doit parler.            |
-| `amount`                                      | Utilisé pour définir le nombre de boss personnalisés qui doivent être tués ou d'objets qui doivent être obtenus.            |
-| `dialog`                                      | Utilisé pour définir le dialogue du PNJ à qui le joueur parle.            |
-| `name`                                        | Utilisé pour définir le nom de l'objectif de la quête, qu'il s'agisse d'un PNJ ou d'un objet personnalisé. À des fins visuelles uniquement.            |
-
-_Veuillez noter que chaque champ d'objectif personnalisé est séparé par un `:` !_
-
-</div>
-
-</details>
-
-***
-
-### customRewards
-
-Définit les récompenses de la quête.
-
-| Clé       |                                Valeurs                                 | Par défaut |
-|-----------|:---------------------------------------------------------------------:|:-------:|
-| `customRewards` | [Format de butin universel EliteMobs]($language$elitemobs/loot_tables.md) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-customRewards:
-- currencyAmount=50:amount=1:chance=0.05
-- material=COOKED_COD:amount=3:chance=1.0
-- filename=magmaguys_toothpick.yml:amount=1:chance=1.0
+7. Por último, pero no menos importante, elija el entorno perfecto para la configuración de su nivel:
+```yaml
+environment: NORMAL
 ```
+Puede elegir entre NORMAL, NETHER o THE_END. Elija el que prefiera.
 
-<div align="center">
+¡Su archivo de configuración de nivel está listo! El resto del archivo se completará con los comandos de EternalTD que utilizaremos en los siguientes pasos cuando mapeemos la compilación.
 
-![create_quest_rewards.jpg](../../../img/wiki/create_quest_rewards.jpg)
+## Preparación de su compilación
+Antes de mapear su compilación para usar con EternalTD, es esencial configurarla de la siguiente manera:
 
-</div>
+- Configúrelo en un mundo vacío. Si utiliza Multiverse, puede usar el comando:
+  ```
+  /mvcreate nombredetumundoaqui NORMAL -g VoidGen:.
+  ```
+- Tenga un borde de mundo ajustado alrededor de la compilación.
+- Cree un cilindro de barrera unos pocos bloques debajo de la compilación con una altura de un bloque y un radio lo suficientemente grande como para alcanzar el borde del mundo (se recomienda un radio de 200 bloques). Usando WorldEdit, puede ejecutar:
+  ```
+  //cyl barrier 200 1
+  ```
+- Establezca el punto de aparición para que esté en el centro de la compilación en un lugar seguro.
+- Aplique las siguientes reglas:
+    - /gamerule doWeatherCycle false
+    - /gamerule doDaylightCycle false
+    - /gamerule doMobSpawning false
+    - /gamerule doFireTick false
+    - /gamerule fireDamage false
+    - /gamerule mobGriefing false
+    - /gamerule disableRaids true
+    - /gamerule announceAdvancements false
+- El área de juego del mapa debe estar en el mismo nivel Y. Cualquier cosa que sea más alta o más baja se ignorará cuando comencemos el proceso de mapeo.
 
-</div>
+## Mapeo de la compilación para usar con EternalTD
+Para mapear el área de juego de su compilación para usar con EternalTD, siga estos pasos:
 
-</details>
+1. Mida manualmente la compilación, asegurándose de incluir solo el área de juego y nada más. Anote las coordenadas a medida que mide.
+<br>El área de juego debe incluir las secciones de inicio (aparición de monstruos) y fin del mapa. El inicio generalmente se construye con bloques verdes y con bloques rojos para el final.
 
-***
+2. Comience midiendo los ejes X, Y y Z de la compilación. Póngase en una esquina del área de juego de sus mapas en el eje X y anote la coordenada informada (puede usar las coordenadas de bloque para esto). Muévase al lado opuesto del eje X y anote esa coordenada.
 
-### questAcceptPermission
+3. Para el eje Y, párese en el **área de juego** y anote la coordenada informada.
 
-Définit la permission que le joueur doit avoir pour accepter la quête.
+4. Repita el mismo proceso que se hizo para el eje X para medir el eje Z. Puede echar un vistazo a esta imagen de ejemplo para ayudarlo a comprender lo que estamos tratando de lograr aquí:
+   ![Ejemplo de mapeo](https://i.imgur.com/IZfh2Nt.jpeg)
+   Observe cómo solo estamos midiendo las coordenadas donde queremos que esté nuestra área de juego e ignorando el resto. Como en el ejemplo, asegúrese de incluir el inicio y el fin al medir el área de juego. <br>Si el área de juego que está midiendo es más ancha en un extremo y más estrecha en el otro, debe medir la sección más ancha.
 
-| Clé       |      Valeurs       | Par défaut |
-|-----------|:-----------------:|:-------:|
-| `questAcceptPermission` | [Chaîne](#string) |  none   |
+5. Después de completar las mediciones, debería tener algo como esto:
+   ```
+   Eje X: -57, 56
+   Eje Y: 65
+   Eje Z: 34, -34
+   ```
 
-<details> 
+6. Reorganice estos números de mayor a menor para obtener dos conjuntos completos de coordenadas XYZ:
+   ```
+   56 65 34 (valores XYZ más altos)
+   -57 65 -34 (valores XYZ más bajos)
+   ```
 
-<summary><b>Exemple</b></summary>
+7. Use el siguiente comando para seleccionar las coordenadas:
+   ```
+   /etd selectfloorcoordinate Xalto Y Zalto Xbajo Y Zbajo
+   Ejemplo: /etd selectfloorcoordinate 56 65 34 -57 65 -34
+   ```
 
-<div align="left">
+8. Ahora se han seleccionado las coordenadas y están en memoria. Si recibe un error, significa que su medición fue incorrecta o que el área de juego no se construyó correctamente. Para verificar si mapeamos el área de juego correctamente, ejecute el siguiente comando:
+   ```
+   /etd register nombre_de_su_nivel.yml test
+   ```
+   Reemplace "nombre_de_su_nivel" con el nombre real del nivel/mapa que está intentando crear. Si todo se hizo correctamente, debería ver barreras que marcan cada mosaico en su área de juego.
 
-```yml
-questAcceptPermission: elitequest.my_permission
-```
+9. Revise el área de juego y asegúrese de que todo se vea como debería y luego ejecute el comando nuevamente, pero esta vez sin la parte de *test* al final.
+   ````
+   /etd register nombre_de_su_nivel.yml
+   ````
+   Esto ahora guardará el área de juego en su archivo de nivel y su archivo de nivel ahora debería estar listo para su uso.
 
-</div>
+## Recorte de la carpeta del mundo
+Hay varios archivos y carpetas ubicados en la carpeta de su mundo que podemos descartar, ya que EternalTD no los usa todos. Esto reducirá el tamaño de su mundo y hará que sea más fácil de distribuir.
 
-</details>
+Para el entorno NORMAL:
 
-***
+Para preparar su mundo, **conserve** los siguientes archivos y carpetas:
 
-### questAcceptPermissions
+1. carpeta **region**
 
-Définit les permissions que le joueur doit avoir pour accepter la quête.
+2.  **raids.dat** dentro de la carpeta **data** (asegúrese de que esté dentro de la carpeta **data** al copiar)
 
-| Clé       |   Valeurs    | Par défaut |
-|-----------|:-----------:|:-------:|
-| `questAcceptPermissions` | [Liste de chaînes](#string_list) |  none   |
+3.  archivo **level.dat**
 
-<details> 
+Puede eliminar de forma segura todos los demás archivos y carpetas ubicados en la carpeta del mundo. Esto configurará su mundo correctamente para el entorno NORMAL.
 
-<summary><b>Exemple</b></summary>
+Para los entornos NETHER y THE_END:
 
-<div align="left">
+Para preparar su mundo, conserve los siguientes archivos y carpetas:
 
-```yml
-questAcceptPermissions: 
-- elitequest.my_previous_quest_one.yml
-- elitequest.my_previous_quest_two.yml
-```
+1. carpeta **region** dentro de la carpeta **DIM-1** (asegúrese de que esté dentro de la carpeta **DIM-1** al copiar)
 
-</div>
+2.  **raids.dat** dentro de la carpeta **data** (asegúrese de que esté dentro de la carpeta **data** al copiar)
 
-</details>
+3.  archivo **level.dat**
 
-***
-
-### questLockoutPermission
-
-Définit la permission que le joueur recevra en terminant la quête, ce qui l'empêchera de la refaire (généralement le [Nom de fichier](#fielname) de la quête que vous modifiez).
-
-| Clé       |      Valeurs       | Par défaut |
-|-----------|:-----------------:|:-------:|
-| `questLockoutPermission` | [Chaîne](#string) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-questLockoutPermission: elitequest.my_quest.yml
-```
-
-</div>
-
-</details>
-
-***
-
-### questLockoutMinutes
-
-Définit le temps, en minutes, que le joueur devra attendre avant de pouvoir refaire la quête (fonctionne en supprimant la permission de verrouillage de la quête).
-
-| Clé       |      Valeurs       | Par défaut |
-|-----------|:-----------------:|:-------:|
-| `questLockoutMinutes` | [Entier](#integer) |  `-1`(ne se répétera jamais)   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-questLockoutMinutes: 60
-```
-
-</div>
-
-</details>
-
-***
-
-### name
-
-Définit le nom de la quête. Accepte les [Codes de couleur](#color_codes).
-
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|:-------:|
-| `name` | [Chaîne](#string) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-name: "&aMy Great Quest Name"
-```
-
-</div>
-
-</details>
-
-***
-
-### questLore
-
-Définit la description de la quête qui apparaîtra dans le menu de quête du jeu.
-
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|:-------:|
-| `questLore` | [Liste de chaînes](#string_list) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-questLore:
-- "Interesting lore sentence."
-- "Yet another interesting lore sentence."
-```
-
-<div align="center">
-
-![create_quest_lore.jpg](../../../img/wiki/create_quest_lore.jpg)
-
-</div>
-
-</div>
-
-</details>
-
-***
-
-### temporaryPermissions
-
-Définit les permissions attribuées au joueur jusqu'à ce qu'il rende la quête.
-
-Si vous utilisez ce paramètre pour vous assurer qu'un objet ne tombe que lorsque les joueurs ont une quête spécifique active, vous devrez également configurer la [Même permission]($language$/elitemobs/creating_items.md&section=permission) dans le fichier de configuration de l'objet.
-
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|:-------:|
-| `temporaryPermissions` | [Liste de chaînes](#string_list) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-temporaryPermissions:
-- elitequest.item_that_should_drop_only_during_quest.yml
-```
-
-</div>
-
-</details>
-
-***
-
-### questAcceptDialog
-
-Définit le dialogue qui apparaît dans le chat lors de l'acceptation de la quête.
-
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|:-------:|
-| `questAcceptDialog` | [Liste de chaînes](#string_list) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-questAcceptDialog:
-- "My hero! You are so helpful!"
-- "I wish you the best of luck!"
-```
-
-<div align="center">
-
-![create_quest_accept.jpg](../../../img/wiki/create_quest_accept.jpg)
-
-</div>
-
-</div>
-
-</details>
-
-***
-
-### questCompleteMessage
-
-Définit le dialogue qui apparaît dans le chat lors de la réalisation de la quête.
-
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|:-------:|
-| `questCompleteMessage` | [Liste de chaînes](#string_list) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-questCompleteMessage:
-- "My hero! You have completed my difficult quest!"
-- "As a reward you can have this loaf of bread!"
-```
-
-<div align="center">
-
-![create_quest_complete.jpg](../../../img/wiki/create_quest_complete.jpg)
-
-</div>
-
-</div>
-
-</details>
-
-***
-
-### questCompleteCommands
-
-Définit les commandes qui seront exécutées lors de la réalisation de la quête.
-
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|:-------:|
-| `questCompleteCommands` | [Liste de chaînes](#string_list) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-questCompleteCommands:
-- say $player has finished a quest!
-```
-
-<div align="center">
-
-![create_quest_commands.jpg](../../../img/wiki/create_quest_commands.jpg)
-
-</div>
-
-</div>
-
-</details>
-
-***
-
-### turnInNPC
-
-Définit le nom de fichier du PNJ à qui les joueurs doivent parler/interagir pour terminer la quête. Cela **n'a pas à** être le même PNJ qui a distribué la quête.
-
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|:-------:|
-| `turnInNPC` | [Nom de fichier](#filename) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-turnInNPC: my_cool_quest_npc.yml
-```
-
-</div>
-
-</details>
-
-***
-
-### trackable
-
-Définit si la quête utilisera le suivi de quête.
-
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|:-------:|
-| `trackable` | [Booléen](#boolean) | `true`  |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-trackable: true
-```
-
-</div>
-
-</details>
-
-***
-
-### questLevel
-
-Définit le niveau de la quête. Ce n'est qu'un guide visuel pour que les joueurs puissent savoir à quel point la quête sera difficile. Cela **ne modifie en aucun cas** les niveaux de boss, d'objets ou autres.
-
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|:-------:|
-| `questLevel` | [Entier](#integer) | `0`  |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-questLevel: 10
-```
-
-<div align="center">
-
-![create_quest_level.jpg](../../../img/wiki/create_quest_BUGGEDaddLATER.jpg)
-
-</div>
-
-</div>
-
-</details>
-
-***
-
-### questAcceptSound
-
-Définit le son qui est joué lorsqu'une quête est acceptée. Il est possible de jouer des sons Minecraft et des sons d'un pack de ressources.
-
-| Clé                |      Valeurs       | Par défaut |
-|--------------------|:-----------------:|:-------:|
-| `questAcceptSound` | [Chaîne](#string) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-questAcceptSound: entity.experience_orb.pickup
-```
-
-<div align="center">
-
-![create_quest_level.jpg](../../../img/wiki/create_quest_BUGGEDaddLATER.jpg)
-
-</div>
-
-</div>
-
-</details>
-
-***
-
-### questCompleteSound
-
-Définit le son qui est joué lorsqu'une quête est terminée (rendue). Il est possible de jouer des sons Minecraft et des sons d'un pack de ressources.
-
-| Clé                |      Valeurs       | Par défaut |
-|--------------------|:-----------------:|:-------:|
-| `questCompleteSound` | [Chaîne](#string) |  none   |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-questCompleteSound: entity.player.levelup
-```
-
-<div align="center">
-
-![create_quest_level.jpg](../../../img/wiki/create_quest_BUGGEDaddLATER.jpg)
-
-</div>
-
-</div>
-
-</details>
-
-### Permissions
-
-Comme mentionné dans les tableaux ci-dessus, les permissions sont généralement des [Chaînes](#string) ou des [Listes de chaînes](#string_list). Mais entrons dans les détails de la façon dont vous allez les utiliser pour verrouiller et déverrouiller les quêtes.
-
-Disons que vous créez la quête_3 dans une série de quêtes que vous avez planifiées et que vous ne voulez pas que les joueurs puissent prendre la quête_3 avant de terminer la quête_2. Nous configurerions le fichier de quête comme ceci :
-
-```yml
-questAcceptPermission: elitequest.quest_2.yml
-questLockoutPermission: elitequest.quest_3.yml
-```
-En définissant le `questAcceptPermissions` sur `elitequest.quest_2.yml`, nous avons maintenant empêché les joueurs de prendre quest_3.yml avant de terminer quest_2.yml. </br> En définissant `questLockoutPermission` sur `elitequest.quest_3.yml`, nous avons empêché les joueurs de pouvoir recevoir cette quête tant qu'ils l'ont déjà dans leur suivi ou s'ils ont déjà terminé cette quête. Cela empêche les joueurs de pouvoir répéter la quête.
-
-Si vous souhaitez créer une quête qui ne devient disponible qu'après que les joueurs ont terminé une série de quêtes, vous configureriez alors le fichier de quête comme ceci :
-
-```yml
-questAcceptPermissions: 
-- elitequest.quest_2.yml
-- elitequest.quest_3.yml
-- elitequest.quest_4.yml
-```
-
-Si vous voulez que les joueurs ne puissent piller certains objets que lorsqu'ils ont la bonne quête active, alors nous pouvons le faire en utilisant `temporaryPermissions`. Nous créerions une permission dans le fichier de quête en utilisant `temporaryPermissions`, puis nous ferions une [permission]($language$/elitemobs/creating_items.md&section=permission) correspondante dans le fichier d'objet en utilisant `permission`.
-
-Par exemple, nous ouvririons notre fichier de quête et ajouterions ce qui suit :
-
-```yml
-temporaryPermissions: 
-- elitequest.my_cool_item.yml
-```
-Ensuite, nous ouvririons le fichier d'objet, dans notre cas *my_cool_item.yml*, puis nous ajouterions ce qui suit :
-
-```yml
-permission: elitequest.my_cool_item.yml
-```
-Les deux fichiers ont maintenant des permissions correspondantes, ce qui devrait maintenant faire en sorte que notre objet ne tombe que lorsque les joueurs ont la bonne quête active.
-
-</div>
-
-```
-
+Puede eliminar de forma segura todos los demás archivos y carpetas ubicados en la carpeta del mundo. Esto configurará su mundo correctamente para los entornos NETHER y THE_END.

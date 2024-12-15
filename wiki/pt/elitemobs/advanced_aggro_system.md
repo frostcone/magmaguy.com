@@ -1,11 +1,20 @@
-A partir do EliteMobs 7.2, as Mobs de Elite usam um sistema de aggro avançado para o dano infligido às Elites.
+A partir da versão 7.2 do EliteMobs, os Elite Mobs utilizam um sistema de aggro avançado para o dano causado aos Elites.
 
-*Nota: aggro é o nome dado ao mecanismo que determina qual jogador o boss almeja para seus ataques*
+*Nota: aggro é o nome dado à mecânica que determina qual jogador o boss irá atacar.*
 
-No sistema de aggro avançado, todas as Elites irão focar o maior causador de dano entre o grupo de jogadores que as atacam se houver mais de um jogador atacando.
+No sistema de aggro avançado, todos os Elites irão atacar o jogador que causar mais dano entre o grupo de jogadores que
+os estiverem a atacar, caso haja mais do que um jogador a atacar.
 
-Isso significa que simplesmente levar os bosses em círculos enquanto outro jogador os mata é impossível, e também significa que jogadores de alto nível não podem usar escudos de carne de nível inferior para receber todo o dano enquanto matam o boss.
+Isto significa que simplesmente atrair bosses enquanto outro jogador os mata é impossível, e também significa que
+jogadores de nível alto não podem usar "escudos de carne" de nível inferior para receber todo o dano enquanto matam o
+boss.
 
-Se o dano for equilibrado entre os jogadores, o boss alternará entre os alvos com bastante regularidade, mantendo todos os jogadores em alerta.
+Se o dano for equilibrado entre os jogadores, o boss irá alternar entre alvos com bastante regularidade, mantendo todos
+os jogadores atentos.
 
-Este sistema é amplamente utilizado em nossas [Masmorras de Instância]($language$/elitemobs/instanced_dungeon_difficulty.md) onde os jogadores são esperados assumir os papéis de Tanques e DPS. [Masmorras de Instância]($language$/elitemobs/instanced_dungeon_difficulty.md) até terá drops de loot que foram feitos especificamente para papéis de Tanque. Esses drops de loot terão um encantamento especial chamado [Ataques Fortes]($language$/elitemobs/custom_enchantments_list.md&section=loud-strikes) que atrairá aggro de qualquer Elite que o jogador acertar. 
+Este sistema é muito usado nas nossas [Instanced Dungeons]($language$/elitemobs/instanced_dungeon_difficulty.md) onde se
+espera que os jogadores assumam papéis de Tanks e DPS.
+As [Instanced Dungeons]($language$/elitemobs/instanced_dungeon_difficulty.md) terão mesmo drops de loot que foram feitos
+especificamente para papéis de Tank. Estes drops de loot terão um encantamento especial
+chamado [Loud Strikes]($language$/elitemobs/custom_enchantments_list.md&section=loud-strikes) que irá atrair aggro de
+quaisquer Elites que o jogador atingir.

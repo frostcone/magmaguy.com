@@ -1,7 +1,7 @@
 ¡Bienvenido a la wiki de BetterStructures!
 
-Este es un complemento de Spigot Minecraft destinado a crear un escáner de topología independiente del generador, capaz de encontrar puntos de alta compatibilidad basados ​​en la geometría y las características de los bloques, complementado con métodos de adaptación del terreno no intrusivos.
+Este es un plugin de Spigot para Minecraft destinado a crear un escáner de topología independiente del generador capaz de encontrar puntos de alta compatibilidad basados en la geometría y las características de los bloques, complementado con métodos de adaptación de terreno no intrusivos.
 
-Básicamente, toma esquemas, hace un montón de mediciones y las pega, a menudo agregando pedestales y usando bloques especiales para asegurarse de que las pastas se vean realmente bien.
+Básicamente, toma esquemas, realiza una serie de mediciones y los pega, a menudo agregando pedestales y usando bloques especiales para asegurarse de que las pegadas se vean realmente bien.
 
-¡Lee la wiki para tener una idea de lo que puedes hacer por el complemento o de lo que puede hacer por ti!
+¡Lea la wiki para tener una idea de lo que puede hacer por el plugin o de lo que puede hacer por usted!

@@ -2,15 +2,15 @@
 
 # ¿Qué son las generaciones personalizadas?
 
-Las generaciones personalizadas son utilizadas por eventos y refuerzos globales para establecer cómo, dónde y cuándo un evento debe generar el jefe para ese evento.
+Las generaciones personalizadas son utilizadas por Eventos y refuerzos globales para establecer cómo, dónde y cuándo un evento debe generar al jefe para ese evento.
 
-Los eventos y los refuerzos globales establecen qué generación están utilizando anotando su nombre de archivo.
+Los eventos y los refuerzos globales establecen qué generación están usando al escribir su nombre de archivo.
 
-# Creando generaciones personalizadas
+# Creación de generaciones personalizadas
 
-Las generaciones personalizadas van en la carpeta `customspawns`. Varios eventos pueden utilizar una generación personalizada al mismo tiempo, por lo que no tienes que crear una por evento.
+Las generaciones personalizadas van a la carpeta `customspawns`. Una generación personalizada puede ser utilizada por varios eventos al mismo tiempo, por lo que no tiene que crear una por evento.
 
-Aquí hay un ejemplo de generación personalizada:
+Aquí hay un ejemplo de una generación personalizada:
 
 ```yaml
 isEnabled: true
@@ -21,16 +21,16 @@ bypassWorldGuard: false
 isSurfaceSpawn: true
 ```
 
-## Hacer una generación en cualquier lugar
-Para hacer una generación que pueda ocurrir **en cualquier lugar**, tu configuración debe ser similar a la siguiente:
+## Creación de una generación en cualquier lugar
+Para hacer que una generación pueda ocurrir **en cualquier lugar**, su configuración debe ser similar a la siguiente:
 
 ```yml
 isEnabled: true
 canSpawnInLight: true
 ```
-Esta configuración permite que las turbas aparezcan en cualquier ubicación, en cualquier mundo, en cualquier momento y durante cualquier fase lunar.
+Esta configuración permite que los mobs aparezcan en cualquier ubicación, en cualquier mundo, en cualquier momento y durante cualquier fase lunar.
 
-Si estás interesado en crear una generación más personalizada, sigue leyendo a continuación.
+Si está interesado en crear una generación más personalizada, siga leyendo a continuación.
 
 ## Valores
 
@@ -46,7 +46,7 @@ Establece si la generación está habilitada.
 |-----------|:-------------------:|:-------:|
 | `isEnabled` | [Booleano](#booleano) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -64,13 +64,13 @@ isEnabled: true
 
 ### lowestYLevel
 
-Establece el nivel y más bajo (altura del mapa) utilizado.
+Establece el nivel y (altura del mapa) más bajo utilizado.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `lowestYLevel` | [Entero](#entero) |   `0`   |
+| `lowestYLevel` | [Entero](#integer) |   `0`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -88,13 +88,13 @@ lowestYLevel: 0
 
 ### highestYLevel
 
-Establece el nivel y más bajo (altura del mapa) utilizado.
+Establece el nivel y (altura del mapa) más bajo utilizado.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `highestYLevel` | [Entero](#entero) |  `320`  |
+| `highestYLevel` | [Entero](#integer) |  `320`  |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -112,13 +112,13 @@ highestYLevel: 320
 
 ### validWorlds
 
-Establece la lista de mundos donde puede ocurrir la generación personalizada. Esta configuración se puede omitir para permitir que **todos** tus mundos sean válidos.
+Establece la lista de mundos donde puede ocurrir la generación personalizada. Esta configuración se puede omitir para permitir que **todos** sus mundos sean válidos.
 
 | Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `validWorlds` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |
+| `validWorlds` | [Lista de cadenas](#string_list) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -130,7 +130,7 @@ validWorlds:
 - FUN_LAND
 ```
 
-*Si quieres que todos tus mundos sean válidos, simplemente no uses la configuración o formatéala así:*
+*Si desea que todos sus mundos sean válidos, simplemente no use la configuración o formatee de esta manera:*
 
 ```yml
 validWorlds: []
@@ -150,7 +150,7 @@ Establece la lista de entornos mundiales válidos donde puede ocurrir la generac
 |-----------|:---------------------------:|:-------:|
 | `validWorldEnvironments` | [Lista de entornos](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -162,7 +162,7 @@ validWorldEnvironments:
 - LARGE_BIOMES
 ```
 
-*Si quieres que todos los entornos sean válidos, simplemente no uses la configuración o formatéala así:*
+*Si desea que todos los entornos sean válidos, simplemente no use la configuración o formatee de esta manera:*
 
 ```yml
 validWorldEnvironments: []
@@ -182,7 +182,7 @@ Establece la lista de biomas válidos donde puede ocurrir la generación persona
 |-----------|:---------------------------:|:-------:|
 | `validBiomes` | [Lista de biomas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -194,7 +194,7 @@ validBiomes:
 - MUSHROOM_FIELDS
 ```
 
-*Si quieres que todos los entornos sean válidos, simplemente no uses la configuración o formatéala así:*
+*Si desea que todos los entornos sean válidos, simplemente no use la configuración o formatee de esta manera:*
 
 ```yml
 validBiomes: []
@@ -212,9 +212,9 @@ Establece la hora más temprana del juego en la que puede ocurrir la generación
 
 | Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `earliestTime` | [Entero](#entero) |   `0`   |
+| `earliestTime` | [Entero](#integer) |   `0`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -236,9 +236,9 @@ Establece la hora más temprana del juego en la que puede ocurrir la generación
 
 | Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `latestTime` | [Entero](#entero) | `24000` |
+| `latestTime` | [Entero](#integer) | `24000` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -262,7 +262,7 @@ Establece la hora más temprana del juego en la que puede ocurrir la generación
 |-----------|:-----------:|:-------:|
 | `moonPhase` | Especial [1] | `24000` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -278,7 +278,7 @@ moonPhase: 24000
 
 **Especial [1]**
 
-<details> 
+<details>
 
 <summary><b>Expandir tabla</b></summary>
 
@@ -304,7 +304,7 @@ Establece si la generación personalizada omitirá los sistemas de protección c
 |-----------|:---------------------------:|:-------:|
 | `bypassWorldGuard` | [Booleano](#booleano) | `false` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -328,7 +328,7 @@ Especifica si la generación personalizada puede ocurrir en bloques iluminados p
 |-----------|:---------------------------:|:-------:|
 | `canSpawnInLight` | [Booleano](#booleano) | `false` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -352,7 +352,7 @@ Establece si la generación personalizada solo puede ocurrir en la superficie de
 |-----------|:---------------------------:|:-------:|
 | `isSurfaceSpawn` | [Booleano](#booleano) | `false` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -376,7 +376,7 @@ Establece si la generación personalizada solo puede ocurrir bajo tierra.
 |-----------|:---------------------------:|:-------:|
 | `isUndergroundSpawn` | [Booleano](#booleano) | `false` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -391,5 +391,3 @@ isUndergroundSpawn: false
 </details>
 
 </div>
-
-

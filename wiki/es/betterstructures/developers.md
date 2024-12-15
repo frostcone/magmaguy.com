@@ -4,32 +4,35 @@
 ```xml
 <repositories>
     <repository>
-        <id>oss-sonatype</id>
-        <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+        <id>magmaguy-repo-releases</id>
+        <name>Repositorio de MagmaGuy</name>
+        <url>https://repo.magmaguy.com/releases</url>
     </repository>
 </repositories>
 
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>versionNumber-SNAPSHOT</version>
+  <version>¡Verifica cuál es la última versión!</version>
+  <scope>provided</scope>
 </dependency>
 ```
 
 # Gradle
 ```kt
 repositories {
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots'
-    }
+  maven {
+    name = "magmaguyRepoReleases"
+    url = uri("https://repo.magmaguy.com/releases")
+  }
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:versionNumber-SNAPSHOT'
+    implementation 'com.magmaguy:BetterStructures:¡Verifica cuál es la última versión!'
 }
 ```
 
-Nota: Reemplaza `versionNumber` con la versión actual del complemento.
+Nota: Reemplace `versionNumber` con la versión actual del plugin.
 
 # Eventos
 
@@ -37,27 +40,26 @@ Nota: Reemplaza `versionNumber` con la versión actual del complemento.
 
 ## BuildPlaceEvent
 
-Se llama cuando una construcción está a punto de ser colocada. Expone datos sobre qué construcción se va a colocar y dónde, entre otras cosas, a través del objeto FitAnything.
+Se llama cuando está a punto de colocarse una construcción. Expone datos sobre qué construcción se va a colocar y dónde, entre otras cosas, a través del objeto FitAnything.
 
-**¡No intentes modificar la construcción que se está colocando!** Puedes modificar cosas menores, pero cambiar toda la construcción probablemente resultará en una construcción con un ajuste deficiente.
+**¡No intente modificar la construcción que se está colocando!** Puede modificar cosas menores, pero cambiar toda la construcción probablemente resultará en una construcción con un ajuste deficiente.
 
-Esto es cancelable.
+Esto se puede cancelar.
 
 ## ChestFillEvent
 
-Se llama cuando se llena un cofre. Utiliza el inventario de instantáneas del contenedor para almacenar de forma segura los datos que se aplicarán.
+Se llama cuando se llena un cofre. Utiliza el inventario de instantáneas del contenedor para almacenar de forma segura los datos que se van a aplicar.
 
-Las modificaciones al botín deben realizarse en el inventario de instantáneas a través del método Spigot para agregar o eliminar elementos.
+Las modificaciones al botín deben realizarse en el inventario de instantáneas a través del método Spigot de agregar o eliminar elementos.
 
-Esto es cancelable.
+Esto se puede cancelar.
 
 # Clases clave
 
 ## FitAnything
 
-La clase FitAnything es la clase que se instancia cuando se pega una construcción y maneja todos los aspectos de la pasta, incluido el llenado de cofres y la generación de mobs.
+La clase FitAnything es la clase que se instancia cuando se pega una construcción y maneja todos los aspectos del pegado, incluido el llenado de cofres y la generación de mobs.
 
 ## WorldGuard
 
-La clase WorldGuard maneja las protecciones de la región WorldGuard. El método de utilidad `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` está disponible para que los desarrolladores conecten fácilmente un esquema de protección de región personalizado sobre BetterStructures.
-
+La clase WorldGuard maneja las protecciones de región de WorldGuard. El método de utilidad `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` está disponible para que los desarrolladores se conecten fácilmente en un esquema de protección de región personalizado sobre BetterStructures.

@@ -1,21 +1,18 @@
-```markdown
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+# カスタムルートテーブル
 
-# カスタムlootテーブル
+ユニバーサルなルート形式。EliteMobsで複数の異なる場所で使用されます。
 
-ユニバーサル loot 形式。EliteMobs では、さまざまな場所で利用されます。
+これは最新の形式であり、使用が推奨される形式ですが、いくつかの代替となる古い形式も存在します。
 
-これは最新の形式であり、使用するように推奨されている形式ですが、古い形式がいくつか存在しています。
+設定を追加する前に、必ずルートテーブルを`uniqueLootList:`で開始してください。そうしないと、.yml設定でエラーが発生します。
 
-`.yml` 設定にエラーが発生しないように、必ず `uniqueLootList:` を loot テーブルの先頭に設定してください。
+### エリートアイテムのドロップ：
 
-### エリートアイテムのドロップ:
-
-| キー | 詳細 | 値                | デフォルト |
+| キー | 詳細 | 値 | デフォルト |
 | --- | :-: |-----------------------| --- |
-| `filename` | 使用するカスタムアイテムのファイル名を設定します。 | [Filename](#filename) | none |
+| `filename` | 使用するカスタムアイテムのファイル名を設定します。 | [ファイル名](#filename) | なし |
 
-<details> 
+<details>
 
 <summary align="center"><b>例</b></summary>
 
@@ -26,21 +23,21 @@ uniqueLootList:
   - filename: magmaguys_toothpick.yml
 ```
 
-これにより、モブは、100% の確率で、*MagmaGuy's Toothpick* を 1 つドロップします。
+これは、100％のドロップ率で*MagmaGuy's Toothpick*を1つドロップさせます。
 
 </div>
 
 </details>
 
-### 一般的な設定:
+### 一般的な設定：
 
-| キー | 詳細 | 値              | デフォルト |
+| キー | 詳細 | 値 | デフォルト |
 | --- | :-: |---------------------| --- |
-| `chance` | loot がドロップする確率を設定します。 | [Double](#double)   | `1.0` |
-| `amount` | ドロップする loot エントリの数を設定します。 | [Integer](#integer) | `1` |
-| `ignorePlayerLevel` | プレイヤーの loot リミッターを無視して loot をドロップします。 | [Boolean](#boolean) | `false` |
+| `chance` | ルートがドロップする確率を設定します。 | [Double](#double) | `1.0` |
+| `amount` | このルートエントリをドロップする量を設定します。 | [Integer](#integer) | `1` |
+| `ignorePlayerLevel` | ルートのドロップをプレイヤーのルート制限を無視するようにします。 | [Boolean](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary align="center"><b>例</b></summary>
 
@@ -54,19 +51,19 @@ uniqueLootList:
     ignorePlayerLevel: true
 ```
 
-これにより、モブは 50% の確率で、プレイヤーレベルを無視して、*MagmaGuy's Toothpick* を 10 個ドロップします。
+これは、プレイヤーレベルを無視し、50％のドロップ率で*MagmaGuy's Toothpick*を10個ドロップさせます。
 
 </div>
 
 </details>
 
-### Elite Coins のドロップ:
+### エリートコインのドロップ：
 
-| キー | 詳細 | 値              | デフォルト |
+| キー | 詳細 | 値 | デフォルト |
 | --- | :-: |---------------------| --- |
-| `currencyAmount` | ドロップされるコインの数を設定します。 | [Integer](#integer) | none |
+| `currencyAmount` | ドロップするコインの量を設定します。 | [Integer](#integer) | なし |
 
-<details> 
+<details>
 
 <summary align="center"><b>例</b></summary>
 
@@ -77,19 +74,20 @@ uniqueLootList:
   - currencyAmount: 344
     chance: 0.5
 ```
-これにより、モブは 50% の確率で、344 個の *Elite Coins* をドロップします。
+
+これは、50％のドロップ率で344 *エリートコイン*をドロップさせます。
 
 </div>
 
 </details>
 
-### vanilla アイテムのドロップ:
+### バニラアイテムのドロップ：
 
-| キー | 詳細 | 値                | デフォルト |
+| キー | 詳細 | 値 | デフォルト |
 | --- | :-: |-----------------------| --- |
-| `material` | ドロップされるアイテムの素材を設定します。 | [Material](#material) | none |
+| `material` | ドロップするアイテムのマテリアルを設定します。 | [Material](#material) | なし |
 
-<details> 
+<details>
 
 <summary align="center"><b>例</b></summary>
 
@@ -101,21 +99,21 @@ uniqueLootList:
     chance: 0.3
     amount: 5
 ```
-これにより、モブは 30% の確率で、*リンゴ* を 5 個ドロップします。
+これは、30％のドロップ率で5個の*リンゴ*をドロップさせます。
 
 </div>
 
 </details>
 
-### アリーナ: 進行中（現在動作していません）
-アリーナの loot テーブルを作成する場合は、`uniqueLootList:` ではなく、`rawArenaReward:` で loot テーブルを開始してください。
+### アリーナ：開発中（現在機能していません）
+アリーナルートテーブルを作成する場合は、`uniqueLootList:`の代わりに`rawArenaReward:`でルートテーブルを開始するようにしてください。
 
-| キー | 詳細 | 値              | デフォルト |
+| キー | 詳細 | 値 | デフォルト |
 | --- | :-: |---------------------| --- |
-| `wave` | この loot エントリがドロップされるウェーブを設定します。アリーナでのみ使用されます。 | [Integer](#integer) | none |
-| `level` | loot ドロップのレベルを設定します。アリーナでのみ使用されます。 | [Integer](#integer) | none |
+| `wave` | このルートエントリがドロップするウェーブを設定します。アリーナでのみ使用します。 | [Integer](#integer) | なし |
+| `level` | ルートドロップのレベルを設定します。アリーナでのみ使用します。 | [Integer](#integer) | なし |
 
-<details> 
+<details>
 
 <summary align="center"><b>例</b></summary>
 
@@ -131,19 +129,19 @@ rawArenaReward:
     wave: 1
     level: 2
 ```
-プレイヤーが最初のウェーブをクリアすると、アリーナは 50% の確率で *パン* を 10 個、そして 100% の確率でレベル 2 の *MagmaGuy's Toothpick* を 1 つドロップします。
+プレイヤーが最初のウェーブをクリアすると、これは50％のドロップ率で10個の*パン*をドロップさせ、100％のドロップ率でレベル2の*MagmaGuy's Toothpick*を1つドロップさせます。
 
 </div>
 
 </details>
 
-### インスタンスダンジョン:
+### インスタンスダンジョン：
 
-| キー | 詳細 | 値            | デフォルト |
+| キー | 詳細 | 値 | デフォルト |
 | --- | :-: |-------------------| --- |
-| `difficultyID` | この loot がドロップされるインスタンスダンジョンの難易度リストを設定します。インスタンスダンジョンでのみ使用されます。 | [String](#string) | none |
+| `difficultyID` | このルートがドロップするインスタンスダンジョンの難易度リストを設定します。インスタンスダンジョンでのみ使用します。 | [String](#string) | なし |
 
-<details> 
+<details>
 
 <summary align="center"><b>例</b></summary>
 
@@ -157,11 +155,8 @@ uniqueLootList:
     - 1
     - 2
 ```
-これにより、プレイヤーが難易度 1 または 2 でボスを倒した場合、モブは 50% の確率で *MagmaGuy's Toothpick* を 1 個ドロップします。
+これは、プレイヤーが難易度1または2でボスを倒した場合、50％のドロップ率で1つの*MagmaGuy's Toothpick*をドロップさせます。
 
 </div>
 
 </details>
-
-```
-

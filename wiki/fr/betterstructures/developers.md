@@ -1,62 +1,65 @@
-# Référentiel Public
+# Dépôt public
 
 ## Maven
 ```xml
 <repositories>
     <repository>
-        <id>oss-sonatype</id>
-        <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+        <id>magmaguy-repo-releases</id>
+        <name>Dépôt de MagmaGuy</name>
+        <url>https://repo.magmaguy.com/releases</url>
     </repository>
 </repositories>
 
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>versionNumber-SNAPSHOT</version>
+  <version>Vérifiez quelle est la dernière version !</version>
+  <scope>provided</scope>
 </dependency>
 ```
 
 # Gradle
 ```kt
 repositories {
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots'
-    }
+  maven {
+    name = "magmaguyRepoReleases"
+    url = uri("https://repo.magmaguy.com/releases")
+  }
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:versionNumber-SNAPSHOT'
+    implementation 'com.magmaguy:BetterStructures:Vérifiez quelle est la dernière version !'
 }
 ```
 
-Note : remplacez `versionNumber` par la version actuelle du plugin.
+Remarque : remplacez `versionNumber` par la version actuelle du plugin.
 
 # Événements
 
-**Note : Les événements se trouvent dans com.magmaguy.betterstructures.api**
+**Remarque : les événements se trouvent dans com.magmaguy.betterstructures.api**
 
 ## BuildPlaceEvent
 
-Appelé lorsqu'une construction est sur le point d'être placée. Expose des données sur la construction qui va être placée et où, entre autres choses, via l'objet FitAnything.
+Appelé lorsqu'une compilation est sur le point d'être placée. Expose les données concernant la compilation qui va être placée et où, entre autres choses, via l'objet FitAnything.
 
-**N'essayez pas de modifier la construction en cours de placement !** Vous pouvez modifier des choses mineures, mais modifier la construction entière entraînera probablement une construction mal ajustée.
+**N'essayez pas de modifier la compilation en cours de placement !** Vous pouvez modifier des éléments mineurs, mais changer l'ensemble de la compilation entraînera probablement une compilation mal ajustée.
 
-Cet événement est annulable.
+Cela peut être annulé.
 
 ## ChestFillEvent
 
-Appelé lorsqu'un coffre est rempli. Utilise l'inventaire instantané du conteneur pour stocker en toute sécurité les données à appliquer.
+Appelé lorsqu'un coffre est rempli. Utilise l'inventaire d'instantané de conteneur pour stocker en toute sécurité les données à appliquer.
 
-Les modifications du butin doivent être effectuées dans l'inventaire instantané via la méthode Spigot d'ajout ou de suppression d'élément.
+Les modifications du butin doivent être apportées à l'inventaire d'instantané via la méthode Spigot d'ajout ou de suppression d'objets.
 
-Cet événement est annulable.
+Cela peut être annulé.
 
 # Classes clés
 
 ## FitAnything
 
-La classe FitAnything est la classe qui est instanciée lorsqu'une construction est collée et gère tous les aspects du collage, y compris le remplissage des coffres et l'apparition des monstres.
+La classe FitAnything est la classe qui est instanciée lorsqu'une compilation est collée et gère tous les aspects du collage, y compris le remplissage des coffres et la génération de mobs.
 
 ## WorldGuard
 
-La classe WorldGuard gère les protections de région WorldGuard. La méthode utilitaire `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` est mise à la disposition des développeurs pour leur permettre d'intégrer facilement un système de protection de région personnalisé en plus de BetterStructures.
+La classe WorldGuard gère les protections de région de WorldGuard. La méthode utilitaire `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` est mise à disposition pour que les développeurs puissent facilement raccorder un schéma de protection de région personnalisé en plus de BetterStructures.

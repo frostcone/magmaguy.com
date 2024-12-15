@@ -1,51 +1,48 @@
-```markdown
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+# エリートスクリプトゾーン
 
-# Elite スクリプトゾーン
+ゾーンとは、スクリプターが何らかのアクションを実行するためのターゲットとして使用できる、形状で定義された場所のことです。
 
-ゾーンは、スクリプターがアクションを実行するためのターゲットとして使用できる、形状で定義された場所です。
+スクリプトごとに設定できるゾーンは1つのみです。
 
-スクリプトごとに、1 つのゾーンのみを設定できます。
+ゾーンをターゲットにするには、ターゲットタイプ `ZONE_FULL` または `ZONE_BORDER` を使用できます。
 
-ゾーンをターゲットにするには、`ZONE_FULL` または `ZONE_BORDER` のターゲットタイプを使用します。
+ゾーン自体も、[スクリプトターゲット]($language$/elitemobs/elitescript_targets.md)を使用して、ゾーンが表示される場所を定義します。
 
-ゾーン自体は、[スクリプトターゲット]($language$/elitemobs/elitescript_targets.md) を使用して、ゾーンが表示される場所を定義します。
+## 形状
 
-## shape
+ゾーンの形状を設定します。有効な形状：
 
-ゾーンの形状を設定します。有効な形状は次のとおりです。
-
-| 形状タイプ                                                               | 詳細 | アニメーション可能 | 境界線 |
+| 形状タイプ                                                               | 詳細 | アニメーション可能 | ボーダー |
 |--------------------------------------------------------------------------| :-: | :-: | :-: |
-| [`CYLINDER`]($language$/elitemobs/elitescript_zones.md&section=cylinder)         | 円柱形 | ❌ | ✅ |
+| [`CYLINDER`]($language$/elitemobs/elitescript_zones.md&section=cylinder)         | 円筒形 | ❌ | ✅ |
 | [`SPHERE`]($language$/elitemobs/elitescript_zones.md&section=sphere)             | 球形 | ❌ | ✅ |
 | [`DOME`]($language$/elitemobs/elitescript_zones.md&section=dome)                 | ドーム形（半球） | ❌ | ✅ |
-| [`CUBOID`]($language$/elitemobs/elitescript_zones.md&section=cuboid)             | 直方体形（立方体のような形） | ❌ | ✅ |
-| [`STATIC_RAY`]($language$/elitemobs/elitescript_zones.md&section=static_ray)     | 2 つの点間の固定された線 | ❌ | ❌ |
-| [`ROTATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=rotating_ray) | 2 つの点間を回転する線 | ✅ | ❌ |
-| [`TRANSLATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=translating_ray) | 2 つの初期点から 2 つの最終点に移動する線 | ✅ | ❌ |
+| [`CUBOID`]($language$/elitemobs/elitescript_zones.md&section=cuboid)             | 直方体形（立方体のような） | ❌ | ✅ |
+| [`STATIC_RAY`]($language$/elitemobs/elitescript_zones.md&section=static_ray)     | 2点間の固定線 | ❌ | ❌ |
+| [`ROTATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=rotating_ray) | 2点間を回転する線 | ✅ | ❌ |
+| [`TRANSLATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=translating_ray) | 2つの初期点から2つの最終点の間を移動する線 | ✅ | ❌ |
 
 ---
 
 #### アニメーション可能
 
-アニメーションを含むゾーンは、スクリプトが最初に呼び出されたときにゾーンのアニメーションを開始します。
+アニメーション付きのゾーンは、スクリプトが最初に呼び出されたときにゾーンアニメーションを開始します。
 
-つまり、アクションに待機時間がある場合、アクションが開始されると、ゾーンはアクションが待機している間もすでに移動しています。
+つまり、アクションに待機時間がある場合、アクションが開始されるときには、ゾーンはアクションが待機している間も動き回っています。
 
-ゾーンは常にすべてのティックでアニメーション化されます。つまり、`SPAWN_PARTICLES` アクションを使用する場合、ゾーンはティックごとに移動するため、ティックごとに実行するように設定できます。秒ごとに実行すると、パーティクルがスポーンされないティックでもゾーンは移動し続けるため、パーティクルが飛び跳ねているように見えます。
+ゾーンは常にすべてのティックでアニメーション化されます。つまり、`SPAWN_PARTICLES`アクションを使用する場合、ゾーンはすべてのティックで移動するため、すべてのティックで実行するように設定できます。毎秒実行すると、パーティクルがスポーンされなかったティックでもゾーンが移動し続けたため、パーティクルが飛び回って見えるでしょう。
 
-ゾーンを回転させたいが、アクションを開始する前に特定のティック数待つ場合は、別のスクリプトを作成し、`RUN_SCRIPT` でそのスクリプトを呼び出します。`RUN_SCRIPT` には、必要な待機時間を設定してください。
+回転するゾーンアクションを作成したいが、アクションを開始する前に一定のティック数待機したい場合は、それを別のスクリプトにして、`RUN_SCRIPT`を通じてそのスクリプトを呼び出します。`RUN_SCRIPT`に目的の待機時間があることを確認してください。
 
-ゾーンは、アニメーションが完了すると、最終的な場所に留まります。
+ゾーンは、アニメーションが終了すると、最終的な場所に留まります。
 
-アニメーション可能なゾーンはすべて、スクリプトターゲットでの追跡が無効になっています。これは、追加の移動により、スクリプターとプレイヤーにとって理解が難しくなるためです。つまり、これらのゾーンはボスやプレイヤーを追跡せず、常に最初のスポーンポイントを基準に移動します。
+アニメーション可能なゾーンはすべて、スクリプトターゲットを追跡しないように設定されています。これは、余分な動きによってスクリプターやプレイヤーにとって理解するのが非常に困難になるためです。つまり、これらのゾーンはボスやプレイヤーを追跡せず、常に初期スポーンポイントを基準に移動します。
 
 ---
 
-#### 境界線
+#### ボーダー
 
-一部のゾーンには、境界線を設定できます。境界線がある場合、`ZONE_BORDER` をゾーンのターゲットとして使用できます。境界線は、最初の大きな形状の中に、2 番目の小さな形状を作成することで定義されます。小さなゾーンと大きなゾーンの間の領域が境界線になります。
+特定のゾーンにはボーダーを設定できます。ボーダーとは、`ZONE_BORDER`をゾーンのターゲットとして使用できることを意味します。ボーダーは、最初の大きな形状の内側に、2番目の小さな形状を作成することで定義されます。小さなゾーンと大きなゾーンの間の領域がボーダーです。
 
 <div align="center">
 
@@ -83,9 +80,9 @@ eliteScript:
 
 </div>
 
-このスクリプトは、5 秒間（5 ティック x 20 回 = 100 ティック）ゾーンの境界線にのみ表示される煙のパーティクルを生成します。
+このスクリプトでは、煙のパーティクルが**ゾーンのボーダー内のみ**に5秒間表示されます（5回ごとに繰り返され、20回=100ティック）。
 
-`ZONE_BORDER` オプションを使用せずに、代わりに `ZONE_FULL` オプションを使用した場合は、ゾーン全体がこのように煙のパーティクルで覆われます。
+`ZONE_BORDER`オプションを使用せずに、代わりに`ZONE_FULL`オプションを使用した場合、ゾーン全体が次のように煙のパーティクルで覆われます。
 
 <div align="center">
 
@@ -105,9 +102,9 @@ eliteScript:
 
 | キー                                                         | 詳細 | 必須 |
 |-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | ゾーンの形状を設定します。`SPHERE` にする必要があります。 | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | 球の中心の場所を設定します。 | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します。 | ❌ |
+| `shape`                                                     | ゾーンの形状を設定します。`SPHERE`である必要があります | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | 球の中心の位置を設定します | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します | ❌ |
 | `radius`                                                    | 球の半径 | ✅ |
 | `borderRadius`                                              | 内側の球の半径 | ❌ |
 
@@ -146,7 +143,7 @@ eliteScript:
 
 </div>
 
-このスクリプトは、雲のパーティクルを使用して、球の形状を示しています。
+このスクリプトは、雲のパーティクルを使用して球の形状を示しています。
 
 </div>
 
@@ -160,9 +157,9 @@ eliteScript:
 
 | キー                                                         | 詳細 | 必須 |
 |-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | ゾーンの形状を設定します。`DOME` にする必要があります。 | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | ドームの中心の場所を設定します。 | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します。 | ❌ |
+| `shape`                                                     | ゾーンの形状を設定します。`DOME`である必要があります | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | ドームの中心の位置を設定します | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します | ❌ |
 | `radius`                                                    | ドームの半径 | ✅ |
 | `borderRadius`                                              | 内側のドームの半径 | ❌ |
 
@@ -201,7 +198,7 @@ eliteScript:
 
 </div>
 
-このスクリプトは、雲のパーティクルを使用して、ドームの形状を示しています。
+このスクリプトは、雲のパーティクルを使用してドームの形状を示しています。
 
 </div>
 
@@ -215,9 +212,9 @@ eliteScript:
 
 | キー                                                         | 詳細 | 必須 |
 |-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | ゾーンの形状を設定します。`CYLINDER` にする必要があります。 | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | 円柱の中心の場所を設定します。 | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します。 | ❌ |
+| `shape`                                                     | ゾーンの形状を設定します。`CYLINDER`である必要があります | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | 円柱の中心の位置を設定します | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します | ❌ |
 | `radius`                                                    | 円柱の半径 | ✅ |
 | `borderRadius`                                              | 内側の円柱の半径 | ❌ |
 | `height`                                                    | 円柱の高さ | ❌ |
@@ -258,7 +255,7 @@ eliteScript:
 
 </div>
 
-このスクリプトは、雲のパーティクルを使用して、円柱の形状を示しています。
+このスクリプトは、雲のパーティクルを使用して円柱の形状を示しています。
 
 </div>
 
@@ -272,15 +269,15 @@ eliteScript:
 
 | キー                                                         | 詳細 | 必須 |
 |-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | ゾーンの形状を設定します。`CUBOID` にする必要があります。 | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | 直方体の中心の場所を設定します。 | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します。 | ❌ |
-| `x`                                                         | 直方体の長さを設定します。 | ✅ |
-| `y`                                                         | 直方体の高さを設定します。 | ✅ |
-| `z`                                                         | 直方体の幅を設定します。デフォルトは `x` です。 | ❌ |
-| `xBorder`                                                   | 内側の直方体の長さを設定します。 | ❌ |
-| `yBorder`                                                   | 内側の直方体の高さを設定します。 | ❌ |
-| `zBorder`                                                   | 内側の直方体の幅を設定します。デフォルトは `x` です。 | ❌ |
+| `shape`                                                     | ゾーンの形状を設定します。`CUBOID`である必要があります | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | 直方体の中心の位置を設定します | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します | ❌ |
+| `x`                                                         | 直方体の長さを設定します | ✅ |
+| `y`                                                         | 直方体の高さを設定します | ✅ |
+| `z`                                                         | 直方体の幅を設定します。デフォルトは`x` | ❌ |
+| `xBorder`                                                   | 内側の直方体の長さを設定します | ❌ |
+| `yBorder`                                                   | 内側の直方体の高さを設定します | ❌ |
+| `zBorder`                                                   | 内側の直方体の幅を設定します。デフォルトは`x` | ❌ |
 
 <div align="center">
 
@@ -321,7 +318,7 @@ eliteScript:
 
 </div>
 
-このスクリプトは、雲のパーティクルを使用して、直方体の形状を示しています。
+このスクリプトは、雲のパーティクルを使用して直方体の形状を示しています。
 
 </div>
 
@@ -335,12 +332,12 @@ eliteScript:
 
 | キー                                                         | 詳細 | 必須 |
 |-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | ゾーンの形状を設定します。`STATIC_RAY` にする必要があります。 | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | 線の最初の点の場所を設定します。 | ✅ |
-| [`target2`]($language$/elitemobs/elitescript_targets.md)    | 線の最後の点の場所を設定します。 | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します。 | ❌ |
-| `ignoresSolidBlocks`                                        | 光線が固体ブロックを貫通するかどうかを設定します。 | ❌ |
-| `pointRadius`                                               | 光線の太さを設定します。デフォルトは 0.5 ブロックです。 | ❌ |
+| `shape`                                                     | ゾーンの形状を設定します。`STATIC_RAY`である必要があります | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | 線の最初の点の位置を設定します | ✅ |
+| [`target2`]($language$/elitemobs/elitescript_targets.md)    | 線の最後の点の位置を設定します | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します | ❌ |
+| `ignoresSolidBlocks`                                        | レイが固体ブロックを通過するかどうかを設定します | ❌ |
+| `pointRadius`                                               | レイの太さを設定します。デフォルトは0.5ブロックです | ❌ |
 
 <div align="center">
 
@@ -379,9 +376,9 @@ eliteScript:
 
 </div>
 
-このスクリプトは、雲のパーティクルを使用して、静的レイの形状を示しています。 
+このスクリプトは、雲のパーティクルを使用して静的なレイの形状を示しています。
 
-ゾーンの両端に `offset` オプションを使用することで、ゾーンの高さを調整し、光線をプレイヤーとボスの真ん中から出現させるようにしています。そうしないと、光線は足元に現れます。
+ゾーンの両端に`offset`オプションを使用することで、ゾーンの高さを調整して、レイがプレイヤーとボスの真ん中から表示されるようにしました。そうしないと、レイは彼らの足元に表示されます。
 
 </div>
 
@@ -395,17 +392,17 @@ eliteScript:
 
 | キー                                                         | 詳細 | 必須 |
 |-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | ゾーンの形状を設定します。`ROTATING_RAY` にする必要があります。 | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します。 | ❌ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | 線の最初の点の場所を設定します。 | ✅ |
-| [`target2`]($language$/elitemobs/elitescript_targets.md)    | 線の最後の点の場所を設定します。 | ✅ |
-| `animationDuration`                                         | 回転にかかる時間（ティック）を設定します。 | ✅ |
-| `pitchPreRotation`                                          | アニメーションの前にピッチに初期回転を適用します。 | ❌ |
-| `yawPreRotation`                                            | アニメーションの前にヨーに初期回転を適用します。 | ❌ |
-| `pitchRotation`                                             | アニメーションのピッチ回転を設定します。 | ❌ |
-| `yawRotation`                                               | アニメーションのヨー回転を設定します。 | ❌ |
-| `ignoresSolidBlocks`                                        | 光線が固体ブロックを貫通するかどうかを設定します。 | ❌ |
-| `pointRadius`                                               | 光線の太さを設定します。デフォルトは 0.5 ブロックです。 | ❌ |
+| `shape`                                                     | ゾーンの形状を設定します。`ROTATING_RAY`である必要があります | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | ターゲットにするエンティティのタイプを設定します | ❌ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | 線の最初の点の位置を設定します | ✅ |
+| [`target2`]($language$/elitemobs/elitescript_targets.md)    | 線の最後の点の位置を設定します | ✅ |
+| `animationDuration`                                         | 回転にかかる時間をティック数で設定します | ✅ |
+| `pitchPreRotation`                                          | アニメーション前にピッチに初期回転を適用します | ❌ |
+| `yawPreRotation`                                            | アニメーション前にヨーに初期回転を適用します | ❌ |
+| `pitchRotation`                                             | アニメーションのピッチ回転を設定します | ❌ |
+| `yawRotation`                                               | アニメーションのヨー回転を設定します | ❌ |
+| `ignoresSolidBlocks`                                        | レイが固体ブロックを通過するかどうかを設定します | ❌ |
+| `pointRadius`                                               | レイの太さを設定します。デフォルトは0.5ブロックです | ❌ |
 
 <div align="center">
 
@@ -450,11 +447,11 @@ eliteScript:
 
 </div>
 
-このスクリプトは、雲のパーティクルを使用して、回転レイの形状を示しています。
+このスクリプトは、雲のパーティクルを使用して回転するレイがどのように見えるかを示しています。
 
-まず、ボスからダメージを与えたプレイヤーに、雲のパーティクルを使用した光線を生成します。次に、`offset` を使用して、位置を少し上に調整します。
+まず、雲のパーティクルを使用して、ボスからそれを攻撃したプレイヤーへのレイを作成します。次に、`offset`を使用して位置を1ブロックだけわずかに上に調整します。
 
-次に、ターゲットにされたプレイヤーを中心に、光線を 360 度回転させます。この回転は 5 秒間（100 ティック）で完了します。
+次に、ターゲットにされたプレイヤーを中心として、レイを完全に回転させます。この回転は、完了するまでに5秒（100ティック）かかり、ターゲットにされたプレイヤーが中心となります。
 
 </div>
 
@@ -468,15 +465,15 @@ eliteScript:
 
 | キー                                                          | 詳細 | 必須 |
 |--------------------------------------------------------------| :-: | :-: |
-| `shape`                                                      | ゾーンの形状を設定します。`TRANSLATING_RAY` にする必要があります。 | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter)  | ターゲットにするエンティティのタイプを設定します。 | ❌ |
-| `animationDuration`                                          | 移動にかかる時間（ティック）を設定します。 | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)      | 線の最初の点の場所を設定します。 | ✅ |
-| [`finalTarget`]($language$/elitemobs/elitescript_targets.md) | 線の最初の点の移動先の場所を設定します。 | ✅ |
-| [`target2`]($language$/elitemobs/elitescript_targets.md)     | 線の 2 番目の点の場所を設定します。 | ✅ |
-| [`finalTarget2`]($language$/elitemobs/elitescript_targets.md) | 線の 2 番目の点の移動先の場所を設定します。 | ✅ |
-| `ignoresSolidBlocks`                                         | 光線が固体ブロックを貫通するかどうかを設定します。 | ❌ |
-| `pointRadius`                                                | 光線の太さを設定します。デフォルトは 0.5 ブロックです。 | ❌ |
+| `shape`                                                      | ゾーンの形状を設定します。`TRANSLATING_RAY`である必要があります | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter)  | ターゲットにするエンティティのタイプを設定します | ❌ |
+| `animationDuration`                                          | 移動にかかる時間をティック数で設定します | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)      | 線の最初の点の位置を設定します | ✅ |
+| [`finalTarget`]($language$/elitemobs/elitescript_targets.md) | 線の最初の点の移動先の位置を設定します | ✅ |
+| [`target2`]($language$/elitemobs/elitescript_targets.md)     | 線の2番目の点の位置を設定します | ✅ |
+| [`finalTarget2`]($language$/elitemobs/elitescript_targets.md) | 線の2番目の点の移動先の位置を設定します | ✅ |
+| `ignoresSolidBlocks`                                         | レイが固体ブロックを通過するかどうかを設定します | ❌ |
+| `pointRadius`                                                | レイの太さを設定します。デフォルトは0.5ブロックです | ❌ |
 
 <div align="center">
 
@@ -521,15 +518,15 @@ eliteScript:
 
 </div>
 
-このスクリプトは、雲のパーティクルを使用して、移動する光線の形状を示しています。
+このスクリプトは、雲のパーティクルを使用して、移動するレイがどのように見えるかを示しています。
 
-まず、ボスからダメージを与えたプレイヤーに、雲のパーティクルを使用した光線を生成します。
+まず、雲のパーティクルを使用して、ボスからそれを攻撃したプレイヤーへのレイを作成します。
 
-次に、`FinalTarget1` と `FinalTarget2` で `offset` を使用して、両方のターゲットから 10 ブロック上に移動するように光線をアニメーション化します。
+次に、`FinalTarget1`と`FinalTarget2`の`offset`を使用して、レイを両方のターゲットから上に10ブロック移動するようにアニメーション化します。
 
-アニメーションは 5 秒間（100 ティック）で完了します。
+アニメーションは、完了するまでに5秒（100ティック）かかります。
 
-Z の `offset` を `offset: 0,0,10` のように調整することで、光線を横方向に簡単に移動できます。
+Z `offset` を `offset: 0,0,10` のように調整することで、レイを横に移動させることができます。
 
 <div align="center">
 
@@ -537,26 +534,24 @@ Z の `offset` を `offset: 0,0,10` のように調整することで、光線�
 
 </div>
 
-この動作は、ゲーム内での向きによって変わる可能性があります。
-<br>GIF 画像に示されているスクリプトの X の `offset` を変更すると、光線は、私たちの方向からまっすぐ離れるように見えるかもしれません。
+この動作は、ゲーム内でどちらを向いているかによって変わる場合があります。
+<br>GIF画像に示されているスクリプトでX `offset`を変更すると、レイは私たちから見て直線的に離れていくように見えます。
 
 </div>
 
 </details>
 
-</div>
-
 ---
 
 ## filter
 
-filter プロパティは、ゾーン内の特定のエンティティのみをターゲットにするために使用できます。これらのエンティティは次のとおりです。
+filterプロパティは、ゾーン内の特定のエンティティのみをターゲットにするために使用できます。これらのエンティティは次のとおりです。
 
 | 値 | 詳細 |
 | --- | :-: |
-| `PLAYER` | ゾーン内のプレイヤーのみをターゲットにする（デフォルト） |
-| `ELITE` | ゾーン内のエリートのみをターゲットにする |
-| `LIVING` | ゾーン内のすべての生きているエンティティをターゲットにする |
+| `PLAYER` | ゾーン内のプレイヤーのみをターゲットにします（デフォルト） |
+| `ELITE` | ゾーン内のエリートのみをターゲットにします |
+| `LIVING` | ゾーン内のすべての生きているエンティティをターゲットにします |
 
 <div align="center">
 
@@ -581,9 +576,6 @@ eliteScript:
         track: false
 ```
 
-このスクリプトの例では、フィルターを使用して、ゾーンがエリートのみをターゲットにする方法を示しています。
+このスクリプト例は、フィルターを使用してゾーンをエリートのみをターゲットにする方法を示しています。
 
 </div>
-
-```
-

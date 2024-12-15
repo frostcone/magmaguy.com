@@ -1,137 +1,122 @@
-```markdown
 # ユーザーコマンド
 
-*注意: すべてのプレイヤー権限は、デフォルトで true に設定されています。つまり、すでに設定されています。*
+*注：すべてのプレイヤーの権限はデフォルトでtrueに設定されています。つまり、すでに設定されている状態です。*
 
-*プレイヤーに特定の機能への権限アクセスを許可したくない場合は、そのプレイヤーの権限を拒否する必要があります。*
+*権限を通じて特定の機能へのアクセスをプレイヤーに許可したくない場合は、そのプレイヤーの権限を拒否する必要があります！*
 
-| コマンド |    説明    |
+| コマンド | 説明 |
 |---------|:-----------------:|
-| `/elitemobs` / `/em` | メインコマンド。プラグイン内のすべてのプレイヤー情報を、アクセスしやすいメニューにまとめます。*注意:* 他のすべてのユーザーコマンドはこのメインコマンドに含まれています。`/em menu` も、このコマンドの有効なコマンドです。 |
-| `/adventurersguild` / `/ag`     |推奨される設定では、プレイヤーをアドベンチャーギルドワールドにテレポートさせます。そこで、プレイヤーはさまざまな EliteMobs NPC と対話します。|
-| `/shareitem`     |他のプレイヤーがアイテムの統計を見られるように、チャットでアイテムをリンクします。|
-| `/em help`     |すべてのコマンドを一覧表示します。残りのユーザーコマンドは、通常、NPC または `/em` インターフェースを使用して置き換えられます！|
-| `/em wallet`     |プレイヤーの所持金を表示します。|
-| `/em pay <username> <amount>`     |プレイヤー同士がお金を支払うことができます。取引には、設定可能な金額が課税されます。|
-| `/em updateitem`     |アイテムの Lore が同期されていない場合に、更新します。このコマンドは、デバッグ目的で使用され、通常のプレイでは必要ありません。|
-| `/em spawntp`     |プレイヤーをサーバーのスポーン地点にテレポートします。|
+| `/elitemobs` / `/em` | メインコマンドで、プラグイン内のすべてのプレイヤー情報をアクセスしやすいメニューにまとめます。 *注：* 他のすべてのユーザーコマンドはこのメインコマンドの中にあります。 |
+| `/adventurersguild` / `/ag`     |推奨設定では、プレイヤーを冒険者ギルドの世界にテレポートさせ、そこでさまざまなEliteMobsのNPCと対話します。|
+| `/em shareItem`     |他のプレイヤーがそのステータスを見ることができるように、チャットにアイテムのリンクを貼ります。|
+| `/em help`     |すべてのコマンドを一覧表示します。残りのユーザーコマンドは通常、NPCまたは`/em`インターフェースの使用に置き換えられます！コマンドにカーソルを合わせると、その説明が表示されます。|
+| `/em money check`     |プレイヤーのお金を表示します。|
+| `/em pay <username> <amount>`     |プレイヤー同士が支払いをできるようにします。トランザクションには設定可能な金額の税金がかかります。|
+| `/em spawntp`     |プレイヤーをサーバーのスポーン地点にテレポートさせます。|
 
-## NPC コマンド
+## NPCコマンド
 
-これらのコマンドは、NPC がインストールされたアドベンチャーギルドハブがない場合にのみ役立ちます。
+これらのコマンドは、NPCがインストールされた冒険者ギルドハブがない場合にのみ役立ちます。
 
-コマンドを覚える代わりに、これらのコマンドを NPC で実行できるようにすることをお勧めします。
+これらのコマンドを、プレイヤーがコマンドの動作を覚えるのではなく、NPCを通じて実行することをお勧めします。
 
 | コマンド | 説明 |
 |---------|:-----------:|
-| `/em rank`     |     ランクメニューを開くか、プレイヤーをアドベンチャーギルドハブにテレポートします。     |
-| `/em shop`     |     ショップにアクセスするか、プレイヤーをアドベンチャーギルドハブにテレポートします。     |
-| `/em customshop`     |     カスタムショップにアクセスするか、プレイヤーをアドベンチャーギルドハブにテレポートします。     |
-| `/em repair`     |     修理メニューにアクセスするか、プレイヤーをアドベンチャーギルドハブにテレポートします。     |
-| `/em enchant`     |     エンチャントメニューにアクセスするか、プレイヤーをアドベンチャーギルドハブにテレポートします。     |
-| `/em scrap`     |     スクラップメニューにアクセスするか、プレイヤーをアドベンチャーギルドハブにテレポートします。     |
-| `/em unbind`     |     アンバインドメニューにアクセスするか、プレイヤーをアドベンチャーギルドハブにテレポートします。     |
+| `/em rank`     |     ランクメニューを開くか、プレイヤーを冒険者ギルドハブにテレポートさせます。     |
+| `/em shop procedural <player>`     |     ショップにアクセスするか、プレイヤーを冒険者ギルドハブにテレポートさせます。     |
+| `/em shop sell <player>`     |     ショップの売却メニューにアクセスするか、プレイヤーを冒険者ギルドハブにテレポートさせます。     |
+| `/em shop custom <player>`     |     カスタムショップにアクセスするか、プレイヤーを冒険者ギルドハブにテレポートさせます。     |
+| `/em repair`     |     修理メニューにアクセスするか、プレイヤーを冒険者ギルドハブにテレポートさせます。     |
+| `/em enchant`     |     エンチャントメニューにアクセスするか、プレイヤーを冒険者ギルドハブにテレポートさせます。     |
+| `/em scrap`     |     スクラップメニューにアクセスするか、プレイヤーを冒険者ギルドハブにテレポートさせます。     |
+| `/em unbind`     |     バインド解除メニューにアクセスするか、プレイヤーを冒険者ギルドハブにテレポートさせます。     |
 
 ## 内部ユーザーコマンド
 
-**これらのコマンドは、クエストメニューのクエストなど、ゲーム内メニューから実行されることを意図しています。ID の取得方法について何も記載されていない場合は、ゲーム内メニューからコマンドを実行する以外に、ID を取得することはできません。** 利便性のために、これらのコマンドは、識別可能なカテゴリと識別不可能なカテゴリに分けられています。
+**これらのコマンドは、クエストメニューからのクエストなど、ゲーム内メニューから実行されることを想定しています。IDを取得する方法に関する説明がない場合、それはゲーム内メニューからコマンドを実行する以外にそのIDを取得することができないことを意味します。**便宜上、これらは識別可能および識別不可能なカテゴリに分割されています。
 
-### 識別可能なコマンド
+### 識別可能
 
 | コマンド | 説明 |
 |---------|-------------|
-|`/em dungeontp <dungeonid>`         |プレイヤーをダンジョンにテレポートします。|
-*注意: これは `/em` メニューから実行されることを意図しています。プレイヤーがダンジョンの ID を推測することは不可能です。ダンジョンの ID は、`~/plugins/EliteMobs/dungeonpackages/` 内の .yml ファイル名と同じです。 <br/>`/em` コマンドを使用すると、コンソールに ID が表示されるので、テレポートページからテレポートを選択できます。*
+|`/em dungeontp <dungeonid>`         |プレイヤーをダンジョンにテレポートさせます。|
+*注：これは`/em`メニューから実行されることを想定しています。プレイヤーがダンジョンIDを推測することは不可能であるためです。ダンジョンのIDは、`~/plugins/EliteMobs/dungeonpackages/`内の.ymlファイル名と同じです。<br/>`/em`コマンドを使用してコンソールでIDを確認し、「テレポート」ページからテレポートを選択できます。*
 
-### 識別不可能なコマンド
+### 識別不可能
 
 | コマンド | 説明 |
 |---------|:-----------:|
 | `/em quest accept <questID>`     |     クエストを受け入れます。     |
 | `/em quest track <questID>`     |     クエストを追跡します。     |
 | `/em quest complete <questID>`     |     クエストを完了します。     |
-| `/em quest leave <questID>`     |     クエストから退出します。     |
-| `/em trackcustomboss <uuid>`     |     カスタムボスを追跡します。注意: これは `/em` メニューから実行されることを意図しています。プレイヤーがボスの UUID を推測することは不可能です。     |
+| `/em quest leave <questID>`     |     クエストを離れます。     |
+| `/em track boss <uuid>`     |     カスタムボスを追跡します。注：これは`/em`メニューから実行されることを想定しています。プレイヤーがボスのUUIDを推測することは不可能であるためです。     |
 
 # 管理者コマンド
 
 <div>
 
-**> > > `elitemobs.*` - EliteMobs のすべてのコマンドへのアクセス権を持つ管理者権限！ < < <**
+**> > > `elitemobs.*` - 完全なアクセス権を持つEliteMobsの管理者権限！ < < <**
 
 </div>
 
 | コマンド | 説明 |
 |---------|:-----------:|
 | `/em setup`     |     メイン設定メニューを開きます。     |
-| `/em setup area <areaName>`     |     WorldGuard を使用してエリアを保護します。ミニダンジョンとアドベンチャーワールドハブで使用されます。注意: 推奨される設定方法を使用して設定する場合、手動で実行する必要はありません。     |
-| `/em spawnelite <entityType> <level> <power1> <power2> <power3>`     |     エンティティタイプに基づいてエリートをスポーンさせます。     |
-| - `/em spawnlocationelite <entityType> <worldName> <x> <y> <z> <level> <power1> <power2> <power3>`     |     エンティティタイプと場所に基づいてエリートをスポーンさせます。     |
-| `/em spawncustom <fileName>`     |     設定ファイルからカスタムボスをスポーンさせます。     |
-| `/em spawncustomlevel <fileName> <level>`     |     設定ファイルからカスタムボスをスポーンさせ、レベルを上書きします。     |
-| `/em spawnlocationcustom <filename> <worldName> <x> <y> <z>`     |     設定ファイルから場所を指定してカスタムボスをスポーンさせます。     |
-| `/em spawnlocationcustomlevel <filename> <worldName> <x> <y> <z>`     |     設定ファイルから場所を指定してカスタムボスをスポーンさせ、レベルを上書きします。     |
-| `/em spawnsuper <EntityType>`     |     エンティティタイプに基づいてスーパーモブをスポーンさせます。     |
-| `/em addSpawnLocation <fileName>`     |     リージョンボスにスポーン位置を追加します。     |
-| `/em addTreasureChest <fileName>`     |     プレイヤーが立っている場所に宝箱を追加します。     |
-| `/em setLeashRadius <fileName> <radius>`     |     リージョンボスにスポーン位置を追加します。     |
-| `/em remove`     |     エリートモブエンティティを永続的に削除します。エリート/リージョン/スーパー/NPC はすべて機能します。再度実行して削除モードを終了します。     |
-| `/em debug <name>`     |     エリートモブエンティティを永続的に削除します。エリート/リージョン/スーパー/NPC はすべて機能します。再度実行して削除モードを終了します。     |
-| `/em debug <name>`     |     プレイヤーまたはリージョンボスのデバッグ画面を開きます。     |
-| `/em event <eventName>`     |     カスタムの時間イベントを開始します。     |
-| `/em spawnnpc <npcFileName>`     |     NPC をスポーンさせます。     |
-| `/em stats`     |     現在アクティブな EliteMobs エンティティとプレイヤーの統計情報を取得します。     |
-| `/em getloot`     |     カスタムlootを取得できるメニューを開きます。     |
-| `/em getloot <filename>`     |     特定のカスタムlootを取得します。     |
-| `/em giveloot <filename> <player>`     |     プレイヤーに特定のカスタムlootを与えます。     |
-| `/em simloot <level>`     |     設定されたティアのエリートモブからのドロップをシミュレートします。     |
-| `/em simloot <level> <times>`     |     設定されたティアのエリートモブからのドロップを、設定された回数だけシミュレートします。     |
+| `/em spawn elite <entityType> <level> <power1> <power2> <power3>`     |     エンティティタイプに基づいてエリートをスポーンします。     |
+| - `/em spawn eliteAt <entityType> <worldName> <x> <y> <z> <level> <power1> <power2> <power3>`     |     エンティティタイプと場所に基づいてエリートをスポーンします。     |
+| `/em spawn boss <fileName>`     |     構成ファイルからカスタムボスをスポーンします。     |
+| `/em spawn boss <fileName> <level>`     |     構成ファイルからカスタムボスをスポーンし、レベルを上書きします。     |
+| `/em spawn bossAt <filename> <worldName> <x> <y> <z>`     |     特定の場所の構成ファイルからカスタムボスをスポーンします。     |
+| `/em spawn bossAt <filename> <level> <worldName> <x> <y> <z>`     |     特定の場所の構成ファイルからカスタムボスをスポーンし、レベルを上書きします。     |
+| `/em place boss <fileName>`     |     リージョナルボスのスポーン場所を追加します。     |
+| `/em place treasureChest <fileName>`     |     プレイヤーが立っている場所に宝箱を追加します。     |
+| `/em remove`     |     エリートモブエンティティを永久に削除します。エリート/リージョナル/スーパー/NPCすべてが機能します。削除モードを終了するには、もう一度実行してください。     |
+| `/em event <eventName>`     |     カスタムの時限イベントを開始します。     |
+| `/em place npc <npcFileName>`     |     NPCをスポーンします。     |
+| `/em stats`     |     現在アクティブなEliteMobsエンティティとプレイヤーの統計情報を取得します。     |
+| `/em loot menu`     |     カスタムルートを取得できるメニューを開きます。     |
+| `/em loot give <player> <filename>`     |     特定のカスタムルートをプレイヤーに付与します。     |
+| `/em loot simulate <level>`     |     設定されたティアのエリートモブからのドロップをシミュレートします。     |
+| `/em loot simulate <level> <times>`     |     設定されたティアのエリートモブからのドロップを設定回数シミュレートします。     |
 | `/em version`     |     プラグインのバージョンを取得します。     |
-| `/em reload`     |     プラグインを再読み込みします。ほとんどの場合機能します。     |
-| `/em killaggressive`     |     すべての攻撃的なエリートモブを殺します。     |
-| `/em killaggressive <radius>`     |     半径内のすべての攻撃的なエリートモブを殺します。     |
-| `/em killpassive`     |     すべての受動的なスーパーモブを殺します。     |
-| `/em killpassive <radius>`     |     半径内のすべての受動的なスーパーモブを殺します。     |
-| `/em killtype <entityType>`     |     特定のタイプのエリートをすべて殺します。     |
-| `/em killtype <entityType> <radius>`     |     半径内の特定のタイプのエリートをすべて殺します。     |
-| `/em gettier <tier>`     |     テスト目的でデバッグアイテムを取得します。     |
-| `/em money add <username> <amount>`     |     プレイヤーに所定の金額を追加します。     |
-| `/em money addall <amount>`     |     オンラインのすべてのプレイヤーに所定の金額を追加します。     |
-| `/em money remove <username> <amount>`     |     プレイヤーから所定の金額を削除します。     |
+| `/em reload`     |     プラグインをリロードします。ほとんどの場合機能します。     |
+| `/em kill `     |     すべてのアグレッシブなエリートモブをキルします。     |
+| `/em kill <radius>`     |     半径内のすべてのアグレッシブなエリートモブをキルします。     |
+| `/em kill type <entityType>`     |     特定のタイプのエリートをすべてキルします。     |
+| `/em kill type <entityType> <radius>`     |     半径内の特定のタイプのエリートをすべてキルします。     |
+| `/em loot debug <level>`     |     テスト目的でデバッグアイテムを取得します。     |
+| `/em money add <username> <amount>`     |     プレイヤーに設定された金額のお金を追加します。     |
+| `/em money addall <amount>`     |     オンラインのすべてのプレイヤーに設定された金額のお金を追加します。     |
+| `/em money remove <username> <amount>`     |     プレイヤーから設定された金額のお金を削除します。     |
 | `/em money set <username> <amount>`     |     プレイヤーの総通貨額を設定します。     |
-| `/em setrank <player> <prestigetier> <guildtier>`     |     プレイヤーのギルドランクを設定します。     |
+| `/em rank <player> <prestigeLevel> <guildLevel>`     |     プレイヤーのギルドランクを設定します。     |
 | `/em discord`     |     サポートDiscordサーバーのリンクを取得します。     |
-| `/em discord <message>`     |     DiscordSRV が正しく設定されている場合は、デバッグメッセージをDiscordに投稿します。     |
-| `/em forceunbind`     |     所持しているソウルバインドアイテムのソウルバインドを解除します。     |
-| `/em relativecoords <minidungeon>`     |     インストールされているダンジョンの相対座標を取得します。     |
-| `/em wallet <player>`     |     特定のプレイヤーの通貨を確認します。     |
-| `/em fireball`     |     エリートの爆発の再生をテストするために、火の玉をスポーンさせます。     |
-| `/em registerblocks <regional_boss_file.yml> <on_spawn/on_remove>`     |     [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks) を参照してください。     |
-| `/em registerblocksedit <regional_boss_file.yml> <on_spawn/on_remove>`     |     [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks) を参照してください。     |
-| `/em registerblocksarea <regional_boss_file.yml> <on_spawn/on_remove>`     |     [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks) を参照してください。     |
-| `/em registerblocksareaedit <regional_boss_file.yml> <on_spawn/on_remove>`     |     [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks) を参照してください。     |
-| `/em cancelblocks`     |     [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks) を参照してください。     |
-| `/em debugmode`     |     デバッグモードをオンにします。これにより、コンソールにモブのスポーンとデスが表示され、追跡が可能になります。     |
+| `/em discord <message>`     |     DiscordSRVが正しく設定されている場合、Discordにデバッグメッセージを投稿します。     |
+| `/em unbind force`     |     保持されているソウルバウンドアイテムをバインド解除します。     |
+| `/em money check <player>`     |     特定のプレイヤーの通貨を確認します。     |
+| `/em fireball`     |     エリート爆発再生をテストするための火の玉をスポーンします。     |
+| `/em transitiveBlocks register <filename> <ON_SPAWN/ON_REMOVE>`     |     [可変ブロック]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks)を参照してください。     |
+| `/em transitiveBlocks edit <filename> <ON_SPAWN/ON_REMOVE>`     |     [可変ブロック]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks)を参照してください。     |
+| `/em /em transitiveBlocks registerArea <filename> <ON_SPAWN/ON_REMOVE>`     |     [可変ブロック]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks)を参照してください。     |
+| `/em transitiveBlocks editArea <filename> <ON_SPAWN/ON_REMOVE>`     |     [可変ブロック]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks)を参照してください。     |
+| `/em transitiveBlocks cancel`     |     [可変ブロック]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks)を参照してください。     |
+| `/em protection bypass`     |     ダンジョン保護を切り替えます。冒険者ギルドでも機能します。     |
 
 ## 内部管理者コマンド
 
-これらのコマンドは、メニューと対話可能なチャットテキストとの対話時に実行されることを意図しており、手動では実行されません。
+これらのコマンドは、メニューやチャットのインタラクティブテキストと対話するときに実行されることを意図しており、手動ではありません。
 
 | コマンド | 説明 |
 |---------|:-----------:|
 | `/em setup done`     |     管理者のログイン時にメッセージの表示を停止します。     |
-| `/em setup minidungeon <minidungeonName>`     |     ミニダンジョンをインストールします。     |
-| `/em setup minidungeon <minidungeonName>`     |     ミニダンジョンをアンインストールします。     |
-| `/em trace <uuid>`     |     カスタムボスのスポーン/デスをトレースします。デバッグモードをオンにする必要があります。     |
-| `/em debugtp <uuid>`     |     トレースされたカスタムボスがいる場所にテレポートします。デバッグモードをオンにする必要があります。     |
-| `/em generateresourcepack`     |     リソースパックを生成します。使用方法については、カスタムモデルに関する wiki のエントリを確認してください。     |
-| `/em updateresourcepack`     |     `server.properties` 設定でリソースパックの SHA1 を更新します。使用方法については、カスタムモデルに関する wiki のエントリを確認してください。     |
+| `/em setup toggle <dungeonConfig>`     |   指定されたEliteMobsコンテンツのインストールを切り替えることができます。    |
 
 # 生の権限:
 ```
 permissions:
   elitemobs.*:
-    description: Gives access to all elitemobs commands
+    description: すべてのelitemobsコマンドへのアクセスを許可します。
     children:
       elitemobs.stats: true
       elitemobs.checktier.others: true
@@ -139,116 +124,115 @@ permissions:
       elitemobs.currency.check.others: true
     default: op
   elitemobs.stats:
-    description: Allows players to run /elitemobs stats
+    description: プレイヤーが/elitemobs statsを実行できるようにします。
     default: op
   elitemobs.version:
-    description: Allows players to run /elitemobs version
+    description: プレイヤーが/elitemobs versionを実行できるようにします。
     default: true
   elitemobs.shop.npc:
-    description: Allows players to interact with NPCs for dynamic shops
+    description: プレイヤーが動的なショップのためにNPCと対話できるようにします。
     default: true
   elitemobs.shop.command:
-    description: Allows players to open the dynamic shop menu through commands
+    description: プレイヤーがコマンドを通じて動的なショップメニューを開くことを許可します。
     default: true
   elitemobs.customshop.npc:
-    description: Allows players to interact with NPCs for dynamic shops
+    description: プレイヤーが動的なショップのためにNPCと対話できるようにします。
     default: true
   elitemobs.customshop.command:
-    description: Allows players to open the dynamic shop menu through commands
+    description: プレイヤーがコマンドを通じて動的なショップメニューを開くことを許可します。
     default: true
   elitemobs.currency.pay:
-    description: Allows players to run /elitemobs pay [username] [amount]
+    description: プレイヤーが/elitemobs pay [username] [amount]を実行できるようにします。
     default: true
   elitemobs.currency.check:
-    description: Allows players to run /elitemobs wallet
+    description: プレイヤーが/elitemobs walletを実行できるようにします。
     default: true
   elitemobs.currency.check.others:
-    description: Allows players to run /elitemobs check [username]
+    description: プレイヤーが/elitemobs check [username]を実行できるようにします。
     default: op
   elitemobs.events:
-    description: Allows players to launch all events
+    description: プレイヤーがすべてのイベントを開始できるようにします。
     default: true
   elitemobs.checktier.others:
-    description: Allows players to run /elitemobs checktier [player]
+    description: プレイヤーが/elitemobs checktier [player]を実行できるようにします。
     default: op
   elitemobs.gettier:
-    description: Allows players tu run /elitemobs gettier [tier]
+    description: プレイヤーが/elitemobs gettier [tier]を実行できるようにします。
     default: op
   elitemobs.versionnotification:
-    description: Allows players to get notified about plugin updates
+    description: プレイヤーがプラグインのアップデートについて通知を受けられるようにします。
     default: op
   elitemobs.adventurersguild.teleport:
-    description: Allows players to teleport to the adventurer's guild hub using /ag
+    description: プレイヤーが/agを使用して冒険者ギルドハブにテレポートできるようにします。
     default: true
   elitemobs.adventurersguild.command:
-    description: Allows players to rank menu using the /em adventurersguild command
+    description: プレイヤーが/em adventurersguildコマンドを使用してランクメニューにアクセスできるようにします。
     default: true
   elitemobs.rank.command:
-    description: Allows players to open the rank menu through /em rank
+    description: プレイヤーが/em rankを通じてランクメニューを開くことができるようにします。
     default: true
   elitemobs.rank.npc:
-    description: Allows players to access the /em rank menu through NPCs
+    description: プレイヤーがNPCを通じて/em rankメニューにアクセスできるようにします。
     default: true
   elitemobs.quest.command:
-    description: Allows players to take on quests via command
+    description: プレイヤーがコマンドを介してクエストを引き受けることを許可します。
     default: true
   elitemobs.quest.npc:
-    description: Allows players to take on quests via EliteMobs NPC
+    description: プレイヤーがEliteMobs NPCを介してクエストを引き受けることを許可します。
     default: true
   elitemobs.dungeontp:
-    description: Allows players to teleport to an elitemobs-set location
+    description: プレイヤーがelitemobs設定の場所にテレポートできるようにします。
     default: true
   elitemobs.spawntp:
-    description: Allows players to teleport to the default spawn location of the server.
+    description: プレイヤーがサーバーのデフォルトのスポーン場所にテレポートできるようにします。
     default: true
   elitemobs.back.npc:
-    description: Allows players to interact with an npc to go back to a previous location.
+    description: プレイヤーがNPCと対話して前の場所に戻ることができるようにします。
     default: true
   elitemobs.shareitem:
-    description: Shares a held Elite Item on chat.
+    description: チャットで保持されているエリートアイテムを共有します。
     default: true
   elitemobs.scrap.npc:
-    description: Allows players to scrap items at an npc
+    description: プレイヤーがNPCでアイテムをスクラップできるようにします。
     default: true
   elitemobs.scrap.command:
-    description: Allows players to scrap items using a command
+    description: プレイヤーがコマンドを使用してアイテムをスクラップできるようにします。
     default: true
   elitemobs.smelt.command:
-    description: Allows players to smelt items using a command
+    description: プレイヤーがコマンドを使用してアイテムを製錬できるようにします。
     default: true
   elitemobs.smelt.npc:
-    description: Allows players to smelt items using an npc
+    description: プレイヤーがNPCを使用してアイテムを製錬できるようにします。
     default: true
   elitemobs.repair.command:
-    description: Allows players to use the repair command to open the menu for repairing elite items
+    description: プレイヤーが修理コマンドを使用して、エリートアイテムを修理するためのメニューを開くことができるようにします。
     default: true
   elitemobs.repair.npc:
-    description: Allows players to interact with the NPC for repairing items
+    description: プレイヤーがアイテムを修理するためにNPCと対話できるようにします。
     default: true
   elitemobs.refiner.command:
-    description: Allows players to use the refiner command to open the menu for upgrading Elite Scrap
+    description: プレイヤーがリファイナーコマンドを使用して、エリートスクラップをアップグレードするためのメニューを開くことができるようにします。
     default: true
   elitemobs.refiner.npc:
-    description: Allows players to interact with the NPC for upgrading Elite Scrap
+    description: プレイヤーがエリートスクラップをアップグレードするためにNPCと対話できるようにします。
     default: true
   elitemobs.enhancer.command:
-    description: Allows players to use the enhancer command to open the menu for upgrading Elite Items
+    description: プレイヤーがエンハンサーコマンドを使用して、エリートアイテムをアップグレードするためのメニューを開くことができるようにします。
     default: true
   elitemobs.enhancer.npc:
-    description: Allows players to interact with the NPC for upgrading Elite Items
+    description: プレイヤーがエリートアイテムをアップグレードするためにNPCと対話できるようにします。
     default: true
   elitemobs.unbind.command:
-    description: Allows players to use the unbind command to open the menu for unbinding Elite Items
+    description: プレイヤーがバインド解除コマンドを使用して、エリートアイテムをバインド解除するためのメニューを開くことができるようにします。
     default: true
   elitemobs.unbind.npc:
-    description: Allows players to interact with the unbinder NPC for unbind Elite Items
+    description: プレイヤーがエリートアイテムのバインドを解除するためにバインダー解除NPCと対話できるようにします。
     default: true
   elitemobs.soulbind.bypass:
-    description: Allows users to bypass the soulbind restrictions. Only recommended for admins!
+    description: ユーザーがソウルバインドの制限を回避できるようにします。管理者のみに推奨されます！
     default: false
   elitequest.*:
-    description: Used for quest-related permissions
+    description: クエスト関連の権限に使用されます。
     default: false
     op: false
 ```
-

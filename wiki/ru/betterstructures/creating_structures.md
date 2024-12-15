@@ -1,46 +1,46 @@
-# Criando Conteúdo
+# Создание контента
 
 ***
 
-## Criando a construção
+## Создание сборки
 
-Não há restrições com o que você pode construir para o BetterStructures, embora seja recomendado manter o tamanho das estruturas abaixo de 100x100x100 blocos por motivos de ajuste geral do mundo e desempenho. Dito isso, ele pode facilmente lidar com estruturas muito maiores.
-
-***
-
-### Blocos Especiais
-
-O BetterStructures possui dois blocos especiais: barreiras e bedrock. Qualquer outro bloco que o WorldEdit / FAWE puder colar será colado normalmente, mas os blocos de barreira e bedrock são a exceção. Em vez de colar, esses blocos são substituídos pelos seguintes comportamentos personalizados:
+Нет никаких ограничений на то, что вы можете построить для BetterStructures, хотя рекомендуется сохранять размер структур менее 100x100x100 блоков для общей подгонки мира и по соображениям производительности. Тем не менее, он легко справляется с гораздо более крупными структурами.
 
 ***
 
-#### Barreira
+### Специальные блоки
 
-Os blocos de barreira fazem com que o plugin não coloque nenhum bloco naquela localização. Isso significa que qualquer bloco que estava originalmente lá na geração normal do mundo permanecerá lá.
-
-Os construtores podem usar isso para arredondar as bordas de uma colagem, fazendo com que pareça mais natural, ou para moldar paredes a uma caverna potencial, entre outras dicas.
+В BetterStructures есть два специальных блока: барьеры и бедрок. Любой другой блок, который может вставить WorldEdit / FAWE, будет вставлен обычным образом, но барьеры и блоки коренной породы являются исключением. Вместо вставки эти блоки заменяются следующими пользовательскими действиями:
 
 ***
 
-#### Bedrock
+#### Барьер
 
-Os blocos de bedrock fazem com que o plugin garanta que haja um bloco sólido naquela localização. Isso significa que se um bloco sólido já estiver lá na geração padrão do mundo, esse bloco não será modificado; no entanto, se o bloco for ar ou líquido, ele será substituído por um bloco sólido do [pedestal](#pedestalmaterial).
+Барьерные блоки заставляют плагин не размещать блоки в этом месте. Это означает, что любой блок, который изначально находился там при нормальной генерации мира, останется там.
 
-Os construtores podem usar isso para criar pisos com recursos como o piso para trilhos de minecart ou garantir que um piso exista sem substituir blocos sólidos que já existam potencialmente naquela localização no mundo, fazendo com que as construções pareçam mais orgânicas.
-
-***
-
-### Placas de Geração
-
-O BetterStructures pode usar placas com texto específico para gerar mobs e até mesmo chefes do EliteMobs e MythicMobs em localizações específicas da construção.
+Строители могут использовать это, чтобы закруглить края вставки, сделав ее более естественной, или чтобы придать стенам форму потенциальной пещеры, среди прочих уловок.
 
 ***
 
-##### Gerando mobs vanilla
+#### Бедрок
 
-Se você pegar uma placa normal e a colocar em algum lugar, certifique-se de que a primeira linha diga `[spawn]` e a segunda linha tenha o [nome do tipo de entidade seguindo a API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) que você irá gerar uma entidade persistente naquela localização do tipo que você especificou.
+Блоки коренной породы заставляют плагин гарантировать, что в этом месте есть твердый блок. Это означает, что если твердый блок уже существует в генерации мира по умолчанию, этот блок не будет изменен; однако, если блок представляет собой воздух или жидкость, он будет заменен твердым блоком из [пьедестала](#pedestalmaterial).
 
-Como exemplo, se você tiver uma placa que diz `[spawn]` na primeira linha e `ZOMBIE` na segunda linha, você gerará um zumbi naquela localização quando a construção for colocada. Isso também pode ser usado para entidades não-vivas, como suportes de armadura ou cristais finais.
+Строители могут использовать это для создания полов с такими элементами, как пол для рельсов вагонеток, или гарантировать наличие пола, не переопределяя потенциально уже существующие твердые блоки в этом месте в мире, делая конструкции более органичными.
+
+***
+
+### Таблички спавна
+
+BetterStructures может использовать таблички с определенным текстом для спавна мобов и даже боссов из EliteMobs и MythicMobs в определенных местах сборки.
+
+***
+
+##### Спавн обычных мобов
+
+Если вы возьмете обычную табличку и разместите ее где-нибудь, то убедитесь, что в первой строке написано `[spawn]`, а во второй строке указано [название типа сущности в соответствии с API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html), вы породите постоянную сущность в этом месте указанного типа.
+
+Например, если у вас есть табличка со словом `[spawn]` в первой строке и `ZOMBIE` во второй строке, то при размещении сборки в этом месте появится зомби. Это также можно использовать для неживых сущностей, таких как стойки для брони или кристаллы края.
 
 <div class="minecraft-sign"> 
 <p>[spawn]</p>
@@ -51,15 +51,15 @@ Como exemplo, se você tiver uma placa que diz `[spawn]` na primeira linha e `ZO
 
 ***
 
-##### Gerando Mobs Elite (plugin de chefe recomendado)
+##### Спавн элитных мобов (рекомендуемый плагин для боссов)
 
-O BetterStructures também possui integração avançada do EliteMobs, que permite que ele crie arenas de chefe com base em construções e placas de geração.
+BetterStructures также имеет расширенную интеграцию с EliteMobs, которая позволяет создавать арены для боссов на основе сборок и знаков спавна.
 
-Se você pegar uma placa normal e a colocar em algum lugar, fazendo a primeira linha [elitemobs], então você pode usar todas as outras linhas para dizer qual arquivo de chefe usar.
+Если вы возьмете обычную табличку и разместите ее где-нибудь, сделав первую строку [elitemobs], то вы можете использовать все остальные строки, чтобы указать, какой файл босса использовать.
 
-Como exemplo, se você fizer `[elitemobs]` na primeira linha e, em seguida, `test_boss.yml`, na segunda linha, você gerará o chefe de teste. Se você tiver um nome de arquivo muito longo, como boss_with_very_long_filename.yml, você pode dividi-lo em várias linhas, então faça a linha 2 `boss_with_very_` e, em seguida, a linha 3 `long_filename.yml`, e isso funcionará.
+Например, если вы напишете `[elitemobs]` в первой строке, а затем `test_boss.yml` во второй строке, то появится тестовый босс. Если у вас очень длинное имя файла, например, boss_with_very_long_filename.yml, вы можете разбить его на несколько строк, например, строка 2 `boss_with_very_`, а затем строка 3 `long_filename.yml`, и это будет работать.
 
-Lembre-se de que, por padrão, as arenas de combate serão protegidas até que os jogadores matem todos os chefes na construção se seu servidor estiver usando o WorldGuard.
+Напоминаем, что по умолчанию боевые арены будут защищены, пока игроки не убьют всех боссов в сборке, если ваш сервер использует WorldGuard.
 
 <div class="minecraft-sign"> 
 <p>[elitemobs]</p>
@@ -70,9 +70,9 @@ Lembre-se de que, por padrão, as arenas de combate serão protegidas até que o
 
 ***
 
-##### Gerando Mythic Mobs
+##### Спавн мифических мобов
 
-O BetterStructures também possui integração simples do MythicMobs, que permite que ele gere um mob do MythicMobs na construção. Na primeira linha de uma placa normal, escreva `[mythicmobs]`, e na segunda linha use o mob identificado. Você pode usar um número na terceira linha para definir o nível do mob.
+BetterStructures также имеет простую интеграцию с MythicMobs, которая позволяет спавнить мобов из MythicMobs в сборку. В первой строке обычной таблички напишите `[mythicmobs]`, затем во второй строке используйте идентификатор моба. Вы можете использовать цифру в третьей строке, чтобы установить уровень моба.
 
 <div class="minecraft-sign"> 
 <p>[mythicmobs]</p>
@@ -83,88 +83,86 @@ O BetterStructures também possui integração simples do MythicMobs, que permit
 
 ***
 
-## Esquemáticos
+## Схемы
 
-Os esquemáticos são arquivos gerados pelo WorldEdit ou FastAsyncWorldEdit que contêm os blocos para a construção que o BetterStructures usará. 
+Схемы — это файлы, сгенерированные WorldEdit или FastAsyncWorldEdit, которые содержат блоки для сборки, которые будет использовать BetterStructures.
 
-As instruções detalhadas sobre como criar um esquemático não estão incluídas aqui, pois são detalhadas nas documentações do WorldEdit e FastAsyncWorldEdit, mas geralmente é feito por:
+Подробные инструкции о том, как сделать схему, здесь не включены, поскольку они подробно описаны в документации WorldEdit и FastAsyncWorldEdit, но обычно это делается так:
 
-1) escolha um canto da construção e use o comando `//pos1`
-2) escolha o canto diagonalmente oposto e use o comando `//pos2`
-3) use o comando `//copy`
-4) use o comando `/schem save <schematicname>`, onde `<schematicName>` é o nome do arquivo que você deseja usar para seu esquemático.
+1) выберите угол конструкции и используйте команду `//pos1`
+2) выберите противоположный угол по диагонали и используйте команду `//pos2`
+3) используйте команду `//copy`
+4) используйте команду `/schem save <имя_схемы>`, где `<имя_схемы>` — это имя файла, которое вы хотите использовать для своей схемы.
 
-<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="worldedit documentation image from their docs">
+<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="изображение из документации worldedit из их документов">
 
-*Certifique-se de executar o comando `//pos1` no ponto 1 e `//pos2` no ponto 2!*
-
-***
-
-#### Ponto de Âncora
-
-Os pontos de âncora são onde você executa o comando `//copy` para o esquemático. Ao simplesmente colar um esquemático, esses são os pontos em que você está em relação à construção.
-
-Os pontos de âncora são importantes para serem configurados corretamente para que os esquemáticos funcionem corretamente.
-
-* Para _construções de superfície_, é recomendável que você fique no ponto mais baixo do chão ao copiar a construção.
-* Para _construções subterrâneas_, é recomendável que você fique no topo da construção.
-* Para _construções líquidas_, é recomendável que você fique no topo da água.
-* Para _construções aéreas_, é recomendável que você fique no topo da construção.
-
-**Observe que você deve estar sempre muito perto ou diretamente no topo das construções ao copiar - quanto mais longe você estiver, mais lag haverá ao colar a construção.**
+*Убедитесь, что вы выполнили команду `//pos1` в точке 1 и `//pos2` в точке 2!*
 
 ***
 
-# Configurações de Esquemáticos
+#### Точка привязки
 
-Cada arquivo esquemático possui uma configuração de esquemático. Se um arquivo esquemático foi apenas adicionado ao servidor, a configuração será gerada após uma reinicialização ou após um `/betterstructures reload`.
+Точки привязки — это места, где вы запускаете команду `//copy` для схемы. При простой вставке схемы это то место, где вы стоите относительно сборки.
 
-Essas configurações permitem que você defina as seguintes configurações para a colagem esquemática:
+Точки привязки важны для правильной работы схем.
+
+* Для _наземных строений_ рекомендуется стоять в самой нижней точке пола при копировании строения.
+* Для _подземных строений_ рекомендуется стоять на вершине строения.
+* Для _жидкостных строений_ рекомендуется стоять на вершине воды.
+* Для _воздушных строений_ рекомендуется стоять на вершине строения.
+
+**Пожалуйста, обратите внимание, что вы всегда должны находиться очень близко или непосредственно на вершине конструкций при копировании — чем дальше вы находитесь, тем больше будет задержка при необходимости вставки конструкции.**
+
+***
+
+# Конфигурации схем
+
+У каждого файла схемы есть конфигурация схемы. Если файл схемы только что был добавлен на сервер, конфигурация будет сгенерирована после перезапуска или после команды `/betterstructures reload`.
+
+Эти конфигурации позволяют установить следующие настройки для вставки схемы:
 
 ***
 
 ## isEnabled
 
-Define se o esquemático está habilitado. Se estiver desabilitado, ele não será colocado em nenhum lugar.
+Устанавливает, включена ли схема. Если она отключена, она нигде не будет размещена.
 
 ***
 
 ## weight
 
-O peso define o peso do esquemático em termos de quão provável é que ele seja escolhido.
+Вес устанавливает вес схемы с точки зрения вероятности ее выбора.
 
-O valor padrão é `1.0`. Se você fizer com que uma construção tenha um peso de `2.0`, ela terá 2x mais chances de ser selecionada do que as outras construções. Se você fizer com que seja `0.5`, ela terá metade das chances de ser escolhida.
+Значение по умолчанию равно `1.0`. Если вы сделаете вес конструкции `2.0`, она будет в 2 раза чаще выбираться, чем другие конструкции. Если вы сделаете его `0.5`, он будет иметь вдвое меньше шансов быть выбранным.
 
-_**Observação:** Lembre-se de que as chances de uma construção específica ser escolhida mudam drasticamente com base em quantas construções existem no total competindo pela localização que receberá uma estrutura!_
+_**Примечание:** Имейте в виду, что вероятность выбора конкретной конструкции резко меняется в зависимости от того, сколько всего конструкций конкурируют за место, где будет установлена структура!_
 
 ***
 
 ## pedestalMaterial
 
-**Importante: campo opcional!**
+**Важно: необязательное поле!**
 
-O material do pedestal define o tipo de material dos blocos do pedestal usando os [nomes de material da API spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) - use-os ou não funcionará!
+Материал пьедестала устанавливает тип материала блоков пьедестала с использованием [названий материалов из spigot api](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) - используйте их, иначе это не сработает!
 
-Os pedestais são os blocos que são colocados abaixo de construções de superfície e subterrâneas para preencher quaisquer lacunas de ar e melhorar o ajuste de uma construção ao mundo. Esses também são os mesmos blocos que substituem blocos de bedrock no esquemático.
+Пьедесталы — это блоки, которые размещаются под наземными и подземными зданиями, чтобы заполнить любые воздушные зазоры и улучшить соответствие здания миру. Это также те же блоки, которые заменяют блоки коренной породы в схеме.
 
-Quando nada é definido na configuração, os blocos abaixo da localização para a colagem são analisados e o melhor ajuste é selecionado como o material para o melhor visual integrado.
+Когда в конфигурации ничего не определено, блоки под местом для вставки анализируются, и в качестве материала для наилучшего интегрированного вида выбирается наиболее подходящий вариант.
 
 ***
 
 ## generatorConfigFilename
 
-Esta opção define o nome do arquivo de configuração, pelo nome do arquivo, que o esquemático usará. Isso requer o nome do arquivo completo, incluindo a extensão `.yml` no final. Como exemplo, `generatorConfigFilename: generator_surface_global.yml` seria a opção correta se você quiser usar o gerador definido em `generator_surface_global.yml`, que você pode encontrar na pasta de configuração de geradores.
+Этот параметр устанавливает имя файла конфигурации, по имени файла, который будет использовать схема. Это требует полного имени файла, включая расширение `.yml` в конце. Например, `generatorConfigFilename: generator_surface_global.yml` будет правильным вариантом, если вы хотите использовать генератор, определенный в `generator_surface_global.yml`, который вы можете найти в папке конфигурации генераторов.
 
 ***
 
 ## treasureFile
 
-Define o [arquivo de tesouro]($language$/betterstructures/creating_treasure.md) que esta estrutura usará, sobrescrevendo o arquivo de tesouro definido pelo [gerador]($language$/betterstructures/creating_generators.md) da estrutura. Isso geralmente não é recomendado, a menos que seja para uma construção muito especial. Geralmente é melhor modificar ou criar um gerador para essa finalidade.
+Устанавливает [файл сокровищ]($language$/betterstructures/creating_treasure.md), который будет использовать эта структура, перезаписывая файл сокровищ, установленный [генератором]($language$/betterstructures/creating_generators.md) структуры. Обычно это не рекомендуется, если только это не для очень специальной сборки. Обычно лучше изменить или создать генератор для этой цели.
 
+# Настройка контента
 
-# Personalizando o conteúdo
+Все, что распространяется в BetterStructures, можно редактировать. Вы можете изменять любые файлы схем и настройки генератора по своему усмотрению.
 
-Tudo que é distribuído no BetterStructures é editável. Você pode modificar quaisquer arquivos de esquemático e configurações de gerador à sua vontade.
-
-O guia de criação de conteúdo acima também é um guia que pode ajudá-lo a editar conteúdo existente.
-
+Приведенное выше руководство по созданию контента также является руководством, которое поможет вам редактировать существующий контент.

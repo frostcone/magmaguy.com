@@ -6,11 +6,11 @@
 
 ### isEnabled
 
-Включает или выключает NPC.
+Устанавливает, включен ли NPC.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `isEnabled` | [Boolean](#boolean) | `true`  |
+| Ключ        |     Значения      | По умолчанию |
+|-------------|:-----------------:|:------------:|
+| `isEnabled` | [Boolean](#boolean) |   `true`     |
 
 <details> 
 
@@ -30,11 +30,11 @@ isEnabled: true
 
 ### name
 
-Отображаемое имя NPC. Поддерживает [Цветные коды](#color_codes).
+Устанавливает отображаемое имя NPC. Поддерживает [Цветовые коды](#color_codes).
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `name` | [String](#string) |  none   |
+| Ключ    |  Значения   | По умолчанию |
+|---------|:-----------:|:------------:|
+| `name`  | [String](#string) |   нет    |
 
 <details> 
 
@@ -43,7 +43,7 @@ isEnabled: true
 <div align="left">
 
 ```yml
-name: "&aEnn Peecee"
+name: "&aЭн Пи Си"
 ```
 
 <div align="center">
@@ -58,13 +58,15 @@ name: "&aEnn Peecee"
 
 ***
 
-### role
+### scale
 
-Роль NPC, отображаемая под именем. Только визуально. Поддерживает [Цветные коды](#color_codes).
+Устанавливает масштаб (размер) NPC.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `role` | [String](#string) |  none   |
+| Ключ     |     Значения      | По умолчанию |
+|----------|:-----------------:|:------------:|
+| `scale`  | [Multiplier](#multiplier) |  `1.0`      |
+
+При масштабировании `1.0` представляет размер по умолчанию. Чтобы сделать сущность больше, увеличьте значение (например, `1.2`). Чтобы сделать сущность меньше, уменьшите значение (например, `0.8`).
 
 <details> 
 
@@ -73,7 +75,31 @@ name: "&aEnn Peecee"
 <div align="left">
 
 ```yml
-role: "&c<Red Fellow>"
+scale: 1.2
+```
+
+</div>
+
+</details>
+
+***
+
+### role
+
+Устанавливает роль NPC под именем. Только визуально. Поддерживает [Цветовые коды](#color_codes).
+
+| Ключ    |  Значения   | По умолчанию |
+|---------|:-----------:|:------------:|
+| `role`  | [String](#string) |   нет    |
+
+<details> 
+
+<summary><b>Пример</b></summary>
+
+<div align="left">
+
+```yml
+role: "&c<Красный Парень>"
 ```
 
 <div align="center">
@@ -90,10 +116,10 @@ role: "&c<Red Fellow>"
 
 ### profession
 
-Профессия NPC, которая задает его внешний вид, если **не** используется маскировка.
+Устанавливает профессию NPC, которая устанавливает его скин, когда **не** используется маскировка.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
+| Ключ         |  Значения   | По умолчанию |
+|--------------|:-----------:|:------------:|
 | `profession` | [Profession](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) |  `NITWIT`   |
 
 <details> 
@@ -120,11 +146,11 @@ profession: NITWIT
 
 ### greetings
 
-Список приветственных фраз, которые NPC произносит, когда к нему приближается игрок.
+Устанавливает список приветствий, которые NPC произносит, когда игрок приближается.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `greetings` | [String List](#string_list) |  none   |
+| Ключ       |     Значения      | По умолчанию |
+|------------|:-----------------:|:------------:|
+| `greetings` | [String List](#string_list) |   нет    |
 
 <details> 
 
@@ -134,8 +160,8 @@ profession: NITWIT
 
 ```yml
 greetings:
-- Hi there!
-- Good day. 
+- Привет!
+- Добрый день.
 ```
 
 <div align="center">
@@ -152,11 +178,11 @@ greetings:
 
 ### dialog
 
-Текст, который NPC будет говорить, пока игрок находится рядом (в случае с `DIALOG` interactionType, это будет диалог).
+Устанавливает диалог, который NPC будет произносить, когда игрок находится рядом (в случае `DIALOG` interactionType, это будет диалог).
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `dialog` | [String List](#string_list) |  none   |
+| Ключ     |     Значения      | По умолчанию |
+|----------|:-----------------:|:------------:|
+| `dialog` | [String List](#string_list) |   нет    |
 
 <details> 
 
@@ -166,8 +192,8 @@ greetings:
 
 ```yml
 dialog:
-- I like apples!
-- Sure is hot.
+- Я люблю яблоки!
+- Ну и жара.
 ```
 
 <div align="center">
@@ -184,11 +210,11 @@ dialog:
 
 ### farewell
 
-Прощальная фраза NPC.
+Устанавливает прощальное сообщение NPC.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `farewell` | [String List](#string_list) |  none   |
+| Ключ     |     Значения      | По умолчанию |
+|----------|:-----------------:|:------------:|
+| `farewell`| [String List](#string_list) |   нет    |
 
 <details> 
 
@@ -197,9 +223,9 @@ dialog:
 <div align="left">
 
 ```yml
-farewell: 
-- Until next time!
-- Bye!
+farewell:
+- До скорой встречи!
+- Пока!
 ```
 
 <div align="center">
@@ -216,11 +242,11 @@ farewell:
 
 ### canTalk
 
-Определяет, может ли NPC говорить.
+Устанавливает, может ли NPC говорить.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `canTalk` | [Boolean](#boolean) | `true`  |
+| Ключ      |     Значения      | По умолчанию |
+|-----------|:-----------------:|:------------:|
+| `canTalk` | [Boolean](#boolean) |   `true`     |
 
 <details> 
 
@@ -240,11 +266,11 @@ canTalk: true
 
 ### activationRadius
 
-Радиус, в котором NPC может обнаружить приближающегося игрока.
+Устанавливает радиус, в котором NPC может обнаружить приближающегося игрока.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `activationRadius` | [Double](#double) |  `3.0`  |
+| Ключ                |     Значения      | По умолчанию |
+|---------------------|:-----------------:|:------------:|
+| `activationRadius`  |  [Double](#double) |   `3.0`      |
 
 <details> 
 
@@ -264,11 +290,11 @@ activationRadius: 3.0
 
 ### interactionType
 
-Определяет, как NPC будет взаимодействовать.
+Устанавливает тип взаимодействия, которое будет выполнять NPC.
 
-| Ключ       |      Значения       | По умолчанию |
-|-----------|:-----------------:|:-------:|
-| `interactionType` |    Special [1]    |  none   |
+| Ключ              |      Значения       | По умолчанию |
+|-------------------|:-------------------:|:------------:|
+| `interactionType` | Специальный [1] |   нет    |
 
 <details> 
 
@@ -288,11 +314,11 @@ interactionType: TELEPORT_BACK
 
 ### noPreviousLocationMessage
 
-Если NPC-телепортер не может телепортировать игрока в предыдущее местоположение, то отображается это сообщение. Поддерживает [Цветные коды](#color_codes)
+Когда у NPC-телепортера нет предыдущего местоположения, куда он может телепортировать игрока, он отобразит это сообщение. Принимает [Цветовые коды](#color_codes)
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `noPreviousLocationMessage` | [String](#string) |  none   |
+| Ключ                      |   Значения   | По умолчанию |
+|---------------------------|:------------:|:------------:|
+| `noPreviousLocationMessage`| [String](#string) |   нет   |
 
 <details> 
 
@@ -301,7 +327,7 @@ interactionType: TELEPORT_BACK
 <div align="left">
 
 ```yml
-noPreviousLocationMessage: '&8[EliteMobs] &cCouldn''t send you back to your previous location - no previous location found!'
+noPreviousLocationMessage: '&8[EliteMobs] &cНе удалось отправить вас обратно в предыдущее местоположение - предыдущее местоположение не найдено!'
 ```
 
 <div align="center">
@@ -318,11 +344,11 @@ noPreviousLocationMessage: '&8[EliteMobs] &cCouldn''t send you back to your prev
 
 ### timeout
 
-Время (в минутах), после которого NPC окончательно исчезнет.
+Устанавливает время в минутах, прежде чем NPC исчезнет навсегда.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `timeout` | [Integer](#integer) |  `0` (никогда)   |
+| Ключ    |     Значения      | По умолчанию |
+|---------|:-----------------:|:------------:|
+| `timeout`|  [Integer](#integer) | `0` (никогда)|
 
 <details> 
 
@@ -342,11 +368,11 @@ timeout: 0
 
 ### questFileName
 
-Квесты, которые выдает NPC.
+Устанавливает квесты, которые выдает NPC.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `questFileName` | [String List](#string_list) |  none   |
+| Ключ          |     Значения      | По умолчанию |
+|---------------|:-----------------:|:------------:|
+| `questFileName` | [String List](#string_list) |   нет    |
 
 <details> 
 
@@ -368,11 +394,11 @@ questFileName:
 
 ### disguise
 
-Маскировка NPC из LibsDisguises.
+Устанавливает маскировку LibsDisguises, которую имеет NPC.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `disguise` | [LibsDisguises format]($language$/elitemobs/libsdisguises.md) |  none   |
+| Ключ     |     Значения      | По умолчанию |
+|----------|:-----------------:|:------------:|
+| `disguise`| [Формат LibsDisguises]($language$/elitemobs/libsdisguises.md) |    нет   |
 
 <details> 
 
@@ -398,11 +424,11 @@ disguise: SKELETON
 
 ### customDisguiseData
 
-Данные для кастомной маскировки из LibsDisguises.
+Устанавливает данные для пользовательской маскировки LibsDisguises.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `customDisguiseData` | [LibsDisguises format]($language$/elitemobs/libsdisguises.md&section=how-can-i-disguise-an-entity-with-a-custom-disguise?) |  none   |
+| Ключ               |      Значения       | По умолчанию |
+|--------------------|:-------------------:|:------------:|
+| `customDisguiseData`| [Формат LibsDisguises]($language$/elitemobs/libsdisguises.md&section=how-can-i-disguise-an-entity-with-a-custom-disguise?) |    нет   |
 
 <details> 
 
@@ -412,7 +438,7 @@ disguise: SKELETON
 
 ```yml
 disguise: custom:my_cool_disguise_name
-customDisguiseData: player my_cool_disguise_name setskin {"id":"364acb6d-9050-46f7-b5fb-f8c3fd83a6fc","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYxMTk4ODA4Nzc1NSwKICAicHJvZmlsZUlkIiA6ICJkZGVkNTZlMWVmOGI0MGZlOGFkMTYyOTIwZjdhZWNkYSIsCiAgInByb2ZpbGVOYW1lIiA6ICJEaXNjb3JkQXBwIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzliYmVkODQzNWY4YmYyNzhhZmUyNmU2NGZkOTI2YjhiMzc3MzJkODhlMzM0ODk3ZGJkNTI3ZDU2ZmY5MTk5MGUiCiAgICB9CiAgfQp9","signature":"ujLq1joYVktuQAp1xpFKlxQFUVinSePiDBiVCAxxix/mA5vP86i/eAOfb1mtGjaAZ6sO0l2olbzvycnGXNBtbAxgqprguROXY4tpWiePVTDmy3iD4GdOCxHAkYLoyMV5qTT4SNsldUFFuND8GSEgbNMltKDLmhNKwzm08iCigPfpeuYpwljgJPxu6ka54PKNaQu4doI0ZDZXKqq4hPhR3Bs2Sz9MI0SmdmQWwcCzUz3DFdVno27fmQ6LwqmT+eSoOv0EttVG/XMaTYQ5lhBY61mqf6WlJyYVUSfjJk1AbYsctu7dWM+sbY8jFq5ljvXJGGr5TyKi+fs8vHy06Z2go20QgTYOw+caFxFijAS6fgm3oY57VEOv+/9OLHdD+Z9BrWqQWcIIrVeIfxjue/yt4pyeVv9jX59hjNFjhcPEwotkxJ+vZ96WlTLWDG4BiqauDr2VeGyLlVaygO9ZU0wwsN65iSh91GI3tMIA5wbDR0Hts/9ABvt9eafHbowS+4SZXN0i9mYnKg7op1eiB8nMEAGsPJg3DwsmUrh3ACAapQ6eYHiJpo59RXDqKlRcXwo7wsEFp//5LgQWbPj0NP3nxnywdpozqSAeq6236qlhE9BT9eiyJ41V9sMelYFEWMlUAltR40NdbIrHB0J3nmfuLJz44/sTwWf6P1khOy//XX0="}],"legacy":false}
+customDisguiseData: player my_cool_disguise_name setskin {"id":"364acb6d-9050-46f7-b5fb-f8c3fd83a6fc","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYxMTk4ODA4Nzc1NSwKICAicHJvZmlsZUlkIiA6ICJkZGVkNTZlMWVmOGI0MGZlOGFkMTYyOTIwZjdhZWNkYSIsCiAgInByb2ZpbGVOYW1lIiA6ICJEaXNjb3JkQXBwIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzliYmVkODQzNWY4YmYyNzhhZmUyNmU2NGZkOTI2YjhiMzc3MzJkODhlMzM0ODk3ZGJkNTI3ZDU2ZmY5MTk5MGUiCiAgICB9CiAgfQp9","signature":"ujLq1joYVktuQAp1xpFKlxQFUVinSePiDBiVCAxxix/mA5vP86i/eAOfb1mtGjaAZ6sO0l2olbzvycnGXNBtbAxgqprguROXY4tpWiePVTDmy3iD4GdOCxHAkYLoyMV5qTT4SNsldUFFuND8GSEgbNMltKDLmhNKwzm08iCigPfpeuYpwljgJPxu6ka54PKNaQu4doI0ZDZXKqq4hPhR3Bs2Sz9MI0SmdmQWwcCzUz3DFdVno27fmQ6LwqmT+eSoOv0EttVG/XMaTYQ5lhBY61mqf6WlJyYVUSfjJk1AbYsctu7dWM+sbY8jFq5ljvXJGGr5TyKi+fs8vHy06Z2go20QgTYOw+caFxFijAS6fgm3oY57VEO/+/9OLHdD+Z9BrWqQWcIIrVeIfxjue/yt4pyeVv9jX59hjNFjhcPEwotkxJ+vZ96WlTLWDG4BiqauDr2VeGyLlVaygO9ZU0wwsN65iSh91GI3tMIA5wbDR0Hts/9ABvt9eafHbowS+4SZXN0i9mYnKg7op1eiB8nMEAGsPJg3DwsmUrh3ACAapQ6eYHiJpo59RXDqKlRcXwo7wsEFp//5LgQWbPj0NP3nxnywdpozqSAeq6236qlhE9BT9eiyJ41V9sMelYFEWMlUAltR40NdbIrHB0J3nmfuLJz44/sTwWf6P1khOy//XX0="}],"legacy":false}
 ```
 
 <div align="center">
@@ -429,11 +455,11 @@ customDisguiseData: player my_cool_disguise_name setskin {"id":"364acb6d-9050-46
 
 ### customModel
 
-Используемый  Custom Model  из ModelEngine.
+Устанавливает пользовательскую модель ModelEngine, которую будет использовать NPC.
 
-| Ключ       |       Значения        | По умолчанию |
-|-----------|:-------------------:|:-------:|
-| `customModel` | [String](#string) |  none   |
+| Ключ        |     Значения      | По умолчанию |
+|-------------|:-----------------:|:------------:|
+| `customModel`| [String](#string) |   нет   |
 
 <details> 
 
@@ -453,11 +479,11 @@ customModel: MY_MODEL_ONE
 
 ### arena
 
-Имя файла арены, для которой NPC откроет меню (требуется `ARENA_MASTER` interactionType).
+Устанавливает имя файла арены, для которой NPC откроет меню (требуется interactionType `ARENA_MASTER`).
 
-| Ключ       |        Значения         | По умолчанию |
-|-----------|:---------------------:|:-------:|
-| `arena` | [Filename](#filename) |  none   |
+| Ключ  |     Значения      | По умолчанию |
+|-------|:-----------------:|:------------:|
+| `arena` |  [Filename](#filename)  |    нет   |
 
 <details> 
 
@@ -477,11 +503,11 @@ arena: my_arena.yml
 
 ### command
 
-Команда, которую выполнит NPC (требуется `COMMAND` interactionType).
+Устанавливает команду, которую NPC будет выполнять (требуется `COMMAND` interactionType).
 
-| Ключ       |        Значения         | По умолчанию |
-|-----------|:---------------------:|:-------:|
-| `command` | [String](#string) |  none   |
+| Ключ    |    Значения     | По умолчанию |
+|---------|:---------------:|:------------:|
+| `command` | [String](#string) |    нет   |
 
 <details> 
 
@@ -490,7 +516,7 @@ arena: my_arena.yml
 <div align="left">
 
 ```yml
-command: say Look at me running a command, how cool!
+command: say Посмотри на меня, как я запускаю команду, как круто!
 ```
 
 <div align="center">
@@ -507,11 +533,11 @@ command: say Look at me running a command, how cool!
 
 ### spawnLocation
 
-Точка появления NPC. Установите ее с помощью команды `/em spawnnpc <npcfilename.yml>`.
+Устанавливает местоположение появления NPC. Вы должны установить это с помощью команды `/em spawnnpc <npcfilename.yml>`.
 
-| Ключ       |        Значения         | По умолчанию |
-|-----------|:---------------------:|:-------:|
-| `spawnLocation` | [String](#string) |  none   |
+| Ключ          |     Значения      | По умолчанию |
+|---------------|:-----------------:|:------------:|
+| `spawnLocation`| [String](#string) |   нет   |
 
 <details> 
 
@@ -531,11 +557,11 @@ spawnLocation: my_world,10,50,10,0,0
 
 ### spawnLocations
 
-Точки появления NPC. Установите ее с помощью команды `/em spawnnpc <npcfilename.yml>`.
+Устанавливает местоположения появления NPC. Вы должны установить это с помощью команды `/em spawnnpc <npcfilename.yml>`.
 
-| Ключ              |           Значения            | По умолчанию |
-|------------------|:---------------------------:|:-------:|
-| `spawnLocations` | [String List](#string_list) |  none   |
+| Ключ              |     Значения      | По умолчанию |
+|-------------------|:-----------------:|:------------:|
+| `spawnLocations`  | [String List](#string_list) |   нет    |
 
 <details> 
 
@@ -544,7 +570,7 @@ spawnLocation: my_world,10,50,10,0,0
 <div align="left">
 
 ```yml
-spawnLocations: 
+spawnLocations:
 - my_world,10,50,10,0,0
 - my_world,-10,50,-10,0,0
 ```
@@ -555,11 +581,11 @@ spawnLocations:
 
 ### instanced
 
-Определяет, должен ли NPC быть  инстанс-сущностью  (для использования в инстанс-мамортах).
+Устанавливает, должен ли NPC быть инстанцирован (для использования в инстанцированных подземельях).
 
-| Ключ              |           Значения            | По умолчанию |
-|------------------|:---------------------------:|:-------:|
-| `instanced` | [Boolean](#boolean) |  `false`   |
+| Ключ       |     Значения      | По умолчанию |
+|------------|:-----------------:|:------------:|
+| `instanced`| [Boolean](#boolean) |  `false`   |
 
 <details> 
 
@@ -587,30 +613,30 @@ instanced: false
 
 ```yml
 isEnabled: true
-name: "&cRed Rubin"
-role: "&a<Generic NPC>"
+name: "&cКрасный Рубин"
+role: "&a<Обычный NPC>"
 profession: NITWIT
 greetings:
-- Hiya!
-- Hello!
+- Привет!
+- Здравствуйте!
 dialog:
-- Great conversation!
-- Pleasure talking with you!
+- Отличный разговор!
+- Приятно было с тобой поговорить!
 farewell:
-- Goodbye!
-- Laters!
+- До свидания!
+- Пока!
 canTalk: true
 activationRadius: 4
 interactionType: CHAT
 timeout: 0
-questFileName: 
-- my_quest.yml #npc interactionType must be set to CUSTOM_QUEST_GIVER
+questFileName:
+- my_quest.yml #тип взаимодействия npc должен быть установлен на CUSTOM_QUEST_GIVER
 disguise: SKELETON
-customDisguiseData: #used when a custom libsdisguise is being set
+customDisguiseData: #используется, когда устанавливается пользовательский libsdisguise
 customModel: MODEL_ONE
-arena: my_arena.yml #npc interactionType must be set to ARENA_MASTER
-command: /say Hello World! #npc interactionType must be set to COMMAND
-spawnLocation: my_world,584,55,127,90,10 #remember that NPCs use pitch and yaw to set where they are looking at. this is also automatically set when running the /em spawnnpc <npcfilename.yml> command, so make sure you pose where you want the NPC to be facing when running the command.
+arena: my_arena.yml #тип взаимодействия npc должен быть установлен на ARENA_MASTER
+command: /say Привет, мир! #тип взаимодействия npc должен быть установлен на COMMAND
+spawnLocation: my_world,584,55,127,90,10 #помните, что NPC используют высоту и угол поворота, чтобы установить, куда они смотрят. это также автоматически устанавливается при запуске команды /em spawnnpc <npcfilename.yml>, поэтому убедитесь, что вы встали там, где вы хотите, чтобы NPC был обращен, при запуске команды.
 ```
 
 <div align="center">
@@ -625,29 +651,28 @@ spawnLocation: my_world,584,55,127,90,10 #remember that NPCs use pitch and yaw t
 
 ***
 
-## Special [1]
-Список допустимых типов взаимодействия NPC:
+## Специальный [1]
+Ниже приведен список допустимых типов взаимодействия NPC:
 
-| Тип                          |                                Description                                |
-|-------------------------------|:-------------------------------------------------------------------------:|
-| `GUILD_GREETER`               |                     Open the adventurer's guild menu                      |
-| `CHAT`                        |                Right-clicking cycles through the `dialog`                 |
-| `CUSTOM_SHOP`                 |                        Opens the custom shop menu                         |
-| `PROCEDURALLY_GENERATED_SHOP` |                   Opens the procedurally generated shop                   |
-| `BAR`                         |                            Opens the bar menu                             |
-| `ARENA`                       |                           Opens the arena menu                            |
-| `QUEST_GIVER`                 |               Opens the procedurally generated quests menu                |
-| `CUSTOM_QUEST_GIVER`          |     Opens the quest menu for a specific quest set in `questFileName`      |
-| `NONE`                        |                              No interactions                              |
-| `SELL`                        |                            Opens the sell menu                            |
-| `TELEPORT_BACK`               | Teleports players back to the last non-elitemobs world location they were |
-| `SCRAPPER`                    |                           Opens the scrap menu                            |
-| `REPAIRMAN`                   |                           Opens the repair menu                           |
-| `ENCHANTER`                   |                          Opens the enchant menu                           |
-| `REFINER`                     |                          Opens the refiner menu                           |
-| `UNBINDER`                    |                           Opens the unbind menu                           |
-| `ARENA_MASTER`                |         Opens the arena menu for the arena set in `arenaFilename`         |
-| `COMMAND`                     |                     Runs the command set in `command`                     |
+| Тип                          |                                Описание                               |
+|-------------------------------|:--------------------------------------------------------------------:|
+| `GUILD_GREETER`               |                    Открывает меню гильдии искателей приключений          |
+| `CHAT`                        |            Щелчок правой кнопкой мыши циклически перебирает `dialog`    |
+| `CUSTOM_SHOP`                 |                        Открывает пользовательское меню магазина          |
+| `PROCEDURALLY_GENERATED_SHOP` |                     Открывает процедурно сгенерированный магазин      |
+| `BAR`                         |                            Открывает меню бара                            |
+| `ARENA`                       |                            Открывает меню арены                           |
+| `QUEST_GIVER`                 |                Открывает процедурно сгенерированное меню квестов        |
+| `CUSTOM_QUEST_GIVER`          |     Открывает меню квестов для определенного набора квестов в `questFileName`  |
+| `NONE`                        |                                Нет взаимодействий                           |
+| `SELL`                        |                             Открывает меню продажи                           |
+| `TELEPORT_BACK`               | Телепортирует игроков обратно в последнее местоположение, где они были в мире не-elitemobs |
+| `SCRAPPER`                    |                           Открывает меню разбора                          |
+| `REPAIRMAN`                   |                           Открывает меню ремонта                          |
+| `ENCHANTER`                   |                          Открывает меню зачарования                          |
+| `REFINER`                     |                          Открывает меню переработки                          |
+| `UNBINDER`                    |                         Открывает меню отвязки                            |
+| `ARENA_MASTER`                |     Открывает меню арены для арены, установленной в `arenaFilename`   |
+| `COMMAND`                     |                    Запускает команду, установленную в `command`                    |
 
-*For more information on what the SCRAPPER and similar interaction types do click [here]($language$/elitemobs/item_upgrade_system.md).*
-
+*Для получения дополнительной информации о том, что делают SCRAPPER и аналогичные типы взаимодействия, нажмите [здесь]($language$/elitemobs/item_upgrade_system.md).*

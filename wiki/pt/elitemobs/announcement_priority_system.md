@@ -1,29 +1,39 @@
-O Sistema de Prioridade de Anúncios gerencia a importância das mensagens do EliteMobs. Atualmente, eles são usados apenas para gerenciar as mensagens enviadas pelos spawns de Custom Bosses.
+O Sistema de Prioridade de Anúncios gere a importância das mensagens do EliteMobs. Atualmente, estas são apenas
+utilizadas para gerir as mensagens enviadas por spawns de Bosses Personalizados.
 
-# Folha de dicas resumida:
+# Guia de consulta rápida:
 
-*   Nível 0: Silencioso / Local para jogadores que lutaram contra o chefe
-*   Nível 1: Mensagens de Chat (se tiver mensagens de spawn)
+* Nível 0: Silencioso / Local para jogadores que lutaram contra o boss
+* Nível 1: Mensagens no Chat (se tiver mensagens de spawn)
 *   Nível 2: Rastreamento (se tiver uma mensagem de localização)
-*   Nível 3: [Anúncios do Discord (se tiver mensagens de spawn e o DiscordSRV estiver instalado e configurado corretamente)]($language$/elitemobs/discordsrv.md)
+* Nível
+  3: [Anúncios no Discord (se tiver mensagens de spawn e o DiscordSRV estiver instalado e configurado corretamente)]($language$/elitemobs/discordsrv.md)
 
 # Como funciona:
 
-Nota: Você precisa configurar seu Custom Boss com este sistema de prioridade se quiser usar um valor diferente do padrão. Clique [aqui]($language$/elitemobs/creating_bosses.md&section=announcementpriority) para aprender como fazer isso.
+Nota: Precisa de configurar o seu Boss Personalizado com este sistema de prioridade se quiser usar um valor não padrão.
+Clique [aqui]($language$/elitemobs/creating_bosses.md&section=announcementpriority) para aprender como fazer isso.
 
 ## Nível 0
 
-Força o Custom Boss a ficar em silêncio. Isso significa que nenhuma mensagem será enviada sobre ele, mesmo que ele esteja configurado para tê-las, com uma exceção: eles enviarão mensagens de morte diretamente para os jogadores que causaram dano ao chefe.
+Força o Boss Personalizado a ficar silencioso. Isto significa que nenhuma mensagem será enviada sobre ele, mesmo que
+esteja configurado para as ter, com uma exceção: Enviarão mensagens de morte diretamente aos jogadores que danificaram o
+boss.
 
 ## Nível 1
 
-**Este é o padrão.** O Custom Boss poderá enviar uma mensagem no chat se estiver configurado para fazê-lo. Ele enviará mensagens de spawn, morte e escape se estiver configurado para tê-las.
+**Este é o padrão.** O Boss Personalizado poderá enviar uma mensagem no chat se estiver configurado para o fazer.
+Enviarão mensagens de spawn, morte e fuga se estiverem configurados para as ter.
 
 ## Nível 2
 
-O Custom Boss terá o mesmo comportamento do Nível 1 e também poderá ser rastreado pelos jogadores ao spawnar se tiver uma mensagem de localização associada a ele. Os jogadores podem clicar no chat para rastreá-lo quando ele spawnar, ou podem usar o menu `/em` para rastreá-lo.
+O Boss Personalizado terá o mesmo comportamento do Nível 1 e também poderá ser rastreado pelos jogadores ao aparecer se
+tiver uma mensagem de localização associada. Os jogadores podem clicar no chat para rastreá-lo quando ele aparece ou
+podem usar o menu /em para rastreá-lo.
 
 ## Nível 3
 
-O Custom Boss terá o mesmo comportamento do Nível 2 e também enviará mensagens para a sala do Discord configurada para enviar notificações sobre o EliteMobs. [A página sobre como configurar este recurso pode ser encontrada aqui.]($language$/elitemobs/discordsrv.md) As mensagens no Discord serão as mesmas das mensagens de chat - spawn/morte/escape
-
+O Boss Personalizado tem o mesmo comportamento do Nível 2 e também enviará mensagens para a sala do Discord configurada
+para enviar notificações sobre o
+EliteMobs. [A página sobre como configurar esta funcionalidade pode ser encontrada aqui.]($language$/elitemobs/discordsrv.md)
+As mensagens no Discord serão as mesmas das mensagens do chat - spawn/morte/fuga

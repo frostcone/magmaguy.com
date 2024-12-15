@@ -1,136 +1,122 @@
-# Команды EliteMobs
+# Пользовательские команды
 
-*Примечание: Все разрешения игроков по умолчанию установлены в true. Это означает, что они уже настроены.*
+*Примечание: Все разрешения игроков по умолчанию установлены в значение true. Это означает, что они уже настроены.*
 
-*Если вы не хотите, чтобы у игроков был доступ к определенной функции с помощью разрешений, вам нужно будет запретить этому игроку разрешение!*
+*Если вы не хотите, чтобы игроки имели доступ к определенной функции через разрешения, вам придется запретить это разрешение игроку!*
 
-| Команда | Описание |
-|---------|:-----------:|
-| `/elitemobs` / `/em` | Основная команда, которая сводит всю информацию об игроке в плагине в легкодоступное меню. *Примечание:* все остальные команды пользователей находятся в этом главном меню. `/em menu` - это также допустимая команда для этого |
-| `/adventurersguild` / `/ag`     |В рекомендуемой настройке телепортирует игрока в мир Гильдии Авантюристов, где он взаимодействует с различными NPC EliteMobs.|
-| `/shareitem`     |Создает ссылку на предмет в чате, чтобы другие игроки могли увидеть его характеристики.|
-| `/em help`     |Перечисляет все команды. Остальные команды пользователей обычно заменяются использованием NPC или интерфейса `/em`!|
-| `/em wallet`     |Отображает деньги игрока.|
-| `/em pay <username> <amount>`     |Позволяет игрокам платить друг другу. Транзакции облагаются налогом в настраиваемой сумме.|
-| `/em updateitem`     |Обновляет описание предмета, если оно было не синхронизировано. Эта команда предназначена для отладки и не требуется в нормальной игре.|
-| `/em spawntp`     |Телепортирует игрока к точке спавна сервера.|
+| Команда |     Описание    |
+|---------|:-----------------:|
+| `/elitemobs` / `/em` | Основная команда, объединяющая всю информацию об игроке в плагине в удобном меню. *Примечание:* все остальные пользовательские команды находятся в этой основной команде. |
+| `/adventurersguild` / `/ag`     | В рекомендуемой настройке телепортирует игрока в мир гильдии искателей приключений, где они взаимодействуют с различными NPC EliteMobs. |
+| `/em shareItem`     | Отправляет ссылку на предмет в чат, чтобы другие игроки могли видеть его характеристики. |
+| `/em help`     | Выводит список всех команд. Остальные пользовательские команды обычно заменяются использованием NPC или интерфейсом `/em`! Вы можете навести курсор на команды, чтобы получить описание их действий. |
+| `/em money check`     | Показывает деньги игрока. |
+| `/em pay <имя_пользователя> <сумма>`     | Позволяет игрокам платить друг другу. Транзакции облагаются налогами в настраиваемом размере. |
+| `/em spawntp`     | Телепортирует игрока на спавн сервера. |
 
 ## Команды NPC
 
-Эти команды полезны только в том случае, если у вас не установлен мир центра Гильдии Авантюристов с NPC. 
+Эти команды полезны только в том случае, если у вас не установлен центр гильдии искателей приключений с NPC.
 
-Рекомендуется установить их, чтобы выполнять все эти команды через NPC, вместо того чтобы заставлять игроков запоминать, как работают команды.
-
-| Команда | Описание |
-|---------|:-----------:|
-| `/em rank`     |     Открывает меню рангов или телепортирует игроков в мир центра Гильдии Авантюристов.     |
-| `/em shop`     |     Доступ к магазину или телепортация в центр Гильдии Авантюристов.     |
-| `/em customshop`     |     Доступ к  Custom Shop  или телепортация в центр Гильдии Авантюристов.     |
-| `/em repair`     |     Доступ к меню ремонта или телепортация в центр Гильдии Авантюристов.     |
-| `/em enchant`     |     Доступ к меню зачарования или телепортация в центр Гильдии Авантюристов.     |
-| `/em scrap`     |     Доступ к меню утилизации или телепортация в центр Гильдии Авантюристов.     |
-| `/em unbind`     |     Доступ к меню отвязки или телепортация в центр Гильдии Авантюристов.     |
-
-## Внутренние команды пользователей
-
-**Эти команды предназначены для выполнения из меню в игре, таких как квесты из меню квестов. Если не указаны инструкции о том, как получить ID, то это означает, что получить этот ID можно только с помощью команды из меню в игре.** Для удобства они были разделены на категории идентифицируемых и неидентифицируемых.
-
-### Identifiable
+Рекомендуется установить их, чтобы выполнять все эти команды через NPC, а не заставлять игроков запоминать, как работают команды.
 
 | Команда | Описание |
 |---------|:-----------:|
-|`/em dungeontp <dungeonid>`         |Телепортирует игрока в подземелье.|
-*Примечание: эту команду нужно запускать из меню `/em`, так как игрокам невозможно угадать ID подземелья. ID подземелий такие же, как имена файлов .yml в папке `~/plugins/EliteMobs/dungeonpackages/`. <br/>Вы можете увидеть ID в консоли при использовании команды `/em`  и выбрать телепортацию на странице Teleports.*
+| `/em rank`     | Открывает меню рангов или телепортирует игроков в центр гильдии искателей приключений. |
+| `/em shop procedural <игрок>`     | Открывает магазин или телепортирует игроков в центр гильдии искателей приключений. |
+| `/em shop sell <игрок>`     | Открывает меню продажи магазина или телепортирует игроков в центр гильдии искателей приключений. |
+| `/em shop custom <игрок>`     | Открывает пользовательский магазин или телепортирует игроков в центр гильдии искателей приключений. |
+| `/em repair`     | Открывает меню ремонта или телепортирует игроков в центр гильдии искателей приключений. |
+| `/em enchant`     | Открывает меню зачарования или телепортирует игроков в центр гильдии искателей приключений. |
+| `/em scrap`     | Открывает меню утилизации или телепортирует игроков в центр гильдии искателей приключений. |
+| `/em unbind`     | Открывает меню отвязки или телепортирует игроков в центр гильдии искателей приключений. |
 
-### Unidentifiable
+## Внутренние пользовательские команды
+
+**Эти команды предназначены для выполнения из внутриигровых меню, таких как квесты из меню квестов. Если нет инструкций о том, как получить идентификатор, это означает, что невозможно получить этот идентификатор иначе, чем запустив команду из внутриигрового меню.** Для удобства они были разделены на идентифицируемые и неидентифицируемые категории.
+
+### Идентифицируемые
+
+| Команда | Описание |
+|---------|-------------|
+|`/em dungeontp <id_подземелья>`         | Телепортирует игрока в подземелье. |
+*Примечание: это предназначено для запуска из меню `/em`, так как игрокам невозможно угадать идентификаторы подземелий. Идентификаторы подземелий совпадают с именами файлов .yml в `~/plugins/EliteMobs/dungeonpackages/`. <br/>Вы можете увидеть идентификаторы в консоли при использовании команды `/em` и выбрать телепорт на странице телепортов.*
+
+### Неидентифицируемые
 
 | Команда | Описание |
 |---------|:-----------:|
-| `/em quest accept <questID>`     |     Принимает квест.     |
+| `/em quest accept <questID>`     |     Принимает квест.    |
 | `/em quest track <questID>`     |     Отслеживает квест.     |
 | `/em quest complete <questID>`     |     Завершает квест.     |
 | `/em quest leave <questID>`     |     Покидает квест.     |
-| `/em trackcustomboss <uuid>`     |     Отслеживает  Custom Boss.  Примечание:  эту  команду  нужно  запускать  из  меню  `/em`,  так  как  игрокам  невозможно  угадать  UUID  босса.     |
+| `/em track boss <uuid>`     |     Отслеживает пользовательского босса. Примечание: это предназначено для запуска из меню `/em`, так как игрокам невозможно угадать UUID босса. |
 
-# Команды администратора
+# Администраторские команды
 
 <div>
 
-**> > > `elitemobs.*` - Разрешение администратора для EliteMobs с полным доступом! < < <**
+**> > > `elitemobs.*` - Разрешение администратора для EliteMobs для полного доступа! < < <**
 
 </div>
 
 | Команда | Описание |
 |---------|:-----------:|
-| `/em setup`     |     Открывает главное меню настроек.     |
-| `/em setup area <areaName>`     |     Защищает область с помощью WorldGuard, используется для Mini-Dungeons и мира центра Гильдии Авантюристов.  Примечание: Вам не нужно запускать эту команду вручную при настройке с использованием рекомендованного метода настройки.     |
-| `/em spawnelite <entityType> <level> <power1> <power2> <power3>`     |     Создает Elite  на основе типа существа.     |
-| - `/em spawnlocationelite <entityType> <worldName> <x> <y> <z> <level> <power1> <power2> <power3>`     |     Создает Elite  на основе типа существа и местоположения.     |
-| `/em spawncustom <fileName>`     |     Создает  Custom Boss  из файла конфигурации.     |
-| `/em spawncustomlevel <fileName> <level>`     |     Создает  Custom Boss  из файла конфигурации и переопределяет уровень.     |
-| `/em spawnlocationcustom <filename> <worldName> <x> <y> <z>`     |     Создает  Custom Boss  из файла конфигурации в определенном месте.     |
-| `/em spawnlocationcustomlevel <filename> <worldName> <x> <y> <z>`     |     Создает  Custom Boss  из файла конфигурации в определенном месте и переопределяет уровень.     |
-| `/em spawnsuper <EntityType>`     |     Создает  Super Mob  на основе типа существа.     |
-| `/em addSpawnLocation <fileName>`     |     Добавляет точку появления к региональному боссу.     |
-| `/em addTreasureChest <fileName>`     |     Добавляет сундук с сокровищами в место, где стоит игрок.     |
-| `/em setLeashRadius <fileName> <radius>`     |     Добавляет точку появления к региональному боссу.     |
-| `/em remove`     |     Окончательно удаляет сущность  Elite Mob.  Работает с Elite/Regional/Super/NPCs.  Запустите снова, чтобы выйти из режима удаления.     |
-| `/em debug <name>`     |     Окончательно удаляет сущность  Elite Mob.  Elite/Regional/Super/NPCs  все работают.  Запустите снова, чтобы выйти из режима удаления.     |
-| `/em debug <name>`     |     Открывает экран отладки для игроков или региональных боссов.     |
-| `/em event <eventName>`     |     Запускает  Custom  timed  event.     |
-| `/em spawnnpc <npcFileName>`     |     Создает NPC.     |
-| `/em stats`     |     Получает статистику для активных сущностей и игроков EliteMobs.     |
-| `/em getloot`     |     Открывает меню, где можно получить любой  Custom Loot.     |
-| `/em getloot <filename>`     |     Получить  Custom Loot.     |
-| `/em giveloot <filename> <player>`     |     Выдать  Custom Loot  игроку.     |
-| `/em simloot <level>`     |     Имитация  дропа  из  Elite Mob  из  установленного  типа.     |
-| `/em simloot <level> <times>`     |     Имитация  дропа  из  Elite Mob  из  установленного  типа  несколько  раз.     |
-| `/em version`     |     Получить  версию  плагина.     |
-| `/em reload`     |     Перезагрузить  плагин.  Работает  почти  всегда.     |
-| `/em killaggressive`     |     Убивает  всех  агрессивных  Elite Mobs.     |
-| `/em killaggressive <radius>`     |     Убивает  всех  агрессивных  Elite Mobs  в  радиусе.     |
-| `/em killpassive`     |     Убивает  всех  пассивных  Super Mobs.     |
-| `/em killpassive <radius>`     |     Убивает  всех  пассивных  Super Mobs  в  радиусе.     |
-| `/em killtype <entityType>`     |     Убивает  всех  элит  определенного  типа.     |
-| `/em killtype <entityType> <radius>`     |     Убивает  всех  элит  определенного  типа  в  радиусе.     |
-| `/em gettier <tier>`     |     Получает  отладочные  предметы  для  тестирования.     |
-| `/em money add <username> <amount>`     |     Добавляет  определенную  сумму  денег  игроку.     |
-| `/em money addall <amount>`     |     Добавляет  определенную  сумму  денег  всем  игрокам  в  сети.     |
-| `/em money remove <username> <amount>`     |     Удаляет  определенную  сумму  денег  у  игрока.     |
-| `/em money set <username> <amount>`     |     Устанавливает  общую  сумму  валюты  игрока.     |
-| `/em setrank <player> <prestigetier> <guildtier>`     |     Устанавливает  ранг  гильдии  игрока.     |
-| `/em discord`     |     Получить  ссылку  на  сервер  Discord  поддержки.     |
-| `/em discord <message>`     |     Отправляет  отладочное  сообщение  в  Discord,  если  DiscordSRV  настроен  правильно.     |
-| `/em forceunbind`     |     Отвязывает  soulbound  предмет,  который  игрок  держит  в  руках.     |
-| `/em relativecoords <minidungeon>`     |     Получить  относительные  координаты  установленного  подземелья.     |
-| `/em wallet <player>`     |     Проверяет  валюту  указанного  игрока.     |
-| `/em fireball`     |     Создает  огненный  шар  для  тестирования  регенерации  взрыва  Elite.     |
-| `/em registerblocks <regional_boss_file.yml> <on_spawn/on_remove>`     |     См.  [Переходные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em registerblocksedit <regional_boss_file.yml> <on_spawn/on_remove>`     |     См.  [Переходные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em registerblocksarea <regional_boss_file.yml> <on_spawn/on_remove>`     |     См.  [Переходные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em registerblocksareaedit <regional_boss_file.yml> <on_spawn/on_remove>`     |     См.  [Переходные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em cancelblocks`     |     См.  [Переходные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
-| `/em debugmode`     |     Включает  режим  отладки,  отображая  появление  и  исчезновение  мобов  в  консоли  и  позволяя  отслеживание.     |
+| `/em setup`     |     Открывает главное меню настройки.     |
+| `/em spawn elite <тип_сущности> <уровень> <сила1> <сила2> <сила3>`     |     Создает элиту на основе типа сущности.     |
+| - `/em spawn eliteAt <тип_сущности> <название_мира> <x> <y> <z> <уровень> <сила1> <сила2> <сила3>`     |     Создает элиту на основе типа сущности и местоположения.     |
+| `/em spawn boss <имя_файла>`     |     Создает пользовательского босса из файла конфигурации.     |
+| `/em spawn boss <имя_файла> <уровень>`     |     Создает пользовательского босса из файла конфигурации и переопределяет уровень.     |
+| `/em spawn bossAt <имя_файла> <название_мира> <x> <y> <z>`     |     Создает пользовательского босса из файла конфигурации в указанном местоположении.     |
+| `/em spawn bossAt <имя_файла> <уровень> <название_мира> <x> <y> <z>`     |     Создает пользовательского босса из файла конфигурации в указанном местоположении и переопределяет уровень.     |
+| `/em place boss <имя_файла>`     |     Добавляет место появления регионального босса.     |
+| `/em place treasureChest <имя_файла>`     |     Добавляет сундук с сокровищами в место, где находится игрок.     |
+| `/em remove`     |     Безвозвратно удаляет сущность элитного моба. Работает со всеми элитами/региональными/супер/NPC. Запустите еще раз, чтобы выйти из режима удаления. |
+| `/em event <название_события>`     |     Запускает настраиваемое таймерное событие.     |
+| `/em place npc <имя_файла_npc>`     |     Создает NPC.     |
+| `/em stats`     |     Получает статистику по активным сущностям EliteMobs и игрокам.     |
+| `/em loot menu`     |     Открывает меню, в котором вы можете получить любой пользовательский лут.     |
+| `/em loot give <игрок> <имя_файла>`     |     Дает определенный пользовательский лут игроку.     |
+| `/em loot simulate <уровень>`     |     Моделирует дропы с элитного моба установленного уровня.     |
+| `/em loot simulate <уровень> <количество>`     |     Моделирует дропы с элитного моба установленного уровня заданное количество раз.     |
+| `/em version`     |     Получает версию плагина.     |
+| `/em reload`     |     Перезагружает плагин. Работает почти всегда.     |
+| `/em kill `     |     Убивает всех агрессивных элитных мобов.     |
+| `/em kill <радиус>`     |     Убивает всех агрессивных элитных мобов в радиусе.     |
+| `/em kill type <тип_сущности>`     |     Убивает всех элит определенного типа.     |
+| `/em kill type <тип_сущности> <радиус>`     |     Убивает всех элит определенного типа в радиусе.     |
+| `/em loot debug <уровень>`     |     Получает отладочные предметы для тестирования.     |
+| `/em money add <имя_пользователя> <сумма>`     |     Добавляет заданную сумму денег игроку.     |
+| `/em money addall <сумма>`     |     Добавляет заданную сумму денег всем онлайн-игрокам.     |
+| `/em money remove <имя_пользователя> <сумма>`     |     Удаляет заданную сумму денег у игрока.     |
+| `/em money set <имя_пользователя> <сумма>`     |     Устанавливает общую сумму валюты игрока.     |
+| `/em rank <игрок> <уровень_престижа> <уровень_гильдии>`     |     Устанавливает ранг гильдии игрока.     |
+| `/em discord`     |     Получает ссылку на сервер поддержки Discord.     |
+| `/em discord <сообщение>`     |     Отправляет отладочное сообщение в Discord, если DiscordSRV настроен правильно.     |
+| `/em unbind force`     |     Отвязывает удерживаемый привязанный к душе предмет.     |
+| `/em money check <игрок>`     |     Проверяет валюту конкретного игрока.     |
+| `/em fireball`     |     Создает огненный шар для тестирования регенерации взрывов элит.     |
+| `/em transitiveBlocks register <имя_файла> <ON_SPAWN/ON_REMOVE>`     |     См. раздел [Транзитивные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em transitiveBlocks edit <имя_файла> <ON_SPAWN/ON_REMOVE>`     |     См. раздел [Транзитивные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em transitiveBlocks registerArea <имя_файла> <ON_SPAWN/ON_REMOVE>`     |     См. раздел [Транзитивные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em transitiveBlocks editArea <имя_файла> <ON_SPAWN/ON_REMOVE>`     |     См. раздел [Транзитивные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em transitiveBlocks cancel`     |     См. раздел [Транзитивные блоки]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
+| `/em protection bypass`     |     Переключает защиту подземелья. Также работает для гильдии искателей приключений.     |
 
-## Внутренние команды администратора
+## Внутренние администраторские команды
 
-Эти команды предназначены для запуска при взаимодействии с меню или интерактивным текстом в чате, а не вручную.
+Эти команды предназначены для выполнения при взаимодействии с меню или интерактивным текстом в чате, а не вручную.
 
 | Команда | Описание |
 |---------|:-----------:|
-| `/em setup done`     |     Прекращает  отображение  сообщений  при  входе  администратора.     |
-| `/em setup minidungeon <minidungeonName>`     |     Устанавливает  Mini-Dungeon.     |
-| `/em setup minidungeon <minidungeonName>`     |     Удаляет  Mini-Dungeon.     |
-| `/em trace <uuid>`     |     Отслеживает  появление/исчезновение  Custom Boss.  Требуется  включенный  режим  отладки.     |
-| `/em debugtp <uuid>`     |     Телепортируется  в  местоположение  отслеживаемого  Custom Boss.  Требуется  включенный  режим  отладки.     |
-| `/em generateresourcepack`     |     Создает  пакет  ресурсов.  Проверьте  запись  в  вики  о  Custom Models  о  том,  как  использовать  это.     |
-| `/em updateresourcepack`     |     Обновляет  SHA1  пакета  ресурсов  в  конфигурации  server.properties.  Проверьте  запись  в  вики  о  Custom Models  о  том,  как  использовать  это.     |
+| `/em setup done`     |     Прекращает показывать сообщения при входе администратора.     |
+| `/em setup toggle <конфигурация_подземелья>`     |   Позволяет переключать установку указанного контента EliteMobs.  |
 
-# Грубые разрешения:
+# Необработанные разрешения:
 ```
 permissions:
   elitemobs.*:
-    description: Gives access to all elitemobs commands
+    description: Дает доступ ко всем командам elitemobs
     children:
       elitemobs.stats: true
       elitemobs.checktier.others: true
@@ -138,116 +124,115 @@ permissions:
       elitemobs.currency.check.others: true
     default: op
   elitemobs.stats:
-    description: Allows players to run /elitemobs stats
+    description: Разрешает игрокам выполнять /elitemobs stats
     default: op
   elitemobs.version:
-    description: Allows players to run /elitemobs version
+    description: Разрешает игрокам выполнять /elitemobs version
     default: true
   elitemobs.shop.npc:
-    description: Allows players to interact with NPCs for dynamic shops
+    description: Разрешает игрокам взаимодействовать с NPC для динамических магазинов
     default: true
   elitemobs.shop.command:
-    description: Allows players to open the dynamic shop menu through commands
+    description: Разрешает игрокам открывать меню динамического магазина через команды
     default: true
   elitemobs.customshop.npc:
-    description: Allows players to interact with NPCs for dynamic shops
+    description: Разрешает игрокам взаимодействовать с NPC для динамических магазинов
     default: true
   elitemobs.customshop.command:
-    description: Allows players to open the dynamic shop menu through commands
+    description: Разрешает игрокам открывать меню динамического магазина через команды
     default: true
   elitemobs.currency.pay:
-    description: Allows players to run /elitemobs pay [username] [amount]
+    description: Разрешает игрокам выполнять /elitemobs pay [имя_пользователя] [сумма]
     default: true
   elitemobs.currency.check:
-    description: Allows players to run /elitemobs wallet
+    description: Разрешает игрокам выполнять /elitemobs wallet
     default: true
   elitemobs.currency.check.others:
-    description: Allows players to run /elitemobs check [username]
+    description: Разрешает игрокам выполнять /elitemobs check [имя_пользователя]
     default: op
   elitemobs.events:
-    description: Allows players to launch all events
+    description: Разрешает игрокам запускать все события
     default: true
   elitemobs.checktier.others:
-    description: Allows players to run /elitemobs checktier [player]
+    description: Разрешает игрокам выполнять /elitemobs checktier [игрок]
     default: op
   elitemobs.gettier:
-    description: Allows players tu run /elitemobs gettier [tier]
+    description: Разрешает игрокам выполнять /elitemobs gettier [уровень]
     default: op
   elitemobs.versionnotification:
-    description: Allows players to get notified about plugin updates
+    description: Разрешает игрокам получать уведомления об обновлениях плагина
     default: op
   elitemobs.adventurersguild.teleport:
-    description: Allows players to teleport to the adventurer's guild hub using /ag
+    description: Разрешает игрокам телепортироваться в центр гильдии искателей приключений с помощью /ag
     default: true
   elitemobs.adventurersguild.command:
-    description: Allows players to rank menu using the /em adventurersguild command
+    description: Разрешает игрокам открывать меню рангов с помощью команды /em adventurersguild
     default: true
   elitemobs.rank.command:
-    description: Allows players to open the rank menu through /em rank
+    description: Разрешает игрокам открывать меню рангов через /em rank
     default: true
   elitemobs.rank.npc:
-    description: Allows players to access the /em rank menu through NPCs
+    description: Разрешает игрокам получать доступ к меню /em rank через NPC
     default: true
   elitemobs.quest.command:
-    description: Allows players to take on quests via command
+    description: Разрешает игрокам брать квесты через команду
     default: true
   elitemobs.quest.npc:
-    description: Allows players to take on quests via EliteMobs NPC
+    description: Разрешает игрокам брать квесты через EliteMobs NPC
     default: true
   elitemobs.dungeontp:
-    description: Allows players to teleport to an elitemobs-set location
+    description: Разрешает игрокам телепортироваться в установленное место EliteMobs
     default: true
   elitemobs.spawntp:
-    description: Allows players to teleport to the default spawn location of the server.
+    description: Разрешает игрокам телепортироваться в место спавна сервера по умолчанию.
     default: true
   elitemobs.back.npc:
-    description: Allows players to interact with an npc to go back to a previous location.
+    description: Разрешает игрокам взаимодействовать с NPC, чтобы вернуться в предыдущее место.
     default: true
   elitemobs.shareitem:
-    description: Shares a held Elite Item on chat.
+    description: Отправляет ссылку на удерживаемый элитный предмет в чате.
     default: true
   elitemobs.scrap.npc:
-    description: Allows players to scrap items at an npc
+    description: Разрешает игрокам утилизировать предметы у NPC
     default: true
   elitemobs.scrap.command:
-    description: Allows players to scrap items using a command
+    description: Разрешает игрокам утилизировать предметы с помощью команды
     default: true
   elitemobs.smelt.command:
-    description: Allows players to smelt items using a command
+    description: Разрешает игрокам плавить предметы с помощью команды
     default: true
   elitemobs.smelt.npc:
-    description: Allows players to smelt items using an npc
+    description: Разрешает игрокам плавить предметы с помощью NPC
     default: true
   elitemobs.repair.command:
-    description: Allows players to use the repair command to open the menu for repairing elite items
+    description: Разрешает игрокам использовать команду repair для открытия меню ремонта элитных предметов
     default: true
   elitemobs.repair.npc:
-    description: Allows players to interact with the NPC for repairing items
+    description: Разрешает игрокам взаимодействовать с NPC для ремонта предметов
     default: true
   elitemobs.refiner.command:
-    description: Allows players to use the refiner command to open the menu for upgrading Elite Scrap
+    description: Разрешает игрокам использовать команду refiner для открытия меню улучшения элитных обрезков
     default: true
   elitemobs.refiner.npc:
-    description: Allows players to interact with the NPC for upgrading Elite Scrap
+    description: Разрешает игрокам взаимодействовать с NPC для улучшения элитных обрезков
     default: true
   elitemobs.enhancer.command:
-    description: Allows players to use the enhancer command to open the menu for upgrading Elite Items
+    description: Разрешает игрокам использовать команду enhancer для открытия меню улучшения элитных предметов
     default: true
   elitemobs.enhancer.npc:
-    description: Allows players to interact with the NPC for upgrading Elite Items
+    description: Разрешает игрокам взаимодействовать с NPC для улучшения элитных предметов
     default: true
   elitemobs.unbind.command:
-    description: Allows players to use the unbind command to open the menu for unbinding Elite Items
+    description: Разрешает игрокам использовать команду unbind для открытия меню отвязки элитных предметов
     default: true
   elitemobs.unbind.npc:
-    description: Allows players to interact with the unbinder NPC for unbind Elite Items
+    description: Разрешает игрокам взаимодействовать с NPC отвязки для отвязки элитных предметов
     default: true
   elitemobs.soulbind.bypass:
-    description: Allows users to bypass the soulbind restrictions. Only recommended for admins!
+    description: Разрешает пользователям обходить ограничения привязки к душе. Рекомендуется только для администраторов!
     default: false
   elitequest.*:
-    description: Used for quest-related permissions
+    description: Используется для разрешений, связанных с квестами
     default: false
     op: false
 ```
-

@@ -1,61 +1,60 @@
-# Qu'est-ce qu'un fichier de trésor ?
+# ¿Qué es un archivo de tesoro?
 
-Les fichiers de trésor sont ceux qui déterminent les tables de butin pour les coffres de BetterStructures. Ils sont généralement attribués
-aux [générateurs]($language$/betterstructures/creating_generators.md&section=treasurefilename) mais ils peuvent également être définis au
-niveau d'une [configuration de construction individuelle]($language$/betterstructures/creating_structures.md&section=treasurefile).
+Los archivos de tesoro son los que determinan las tablas de botín para los cofres de BetterStructures. Por lo general, se asignan a los
+[generadores]($language$/betterstructures/creating_generators.md&section=treasurefilename), pero también se pueden establecer en el nivel de una [configuración de compilación individual]($language$/betterstructures/creating_structures.md&section=treasurefile).
 
-Ces tables de butin sont assez puissantes, mais nécessitent également la connaissance de certains concepts statistiques de base pour être comprises.
+Estas tablas de botín son bastante poderosas, pero también requieren conocimiento de algunos conceptos básicos de estadística para entenderlas.
 
 <details>
 <summary>
-Lisez à propos de ces concepts ici, le reste de la page suppose que vous les comprenez !
+Lea sobre esos conceptos aquí, ¡el resto de la página asume que los entiende!
 </summary>
 
-***Probabilité pondérée***
+***Probabilidad ponderada***
 
-BetterStructures et EliteMobs utilisent fréquemment le concept de probabilité pondérée. Il s'agit de résoudre un problème simple : comment définir la probabilité de choisir un élément dans une liste d'éléments potentiellement infinis ?
+BetterStructures y EliteMobs usan con frecuencia el concepto de probabilidad ponderada. Esto es para resolver un problema simple: ¿cómo puede establecer la posibilidad de elegir un elemento de una lista de elementos potencialmente infinitos?
 
-La probabilité pondérée résout ce problème en attribuant un poids à chaque élément. Si vous avez 100 éléments et que chacun a un poids de 1, alors ils ont tous une chance égale - 1% - d'être choisis. Si vous ajoutez un élément supplémentaire, portant le total à 101 éléments, et que vous donnez à ce dernier élément un poids de 1, tous les éléments ont toujours la même chance - ~0,99% - d'être choisis. Si vous donnez au dernier élément un poids de 2, sa probabilité d'être choisi augmente - le nouveau poids total est de 102, le dernier élément a un poids de 2 et 100/102 = ~0,98%, donc 0,98% + 0,98% = 1,96% de chances d'être choisi. Si vous donnez au dernier élément un poids de 100, le nouveau poids est de 200, et puisque la moitié de ce poids est votre nouvel élément, votre nouvel élément a 50% de chances d'être choisi.
+La probabilidad ponderada resuelve este problema dando a cada elemento un peso. Si tiene 100 elementos y cada uno tiene un peso de 1, entonces todos tienen la misma posibilidad, 1%, de ser elegidos. Si agrega un elemento más, elevando el total a 101 elementos, y le da a ese último elemento una posibilidad de 1, todos los elementos aún tienen la misma posibilidad, ~0,99%, de ser elegidos. Si le da al último elemento un peso de 2, la posibilidad de que sea elegido aumenta: el nuevo peso total es 102, el último elemento tiene un peso de 2 y 100/102 = ~0,98%, por lo que 0,98% + 0,98% = 1,96% de posibilidades de ser elegido. Si le da al último elemento un peso de 100, el nuevo peso es 200, y dado que la mitad de ese peso es su nuevo elemento, su nuevo elemento tiene un 50% de posibilidades de ser elegido.
 
-Comme vous pouvez le voir, c'est utile lorsque vous avez des listes de centaines de choses à choisir au hasard.
+Como puede ver, esto es bueno para usar cuando puede tener listas de cientos de cosas de las que aleatorizar.
 
-***Distribution gaussienne***
+***Distribución gaussiana***
 
-Une distribution gaussienne est une fonction mathématique en forme de cloche.
+Una distribución gaussiana es una función matemática en forma de campana.
 
 <img src="http://sfonline.barnard.edu/wp-content/uploads/2015/12/gaussian-distribution.jpg">
 
-Vous vous demandez peut-être en quoi cela est pertinent pour le système de butin. Une chose que BetterStructures doit décider lors de la définition du butin dans les coffres est la quantité de butin qui apparaît dans ces coffres. La quantité doit être constamment autour d'un nombre spécifique, mais idéalement pas si prévisible que l'ouverture d'un coffre puisse devenir moins excitante.
+Es posible que se pregunte cómo esto es relevante para el sistema de botín. Una cosa que BetterStructures tiene que decidir al establecer el botín en los cofres es cuánto botín aparece en esos cofres. La cantidad debería estar constantemente alrededor de un número específico, pero idealmente no tan predecible como para que abrir un cofre sea menos emocionante.
 
-Pour obtenir cet effet semi-aléatoire, la distribution gaussienne est utilisée pour randomiser le *nombre* d'éléments choisis. Une fois cette quantité choisie, la *probabilité pondérée* sélectionne un élément dans la table de rareté au hasard en tenant compte des poids.
+Para lograr este efecto semi-aleatorio, la distribución gaussiana se utiliza para aleatorizar *cuántos* elementos se eligen. Una vez que se elige esta cantidad, la *probabilidad ponderada* elige un elemento de la tabla de rareza al azar y teniendo en cuenta los pesos.
 
-Alors, comment fonctionne la distribution gaussienne ?
+Entonces, ¿cómo funciona la distribución gaussiana?
 
-Heureusement, vous n'avez pas à vous soucier du fonctionnement mathématique derrière cela, et vous pouvez plutôt vous concentrer sur les deux paramètres qui la modifient : la moyenne et l'écart type.
+Afortunadamente, no tiene que preocuparse por cómo funciona la matemática detrás de ella, y en su lugar puede concentrarse en las dos configuraciones que la modifican: media y desviación estándar.
 
-*Moyenne*
+*Media*
 
-Pour faire simple, la `moyenne` définit le milieu de la courbe gaussienne, ce qui signifie qu'elle définit la quantité d'éléments la plus probable qui apparaîtra dans un coffre. Essentiellement, si vous voulez que vos coffres contiennent généralement 5 éléments, définissez votre moyenne sur 5.
+En pocas palabras, `media` establece el centro de la curva gaussiana, lo que significa que establece la cantidad más probable de elementos que aparecerán en un cofre. Esencialmente, si desea que sus cofres suelan tener 5 elementos, establezca su media en 5.
 
-*Écart type*
+*Desviación estándar*
 
-Imaginez que le nombre moyen d'éléments dans un coffre est de 5. L'`écart type` permet de déterminer dans quelle mesure ce nombre peut varier d'un coffre à l'autre.
+Imagine que el número promedio de elementos en un cofre es 5. La `desviación estándar` ayuda a decidir cuánto puede cambiar este número de un cofre a otro.
 
-Petit `écart type` (par exemple, 1) : Cela signifie que la plupart des coffres auront des éléments très proches de la moyenne, comme 4, 5 ou 6 éléments. C'est une expérience plus prévisible. Par exemple, si un coffre a un écart type de 1, vous pouvez vous attendre à ce que presque tous les coffres contiennent entre 4 et 6 éléments.
+`Desviación estándar` pequeña (por ejemplo, 1): esto significa que la mayoría de los cofres tendrán elementos muy cercanos al promedio, como 4, 5 o 6 elementos. Es una experiencia más predecible. Por ejemplo, si un cofre tiene una desviación estándar de 1, puede esperar que casi todos los cofres tengan entre 4 y 6 elementos.
 
-`Écart type` moyen (par exemple, 2) : Ici, il y a plus de variété. Les coffres peuvent contenir de 3 à 7 éléments. Bien que 5 éléments soient toujours courants, il n'est pas rare de trouver des coffres avec un peu plus ou moins. Ainsi, avec un écart type de 2, vous pourriez occasionnellement trouver un coffre avec seulement 3 éléments, ou si vous êtes chanceux, un avec 7 éléments.
+`Desviación estándar` media (por ejemplo, 2): Aquí, hay más variedad. Los cofres pueden tener de 3 a 7 elementos. Si bien 5 elementos siguen siendo comunes, no es inusual encontrar cofres con un poco más o menos. Entonces, con una desviación estándar de 2, es posible que ocasionalmente encuentre un cofre con solo 3 elementos o, si tiene suerte, uno con 7 elementos.
 
-Grand `écart type` (par exemple, 3 ou plus) : Maintenant, les choses deviennent vraiment surprenantes ! Les coffres pourraient contenir aussi peu que 2 éléments ou jusqu'à 8 éléments ou plus. Cela signifie que vous pourriez trouver un coffre avec seulement quelques éléments, mais il y a aussi une chance de trouver un coffre rempli de goodies. Par exemple, avec un écart type de 3, un coffre pourrait contenir entre 2 et 8 éléments, faisant de chaque ouverture de coffre un pari passionnant.
+`Desviación estándar` grande (por ejemplo, 3 o más): ¡Ahora las cosas se vuelven realmente sorprendentes! Los cofres podrían tener tan solo 2 elementos o hasta 8 o más. Significa que puede encontrar un cofre con solo un par de elementos, pero también existe la posibilidad de encontrar un cofre lleno de golosinas. Por ejemplo, con una desviación estándar de 3, un cofre podría tener entre 2 y 8 elementos, lo que hace que cada apertura de cofre sea una apuesta emocionante.
 
-***La moyenne par défaut est de 4 et l'écart type par défaut est de 3.***
+***La media predeterminada es 4 y la desviación estándar predeterminada es 3.***
 
 </details>
 
 ***
 
-# Format spécial
+# Formato especial
 
-Les fichiers de trésor ont un format spécial qui ressemble à ceci :
+Los archivos de tesoro tienen un formato especial que se ve así:
 
 ```yml
 isEnabled: true
@@ -101,42 +100,41 @@ procedurallyGeneratedItemSettings:
       minLevel: 1
       maxLevel: 3
       chance: 0.2
-
 ```
 
-*Remarque : il s'agit d'une version très simplifiée du fichier, le fichier réel comporte 2599 lignes car il couvre beaucoup plus de butin et tous les enchantements possibles.*
+*Nota: esta es una versión muy reducida del archivo, el archivo real tiene 2599 líneas, ya que cubre mucho más botín y todos los encantamientos posibles.*
 
 # isEnabled
 
-| Clé | Valeurs | Valeur par défaut |
-|-|:-------------------:|-|
-| `isEnabled` | [Booléen](#boolean) | `true` |
+| Clave |       Valores        | Predeterminado |
+|---|:-------------------:|---|
+| `isEnabled` | [Booleano](#booleano) | `true` |
 
 ***
 
 # mean
 
-| Clé | Valeurs | Valeur par défaut |
+| Clave    |      Valores       | Predeterminado |
 |--------|:-----------------:|---------|
-| `mean` | [Nombre décimal](#double) | `4`     |
+| `mean` | [Doble](#doble) | `4`     |
 
-Définit la `moyenne`. Lisez les détails à ce sujet [ici](#what-is-a-treasure-file).
+Establezca la `media`. Lea los detalles sobre eso [aquí](https://magmaguy.com/wiki.html#lang=es&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # standardDeviation
 
-| Clé | Valeurs | Valeur par défaut |
+| Clave                 |      Valores       | Predeterminado |
 |---------------------|:-----------------:|---------|
-| `standardDeviation` | [Nombre décimal](#double) | `3`     |
+| `standardDeviation` | [Doble](#doble) | `3`     |
 
-Définit l'`écart type`. Lisez les détails à ce sujet [ici](#what-is-a-treasure-file).
+Establezca la `desviación estándar`. Lea los detalles sobre eso [aquí](https://magmaguy.com/wiki.html#lang=es&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # items
 
-C'est là que ça devient délicat, car de nombreuses options peuvent être définies par les administrateurs. Zoomons sur l'exemple de fichier de configuration précédent.
+Aquí es donde se vuelve complicado, ya que los administradores pueden establecer muchas de las opciones. Analicemos el ejemplo de archivo de configuración anterior.
 
 ```yml
 items:
@@ -162,38 +160,38 @@ items:
       weight: 6.0
 ```
 
-Ici, vous pouvez voir que sous la clé de configuration `items`, nous avons une carte avec `common` et `rare`. Ce sont des `raretés` !
+Aquí, puede ver que debajo de la clave de configuración `items` tenemos un mapa con `common` y `rare`. ¡Estas son `rareza`!
 ***
 
-## raretés
+## rareza
 
-Les raretés n'ont pas de nom fixe. Vous pouvez les ajouter ou les supprimer, et les personnaliser autant que vous le souhaitez, tant que vous utilisez le même format.
+Las rarezas no tienen un nombre fijo. Puede agregarlas o eliminarlas, y personalizarlas tanto como desee, siempre que use el mismo formato.
 
-Notez que ce qui rend ces tables de rareté plus ou moins rares est le `poids` de la table de butin !
+¡Tenga en cuenta que lo que hace que estas tablas de rareza sean más o menos raras es el `peso` de la tabla de botín!
 
-Par défaut :
-- `common` a un `poids` par défaut de 60
-- `rare` a un `poids` par défaut de 30
-- `epic` a un `poids` par défaut de 10
+Por defecto:
+- `common` tiene un `peso` predeterminado de 60
+- `rare` tiene un `peso` predeterminado de 30
+- `epic` tiene un `peso` predeterminado de 10
 
-Ce qui rend les objets communs 6 fois plus susceptibles d'apparaître que les objets épiques. Vous pouvez en savoir plus sur les `poids` [ici](#what-is-a-treasure-file) !
+Haciendo que los elementos comunes tengan 6 veces más probabilidades de aparecer que los elementos épicos. Puede leer más sobre `peso`s [aquí](https://magmaguy.com/wiki.html#lang=es&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)!
 
-Outre le poids, chaque table de rareté a sa propre liste d'`éléments`.
+Además del peso, cada tabla de rareza tiene su propia lista de `items`.
 
 ***
 
-### Éléments de rareté
+### items de rareza
 
-Les éléments de rareté sont une [liste de cartes]($language$/global/configuration_file_guide.md&section=map_list) qui répertorie tous les éléments que la table de rareté contient.
+Los elementos de rareza son una [lista de mapas](https://magmaguy.com/wiki.html#lang=es&article=global+configuration_file_guide.md&section=map-list) que enumera todos los elementos que tiene la tabla de rareza.
 
-Ces éléments ont les paramètres suivants :
+Estos elementos tienen las siguientes configuraciones:
 
-| Clé | Valeurs | Valeur par défaut |
+| Clave                                |           Valores            | Predeterminado |
 |------------------------------------|:---------------------------:|----------|
-| `amount` | min-max [Entier](#integer) | variable |
-| `material` | [Matériau](#Material) | variable |
-| `procedurallyGenerateEnchantments` | [Booléen](#boolean) | variable |
-| `weight` | [Nombre décimal](#double) | variable |
+| `amount`                           | min-max [Entero](#entero) | variable |
+| `material`                         |    [Material](#material)    | variable |
+| `procedurallyGenerateEnchantments` |     [Booleano](#booleano)     | variable |
+| `weight`                           |      [Doble](#doble)      | variable |
 
 ***
 
@@ -201,36 +199,35 @@ Ces éléments ont les paramètres suivants :
 
 ***
 
-Définit la quantité à faire apparaître. Ceci est exprimé sous forme de plage comme suit `amount: MIN-MAX`. Par exemple, pour faire apparaître entre 1 et 5
-éléments : `amount: 1-5`.
+Establece la cantidad que se debe soltar. Esto se expresa como un rango de la siguiente manera `amount: MIN-MAX`. Como ejemplo, para soltar entre 1 y 5
+elementos: `amount: 1-5`.
 
 #### material
 
-Définit le matériau en utilisant les [noms de l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) de
-l'élément à faire apparaître potentiellement.
+Establece el material utilizando los [nombres de la API de Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) del
+elemento para que potencialmente caiga.
 
 ***
 
-##### Cas spécial - sérialisé
+##### Caso especial: serializado
 
-Lors de l'utilisation de la commande lootify, au lieu d'un matériau, lootify fournira un paramètre `sérialisé`. Ceci est généré automatiquement par le plugin et ne doit pas être généré manuellement. Il est dans un format illisible par l'homme.
+Al usar el comando lootify, en lugar de un material, lootify proporcionará una configuración `serialized`. Esto es generado automáticamente por el plugin y no debe generarse manualmente. Está en un formato que no es legible por humanos.
 
 ***
 
 #### weight
 
-Définit le poids pour la probabilité pondérée. Plus d'informations à ce sujet [ici](#what-is-a-treasure-file).
+Establece el peso para la posibilidad ponderada. Más sobre eso [aquí](https://magmaguy.com/wiki.html#lang=es&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 #### procedurallyGenerateItems
 
-Définit si l'élément doit être généré de manière procédurale en fonction des paramètres de configuration si `procedurallyGeneratedItemSettings`. Notez qu'en fonction des paramètres, cela peut entraîner la génération d'un élément sans enchantements.
-
+Establece si el objeto debe generarse procedimentalmente según la configuración si `procedurallyGeneratedItemSettings`. Tenga en cuenta que, según la configuración, esto podría resultar en la generación de un objeto sin encantamientos.
 
 # procedurallyGeneratedItemSettings
 
-Jetons un autre coup d'œil à notre exemple de fichier de configuration :
+Echemos otro vistazo a nuestro ejemplo de archivo de configuración:
 
 ```yml
 procedurallyGeneratedItemSettings:
@@ -245,32 +242,32 @@ procedurallyGeneratedItemSettings:
       chance: 0.2
 ```
 
-Comme vous pouvez le voir, ce fichier répertorie les types de matériaux, suivis des enchantements, puis des niveaux minimum et maximum et d'une probabilité.
+Como puede ver, este archivo enumera los tipos de materiales, seguidos de los encantamientos y luego seguidos de los niveles mínimo y máximo y una probabilidad.
 
-Notez que vous ne pouvez pas ajouter de matériaux personnalisés provenant d'autres plugins dans ces paramètres, et vous ne pouvez probablement pas ajouter d'enchantements personnalisés provenant d'autres plugins à moins que leur auteur ne dise explicitement qu'ils ont rendu leur système compatible.
+Tenga en cuenta que no puede agregar materiales personalizados de otros plugins en estas configuraciones, y probablemente no pueda agregar encantamientos personalizados de otros plugins a menos que su autor diga explícitamente que han hecho que su sistema sea compatible.
 
-En ce qui concerne les paramètres d'enchantement :
+En cuanto a la configuración de encantamiento:
 
-| Clé | Valeurs | Valeur par défaut |
+| Clave        |       Valores        | Predeterminado |
 |------------|:-------------------:|----------|
-| `minLevel` | [Entier](#integer) | variable |
-| `maxLevel` | [Entier](#integer) | variable |
-| `chance` | [Probabilité](#chance) | variable |
+| `minLevel` | [Entero](#entero) | variable |
+| `maxLevel` | [Entero](#entero) | variable |
+| `chance`   |  [Probabilidad](#probabilidad)  | variable |
 
 ***
 
 ## minLevel
 
-Définit le niveau d'enchantement minimum.
+Establece el nivel de encantamiento mínimo.
 
 ***
 
 ## maxLevel
 
-Définit le niveau d'enchantement maximum.
+Establece el nivel de encantamiento máximo.
 
 ***
 
 ## chance
 
-Définit la probabilité que l'enchantement se produise. Il ne s'agit pas d'une probabilité pondérée, mais d'un simple lancer de dé.
+Establece la probabilidad de que ocurra el encantamiento. Esto no está utilizando probabilidad ponderada, solo una tirada de dados normal.

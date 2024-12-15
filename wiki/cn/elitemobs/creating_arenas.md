@@ -6,13 +6,13 @@
 
 ### isEnabled
 
-设置竞技场是否启用。
+设置是否启用竞技场。
 
-| 键        | 值              | 默认值 |
-|------------|:-----------------|--------|
-| `isEnabled` | [布尔值](#布尔值) | `true` |
+| 键           |        值        |  默认值   |
+|-------------|:---------------:|:------:|
+| `isEnabled` | [布尔值](#boolean) | `true` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -32,11 +32,11 @@ isEnabled: true
 
 设置竞技场的名称。
 
-| 键         | 值              | 默认值 |
-|-------------|:-----------------|--------|
-| `arenaName` | [字符串](#字符串) | 无     |
+| 键           |       值        | 默认值 |
+|-------------|:--------------:|:---:|
+| `arenaName` | [字符串](#string) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -62,18 +62,18 @@ arenaName: 基岩竞技场
 
 设置竞技场的第一个角。
 
-| 键        | 值                     | 默认值 |
-|------------|:------------------------:|--------|
-| `corner1` | [位置](#序列化位置)      | 无     |
+| 键         |             值              | 默认值 |
+|-----------|:--------------------------:|:---:|
+| `corner1` | [位置](#serialized_location) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-corner1: 我的竞技场世界,10,50,-10,0,0
+corner1: my_arena_world,10,50,-10,0,0
 ```
 
 <div align="center">
@@ -92,20 +92,20 @@ corner1: 我的竞技场世界,10,50,-10,0,0
 
 ### corner2
 
-设置竞技场的第二个角，必须与 `corner1` 对角线相对。
+设置竞技场的第二个角，必须与 `corner1` 呈对角线。
 
-| 键         | 值                     | 默认值 |
-|-------------|:------------------------:|--------|
-| `corner2` | [位置](#序列化位置)      | 无     |
+| 键         |             值              | 默认值 |
+|-----------|:--------------------------:|:---:|
+| `corner2` | [位置](#serialized_location) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-corner2: 我的竞技场世界,-10,50,10,0,0
+corner2: my_arena_world,-10,50,10,0,0
 ```
 
 <div align="center">
@@ -126,18 +126,18 @@ corner2: 我的竞技场世界,-10,50,10,0,0
 
 设置竞技场的起始位置。
 
-| 键              | 值                     | 默认值 |
-|-----------------|:------------------------:|--------|
-| `startLocation` | [位置](#序列化位置)      | 无     |
+| 键               |             值              | 默认值 |
+|-----------------|:--------------------------:|:---:|
+| `startLocation` | [位置](#serialized_location) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-startLocation: 我的竞技场世界,1,50,1,0,0
+startLocation: my_arena_world,1,50,1,0,0
 ```
 
 </div>
@@ -150,18 +150,18 @@ startLocation: 我的竞技场世界,1,50,1,0,0
 
 设置竞技场的退出位置。
 
-| 键             | 值                     | 默认值 |
-|----------------|:------------------------:|--------|
-| `exitLocation` | [位置](#序列化位置)      | 无     |
+| 键              |             值              | 默认值 |
+|----------------|:--------------------------:|:---:|
+| `exitLocation` | [位置](#serialized_location) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-exitLocation: 我的世界,1,50,1,0,0
+exitLocation: my_world,1,50,1,0,0
 ```
 
 </div>
@@ -172,13 +172,13 @@ exitLocation: 我的世界,1,50,1,0,0
 
 ### waveCount
 
-设置竞技场拥有的波次数。
+设置竞技场拥有的波次数量。
 
-| 键          | 值                | 默认值 |
-|--------------|:------------------:|--------|
-| `waveCount` | [整数](#整数)          | 无     |
+| 键           |       值        | 默认值 |
+|-------------|:--------------:|:---:|
+| `waveCount` | [整数](#integer) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -196,13 +196,13 @@ waveCount: 10
 
 ### delayBetweenWaves
 
-设置波次之间的延迟时间（以秒为单位）。
+设置波次之间的时间延迟（以秒为单位）。
 
-| 键                 | 值                | 默认值 |
-|---------------------|:------------------:|--------|
-| `delayBetweenWaves` | [整数](#整数)          | `0`    |
+| 键                   |       值        | 默认值 |
+|---------------------|:--------------:|:---:|
+| `delayBetweenWaves` | [整数](#integer) | `0` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -220,13 +220,13 @@ delayBetweenWaves: 5
 
 ### spawnPoints
 
-设置竞技场 Boss 的生成位置。
+设置竞技场首领的生成位置。
 
-| 键           | 值                           | 默认值 |
-|---------------|:------------------------------:|--------|
-| `spawnPoints` | [字符串列表](#字符串列表) [1] | 无      |
+| 键             |             值             | 默认值 |
+|---------------|:-------------------------:|:---:|
+| `spawnPoints` | [字符串列表](#string_list) [1] |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -234,11 +234,11 @@ delayBetweenWaves: 5
 
 ```yml
 spawnPoints:
-- name=north:location=我的竞技场世界,219.5,71,273.5
-- name=south:location=我的竞技场世界,219.5,71,316.5
-- name=west:location=我的竞技场世界,197.5,71,295.5
-- name=east:location=我的竞技场世界,240.5,71,295.5
-- name=center:location=我的竞技场世界,219.5,71,295.5
+- name=north:location=my_arena_world,219.5,71,273.5
+- name=south:location=my_arena_world,219.5,71,316.5
+- name=west:location=my_arena_world,197.5,71,295.5
+- name=east:location=my_arena_world,240.5,71,295.5
+- name=center:location=my_arena_world,219.5,71,295.5
 ```
 
 </div>
@@ -249,13 +249,13 @@ spawnPoints:
 
 ### bossList
 
-设置在竞技场波次中出现的 Boss 列表。EliteMobs 竞技场确实支持 Mythic Mobs 在竞技场中生成。
+设置在竞技场波次期间出现的首领列表。EliteMobs 竞技场支持在竞技场中生成神话生物。
 
-| 键         | 值                           | 默认值 |
-|-------------|:------------------------------:|--------|
-| `bossList` | [字符串列表](#字符串列表) [2] | 无      |
+| 键          |             值             | 默认值 |
+|------------|:-------------------------:|:---:|
+| `bossList` | [字符串列表](#string_list) [2] |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -263,14 +263,15 @@ spawnPoints:
 
 ```yml
 bossList:
-- wave=1:spawnPoint=north:boss=我的 Boss_wave_1.yml
-- wave=1:spawnPoint=south:boss=我的 Boss_wave_1.yml
-- wave=2:spawnPoint=center:boss=我的 MythicMobs_Boss:mythicmob=true:level=10
+- wave=1:spawnPoint=north:boss=my_boss_wave_1.yml
+- wave=1:spawnPoint=south:boss=my_boss_wave_1.yml
+- wave=2:spawnPoint=center:boss=my_mythicmobs_boss:mythicmob=true:level=10
 ```
 
-在这个例子中，第 1 波将在北部生成点生成一个 Boss，在南部生成点生成一个 Boss。然后，在第 2 波，一个 10 级的 Mythic Boss 将在中心点生成。
+在此示例中，第 1 波将在北部生成点生成一个首领，在南部生成点生成一个首领。然后，在第 2 波中，一个神话首领将在中心点生成，等级为
+10。
 
-请注意，您也可以强制设置 EliteMobs Boss 的等级，但建议您在它们的配置文件中设置它们的等级。
+请注意，您也可以强制 EliteMobs 首领的等级，但建议您在其配置文件中设置其等级。
 
 </div>
 
@@ -282,11 +283,11 @@ bossList:
 
 设置在波次结束时给予的奖励。
 
-| 键            | 值                                                      | 默认值 |
-|----------------|:--------------------------------------------------------:|--------|
-| `rawArenaReward` | [通用 EliteMobs 战利品表]($language$/elitemobs/loot_tables.md) | 无      |
+| 键                |                            值                             | 默认值 |
+|------------------|:--------------------------------------------------------:|:---:|
+| `rawArenaReward` | [通用 EliteMobs 战利品表]($language$/elitemobs/loot_tables.md) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -294,11 +295,11 @@ bossList:
 
 ```yml
 rawArenaReward:
-- filename=附魔书_伤害_所有.yml:wave=5:chance=0.25
-- filename=精英碎片_微小.yml:wave=1:chance=0.5:amount=5
+- filename=enchanted_book_damage_all.yml:wave=5:chance=0.25
+- filename=elite_scrap_tiny.yml:wave=1:chance=0.5:amount=5
 - currencyAmount=3:wave=3
-- level=5:filename=召唤商人卷轴.yml:wave=5
-- filename=MagmaGuy 的牙签.yml:itemlevel=10:wave=10:chance=0.95
+- level=5:filename=summon_merchant_scroll.yml:wave=5
+- filename=magmaguys_toothpick.yml:itemlevel=10:wave=10:chance=0.95
 ```
 
 </div>
@@ -309,13 +310,13 @@ rawArenaReward:
 
 ### minimumPlayerCount
 
-设置竞技场开始前必须拥有的最小玩家数量。
+设置竞技场开始前必须拥有的最少玩家数量。
 
-| 键                    | 值                | 默认值 |
-|------------------------|:------------------:|--------|
-| `minimumPlayerCount` | [整数](#整数)          | `1`    |
+| 键                    |       值        | 默认值 |
+|----------------------|:--------------:|:---:|
+| `minimumPlayerCount` | [整数](#integer) | `1` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -333,13 +334,13 @@ minimumPlayerCount: 1
 
 ### maximumPlayerCount
 
-设置竞技场可以容纳的最大玩家数量。
+设置竞技场可以拥有的最多玩家数量。
 
-| 键                    | 值                | 默认值 |
-|------------------------|:------------------:|--------|
-| `maximumPlayerCount` | [整数](#整数)          | `100`   |
+| 键                    |       值        |  默认值  |
+|----------------------|:--------------:|:-----:|
+| `maximumPlayerCount` | [整数](#integer) | `100` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -359,11 +360,11 @@ maximumPlayerCount: 100
 
 设置在波次之间运行的消息。
 
-| 键             | 值                 | 默认值 |
-|----------------|:--------------------:|--------|
-| `arenaMessages` | 特殊 [3]             | 无      |
+| 键               |   值    | 默认值 |
+|-----------------|:------:|:---:|
+| `arenaMessages` | 特殊 [3] |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -371,8 +372,8 @@ maximumPlayerCount: 100
 
 ```yml
 arenaMessages:
-- wave=1:message="&a[竞技场播报员] &f第一波开始了！"
-- wave=2:message="&a[竞技场播报员] &f哇，已经是第二波了。"
+- wave=1:message="&a[竞技场播音员] &f第一波的时间到了！"
+- wave=2:message="&a[竞技场播音员] &f哇，已经是第二波了。"
 ```
 
 <div align="center">
@@ -391,11 +392,11 @@ arenaMessages:
 
 设置竞技场是否使用圆柱形（默认值为长方体）。
 
-| 键                | 值              | 默认值  |
-|--------------------|:-----------------|---------|
-| `cylindricalArena` | [布尔值](#布尔值) | `false` |
+| 键                  |        值        |   默认值   |
+|--------------------|:---------------:|:-------:|
+| `cylindricalArena` | [布尔值](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -415,18 +416,18 @@ cylindricalArena: false
 
 设置使用竞技场所需的权限。
 
-| 键          | 值              | 默认值 |
-|--------------|:-----------------|--------|
-| `permission` | [字符串](#整数) | 无      |
+| 键            |        值        | 默认值 |
+|--------------|:---------------:|:---:|
+| `permission` | [字符串](#integer) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-permission: 我的权限.竞技场
+permission: mypermission.arena
 ```
 
 </div>
@@ -437,17 +438,19 @@ permission: 我的权限.竞技场
 
 </div>
 
+## 特殊 [1]
 
-## 特殊 [1] 
-生成点：使用以下格式：`name=点名称:location=世界名称,x,y,z`。
+生成点：使用以下格式：`name=pointName:location=world_name,x,y,z`。
 
-## 特殊 [2] 
-Boss 列表：使用以下格式：`wave=x:spawnPoint=Y:boss=Boss 文件名.yml`。
+## 特殊 [2]
 
-## 特殊 [3] 
-竞技场消息：使用以下格式：`wave=X:message=您的消息`。
+首领列表：使用以下格式：`wave=x:spawnPoint=Y:boss=bossfilename.yml`。
 
-<details> 
+## 特殊 [3]
+
+竞技场消息：使用以下格式：`wave=X:message=您的消息在这里`。
+
+<details>
 
 <summary align="center"><b>竞技场配置示例</b></summary>
 
@@ -456,79 +459,90 @@ Boss 列表：使用以下格式：`wave=x:spawnPoint=Y:boss=Boss 文件名.yml`
 ```yml
 isEnabled: true
 arenaName: 示例竞技场
-corner1: 我的竞技场世界,0,0,0,0,0
-corner2: 我的竞技场世界,50,50,50,0,0
-startLocation: 我的竞技场世界,25,0,25,0,0
-exitLocation: 我的 Minecraft 世界,234,44,245,0,0
+corner1: my_arena_world,0,0,0,0,0
+corner2: my_arena_world,50,50,50,0,0
+startLocation: my_arena_world,25,0,25,0,0
+exitLocation: my_minecraft_world,234,44,245,0,0
 waveCount: 5
 delayBetweenWaves: 5
 spawnPoints:
-  - name=north:location=我的竞技场世界,40.5,0,0
-  - name=south:location=我的竞技场世界,10.5,0,0
-  - name=west:location=我的竞技场世界,0,0,40.5
-  - name=east:location=我的竞技场世界,0,0,10.5
-  - name=center:location=我的竞技场世界,25.5,0,25.5
+  - name=north:location=my_arena_world,40.5,0,0
+  - name=south:location=my_arena_world,10.5,0,0
+  - name=west:location=my_arena_world,0,0,40.5
+  - name=east:location=my_arena_world,0,0,10.5
+  - name=center:location=my_arena_world,25.5,0,25.5
 bossList:
-  - wave=1:spawnPoint=north:boss=示例竞技场_波次_1_怪物.yml
-  - wave=1:spawnPoint=center:boss=示例竞技场_波次_1_怪物.yml
-  - wave=1:spawnPoint=south:boss=示例竞技场_波次_1_怪物.yml
-  - wave=2:spawnPoint=center:boss=示例竞技场_波次_2_怪物.yml
-  - wave=3:spawnPoint=east:boss=示例竞技场_波次_3_怪物.yml
-  - wave=3:spawnPoint=west:boss=示例竞技场_波次_3_怪物.yml
-  - wave=4:spawnPoint=center:boss=示例竞技场_波次_4_怪物.yml
-  - wave=4:spawnPoint=center:boss=示例竞技场_波次_4_怪物.yml
-  - wave=5:spawnPoint=center:boss=示例竞技场_波次_5_怪物.yml
-  - wave=5:spawnPoint=south:boss=示例竞技场_波次_5_怪物.yml
-  - wave=5:spawnPoint=west:boss=示例竞技场_波次_5_怪物.yml
+  - wave=1:spawnPoint=north:boss=example_arena_wave_1_mob.yml
+  - wave=1:spawnPoint=center:boss=example_arena_wave_1_mob.yml
+  - wave=1:spawnPoint=south:boss=example_arena_wave_1_mob.yml
+  - wave=2:spawnPoint=center:boss=example_arena_wave_2_mob.yml
+  - wave=3:spawnPoint=east:boss=example_arena_wave_3_mob.yml
+  - wave=3:spawnPoint=west:boss=example_arena_wave_3_mob.yml
+  - wave=4:spawnPoint=center:boss=example_arena_wave_4_mob.yml
+  - wave=4:spawnPoint=center:boss=example_arena_wave_4_mob.yml
+  - wave=5:spawnPoint=center:boss=example_arena_wave_5_mob.yml
+  - wave=5:spawnPoint=south:boss=example_arena_wave_5_mob.yml
+  - wave=5:spawnPoint=west:boss=example_arena_wave_5_mob.yml
 rawArenaReward:
   - currencyAmount=5:wave=1
   - currencyAmount=10:wave=2
   - currencyAmount=15:wave=3
   - currencyAmount=20:wave=4
   - currencyAmount=25:wave=5
-  - filename=MagmaGuy 的牙签.yml:itemlevel=5:wave=5:chance=0.5
+  - filename=magmaguys_toothpick.yml:itemlevel=5:wave=5:chance=0.5
 minimumPlayerCount: 1
 maximumPlayerCount: 3
 arenaMessages:
   - wave=1:message=&d[竞技场 NPC] &f哇！第一波！
   - wave=2:message=&d[竞技场 NPC] &f太棒了，已经是第二波了！
-  - wave=3:message=&d[竞技场 NPC] &f第三波开始了！
+  - wave=3:message=&d[竞技场 NPC] &f现在开始第三波了！
   - wave=4:message=&d[竞技场 NPC] &f已经是第四波了！
-  - wave=5:message=&d[竞技场 NPC] &f好吧，最后一波了。
+  - wave=5:message=&d[竞技场 NPC] &f嗯，这一次之后就结束了。
 cylindricalArena: false
-permission: 竞技场.我的权限
+permission: arena.mypermission
 ```
 </div>
 
 </details>
 
-<details> 
+<details>
 
-<summary align="center"><b>示例细分</b></summary>
+<summary align="center"><b>示例分解</b></summary>
 
 <div align="left">
 
-让我们从头开始回顾这个示例，并解释此竞技场配置的作用。
+让我们从头开始查看此示例，并解释此竞技场配置的作用。
 
-首先，竞技场使用 `isEnabled` 启用，我们可以看到它使用 `arenaName` 设置被称为“示例竞技场”。当您与允许玩家加入竞技场的竞技场 NPC（我们将在后面讨论如何创建竞技场 NPC）交互时，将会显示该名称。`corner1` 和 `corner2` 定义了竞技场的范围。这些角应该位于您计划用于竞技场的区域中彼此相对的两侧。
+首先，使用 `isEnabled` 启用竞技场，我们可以看到它使用 `arenaName` 设置称为示例竞技场。当您与允许玩家加入竞技场的竞技场 NPC
+互动时，将显示该名称（我们将在下面讨论如何创建竞技场 NPC）。corner1 和 corner2 定义竞技场大小。这些角应位于您计划用于竞技场的区域的相对两侧。
 
-`startLocation` 是玩家加入竞技场时生成的位置，在本例中，它位于“我的竞技场世界”世界中竞技场的中心。`exitLocation` 是玩家在竞技场失败或完成竞技场后将被传送到的地方。在这种情况下，它将是“我的 Minecraft 世界”世界以及示例中的坐标。
+`startLocation` 是玩家加入竞技场时将生成的位置，在示例中，这将位于 my_arena_world 世界中竞技场的中心。`exitLocation`
+是玩家在失败或完成竞技场后将被传送到的位置。在这种情况下，它将是世界 my_minecraft_world 和示例中的坐标。
 
-`waveCount` 只是设置竞技场将持续的波次数。在本例中，将有 5 波。如果玩家设法在所有 5 波中生存下来，则他们就成功通关了竞技场。`delayBetweenWaves` 将设置下一波开始之前的秒数。在我们的示例中，玩家将在下一波开始之前有 5 秒钟的时间进行准备。
+`waveCount` 只是设置竞技场将持续的波次数量。在这种情况下，将是 5 波。如果他们设法在所有 5
+波中幸存下来，他们就设法在竞技场中幸存下来。`delayBetweenWaves` 将设置下一波开始之前的秒数。在我们的示例中，玩家将有 5
+秒钟的时间来准备，然后下一波开始。
 
-`spawnPoints` 设置我们可以生成怪物的位置。我们可以根据需要创建任意数量的生成点，并根据需要命名它们。在本例中，我们决定创建 5 个生成点，并将它们命名为 north、south、center、east 和 west。
+`spawnPoints` 设置我们可以让生物生成的位置。我们可以根据需要制作任意数量的生成点，并根据需要命名它们。在示例中，我们决定制作
+5 个生成点，并将它们命名为北部、南部、中心、东部和西部。
 
-`bossList` 是我们定义哪个 Boss 应该在哪一波以及在哪个位置生成的地方。在本例中，第 1 波将在我们命名为 north、center 和 south 的生成位置生成 3 个 Boss。这三个都设置为使用相同的 Boss 文件，但我们可以为每个 Boss 使用不同的 Boss 文件。
+`bossList` 是我们定义哪个首领应该在哪个波次和哪个位置生成的地方。在示例中，第 1 波将有 3
+个首领从我们命名为北部、中心和南部的生成位置生成。所有三个都设置为使用相同的首领文件，但我们可以为每个首领文件使用不同的首领文件。
 
-`rawArenaReward` 设置玩家在成功生存/击败一波后将获得的奖励。正如我们在示例中看到的，击败第 1 波将奖励玩家 5 个精英硬币。如果他们设法在剩下的波次中生存下来并击败了第 5 波，他们将获得 25 个精英硬币和 50% 的几率获得 5 级 MagmaGuy 的牙签。
+`rawArenaReward` 设置在玩家设法幸存/击败一波后将发放的奖励。正如我们在示例中看到的，击败第 1 波将奖励玩家 5
+个精英币。如果他们设法在其余波次中幸存下来，然后击败第 5 波，他们将获得 25 个精英币和 50% 的机会获得 5 级 MagmaGuy 的牙签。
 
-`minimumPlayerCount` 设置竞技场开始前所需的最小玩家数量。在我们的示例中，此设置设置为 1，因此竞技场开始只需要一名玩家。`maximumPlayerCount` 设置可以参与竞技场的最大玩家数量。在我们的示例中，此设置设置为 3，这意味着如果超过 3 名玩家尝试参与竞技场，则竞技场将不会开始，直到玩家人数减少到 3 人或更少。
+`minimumPlayerCount` 设置竞技场开始前所需的最少玩家数量。在我们的示例中，此设置设置为
+1，因此只需一名玩家即可开始竞技场。`maximumPlayerCount` 设置可以参与竞技场的最大玩家数量。在我们的示例中，此设置设置为
+3，这意味着如果有超过 3 个玩家尝试参与竞技场，则竞技场将不会开始，直到有 3 个或更少的玩家。
 
-`arenaMessages` 允许您添加一些将在定义的波次开始时在聊天中显示的提示文本。在我们的示例中，我们决定在每波开始时显示一条短消息。我们还决定在每条消息的开头都包含 NPC 的名字，给人一种这些文字是由播报员（竞技场大师）说出的对话的错觉。
+`arenaMessages` 可让您添加一些在定义的波次开始时显示在聊天中的风味文本。在我们的示例中，我们决定在每波开始时显示一条简短消息。我们还决定在每条消息的开头包含
+NPC 名称，从而产生文本是由播音员（竞技场大师）说的对话的错觉。
 
-`cylindricalArena` 此设置让我们可以切换使用 `corner1` 和 `corner2` 定义的区域是圆柱形还是长方体。在我们的示例中，我们将其设置为 `false`，这意味着示例竞技场是长方体。
+`cylindricalArena` 此设置将允许我们切换是否应将使用 `corner1` 和 `corner2`
+设置的定义区域设置为圆柱形而不是长方体。在我们的示例中，我们已将其设置为 `false`，这意味着示例竞技场是长方体形状。
 
-`permission` 允许我们设置玩家加入/开始竞技场所需的权限。在我们的示例中，玩家需要拥有 `arena.mypermission` 权限才能使用竞技场。
+`permission` 允许我们设置玩家需要拥有的权限才能加入/启动竞技场。在我们的示例中，玩家将需要 `arena.mypermission` 权限才能使用竞技场。
 
 </div>
 
@@ -540,13 +554,13 @@ permission: 竞技场.我的权限
 
 ### isEnabled
 
-设置 NPC 是否启用。
+设置是否启用 NPC。
 
-| 键        | 值              | 默认值 |
-|------------|:-----------------|--------|
-| `isEnabled` | [布尔值](#布尔值) | `true` |
+| 键           |        值        |  默认值   |
+|-------------|:---------------:|:------:|
+| `isEnabled` | [布尔值](#boolean) | `true` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -566,18 +580,18 @@ isEnabled: true
 
 设置 NPC 的显示名称。
 
-| 键     | 值              | 默认值 |
-|---------|:-----------------|--------|
-| `name` | [字符串](#字符串) | 无      |
+| 键      |       值        | 默认值 |
+|--------|:--------------:|:---:|
+| `name` | [字符串](#string) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-name: "&a格拉迪乌斯"
+name: "&a角斗士"
 ```
 
 <div align="center">
@@ -594,13 +608,13 @@ name: "&a格拉迪乌斯"
 
 ### role
 
-设置 NPC 名称下方显示的角色。
+设置 NPC 名称下方的角色显示。
 
-| 键     | 值              | 默认值 |
-|---------|:-----------------|--------|
-| `role` | [字符串](#字符串) | 无      |
+| 键      |       值        | 默认值 |
+|--------|:--------------:|:---:|
+| `role` | [字符串](#string) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -625,24 +639,23 @@ role: "&c<竞技场大师>"
 
 设置 NPC 的 MineCraft 职业。
 
-| 键          | 值                                                                        | 默认值 |
-|--------------|:-----------------------------------------------------------------------------:|--------|
-| `profession` | [职业](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) | 无      |
+| 键            |                                             值                                             | 默认值 |
+|--------------|:-----------------------------------------------------------------------------------------:|:---:|
+| `profession` | [职业](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-profession: ARMORER
+profession: 盔甲匠
 ```
 
 <div align="center">
 
-
-*如果使用了 `disguise`，则将被覆盖。*
+*如果使用 `伪装`，将被覆盖。*
 
 ![create_arena_npc_profession.jpg](../../../img/wiki/create_arena_npc_profession.jpg)
 
@@ -658,18 +671,18 @@ profession: ARMORER
 
 设置 NPC 的生成位置。
 
-| 键              | 值                     | 默认值 |
-|-----------------|:------------------------:|--------|
-| `spawnLocation` | [位置](#序列化位置)      | 无      |
+| 键               |             值              | 默认值 |
+|-----------------|:--------------------------:|:---:|
+| `spawnLocation` | [位置](#serialized_location) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-spawnLocation: 我的世界,1.5,50,1.5,-108,0
+spawnLocation: my_world,1.5,50,1.5,-108,0
 ```
 
 </div>
@@ -680,13 +693,13 @@ spawnLocation: 我的世界,1.5,50,1.5,-108,0
 
 ### greetings
 
-设置 NPC 的问候语。
+设置 NPC 的问候对话。
 
-| 键          | 值                           | 默认值 |
-|--------------|:------------------------------:|--------|
-| `greetings` | [字符串列表](#字符串列表) | 无      |
+| 键           |           值           | 默认值 |
+|-------------|:---------------------:|:---:|
+| `greetings` | [字符串列表](#string_list) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -712,13 +725,13 @@ greetings:
 
 ### dialog
 
-设置玩家与 NPC 交互时的对话。
+设置玩家与 NPC 互动时的对话。
 
-| 键      | 值                           | 默认值 |
-|----------|:------------------------------:|--------|
-| `dialog` | [字符串列表](#字符串列表) | 无      |
+| 键        |           值           | 默认值 |
+|----------|:---------------------:|:---:|
+| `dialog` | [字符串列表](#string_list) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -727,7 +740,7 @@ greetings:
 ```yml
 dialog:
 - 准备好迎接挑战了吗？
-- 面临竞技场？
+- 面向竞技场？
 ```
 
 <div align="center">
@@ -744,13 +757,13 @@ dialog:
 
 ### farewell
 
-设置 NPC 的告别语。
+设置 NPC 的告别对话。
 
-| 键         | 值                           | 默认值 |
-|-------------|:------------------------------:|--------|
-| `farewell` | [字符串列表](#字符串列表) | 无      |
+| 键          |           值           | 默认值 |
+|------------|:---------------------:|:---:|
+| `farewell` | [字符串列表](#string_list) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -759,7 +772,7 @@ dialog:
 ```yml
 farewell:
 - 再见。
-- 带着你的盾牌回来，或者倒在上面！
+- 带着你的盾牌返回，或带着它！
 ```
 
 <div align="center">
@@ -768,14 +781,14 @@ farewell:
 
 <div align="center">
 
-*如果字符串太长，您可以使用 \n 将字符串分成多行。*
+*如果字符串太长，可以使用 \n 将字符串分隔成多行。*
 
 <div align="left">
 
 ```yml
 farewell:
 - 再见。
-- 带着你的\n盾牌回来，或者倒在上面！
+- 带着你的\n盾牌返回，或带着它！
 ```
 </div>
 
@@ -793,13 +806,13 @@ farewell:
 
 ### canTalk
 
-设置 NPC 的告别语。
+设置 NPC 的告别对话。
 
-| 键        | 值              | 默认值 |
-|------------|:-----------------|--------|
-| `canTalk` | [布尔值](#布尔值) | `true` |
+| 键         |        值        |  默认值   |
+|-----------|:---------------:|:------:|
+| `canTalk` | [布尔值](#boolean) | `true` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -817,13 +830,13 @@ canTalk: true
 
 ### activationRadius
 
-设置 NPC 开始说话的半径。
+设置 NPC 应开始说话的半径。
 
-| 键                | 值              | 默认值 |
-|--------------------|:-----------------|--------|
-| `activationRadius` | [双精度浮点数](#双精度浮点数) | `3.0` |
+| 键                  |         值         |  默认值  |
+|--------------------|:-----------------:|:-----:|
+| `activationRadius` | [双精度浮点数](#double) | `3.0` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -841,13 +854,13 @@ activationRadius: 3.0
 
 ### interactionType
 
-设置 NPC 将执行的交互类型。
+设置 NPC 将执行的互动类型。
 
-| 键                | 值              | 默认值        |
-|--------------------|:-----------------|----------------|
-| `interactionType` | 特殊 [4]        | `ARENA_MASTER` |
+| 键                 |   值    |      默认值       |
+|-------------------|:------:|:--------------:|
+| `interactionType` | 特殊 [4] | `ARENA_MASTER` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -867,11 +880,11 @@ interactionType: ARENA_MASTER
 
 设置自定义 NPC 伪装。
 
-| 键         | 值                                 | 默认值 |
-|-------------|:-------------------------------------:|--------|
-| `disguise` | [伪装]($language$/elitemobs/libsdisguises.md) | 无      |
+| 键          |                      值                      | 默认值 |
+|------------|:-------------------------------------------:|:---:|
+| `disguise` | [伪装]($language$/elitemobs/libsdisguises.md) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -897,18 +910,18 @@ disguise: ZOMBIE
 
 设置玩家将被传送到哪个竞技场。
 
-| 键      | 值                  | 默认值 |
-|----------|:----------------------:|--------|
-| `arena` | [文件名](#文件名)      | 无      |
+| 键       |        值         | 默认值 |
+|---------|:----------------:|:---:|
+| `arena` | [文件名](#filename) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-arena: 我的竞技场.yml
+arena: my_arena.yml
 ```
 
 </div>
@@ -919,20 +932,20 @@ arena: 我的竞技场.yml
 
 ### teleportLocation
 
-设置玩家在与 NPC 交互后应该被传送到哪里。此设置通常用于将玩家传送到竞技场的专用大厅类型区域，他们可以在那里开始竞技场挑战或等待其他玩家完成竞技场。
+设置与 NPC 互动后应将玩家传送到的位置。此设置通常用于将玩家传送到竞技场的专用大厅类型区域，他们可以在其中开始竞技场挑战或等待其他玩家完成竞技场。
 
-| 键                  | 值                 | 默认值 |
-|----------------------|:--------------------:|--------|
-| `teleportLocation` | [位置](#位置)       | 无      |
+| 键                  |        值        | 默认值 |
+|--------------------|:---------------:|:---:|
+| `teleportLocation` | [位置](#location) |  无  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-teleportLocation: 我的竞技场世界,10,50,10,0,0
+teleportLocation: my_arena_world,10,50,10,0,0
 ```
 
 </div>
@@ -945,7 +958,7 @@ teleportLocation: 我的竞技场世界,10,50,10,0,0
 
 <details>
 
-<summary align="center"><b>竞技场 NPC 配置示例</b></summary>
+<summary align="center"><b>竞技场配置示例</b></summary>
 
 <div align="left">
 
@@ -953,11 +966,12 @@ teleportLocation: 我的竞技场世界,10,50,10,0,0
 isEnabled: true
 name: 示例 NPC
 role: <竞技场大师>
-profession: ARMORER
-spawnLocation: 我的 Minecraft 世界,233,44,245,0,0
+profession: 盔甲匠
+spawnLocation: my_minecraft_world,233,44,245,0,0
 greetings:
   - 欢迎来到竞技场！
 dialog:
+```
   - 准备好进入竞技场了吗？
 farewell:
   - 再见！
@@ -965,37 +979,35 @@ canTalk: true
 activationRadius: 3.0
 interactionType: ARENA_MASTER
 disguise: ZOMBIE
-arena: 示例竞技场.yml
+    arena: example_arena.yml
 ```
-此示例显示了一个将在“我的 Minecraft 世界”中生成的带有僵尸伪装的基本竞技场 NPC。玩家可以与这位 NPC 交互以挑战示例竞技场。
+此示例显示了一个基本的竞技场 NPC，它将在 my_minecraft_world 中生成，并带有僵尸伪装。玩家可以与此 NPC 互动以挑战示例竞技场。
 
 </div>
 
 </details>
 
-## 特殊 [4] 
+## 特殊 [4]
 以下是有效的 NPC 交互类型列表：
 
-| 类型              | 描述                                                         |
-|-------------------|--------------------------------------------------------------|
-| `GUILD_GREETER` | 打开冒险家公会菜单                                              |
-| `CHAT`           | 右键单击循环浏览 `dialog`                                       |
-| `CUSTOM_SHOP`     | 打开自定义商店菜单                                               |
-| `PROCEDURALLY_GENERATED_SHOP` | 打开程序生成的商店                                           |
-| `BAR`            | 打开酒吧菜单                                                   |
-| `ARENA`          | 打开竞技场菜单                                                  |
-| `QUEST_GIVER`    | 打开程序生成的任务菜单                                          |
-| `CUSTOM_QUEST_GIVER` | 打开 `questFilenames` 中设置的特定任务集的任务菜单            |
-| `NONE`           | 无交互                                                        |
-| `SELL`           | 打开出售菜单                                                   |
-| `TELEPORT_BACK`  | 将玩家传送回他们上次所在的非 EliteMobs 世界位置               |
-| `SCRAPPER`       | 打开碎片菜单                                                   |
-| `SMELTER`        | 打开熔炼菜单                                                   |
-| `REPAIRMAN`      | 打开修理菜单                                                   |
-| `ENHANCER`       | 打开物品强化菜单                                               |
-| `REFINER`        | 打开精炼菜单                                                   |
-| `UNBINDER`       | 打开解绑菜单                                                   |
-| `ARENA_MASTER`   | 打开 `arenaFilename` 中设置的竞技场的竞技场菜单                 |
-| `COMMAND`        | 运行 `command` 中设置的命令                                     |
-
-
+| 类型 | 描述 |
+| --- | :-: |
+| `GUILD_GREETER` | 打开冒险者公会菜单 |
+| `CHAT` | 右键单击可在 `dialog` 中循环 |
+| `CUSTOM_SHOP` | 打开自定义商店菜单 |
+| `PROCEDURALLY_GENERATED_SHOP` | 打开程序化生成的商店 |
+| `BAR` | 打开酒吧菜单 |
+| `ARENA` | 打开竞技场菜单 |
+| `QUEST_GIVER` | 打开程序化生成的任务菜单 |
+| `CUSTOM_QUEST_GIVER` | 打开 `questFilenames` 中设置的特定任务集的任务菜单 |
+| `NONE` | 无交互 |
+| `SELL` | 打开出售菜单 |
+| `TELEPORT_BACK` | 将玩家传送回他们所在的最后一个非 elitemobs 世界位置 |
+| `SCRAPPER` | 打开废料菜单 |
+| `SMELTER` | 打开冶炼菜单 |
+| `REPAIRMAN` | 打开修理菜单 |
+| `ENHANCER` | 打开物品强化菜单 |
+| `REFINER` | 打开提炼器菜单 |
+| `UNBINDER` | 打开解绑菜单 |
+| `ARENA_MASTER` | 打开 `arenaFilename` 中设置的竞技场的竞技场菜单 |
+| `COMMAND` | 运行 `command` 中设置的命令 |

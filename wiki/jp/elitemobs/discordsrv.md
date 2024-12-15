@@ -1,38 +1,32 @@
-# EliteMobs と DiscordSRV
+EliteMobsは、レベル3の優先度メッセージのブロードキャストを有効にするためにDiscordSRVを使用します。アナウンス優先度システムについては[こちら]($language$/elitemobs/announcement_priority_system.md)をご覧ください。
 
-EliteMobs は DiscordSRV を使用して、レベル 3 の優先度のメッセージのブロードキャストを有効にします。アナウンス優先度システムについては、[こちら]($language$/elitemobs/announcement_priority_system.md) をご覧ください。
-
-本質的に、これは、いくつかの非常に特別なカスタムボスが、次のような方法で Discord にメッセージを送信できることを意味します。
+基本的に、これはいくつかの非常に特別なカスタムボスが、次のようにDiscordにメッセージを送信できることを意味します。
 
 ![discord message example](https://i.imgur.com/sIndft0.png)
 
-目的は、プレイヤーが、現在生きている興味深いワールドボスがいないか確認し、そのボスを倒してキルリーダーボードに表示するために、専用の EliteMobs アナウンスルームを作成することです。
+この目的は、プレイヤーが現在生きている興味深いワールドボスがいるかどうかを確認し、キルリーダーボードで彼らが倒したことを自慢できる専用のEliteMobsアナウンスルームを作成することです。
 
-# 設定
+# すべての設定
 
-## DiscordSRV の設定
+## DiscordSRVの設定
 
-[DiscordSRV](https://www.spigotmc.org/resources/discordsrv.18494/) は、私が開発したものではなく、別のプラグインです。[広範なセットアップガイドはこちらで見つけることができます](https://github.com/discordsrv/discordsrv/wiki/Installation)。セットアップに苦労している場合は、[サポートルームはこちら](https://discord.discordsrv.com/) にあります。このプラグインのサポートを提供することはできませんので、インストールのこの部分については、DiscordSRV にお問い合わせください。
+[DiscordSRV](https://www.spigotmc.org/resources/discordsrv.18494/)は、私が開発したものではない別のプラグインです。[詳細な設定ガイドはこちら](https://github.com/discordsrv/discordsrv/wiki/Installation)にあります。設定に苦労している場合は、[彼らのサポートルームはこちら](https://discord.discordsrv.com/)です。このプラグインのサポートは提供できませんので、インストールについてはそちらを参照してください。
 
-## EliteMobs の DiscordSRV 設定
+## EliteMobs DiscordSRV設定
 
-DiscordSRV を正しく構成したら (この手順に進む前に、実際に動作しているかどうかをテストする必要があります)、**EliteMobs の構成は 1 つの手順のみです。**
+DiscordSRVを正しく設定したら（*そして、このステップに進む前に本当に動作しているかテストする必要があります*）、**EliteMobsの設定は1つのステップだけです**。
 
-EliteMobs の構成フォルダーの `DiscordSRV.yml` 構成ファイルに移動すると、`announcementRoomName` という構成オプションが見つかります。
+EliteMobs設定フォルダにある`DiscordSRV.yml`設定ファイルに移動すると、`announcementRoomName`という設定オプションがあります。
 
-このメッセージには、3 つの値を使用できます。#1 をお勧めします。
+このメッセージには3つの値を使用できます。1を推奨します。
 
-1. [推奨] DiscordSRV 構成ファイルで構成したルームの名前。ルームの名前は関係ありません。正しい名前を使用していることが重要です。これは、EliteMobs イベント専用に構成したルームの例です。
+1. [推奨] DiscordSRV設定ファイルで設定した部屋の名前。部屋の名前は何でもかまいません。正しい名前を使用するだけで構いません。以下は、EliteMobsイベント専用に設定した部屋の例です。
    ![using name example](https://i.imgur.com/a2kMWXv.png)
-   私の場合、オプションは `announcementRoomName: EMEvents` になります。
+   私の場合、オプションは`announcementRoomName: EMEvents`と表示されるはずです。
 
-2. DiscordSRV 構成ファイルで構成したルームの ID。ルームの例を以下に示します。*各ルームはユニークであることに注意してください。画像の例としてのみ表示しています。ID 番号をコピーしようとしないでください。機能しません。セットアップでは、Discord ルーム ID に基づいて、一意の番号のセットが設定されているはずです。*
+2. DiscordSRV設定ファイルで設定した部屋のID。以下は、部屋の例です。*各部屋は固有であることに注意してください。私は例として写真を示しているだけであり、ID番号をコピーしようとしないでください。それは機能しません。セットアップには、ディスコードルームIDに基づいて固有の番号セットが必要です。*
    ![using id example](https://i.imgur.com/CGElkdh.png)
-3. [悪い] Discord に表示されるルームの名前。これは、さまざまな要因により、正しく動作しない可能性があります。Discord ルームは DiscordSRV の構成ファイルで設定する必要があることに注意してください。この構成ファイルにルームの名前を置くことができるからといって、DiscordSRV での構成をスキップできるわけではありません。
+3. [非推奨] Discordに表示される部屋の名前。これは、いくつかの要因により正しく動作することが保証されていません。この設定ファイルに部屋の名前を入力できるからといって、DiscordSRVの設定ファイルで設定をスキップできるわけではないことに注意してください。ディスコードルームはDiscordSRVの設定ファイルで設定する必要があります。
 
 ## テスト
-
-コマンド `/em discord [message]` を使用して、構成が機能しているかどうかを確認できます。メッセージが表示されたら、完了です！
-
-```
-
+コマンド`/em discord [メッセージ]`を使用して、設定が機能しているかどうかを確認できます。メッセージが表示されたら完了です！

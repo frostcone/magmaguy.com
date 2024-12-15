@@ -1,53 +1,49 @@
-# Mobs Elite: Geração e Loot
+Nota: Esta seção fala sobre o aparecimento normal de Mobs Elite, não sobre Bosses Customizados. Também assume que está a usar as configurações padrão.
 
-*Observação: Esta seção fala sobre a geração normal de Mobs Elite, não Chefes Personalizados. Também assume que você está usando as configurações padrão.*
+# Quando é que um Mob Elite aparece?
 
-# Quando um Mob Elite é gerado?
+Quando um mob normal aparece perto de um jogador a usar armadura. Apenas armaduras de nível 1 ou superior farão com que Mobs Elite apareçam. Armaduras de níveis mais altos fazem aparecer mobs de níveis mais altos.
+<br>Eles aparecem com base numa percentagem de hipótese, que é configurável no ficheiro MobCombatSettings.yml.
 
-Quando um mob normal gera perto de um jogador usando armadura. Apenas armaduras de nível 1 ou superior farão com que Mobs Elite apareçam. Armaduras de nível mais alto geram mobs de nível mais alto.
-<br>Eles são gerados com base em uma porcentagem de chance, que é configurável no arquivo MobCombatSettings.yml.
-
-**Se o equipamento do jogador não for bom o suficiente, nenhum Mob Elite será gerado. Se você estiver apenas vagando pela natureza sem nenhum equipamento, não encontrará nenhum Mob Elite.**
+**Se o equipamento do jogador não for bom o suficiente, nenhum Mob Elite irá aparecer. Se estiver apenas a vaguear pela natureza sem nenhum equipamento, não irá encontrar nenhum Mob Elite.**
 
 ## O que determina o nível do Mob Elite?
 
-* O nível do mob é o mesmo que o nível médio do equipamento que o jogador está usando.
+* O nível do mob é o mesmo que o nível médio do equipamento que o jogador está a usar.
 
 ## O que determina o nível de um item?
 
-* Os itens não-elite têm níveis iguais ao nível do material (listados abaixo). Os Itens Elite têm níveis que são *geralmente* baseados no nível da elite morta.
+* Itens não-elite têm níveis iguais ao nível do material (listado abaixo). Itens Elite têm níveis que são *normalmente* baseados no nível do elite morto.
 
-### Níveis de Material
+### Níveis de material
 * Material de Tridente: Nível 9
 * Material de Netherite: Nível 8
 * Material de Diamante: Nível 7
 * Material de Ferro: Nível 6
-* Material de Pedra/Corrente: Nível 5
-* Material de Ouro/Madeira/Couro: Nível 3
+* Material de Pedra / Cota de Malha: Nível 5
+* Material de Ouro / Madeira / Couro: Nível 3
 
 ***
 
 # Que tipo de recompensas posso obter de Mobs Elite?
-Antes de falar sobre as recompensas especiais, é importante observar que **apenas os Mobs Elite gerados naturalmente deixarão cair loot especial**. Você não pode usar geradores de mobs para obter loot especial. Além disso, os mecanismos anti-trapaça podem remover a elegibilidade de um Mob Elite para deixar cair loot especial. 
+Antes de falar sobre as recompensas especiais, é importante notar que **apenas Mobs Elite que aparecem naturalmente irão dropar loot especial**. Não pode usar mob spawners para obter loot especial. Adicionalmente, os mecanismos anti cheat podem remover a elegibilidade de um Mob Elite dropar loot especial.
 
-Isso significa que se o sistema detectar que você está lutando contra um Mob Elite que está preso ou que não pode alcançá-lo por algum motivo (você está voando/em uma torre/ele está em um buraco), ele deixará de mostrar seu rastro de poder e não deixará cair nenhum loot especial.
+Isto significa que se o sistema detetar que está a lutar contra um Mob Elite que está preso ou que não consegue chegar até si por alguma razão (está a voar / numa torre / está num buraco) ele deixará de mostrar o seu rasto de poder e deixará de dropar qualquer loot especial.
 
-
-Mobs Elite podem deixar cair três tipos de itens especiais: itens gerados proceduralmente, itens personalizados e itens únicos. Além disso, eles deixam cair mais loot vanilla do que mobs normais. A chance de drop não é de 100%, mas as chances de obter loot aumentam com o nível do mob.
+Mobs Elite podem dropar três tipos de itens especiais: itens gerados proceduralmente, itens customizados e itens únicos. Adicionalmente, eles dropam mais loot vanilla do que os mobs normais. A chance de drop não é 100%, mas as probabilidades de obter loot aumentam com o nível do mob.
 
 ## O que é um item gerado proceduralmente?
-Itens gerados proceduralmente são itens que são gerados semi-aleatoriamente com base nas configurações do servidor. Existe uma quantidade quase infinita de possibilidades para itens gerados proceduralmente. 
+Itens gerados proceduralmente são itens que são gerados semi-aleatoriamente com base nas configurações do servidor. Há uma quantidade quase infinita de possibilidades para itens gerados proceduralmente.
 
-Geralmente, os itens gerados proceduralmente são armaduras, armas e ferramentas de qualquer qualidade de material com diferentes quantidades e níveis de encantamento.
+Normalmente itens gerados proceduralmente são armaduras, armas e ferramentas de qualquer qualidade de material com quantidades e níveis de encantamento variáveis.
 
-## O que é um item personalizado?
-Itens personalizados são itens pré-carregados no plugin (como o palito de dente do MagmaGuy e os amuletos) ou adicionados pelos administradores. Esses itens são totalmente personalizados e podem dar aos jogadores efeitos de poção quando usados ou segurados na mão principal ou na mão secundária.
+## O que é um item customizado?
+Itens customizados são itens pré-carregados no plugin (como o palito e os amuletos do MagmaGuy) ou adicionados por administradores. Estes itens são totalmente customizados, e podem dar aos jogadores efeitos de poção quando usados ou segurados na mão principal ou na mão secundária.
 
 ## O que é um item único?
-Itens únicos são drops especiais de Chefes Personalizados que são semelhantes a itens personalizados. Eles podem às vezes também ter poderes únicos, como o poder de lança-chamas para o machado do Rei Zumbi.
+Itens únicos são drops especiais de Bosses Customizados que são semelhantes a itens customizados. Podem por vezes também ter poderes únicos, como o poder de lança-chamas para o machado do Rei Zombie.
 
 ***
 
-# Como posso obter loot melhor?
-Quanto maior o nível do Mob Elite morto, melhor o item deixado cair!
-
+# Como posso obter melhor loot?
+Quanto maior for o nível do Mob Elite morto, melhor o item dropado!

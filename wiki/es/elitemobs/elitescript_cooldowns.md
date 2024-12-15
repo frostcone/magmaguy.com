@@ -1,14 +1,16 @@
-# Enfriamientos de Elite Script
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-Los tiempos de reutilización establecen la cantidad de tiempo que debe pasar antes de que el jefe sea elegible para realizar el mismo script o cualquier otro poder\*.
+# Tiempos de espera de Elite Script
 
-- nota: algunos poderes actualmente no se ven afectados por los tiempos de reutilización.
+Los tiempos de espera establecen la cantidad de tiempo que debe transcurrir antes de que el jefe sea elegible para ejecutar tanto el mismo script como cualquier otro poder\*.
 
-Los tiempos de reutilización tienen dos valores:
+- nota: algunos poderes no se ven afectados actualmente por los tiempos de espera.
 
-## Local
+Los tiempos de espera tienen dos valores:
 
-`local` establece el tiempo, en ticks, antes de que el mismo script pueda volver a ocurrir. Ejemplo:
+## local
+
+`local` establece el tiempo, en ticks, antes de que el mismo script pueda volver a suceder. Ejemplo:
 
 Ejemplo
 
@@ -16,11 +18,11 @@ Ejemplo
 local: 60
 ```
 
-Establece el poder para que pueda volver a ejecutarse durante 3 segundos.
+Establece que el poder pueda volver a ejecutarse durante 3 segundos.
 
-## Global
+## global
 
-`global` establece el tiempo, en ticks, antes de que cualquier otro script o poder pueda volver a ocurrir \[1\]. Ejemplo:
+`global` establece el tiempo, en ticks, antes de que cualquier otro script o poder pueda volver a suceder[1]. Ejemplo:
 
 Ejemplo
 
@@ -28,20 +30,20 @@ Ejemplo
 global: 20
 ```
 
-Establece que todos los demás poderes no puedan iniciarse durante 1 segundo.
+Establece que todos los demás poderes no puedan comenzar durante 1 segundo.
 
-[1] algunos de los poderes más antiguos actualmente no se ven afectados por esto, es un trabajo en progreso.
+[1] algunos de los poderes más antiguos no se ven afectados actualmente por esto, es un trabajo en progreso.
 
-**Nota: al hacer que el tiempo de reutilización local sea más largo y el tiempo de reutilización global más corto, ¡puedes garantizar que el jefe alternará entre sus poderes disponibles!** Nunca hagas que el tiempo de reutilización global sea más largo, y recomiendo dejar al menos un segundo de tiempo de reutilización local para dar a otros poderes la oportunidad de activarse.
+**Nota: al hacer que el tiempo de espera local sea más largo y el tiempo de espera global más corto, ¡puede garantizar que el jefe se alternará entre sus poderes disponibles!** Nunca haga que el tiempo de espera global sea más largo, y recomiendo dejar al menos un segundo de tiempo de espera local para dar a otros poderes la oportunidad de activarse.
 
-Además, si tu poder tiene una duración específica durante la cual está activo, debes usar este sistema para evitar que otros poderes se ejecuten simultáneamente y potencialmente arruinen tu poder.
+Además, si su poder tiene una duración específica durante la cual está activo, debe utilizar este sistema para evitar que otros poderes se ejecuten simultáneamente y que potencialmente arruinen su poder.
 
-### Ejecutar scripts una vez con tiempos de reutilización
-Para garantizar que los scripts se activen solo una vez mientras se sigue utilizando un [Evento]($language$/elitemobs/elitescript_events.md) que puede ocurrir varias veces durante una pelea, establece el tiempo de reutilización local en un número alto, como `99999`. Este ejemplo demuestra el concepto:
+### Ejecutar scripts una vez con tiempos de espera
+Para asegurarse de que los scripts se activen solo una vez mientras siguen usando un [Evento]($language$/elitemobs/elitescript_events.md) que puede ocurrir varias veces durante una pelea, establezca el tiempo de espera local en un número alto, como `99999`. Este ejemplo demuestra el concepto:
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -50,25 +52,23 @@ Para garantizar que los scripts se activen solo una vez mientras se sigue utiliz
 ```yaml
 eliteScript:
   SetMeOnFireOnlyOnce:
-    Eventos:
+    Events:
     - EliteMobDamagedByPlayerEvent
-    Acciones:
+    Actions:
     - action: SET_ON_FIRE
       duration: 60
       Target:
       targetType: DIRECT_TARGET
-    Enfriamientos:
+    Cooldowns:
     local: 99999
     global: 50
 ```
-En este escenario, `EliteMobDamagedByPlayerEvent` activa la acción `SET_ON_FIRE`. Sin tiempos de reutilización, la acción se activaría cada vez que el jugador golpea a la mafia.
+En este escenario, `EliteMobDamagedByPlayerEvent` activa la acción `SET_ON_FIRE`. Sin tiempos de espera, la acción se activaría cada vez que el jugador golpea al mob.
 
-Sin embargo, con un tiempo de reutilización local establecido en `99999`, la acción solo se activará cada `99999` ticks (83 minutos).
+Sin embargo, con un tiempo de espera local establecido en `99999`, la acción solo se activará cada `99999` ticks (83 minutos).
 
 </div>
 
 </details>
 
 </div>
-
-

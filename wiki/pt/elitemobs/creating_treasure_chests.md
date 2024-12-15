@@ -1,8 +1,6 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# Baús do Tesouro
-
-Baús do Tesouro são um recurso que permite que os administradores criem baús que podem deixar cair loot ou gerar um chefe (hostil) mímico.
+Os Cofres de Tesouro são uma funcionalidade que permite aos administradores criar cofres que podem largar itens ou gerar um chefe Mimic (hostil).
 
 <div align="center">
 
@@ -14,11 +12,11 @@ Baús do Tesouro são um recurso que permite que os administradores criem baús 
 
 ### isEnabled
 
-Define se um baú do tesouro está habilitado.
+Define se um cofre de tesouro está ativado.
 
 | Chave       |       Valores        | Padrão |
 |-----------|:-------------------:|:-------:|
-| `isEnabled` | [Booleano](#boolean) | `true`  |
+| `isEnabled` | [Booleano](#booleano) | `true`  |
 
 <details> 
 
@@ -38,7 +36,7 @@ isEnabled: true
 
 ### chestType
 
-Define o tipo de material do baú.
+Define o tipo de material do cofre.
 
 | Chave       |        Valores         | Padrão |
 |-----------|:---------------------:|:-------:|
@@ -53,7 +51,7 @@ Define o tipo de material do baú.
 ```yml
 chestType: CHEST
 ```
-*Isso precisa ser um material de baú válido, como `CHEST` ou `BARREL`*.
+*Este precisa ser um material de cofre válido, como `CHEST` ou `BARREL`.*
 
 <div align="center">
 
@@ -69,7 +67,7 @@ chestType: CHEST
 
 ### facing
 
-Define a direção voltada do baú.
+Define a direção para a qual o cofre está virado.
 
 | Chave       |   Valores    | Padrão |
 |-----------|:-----------:|:-------:|
@@ -84,7 +82,7 @@ Define a direção voltada do baú.
 ```yml
 facing: CHEST
 ```
-*Isso precisa ser um material de baú válido, como `CHEST` ou `BARREL`*.
+*Este precisa ser um material de cofre válido, como `CHEST` ou `BARREL`.*
 
 </div>
 
@@ -96,7 +94,7 @@ facing: CHEST
 
 <summary><b>Expandir Tabela</b></summary>
 
-| Voltado  |
+| Direção  |
 |---------|
 | `NORTH` |
 | `SOUTH` |
@@ -110,9 +108,9 @@ facing: CHEST
 
 ### dropStyle
 
-Define se o baú é destinado a ser deixado cair para um jogador ou para vários jogadores.
+Define se o cofre é para ser dropado para um jogador ou vários jogadores.
 
-Os baús `SINGLE` desaparecem depois de serem abertos e reaparecem quando são reabastecidos. Os baús `GROUP` permanecem por perto e informam os jogadores individualmente que estão em tempo de espera.
+Cofres `SINGLE` desaparecem depois de serem abertos e reaparecem quando são reabastecidos. Cofres `GROUP` permanecem e indicam a jogadores individuais que estão em cooldown.
 
 | Chave       |       Valores       | Padrão |
 |-----------|:------------------:|:-------:|
@@ -136,11 +134,11 @@ dropStyle: SINGLE
 
 ### lootList
 
-Lista o loot que o baú do tesouro deve deixar cair quando aberto.
+Lista o saque que o cofre de tesouro deve largar quando aberto.
 
 | Chave       |                        Valores                        | Padrão |
 |-----------|:----------------------------------------------------:|:-------:|
-| `lootList` | [Tabela de Loot do EM]($language$/elitemobs/loot_tables.md) |  nenhum   |
+| `lootList` | [Tabela de Saque EM]($language$/elitemobs/loot_tables.md) |  nenhum   |
 
 <details> 
 
@@ -162,11 +160,11 @@ lootList:
 
 ### mimicChance
 
-Define a chance de gerar um chefe hostil em vez de deixar cair loot.
+Define a chance de gerar um chefe hostil em vez de largar saque.
 
 | Chave       |      Valores       | Padrão |
 |-----------|:-----------------:|:-------:|
-| `mimicChance` | [Double](#double) |   `0`   |
+| `mimicChance` | [Número Decimal](#número-decimal) |   `0`   |
 
 <details> 
 
@@ -186,13 +184,13 @@ mimicChance: 0.5
 
 ### mimicCustomBossesList
 
-Especifica a lista de chefes hostis disponíveis para geração. Um único chefe será selecionado aleatoriamente nesta lista para geração. 
+Especifica a lista de chefes hostis disponíveis para geração. Um único chefe será selecionado aleatoriamente desta lista para geração.
 
-A lista também suporta um sistema de peso que você pode implementar para garantir que alguns chefes sejam escolhidos com mais frequência do que outros.
+A lista também suporta um sistema de peso que pode implementar para garantir que alguns chefes sejam escolhidos com mais frequência do que outros.
 
 | Chave       |      Valores       | Padrão |
 |-----------|:-----------------:|:-------:|
-| `mimicCustomBossesList` | [Lista de Strings](#string_list) |  nenhum   |
+| `mimicCustomBossesList` | [Lista de Strings](#lista-de-strings) |  nenhum   |
 
 <details> 
 
@@ -205,7 +203,7 @@ mimicCustomBossesList:
 - my_cool_mimic_boss.yml
 - weak_mimic_boss.yml
 ```
-*Se você deseja atribuir pesos aos chefes, a lista deve ser formatada da seguinte forma:*
+*Se desejar atribuir pesos aos chefes, a lista deve ser formatada da seguinte forma:*
 
 ```yml
 mimicCustomBossesList:
@@ -213,7 +211,7 @@ mimicCustomBossesList:
 - weak_mimic_boss.yml:40
 ```
 
-*Nesta configuração, `my_cool_mimic_boss.yml` tem maior probabilidade de ser escolhido para geração do que `weak_mimic_boss.yml`.*
+*Nesta configuração, `my_cool_mimic_boss.yml` é mais provável de ser escolhido para gerar do que `weak_mimic_boss.yml`.*
 
 </div>
 
@@ -223,11 +221,11 @@ mimicCustomBossesList:
 
 ### restockTimer
 
-Define o tempo, em minutos, antes que o baú seja reabastecido com loot.
+Define o tempo, em minutos, antes que o cofre seja reabastecido com saque.
 
 | Chave       |      Valores       | Padrão |
 |-----------|:-----------------:|:-------:|
-| `restockTimer` | [Integer](#integer) |   `0`   |
+| `restockTimer` | [Número Inteiro](#número-inteiro) |   `0`   |
 
 <details> 
 
@@ -247,11 +245,11 @@ restockTimer: 30
 
 ### effects
 
-Define os efeitos de partículas que o baú terá.
+Define os efeitos de partícula que o cofre irá gerar.
 
 | Chave       |      Valores       | Padrão |
 |-----------|:-----------------:|:-------:|
-| `effects` | [Particle](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) |  nenhum   |
+| `effects` | [Partícula](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) |  nenhum   |
 
 <details> 
 
@@ -279,13 +277,13 @@ effects:
 
 ### locations
 
-Define as localizações onde o baú do tesouro será gerado.
+Define as localizações onde o cofre de tesouro irá surgir.
 
-As localizações podem ser definidas mais facilmente por meio de `/em addTreasureChest <treasurechestfilename.yml>
+As localizações podem ser definidas mais facilmente através de `/em addTreasureChest <nome_do_ficheiro_cofre_de_tesouro.yml>
 
 | Chave       |           Valores            | Padrão |
 |-----------|:---------------------------:|:-------:|
-| `locations` | [Lista de Strings](#string_list) |  nenhum   |
+| `locations` | [Lista de Strings](#lista-de-strings) |  nenhum   |
 
 <details> 
 
@@ -307,11 +305,11 @@ locations:
 
 ### chestTier
 
-Define o nível mínimo de guilda necessário para abrir o baú.
+Define o nível mínimo da guild necessário para abrir o cofre.
 
 | Chave       |           Valores            | Padrão |
 |-----------|:---------------------------:|:-------:|
-| `chestTier` | [Integer](#integer) |  nenhum   |
+| `chestTier` | [Número Inteiro](#número-inteiro) |  nenhum   |
 
 <details> 
 
@@ -332,14 +330,14 @@ chestTier: 3
 
 ### instanced
 
-Define se o baú deve ser instanciado (para uso em masmorras instanciadas).
-Todos os tempos de reabastecimento são desabilitados quando os baús são colocados em masmorras.
+Define se o cofre deve ser instanciado (para uso em dungeons instanciadas).
+Todos os timers de reabastecimento são desativados quando os cofres são colocados em dungeons.
 
 **NÃO DEFINA ESTE VALOR MANUALMENTE**.
 
 | Chave       |     Valores     | Padrão |
 |-----------|:--------------:|:-------:|
-| `instanced` | [Booleano](#boolean) |  `false`   |
+| `instanced` | [Booleano](#booleano) |  `false`   |
 
 <details> 
 
@@ -361,13 +359,13 @@ instanced: true
 
 ### restockTime
 
-Depois que um baú for saqueado, o plugin escreverá esta chave para rastrear o tempo de reabastecimento. 
+Depois de um cofre ter sido saqueado, o plugin irá escrever esta chave para rastrear o tempo de reabastecimento.
 
 **NÃO DEFINA ESTE VALOR MANUALMENTE**.
 
 | Chave       |     Valores     | Padrão |
 |-----------|:--------------:|:-------:|
-| `restockTime` | Carimbo de Tempo Unix |  nenhum   |
+| `restockTime` | Timestamp Unix |  nenhum   |
 
 <details> 
 
@@ -389,7 +387,7 @@ restockTime: 1707394380
 
 <details> 
 
-<summary align="center"><b>Exemplo de Configuração de Baú do Tesouro</b></summary>
+<summary align="center"><b>Exemplo de Configuração de Cofre de Tesouro</b></summary>
 
 <div align="left">
 
@@ -420,5 +418,3 @@ locations:
 </div>
 
 </details>
-
-

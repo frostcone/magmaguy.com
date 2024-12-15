@@ -1,39 +1,15 @@
+```markdown
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# Создание квестов
+# Пример Квеста
 
-# Прежде чем начать
+EliteMobs поставляется с предустановленным `test_quest.yml`, который будет проанализирован здесь как простой формат квеста для примера.
 
-## Где хранятся файлы квестов?
+_Пользовательские квесты находятся в папке `~plugins/EliteMobs/customquests`!_
 
-Файлы квестов находятся в папке конфигурации `~/plugins/EliteMobs/customquests`.
+`test_quest.yml`
 
-Можно создавать подпапки, например, `~/plugins/EliteMobs/customquests/myquests`. Это рекомендуется для удобства организации.
-
-Один файл определяет один квест, хотя можно несколько раз создавать один и тот же квест и даже задавать несколько точек появления для одного и того же файла квеста.
-
-Можно использовать [webapp](https://magmaguy.com/webapp/webapp.html) для быстрого и простого создания  Custom Bosses и не только.
-
-## Минимальная конфигурация
-
-**Минимальный возможный файл конфигурации для  Custom Quest:**
-```yml
-```
-
-Обратите внимание, что это просто пустой файл. Он все равно будет создавать  Custom Quest, который не работает, так как это значения по умолчанию. **Все на этой странице - опционально!**
-
-## Пример квеста
-
-<div align="center">
-
-Давайте посмотрим на пример того, как выглядит файл квеста.
-
-<details> 
-<summary><b>Пример</b></summary>
-
-<div align="left">
-
-```yml
+```yaml
 isEnabled: true
 customObjectives:
   Objective1:
@@ -42,55 +18,34 @@ customObjectives:
     objectiveType: KILL_CUSTOM
 customRewards:
 - filename=magmaguys_toothpick.yml:amount=1:chance=1
-name: "&aKill the Test Boss"
+name: "&aУбейте Тестового Босса"
 questLore: 
-- "&cEnd the test boss'' reign of terror!"
+- "&cПоложите конец правлению террора тестового босса!"
 ```
-
-</div>
-
-</details>
-
-</div>
-
-
-## Базовые настройки
 
 <div align="center">
 
-### isEnabled
-
-Включает или выключает квест.
-
-| Ключ       |       Значения        | По умолчанию |
-|-|:-:|-|
-| `isEnabled` | `true` / `false` | `true` |
-
-<details> 
-
-<summary><b>Пример</b></summary>
-
-<div align="left">
-
-```yml
-isEnabled: true
-```
+![create_quest_quest.jpg](../../../img/wiki/create_quest_quest.jpg)
 
 </div>
 
-</details>
+*Если ваш интерфейс квестов выглядит не так, вы можете изменить его, используя `/em alt`.*
 
-***
+Этот пример квеста даст игрокам задание убить 1 `test_boss.yml`. (Фактическое имя босса, отображаемое в трекере квестов, будет `name:`, установленным в `test_boss.yml`.) И в качестве награды за выполнение квеста они будут вознаграждены 1 Зубочисткой Магмагуя.
+
+## Создание Пользовательских Квестов
+
+<div align="center">
 
 ### customObjectives
 
-Цели квеста.
+Устанавливает цели квеста.
 
-| Ключ       |       Значения        | По умолчанию |
-|-|:-:|-|
-| `customObjectives` |  Special [1] |  none   |
+| Ключ       |   Значения    | По умолчанию |
+|-----------|:-----------:|:-------:|
+| `customObjectives` | Специальный [1] |  none   |
 
-*Примечание: Если вы используете многофазного босса в качестве цели, то цель должна использовать первую фазу в качестве цели.*
+*Примечание: Если вы используете многофазного босса в качестве цели, то цель должна использовать первую фазу в качестве целевой.*
 
 <details> 
 
@@ -114,11 +69,11 @@ customObjectives:
 customObjectives:
   Objective1:
     dialog:
-    - "&a[Dialog NPC] &fCome here often?"
-    - "&7&oI should eat more apples."
+    - "&a[Диалоговый NPC] &fЧасто сюда заходите?"
+    - "&7&oМне нужно есть больше яблок."
     filename: dialog_npc.yml
-    npcName: Dialog NPC
-    location: at dialog location.
+    npcName: Диалоговый NPC
+    location: в месте диалога.
     objectiveType: DIALOG
 ```
 
@@ -128,7 +83,7 @@ customObjectives:
 customObjectives:
   Objective1:
     amount: '99'
-    itemName: Red Apples
+    itemName: Красные Яблоки
     filename: my_quest_item_red_apples.yml
     objectiveType: FETCH_ITEM
 ```
@@ -143,25 +98,25 @@ customObjectives:
 
 </details>
 
-**Special [1]**
+**Специальный [1]**
 
 <details>
 
-<summary><b>Expand Table</b></summary>
+<summary><b>Развернуть таблицу</b></summary>
 
 <div align="center">
 
-Custom Objectives are constructed using the following values:
+Пользовательские цели создаются с использованием следующих значений:
 
-| Key                                     | Description |
+| Ключ                                     | Описание |
 |-----------------------------------------|-------------|
-| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | Used to set the type of objective this represents. `KILL_CUSTOM` indicates the quest involves killing a specific Custom Boss, `FETCH_ITEM` indicates that the quest involves getting a specific Custom Item and `DIALOG` indicates that the quest involves talking to an NPC.            |
-| `filename`                                    | Used to set the file name of the Custom Boss, the Custom Item that the player has to kill / obtain or the NPC they have to talk to.            |
-| `amount`                                      | Used to set the amount of Custom Bosses that must be killed or items that must be obtained.            |
-| `dialog`                                      | Used to set the dialog of the NPC the player talks to.            |
-| `name`                                        | Used to set the name of the quest objective, be it an NPC or a custom item. For visual purposes only.            |
+| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | Используется для установки типа цели, которую это представляет. `KILL_CUSTOM` указывает, что квест включает убийство определенного пользовательского босса, `FETCH_ITEM` указывает, что квест включает получение определенного пользовательского предмета, а `DIALOG` указывает, что квест включает разговор с NPC.            |
+| `filename`                                    | Используется для установки имени файла пользовательского босса, пользовательского предмета, которого игрок должен убить/получить, или NPC, с которым нужно поговорить.           |
+| `amount`                                      | Используется для установки количества пользовательских боссов, которых нужно убить, или предметов, которые нужно получить.            |
+| `dialog`                                      | Используется для установки диалога NPC, с которым говорит игрок.            |
+| `name`                                        | Используется для установки имени цели квеста, будь то NPC или пользовательский предмет. Только для визуальных целей.            |
 
-_Please note that every Custom Objective field is separated with a `:` !_
+_Пожалуйста, обратите внимание, что каждое поле пользовательской цели разделено с помощью `:` !_
 
 </div>
 
@@ -171,11 +126,11 @@ _Please note that every Custom Objective field is separated with a `:` !_
 
 ### customRewards
 
-Настройки наград за квест.
+Устанавливает награды за квест.
 
 | Ключ       |                                Значения                                 | По умолчанию |
-|-|:-:|:-------:|
-| `customRewards` | [Универсальный формат лута EliteMobs]($language$elitemobs/loot_tables.md) |  none   |
+|-----------|:---------------------------------------------------------------------:|:-------:|
+| `customRewards` | [Универсальный формат добычи EliteMobs]($language$elitemobs/loot_tables.md) |  none   |
 
 <details> 
 
@@ -204,11 +159,11 @@ customRewards:
 
 ### questAcceptPermission
 
-Разрешение, которое должно быть у игрока, чтобы принять квест.
+Устанавливает разрешение, которое игрок должен иметь, чтобы принять квест.
 
 | Ключ       |      Значения       | По умолчанию |
 |-----------|:-----------------:|:-------:|
-| `questAcceptPermission` | [String](#string) |  none   |
+| `questAcceptPermission` | [Строка](#string) |  none   |
 
 <details> 
 
@@ -228,11 +183,11 @@ questAcceptPermission: elitequest.my_permission
 
 ### questAcceptPermissions
 
-Разрешения, которые должны быть у игрока, чтобы принять квест.
+Устанавливает разрешения, которые игрок должен иметь, чтобы принять квест.
 
 | Ключ       |   Значения    | По умолчанию |
 |-----------|:-----------:|:-------:|
-| `questAcceptPermissions` | [String List](#string_list) |  none   |
+| `questAcceptPermissions` | [Список Строк](#string_list) |  none   |
 
 <details> 
 
@@ -254,11 +209,11 @@ questAcceptPermissions:
 
 ### questLockoutPermission
 
-Разрешение, которое игрок получит после завершения квеста, которое заблокирует его от повторного выполнения квеста (обычно [Filename](#fielname) редактируемого квеста).
+Устанавливает разрешение, которое игрок получит после завершения квеста, что заблокирует его от повторного выполнения квеста (обычно [имя файла](#fielname) квеста, который вы редактируете).
 
 | Ключ       |      Значения       | По умолчанию |
 |-----------|:-----------------:|:-------:|
-| `questLockoutPermission` | [String](#string) |  none   |
+| `questLockoutPermission` | [Строка](#string) |  none   |
 
 <details> 
 
@@ -278,11 +233,11 @@ questLockoutPermission: elitequest.my_quest.yml
 
 ### questLockoutMinutes
 
-Сколько времени (в минутах) игрок должен ждать, прежде чем сможет снова выполнить квест (работает путем удаления разрешения на блокировку квеста).
+Устанавливает, сколько минут игрок должен ждать, прежде чем сможет снова выполнить квест (работает путем удаления разрешения на блокировку квеста).
 
 | Ключ       |      Значения       | По умолчанию |
 |-----------|:-----------------:|:-------:|
-| `questLockoutMinutes` | [Integer](#integer) |  `-1`(никогда не повторится)   |
+| `questLockoutMinutes` | [Целое Число](#integer) |  `-1`(никогда не повторится)   |
 
 <details> 
 
@@ -302,11 +257,11 @@ questLockoutMinutes: 60
 
 ### name
 
-Название квеста. Поддерживает [Цветные коды](#color_codes).
+Устанавливает имя квеста. Принимает [Цветовые Коды](#color_codes).
 
 | Ключ    |      Значения       | По умолчанию |
 |--------|:-----------------:|:-------:|
-| `name` | [String](#string) |  none   |
+| `name` | [Строка](#string) |  none   |
 
 <details> 
 
@@ -315,7 +270,7 @@ questLockoutMinutes: 60
 <div align="left">
 
 ```yml
-name: "&aMy Great Quest Name"
+name: "&aМое Великое Имя Квеста"
 ```
 
 </div>
@@ -326,11 +281,11 @@ name: "&aMy Great Quest Name"
 
 ### questLore
 
-Описание квеста, которое будет отображаться в меню квестов в игре.
+Устанавливает описание квеста, которое будет отображаться в игровом меню квестов.
 
 | Ключ    |      Значения       | По умолчанию |
 |--------|:-----------------:|:-------:|
-| `questLore` | [String List](#string_list) |  none   |
+| `questLore` | [Список Строк](#string_list) |  none   |
 
 <details> 
 
@@ -340,8 +295,8 @@ name: "&aMy Great Quest Name"
 
 ```yml
 questLore:
-- "Interesting lore sentence."
-- "Yet another interesting lore sentence."
+- "Интересное предложение описания."
+- "Еще одно интересное предложение описания."
 ```
 
 <div align="center">
@@ -358,13 +313,13 @@ questLore:
 
 ### temporaryPermissions
 
-Разрешения, которые присваиваются игроку, пока он не сдаст квест.
+Устанавливает разрешения, назначенные игроку до тех пор, пока он не сдаст квест.
 
-Если вы используете эту настройку, чтобы гарантировать, что предмет выпадает только тогда, когда у игроков есть активный определенный квест, вам также нужно будет настроить [Same Permission]($language$/elitemobs/creating_items.md&section=permission) в конфигурационном файле предмета.
+Если вы используете эту настройку, чтобы гарантировать, что предмет выпадает только тогда, когда у игроков есть конкретный активный квест, вам также необходимо настроить [То же Разрешение]($language$/elitemobs/creating_items.md&section=permission) в файле конфигурации предмета.
 
 | Ключ    |      Значения       | По умолчанию |
 |--------|:-----------------:|:-------:|
-| `temporaryPermissions` | [String List](#string_list) |  none   |
+| `temporaryPermissions` | [Список Строк](#string_list) |  none   |
 
 <details> 
 
@@ -385,11 +340,11 @@ temporaryPermissions:
 
 ### questAcceptDialog
 
-Диалог, который появляется в чате при принятии квеста.
+Устанавливает диалог, который появляется в чате при принятии квеста.
 
 | Ключ    |      Значения       | По умолчанию |
 |--------|:-----------------:|:-------:|
-| `questAcceptDialog` | [String List](#string_list) |  none   |
+| `questAcceptDialog` | [Список Строк](#string_list) |  none   |
 
 <details> 
 
@@ -399,8 +354,8 @@ temporaryPermissions:
 
 ```yml
 questAcceptDialog:
-- "My hero! You are so helpful!"
-- "I wish you the best of luck!"
+- "Мой герой! Вы так полезны!"
+- "Я желаю вам удачи!"
 ```
 
 <div align="center">
@@ -417,11 +372,11 @@ questAcceptDialog:
 
 ### questCompleteMessage
 
-Диалог, который появляется в чате при завершении квеста.
+Устанавливает диалог, который появляется в чате при завершении квеста.
 
 | Ключ    |      Значения       | По умолчанию |
 |--------|:-----------------:|:-------:|
-| `questCompleteMessage` | [String List](#string_list) |  none   |
+| `questCompleteMessage` | [Список Строк](#string_list) |  none   |
 
 <details> 
 
@@ -431,8 +386,8 @@ questAcceptDialog:
 
 ```yml
 questCompleteMessage:
-- "My hero! You have completed my difficult quest!"
-- "As a reward you can have this loaf of bread!"
+- "Мой герой! Вы выполнили мой сложный квест!"
+- "В качестве награды вы можете получить этот батон хлеба!"
 ```
 
 <div align="center">
@@ -449,11 +404,11 @@ questCompleteMessage:
 
 ### questCompleteCommands
 
-Команды, которые будут выполняться при завершении квеста.
+Устанавливает команды, которые будут выполняться при завершении квеста.
 
 | Ключ    |      Значения       | По умолчанию |
 |--------|:-----------------:|:-------:|
-| `questCompleteCommands` | [String List](#string_list) |  none   |
+| `questCompleteCommands` | [Список Строк](#string_list) |  none   |
 
 <details> 
 
@@ -463,7 +418,7 @@ questCompleteMessage:
 
 ```yml
 questCompleteCommands:
-- say $player has finished a quest!
+- say $player закончил квест!
 ```
 
 <div align="center">
@@ -480,11 +435,11 @@ questCompleteCommands:
 
 ### turnInNPC
 
-Имя файла NPC, с которым игрокам нужно поговорить/взаимодействовать, чтобы завершить квест. Это **не обязательно** должен быть тот же NPC, который выдал квест.
+Устанавливает имя файла NPC, с которым игрокам нужно поговорить/взаимодействовать, чтобы завершить квест. Это **не** обязательно должен быть тот же NPC, который выдал квест.
 
 | Ключ    |      Значения       | По умолчанию |
 |--------|:-----------------:|:-------:|
-| `turnInNPC` | [Filename](#filename) |  none   |
+| `turnInNPC` | [Имя файла](#filename) |  none   |
 
 <details> 
 
@@ -504,11 +459,11 @@ turnInNPC: my_cool_quest_npc.yml
 
 ### trackable
 
-Определяет, будет ли квест использовать трекер квестов.
+Устанавливает, будет ли квест использовать трекер квестов.
 
 | Ключ    |      Значения       | По умолчанию |
 |--------|:-----------------:|:-------:|
-| `trackable` | [Boolean](#boolean) | `true`  |
+| `trackable` | [Логическое значение](#boolean) | `true`  |
 
 <details> 
 
@@ -528,11 +483,11 @@ trackable: true
 
 ### questLevel
 
-Уровень квеста. Это всего лишь визуальное руководство, чтобы игроки могли понять, насколько сложным будет квест. Это **никак не** влияет на уровень босса, предмета или других уровней.
+Устанавливает уровень квеста. Это всего лишь визуальное руководство, чтобы игроки могли понять, насколько сложным будет квест. Это **никак** не меняет уровень босса, предмета или других уровней.
 
 | Ключ    |      Значения       | По умолчанию |
 |--------|:-----------------:|:-------:|
-| `questLevel` | [Integer](#integer) | `0`  |
+| `questLevel` | [Целое число](#integer) | `0`  |
 
 <details> 
 
@@ -558,11 +513,11 @@ questLevel: 10
 
 ### questAcceptSound
 
-Звук, который воспроизводится при принятии квеста. Можно воспроизводить как звуки Minecraft, так и звуки из текстурного пакета.
+Устанавливает звук, который воспроизводится при принятии квеста. Можно воспроизводить как звуки Minecraft, так и звуки из ресурспака.
 
 | Ключ                |      Значения       | По умолчанию |
 |--------------------|:-----------------:|:-------:|
-| `questAcceptSound` | [String](#string) |  none   |
+| `questAcceptSound` | [Строка](#string) |  none   |
 
 <details> 
 
@@ -588,11 +543,11 @@ questAcceptSound: entity.experience_orb.pickup
 
 ### questCompleteSound
 
-Звук, который воспроизводится при завершении квеста (сдаче). Можно воспроизводить как звуки Minecraft, так и звуки из текстурного пакета.
+Устанавливает звук, который воспроизводится при завершении (сдаче) квеста. Можно воспроизводить как звуки Minecraft, так и звуки из ресурспака.
 
 | Ключ                |      Значения       | По умолчанию |
 |--------------------|:-----------------:|:-------:|
-| `questCompleteSound` | [String](#string) |  none   |
+| `questCompleteSound` | [Строка](#string) |  none   |
 
 <details> 
 
@@ -616,17 +571,17 @@ questCompleteSound: entity.player.levelup
 
 ### Разрешения
 
-Как упоминалось в таблицах выше, разрешения обычно являются [Строками](#string) или [Список строк](#string_list). Но давайте подробнее рассмотрим, как вы будете их использовать для блокировки и разблокировки квестов. 
+Как упоминалось в таблицах выше, разрешения обычно являются [Строками](#string) или [Списками Строк](#string_list). Но давайте подробнее рассмотрим, как вы будете использовать их для блокировки и разблокировки квестов.
 
-Допустим, вы создаете quest_3 в серии квестов, которые вы запланировали, и не хотите, чтобы игроки могли взять quest_3, пока не завершат quest_2. Мы настроим файл квеста следующим образом:
+Допустим, вы делаете quest_3 в серии запланированных квестов, и вы не хотите, чтобы игроки могли взять quest_3 до завершения quest_2. Мы бы настроили файл квеста следующим образом:
 
 ```yml
 questAcceptPermission: elitequest.quest_2.yml
 questLockoutPermission: elitequest.quest_3.yml
 ```
-Установив `questAcceptPermissions` как `elitequest.quest_2.yml`, мы теперь запретили игрокам брать quest_3.yml, пока они не завершат quest_2.yml. </br> Установив `questLockoutPermission` как `elitequest.quest_3.yml`, мы запретили игрокам получать этот квест, пока у них уже есть этот квест в их трекере или если они уже завершили этот квест. Это не позволяет игрокам повторять квест.
+Установив `questAcceptPermissions` на `elitequest.quest_2.yml`, мы теперь предотвратили возможность для игроков взять quest_3.yml до завершения quest_2.yml. </br> Установив `questLockoutPermission` на `elitequest.quest_3.yml`, мы предотвратили возможность для игроков получить этот квест, если он уже есть в их трекере, или если они уже закончили этот квест. Это останавливает игроков от повторения квеста.
 
-Если вы хотите создать квест, который станет доступен только после того, как игроки завершат серию квестов, вам нужно будет настроить файл квеста следующим образом:
+Если вы хотите создать квест, который станет доступен только после того, как игроки завершат серию квестов, вы бы настроили файл квеста следующим образом:
 
 ```yml
 questAcceptPermissions: 
@@ -635,7 +590,7 @@ questAcceptPermissions:
 - elitequest.quest_4.yml
 ```
 
-Если вы хотите, чтобы игроки могли lootar определенные предметы только тогда, когда у них есть активный правильный квест, то мы можем сделать это, используя `temporaryPermissions`. Мы создадим разрешение в файле квеста, используя `temporaryPermissions`, а затем создадим соответствующее [разрешение]($language$/elitemobs/creating_items.md&section=permission) в файле предмета, используя `permission`.
+Если вы хотите, чтобы игроки могли получать определенные предметы только при наличии активного правильного квеста, то мы можем сделать это, используя `temporaryPermissions`. Мы создадим разрешение в файле квеста, используя `temporaryPermissions`, а затем создадим соответствующее [разрешение]($language$/elitemobs/creating_items.md&section=permission) в файле предмета, используя `permission`.
 
 Например, мы откроем наш файл квеста и добавим следующее:
 
@@ -648,7 +603,6 @@ temporaryPermissions:
 ```yml
 permission: elitequest.my_cool_item.yml
 ```
-Оба файла теперь имеют совпадающие разрешения, что должно сделать так, чтобы наш предмет выпадал только тогда, когда у игроков есть активный правильный квест.
-
+Оба файла теперь имеют соответствующие разрешения, которые теперь должны сделать так, чтобы наш предмет выпадал только тогда, когда у игроков есть активный правильный квест.
 </div>
-
+```

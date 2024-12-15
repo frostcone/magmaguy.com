@@ -4,28 +4,31 @@
 ```xml
 <repositories>
     <repository>
-        <id>oss-sonatype</id>
-        <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+        <id>magmaguy-repo-releases</id>
+        <name>MagmaGuy's Repository</name>
+        <url>https://repo.magmaguy.com/releases</url>
     </repository>
 </repositories>
 
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>versionNumber-SNAPSHOT</version>
+  <version>Check what the latest version is!</version>
+  <scope>provided</scope>
 </dependency>
 ```
 
 # Gradle
 ```kt
 repositories {
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots'
-    }
+  maven {
+    name = "magmaguyRepoReleases"
+    url = uri("https://repo.magmaguy.com/releases")
+  }
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:versionNumber-SNAPSHOT'
+    implementation 'com.magmaguy:BetterStructures:Check what the latest version is!'
 }
 ```
 

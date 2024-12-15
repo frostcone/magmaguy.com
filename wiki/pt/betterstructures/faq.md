@@ -1,64 +1,58 @@
-```markdown
-# コマンドの使い方
-- ヘルプについては、コマンドページを参照してください: [コマンドページ]($language$/betterstructures/commands.md)
+# Como Usar Comandos
+- Vá para a página de comandos para obter ajuda: [Página de Comandos]($language$/betterstructures/commands.md)
 
-# 構造物がどこに出現するかを確認する
-- サーバーの管理者で、警告をオフにしていない場合は、構造物が現れるとチャットに通知されます。
-- チャットメッセージをクリックして、構造物にテレポートします（Bedrock Edition では使用できません）。
-- `/betterstructures warn` を使用して、警告をオン/オフにします。
+# Verificar Onde as Estruturas Aparecem
+- Se for um administrador de servidor e não tiver desativado os avisos, será notificado no chat quando uma estrutura aparecer.
+- Clique na mensagem do chat para teletransportar para a estrutura (não para a edição Bedrock).
+- Ative/desative os avisos com `/betterstructures warn`.
 
-# 構造物が表示されない理由
-- 通常、構造物は、すでに探索されたエリアには表示されません。構造物を見つけるには、新しいエリアに移動してください。
+# Por Que as Estruturas Podem Não Aparecer
+- Normalmente, as estruturas não aparecem em áreas já exploradas. Visite novas áreas para encontrar estruturas.
 
 <details> 
-<summary>詳細</summary>
+<summary>Mais Detalhes</summary>
 
-構造物は、すでに探索されたエリアには表示されません。これは、エリアを過度に埋め尽くしたり、プレイヤーの建築物を破壊したりするのを防ぐためです。BetterStructures は、インストールされる前にエリアが探索されたかどうかを認識し、そこに構造物を配置しません。BetterStructures をインストールする前にワールドが完全に探索されていた場合は、ワールドを再生成するか、新しいワールドを作成する必要があります。
+As estruturas não aparecerão em áreas já exploradas para evitar sobrecarregá-las demasiado e danificar as construções dos jogadores. O BetterStructures sabe se uma área foi explorada antes de ser instalado e não colocará estruturas lá. Se o seu mundo foi totalmente explorado antes de instalar o BetterStructures, precisa de o regenerar ou criar um novo mundo.
 
 </details>
 
-# EliteMobs と BetterStructures
+# EliteMobs e BetterStructures
 
-## EliteMobs が提供するもの
-- EliteMobs について学ぶ: [EliteMobs Wiki](#)
-- 構造物にボスを追加します。
+## O Que o EliteMobs Oferece
+- Saiba mais sobre o EliteMobs: [Wiki do EliteMobs](#)
+- Adiciona chefes às estruturas.
 
-## 事前作成された EliteMobs コンテンツの取得
-- [magmaguy.itch.io](https://magmaguy.itch.io/) と [patreon.com/magmaguy](https://www.patreon.com/magmaguy) から入手できます。
+## Obter Conteúdo EliteMobs Pré-Feito
+- Disponível em [magmaguy.itch.io](https://magmaguy.itch.io/) e [patreon.com/magmaguy](https://www.patreon.com/magmaguy)
 
-## 他の機能を使用せずに EliteMobs を使用する
-- EliteMobs の他の機能をオフにすることができます。無効にするには、次の設定を変更します。
-    - `events.yml`: `timedEventsEnabled: false` と `actionEventsEnabled: false` に設定すると、すべてのイベントが無効になります。
-    - `MobCombatSettings.yml`: `doNaturalMobSpawning: false` に設定すると、自然発生するエリートのスポーンが無効になります。
+## Usar EliteMobs Sem Outras Funcionalidades
+- Pode desativar outras funcionalidades do EliteMobs. Para desativar, altere as definições em:
+    - events.yml: `timedEventsEnabled: false` e `actionEventsEnabled: false` desativa todos os eventos
+    - MobCombatSettings.yml: `doNaturalMobSpawning: false` desativa o aparecimento natural de elite
 
-## 構造物に EliteMobs のボスを追加する
+## Adicionar um chefe EliteMobs à sua estrutura
 
-- 看板の最初の行に `[elitemobs]` を追加します。
-- 看板の 2 行目/3 行目/4 行目に、ボスのファイル名（`test_boss.yml` など）を追加します。
-- 詳細は [こちら]($language$/betterstructures/creating_structures.md) をご覧ください。
+- Adicione `[elitemobs]` à primeira linha da sua placa
+- Adicione o nome do ficheiro do chefe na segunda/terceira/quarta linha da placa como `test_boss.yml`
+- Mais informações [aqui]($language$/betterstructures/creating_structures.md)
 
-# BetterStructures と他のプラグインの連携
+# BetterStructures com outros plugins
 
 ## MythicMobs
-- 看板の最初の行に `[mythicmobs]` と入力し、その後に他の行にモブの識別子を入力することで、Mythic Mobs をスポーンさせます。
-- EliteMobs は、BetterStructures との組み合わせでボスを使用するのに適しています。これは、私が両方を作成したためです。
+- Crie mobs míticos usando placas com `[mythicmobs]` seguido pelo identificador do mob nas outras linhas da placa.
+- EliteMobs é melhor para chefes com BetterStructures porque eu criei ambos.
 
 ## MMOItems
-- `mmoitems=<TYPE>@<ITEM-ID>` を宝箱の設定ファイルに追加します。
+- Adicione MMOItems com `mmoitems=<TYPE>@<ITEM-ID>` no ficheiro de configuração de tesouros.
 
-## 他のプラグインのカスタムアイテム
-- lootify コマンドを使用して、チェストにアイテムを追加します。[コマンドページ]($language$/betterstructures/commands.md) をご覧ください。
+## Itens Personalizados de Outros Plugins
+- Use o comando lootify para adicionar quaisquer itens aos baús. Consulte a [Página de Comandos]($language$/betterstructures/commands.md).
 
-# 独自の構造物の作成
-- 作成方法はこちらをご覧ください: [構造物の作成ガイド]($language$/betterstructures/creating_structures.md)
+# Criar as Suas Próprias Estruturas
+- Saiba como: [Guia de Criação de Estruturas]($language$/betterstructures/creating_structures.md)
 
-# パフォーマンスへの影響と最小化
-- 多くの構造物を生成すると、サーバーの速度が遅くなる可能性があります。
-- [Chunky](https://www.spigotmc.org/resources/chunky.81534/) を使用して、ワールドを事前に生成し、パフォーマンスの問題を回避してください。
-- EliteMobs を使用していない場合は、ワールド生成後に BetterStructures を削除できます。
-- EliteMobs を使用している場合は、パフォーマンスへの影響を最小限に抑えるために、BetterStructures を使用して、保護されたエリアを管理してください。
-
-
-```
-
-
+# Impacto no Desempenho e Minimização
+- Gerar muitas estruturas pode tornar o seu servidor mais lento.
+- Use o [Chunky](https://www.spigotmc.org/resources/chunky.81534/) para pré-gerar o seu mundo e evitar problemas de desempenho.
+- Se não estiver a usar o EliteMobs, pode remover o BetterStructures após a geração do mundo.
+- Com o EliteMobs, mantenha o BetterStructures para a gestão de áreas protegidas, com impacto mínimo.

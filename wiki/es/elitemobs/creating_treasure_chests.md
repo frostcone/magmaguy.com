@@ -1,6 +1,6 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-Los cofres del tesoro son una función que permite a los administradores crear cofres que pueden soltar botín o generar un jefe mímico (hostil).
+Los cofres del tesoro son una función que permite a los administradores crear cofres que pueden dejar caer botín o generar un jefe (hostil) de imitación.
 
 <div align="center">
 
@@ -18,7 +18,7 @@ Establece si un cofre del tesoro está habilitado.
 |-----------|:-------------------:|:-------:|
 | `isEnabled` | [Booleano](#booleano) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -42,7 +42,7 @@ Establece el tipo de material del cofre.
 |-----------|:---------------------:|:-------:|
 | `chestType` | [Material](#material) | `CHEST` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -51,7 +51,7 @@ Establece el tipo de material del cofre.
 ```yml
 chestType: CHEST
 ```
-*Este debe ser un material de cofre válido como `CHEST` o `BARREL`*.
+*Esto debe ser un material de cofre válido como `CHEST` o `BARREL`*.
 
 <div align="center">
 
@@ -67,13 +67,13 @@ chestType: CHEST
 
 ### facing
 
-Establece la dirección de orientación del cofre.
+Establece la dirección en la que mira el cofre.
 
 | Clave       |   Valores    | Predeterminado |
 |-----------|:-----------:|:-------:|
 | `facing` | Especial [1] | `CHEST` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -82,7 +82,7 @@ Establece la dirección de orientación del cofre.
 ```yml
 facing: CHEST
 ```
-*Este debe ser un material de cofre válido como `CHEST` o `BARREL`*.
+*Esto debe ser un material de cofre válido como `CHEST` o `BARREL`*.
 
 </div>
 
@@ -90,17 +90,16 @@ facing: CHEST
 
 **Especial [1]**
 
-<details> 
+<details>
 
 <summary><b>Expandir tabla</b></summary>
 
-| Mirando  |
+| Orientación  |
 |---------|
 | `NORTH` |
 | `SOUTH` |
 | `WEST`  |
 | `EAST`  |
-
 
 </details>
 
@@ -108,15 +107,15 @@ facing: CHEST
 
 ### dropStyle
 
-Establece si el cofre está destinado a ser soltado para uno o varios jugadores.
+Establece si el cofre está destinado a ser dejado caer para un jugador o para varios jugadores.
 
-Los cofres `SINGLE` desaparecen después de ser abiertos y reaparecen cuando se reabastecen. Los cofres `GROUP` permanecen y les permiten a los jugadores individuales saber que están en tiempo de reutilización.
+Los cofres `SINGLE` desaparecen después de ser abiertos y vuelven a aparecer cuando se reabastecen. Los cofres `GROUP` permanecen y les hacen saber a los jugadores individuales que están en tiempo de espera.
 
 | Clave       |       Valores       | Predeterminado |
 |-----------|:------------------:|:-------:|
 | `dropStyle` | `SINGLE` / `GROUP` | `SINGLE` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -134,13 +133,13 @@ dropStyle: SINGLE
 
 ### lootList
 
-Enumera el botín que debe soltar el cofre del tesoro cuando se abre.
+Enumera el botín que el cofre del tesoro debe dejar caer cuando se abre.
 
 | Clave       |                        Valores                        | Predeterminado |
 |-----------|:----------------------------------------------------:|:-------:|
 | `lootList` | [Tabla de botín de EM]($language$/elitemobs/loot_tables.md) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -149,7 +148,7 @@ Enumera el botín que debe soltar el cofre del tesoro cuando se abre.
 ```yml
 lootList:
 - filename=elite_scrap_tiny.yml:chance=0.90
-- palillo_de_magmaguys.yml
+- magmaguys_toothpick.yml
 ```
 
 </div>
@@ -160,13 +159,13 @@ lootList:
 
 ### mimicChance
 
-Establece la posibilidad de generar un jefe hostil en lugar de soltar botín.
+Establece la posibilidad de generar un jefe hostil en lugar de dejar caer botín.
 
 | Clave       |      Valores       | Predeterminado |
 |-----------|:-----------------:|:-------:|
-| `mimicChance` | [Doble](#doble) |   `0`   |
+| `mimicChance` | [Doble](#double) |   `0`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -186,13 +185,13 @@ mimicChance: 0.5
 
 Especifica la lista de jefes hostiles disponibles para la generación. Se seleccionará aleatoriamente un solo jefe de esta lista para la generación.
 
-La lista también admite un sistema de ponderación que puedes implementar para asegurarte de que algunos jefes sean elegidos con más frecuencia que otros.
+La lista también admite un sistema de peso que puede implementar para asegurarse de que algunos jefes se elijan con más frecuencia que otros.
 
 | Clave       |      Valores       | Predeterminado |
 |-----------|:-----------------:|:-------:|
-| `mimicCustomBossesList` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |
+| `mimicCustomBossesList` | [Lista de cadenas](#string_list) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -200,18 +199,18 @@ La lista también admite un sistema de ponderación que puedes implementar para 
 
 ```yml
 mimicCustomBossesList:
-- mi_jefe_mímico_genial.yml
-- jefe_mímico_débil.yml
+- my_cool_mimic_boss.yml
+- weak_mimic_boss.yml
 ```
-*Si deseas asignar pesos a los jefes, la lista debe formatearse de la siguiente manera:*
+*Si desea asignar pesos a los jefes, la lista debe tener el siguiente formato:*
 
 ```yml
 mimicCustomBossesList:
-- mi_jefe_mímico_genial.yml:60
-- jefe_mímico_débil.yml:40
+- my_cool_mimic_boss.yml:60
+- weak_mimic_boss.yml:40
 ```
 
-*En esta configuración, es más probable que `mi_jefe_mímico_genial.yml` sea ​​elegido para la generación que `jefe_mímico_débil.yml`.*
+*En esta configuración, es más probable que se elija `my_cool_mimic_boss.yml` para la generación que `weak_mimic_boss.yml`.*
 
 </div>
 
@@ -221,13 +220,13 @@ mimicCustomBossesList:
 
 ### restockTimer
 
-Establece el tiempo, en minutos, antes de que el cofre se vuelva a llenar con botín.
+Establece el tiempo, en minutos, antes de que el cofre se rellene con botín.
 
 | Clave       |      Valores       | Predeterminado |
 |-----------|:-----------------:|:-------:|
-| `restockTimer` | [Entero](#entero) |   `0`   |
+| `restockTimer` | [Entero](#integer) |   `0`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -251,7 +250,7 @@ Establece los efectos de partículas que hará el cofre.
 |-----------|:-----------------:|:-------:|
 | `effects` | [Partícula](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -279,13 +278,13 @@ effects:
 
 Establece las ubicaciones donde aparecerá el cofre del tesoro.
 
-Las ubicaciones se pueden establecer más fácilmente a través de `/em addTreasureChest <nombredearchivodelcofredeltesoro.yml>`
+Las ubicaciones se pueden establecer más fácilmente a través de `/em addTreasureChest <nombrearchivocofre.yml>
 
 | Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `locations` | [Lista de cadenas](#lista_de_cadenas) |  ninguno   |
+| `locations` | [Lista de cadenas](#string_list) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -293,8 +292,8 @@ Las ubicaciones se pueden establecer más fácilmente a través de `/em addTreas
 
 ```yml
 locations:
-- mi_mundo,10,50,10,0,0
-- mi_mundo_nether,12,58,12,0,0
+- my_world,10,50,10,0,0
+- my_nether_world,12,58,12,0,0
 ```
 
 </div>
@@ -305,13 +304,13 @@ locations:
 
 ### chestTier
 
-Establece el rango mínimo de gremio requerido para abrir el cofre.
+Establece el rango de gremio mínimo requerido para abrir el cofre.
 
 | Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
-| `chestTier` | [Entero](#entero) |  ninguno   |
+| `chestTier` | [Entero](#integer) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -325,21 +324,20 @@ chestTier: 3
 
 </details>
 
-
 ***
 
 ### instanced
 
-Establece si el cofre debe ser instanciado (para usar en mazmorras instanciadas).
-Todos los temporizadores de reabastecimiento se desactivan cuando los cofres se colocan en mazmorras.
+Establece si el cofre debe ser de instancia (para usar en mazmorras de instancia).
+Todos los tiempos de espera de reabastecimiento se desactivan cuando los cofres se colocan en mazmorras.
 
-**NO ESTABLEZCAS ESTE VALOR MANUALMENTE**.
+**NO ESTABLEZCA ESTE VALOR MANUALMENTE**.
 
 | Clave       |     Valores     | Predeterminado |
 |-----------|:--------------:|:-------:|
 | `instanced` | [Booleano](#booleano) |  `false`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -359,15 +357,15 @@ instanced: true
 
 ### restockTime
 
-Después de que se ha saqueado un cofre, el complemento escribirá esta clave para rastrear el tiempo de reabastecimiento.
+Después de que un cofre ha sido saqueado, el plugin escribirá esta clave para rastrear el tiempo de reabastecimiento.
 
-**NO ESTABLEZCAS ESTE VALOR MANUALMENTE**.
+**NO ESTABLEZCA ESTE VALOR MANUALMENTE**.
 
 | Clave       |     Valores     | Predeterminado |
 |-----------|:--------------:|:-------:|
-| `restockTime` | Marca de tiempo de Unix |  ninguno   |
+| `restockTime` | Marca de tiempo Unix |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -385,7 +383,7 @@ restockTime: 1707394380
 
 ***
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo de configuración de cofre del tesoro</b></summary>
 
@@ -398,7 +396,7 @@ facing: NORTH
 dropStyle: MULTIPLE
 lootList:
 - filename=elite_scrap_tiny.yml:chance=0.90
-- palillo_de_magmaguys.yml:chance=0.95
+- magmaguys_toothpick.yml:chance=0.95
 mimicChance: 0.50
 mimicCustomBossesList:
 - balrog.yml
@@ -406,7 +404,7 @@ mimicCustomBossesList:
 restockTimer: 1
 effects: SMOKE_NORMAL
 locations:
-- mundo,0.0,-60.0,-14.0,0.0,0.0
+- world,0.0,-60.0,-14.0,0.0,0.0
 ```
 
 <div align="center">
@@ -418,7 +416,3 @@ locations:
 </div>
 
 </details>
-
-
-
-

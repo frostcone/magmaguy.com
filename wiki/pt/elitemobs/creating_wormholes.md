@@ -2,36 +2,36 @@
 
 # O que são Buracos de Minhoca?
 
-Buracos de Minhoca são um tipo de sistema de teletransporte de portal a portal altamente eficiente. Os portais são marcados com efeitos visuais.
+Buracos de minhoca são um tipo de sistema de teletransporte portal-a-portal altamente eficiente. Os portais são marcados com efeitos visuais.
 
-# Mecânicas do Buraco de Minhoca
+# Mecânicas dos Buracos de Minhoca
 
-Os Buracos de Minhoca podem fazer o seguinte:
+Os buracos de minhoca podem fazer o seguinte:
 
-*   Passar por um portal para alcançar o portal de destino e voltar do portal de destino para o primeiro.
-*   Reproduzir um som quando os jogadores passam por eles.
-*   Cegar temporariamente os jogadores enquanto eles passam por eles para suavizar a transição.
-*   Empurrar os jogadores para fora para evitar que fiquem presos em um loop de teletransporte.
-*   Bloquear os jogadores do teletransporte por 5 segundos para evitar que fiquem presos em um loop de teletransporte.
-*   Reproduzir efeitos visuais elaborados.
-*   Exigir permissões para usar o buraco de minhoca.
-*   Exigir o uso de moeda para usar o buraco de minhoca.
-*   Notificar os jogadores e administradores quando o portal de destino não estiver disponível.
+*   Atravessar um portal para alcançar o portal de destino, e ir do portal de destino de volta para o primeiro.
+*   Reproduzir um som quando os jogadores os atravessam
+*   Cegar temporariamente os jogadores enquanto os atravessam para suavizar a transição
+*   Empurrar os jogadores para fora para evitar ficarem presos num loop de teletransporte
+*   Bloquear os jogadores do teletransporte por 5 segundos para evitar ficarem presos num loop de teletransporte
+*   Reproduzir efeitos visuais elaborados
+*   Exigir permissões para usar o buraco de minhoca
+*   Exigir o uso de moeda para usar o buraco de minhoca
+*   Notificar jogadores e admins quando o portal de destino não está disponível
 
-# Criando um Buraco de Minhoca
+# Criar um Buraco de Minhoca
 
-Os Buracos de Minhoca são adicionados como arquivos de configuração à pasta de buracos de minhoca. É possível criar subpastas, e é recomendável fazê-lo se você estiver adicionando buracos de minhoca para masmorras específicas, no formato `~/plugins/EliteMobs/wormholes/dungeonName/dungeonName_identifier.yml`.
+Os buracos de minhoca são adicionados como ficheiros de configuração à pasta wormholes. É possível criar subpastas, e é recomendado fazê-lo se estiver a adicionar buracos de minhoca para dungeons específicas, sob o formato \` ~/plugins/EliteMobs/wormholes/nomeDaDungeon/nomeDaDungeon\_identificador.yml\`.
 
 ### Ejeção
 
-Yaw e Pitch (os dois últimos dígitos nas coordenadas) em `location1` e `location2` definirão de onde os jogadores serão ejetados do buraco de minhoca quando viajarem por ele. Vejamos este exemplo:
+O Yaw e o Pitch (os dois últimos dígitos nas coordenadas) em `location1` e `location2` definirão onde os jogadores serão ejetados do buraco de minhoca quando viajarem através dele. Vejamos este exemplo:
 
 `location1: my_world,20,10,20,180,20`
 
-Com Yaw definido como `180`, o jogador seria ejetado voltado para o Norte, e com Pitch definido como `20`, ele também seria ejetado ligeiramente para cima. Se você deseja que o jogador permaneça no mesmo bloco que o buraco de minhoca ao ser ejetado, então é uma boa ideia definir o Pitch como negativo para garantir que os jogadores não deslizem para fora do bloco.
+Com o Yaw definido como `180` o jogador seria ejetado virado para Norte, e com o Pitch definido como `20` também seria ejetado ligeiramente para cima. Se desejar que o jogador permaneça no mesmo bloco que o buraco de minhoca ao ser ejetado, então é uma boa ideia definir o Pitch para negativo para garantir que os jogadores não deslizem para fora do bloco.
 
 ## Configuração do Buraco de Minhoca
-A seguir, um exemplo de uma configuração válida do Buraco de Minhoca:
+O seguinte é um exemplo de uma configuração de Buraco de Minhoca válida:
 
 ```yaml
 isEnabled: true
@@ -45,11 +45,11 @@ location2: em_primis,1288.5,-39,451.5,180,-1
 
 ### isEnabled
 
-Define se o buraco de minhoca está habilitado.
+Define se o buraco de minhoca está ativado.
 
-| Chave       |       Valores        | Padrão |
+| Chave       |       Valores        | Predefinição |
 |-----------|:-------------------:|:-------:|
-| `isEnabled` | [Booleano](#boolean) | `true`  |
+| `isEnabled` | [Booleano](#booleano) | `true`  |
 
 <details> 
 
@@ -71,9 +71,9 @@ isEnabled: true
 
 Especifica a primeira localização para o buraco de minhoca.
 
-| Chave       |      Valores       | Padrão |
+| Chave       |      Valores       | Predefinição |
 |-----------|:-----------------:|:-------:|
-| `location1` | [String](#string) |  nenhum   |
+| `location1` | [String](#string) |  nenhuma   |
 
 <details> 
 
@@ -95,9 +95,9 @@ location1: world_one,50,100,50,0,0
 
 Especifica a segunda localização para o buraco de minhoca.
 
-| Chave         |      Valores       | Padrão |
+| Chave         |      Valores       | Predefinição |
 |-------------|:-----------------:|:-------:|
-| `location2` | [String](#string) |  nenhum   |
+| `location2` | [String](#string) |  nenhuma   |
 
 <details> 
 
@@ -119,9 +119,9 @@ location2: world_two,100,33,100,0,0
 
 Define o texto de exibição da primeira localização.
 
-| Chave         |      Valores       | Padrão |
+| Chave         |      Valores       | Predefinição |
 |-------------|:-----------------:|:-------:|
-| `location1Text` | [String](#string) |  nenhum   |
+| `location1Text` | [String](#string) |  nenhuma   |
 
 <details> 
 
@@ -130,7 +130,7 @@ Define o texto de exibição da primeira localização.
 <div align="left">
 
 ```yml
-location1Text: Awesome Wormhole In World One
+location1Text: Buraco de Minhoca Incrível no Mundo Um
 ```
 
 <div align="center">
@@ -149,9 +149,9 @@ location1Text: Awesome Wormhole In World One
 
 Define o texto de exibição da segunda localização.
 
-| Chave         |      Valores       | Padrão |
+| Chave         |      Valores       | Predefinição |
 |-------------|:-----------------:|:-------:|
-| `location2Text` | [String](#string) |  nenhum   |
+| `location2Text` | [String](#string) |  nenhuma   |
 
 <details> 
 
@@ -160,7 +160,7 @@ Define o texto de exibição da segunda localização.
 <div align="left">
 
 ```yml
-location2Text: Awesome Wormhole In World Two
+location2Text: Buraco de Minhoca Incrível no Mundo Dois
 ```
 
 <div align="center">
@@ -179,9 +179,9 @@ location2Text: Awesome Wormhole In World Two
 
 Define a permissão necessária para usar o buraco de minhoca.
 
-| Chave         |      Valores       | Padrão |
+| Chave         |      Valores       | Predefinição |
 |-------------|:-----------------:|:-------:|
-| `permission` | [String](#string) |  nenhum   |
+| `permission` | [String](#string) |  nenhuma   |
 
 <details> 
 
@@ -190,7 +190,7 @@ Define a permissão necessária para usar o buraco de minhoca.
 <div align="left">
 
 ```yml
-permission: elitemobs.mypermission
+permission: elitemobs.minhapermissao
 ```
 
 </div>
@@ -201,11 +201,11 @@ permission: elitemobs.mypermission
 
 ### coinCost
 
-Define o custo, em moedas elite, de usar o buraco de minhoca.
+Define o custo, em moedas de elite, de usar o buraco de minhoca.
 
-| Chave         |      Valores       | Padrão |
+| Chave         |      Valores       | Predefinição |
 |-------------|:-----------------:|:-------:|
-| `coinCost` | [Double](#double) |  nenhum   |
+| `coinCost` | [Duplo](#duplo) |  nenhuma   |
 
 <details> 
 
@@ -227,9 +227,9 @@ coinCost: 2.5
 
 Define a forma visual do buraco de minhoca.
 
-*As partículas que compõem essas formas podem causar lag em certos clientes. Para desabilitar as partículas, vá para **Wormholes.yml** e defina `noParticlesMode` como `true`.*
+*As partículas que compõem estas formas podem causar lag em certos clientes. Para desligar as partículas, vá para **Wormholes.yml** e defina `noParticlesMode` para `true`.*
 
-| Chave         |      Valores       | Padrão |
+| Chave         |      Valores       | Predefinição |
 |-------------|:-----------------:|:-------:|
 | `style` | `NONE` / `CRYSTAL` / `ISOCAHEDRON` / `CUBE` |  `CUBE`   |
 
@@ -257,11 +257,11 @@ style: CRYSTAL
 
 ### particleColor
 
-Define a cor das partículas usadas na configuração `style`.
+Define a cor das partículas usadas na definição `style`.
 
-| Chave         |      Valores       | Padrão |
+| Chave         |      Valores       | Predefinição |
 |-------------|:-----------------:|:-------:|
-| `particleColor` | [`0x` seguido por um hexcode](https://www.w3schools.com/colors/colors_hexadecimal.asp) |  `0x800080`   |
+| `particleColor` | [`0x` seguido por um código hexadecimal](https://www.w3schools.com/colors/colors_hexadecimal.asp) |  `0x800080`   |
 
 <details> 
 
@@ -289,9 +289,9 @@ particleColor: 0x9f5cdd
 
 Define se o portal cega o jogador para um teletransporte mais suave.
 
-| Chave         |      Valores       | Padrão |
+| Chave         |      Valores       | Predefinição |
 |-------------|:-----------------:|:-------:|
-| `blindPlayer` | [Booleano](#boolean) | `false` |
+| `blindPlayer` | [Booleano](#booleano) | `false` |
 
 <details> 
 
@@ -319,9 +319,9 @@ blindPlayer: true
 
 Multiplica o tamanho do portal e a forma definida por `style`.
 
-| Chave         |      Valores       | Padrão |
+| Chave         |      Valores       | Predefinição |
 |-------------|:-----------------:|:-------:|
-| `sizeMultiplier` | [Multiplier](#multiplier) |   `1`   |
+| `sizeMultiplier` | [Multiplicador](#multiplicador) |   `1`   |
 
 <details> 
 
@@ -333,7 +333,7 @@ Multiplica o tamanho do portal e a forma definida por `style`.
 sizeMultiplier: 3
 ```
 
-*Lembre-se de que você terá que ajustar as coordenadas Y do buraco de minhoca após aplicar o multiplicador de tamanho.*
+*Tenha em atenção que terá de ajustar as coordenadas Y do buraco de minhoca após aplicar o multiplicador de tamanho.*
 
 <div align="center">
 
@@ -351,23 +351,23 @@ sizeMultiplier: 3
 
 <details>
 
-<summary align="center"><b>Exemplo de Configuração do Buraco de Minhoca</b></summary>
+<summary align="center"><b>Exemplo de Configuração de Buraco de Minhoca</b></summary>
 
 <div align="left">
 
-Neste exemplo, faremos um buraco de minhoca simples que nos leva de um mundo para outro. Não se esqueça de que os buracos de minhoca também podem simplesmente teletransportar os jogadores para uma localização diferente no mesmo mundo.
+Neste exemplo, faremos um buraco de minhoca simples que nos leva de um mundo para outro. Não se esqueça de que os buracos de minhoca também podem apenas teletransportar os jogadores para uma localização diferente no mesmo mundo.
 
 ```yml
-isEnabled: true #Habilitamos o buraco de minhoca definindo este valor como true
-location1: my_world,1.5,11.0,1.5,108.0,5.0 #este é o local onde o buraco de minhoca aparecerá em my_world
-location2: my_other_world,766.5,29.0,517.5,-136.0,5.0 #este é o local onde o buraco de minhoca aparecerá em my_other_world
-location1Text: "&aGo to My World" #cria um texto de exibição legal acima da localização 1 do buraco de minhoca
-location2Text: "&aGo to My Other World" #cria um texto de exibição legal acima da localização 2 do buraco de minhoca
-permission: eliteperm.coolplayers #apenas os jogadores com essa permissão poderão usar o buraco de minhoca, tanto para localização 1 quanto para localização 2
-coinCost: 2 #os jogadores precisarão pagar 12 moedas elite para poderem usar o buraco de minhoca
-style: CRYSTAL #este buraco de minhoca será na forma de um cristal
-particleColor: 0x00ff00 #isso definirá as partículas do buraco de minhoca como verdes
-blindPlayer: true #o teletransporte do buraco de minhoca cegará o jogador por um curto período para tornar a transição menos desagradável
+isEnabled: true #Ativamos o buraco ao definir este valor como true
+location1: my_world,1.5,11.0,1.5,108.0,5.0 #é aqui que o buraco de minhoca aparecerá em my_world
+location2: my_other_world,766.5,29.0,517.5,-136.0,5.0 #é aqui que o buraco de minhoca aparecerá em my_other_world
+location1Text: "&aIr para o Meu Mundo" #faz um texto de exibição agradável acima da localização1 do buraco de minhoca
+location2Text: "&aIr para o Meu Outro Mundo" #faz um texto de exibição agradável acima da localização2 do buraco de minhoca
+permission: eliteperm.jogadoreslegais #apenas os jogadores com esta permissão poderão usar o buraco de minhoca, tanto para a localização1 como para a localização2
+coinCost: 2 #os jogadores terão de pagar 12 moedas de elite para poderem usar o buraco de minhoca
+style: CRYSTAL #este buraco de minhoca terá a forma de um cristal
+particleColor: 0x00ff00 #isto definirá as partículas do buraco de minhoca para verde
+blindPlayer: true #o teletransporte do buraco de minhoca cegará o jogador por uma curta duração para tornar a transição menos brusca
 sizeMultiplier: 1.0 #define o tamanho da forma do buraco de minhoca
 ```
 
@@ -377,5 +377,4 @@ sizeMultiplier: 1.0 #define o tamanho da forma do buraco de minhoca
 
 #### Problemas de Desempenho
 
-As partículas do buraco de minhoca podem causar problemas de desempenho do cliente para jogadores que estão executando bedrock. Se você deseja desabilitar as partículas do buraco de minhoca, pode ir para `~plugins\EliteMobs\Wormholes.yml` e alterar a configuração `noParticlesMode` para `true`.
-
+As partículas do buraco de minhoca podem causar problemas de desempenho do cliente para os jogadores que estão a executar o bedrock. Se pretender desligar as partículas do buraco de minhoca, pode ir para `~plugins\EliteMobs\Wormholes.yml` e alterar a definição `noParticlesMode` para `true`.

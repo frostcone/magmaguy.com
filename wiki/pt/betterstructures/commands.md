@@ -1,7 +1,7 @@
-```markdown
-# Comandos BetterStructures
+# Comandos do BetterStructures
 
-Abaixo está uma lista abrangente de comandos disponíveis para uso com o plugin BetterStructures, juntamente com suas respectivas permissões necessárias.
+Abaixo está uma lista abrangente de comandos disponíveis para uso com o plugin BetterStructures, juntamente com as suas
+respetivas permissões necessárias.
 
 ## Comando Reload
 
@@ -13,21 +13,24 @@ Abaixo está uma lista abrangente de comandos disponíveis para uso com o plugin
 
 ## Comando Lootify
 
-**Comando:** `/betterstructures lootify <nome do arquivo do tesouro> <raridade> <quantidade mínima> <quantidade máxima> <peso>`
+**Comando:** `/betterstructures lootify <nome do ficheiro do tesouro> <raridade> <minAmount> <maxAmount> <peso>`
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Adiciona o item atualmente segurado à tabela de `raridade` específica do `gerador` específico, randomizando a quantidade do item que pode ser encontrado em um baú entre `quantidade mínima` e `quantidade máxima`, com o `peso` especificado.
+**Descrição:** Adiciona o item atualmente em posse à tabela de `raridade` específica do `gerador` específico,
+randomizando a quantidade do item que pode ser encontrada num baú entre `minAmount` e `maxAmount`, com o `peso`
+especificado.
 
-Este é um sistema muito específico, para mais detalhes sobre como esses valores funcionam, você pode ler [esta página]($language$/betterstructures/creating_structures.md).
+Este é um sistema muito específico, para mais detalhes sobre como esses valores funcionam, pode
+ler [esta página]($language$/betterstructures/creating_structures.md).
 
 ## Comando Place
 
-**Comando:** `/betterstructures place <nome do arquivo da estrutura> <tipo de gerador>`
+**Comando:** `/betterstructures place <nome do ficheiro da estrutura> <tipo de gerador>`
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Força a colocação da estrutura selecionada no seu local.
+**Descrição:** Força a colocação da estrutura selecionada na sua localização.
 
 ## Comando Teleportcoords
 
@@ -35,7 +38,8 @@ Este é um sistema muito específico, para mais detalhes sobre como esses valore
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Não deve ser usado diretamente. Este é o comando que é executado quando um administrador clica em um aviso no chat que permite que ele teletransporte para uma estrutura.
+**Descrição:** Não se destina a ser usado diretamente, este é o comando que é executado quando um administrador clica
+num aviso no chat que o permite teleportar para uma estrutura.
 
 ## Comando Version
 
@@ -43,7 +47,7 @@ Este é um sistema muito específico, para mais detalhes sobre como esses valore
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Exibe a versão do plugin no chat.
+**Descrição:** Imprime a versão do plugin no chat.
 
 ## Comando Silent
 
@@ -51,6 +55,5 @@ Este é um sistema muito específico, para mais detalhes sobre como esses valore
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Silencia ou remove o silêncio dos avisos que aparecem no chat para operadores de servidor sobre estruturas sendo geradas no servidor.
-
-```
+**Descrição:** Silencia ou remove o silêncio dos avisos que aparecem no chat para os operadores do servidor sobre as
+estruturas que estão a ser geradas no servidor.

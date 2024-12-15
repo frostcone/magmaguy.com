@@ -1,62 +1,61 @@
-```markdown
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+# O que é um ficheiro de tesouro?
 
-# 宝箱ファイルとは？
+Ficheiros de tesouro são o que determinam as tabelas de saque para os baús do BetterStructures. Geralmente são atribuídos
+a [geradores]($language$/betterstructures/creating_generators.md&section=treasurefilename), mas também podem ser definidos ao
+nível de uma [configuração de construção individual]($language$/betterstructures/creating_structures.md&section=treasurefile).
 
-宝箱ファイルは、BetterStructures のチェストの loot テーブルを決定するものです。通常、[ジェネレーター]($language$/betterstructures/creating_generators.md&section=treasurefilename) に割り当てられますが、[個々のビルド構成]($language$/betterstructures/creating_structures.md&section=treasurefile) のレベルで設定することもできます。
-
-これらの loot テーブルは非常に強力ですが、理解するには、基本的な統計の概念をある程度知っておく必要があります。
+Estas tabelas de saque são bastante poderosas, mas também requerem conhecimento de alguns conceitos básicos de estatística para serem compreendidas.
 
 <details>
 <summary>
-これらの概念については、こちらをご覧ください。ページの残りの部分では、これらの概念を理解していることを前提としています。
+Leia sobre esses conceitos aqui, o resto da página assume que os compreende!
 </summary>
 
-***加重確率***
+***Probabilidade ponderada***
 
-BetterStructures と EliteMobs では、頻繁に加重確率の概念を使用します。これは、潜在的に無限のアイテムリストから 1 つのアイテムを選択する確率をどのように設定するかという、単純な問題を解決するためです。
+BetterStructures e EliteMobs usam frequentemente o conceito de probabilidade ponderada. Isto serve para resolver um problema simples: como pode definir a chance de escolher um item de uma lista de itens potencialmente infinita?
 
-加重確率は、各アイテムに重みを付けることで、この問題を解決します。100 個のアイテムがあり、それぞれが 1 の重みを持っている場合、すべてのアイテムは、同じ確率（1%）で選択されます。1 つのアイテムを追加して合計を 101 個にすると、最後のアイテムに 1 の確率を与えても、すべてのアイテムは同じ確率（約 0.99%）で選択されます。最後のアイテムに 2 の重みを付けると、選択される確率が上昇します。新しい合計の重みは 102 で、最後の要素の重みは 2、100/102 = 約 0.98% で、0.98% + 0.98% = 1.96% の確率で選択されます。最後のアイテムに 100 の重みを付けると、新しい重みは 200 になり、その重みの半分が新しいアイテムなので、新しいアイテムは 50% の確率で選択されます。
+A probabilidade ponderada resolve este problema ao atribuir um peso a cada item. Se tiver 100 itens e cada um tiver um peso de 1, então todos têm uma chance igual - 1% - de serem escolhidos. Se adicionar mais um item, elevando o total para 101 itens, e atribuir a esse último item uma chance de 1, todos os itens ainda têm a mesma chance - ~0,99% - de serem escolhidos. Se atribuir ao último item um peso de 2, a chance de ele ser escolhido aumenta - o novo peso total é 102, o último elemento tem um peso de 2 e 100/102 = ~0,98%, então 0,98%+0,98% = 1,96% de chance de ser escolhido. Se atribuir ao último item um peso de 100, o novo peso é 200 e, como metade desse peso é o seu novo item, o seu novo item tem 50% de chance de ser escolhido.
 
-ご覧のとおり、これは、数百ものものをランダム化する必要がある場合に適しています。
+Como pode ver, isto é bom para usar quando pode ter listas de centenas de coisas para aleatorizar.
 
-***ガウス分布***
+***Distribuição gaussiana***
 
-ガウス分布は、釣鐘型の数学関数です。
+Uma distribuição gaussiana é uma função matemática em forma de sino.
 
 <img src="http://sfonline.barnard.edu/wp-content/uploads/2015/12/gaussian-distribution.jpg">
 
-これは、loot システムとどのように関係しているのでしょうか？BetterStructures は、チェストの loot を設定する際に、チェストに表示される loot の量を決定する必要があります。量は特定の数値の周囲に一貫して存在する必要がありますが、理想的には、チェストを開けるのがあまりにも予測可能にならないように、チェストを開けるのがそれほど面白くなくなるようにします。
+Pode estar a perguntar-se como é que isto é relevante para o sistema de saque. Uma coisa que o BetterStructures tem de decidir ao definir o saque nos baús é exatamente quanto saque aparece nesses baús. A quantidade deve ser consistentemente próxima de um número específico, mas idealmente não tão previsível que abrir um baú possa tornar-se menos emocionante.
 
-この半ランダムな効果を得るために、ガウス分布を使用して、*選択するアイテムの数* をランダム化します。この数が選択されると、*加重確率* によって、rarety テーブルから 1 つの要素がランダムに選択され、重みが考慮されます。
+Para alcançar este efeito semi-aleatório, a distribuição gaussiana é usada para aleatorizar *quantos* itens são escolhidos. Depois de esta quantidade ser escolhida, a *probabilidade ponderada* escolhe um elemento da tabela de raridade aleatoriamente, tendo em conta os pesos.
 
-では、ガウス分布はどのように機能するのでしょうか？
+Então, como é que a distribuição gaussiana funciona?
 
-幸いなことに、その仕組みを理解する必要はありません。代わりに、それを修正する 2 つの設定、平均と標準偏差に焦点を当てることができます。
+Felizmente, não tem de se preocupar com a forma como a matemática por trás dela funciona e pode, em vez disso, concentrar-se nas duas configurações que a modificam: média e desvio padrão.
 
-*平均*
+*Média*
 
-簡単に言うと、`mean` はガウス曲線の真ん中を設定します。つまり、チェストに表示される可能性が最も高いアイテムの数を設定します。基本的に、チェストに通常 5 つのアイテムを入れたい場合は、平均を 5 に設定します。
+Simplificando, a `média` define o meio da curva gaussiana, o que significa que define a quantidade mais provável de itens que aparecerão num baú. Essencialmente, se quiser que os seus baús tenham geralmente 5 itens, defina a sua média para 5.
 
-*標準偏差*
+*Desvio padrão*
 
-チェスト内のアイテムの平均数を 5 とします。`standard deviation` は、この数が、チェストごとにどれだけ変化できるかを決定するのに役立ちます。
+Imagine que o número médio de itens num baú é 5. O `desvio padrão` ajuda a decidir o quanto este número pode mudar de um baú para outro.
 
-`標準偏差` が小さい（例：1）場合: これは、ほとんどのチェストが、平均値に近い、4、5、または 6 個のアイテムを持っていることを意味します。これは、より予測可能な経験です。たとえば、チェストの標準偏差が 1 の場合、ほとんどのチェストに 4 つから 6 つのアイテムが含まれていると予想できます。
+`Desvio padrão` pequeno (por exemplo, 1): Isto significa que a maioria dos baús terá itens muito próximos da média, como 4, 5 ou 6 itens. É uma experiência mais previsível. Por exemplo, se um baú tiver um desvio padrão de 1, pode esperar que quase todos os baús tenham entre 4 a 6 itens.
 
-`標準偏差` が中程度（例：2）の場合: ここでは、より多くのバリエーションがあります。チェストには、3 つから 7 つのアイテムが含まれている可能性があります。5 つのアイテムが最も一般的ですが、少し多い、または少ないアイテムが含まれているチェストを見つけるのも珍しいことではありません。そのため、標準偏差が 2 の場合、たまに 3 つのアイテムしか入っていないチェストを見つけたり、運が良ければ、7 つのアイテムが入っているチェストを見つけたりすることもあります。
+`Desvio padrão` médio (por exemplo, 2): Aqui, há mais variedade. Os baús podem ter de 3 a 7 itens. Embora 5 itens ainda sejam comuns, não é incomum encontrar baús com um pouco mais ou menos. Portanto, com um desvio padrão de 2, poderá ocasionalmente encontrar um baú com apenas 3 itens ou, se tiver sorte, um com 7 itens.
 
-`標準偏差` が大きい（例：3 以上）場合: これで、本当に驚くべきことに！チェストには、わずか 2 つのアイテムから 8 つ以上のアイテムまで、さまざまなアイテムが含まれている可能性があります。つまり、ほんの数アイテムしかないチェストが見つかることもありますが、たくさんの goodies が詰まっているチェストが見つかる可能性もあります。たとえば、標準偏差が 3 の場合、チェストには 2 から 8 つのアイテムが含まれており、チェストを開けるたびにエキサイティングな賭けになります。
+`Desvio padrão` grande (por exemplo, 3 ou mais): Agora as coisas ficam realmente surpreendentes! Os baús podem ter apenas 2 itens ou até 8 ou mais. Significa que pode encontrar um baú com apenas alguns itens, mas também há uma chance de encontrar um baú carregado de guloseimas. Por exemplo, com um desvio padrão de 3, um baú pode ter entre 2 e 8 itens, tornando cada abertura de baú um jogo emocionante.
 
-***デフォルトの平均値は 4、標準偏差は 3 です。***
+***A média padrão é 4 e o desvio padrão padrão é 3.***
 
 </details>
 
 ***
 
-# 特殊な形式
+# Formato especial
 
-宝箱ファイルには、次の特殊な形式があります。
+Os ficheiros de tesouro têm um formato especial que se parece com isto:
 
 ```yml
 isEnabled: true
@@ -105,39 +104,39 @@ procedurallyGeneratedItemSettings:
 
 ```
 
-*注意: これは、非常に簡略化されたバージョンです。実際には 2599 行あり、loot とすべての可能なエンチャントがはるかに多く含まれています。*
+*Nota: esta é uma versão muito reduzida do ficheiro, o ficheiro real tem 2599 linhas, pois abrange muito mais saque e todos os encantamentos possíveis.*
 
 # isEnabled
 
-| キー |       値        | デフォルト |
+| Chave |       Valores        | Padrão |
 |-|:-------------------:|-|
-| `isEnabled` | [Boolean](#boolean) | `true` |
+| `isEnabled` | [Booleano](#booleano) | `true` |
 
 ***
 
 # mean
 
-| キー    |      値       | デフォルト |
+| Chave    |      Valores       | Padrão |
 |--------|:-----------------:|---------|
-| `mean` | [Double](#double) | `4`     |
+| `mean` | [Duplo](#duplo) | `4`     |
 
-`mean` を設定します。詳細については、[こちら](#what-is-a-treasure-file) をご覧ください。
+Defina a `média`. Leia os detalhes sobre isso [aqui](https://magmaguy.com/wiki.html#lang=pt&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # standardDeviation
 
-| キー                 |      値       | デフォルト |
+| Chave                 |      Valores       | Padrão |
 |---------------------|:-----------------:|---------|
-| `standardDeviation` | [Double](#double) | `3`     |
+| `standardDeviation` | [Duplo](#duplo) | `3`     |
 
-`standardDeviation` を設定します。詳細については、[こちら](#what-is-a-treasure-file) をご覧ください。
+Defina o `desvio padrão`. Leia os detalhes sobre isso [aqui](https://magmaguy.com/wiki.html#lang=pt&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # items
 
-これは、多くのオプションを管理者が設定できるため、少し複雑な部分です。前の設定ファイルの例を拡大して見てみましょう。
+É aqui que a coisa fica complicada, pois muitas das opções podem ser definidas pelos administradores. Vamos analisar o exemplo do ficheiro de configuração de antes.
 
 ```yml
 items:
@@ -163,38 +162,38 @@ items:
       weight: 6.0
 ```
 
-この例では、`items` 設定キーの下に、`common` と `rare` の map があることがわかります。これらは `rarity` です！
+Aqui, pode ver que, sob a chave de configuração `items`, temos um mapa com `common` e `rare`. Estas são `raridades`!
 ***
 
-## rarities
+## raridades
 
-rarity には、固定された名前はありません。同じ形式を使用する限り、自由に追加したり、削除したり、カスタマイズしたりできます。
+As raridades não têm um nome fixo. Pode adicioná-las ou removê-las e personalizá-las o quanto quiser, desde que use o mesmo formato.
 
-これらの rarity テーブルがどれほどレアになるかは、loot テーブルの `weight` によって決まります！
+Note que o que torna estas tabelas de raridade mais ou menos raras é o `peso` da tabela de saque!
 
-デフォルトでは、
-- `common` のデフォルトの `weight` は 60 です。
-- `rare` のデフォルトの `weight` は 30 です。
-- `epic` のデフォルトの `weight` は 10 です。
+Por padrão:
+- `common` tem um `peso` padrão de 60
+- `rare` tem um `peso` padrão de 30
+- `epic` tem um `peso` padrão de 10
 
-これにより、common アイテムは、epic アイテムよりも 6 倍ドロップする確率が高くなります。[`weight` についての詳細はこちらをご覧ください](#what-is-a-treasure-file)！
+Tornando os itens comuns 6 vezes mais prováveis de cair do que os itens épicos. Pode ler mais sobre `pesos` [aqui](https://magmaguy.com/wiki.html#lang=pt&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)!
 
-weight 以外にも、各 rarity テーブルには、独自の `items` リストがあります。
+Além do peso, cada tabela de raridade tem a sua própria lista de `items`.
 
 ***
 
-### rarity アイテム
+### itens de raridade
 
-rarity アイテムは、[map リスト]($language$/global/configuration_file_guide.md&section=map_list) で、rarity テーブルにあるすべてのアイテムをリストします。
+Os itens de raridade são uma [lista de mapas](https://magmaguy.com/wiki.html#lang=pt&article=global+configuration_file_guide.md&section=map-list) que lista todos os itens que a tabela de raridade tem.
 
-これらのアイテムには、次の設定が含まれています。
+Estes itens têm as seguintes configurações:
 
-| キー                                |           値            | デフォルト  |
+| Chave                                |           Valores            | Padrão  |
 |------------------------------------|:---------------------------:|----------|
-| `amount`                           | min-max [Integer](#integer) | variable |
-| `material`                         |    [Material](#Material)    | variable |
-| `procedurallyGenerateEnchantments` |     [Boolean](#boolean)     | variable |
-| `weight`                           |      [Double](#double)      | variable |
+| `amount`                           | min-max [Inteiro](#inteiro) | variável |
+| `material`                         |    [Material](#Material)    | variável |
+| `procedurallyGenerateEnchantments` |     [Booleano](#booleano)     | variável |
+| `weight`                           |      [Duplo](#duplo)      | variável |
 
 ***
 
@@ -202,34 +201,36 @@ rarity アイテムは、[map リスト]($language$/global/configuration_file_gu
 
 ***
 
-ドロップする数を設定します。これは、`amount: MIN-MAX` のように、範囲で表されます。たとえば、1 つから 5 つのアイテムをドロップするには、`amount: 1-5` とします。
+Define a quantidade a largar. Isto é expresso como um intervalo da seguinte forma `amount: MIN-MAX`. Como exemplo, para largar entre 1 a 5
+itens: `amount: 1-5`.
 
 #### material
 
-ドロップされる可能性のあるアイテムの素材を、[Spigot API の名前](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) を使用して設定します。
+Define o material usando os [nomes da API do Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) do
+item a largar potencialmente.
 
 ***
 
-##### 特殊なケース - シリアル化
+##### Caso especial - serializado
 
-lootify コマンドを使用する場合、material の代わりに、lootify は `serialized` 設定を提供します。これはプラグインによって自動的に生成されるため、手動で生成しないでください。これは、人間が読み取れない形式です。
+Ao usar o comando lootify, em vez de um material, o lootify fornecerá uma configuração `serialized`. Isto é gerado automaticamente pelo plugin e não deve ser gerado manualmente. Está num formato que não é legível por humanos.
 
 ***
 
 #### weight
 
-加重確率の重みを設定します。詳細については、[こちら](#what-is-a-treasure-file) をご覧ください。
+Define o peso para a chance ponderada. Mais sobre isso [aqui](https://magmaguy.com/wiki.html#lang=pt&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
-#### procedurallyGenerateEnchantments
+#### procedurallyGenerateItems
 
-`procedurallyGeneratedItemSettings` にある設定に基づいて、アイテムを処理で生成するかどうかを設定します。設定に基づいて、エンチャントなしでアイテムが生成される場合があります。
+Define se o item deve ser gerado processualmente com base nas configurações de configuração, se `procedurallyGeneratedItemSettings`. Note que, com base nas configurações, isto pode resultar num item a gerar sem encantamentos, independentemente.
 
 
 # procedurallyGeneratedItemSettings
 
-設定ファイルの例をもう一度見てみましょう。
+Vamos dar outra olhadela no nosso exemplo de ficheiro de configuração:
 
 ```yml
 procedurallyGeneratedItemSettings:
@@ -244,37 +245,32 @@ procedurallyGeneratedItemSettings:
       chance: 0.2
 ```
 
-ご覧のとおり、このファイルには、素材タイプ、エンチャント、最小レベルと最大レベル、確率がリストされています。
+Como pode ver, este ficheiro lista os tipos de material, seguidos pelos encantamentos e, em seguida, seguidos pelos níveis mínimo e máximo e uma chance.
 
-他のプラグインから、カスタム素材をこれらの設定に追加することはできません。また、他のプラグインの作者が、明示的にシステムを互換性があると宣言していない限り、他のプラグインのカスタムエンチャントを追加できない可能性があります。
+Note que não pode adicionar materiais personalizados de outros plugins nestas configurações e provavelmente não poderá adicionar encantamentos personalizados de outros plugins, a menos que o seu autor diga explicitamente que tornou o seu sistema compatível.
 
-エンチャントの設定については、次のとおりです。
+Quanto às configurações de encantamento:
 
-| キー        |       値        | デフォルト  |
+| Chave        |       Valores        | Padrão  |
 |------------|:-------------------:|----------|
-| `minLevel` | [Integer](#integer) | variable |
-| `maxLevel` | [Integer](#integer) | variable |
-| `chance`   |  [Chance](#chance)  | variable |
+| `minLevel` | [Inteiro](#inteiro) | variável |
+| `maxLevel` | [Inteiro](#inteiro) | variável |
+| `chance`   |  [Chance](#chance)  | variável |
 
 ***
 
 ## minLevel
 
-エンチャントの最小レベルを設定します。
+Define o nível mínimo de encantamento.
 
 ***
 
 ## maxLevel
 
-エンチャントの最大レベルを設定します。
+Define o nível máximo de encantamento.
 
 ***
 
 ## chance
 
-エンチャントが発生する確率を設定します。これは、加重確率ではなく、通常のサイコロのロールです。
-
-```
-
-
-
+Define a chance de o encantamento acontecer. Isto não está a usar probabilidade ponderada, apenas um lançamento de dados normal.

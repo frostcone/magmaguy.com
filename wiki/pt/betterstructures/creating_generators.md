@@ -1,25 +1,24 @@
-```markdown
-## ジェネレーター
+## Geradores
 
-ジェネレーターは、BetterStructures の設定システムの中で最も強力な部分です。デフォルトでは、ジェネレーターは 27 個あり、これらは現在 BetterStructures によって配布されている 200 を超えるビルドをまとめて管理しています。独自のジェネレーターを作成することもできますが、既存のジェネレーターをショートカットとして使用することもできます。
+Os geradores são a parte mais poderosa do sistema de configuração do BetterStructures. Por padrão, existem 27 geradores que gerem coletivamente mais de 200 construções atualmente distribuídas pelo BetterStructures, e embora possa criar os seus próprios geradores, também pode usar os existentes como atalho.
 
-ジェネレーターは、プラグインに、ものが正確にどこでスポーンするかを指示し、loot テーブルを定義します。デフォルトのジェネレーターの名前は、何をすべきかを推測しやすいように付けられています。
+Os geradores dizem ao plugin onde exatamente as coisas devem surgir e definem tabelas de loot. Os geradores padrão também são nomeados de forma que seja muito fácil adivinhar o que fazem.
 
-ジェネレーターで必須のフィールドは、`structureType` 設定のみです。これは、ビルドが空に、浅い地下に、深い地下に、地上に、または液体の上面にスポーンするように設計されているかどうかをプラグインに指示します。
+O único campo obrigatório para os geradores é a configuração `structureType`, que diz ao plugin se a construção deve surgir no céu, no subsolo raso, no subsolo profundo, na superfície ou na superfície líquida.
 
 ***
 
 ### isEnabled
 
-ジェネレーターを有効にするかどうかを設定します。
+Define se o gerador está ativado.
 
 ***
 
 ### structureType
 
-ビルドがどのような構造であるかを設定します。**複数のタイプをリストとして指定することもできます！**
+Define que tipo de estrutura é a construção. **Observe que pode criar uma lista de vários tipos!**
 
-次の値は、有効な構造タイプです。
+Os seguintes são valores de tipo de estrutura válidos:
 
 ***
 
@@ -30,7 +29,7 @@ structureType:
 - SURFACE
 ```
 
-サーフェス構造は、ワールドの表面にスポーンします。唯一の例外は、ネザー環境で、プラグインが十分に表面と見なすポイントにスポーンする場合です。
+As estruturas de superfície surgem na superfície do mundo. A única exceção é o ambiente Nether, onde surgem em pontos que o plugin considera suficientemente semelhantes à superfície.
 
 ***
 
@@ -41,7 +40,7 @@ structureType:
 - SKY
 ```
 
-スカイ構造は、空気の上 80 ～ 120 ブロックの間にスポーンします。これは、`config.yml` で設定可能です。唯一の例外は、ネザー環境で、プラグインが十分に空気と見なすポイントにスポーンする場合です。
+As estruturas do céu surgem entre 80 e 120 blocos acima do ar, configuráveis em config.yml. A única exceção é o ambiente Nether, onde surge em pontos que o plugin considera suficientemente semelhantes ao ar.
 
 ***
 
@@ -52,9 +51,9 @@ structureType:
 - UNDERGROUND_SHALLOW
 ```
 
-地下の浅い構造は、オーバーワールドでは y=0 から y=60 の間に、ネザーでは y=60 から y=120 の間に、エンドでは有効な地下の高さの範囲にスポーンします。
+As estruturas subterrâneas rasas surgem entre y=0 e y=60 no overworld, y=60 e y=120 no nether e qualquer altura subterrânea válida no End.
 
-_**注意:**_ 2 つの地下設定があることに注目してください。これは、1 つしかない場合、地下が非常にまばらになるためです。Minecraft には地下に多くのスペースがあり、プレイヤーは、単純に地下に掘らなかったために、地下構造を見逃してしまうことがよくあります。これにより、さまざまな深さで均等に分布することも保証されます。
+_**Nota:** Irá notar que existem duas configurações subterrâneas. Isto porque ter apenas uma resulta em ter um subsolo muito escasso, já que o Minecraft tem muito espaço subterrâneo e os jogadores muitas vezes perdem estruturas subterrâneas simplesmente porque não escavaram até elas. Isto também garante que haja uma distribuição uniforme em diferentes profundidades._
 
 ***
 
@@ -65,7 +64,7 @@ structureType:
 - UNDERGROUND_DEEP
 ```
 
-地下の深い構造は、オーバーワールドでは y=-64 から y=0 の間に、ネザーでは y=0 から y=60 の間にスポーンし、エンドではスポーンしません。
+As estruturas subterrâneas profundas surgem entre y=-64 e y=0 no overworld, y=0 e y=60 no nether e não surgem no End.
 
 ***
 
@@ -76,47 +75,42 @@ structureType:
 - LIQUID_SURFACE
 ```
 
-液体サーフェス構造は、液体の上にスポーンします。オーバーワールドの場合、水の上にスポーンし、ほとんどの場合、海にスポーンします。ネザーの場合、溶岩湖にスポーンします。エンドにはスポーンしません。
+As estruturas de superfície líquida surgirão em líquidos. No caso do overworld, irão surgir em água e quase sempre em oceanos. No caso do Nether, irão surgir nos lagos de lava. Não irão surgir no End.
 
 ***
 
 ### lowestYLevel
 
-構造がスポーンする最低 Y レベル（高度）を設定します。
+Define o nível Y mais baixo (altitude) em que a estrutura irá surgir.
 
 ***
 
 ### highestYLevel
 
-構造がスポーンする最高 Y レベル（高度）を設定します。
+Define o nível Y mais alto (altitude) em que a estrutura irá surgir.
 
 ***
 
 ### validWorlds
 
-構造がスポーンするワールドのリストを設定します。**リストが存在しない場合は、プラグインで許可されているすべてのワールドが使用されます。** ただし、環境タイプやバイオームなどによって制限される場合があります。
+Define a lista de mundos em que a estrutura irá surgir. **Se não existir lista, irá usar todos os mundos permitidos pelo plugin**, a menos que seja limitado de outra forma (tal como pelo tipo de ambiente ou biomas).
 
 ***
 
 ### validWorldEnvironments
 
-構造がスポーンするワールド環境のリストを設定します。**リストが存在しない場合は、プラグインで許可されているすべてのワールド環境が使用されます。** 有効な値は、`NORMAL`、`NETHER`、`END`、`CUSTOM` です。
+Define a lista de ambientes mundiais em que a estrutura irá surgir. **Se não existir lista, irá usar todos os ambientes mundiais permitidos pelo plugin**. Valores válidos: `NORMAL`, `NETHER`, `END` e `CUSTOM`.
 
 ***
 
 ### validBiomes
 
-構造がスポーンする有効なバイオームのリストを設定します。**リストが定義されていない場合は、すべてのバイオームが有効であると見なされます！**。
+Define a lista de biomas válidos em que a estrutura irá surgir. **Se não for definida nenhuma lista, irá assumir que todos os biomas são válidos!**.
 
-これには、[Spigot API](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) で定義されているバイオームのリストを使用する必要があります。
+Isto requer usar a lista de biomas conforme definida pela [Spigot API](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html).
 
 ***
 
 ### treasureFilename
 
-ジェネレーターが使用する宝箱ファイルを設定します。これは、このジェネレーターを使用するすべてのビルドのチェストにスポーンするものを設定します。ただし、[スキーム構成の `treasureFile` 設定]($language$/betterstructures/creating_structures.md&section=treasurefile) で別の値が設定されている場合は、その値が使用されます。
-
-```
-
-
-
+Define o ficheiro de tesouros que o gerador irá usar. Isto define o que surge nos baús para todas as construções que usam este gerador, a menos que um valor diferente seja definido na configuração `treasureFile` de uma configuração esquemática [($language$/betterstructures/creating_structures.md&section=treasurefile)].

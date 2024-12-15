@@ -1,274 +1,270 @@
-```markdown
-もしここに載っていない質問がある場合は、***サイドバーを見てください***。wiki にそのページが用意されているかもしれません！
+もしここにない質問がある場合は、***サイドバーを見てください***。Wikiに専用のページがあるかもしれません！
 
-# 設定とインストールに関する FAQ
+# セットアップとインストールに関するFAQ
 
-### カスタムモデルをセットアップするにはどうすればいいですか？
+### カスタムモデルをセットアップするにはどうすればよいですか？
 
 <details>
 <summary>
 情報
 </summary>
 
-"カスタムモデル" を扱うプラグインは 2 つあります。
+「カスタムモデル」を扱うプラグインは2種類あります。
 
-- LibsDisguises（無料版を含む）を使用すると、モブを別のモブに変装させるか、カスタムプレイヤーのスキンに変装させることができます。プレイヤーの変装をしたカスタムボスがいる場合、LibsDisguises を使用して変装しています。この特定の機能を動作させるには、LibsDisguises をダウンロードする必要があります。
+- LibsDisguises (無料版を含む) は、モブを他のモブやカスタムプレイヤースキンに変装させることができます。カスタムボスがプレイヤースキンに変装しているのを見たら、それは変装にLibsDisguisesを使用しています。この特定の機能を動作させるには、LibsDisguisesをダウンロードする必要があります。
 
-
-- FreeMinecraftModels（ModelEngine R3 も使用できますが、ModelEngine は推奨されていません）を使用すると、非常に少ない制限で、モブを任意のカスタムモデルに変装させることができます。FreeMinecraftModels は無料で使用でき、お勧めです。カスタムモデルを動作させるには、FreeMinecraftModels または ModelEngine R3（R4 ではありません）のいずれかを使用する必要があります。FreeMinecraftModels は ModelEngine と同時に実行できます。そのため、両方のプラグインを実行することもできます。
-<br>FreeMinecraftModels/ModelEngine をインストールしたにもかかわらず、カスタムモデルがまだ動作しない場合は、モデルプラグインをインストールする前にコンテンツをインストールした可能性があります。これが問題ないことを確認するために、カスタム変装付きの EliteMobs コンテンツを再インポートして、もう一度インストールしてください。
+- FreeMinecraftModels (およびModelEngine R3。ただし、ModelEngineはもう推奨されていません) では、モブをほとんど制限なく任意のカスタムモデルに変装させることができます。FreeMinecraftModelsではこれが無料ででき、推奨されています。カスタムモデルを動作させるには、FreeMinecraftModelsまたはModelEngine R3 (R4ではない) のいずれかを使用する必要があります。FreeMinecraftModelsはModelEngineと並行して実行できるため、両方を実行することもできます。<br>FreeMinecraftModels/ModelEngineをインストールしてもカスタムモデルがまだ動作しない場合は、モデルプラグインをインストールする前にコンテンツをインストールした可能性があります。この問題がないことを確認するには、カスタム変装を使用してEliteMobsコンテンツを再インポートし、再度インストールしてください。
 
 </details>
 
-### コンソールまたは EliteMobs に、WorldGuard のバージョンが間違っているというメッセージが表示されます。
+### コンソール / EliteMobsで間違ったWorldGuardバージョンを使用していると言われます
 
 <details>
 <summary>
 情報
 </summary>
 
-EliteMobs に WorldGuard がインストールされていないと報告された場合、サーバープラットフォームに適した WorldGuard のバージョンを使用していないことが原因です。WorldGuard は、使用しているバージョンに非常に敏感で、サーバーソフトウェアごとに異なるバージョンが用意されています。
+EliteMobsでWorldGuardがインストールされていないと報告される場合、それはサーバープラットフォームで間違ったWorldGuardバージョンを使用しているためです。WorldGuardはどのバージョンを使用しているかに非常に敏感で、サーバーソフトウェアごとに異なるバージョンがあります。
 
-- Spigot/Paper 用の WorldGuard のバージョンは、こちらからダウンロードできます。https://dev.bukkit.org/projects/worldguard - Minecraft のバージョンとの互換性があることが記載されていることを確認してください！
+- Spigot / Paper用のWorldGuardバージョンはここからダウンロードできます: https://dev.bukkit.org/projects/worldguard - お使いのMinecraftバージョンと互換性があることを確認してください!
 
 </details>
 
-### ワープホール/アリーナ/NPC が、インストール直後に正しく動作していないようです。
+### ワームホール / アリーナ / NPCがインストール直後に正しく動作していないようです
 
 <details>
 <summary>
 情報
 </summary>
 
-ワープホール/アリーナ/NPC が、コンテンツをインストールした直後に正しく動作していない場合は、`/em reload` を実行する必要があります。EliteMobs のコンテンツをインストールした後は、必ず実行してください。
+ワームホール / アリーナ / NPCがコンテンツのインストール直後に正しく動作していないように見える場合は、`/em reload`を実行する必要があります。EliteMobsコンテンツをインストールした後、常に実行することをお勧めします。
 
 </details>
 
-### ダンジョンボスが倒した後、再び現れません。
+### ダンジョンボスを倒した後、再出現しません
 
 <details>
 <summary>
 情報
 </summary>
 
-ほとんどの場合、これは、一部のボスが長いリスポーン時間を持つためです。Binder of Worlds の影は、現実時間で 1 週間という長いリスポーンタイマーを持っています。レイドボスは通常、4 時間のリスポーンタイマーを持っています。それ以外のものは、5 分から 30 分のリスポーンタイマーになっている傾向があります。カスタムボスのリスポーンタイマーは、`~/plugins/EliteMobs/custombosses` フォルダ内の設定ファイルで編集できます。
+ほとんどの場合、これは一部のボスが長いリスポーン時間を持っているためです。「世界の束縛者の影」は、現実世界の1週間の長いリスポーンタイマーを持っています。隠れ家のボスは通常4時間のリスポーンタイマーを持っています。その他はすべて5〜30分のリスポーンタイマーであることが多いです。カスタムボスのリスポーンタイマーは、`~/plugins/EliteMobs/custombosses`フォルダにある構成ファイルで編集できます。
 
 </details>
 
-### ダンジョンボスがインストール後、まったく出現しませんでした。
+### インストール後、ダンジョンボスが一度も出現しませんでした
 
 <details>
 <summary>
 情報
 </summary>
 
-これは、ほとんどの場合、サードパーティプラグインの干渉によるものです。次のことを確認してください。
-- ワールドの難易度が「Peaceful」になっていますか？モブは「Peaceful」難易度ではスポーンしません。
+これはほぼ確実にサードパーティ製プラグインの干渉によるものです。以下を確認してください。
+- ワールドはピースフル難易度になっていますか? モブはピースフル難易度ではスポーンしません。
 
+- あなたの領域はスポーンから保護されていますか? EliteMobsダンジョンはWorldGuardを介して独自の領域保護を処理します。EliteMobsダンジョンワールドを保護する必要はありません。実際には、間違ったフラグを使用するとスポーンを防ぐ可能性があります。
 
-- リージョンがスポーンから保護されていますか？EliteMobs ダンジョンは、WorldGuard を介して独自のリージョン保護を処理します。EliteMobs のダンジョンワールドを保護する必要はありません。実際には、間違ったフラグを使用すると、スポーンが妨げられる可能性があります。
-
-
-- EliteMobs ボスのスポーンを妨げたり、削除したりする別のプラグインはありますか？これらの競合は、多くの場合、コンソールに表示されるため、コンソールのログを確認してください。
+- EliteMobsボスのスポーンを妨げたり、削除したりする別のプラグインはありますか? これらの競合は多くの場合、コンソールに表示されるため、コンソールログを確認してください。
 
 </details>
 
-### インストールしたばかりのコンテンツのコマンドが自動補完されません。
+### プラグインがインストールしたばかりのコンテンツのコマンドを自動補完しません
 
 <details>
 <summary>
 情報
 </summary>
 
-コマンドの自動補完は、CloudCommandFramework によって処理され、コマンドの候補が更新されるのは **サーバーの再起動後** です。残念ながら、これについては何もできません。
+コマンドの自動提案はCloudCommandFrameworkによって処理され、**サーバー再起動後**にのみコマンド提案が更新されます。残念ながら、それについては何もできません。
 
 </details>
 
-### EliteMobs の翻訳を使用するにはどうすればいいですか？
+### EliteMobsの翻訳をどのように使用しますか？
 
 <details>
 <summary>
 情報
 </summary>
 
-`/em language <languagename>.yml` を実行することで、EliteMob の言語を変更できます。これにより、EliteMobs コミュニティによって作成され、管理されているデフォルトのプラグイン翻訳を使用できます。
+`/em language <言語名>.yml`を実行して、EliteMobsコミュニティによって作成および管理されたデフォルトのプラグイン翻訳を使用することにより、EliteMobの言語を変更できます。
 
-プラグインに含まれていない言語を追加したり、既存の言語をカスタマイズしたりするには、`custom_language.yml` を使用することをお勧めします。
+プラグインにない言語を追加したり、既存の言語をカスタマイズしたりするには、`custom_language.yml`を使用することをお勧めします。
 
-言語ファイルの内容は、言語を切り替えたときにのみ生成されます！
+言語ファイルは、言語を切り替えたときにのみコンテンツを生成します！
 
-yml ファイルのフォーマットが壊れてしまうと（これは簡単に起こります）、ファイルがリセットされます！***手動でコンテンツを翻訳している場合は、翻訳のローカルバックアップを作成してください！***
+誤って行いやすい、ymlファイルのフォーマットを壊すと、ファイルがリセットされます！ ***コンテンツを手動で翻訳する場合は、翻訳のローカルバックアップを必ず保管してください！***
 
-コミュニティの翻訳ウェブサイトで言語ファイルを翻訳すると、フォーマットが処理されるため、より簡単に翻訳できます。また、自動的に翻訳を提案します。こちらから見つけることができます。https://crowdin.com/project/elitemobs
+コミュニティ翻訳ウェブサイトで言語ファイルを翻訳する方が簡単です。これはフォーマットを処理してくれるからです！また、自動的に翻訳を提案します。こちらをご覧ください：https://crowdin.com/project/elitemobs
 
-翻訳時に、`&` などの特殊文字を使用して設定値を開始する場合は、値を引用符で囲んで、\"&cCool value\" のようにしてください。そうしないと、ファイルが壊れてしまい、進捗状況がリセットされます。yml ファイルの有効性をチェックするには、リンターを使用できます。yml コンテンツをここに貼り付けるだけです。 <https://www.yamllint.com/>
+念のためですが、翻訳している場合、`&`などの特殊文字を使用して構成値を開始する場合は、`\"&cCool value\"`のように値を引用符で囲む必要があります！そうしないと、ファイルが壊れ、進行状況がリセットされます。linterを使用してymlファイルの有効性を確認できます。ymlの内容をここに貼り付けるだけです: <https://www.yamllint.com/>
 
 </details>
 
-# EliteMobs と BetterStructures の互換性に関する FAQ
+# EliteMobsとBetterStructuresの互換性に関するFAQ
 
-### BetterStructure で、EliteMobs のボスを含む構造物を取得できますか？
+### BetterStructureでEliteMobsのボスがいる構造物を手に入れることはできますか？
 
 <details>
 <summary>
 情報
 </summary>
 
-はい、BetterStructures の神殿パッケージは、まさにこの種のコンテンツです。神殿パックは、[itch.io](https://magmaguy.itch.io/) からダウンロードできます。
+はい、BetterStructures神社のパッケージはまさにこの種のコンテンツです。神社のパックは[itch.io](https://magmaguy.itch.io/)からダウンロードできます。
 
 </details>
 
-### なぜ神殿は WorldGuard で保護されているのですか？どのようにして保護を解除できますか？
+### なぜ神社はWorldGuardで保護されており、それを防ぐにはどうすればよいですか
 
 <details>
 <summary>
 情報
 </summary>
 
-EliteMobs の神殿構造物は、デフォルトで WorldGuard で保護されています。これは、プレイヤーが戦闘エリア内で Minecraft の戦闘システムを悪用するような仕掛けを構築することを防ぐためです。
+EliteMobs神社の構造物は、戦闘エリア内でプレイヤーがMinecraftの戦闘システムを悪用する構造物を構築しないように、デフォルトでWorldGuardで保護されています。
 
 保護は、ボスが倒されると自動的に削除されます。
 
-すべて的神殿には、プレイヤーが地下にある場合に探す必要があるエントリポイントがあります。
+すべての神社には、地下にある場合にプレイヤーが掘り進んで見つける必要のあるエントリポイントがあります。
 
-WorldGuard 保護を使用しない場合は、BetterStructures の `config.yml` 設定ファイルで無効にすることができます。
+WorldGuard保護を使用したくない場合は、BetterStructures config.yml構成ファイルで無効にできます。
 
 </details>
 
-### なぜ神殿にエリートがスポーンしていないのですか？
+### なぜ神社はエリートなしでスポーンするのですか？
 
 <details>
 <summary>
 情報
 </summary>
 
-これは、EliteMobs をインストールする前に BetterStructures の神殿をインストールした場合に発生する可能性があります。これを解決するには、EliteMobs をインストールした **後** に、神殿をサーバーに再インポートして再インストールしてください。
+これは、EliteMobsをインストールする前にBetterStructures神社をインストールした場合に発生する可能性があります。これを修正するには、EliteMobsがインストールされた**後**、神社をサーバーに再インポートして再インストールしてください。
 
 </details>
 
-### EliteMobs を使用せずに、神殿を使用できますか？
+### EliteMobsを使用せずに神社を使用できますか
 
 <details>
 <summary>
 情報
 </summary>
 
-神殿は、神殿内にいるボスと戦うために特別に作られましたが、単に戦闘アリーナの見た目を取得したい場合は、EliteMobs をインストールせずに、神殿パッケージを実行できます。
+神社は、その中にいるボスと戦うために特別に作られましたが、外観のために戦闘アリーナだけが必要な場合は、EliteMobsをインストールせずに神社のパッケージを実行できます。
 
 </details>
 
-# EliteMobs と FreeMinecraftModels の互換性に関する FAQ
+# EliteMobsとFreeMinecraftModelsの互換性に関するFAQ
 
-### FreeMinecraftModels は EliteMobs と互換性がありますか？
+### FreeMinecraftModelsはEliteMobsと互換性がありますか？
 
 <details>
 <summary>
 情報
 </summary>
 
-はい。FreeMinecraftModels プラグインは、EliteMobs と EternalTD のために特別に開発されました。
+はい。FreeMinecraftModelsプラグインは、EliteMobsとEternalTDを中心に特別に作成されました。
 
 </details>
 
-### EliteMobs のカスタムモデルをインストールするにはどうすればいいですか？
+### EliteMobsカスタムモデルをインストールするにはどうすればよいですか？
 
 <details>
 <summary>
 情報
 </summary>
 
-EliteMobs のカスタムモデルは、https://www.patreon.com/magmaguy と https://magmaguy.itch.io/ からダウンロードできます。インストールしたら、公式のリソースパックを使用し、オンラインでホスティングしてプレイヤーに配布する場合は、FreeMinecraftModels の出力フォルダで生成されたカスタムリソースパックを、EliteMobs の公式リソースパックと **マージする必要があります** 。
+EliteMobsのカスタムモデルは、https://www.patreon.com/magmaguy および https://magmaguy.itch.io/ からダウンロードできます。インストールしたら、オンラインでホストしてプレイヤーに配布したい場合は、FreeMinecraftModelsがその出力フォルダーで生成したリソースパックを、EliteMobsからの公式リソースパックと**マージする必要があります**。
 
 </details>
 
-### EliteMobs のカスタムモデルをインストールするにはどうすればいいですか？
+### EliteMobsカスタムモデルをインストールするにはどうすればよいですか？
 
 <details>
 <summary>
 情報
 </summary>
 
-EliteMobs のカスタムモデルは、https://www.patreon.com/magmaguy と https://magmaguy.itch.io/ からダウンロードできます。インストールしたら、公式のリソースパックを使用し、オンラインでホスティングしてプレイヤーに配布する場合は、FreeMinecraftModels の出力フォルダで生成されたカスタムリソースパックを、EliteMobs の公式リソースパックと **マージする必要があります** 。
+EliteMobsのカスタムモデルは、https://www.patreon.com/magmaguy および https://magmaguy.itch.io/ からダウンロードできます。インストールしたら、オンラインでホストしてプレイヤーに配布したい場合は、FreeMinecraftModelsがその出力フォルダーで生成したリソースパックを、EliteMobsからの公式リソースパックと**マージする必要があります**。
 
 </details>
 
+# EliteMobsとResurrectionChestの互換性に関するFAQ
 
-# EliteMobs と ResurrectionChest の互換性に関する FAQ
-
-### EliteMobs は ResurrectionChest と動作しますか？
+### EliteMobsはResurrectionChestと連携しますか？
 
 <details>
 <summary>
 情報
 </summary>
 
-はい。ResurrectionChest は、EliteMobs コンテンツ専用に開発されており、完全に互換性があります。
+はい。ResurrectionChestはEliteMobsコンテンツ専用に作成されており、完全に互換性があります。
 
 </details>
 
-# その他のプラグインとの互換性に関する FAQ
+# 他のプラグインとの互換性に関するFAQ
 
-### EliteMobs を、MCMMO や AureliumSkills に似たプラグインと使用できますか？
+### MCMMOやAureliumSkillsのようなプラグインと一緒にEliteMobsを使用できますか
 
 <details>
 <summary>
 情報
 </summary>
 
-はい。ただし、EliteMobs のプレステージシステムによる追加の体力は、無効にすることをお勧めします。
+はい。そうは言っても、EliteMobsのプレステージシステムによるボーナスヘルスを無効にすることもできます。
 
 </details>
 
-### EliteMobs を、別のカスタムアイテムプラグインと使用できますか？
+### 別のカスタムアイテムプラグインでEliteMobsを使用できますか
 
 <details>
 <summary>
 情報
 </summary>
 
-はい。ボスがそのプラグインの特定のアイテムをドロップするようにするには、死亡時のコマンドを実行して、プレイヤーにそのアイテムを与えるように設定します。ただし、使用しているアイテムシステムに関係なく、EliteMobs をバランスさせる方法は実際にはありません。エリートは、体力が 7 から数十万にまで増加するため、他のアイテムプラグインは、信じられないほど強力になるか、非常に弱体化します。EliteMobs はすでにアイテムシステムを内蔵しているため、外部のアイテムプラグインは必要ありません。
+はい。ボスにそのプラグインから特定のアイテムをドロップさせたい場合は、死亡時のコマンドを設定して、その方法でプレイヤーにアイテムを与えます。ただし、使用しているアイテムシステムでEliteMobsのバランスを取るための適切な方法はありません。エリートは7ヘルスポイントから数十万のヘルスポイントまで増加するため、他のアイテムプラグインは非常に強力になるか、非常に弱くなります。EliteMobsにはすでに組み込まれたアイテムシステムがあり、外部のアイテムプラグインは必要ありません。
 
 </details>
 
-# その他の FAQ
+# その他のFAQ
 
-### Elite Mob の死亡時にコマンドを実行したり、他のプラグインから loot/報酬を死亡時に付与したりできますか？
+### エリートモブの死亡時にコマンドを実行するか、エリートモブの死亡時に他のプラグインから戦利品/報酬を与えますか？
 
-[情報はここにあります。]($language$/elitemobs/creating_bosses.md&section=ondeathcommands)
+[情報はここで入手できます。]($language$/elitemobs/creating_bosses.md&section=ondeathcommands)
 
-### Vault サポートはありますか？
+### Vaultサポートはありますか？
 
-[情報はここにあります。]($language$/elitemobs/vault.md)
+[情報はここで入手できます。]($language$/elitemobs/vault.md)
 
-### PlaceholderAPI プレースホルダーはありますか？
+### PlaceholderAPIのプレースホルダーはありますか？
 
-[情報はここにあります。]($language$/elitemobs/placeholders.md)
+[情報はここで入手できます。]($language$/elitemobs/placeholders.md)
 
-### WorldGuard のフラグを使用して、EliteMobs を一部の場所では許可し、他の場所では許可しないようにできますか？
+### WorldGuardフラグを使用して、一部の場所ではEliteMobsを許可し、他の場所では許可しないようにすることはできますか？
 
-[情報はここにあります。]($language$/elitemobs/worldguard_flags.md)
+[情報はここで入手できます。]($language$/elitemobs/worldguard_flags.md)
 
-### スポーンするモブの 100% を Elite Mob にできますか？
+### スポーンするモブの100％をエリートモブにすることはできますか？
 
-これはひどい考えですが、`MobCombatSettings.yml` 設定ファイルにアクセスして、`eliteMobsSpawnPercentage` を編集することで、Elite Mob のスポーン率を設定できます。
+これはひどい考えですが、`MobCombatSettings.yml`構成ファイルにアクセスして、
+`eliteMobsSpawnPercentage`を編集して、エリートモブのスポーン率を設定できます。
 
 ### カスタムパワーを作成できますか？
 
-[情報はここにあります。]($language$/elitemobs/creating_powers.md)
+[情報はここで入手できます。]($language$/elitemobs/creating_powers.md)
 
 ### カスタムエンチャントを作成できますか？
 
-これは、私たちの ToDo リストにあり、まもなく公開される予定です。しかし、現時点では不可能です。
+これは私たちのTo Doリストにあり、近日中に登場する予定ですが、現在はできません。
 
-### カスタムポーション効果を作成できますか？
+### カスタムポーションエフェクトを作成できますか？
 
-これを行うには、Java を学習して自分で書く必要があります。その時点で、EliteMobs のソースコードを変更するのも同じことです。
+これを行う唯一の方法は、Javaを学び、自分で記述することです。その時点で、EliteMobsソースコードを修正することもできます。
 
-### ワープホールのパーティクルをオフにするにはどうすればいいですか？
+### ワームホールのパーティクルをオフにするにはどうすればよいですか？
 
-ワープホールのパーティクルをオフにするには、*~plugins\EliteMobs\Wormholes.yml* に移動し、`noParticlesMode` を探し、値を `false` に変更します。
+ワームホールのパーティクルをオフにするには、*~plugins\EliteMobs\Wormholes.yml*に移動し、`noParticlesMode`を見つけて
+値を`false`に変更します。
 
-### AG スポーンのワープホールを編集して、プレイヤーを好きな場所にテレポートさせるにはどうすればいいですか？
+### AGスポーンのワームホールを編集して、プレイヤーを好きな場所にテレポートするにはどうすればよいですか？
 
 <div align="center">
 
@@ -276,39 +272,46 @@ EliteMobs のカスタムモデルは、https://www.patreon.com/magmaguy と htt
 
 </div>
 
-*plugins\EliteMobs\wormholes\adventurers_guild_wormhole.yml* を開いてください。
+*plugins\EliteMobs\wormholes\adventurers_guild_wormhole.yml*を開くことで実行できます。
 
-次に、次の設定を見つけます。
+次に、次の設定を見つけます
 `location2: your_world_here,0.5,64,0.5,0,0`
-値を希望の場所に変更します。
+値を目的の場所に変更します。
 
-### アイテムのソウルバインドを解除するにはどうすればいいですか？
+変更を有効にするには、`/em reload`を実行することを忘れないでください。
 
-アイテムからソウルバインドを解除する唯一の方法は、ソウルバインド解除スクロールを使用することです。詳細については、[こちら]($language$/elitemobs/soulbind.md) をご覧ください。
+### アイテムのバインドを解除するにはどうすればよいですか？
 
-### リソースパックをマージするにはどうすればいいですか？
+アイテムからソウルバウンドを削除する唯一の方法は、アンバインドスクロールを使用することです。詳細については、
+[こちら]($language$/elitemobs/soulbind.md)を参照してください。
 
-リソースパックを手動でマージすることもできますが、[merge.elmakers](https://merge.elmakers.com/) などのオンラインツールを使用して、リソースパックをマージすることをお勧めします。
+### リソースパックをマージするにはどうすればよいですか？
 
-### EliteMobs のコマンドプレースホルダーは何ですか？
+リソースパックを手動でマージすることは可能ですが、[merge.elmakers](https://merge.elmakers.com/)などのオンラインツールを使用してリソースパックをマージすることをお勧めします。
+
+### EliteMobsのコマンドプレースホルダーは何ですか？
 
 | プレースホルダー |          詳細           |
 | --- |:--------------------------:|
 | `$player` | プレイヤーの表示名 |
-| `$bossName` |  ボスの表示名  |
-| `$bossLevel` |     ボスのレベル      |
+| `$bossName` |   ボスの表示名   |
+| `$bossLevel` |     ボスのレベル     |
 
-### リソースパックの強制をオフにするにはどうすればいいですか？
+### 強制リソースパックをオフにするにはどうすればよいですか？
 
-この設定は、実際には `server.properties` ファイルにあります。このファイルは、通常、サーバーのルートディレクトリにあります。ファイルを
-開き、`require-resource-pack` 設定を探し、値を `false` に変更して、リソースパックの強制をオフにします。
+この設定は実際には`server.properties`ファイルにあります。このファイルは通常、サーバーのルートディレクトリにあります。ファイルを開いたら、`require-resource-pack`設定を見つけて、値を`false`に変更して強制リソースパックをオフにします。
 
-### イベントをオフにするにはどうすればいいですか？
+### イベントをオフにするにはどうすればよいですか？
 
-武器ゴブリン、チャームゴブリンなどのイベントをオフにするには、*~plugins\EliteMobs\events.yml* を開き、`actionEventsEnabled` と `timedEventsEnabled` の設定を見つけて、`false` に設定します。
+武器ゴブリン、チャームゴブリンなどのイベントをオフにする場合は、*~plugins\EliteMobs\events.yml*を開き、`actionEventsEnabled`、`timedEventsEnabled`の設定を見つけて`false`に設定します。
 
+### ダンジョンワールドまたは冒険者ギルドワールドを編集するにはどうすればよいですか？
 
-```
+EliteMobs 9以降、EliteMobsはダンジョンとコンテンツの保護にWorldGuardに依存しなくなりました。この保護を一時的にバイパスするには、コマンド`/em protection bypass`を使用します。
 
+特定のダンジョンの保護を永続的に無効にする場合は、次の手順に従ってください。
 
-
+1. *plugins/EliteMobs/content_packages/*に移動します。
+2. 変更したいダンジョンの*dungeon_config.yml*ファイルを見つけます。
+3. 構成ファイルを開き、`protect:`設定を見つけます。
+4. 保護を無効にするには、値を`false`に変更します。

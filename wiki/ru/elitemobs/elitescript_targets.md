@@ -1,50 +1,29 @@
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+# Цели элитных скриптов
 
-# Зоны в Elite Script
+Цели являются центральной частью элитных скриптов и необходимы для работы действий и зон.
 
-Зоны - это местоположения, определяемые формой, которые могут использоваться scripters  в качестве целей для запуска любого типа действия.
+## Типы целей
 
-В каждом скрипте может быть задана только одна зона.
+Типы целей определяют, какие сущности или местоположения становятся целью скрипта.
 
-Для выбора зон в качестве цели можно использовать тип цели `ZONE_FULL` или `ZONE_BORDER`.
-
-Сами зоны также используют [Цели скриптов]($language$/elitemobs/elitescript_targets.md) для определения того, где будет находиться зона.
-
-## shape
-
-Форма зоны. Допустимые формы:
-
-| Тип Формы                                                               | Детали | Animatable | Border |
-|--------------------------------------------------------------------------| :-: | :-: | :-: |
-| [`CYLINDER`]($language$/elitemobs/elitescript_zones.md&section=cylinder)         | Цилиндрическая форма | ❌ | ✅ |
-| [`SPHERE`]($language$/elitemobs/elitescript_zones.md&section=sphere)             | Сферическая форма | ❌ | ✅ |
-| [`DOME`]($language$/elitemobs/elitescript_zones.md&section=dome)                 | Форма купола (полусфера) | ❌ | ✅ |
-| [`CUBOID`]($language$/elitemobs/elitescript_zones.md&section=cuboid)             | Кубоидная форма (кубообразная) | ❌ | ✅ |
-| [`STATIC_RAY`]($language$/elitemobs/elitescript_zones.md&section=static_ray)     | Неподвижная линия между двумя точками | ❌ | ❌ |
-| [`ROTATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=rotating_ray) | Вращающаяся линия между двумя точками | ✅ | ❌ |
-| [`TRANSLATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=translating_ray) | Линия, которая перемещается между двумя начальными точками к двум конечным точкам | ✅ | ❌ |
-
----
-
-#### Animatable
-
-Анимация зоны с анимацией начинается, когда скрипт вызывается в первый раз.
-
-Это означает, что если у действия есть время ожидания, когда действие начнётся, зона уже будет двигаться, пока действие ожидает.
-
-Зона всегда анимируется на каждом такте. Это означает, что если вы используете действие `SPAWN_PARTICLES`, вы можете задать его выполнение на каждом такте, так как зона будет двигаться на каждом такте. Если вы запустите его каждую секунду, вы увидите, как частицы прыгают, потому что зона продолжала двигаться даже на тех тиках, когда частицы не генерировались.
-
-Если вы хотите сделать вращающуюся зону, но хотите подождать определенное количество тактов, прежде чем начать действие, сделайте его отдельным скриптом и вызовите этот скрипт через `RUN_SCRIPT`.  Убедитесь, что у  `RUN_SCRIPT`  есть необходимое вам время ожидания.
-
-Зона останется в конечном положении после завершения анимации.
-
-Все animatable зоны установлены так, чтобы они не отслеживались в целях скриптов, так как дополнительное движение затруднило бы понимание scripters  и игроков. Это означает, что эти зоны не будут следовать за боссами или игроками и всегда будут двигаться относительно своих начальных точек появления.
-
----
-
-#### Border
-
-Определенные зоны могут иметь границы. Границы означают, что `ZONE_BORDER`  можно использовать как цель зоны. Границы определяются созданием второй, более маленькой, формы внутри первой, более большой формы.  Область между более маленькой зоной и более большой зоной - это граница.
+| Тип цели               |                                 Детали                                  |                                                                                                Особенности                                                                                                |
+|------------------------|:-----------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| `NEARBY_PLAYERS`       |       Игроки в [радиусе]($language$/elitemobs/elitescript_targets.md&section=range)        |                                                               Требуется [`радиус`]($language$/elitemobs/elitescript_targets.md&section=range)                                                              |
+| `NEARBY_MOBS`          |         Мобы в [радиусе]($language$/elitemobs/elitescript_targets.md&section=range)          |                                                               Требуется [`радиус`]($language$/elitemobs/elitescript_targets.md&section=range)                                                              |
+| `WORLD_PLAYERS`        |                             Игроки в мире                             |                                                                                                    ❌                                                                                                    |
+| `ALL_PLAYERS`          |                           Игроки на сервере                           |                                                                                                    ❌                                                                                                    |
+| `DIRECT_TARGET`        |                             Игроки в событии                             |                                                                 [Требуется совместимое событие]($language$/elitemobs/elitescript_events.md)                                                                 |
+| `SELF`                 |                        Элитный моб, использующий силу                         |                                                                                                    ❌                                                                                                    |
+| `SELF_SPAWN`           |                   Цель — место появления босса                   |                                                                                                    ❌                                                                                                    |
+| `LOCATION`             |                         Конкретное местоположение                         |                                                      Требуется [`местоположение`]($language$/elitemobs/elitescript_targets.md&section=location)                                                      |
+| `LOCATIONS`            |                        Несколько конкретных местоположений                        |                                                     Требуется [`местоположения`]($language$/elitemobs/elitescript_targets.md&section=locations)                                                     |
+| `ZONE_FULL`            |                           Цели внутри зоны                           |                                                                         Требуется [`Зона`]($language$/elitemobs/elitescript_zones.md)                                                                          |
+| `ZONE_BORDER`          |                          Цели на границе зоны                           |                                                                         Требуется [`Зона`]($language$/elitemobs/elitescript_zones.md)                                                                          |
+| `ACTION_TARGET`        |                  Наследует цели от другого действия.                   |                **Может использоваться только для [условий]($language$/elitemobs/elitescript_conditions.md) и [относительных векторов]($language$/elitemobs/elitescript_relative_vectors.md)!!**               |
+| `LANDING_LOCATION`     |                   Цель — место, куда упал блок.                   |                                     **Может использоваться только для действия [`SPAWN_FALLING_BLOCK`]($language$/elitemobs/elitescript_actions.md&section=spawn_falling_block)!**                                      |
+| `INHERIT_SCRIPT_TARGET` |        Наследует цель от скрипта, который запускает этот скрипт        |                                                                            Может выполняться только если скрипт был вызван другим скриптом!                                                                             |
+| `INHERIT_SCRIPT_ZONE_FULL` |  Цели внутри зоны, унаследованной от скрипта, который запускает этот скрипт  |                                                     Требуется [`Зона`]($language$/elitemobs/elitescript_zones.md) **в скрипте, который вызывает этот скрипт!**                                                     |
+| `INHERIT_SCRIPT_ZONE_BORDER` | Цели на границе зоны, унаследованной от скрипта, который запускает этот скрипт |                                                     Требуется [`Зона`]($language$/elitemobs/elitescript_zones.md) **в скрипте, который вызывает этот скрипт!**                                                     |
 
 <div align="center">
 
@@ -58,39 +37,223 @@
 eliteScript:
   Example:
     Events:
-      - EliteMobDamagedByPlayerEvent
+    - EliteMobDeathEvent
+    Actions:
+      - action: MESSAGE
+        Target:
+          targetType: ALL_PLAYERS
+        sValue: "&2Hello World!"
+```
+
+Это отправляет сообщение цели. Поскольку цель установлена в `ALL_PLAYERS`, сообщение будет отправлено всем игрокам онлайн.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
+## Общие атрибуты
+
+Следующие настройки могут быть применены ко всем целям.
+
+| Значения | Детали | Особенности |
+| --- | :-: | :-: |
+| `offset` | Устанавливает смещение для местоположения цели. | Не может нацеливаться на сущности! |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Пример</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDeathEvent
+    Actions
+    - action: STRIKE_LIGHTNING
+      Target:
+        targetType: SELF
+        offset: "0,2,0"
+```
+
+Это бьет молнией на 2 блока выше босса. Обратите внимание, что STRIKE_LIGHTNING использует местоположения и не влияет на сущности, поэтому у него могут быть смещения.
+
+Вы не можете установить смещение для отправки сообщения, так как сообщения отправляются игрокам. Однако вы можете установить смещение для зоны, которая затем может нацеливаться на сущности.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
+## радиус
+
+Устанавливает радиус сканирования для поиска ближайших игроков в типе цели `NEARBY_PLAYERS`.
+
+| Значения | Детали | По умолчанию |
+| --- | :-: | :-: |
+| `range` | Устанавливает радиус в блоках для сканирования целей-игроков. | `20.0` |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Пример</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDeathEvent
+    Actions:
+      - action: MESSAGE
+        Target:
+          targetType: NEARBY_PLAYERS
+          range: 25.0
+        sValue: "&2Цель — игроки в радиусе 25 блоков!"
+```
+
+Это отправляет сообщение игрокам в радиусе 25 блоков от босса, когда босс умирает.
+
+</div>
+
+</details>
+
+</div>
+
+## местоположение
+
+Устанавливает местоположение для типа цели `LOCATION`.
+
+| Значения | Детали | По умолчанию |
+| --- | :-: | :-: |
+| `location` | Устанавливает мировое местоположение, которое будет целью. | `none` |
+
+Используется формат `location: worldname,x,y,z,pitch,yaw` для местоположения.
+
+**Обратите внимание, что `same_as_boss` является допустимым заполнителем для имени мира, например, `same_as_boss,100,64,100,0,0` будет допустимым местоположением, которое будет нацелено на тот же мир, где находится босс.**
+
+<div align="center">
+
+<details> 
+
+<summary><b>Пример</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDeathEvent
+    Actions
+    - action: STRIKE_LIGHTNING
+      Target:
+        targetType: LOCATION
+        location: "myWorld,100,64,200,0,0"
+```
+
+Это вызывает удар молнии в местоположении x=100, y=64, z=200 мира под названием `myWorld`.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
+## местоположения
+
+Устанавливает местоположения для типа цели `LOCATIONS`.
+
+| Значения | Детали | По умолчанию |
+| --- | :-: | :-: |
+| `locations` | Устанавливает список мировых местоположений, которые будут целями. | `none` |
+
+Используется формат `worldname,x,y,z,pitch,yaw` для местоположения.
+
+**Обратите внимание, что `same_as_boss` является допустимым заполнителем для имени мира, например, `same_as_boss,100,64,100,0,0` будет допустимым местоположением, которое будет нацелено на тот же мир, где находится босс.**
+
+<div align="center">
+
+<details> 
+
+<summary><b>Пример</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDeathEvent
+    Actions
+    - action: STRIKE_LIGHTNING
+      Target:
+        targetType: LOCATIONS
+        locations:
+        - "myWorld,100,64,200,0,0"
+        - "same_as_boss,-100,12,130,0,0"
+```
+
+Это вызывает удар молнии в местоположении x=100, y=64, z=200 мира под названием `myWorld` и другой удар молнии в том же мире, где находится босс, в местоположении x=-100, y=12 и z=130.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
+## Нацеливание на зоны
+
+[Зоны]($language$/elitemobs/elitescript_zones.md) имеют несколько целей, и важно понимать, как они работают, чтобы использовать элитное скриптование в полной мере.
+
+Зоны работают в двух частях:
+
+### Часть 1. Настройка того, куда идет зона
+
+Зоны должны знать, где они должны находиться, и для этого вы используете систему целей так же, как и для любого другого эффекта, основанного на местоположении, такого как удар молнии.
+
+<div align="center">
+
+<details> 
+
+<summary><b>Пример</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  VisualCylinder:
+    Events:
+    - EliteMobDamagedEvent
     Zone:
+      radius: 10.0
       shape: CYLINDER
-      radius: 4
-      borderRadius: 3
-      height: 8
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
       Target:
         targetType: SELF
-    Actions:
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: SMOKE_LARGE
-        Target:
-          targetType: ZONE_BORDER
-        repeatEvery: 5
-        times: 20
 ```
 
-<div align="center">
+Это порождает цилиндрическую зону вокруг босса. Обратите внимание, что в этом примере еще не заданы никакие действия, это будет рассмотрено ниже.
 
-![elitescript_zones_border.jpg](../../../img/wiki/elitescript_zones_border.jpg)
-
-</div>
-
-Этот скрипт создает дымовые частицы, которые  **только**  появляются на границе зоны в течение 5 секунд (repeat every 5 x times 20 = 100 ticks).
-
-Если бы вы не использовали опцию `ZONE_BORDER`, а вместо этого  опцию  `ZONE_FULL`, то вся зона была бы покрыта дымовыми частицами, как в этом случае:
-
-<div align="center">
-
-![elitescript_zones_borderfull.jpg](../../../img/wiki/elitescript_zones_borderfull.jpg)
-
-</div>
+Некоторые зоны, такие как [STATIC_RAY]($language$/elitemobs/elitescript_zones.md&section=static_ray), имеют две или более цели. Это связано с тем, что лучи — это линии, а линии определяются двумя точками. Это более подробно рассматривается на [странице зон]($language$/elitemobs/elitescript_zones.md), но принципиально все они работают одинаково.
 
 </div>
 
@@ -98,17 +261,9 @@ eliteScript:
 
 </div>
 
----
+### Часть 2. Нацеливание на внутреннюю часть зоны
 
-### SPHERE
-
-| Ключ                                                         | Детали | Obrigatório |
-|-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | Задает форму зоны. Должно быть `SPHERE` | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | Задает местоположение для центра сферы | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Задает, какие типы существ будут являться целью | ❌ |
-| `radius`                                                    | Радиус сферы | ✅ |
-| `borderRadius`                                              | Радиус внутренней сферы | ❌ |
+Теперь, когда зона знает, где она находится, нам нужно, чтобы действие знало, что его целью является зона, которую мы определили. Именно для этого предназначены `targetType: ZONE_FULL` и `targetType:ZONE_BORDER`.
 
 <div align="center">
 
@@ -120,144 +275,30 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  Example:
+  VisualCylinder:
     Events:
-      - EliteMobDamagedByPlayerEvent
+    - EliteMobDamagedEvent
     Zone:
-      shape: SPHERE
-      radius: 4
-      borderRadius: 3
-      Target:
-        targetType: SELF
-    Actions:
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: CLOUD
-        Target:
-          targetType: ZONE_FULL
-        repeatEvery: 5
-        times: 20
-```
-
-<div align="center">
-
-![elitescript_zones_sphere.jpg](../../../img/wiki/elitescript_zones_sphere.jpg)
-
-</div>
-
-Этот скрипт демонстрирует форму сферы с помощью частиц облака.
-
-</div>
-
-</details>
-
-</div>
-
----
-
-### DOME
-
-| Ключ                                                         | Детали | Obrigatório |
-|-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | Задает форму зоны. Должно быть `DOME` | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | Задает местоположение для центра купола | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Задает, какие типы существ будут являться целью | ❌ |
-| `radius`                                                    | Радиус купола | ✅ |
-| `borderRadius`                                              | Радиус внутреннего купола | ❌ |
-
-<div align="center">
-
-<details> 
-
-<summary><b>Пример</b></summary>
-
-<div align="left">
-
-```yaml
-eliteScript:
-  Example:
-    Events:
-      - EliteMobDamagedByPlayerEvent
-    Zone:
-      shape: DOME
-      radius: 4
-      borderRadius: 3
-      Target:
-        targetType: SELF
-    Actions:
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: CLOUD
-        Target:
-          targetType: ZONE_FULL
-        repeatEvery: 5
-        times: 20
-```
-
-<div align="center">
-
-![elitescript_zones_dome.jpg](../../../img/wiki/elitescript_zones_dome.jpg)
-
-</div>
-
-Этот скрипт демонстрирует форму купола с помощью частиц облака.
-
-</div>
-
-</details>
-
-</div>
-
----
-
-### CYLINDER
-
-| Ключ                                                         | Детали | Obrigatório |
-|-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | Задает форму зоны. Должно быть `CYLINDER` | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | Задает местоположение для центра цилиндра | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Задает, какие типы существ будут являться целью | ❌ |
-| `radius`                                                    | Радиус цилиндра | ✅ |
-| `borderRadius`                                              | Радиус внутреннего цилиндра | ❌ |
-| `height`                                                    | Высота цилиндра | ❌ |
-
-<div align="center">
-
-<details> 
-
-<summary><b>Пример</b></summary>
-
-<div align="left">
-
-```yaml
-eliteScript:
-  Example:
-    Events:
-      - EliteMobDamagedByPlayerEvent
-    Zone:
+      radius: 10.0
       shape: CYLINDER
-      radius: 4
-      borderRadius: 3
-      height: 8
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
       Target:
         targetType: SELF
     Actions:
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: CLOUD
-        Target:
-          targetType: ZONE_FULL
-        repeatEvery: 5
-        times: 20
+    - action: SPAWN_PARTICLE
+      times: 12
+      repeatEvery: 5
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
 ```
 
-<div align="center">
+Используя ту же зону из первой части, мы теперь добавляем действие. Целью для этого действия является `ZONE_FULL`, что означает, что частицы будут появляться внутри всей зоны.
 
-![elitescript_zones_cylinder.jpg](../../../img/wiki/elitescript_zones_cylinder.jpg)
-
-</div>
-
-Этот скрипт демонстрирует форму цилиндра с помощью частиц облака.
+Обратите внимание, что ZONE_BORDER доступен не для каждой зоны. Подробнее об этом на странице [скриптовые зоны]($language$/elitemobs/elitescript_zones.md).
 
 </div>
 
@@ -265,21 +306,15 @@ eliteScript:
 
 </div>
 
----
+### Отслеживание зоны
 
-### CUBOID
+Определяет, будет ли зона перемещаться вместе с целью, например, будет ли зона перемещаться, когда босс перемещается для `targetType: SELF`.
 
-| Ключ                                                         | Детали | Obrigatório |
-|-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | Задает форму зоны. Должно быть `CUBOID` | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | Задает местоположение для центра кубоида | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Задает, какие типы существ будут являться целью | ❌ |
-| `x`                                                         | Задает длину кубоида | ✅ |
-| `y`                                                         | Задает высоту кубоида | ✅ |
-| `z`                                                         | Задает ширину кубоида, по умолчанию `x` | ❌ |
-| `xBorder`                                                   | Задает длину внутреннего кубоида | ❌ |
-| `yBorder`                                                   | Задает высоту внутреннего кубоида | ❌ |
-| `zBorder`                                                   | Задает ширину внутреннего кубоида, по умолчанию `x` | ❌ |
+| Значения | Детали | По умолчанию |
+| --- | :-: | :-: |
+| `track` | Определяет, будет ли зона перемещаться вместе с целью. | `true` |
+
+Обратите внимание, что анимируемые зоны не могут отслеживать. [Подробнее об этом здесь.]($language$/elitemobs/elitescript_zones.md&section=animatable)
 
 <div align="center">
 
@@ -291,36 +326,27 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  Example:
+  VisualCylinder:
     Events:
-      - EliteMobDamagedByPlayerEvent
+    - EliteMobDamagedEvent
     Zone:
-      shape: CUBOID
-      x: 4
-      y: 4
-      z: 4
-      xBorder: 3
-      yBorder: 3
-      zBorder: 3
+      radius: 10.0
+      shape: CYLINDER
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
       Target:
         targetType: SELF
     Actions:
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: CLOUD
-        Target:
-          targetType: ZONE_FULL
-        repeatEvery: 5
-        times: 20
+    - action: SPAWN_PARTICLE
+      times: 12
+      repeatEvery: 5
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        track: false
 ```
-
-<div align="center">
-
-![elitescript_zones_cuboid.jpg](../../../img/wiki/elitescript_zones_cuboid.jpg)
-
-</div>
-
-Этот скрипт демонстрирует форму кубоида с помощью частиц облака.
 
 </div>
 
@@ -328,18 +354,13 @@ eliteScript:
 
 </div>
 
----
+Используя тот же пример из части 1 и части 2, зона теперь настроена на то, чтобы не отслеживать. Это означает, что зона появится в местоположении босса, но даже если босс будет продолжать двигаться, зона останется там, где она впервые появилась.
 
-### STATIC_RAY
+Наконец, обратите внимание, что если зона настроена на то, чтобы не отслеживать, она зарегистрирует свое местоположение в момент вызова скрипта.
 
-| Ключ                                                         | Детали | Obrigatório |
-|-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | Задает форму зоны. Должно быть `STATIC_RAY` | ✅ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | Задает местоположение для первой точки линии | ✅ |
-| [`target2`]($language$/elitemobs/elitescript_targets.md)    | Задает местоположение для последней точки линии | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Задает, какие типы существ будут являться целью | ❌ |
-| `ignoresSolidBlocks`                                        | Определяет, будет ли луч проходить через твердые блоки | ❌ |
-| `pointRadius`                                               | Задает толщину луча. По умолчанию 0.5 блоков. | ❌ |
+Например, вы хотите иметь фазу предупреждения и фазу урона для своего скрипта, вам нужно убедиться, что вы запускаете все действия в начале и устанавливаете время ожидания для всех действий, связанных с уроном, которые вы хотите запустить позже по отдельности. Вы не должны задерживать весь скрипт, который вы вызываете через `RUN_SCRIPT`, по техническим причинам.
+
+Ниже приведен правильный пример силы с фазой предупреждения и фазой урона, взятый из Святилища Ледяного Дворца.
 
 <div align="center">
 
@@ -351,36 +372,129 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  Example:
+  VisualCylinder:
     Events:
-      - EliteMobDamagedByPlayerEvent
+    - EliteMobDamagedEvent
     Zone:
-      shape: STATIC_RAY
-      Target2:
-        targetType: DIRECT_TARGET
-        offset: 0,1,0
+      radius: 10.0
+      shape: CYLINDER
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
       Target:
         targetType: SELF
-        offset: 0,1,0
     Actions:
-      - action: SPAWN_PARTICLE
-        particles:
-          - particle: CLOUD
-        Target:
-          targetType: ZONE_FULL
-        repeatEvery: 5
-        times: 20
+    - action: SPAWN_PARTICLE
+      times: 12
+      repeatEvery: 5
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        track: false
+    - action: SPAWN_PARTICLE
+      wait: 60
+      times: 13
+      repeatEvery: 3
+      particles:
+      - particle: FLAME
+        amount: 0
+        x: 0
+        y: 1
+        z: 0
+        speed: 0.2
+      - particle: FLAME
+        amount: 0
+        x: 0.5
+        y: 1
+        z: 0.5
+        speed: 0.2
+      - particle: FLAME
+        amount: 0
+        x: 0
+        y: 1
+        z: 0.5
+        speed: 0.2
+      - particle: FLAME
+        amount: 0
+        x: 0.5
+        y: 1
+        z: 0
+        speed: 0.2
+      - particle: FLAME
+        amount: 0
+        x: -0.5
+        y: 1
+        z: -0.5
+        speed: 0.2
+      - particle: FLAME
+        amount: 0
+        x: -0.5
+        y: 1
+        z: 0
+        speed: 0.2
+      - particle: FLAME
+        amount: 0
+        x: 0
+        y: 1
+        z: -0.5
+        speed: 0.2
+      - particle: FLAME
+        amount: 0
+        x: -0.5
+        y: 1
+        z: 0.5
+        speed: 0.2
+      - particle: FLAME
+        amount: 0
+        x: 0.5
+        y: 1
+        z: -0.5
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        track: false
+    - action: RUN_SCRIPT
+      scripts:
+      - DamageCylinder
+    - action: PLAY_ANIMATION
+      sValue: fire_zone
+      Target:
+        targetType: SELF
+    - action: SET_MOB_AI
+      duration: 100
+      bValue: false
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 1200
+      global: 300
+  DamageCylinder:
+    Zone:
+      radius: 10.0
+      shape: CYLINDER
+      height: 10
+      filter: PLAYER
+      borderRadius: 5.0
+      Target:
+        targetType: SELF
+        offset: 0,-1,0
+    Actions:
+    - action: DAMAGE
+      wait: 60
+      repeatEvery: 10
+      times: 4
+      multiplier: 4
+      Target:
+        targetType: ZONE_FULL
+        track: false
+    - action: SET_ON_FIRE
+      wait: 60
+      duration: 80
+      Target:
+        targetType: ZONE_FULL
+        track: false
 ```
-
-<div align="center">
-
-![elitescript_zones_staticray.jpg](../../../img/wiki/elitescript_zones_staticray.jpg)
-
-</div>
-
-Этот скрипт демонстрирует форму статического луча с помощью частиц облака. 
-
-Мы скорректировали высоту зоны, используя опцию `offset` на обоих концах зоны, чтобы луч появлялся из середины игрока и босса, иначе луч появлялся бы у их ног.
 
 </div>
 
@@ -388,15 +502,108 @@ eliteScript:
 
 </div>
 
----
+Этот скрипт делает много вещей, но он разделен на два четких скрипта: `VisualCylinder` и `DamageCylinder`.
 
-### ROTATING_RAY
+`VisualCylinder` запускается первым и имеет действие `RUN_SCRIPT`, которое немедленно запускает `DamageCylinder` одновременно с запуском `VisualCylinder`.
 
-| Ключ                                                         | Детали | Obrigatório |
-|-------------------------------------------------------------| :-: | :-: |
-| `shape`                                                     | Задает форму зоны. Должно быть `ROTATING_RAY` | ✅ |
-| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter)  | Задает, какие типы существ будут являться целью | ❌ |
-| [`target`]($language$/elitemobs/elitescript_targets.md)     | Задает местоположение для первой точки линии | ✅ |
-| [`target2`]($language$/elitemobs/elitescript_targets.md)    | Задает местоположение для последней точки линии | ✅ |
-| `animationDuration`                                         | Задает (в тиках) количество времени для вращения | ✅ |
-| `pitchPreRotation`                                          | Применяет начальную
+Однако каждое действие в `DamageCylinder` настроено на ожидание в течение 60 тиков, или 3 секунд.
+
+Это означает, что у босса есть фаза предупреждения в 3 секунды, а затем фаза урона, и даже если зоны настроены на отсутствие отслеживания, зона предупреждения и зона урона будут находиться в одном и том же месте.
+
+### Свойства цели, специфичные для зоны
+
+Зона имеет следующие особые свойства:
+
+#### покрытие
+
+Устанавливает процент зоны, который будет фактически использоваться для действия. Работает только для целей местоположения (не будет работать при нацеливании на игроков или другие сущности).
+
+| Значения | Детали | По умолчанию |
+| --- | :-: | :-: |
+| `coverage` | Устанавливает процент зоны, который будет охвачен. | `1.0` |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Пример</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  VisualCylinder:
+    Events:
+    - EliteMobDamagedEvent
+    Zone:
+      radius: 10.0
+      shape: CYLINDER
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SPAWN_PARTICLE
+      times: 12
+      repeatEvery: 5
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 0.5
+```
+
+В этом случае только 50% зоны будет покрыто частицами.
+
+</div>
+
+</details>
+
+</div>
+
+### Наследование целей
+
+Когда скрипт запускает другой скрипт (или «вызывает» этот скрипт), можно передавать информацию о зоне и цели из первого скрипта во второй.
+
+**Примеры использования**
+
+1. **Улучшенные запускатели скриптов**
+
+Запускатели скриптов — это скрипты, единственная функция которых — запускать множество других скриптов. Они используются для упрощения управления скриптами, особенно при обработке нескольких скриптов, требующих точного расчета времени.
+
+Благодаря наследованию целей несколько скриптов могут использовать одну и ту же зону или цель, сокращая потенциально сотни строк повторяющегося скриптования.
+
+2. **Фильтрация целей «матрешка» / Фильтрация целей по принципу русской матрешки**
+
+Условия фильтрации могут применяться к целям в действии. Передавая цели другому скрипту с другими фильтрами, можно накладывать условия и применять различные эффекты к одному и тому же пулу целей на основе все более и более конкретных критериев.
+
+Например, можно создать зону, которая ищет игроков, и создать действие, которое проверяет, есть ли у всех игроков в зоне определенный тег. Затем допустимые цели можно передать другому скрипту, где другое действие может затем выполнить проверку случайного условия и применить эффект на основе этого шанса. Затем цели можно передать еще одному скрипту, где другое условие может выполнить проверку, чтобы увидеть, живы ли цели, и выполнить какое-либо особое поведение, если они мертвы.
+
+Это, конечно, всего лишь примеры. Это очень гибкая система.
+
+3. **Сложные зоны**
+
+Наконец, можно накладывать цели для создания сложных зон, при необходимости использовать условия, и даже можно создавать полурандомизированные зоны, используя условия скрипта и возможность запуска только одного из перечисленных скриптов из действий скрипта.
+
+**Примечание:** В этом разделе **«родительский скрипт»** относится к скрипту, который запускает **«наследующий скрипт»**, то есть скрипт, который будет использовать унаследованные цели.
+При использовании наследования целей важно внимательно изучить _родительский скрипт_, чтобы убедиться, что передаются правильные данные.
+
+#### INHERIT_SCRIPT_TARGET
+
+При использовании `INHERIT_SCRIPT_TARGET` цели из _родительского скрипта_ будут переданы наследующему скрипту. При этом есть несколько предостережений:
+
+- При передаче **целей-сущностей** можно выполнять действия, требующие местоположения (например, порождение частиц), поскольку будет использоваться местоположение сущностей. Конечно, также можно использовать действия, требующие сущностей.
+
+- При передаче **целей-местоположений** можно использовать только местоположения. **Единственный способ получить сущность из местоположений — создать зону в этом местоположении и искать сущности.** Таким образом, хотя и не невозможно передать местоположение, а затем получить сущности, это потребует немного дополнительной работы.
+
+#### Наследование зон
+
+При использовании `INHERIT_SCRIPT_ZONE_FULL` или `INHERIT_SCRIPT_ZONE_BORDER` крайне важно, чтобы _родительский скрипт_ определял зону, иначе _наследующий скрипт_ не сможет работать правильно.
+
+Кроме того, зоны могут дополнительно [отслеживаться]($language$/elitemobs/elitescript_targets.md&section=zone-track). Это также будет передано вместе с зоной.
+
+- **Неотслеживаемая** зона всегда будет создавать зону там, где она определена _наследующим скриптом_. Это означает, что настройки зоны будут использоваться действиями в _наследующих скриптах_ для создания совершенно новых зон каждый раз, когда выполняется действие, и местоположение этих зон будет определяться действием.
+
+- **Отслеживаемая** зона может передавать одно и то же точное местоположение зоны всем _наследующим скриптам_, если _родительский скрипт_ настроен на нацеливание `ZONE_FULL` или `ZONE_BORDER`. Это означает, что каждый скрипт будет действовать в одних и тех же местах.

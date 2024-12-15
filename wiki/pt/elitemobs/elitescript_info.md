@@ -2,9 +2,8 @@
 
 # EliteScript
 
-O EliteScript é um sistema de scripting para os plugins do MagmaGuy, oferecendo opções avançadas de personalização para criar comportamentos dinâmicos para chefes e outras entidades no Minecraft.
+Elitescript é um sistema de scripting para os Plugins do MagmaGuy, proporcionando opções de personalização avançadas para criar comportamentos dinâmicos para bosses e outras entidades no Minecraft.
 
-Os Scripts Elite podem ser adicionados como arquivos de poder ou a arquivos de chefe personalizados, oferecendo flexibilidade na implementação. O scripting envolve a definição de eventos, condições, zonas, ações e tempos de espera.
+Os Scripts Elite podem ser adicionados como ficheiros de power ou a ficheiros de boss personalizados, oferecendo flexibilidade na implementação. O scripting envolve a definição de eventos, condições, zonas, ações e cooldowns.
 
-[Clique aqui para saber mais sobre o EliteScript]($language$/elitemobs/creating_powers.md)
-
+[Clique aqui para saber mais sobre EliteScript]($language$/elitemobs/creating_powers.md)

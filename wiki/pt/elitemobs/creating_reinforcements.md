@@ -1,18 +1,16 @@
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+# Criar Reforços Personalizados
 
-# Criando Reforços Personalizados
-
-Se você está interessado em invocar elites durante o combate para reforçar um chefe, este guia aborda isso em detalhes.
+Se tem interesse em invocar elites durante o combate para reforçar um chefe, este guia cobre isso detalhadamente.
 
 ## Passos para criar um chefe personalizado:
 
-1. Crie seu chefe personalizado principal que invocará seu chefe personalizado
-2. Crie um chefe personalizado para reforços. Lembre-se de que os chefes personalizados podem ser mais fortes do que os mobs do vanilla, mas também podem ser mais fracos.
-3. Adicione a linha de reforço correta ao arquivo de configuração
+1. Crie o seu chefe personalizado principal que irá invocar o seu chefe personalizado
+2. Crie um chefe personalizado para reforços. Tenha em mente que os chefes personalizados podem ser mais fortes que os mobs do jogo base, mas também podem ser mais fracos.
+3. Adicione a linha de reforço correta ao ficheiro de configuração
 
-## Criando a linha de reforço
+## Criar a linha de reforço
 
-Vamos supor que você tenha um chefe personalizado com este formato:
+Vamos assumir que tem um chefe personalizado com este formato:
 
 ```yaml
 isEnabled: true
@@ -23,7 +21,7 @@ powers:
 - ender_dragon_arrow_bombardment.yml
 ```
 
-E você quer adicionar reforços a ele. Aqui está como um desses reforços poderia ser:
+E quer adicionar reforços a ele. Aqui está como um tal reforço poderia ser:
 
 ```yaml
 - summonType:ON_COMBAT_ENTER
@@ -43,17 +41,17 @@ powers:
   filename: binder_of_worlds_phase_1_parkour_reinforcement.yml
 ```
 
-O reforço agora é adicionado à entidade do chefe. No entanto, como você pode ver, existem várias opções aqui que você pode personalizar. Vamos cobri-las.
+O reforço está agora adicionado à entidade chefe. No entanto, como pode ver, existem várias opções aqui que pode personalizar. Vamos cobri-las.
 
-## Todas as opções de reforço personalizadas
+## Todas as opções de Reforço Personalizado
 
-*Dica: Você também pode usar o EliteScript para invocar reforços, mais sobre isso [aqui]($language$/elitemobs/elitescript_actions.md&section=summon_reinforcement).*
+*Dica: Também pode usar EliteScript para invocar reforços, mais sobre isso [aqui]($language$/elitemobs/elitescript_actions.md&section=summon_reinforcement).*
 
 <div align="center">
 
 ### summonType
 
-Este é um campo obrigatório. Ele define quando o reforço deve ser gerado.
+Este é um campo obrigatório. Define quando o reforço deve surgir.
 
 | Chave    |   Valores    | Padrão  |
 |--------|:-----------:|:--------:|
@@ -75,25 +73,25 @@ summonType: ON_HIT
 
 #### Especial [1]
 
-| Chave | Descrição                                                                                       |
-|-----|---------------------------------------------------------------------------------------------------|
-|  `ONCE`   | Gera o reforço uma vez, na primeira vez que o chefe é atingido. (pode depender de uma porcentagem de chance de acontecer) |
-| `ON_HIT`  | Gere o reforço sempre que o chefe for atingido (pode depender de uma porcentagem de chance de acontecer)             |
-| `ON_COMBAT_ENTER`    | Gere o reforço quando o chefe entrar em combate (1)                                                                                                  |
-| `ON_COMBAT_ENTER_PLACE_CRYSTAL`    |  Especial: isto é especificamente para colocar cristais finais para lutas de dragão quando o chefe entrar em combate(1)                                                                                                 |
-| `GLOBAL`    |  Gera reforços para cada jogador no mesmo mundo que o chefe. Os reforços serão gerados perto dos jogadores, não importa quão longe eles estejam do chefe. Isso requer que o campo `customSpawn` seja definido para funcionar!                                                                                                 |
+| Chave | Descrição                                                                                      |
+|-----|--------------------------------------------------------------------------------------------------|
+| `ONCE` | Invoca o reforço uma vez, a primeira vez que o chefe é atingido. (pode depender de uma % de chance de acontecer) |
+| `ON_HIT` | Invoca o reforço sempre que o chefe é atingido (pode depender de uma % de chance de acontecer)           |
+| `ON_COMBAT_ENTER` | Invoca o reforço quando o chefe entra em combate (1)                                                                |
+| `ON_COMBAT_ENTER_PLACE_CRYSTAL`    | Especial: isto é especificamente para colocar cristais do end para lutas de dragão quando o chefe entra em combate (1)                                                              |
+| `GLOBAL` | Invoca reforços para cada jogador no mesmo mundo que o chefe. Os reforços surgirão perto dos jogadores, não importa quão longe estejam do chefe. Isto requer que o campo `customSpawn` esteja definido para funcionar! |
 
-_(1) Os chefes entram em combate quando são atingidos por jogadores ou quando detectam um jogador dentro do alcance._
+_(1) Os chefes entram em combate quando são atingidos por jogadores ou quando detetam um jogador dentro do alcance._
 
 ***
 
 ### filename
 
-Este é um campo obrigatório, pois define qual reforço deve ser gerado. A única exceção para tornar este campo obrigatório é ao usar a configuração `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`, pois os cristais finais não são elites.
+Este é um campo obrigatório, pois define qual reforço deve surgir. A única exceção para tornar este campo obrigatório é quando usa a configuração `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`, pois os cristais do end não são elites.
 
 | Chave    |        Valores         | Padrão |
 |--------|:---------------------:|:-------:|
-| `filename` | [Nome do Arquivo](#filename) |  nenhum   |
+| `filename` | [Nome de Ficheiro](#filename) |  nenhum   |
 
 <details> 
 
@@ -115,7 +113,7 @@ filename: test_boss.yml
 
 **Viabilidade Mínima**
 
-`summonType: SUMMON_TYPE` e `filename: filename.yml` são suficientes por si só para criar um Reforço Personalizado. O exemplo a seguir demonstra isso.
+`summonType: SUMMON_TYPE` e `filename: filename.yml` são suficientes por si só para criar um Reforço Personalizado. O seguinte exemplo demonstra isto.
 
 <div align="center">
 
@@ -136,7 +134,7 @@ powers:
   filename: binder_of_worlds_phase_1_parkour_reinforcement.yml
 ```
 
-*No entanto, se você quiser ou precisar de algo mais complexo, continue lendo abaixo para ver o que mais você pode fazer com essas opções.*
+*No entanto, se quiser ou precisar de algo mais complexo, continue a ler abaixo para ver o que mais pode fazer com estas opções.*
 
 </div>
 
@@ -150,11 +148,11 @@ powers:
 
 ### chance
 
-Este é um campo de configuração opcional feito para complementar as opções `summonType` `ONCE` e `ON_HIT`. Ele representa a chance de o Reforço Personalizado ser gerado quando um chefe é atingido.
+Este é um campo de configuração opcional feito para complementar as opções `summonType` `ONCE` e `ON_HIT`. Representa a chance do Reforço Personalizado surgir quando um chefe é atingido.
 
 | Chave    |        Valores         | Padrão |
 |--------|:---------------------:|:-------:|
-| `chance` | [Double](#double) |  nenhum   |
+| `chance` | [Decimal](#double) |  nenhum   |
 
 <details> 
 
@@ -165,7 +163,7 @@ Este é um campo de configuração opcional feito para complementar as opções 
 ```yml
 chance: 0.5
 ```
-*Representa uma chance de 50% de gerar um Reforço Personalizado.*
+*Representa uma chance de 50% de surgir um Reforço Personalizado.*
 
 </div>
 
@@ -175,15 +173,15 @@ chance: 0.5
 
 ### location
 
-`location: x,y,z` é um campo de configuração opcional que permite que os administradores desloquem a localização do reforço por um número de blocos. Aqui estão os conceitos-chave que você precisa saber sobre esta opção:
+`location: x,y,z` é um campo de configuração opcional que permite aos administradores deslocar a localização do reforço por um número de blocos. Aqui estão os conceitos-chave que precisa de saber sobre esta opção:
 
-**A localização de deslocamento é relativa.** Isso significa que `location: 0,10,0` gerará um chefe exatamente 10 blocos acima do chefe e não nas coordenadas do mundo 0,10,0.
-
-
-**A localização relativa é diferente para os chefes regionais.** Os chefes regionais sempre usarão seu ponto de geração como a origem para a localização relativa, o que significa que se você souber onde está o ponto de geração do chefe e contar os blocos, poderá fazer com que os chefes de reforço sejam gerados em localizações específicas. O covil do Binder of Worlds depende disso para gerar os chefes da torre de desafio em posições de bloco extremamente específicas, independentemente de onde o chefe dragão esteja.
+**A localização de deslocamento é relativa.** Isto significa que `location: 0,10,0` irá gerar um chefe exatamente 10 blocos acima do chefe, e não nas coordenadas do mundo 0,10,0.
 
 
-**Os chefes serão gerados dentro de blocos se você errar ao medir distâncias.**
+**A localização relativa é diferente para chefes regionais.** Os chefes regionais usarão sempre o seu ponto de surgimento como origem para a localização relativa, o que significa que se souber onde está o ponto de surgimento do chefe e contar os blocos, pode fazer com que os chefes de reforço surjam em locais específicos. O covil do Binder of Worlds depende disto para gerar os chefes da torre de desafio em posições de blocos extremamente específicas, independentemente de onde o chefe dragão esteja.
+
+
+**Os chefes surgirão dentro de blocos se errar a medição das distâncias.**
 
 | Chave    |      Valores       | Padrão |
 |--------|:-----------------:|:-------:|
@@ -198,27 +196,27 @@ chance: 0.5
 ```yml
 location: 0,10,0
 ```
-*Para um Chefe Personalizado não regional, gerará o reforço exatamente 10 blocos acima do chefe, independentemente de onde ele possa estar.*
+*Para um Chefe Personalizado não regional, o reforço surgirá exatamente 10 blocos acima do chefe, independentemente de onde ele possa estar.*
 
-*Para um Chefe Personalizado regional, gerará o reforço exatamente 10 blocos acima do ponto de geração do chefe regional, independentemente de onde o chefe esteja.*
+*Para um Chefe Personalizado regional, o reforço surgirá exatamente 10 blocos acima do ponto de surgimento do chefe regional, independentemente de onde o chefe esteja.*
 
 </div>
 
 </details>
 
-_**Observação importante: Este é um campo obrigatório para `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` especificamente!**_
+_**Nota importante: Este é um campo obrigatório para `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL` especificamente!**_
 
 ***
 
 ### lightningRod
 
-É uma configuração especial útil apenas para `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Isso dá aos cristais finais a capacidade de golpear o chão ao redor deles com um atraso. 
+É uma configuração especial útil apenas para `summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`. Isto dá aos cristais do end a capacidade de atingir o chão à sua volta com um raio com um atraso.
 
-Não pode ser usado com os outros Reforços Personalizados, pois esses devem depender de poderes para esses tipos de habilidades.
+Não pode ser usado com os outros Reforços Personalizados, pois estes devem depender de poderes para este tipo de habilidades.
 
 | Chave    |       Valores        | Padrão |
 |--------|:-------------------:|:-------:|
-| `lightningRod` | [Booleano](#boolean) | `false` |
+| `lightningRod` | [Boolean](#boolean) | `false` |
 
 <details> 
 
@@ -238,13 +236,13 @@ lightningRod: false
 
 ### inheritAggro
 
-É um campo de configuração opcional que faz com que os Reforços Personalizados herdem os níveis de ameaça do chefe. 
+É um campo de configuração opcional que faz com que os Reforços Personalizados herdem os níveis de ameaça do chefe.
 
-Isso é especialmente útil quando você deseja ter os reforços que geram como alvo a pessoa que está causando a maior quantidade de dano.
+Isto é especialmente útil quando quer que os reforços que surgem visem a pessoa que está a causar a maior quantidade de dano.
 
 | Chave    |       Valores        | Padrão |
 |--------|:-------------------:|:-------:|
-| `inheritAggro` | [Booleano](#boolean) | `false` |
+| `inheritAggro` | [Boolean](#boolean) | `false` |
 
 <details> 
 
@@ -264,11 +262,11 @@ inheritAggro: false
 
 ### amount
 
-É um campo de configuração opcional que define a quantidade de Reforços que são gerados.
+É um campo de configuração opcional que define a quantidade de Reforços que surgem.
 
 | Chave    |       Valores        | Padrão |
 |--------|:-------------------:|:-------:|
-| `amount` | [Integer](#integer) |   `1`   |
+| `amount` | [Número Inteiro](#integer) |   `1`   |
 
 <details> 
 
@@ -288,13 +286,13 @@ amount: 1
 
 ### spawnNearby
 
-É um campo de configuração opcional que define se o Reforço Personalizado deve ser gerado nas proximidades em vez de em cima do chefe ou em uma localização relativa específica. 
+É um campo de configuração opcional que define se o Reforço Personalizado deve surgir nas proximidades em vez de em cima do chefe ou numa localização relativa específica.
 
-Este método deve levar em consideração a variação do terreno corretamente e não gerar chefes dentro de paredes, embora em algumas configurações possa resultar em que eles sejam gerados atrás de paredes se a área de combate for muito pequena. Tem um raio de ~30 blocos.
+Este método deve ter em consideração corretamente a variação do terreno e não gerar chefes dentro de paredes, embora em algumas configurações possa resultar no seu surgimento atrás de paredes se a área de combate for demasiado pequena. Tem um raio de cerca de 30 blocos.
 
 | Chave    |       Valores        | Padrão |
 |--------|:-------------------:|:-------:|
-| `spawnNearby` | [Booleano](#boolean) | `false` |
+| `spawnNearby` | [Boolean](#boolean) | `false` |
 
 <details> 
 
@@ -314,11 +312,11 @@ spawnNearby: false
 
 ### inheritLevel
 
-É um campo de configuração opcional que define se o Reforço Personalizado deve herdar o nível do Chefe Personalizado que está reforçando.
+É um campo de configuração opcional que define se o Reforço Personalizado deve herdar o nível do Chefe Personalizado que está a reforçar.
 
 | Chave    |       Valores        | Padrão |
 |--------|:-------------------:|:-------:|
-| `inheritLevel` | [Booleano](#boolean) | `false` |
+| `inheritLevel` | [Boolean](#boolean) | `false` |
 
 <details> 
 
@@ -338,13 +336,13 @@ inheritLevel: false
 
 ### customSpawn
 
-É um campo de configuração que é usado apenas para reforços globais. Ele usa as configurações de geração personalizadas para definir onde os reforços serão capazes de gerar. 
+É um campo de configuração que só é usado para reforços globais. Usa as configurações de surgimento personalizadas para definir onde os reforços poderão surgir.
 
-Isso pode ser usado para fazer com que os reforços sejam capazes de gerar na superfície, em lugares com luz, em biomas específicos e assim por diante. Verifique a página da wiki sobre [Geração Personalizada]($language$/elitemobs/creating_spawns.md) para mais detalhes
+Isto pode ser usado para fazer com que os reforços possam surgir na superfície, em locais com luz, em biomas específicos e assim por diante. Consulte a página da wiki sobre [Surgimentos Personalizados]($language$/elitemobs/creating_spawns.md) para mais detalhes
 
 | Chave    |        Valores         | Padrão |
 |--------|:---------------------:|:-------:|
-| `customSpawn` | [Nome do Arquivo](#filename) |  nenhum   |
+| `customSpawn` | [Nome de Ficheiro](#filename) |  nenhum   |
 
 <details> 
 
@@ -362,7 +360,7 @@ customSpawn: normal_surface_spawn.yml
 
 </div>
 
-## Montando um grande reforço
+## Juntar um grande reforço
 
 Vamos criar um exemplo de reforço usando a maioria dos campos anteriores:
 
@@ -374,14 +372,14 @@ Vamos criar um exemplo de reforço usando a maioria dos campos anteriores:
   inheritLevel: true
 ```
 
-Isso faz o seguinte:
+Isto faz o seguinte:
 
 - Cria um Reforço Personalizado
-- O Reforço Personalizado será gerado quando o Chefe Personalizado entrar em combate (`summonType: ON_COMBAT_ENTER`)
+- O Reforço Personalizado surgirá quando o Chefe Personalizado entrar em combate (`summonType: ON_COMBAT_ENTER`)
 - O Reforço Personalizado invocado será o de `test_boss.yml` (`filename: test_boss.yml`)
-- O Reforço Personalizado será gerado dentro de 30 blocos da localização atual do Chefe Personalizado (`spawnNearby: true`)
-- O Reforço Personalizado herdará o aggro do Chefe Personalizado que está reforçando, o que significa que ele atacará o jogador que causou mais dano (`inheritAggro: true`)
-- Independentemente da configuração em `test_boss.yml`, o Reforço Personalizado terá o mesmo nível que o Chefe Personalizado que está reforçando (`inheritLevel: true`)
+- O Reforço Personalizado surgirá a 30 blocos da localização atual do Chefe Personalizado (`spawnNearby: true`)
+- O Reforço Personalizado herdará a aggro do Chefe Personalizado que está a reforçar, o que significa que atacará o jogador que causou mais dano (`inheritAggro: true`)
+- Independentemente da configuração em `test_boss.yml`, o Reforço Personalizado terá o mesmo nível do Chefe Personalizado que está a reforçar (`inheritLevel: true`)
 
 ```yaml
 - summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL
@@ -389,13 +387,13 @@ Isso faz o seguinte:
   lightningRod: true
 ```
 
-Isso faz o seguinte:
+Isto faz o seguinte:
 
 - Cria um Reforço Personalizado
-- O Reforço Personalizado será um Cristal Final que será colocado quando o combate começar (`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`)
-- O Cristal Final golpeará o chão ao redor com um atraso (`lightningRod: true`)
+- O Reforço Personalizado será um Cristal do End que é colocado quando o combate começa (`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`)
+- O Cristal do End irá atingir o chão com um raio à sua volta com um atraso (`lightningRod: true`)
 
-Agora, para aplicar isso ao Chefe Personalizado:
+Agora para aplicar isto ao Chefe Personalizado:
 
 ```yaml
 isEnabled: true
@@ -414,8 +412,7 @@ powers:
   lightningRod: true
 ```
 
-E pronto! Aqui estão mais algumas dicas:
+E já está! Aqui ficam mais algumas dicas:
 
-- Os campos podem ser definidos em qualquer ordem, embora seja recomendado que `summonable` esteja sempre em primeiro lugar!
-- Esta é uma grande melhoria em relação ao antigo sistema de reforços, que não está mais listado. Não é recomendado depender dele neste momento, pois ele pode parar de funcionar no futuro.
-
+- Os campos podem ser definidos em qualquer ordem, embora seja recomendado ter sempre `summonable` em primeiro lugar!
+- Esta é uma grande melhoria no antigo sistema de reforços, que já não está listado. Não é recomendado depender dele neste momento, pois pode deixar de funcionar no futuro.

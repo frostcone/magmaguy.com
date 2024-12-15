@@ -1,33 +1,35 @@
-# Elite 脚本目标
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-目标是 Elite 脚本的核心部分，是动作和区域工作所必需的。
+# Elite Script 目标
+
+目标是 Elite Script 的核心部分，并且是操作和区域正常工作所必需的。
 
 ## 目标类型
 
-目标类型设置了脚本将定位哪些实体或位置。
+目标类型设置脚本定位的实体或位置。
 
-| 目标类型                     | 详细信息                                                                        | 特殊                                                                                                                                                                                           |
-|------------------------------|:--------------------------------------------------------------------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `附近玩家`                  | [范围]($language$/elitemobs/elitescript_targets.md&section=range) 内的玩家。      | 需要 [`范围`]($language$/elitemobs/elitescript_targets.md&section=range)。                                                                                                                              |
-| `附近怪物`                 | [范围]($language$/elitemobs/elitescript_targets.md&section=range) 内的怪物。      | 需要 [`范围`]($language$/elitemobs/elitescript_targets.md&section=range)。                                                                                                                              |
-| `世界玩家`                  | 世界中的玩家。                                                               | ❌                                                                                                                                                                                            |
-| `所有玩家`                 | 服务器中的玩家。                                                               | ❌                                                                                                                                                                                            |
-| `直接目标`                  | 事件中的玩家。                                                               | [需要兼容的事件]($language$/elitemobs/elitescript_events.md)。                                                                                                                                 |
-| `自身`                      | 使用力量的精英。                                                               | ❌                                                                                                                                                                                            |
-| `自身生成点`                | 以 Boss 的生成位置为目标。                                                    | ❌                                                                                                                                                                                            |
-| `位置`                      | 特定的位置。                                                               | 需要 [`位置`]($language$/elitemobs/elitescript_targets.md&section=location)。                                                                                                                           |
-| `位置列表`                  | 多个特定的位置。                                                               | 需要 [`位置列表`]($language$/elitemobs/elitescript_targets.md&section=locations)。                                                                                                                         |
-| `区域_完整`                 | 以区域内部为目标。                                                               | 需要 [`区域`]($language$/elitemobs/elitescript_zones.md)。                                                                                                                                       |
-| `区域_边界`                 | 以区域边界为目标。                                                               | 需要 [`区域`]($language$/elitemobs/elitescript_zones.md)。                                                                                                                                       |
-| `动作目标`                  | 继承动作中的目标。                                                             | **只能用于动作 [条件]($language$/elitemobs/elitescript_conditions.md) 和 [相对向量]($language$/elitemobs/elitescript_relative_vectors.md)！！**                                                 |
-| `着陆位置`                | 以方块掉落的位置为目标。                                                        | **只能用于 [`SPAWN_FALLING_BLOCK` 动作]($language$/elitemobs/elitescript_actions.md&section=spawn_falling_block)！**                                                                      |
-| `继承_脚本_目标`             | 继承运行此脚本的脚本中的目标。                                                     | 仅当脚本由另一个脚本调用时才能运行！                                                                                                                                                      |
-| `继承_脚本_区域_完整`    | 以运行此脚本的脚本继承的区域内部为目标。                                       | 需要**在调用此脚本的脚本中**设置 [`区域`]($language$/elitemobs/elitescript_zones.md)！                                                                                                                |
-| `继承_脚本_区域_边界`    | 以运行此脚本的脚本继承的区域边界为目标。                                       | 需要**在调用此脚本的脚本中**设置 [`区域`]($language$/elitemobs/elitescript_zones.md)！                                                                                                                |
+| 目标类型                 |                                    详细信息                                    |                                                                                                   特殊                                                                                                   |
+|------------------------------|:------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| `NEARBY_PLAYERS`             |      [范围]($language$/elitemobs/elitescript_targets.md&section=range) 中的玩家      |                                                                  需要 [`range`]($language$/elitemobs/elitescript_targets.md&section=range)                                                                  |
+| `NEARBY_MOBS`                |         [范围]($language$/elitemobs/elitescript_targets.md&section=range) 中的生物        |                                                                  需要 [`range`]($language$/elitemobs/elitescript_targets.md&section=range)                                                                  |
+| `WORLD_PLAYERS`              |                                   世界中的玩家                                 |                                                                                                    ❌                                                                                                      |
+| `ALL_PLAYERS`                |                                   服务器中的玩家                                 |                                                                                                    ❌                                                                                                      |
+| `DIRECT_TARGET`              |                                   事件中的玩家                                 |                                                                  [需要兼容事件]($language$/elitemobs/elitescript_events.md)                                                                  |
+| `SELF`                       |                             使用能力的首领                             |                                                                                                    ❌                                                                                                      |
+| `SELF_SPAWN`                 |                             目标首领的生成位置                            |                                                                                                    ❌                                                                                                      |
+| `LOCATION`                   |                                    特定位置                                    |                                                             需要 [`location`]($language$/elitemobs/elitescript_targets.md&section=location)                                                             |
+| `LOCATIONS`                  |                            多个特定位置                            |                                                            需要 [`locations`]($language$/elitemobs/elitescript_targets.md&section=locations)                                                            |
+| `ZONE_FULL`                  |                                区域内的目标                                |                                                                        需要 [`Zone`]($language$/elitemobs/elitescript_zones.md)                                                                         |
+| `ZONE_BORDER`                |                                区域边界的目标                                |                                                                        需要 [`Zone`]($language$/elitemobs/elitescript_zones.md)                                                                         |
+| `ACTION_TARGET`              |                           继承操作中的目标。                           |                **只能用于操作[条件]($language$/elitemobs/elitescript_conditions.md)和[相对向量]($language$/elitemobs/elitescript_relative_vectors.md)！**                |
+| `LANDING_LOCATION`           |                           目标方块坠落的位置。                           |                                         **只能用于 [`SPAWN_FALLING_BLOCK` 操作]($language$/elitemobs/elitescript_actions.md&section=spawn_falling_block)！**                                         |
+| `INHERIT_SCRIPT_TARGET`      |           继承运行此脚本的脚本中的目标            |                                                                          只有当脚本被另一个脚本调用时才能运行！                                                                          |
+| `INHERIT_SCRIPT_ZONE_FULL`   |     目标从运行此脚本的脚本继承的区域内部     |                                                 需要在调用此脚本的脚本中使用 [`Zone`]($language$/elitemobs/elitescript_zones.md)！                                                  |
+| `INHERIT_SCRIPT_ZONE_BORDER` |     目标从运行此脚本的脚本继承的区域边界     |                                                 需要在调用此脚本的脚本中使用 [`Zone`]($language$/elitemobs/elitescript_zones.md)！                                                  |
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -35,17 +37,17 @@
 
 ```yaml
 eliteScript:
-  示例:
-    事件:
+  Example:
+    Events:
     - EliteMobDeathEvent
-    动作:
-      - action: 消息
-        目标:
-          目标类型: 所有玩家
+    Actions:
+      - action: MESSAGE
+        Target:
+          targetType: ALL_PLAYERS
         sValue: "&2你好，世界！"
 ```
 
-这会向目标发送一条消息。由于目标设置为 `所有玩家`，因此它将向所有在线玩家发送该消息。
+这会将消息发送到目标。由于目标设置为 `ALL_PLAYERS`，它会将该消息发送给所有在线玩家。
 
 </div>
 
@@ -59,13 +61,13 @@ eliteScript:
 
 以下设置可以应用于所有目标。
 
-| 值       | 详细信息                                      | 特殊               |
-|-----------|:--------------------------------------------:|----------------------|
-| `offset` | 设置目标位置的偏移量。                         | 不能以实体为目标！ |
+| 值 | 详细信息 | 特殊 |
+| --- | :-: | :-: |
+| `offset` | 设置目标位置的偏移量。 | 无法定位实体！ |
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -73,98 +75,19 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  示例:
-    事件:
+  Example:
+    Events:
     - EliteMobDeathEvent
-    动作
-    - action: 召唤闪电
-      目标:
-        目标类型: 自身
+    Actions
+    - action: STRIKE_LIGHTNING
+      Target:
+        targetType: SELF
         offset: "0,2,0"
 ```
 
-这会在 Boss 上方 2 个方块处召唤闪电。请注意，召唤闪电使用位置，不影响实体，因此可以具有偏移量。
+这会在首领上方 2 个方块处产生闪电。请注意，STRIKE_LIGHTNING 使用位置并且不影响实体，因此它可以使用偏移量。
 
-您不能设置偏移量来发送消息，因为消息是发送给玩家的。但是，您可以为区域设置偏移量，然后以实体为目标。
-
-</div>
-
-</details>
-
-</div>
-
----
-
-## 范围
-
-在 `附近玩家` 目标类型中设置要扫描附近玩家的范围。
-
-| 值      | 详细信息                                               | 默认值  |
-|----------|:------------------------------------------------------:|---------|
-| `范围` | 设置以方块为单位的扫描玩家目标的范围。                 | `20.0` |
-
-<div align="center">
-
-<details> 
-
-<summary><b>示例</b></summary>
-
-<div align="left">
-
-```yaml
-eliteScript:
-  示例:
-    事件:
-    - EliteMobDeathEvent
-    动作:
-      - action: 消息
-        目标:
-          目标类型: 附近玩家
-          范围: 25.0
-        sValue: "&2以 25 个方块内的玩家为目标！"
-```
-
-这会在 Boss 死亡时向距离 Boss 25 个方块内的玩家发送消息。
-
-</div>
-
-</details>
-
-</div>
-
-## 位置
-
-为 `位置` 目标类型设置位置。
-
-| 值       | 详细信息                       | 默认值 |
-|-----------|:----------------------------------:|--------|
-| `位置` | 设置将作为目标的世界位置。       | `none` |
-
-这使用格式 `location: 世界名称,x,y,z,俯仰角,偏航角` 来表示位置。
-
-**请注意，`same_as_boss` 是世界名称的有效占位符，例如 `same_as_boss,100,64,100,0,0` 将是一个有效位置，它将以与 Boss 所在世界相同的世界为目标。**
-
-<div align="center">
-
-<details> 
-
-<summary><b>示例</b></summary>
-
-<div align="left">
-
-```yaml
-eliteScript:
-  示例:
-    事件:
-    - EliteMobDeathEvent
-    动作
-    - action: 召唤闪电
-      目标:
-        目标类型: 位置
-        位置: "我的世界,100,64,200,0,0"
-```
-
-这将在名为 `我的世界` 的世界的 x=100、y=64、z=200 位置生成雷击。
+您不能设置偏移量来发送消息，因为消息是发送给玩家的。但是，您可以为可以定位实体的区域设置偏移量。
 
 </div>
 
@@ -174,21 +97,17 @@ eliteScript:
 
 ---
 
-## 位置列表
+## range
 
-为 `位置列表` 目标类型设置位置。
+设置扫描 `NEARBY_PLAYERS` 目标类型中附近玩家的范围。
 
-| 值          | 详细信息                         | 默认值 |
-|--------------|:------------------------------------:|--------|
-| `位置列表` | 设置将作为目标的世界位置列表。         | `none` |
-
-这使用格式 `世界名称,x,y,z,俯仰角,偏航角` 来表示位置。
-
-**请注意，`same_as_boss` 是世界名称的有效占位符，例如 `same_as_boss,100,64,100,0,0` 将是一个有效位置，它将以与 Boss 所在世界相同的世界为目标。**
+| 值 | 详细信息 | 默认值 |
+| --- | :-: | :-: |
+| `range` | 设置扫描玩家目标的范围（以方块为单位）。 | `20.0` |
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -196,19 +115,102 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  示例:
-    事件:
+  Example:
+    Events:
     - EliteMobDeathEvent
-    动作
-    - action: 召唤闪电
-      目标:
-        目标类型: 位置列表
-        位置列表:
-        - "我的世界,100,64,200,0,0"
+    Actions:
+      - action: MESSAGE
+        Target:
+          targetType: NEARBY_PLAYERS
+          range: 25.0
+        sValue: "&2目标是 25 个方块内的玩家！"
+```
+
+这会在首领死亡时向距首领 25 个方块内的玩家发送消息。
+
+</div>
+
+</details>
+
+</div>
+
+## location
+
+为 `LOCATION` 目标类型设置位置。
+
+| 值 | 详细信息 | 默认值 |
+| --- | :-: | :-: |
+| `location` | 设置将成为目标的世界位置。 | `无` |
+
+这使用格式 `location: worldname,x,y,z,pitch,yaw` 来表示位置。
+
+**请注意，`same_as_boss` 是世界名称的有效占位符，例如 `same_as_boss,100,64,100,0,0` 将是一个有效位置，会将目标设置为与首领所在的世界相同的世界。**
+
+<div align="center">
+
+<details>
+
+<summary><b>示例</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDeathEvent
+    Actions
+    - action: STRIKE_LIGHTNING
+      Target:
+        targetType: LOCATION
+        location: "myWorld,100,64,200,0,0"
+```
+
+这将使闪电在名为 `myWorld` 的世界的 x=100、y=64、z=200 的位置生成。
+
+</div>
+
+</details>
+
+</div>
+
+---
+
+## locations
+
+为 `LOCATIONS` 目标类型设置位置。
+
+| 值 | 详细信息 | 默认值 |
+| --- | :-: | :-: |
+| `locations` | 设置将成为目标的世界位置列表。 | `无` |
+
+这使用格式 `worldname,x,y,z,pitch,yaw` 来表示位置。
+
+**请注意，`same_as_boss` 是世界名称的有效占位符，例如 `same_as_boss,100,64,100,0,0` 将是一个有效位置，会将目标设置为与首领所在的世界相同的世界。**
+
+<div align="center">
+
+<details>
+
+<summary><b>示例</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDeathEvent
+    Actions
+    - action: STRIKE_LIGHTNING
+      Target:
+        targetType: LOCATIONS
+        locations:
+        - "myWorld,100,64,200,0,0"
         - "same_as_boss,-100,12,130,0,0"
 ```
 
-这将在名为 `我的世界` 的世界的 x=100、y=64、z=200 位置生成雷击，并在与 Boss 相同的世界中 x=-100、y=12 和 z=130 位置生成另一个雷击。
+这将使闪电在名为 `myWorld` 的世界的 x=100、y=64、z=200 的位置生成，并在与首领位于同一世界中 x=-100、y=12 和 z=130 的位置生成另一个闪电。
 
 </div>
 
@@ -220,17 +222,17 @@ eliteScript:
 
 ## 定位区域
 
-[区域]($language$/elitemobs/elitescript_zones.md) 具有多个目标，为了充分利用 Elite 脚本，了解它们的工作原理非常重要。
+[区域]($language$/elitemobs/elitescript_zones.md)具有多个目标，并且了解它们的工作原理非常重要，以便最大限度地利用 Elite Scripting。
 
-区域分为两部分工作：
+区域分两部分工作：
 
-### 第 1 部分 - 设置区域的位置
+### 第 1 部分 - 设置区域的去向
 
-区域需要知道它们应该在哪里，为此，您可以像使用任何其他基于位置的效果（例如雷击）一样使用目标系统。
+区域需要知道它们应该在哪里，并且为此，您可以使用与任何其他基于位置的效果（如闪电）相同的方式使用目标系统。
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -238,22 +240,22 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  可视圆柱体:
-    事件:
+  VisualCylinder:
+    Events:
     - EliteMobDamagedEvent
-    区域:
-      半径: 10.0
-      形状: 圆柱体
-      高度: 1
-      过滤器: 玩家
-      圆角半径: 5.0
-      目标:
-        目标类型: 自身
+    Zone:
+      radius: 10.0
+      shape: CYLINDER
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
+      Target:
+        targetType: SELF
 ```
 
-这会在 Boss 周围生成一个圆柱形区域。请注意，此示例中尚未设置任何动作，这将在下面介绍。
+这将在首领周围生成一个圆柱形区域。请注意，在此示例中尚未设置任何操作，这将在下面介绍。
 
-某些区域（例如 [静态光线]($language$/elitemobs/elitescript_zones.md&section=static_ray)）有两个或多个目标。这是因为光线是线，而线由两点定义。这在 [区域页面]($language$/elitemobs/elitescript_zones.md) 中有更详细的介绍，但它们基本上都以相同的方式工作。
+某些区域（例如 [STATIC_RAY]($language$/elitemobs/elitescript_zones.md&section=static_ray)）具有两个或多个目标。这是因为射线是线，而线由两个点定义。这在[区域页面]($language$/elitemobs/elitescript_zones.md)中有更详尽的介绍，但它们从根本上都以相同的方式工作。
 
 </div>
 
@@ -263,11 +265,11 @@ eliteScript:
 
 ### 第 2 部分 - 定位区域内部
 
-现在区域知道了它的位置，我们需要让动作知道它的目标是我们定义的区域。这就是 `targetType: 区域_完整` 和 `targetType: 区域_边界` 的用途。
+现在区域知道它在哪里，我们需要操作知道其目标是我们定义的区域。这就是 `targetType: ZONE_FULL` 和 `targetType:ZONE_BORDER` 的用途。
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -275,30 +277,30 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  可视圆柱体:
-    事件:
+  VisualCylinder:
+    Events:
     - EliteMobDamagedEvent
-    区域:
-      半径: 10.0
-      形状: 圆柱体
-      高度: 1
-      过滤器: 玩家
-      圆角半径: 5.0
-      目标:
-        目标类型: 自身
-    动作:
-    - action: 生成粒子
+    Zone:
+      radius: 10.0
+      shape: CYLINDER
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SPAWN_PARTICLE
       times: 12
       repeatEvery: 5
-      粒子:
+      particles:
       - particle: SMOKE_NORMAL
-      目标:
-        目标类型: 区域_完整
+      Target:
+        targetType: ZONE_FULL
 ```
 
-使用第 1 部分中的相同区域，我们现在添加动作。此动作的目标是 `区域_完整`，这意味着它将在整个区域内部生成粒子。
+使用第一部分中的相同区域，我们现在添加操作。此操作的目标是 `ZONE_FULL`，这意味着它将在整个区域内生成粒子。
 
-请注意，并非所有区域都提供 ZONE_BORDER。有关更多信息，请参阅 [脚本区域]($language$/elitemobs/elitescript_zones.md) 页面。
+请注意，并非所有区域都提供 ZONE_BORDER。有关更多信息，请参见[脚本区域]($language$/elitemobs/elitescript_zones.md)页面。
 
 </div>
 
@@ -306,19 +308,19 @@ eliteScript:
 
 </div>
 
-### 区域追踪
+### 区域跟踪
 
-设置区域是否会随目标移动，例如，如果区域将在 Boss 移动时移动（对于 `targetType: 自身`）。
+设置该区域是否将与目标一起移动，例如，如果区域在首领因 `targetType: SELF` 而移动时是否将随之移动。
 
-| 值      | 详细信息                                       | 默认值 |
-|----------|:---------------------------------------------:|--------|
-| `追踪` | 设置区域是否会随目标移动。                       | `true` |
+| 值 | 详细信息 | 默认值 |
+| --- | :-: | :-: |
+| `track` | 设置区域是否将随目标一起移动。 | `true` |
 
-请注意，可动画区域无法追踪。[在此处了解更多信息。]($language$/elitemobs/elitescript_zones.md&section=animatable)
+请注意，可动画的区域无法跟踪。[有关更多信息，请参见此处。]($language$/elitemobs/elitescript_zones.md&section=animatable)
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -326,26 +328,26 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  可视圆柱体:
-    事件:
+  VisualCylinder:
+    Events:
     - EliteMobDamagedEvent
-    区域:
-      半径: 10.0
-      形状: 圆柱体
-      高度: 1
-      过滤器: 玩家
-      圆角半径: 5.0
-      目标:
-        目标类型: 自身
-    动作:
-    - action: 生成粒子
+    Zone:
+      radius: 10.0
+      shape: CYLINDER
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SPAWN_PARTICLE
       times: 12
       repeatEvery: 5
-      粒子:
+      particles:
       - particle: SMOKE_NORMAL
-      目标:
-        目标类型: 区域_完整
-        追踪: false
+      Target:
+        targetType: ZONE_FULL
+        track: false
 ```
 
 </div>
@@ -354,17 +356,17 @@ eliteScript:
 
 </div>
 
-使用第 1 部分和第 2 部分中的相同示例，现在将区域设置为不追踪。这意味着该区域将在 Boss 位置生成，但即使 Boss 继续移动，该区域仍将保留在它最初生成的位置。
+使用第 1 部分和第 2 部分的相同示例，该区域现在设置为不跟踪。这意味着该区域将在首领位置生成，但即使首领不断移动，该区域也将保持在其首次生成的位置。
 
-最后，请注意，如果区域设置为不追踪，它将在调用脚本时注册其位置。
+最后，请注意，如果将某个区域设置为不跟踪，它将记录在调用脚本时所在的位置。
 
-例如，您希望您的脚本具有警告阶段和伤害阶段，您需要确保在开始时运行所有动作，并为稍后要单独运行的所有与伤害相关的动作设置等待时间。出于技术原因，您不应该延迟通过 `RUN_SCRIPT` 调用的整个脚本。
+例如，您希望为脚本设置一个警告阶段和一个伤害阶段，您需要确保在开始时运行所有操作，并将等待时间设置为所有与您希望稍后单独运行的伤害相关的操作。出于技术原因，您不应延迟通过 `RUN_SCRIPT` 调用的整个脚本。
 
-以下是来自寒冰宫殿圣殿的具有警告和伤害阶段的力量的正确示例。
+以下是摘自冰霜宫殿圣所的一个具有警告和伤害阶段的能力的正确示例。
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -372,128 +374,128 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  可视圆柱体:
-    事件:
+  VisualCylinder:
+    Events:
     - EliteMobDamagedEvent
-    区域:
-      半径: 10.0
-      形状: 圆柱体
-      高度: 1
-      过滤器: 玩家
-      圆角半径: 5.0
-      目标:
-        目标类型: 自身
-    动作:
-    - action: 生成粒子
+    Zone:
+      radius: 10.0
+      shape: CYLINDER
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SPAWN_PARTICLE
       times: 12
       repeatEvery: 5
-      粒子:
+      particles:
       - particle: SMOKE_NORMAL
-      目标:
-        目标类型: 区域_完整
-        追踪: false
-    - action: 生成粒子
+      Target:
+        targetType: ZONE_FULL
+        track: false
+    - action: SPAWN_PARTICLE
       wait: 60
       times: 13
       repeatEvery: 3
-      粒子:
-      - particle: 火焰
+      particles:
+      - particle: FLAME
         amount: 0
         x: 0
         y: 1
         z: 0
         speed: 0.2
-      - particle: 火焰
+      - particle: FLAME
         amount: 0
         x: 0.5
         y: 1
         z: 0.5
         speed: 0.2
-      - particle: 火焰
+      - particle: FLAME
         amount: 0
         x: 0
         y: 1
         z: 0.5
         speed: 0.2
-      - particle: 火焰
+      - particle: FLAME
         amount: 0
         x: 0.5
         y: 1
         z: 0
         speed: 0.2
-      - particle: 火焰
+      - particle: FLAME
         amount: 0
         x: -0.5
         y: 1
         z: -0.5
         speed: 0.2
-      - particle: 火焰
+      - particle: FLAME
         amount: 0
         x: -0.5
         y: 1
         z: 0
         speed: 0.2
-      - particle: 火焰
+      - particle: FLAME
         amount: 0
         x: 0
         y: 1
         z: -0.5
         speed: 0.2
-      - particle: 火焰
+      - particle: FLAME
         amount: 0
         x: -0.5
         y: 1
         z: 0.5
         speed: 0.2
-      - particle: 火焰
+      - particle: FLAME
         amount: 0
         x: 0.5
         y: 1
         z: -0.5
         speed: 0.2
-      目标:
-        目标类型: 区域_完整
-        追踪: false
-    - action: 运行脚本
+      Target:
+        targetType: ZONE_FULL
+        track: false
+    - action: RUN_SCRIPT
       scripts:
-      - 伤害圆柱体
-    - action: 播放动画
+      - DamageCylinder
+    - action: PLAY_ANIMATION
       sValue: fire_zone
-      目标:
-        目标类型: 自身
-    - action: 设置_怪物_AI
+      Target:
+        targetType: SELF
+    - action: SET_MOB_AI
       duration: 100
       bValue: false
-      目标:
-        目标类型: 自身
-    冷却时间:
-      本地: 1200
-      全局: 300
-  伤害圆柱体:
-    区域:
-      半径: 10.0
-      形状: 圆柱体
-      高度: 10
-      过滤器: 玩家
-      圆角半径: 5.0
-      目标:
-        目标类型: 自身
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 1200
+      global: 300
+  DamageCylinder:
+    Zone:
+      radius: 10.0
+      shape: CYLINDER
+      height: 10
+      filter: PLAYER
+      borderRadius: 5.0
+      Target:
+        targetType: SELF
         offset: 0,-1,0
-    动作:
-    - action: 伤害
+    Actions:
+    - action: DAMAGE
       wait: 60
       repeatEvery: 10
       times: 4
       multiplier: 4
-      目标:
-        目标类型: 区域_完整
-        追踪: false
-    - action: 点燃
+      Target:
+        targetType: ZONE_FULL
+        track: false
+    - action: SET_ON_FIRE
       wait: 60
       duration: 80
-      目标:
-        目标类型: 区域_完整
-        追踪: false
+      Target:
+        targetType: ZONE_FULL
+        track: false
 ```
 
 </div>
@@ -502,29 +504,29 @@ eliteScript:
 
 </div>
 
-此脚本执行很多操作，但它分为两个清晰的脚本：`可视圆柱体` 和 `伤害圆柱体`。
+此脚本执行许多操作，但它分为两个清晰的脚本：`VisualCylinder` 和 `DamageCylinder`。
 
-可视圆柱体首先运行，并具有 `运行脚本` 动作，该动作会在 `可视圆柱体` 运行的同时立即运行 `伤害圆柱体`。
+`VisualCylinder` 首先运行，并具有 `RUN_SCRIPT` 操作，该操作会立即运行 `DamageCylinder`，同时 `VisualCylinder` 也在运行。
 
-但是，`伤害圆柱体` 中的每个动作都设置为等待 60 滴答，即 3 秒。
+但是，`DamageCylinder` 中的每个操作都设置为等待 60 个刻度或 3 秒。
 
-这意味着 Boss 有 3 秒的警告阶段，然后进入伤害阶段，即使区域设置为不追踪，警告区域和伤害区域也将位于同一位置。
+这意味着首领有一个 3 秒的警告阶段，然后执行一个伤害阶段，并且即使区域设置为不跟踪，警告区域和伤害区域也将位于同一位置。
 
-### 区域特定目标属性
+### 特定于区域的目标属性
 
 区域具有以下特定属性：
 
-#### 覆盖范围
+#### coverage
 
-设置实际用于动作的区域的百分比。仅适用于位置目标（不适用于以玩家或其他实体为目标）。
+设置将实际用于操作的区域的百分比。仅适用于位置目标（在定位玩家或其他实体时无效）。
 
-| 值         | 详细信息                                | 默认值  |
-|-------------|:----------------------------------------:|---------|
-| `覆盖范围` | 设置将覆盖的区域的百分比。          | `1.0` |
+| 值 | 详细信息 | 默认值 |
+| --- | :-: | :-: |
+| `coverage` | 设置将覆盖的区域的百分比。 | `1.0` |
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -532,30 +534,30 @@ eliteScript:
 
 ```yaml
 eliteScript:
-  可视圆柱体:
-    事件:
+  VisualCylinder:
+    Events:
     - EliteMobDamagedEvent
-    区域:
-      半径: 10.0
-      形状: 圆柱体
-      高度: 1
-      过滤器: 玩家
-      圆角半径: 5.0
-      目标:
-        目标类型: 自身
-    动作:
-    - action: 生成粒子
+    Zone:
+      radius: 10.0
+      shape: CYLINDER
+      height: 1
+      filter: PLAYER
+      borderRadius: 5.0
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SPAWN_PARTICLE
       times: 12
       repeatEvery: 5
-      粒子:
+      particles:
       - particle: SMOKE_NORMAL
-      目标:
-        目标类型: 区域_完整
-        追踪: false
-        覆盖范围: 0.5
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 0.5
 ```
 
-在这种情况下，只有 50% 的区域会被粒子覆盖。
+在这种情况下，只有 50% 的区域将覆盖粒子。
 
 </div>
 
@@ -567,45 +569,43 @@ eliteScript:
 
 当一个脚本运行另一个脚本（或“调用”该脚本）时，可以将区域和目标信息从第一个脚本传递到第二个脚本。
 
-**示例用途**
+**示例用法**
 
 1. **改进的脚本运行器**
 
-脚本运行器是其唯一功能是运行许多其他脚本的脚本。它们用于使管理脚本更容易，尤其是在处理需要精确计时的多个脚本时。
+脚本运行器是其唯一功能是运行大量其他脚本的脚本。它们用于简化脚本管理，尤其是在处理需要精确计时的多个脚本时。
 
-通过目标继承，多个脚本可以使用相同的区域或目标，从而减少了数百行重复脚本的可能性。
+通过目标继承，多个脚本可以使用相同的区域或目标，从而减少了数百行可能重复的脚本编写。
 
-2. **俄罗斯套娃目标过滤**
+2. **套娃式目标筛选/俄罗斯套娃式目标筛选**
 
-过滤条件可以应用于动作中的目标。通过将目标传递给具有不同过滤器的不同脚本，可以对条件进行分层，并根据越来越具体的标准对同一目标池应用不同的效果。
+可以将筛选条件应用于操作中的目标。通过将目标传递到具有不同筛选器的另一个脚本，可以对同一目标池中的目标根据越来越具体的条件进行分层，并应用不同的效果。
 
-例如，可以创建一个寻找玩家的区域，并创建一个动作来检查区域中的所有玩家是否具有特定标签。然后，可以将有效目标传递给另一个脚本，在该脚本中，另一个动作可以运行随机检查条件，并根据该几率应用效果。然后，可以将目标进一步传递给另一个脚本，在该脚本中，另一个条件可以检查目标是否仍然活着，并在它们死亡时执行一些特殊行为。
+例如，可以创建一个查找玩家的区域，并创建一个操作来检查区域中的所有玩家是否具有特定标签。然后，可以将有效目标传递到另一个脚本，其中另一个操作可以运行随机检查条件，并根据该机会应用效果。然后，可以将目标进一步传递到另一个脚本，在其中，另一个条件可以进行检查，以查看目标是否仍然存活，如果它们已死亡，则执行一些特殊行为。
 
-当然，这些只是示例。这是一个高度灵活的系统。
+当然，这些只是示例。它是一个高度灵活的系统。
 
 3. **复杂区域**
 
-最后，可以对目标进行分层以创建复杂区域，如有必要，可以选择使用条件，甚至可以使用脚本条件和仅从脚本动作中运行列出的一个脚本的功能来创建半随机区域。
+最后，可以分层目标以创建复杂的区域，如果需要，可以选择使用条件，甚至可以使用脚本条件和仅运行脚本操作中列出的一个脚本的功能来创建半随机区域。
 
-**注意**：对于本节，**“父脚本”**是指运行 **“继承脚本”** 的脚本，它是将使用继承目标的脚本。
+**注意：** 在本节中，**“父脚本”** 指的是运行 **“继承脚本”** 的脚本，后者是将使用继承目标的脚本。
+当使用目标继承时，请务必仔细查看*父脚本*，以确保将正确的数据传递下来。
 
-使用目标继承时，请务必仔细查看 _父脚本_ 以确保正确的数据被传递下来。
+#### INHERIT_SCRIPT_TARGET
 
-#### 继承_脚本_目标
+当使用 `INHERIT_SCRIPT_TARGET` 时，来自*父脚本*的目标将传递到继承脚本。这有一些注意事项：
 
-使用 `继承_脚本_目标` 时，_父脚本_ 中的目标将传递给继承脚本。这有一些注意事项：
+- 在传递**实体目标**时，可以运行需要位置的操作（例如生成粒子），因为将使用实体的位置。当然，也可以使用需要实体的操作。
 
-- 传递 **实体目标** 时，可以运行需要位置的动作（例如生成粒子），因为将使用实体的位置。当然，也可以使用需要实体的动作。
-
-- 传递 **位置目标** 时，只能使用位置。**从位置获取实体的唯一方法是在该位置创建区域并寻找实体。** 因此，虽然传递位置然后获取实体并非不可能，但需要一些额外的工作。
-
+- 在传递**位置目标**时，只能使用位置。**从位置获取实体的唯一方法是在该位置创建一个区域并查找实体。** 因此，虽然传递位置然后获取实体并非不可能，但这需要做一些额外的工作。
 
 #### 继承区域
 
-使用 `继承_脚本_区域_完整` 或 `继承_脚本_区域_边界` 时，_父脚本_ 必须定义一个区域，否则 _继承脚本_ 将无法正确运行。
+当使用 `INHERIT_SCRIPT_ZONE_FULL` 或 `INHERIT_SCRIPT_ZONE_BORDER` 时，必须使*父脚本*定义一个区域，否则*继承脚本*将无法正常运行。
 
-此外，还可以选择对区域进行 [追踪]($language$/elitemobs/elitescript_targets.md&section=zone-track)。这也将与区域一起传递。
+此外，区域可以选择[跟踪]($language$/elitemobs/elitescript_targets.md&section=zone-track)。这也会随区域一起传递。
 
-- **未追踪** 的区域将始终在 _继承脚本_ 定义的位置创建一个区域。这意味着 _继承脚本_ 中的动作将使用区域设置来每次运行动作时创建全新的区域，并且这些区域的位置将由动作定义。
+- **未跟踪**的区域将始终在*继承脚本*定义的位置创建一个区域。这意味着该区域设置将由*继承脚本*中的操作使用，以便在每次操作运行时创建全新的区域，并且这些区域的位置将由操作定义。
 
-- 如果 _父脚本_ 设置为以 `区域_完整` 或 `区域_边界` 为目标，则 **追踪** 的区域可以将完全相同的区域位置传递给所有 _继承脚本_。这意味着每个脚本都将在相同的位置上运行。
+- 如果*父脚本*设置为目标 `ZONE_FULL` 或 `ZONE_BORDER`，**跟踪**的区域可以将完全相同的区域位置传递给所有*继承脚本*。这意味着每个脚本都将在相同的位置上运行。

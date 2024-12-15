@@ -1,18 +1,20 @@
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+
 # Table de butin personnalisée
 
-Format de butin universel. Utilisé par EliteMobs dans plusieurs endroits différents.
+Format de butin universel. Utilisé par EliteMobs dans plusieurs emplacements différents.
 
-Veuillez noter qu'il s'agit du dernier format et celui qu'il est recommandé d'utiliser, mais il existe des formats plus anciens en alternative.
+Veuillez noter qu'il s'agit du dernier format et de celui qu'il est recommandé d'utiliser, mais certains anciens formats alternatifs existent.
 
 Assurez-vous de commencer vos tables de butin par `uniqueLootList:` avant d'ajouter des paramètres, sinon la configuration .yml produira une erreur.
 
-### Laisser tomber des objets d'élite :
+### Laisser tomber les objets d'élite :
 
 | Clé | Détails | Valeurs                | Par défaut |
 | --- | :-: |-----------------------| --- |
-| `filename` | Définit le nom de fichier de l'objet personnalisé à utiliser. | [Nom de fichier](#filename) | none |
+| `filename` | Définit le nom de fichier de l'objet personnalisé à utiliser. | [Nom de fichier](#filename) | aucun |
 
-<details> 
+<details>
 
 <summary align="center"><b>Exemple</b></summary>
 
@@ -23,7 +25,7 @@ uniqueLootList:
   - filename: magmaguys_toothpick.yml
 ```
 
-Cela fera en sorte que le mob laisse tomber 1 *Cure-dent de MagmaGuy* avec une chance de 100 % de chute.
+Cela fera que le mob laisse tomber 1 *cure-dent de MagmaGuy* avec une probabilité de 100 % de le faire tomber.
 
 </div>
 
@@ -33,13 +35,13 @@ Cela fera en sorte que le mob laisse tomber 1 *Cure-dent de MagmaGuy* avec une 
 
 | Clé | Détails | Valeurs              | Par défaut |
 | --- | :-: |---------------------| --- |
-| `chance` | Définit la chance que le butin tombe. | [Double](#double)   | `1.0` |
+| `chance` | Définit la probabilité que le butin tombe. | [Nombre à virgule flottante double précision](#double)   | `1.0` |
 | `amount` | Définit la quantité de cette entrée de butin à laisser tomber | [Entier](#integer) | `1` |
-| `ignorePlayerLevel` | Fait en sorte que le butin ignore le limiteur de butin du joueur | [Booléen](#boolean) | `false` |
+| `ignorePlayerLevel` | Fait que le butin qui tombe ignore le limiteur de butin du joueur | [Booléen](#boolean) | `false` |
 
-<details> 
+<details>
 
-<summary align="center"><b>Exemple</b></summary>
+<summary align="center"><b>Ejemplo</b></summary>
 
 <div align="left">
 
@@ -51,7 +53,7 @@ uniqueLootList:
     ignorePlayerLevel: true
 ```
 
-Cela fera en sorte que le mob laisse tomber 10 *Cure-dents de MagmaGuy* avec une chance de 50 % de chute tout en ignorant le niveau du joueur.
+Cela fera que le mob laisse tomber 10 *cure-dents de MagmaGuy* avec une probabilité de 50 % de le faire tomber tout en ignorant le niveau du joueur.
 
 </div>
 
@@ -61,11 +63,11 @@ Cela fera en sorte que le mob laisse tomber 10 *Cure-dents de MagmaGuy* avec un
 
 | Clé | Détails | Valeurs              | Par défaut |
 | --- | :-: |---------------------| --- |
-| `currencyAmount` | Définit le nombre de pièces qui seront laissées tomber. | [Entier](#integer) | none |
+| `currencyAmount` | Définit la quantité de pièces qui seront laissées tomber. | [Entier](#integer) | aucun |
 
-<details> 
+<details>
 
-<summary align="center"><b>Exemple</b></summary>
+<summary align="center"><b>Ejemplo</b></summary>
 
 <div align="left">
 
@@ -74,21 +76,21 @@ uniqueLootList:
   - currencyAmount: 344
     chance: 0.5
 ```
-Cela fera en sorte que le mob laisse tomber 344 *Pièces d'élite* avec une chance de 50 % de chute.
+Cela fera que le mob laisse tomber 344 *pièces d'élite* avec une probabilité de 50 % de le faire tomber.
 
 </div>
 
 </details>
 
-### Laisser tomber des objets vanilla :
+### Laisser tomber des objets de vanilla :
 
 | Clé | Détails | Valeurs                | Par défaut |
 | --- | :-: |-----------------------| --- |
-| `material` | Définit le matériau de l'objet qui tombe. | [Matériau](#material) | none |
+| `material` | Définit le matériau de l'objet qui tombe. | [Matériau](#material) | aucun |
 
-<details> 
+<details>
 
-<summary align="center"><b>Exemple</b></summary>
+<summary align="center"><b>Ejemplo</b></summary>
 
 <div align="left">
 
@@ -98,23 +100,23 @@ uniqueLootList:
     chance: 0.3
     amount: 5
 ```
-Cela fera en sorte que le mob laisse tomber 5 *Pommes* avec une chance de 30 % de chute.
+Cela fera que le mob laisse tomber 5 *pommes* avec une possibilité de 30 % de les faire tomber.
 
 </div>
 
 </details>
 
-### Arènes : EN COURS DE DÉVELOPPEMENT (Ne fonctionne pas actuellement)
-Lorsque vous créez des tables de butin d'arène, assurez-vous de commencer votre table de butin par `rawArenaReward:` au lieu de `uniqueLootList:`.
+### Arènes : TRAVAIL EN COURS (ne fonctionne pas actuellement)
+Lors de la création de tables de butin d'arènes, assurez-vous de commencer votre table de butin par `rawArenaReward:` au lieu de `uniqueLootList:`.
 
 | Clé | Détails | Valeurs              | Par défaut |
 | --- | :-: |---------------------| --- |
-| `wave` | Définit la vague à laquelle cette entrée de butin tombera. Uniquement pour une utilisation dans les arènes. | [Entier](#integer) | none |
-| `level` | Définit le niveau de la chute de butin. Uniquement pour une utilisation dans les arènes. | [Entier](#integer) | none |
+| `wave` | Définit la vague à laquelle cette entrée de butin tombera. Uniquement pour une utilisation dans les arènes. | [Entier](#integer) | aucun |
+| `level` | Définit le niveau du butin qui tombe. Uniquement pour une utilisation dans les arènes. | [Entier](#integer) | aucun |
 
-<details> 
+<details>
 
-<summary align="center"><b>Exemple</b></summary>
+<summary align="center"><b>Ejemplo</b></summary>
 
 <div align="left">
 
@@ -128,7 +130,7 @@ rawArenaReward:
     wave: 1
     level: 2
 ```
-Lorsque les joueurs battent la première vague, cela fera en sorte que l'arène laisse tomber 10 *Pains* avec une chance de 50 % de chute et 1 *Cure-dent de MagmaGuy* de niveau 2 avec une chance de 100 % de chute.
+Lorsque les joueurs battent la première vague, cela fera que l'arène laisse tomber 10 *Pains* avec une probabilité de 50 % de les faire tomber et 1 *cure-dent de MagmaGuy* de niveau 2 avec une probabilité de 100 % de le faire tomber.
 
 </div>
 
@@ -138,11 +140,11 @@ Lorsque les joueurs battent la première vague, cela fera en sorte que l'arène 
 
 | Clé | Détails | Valeurs            | Par défaut |
 | --- | :-: |-------------------| --- |
-| `difficultyID` | Définit la liste des difficultés de donjon instancié pour lesquelles ce butin tombera. Uniquement pour une utilisation dans les donjons instanciés. | [Chaîne](#string) | none |
+| `difficultyID` | Définit la liste des difficultés de donjon instancié pour lesquelles ce butin sera laissé tomber. Uniquement pour une utilisation dans les donjons instanciés. | [Chaîne de caractères](#string) | aucun |
 
-<details> 
+<details>
 
-<summary align="center"><b>Exemple</b></summary>
+<summary align="center"><b>Ejemplo</b></summary>
 
 <div align="left">
 
@@ -154,11 +156,8 @@ uniqueLootList:
     - 1
     - 2
 ```
-Cela fera en sorte que le mob laisse tomber 1 *Cure-dent de MagmaGuy* avec une chance de 50 % de chute si les joueurs ont vaincu le boss en difficulté 1 ou 2.
+Cela fera que le mob laissera tomber 1 *cure-dent de MagmaGuy* avec une probabilité de 50 % de le faire tomber si les joueurs ont vaincu le boss à la difficulté 1 ou 2.
 
 </div>
 
 </details>
-
-```
-

@@ -1,19 +1,15 @@
-A partir de la versión 7.1.0 de EliteMobs, por demanda popular, ahora puedes activar Vault para unificar la economía de EliteMobs con la economía de tu servidor.
+A partir de la versión 7.1.0, a petición popular, ahora puede activar Vault para unificar la economía de EliteMobs con la economía de su servidor.
 
-***Ahora, aquí tienes por qué es una mala idea:***
+***Ahora, aquí está la razón por la que es una mala idea:***
 
-EliteMobs no tiene sistema de nivelación. El [sistema de progresión]($language$/elitemobs/understanding_the_basics_of_elitemobs.md) está ligado a la obtención de mejores objetos matando turbas de élite y comprando rangos de gremio más altos para acceder a botín de nivel superior, turbas de nivel superior, misiones de nivel superior y, desafíos de arena y mazmorras de nivel superior.
+EliteMobs no tiene un sistema de niveles. El [sistema de progresión]($language$/elitemobs/understanding_the_basics_of_elitemobs.md) está ligado a obtener mejores objetos al matar a mobs de élite y comprar rangos de gremio más altos para acceder a botín de nivel superior, mobs de nivel superior, misiones de nivel superior y desafíos y mazmorras de arena de nivel superior.
 
-Además, EliteMobs tiene un equilibrio muy delicado cuando se trata de comprar amuletos y revender el botín obtenido de las turbas de élite.
+Además, EliteMobs tiene un equilibrio muy delicado cuando se trata de comprar amuletos y revender el botín obtenido de los mobs de élite.
 
-***Por lo tanto, si combinas la economía de tu servidor con la economía de EliteMobs, los jugadores podrán llegar fácilmente a la cima, potencialmente sin pasar por la curva de aprendizaje.***
+***Por lo tanto, si combina la economía de su servidor con la economía de EliteMobs, los jugadores podrán comprar fácilmente su camino a la cima, lo que podría evitar la curva de aprendizaje.***
 
-Ahora el [sistema de progresión]($language$/elitemobs/understanding_the_basics_of_elitemobs.md) no funcionará correctamente, lo que lleva a problemas aún peores. Las turbas de élite de alto nivel tienen varios poderes, y los jugadores deben aprender lentamente esos poderes luchando contra ellos durante docenas de horas, aprendiendo a identificar los poderes que tienen las turbas de élite y cómo contrarrestar esos poderes, así como aprendiendo a prepararse para entrar en combate contra las turbas de élite.
+Ahora el [sistema de progresión]($language$/elitemobs/understanding_the_basics_of_elitemobs.md) no funcionará correctamente, lo que conduce a problemas aún peores. Los mobs de élite de alto nivel tienen varios poderes, y se supone que los jugadores aprenderán lentamente esos poderes luchando contra ellos durante docenas de horas, aprendiendo a identificar los poderes que tienen los mobs de élite y cómo contrarrestar esos poderes, así como aprendiendo a prepararse para ir a combate contra mobs de élite.
 
-Si los jugadores pasan directamente al final del juego, sentirán que la dificultad del combate es casi imposible y extremadamente injusta, ya que no habrán tenido tiempo de desarrollar el conocimiento necesario para matar a los EliteMobs de manera eficiente a través de largas horas de juego.
+Si los jugadores se saltan directamente el final del juego, sentirán que la dificultad del combate es casi imposible y extremadamente injusta, ya que no habrán tenido tiempo para desarrollar el conocimiento necesario para matar a los EliteMobs de manera eficiente a través de largas horas de juego.
 
-Puedes habilitar la compatibilidad con Vault en el archivo de configuración `EconomySettings.yml`.
-
-
-
-
+Puede habilitar la compatibilidad con Vault en el archivo de configuración `EconomySettings.yml`.

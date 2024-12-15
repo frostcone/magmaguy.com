@@ -1,269 +1,225 @@
-```markdown
-# ***Avant de commencer !***
-
-FreeMinecraftModels (FMM) est actuellement en **alpha !** Cela signifie que plusieurs fonctionnalités ne sont pas encore terminées et sont en cours de développement actif.
-
-Cependant, à ce jour, le cœur du plugin est entièrement fonctionnel : la conversion de fichiers `.bbmodel`, la génération de packs de ressources, le spawn d'entités dans le jeu et la gestion de leurs animations fonctionnent toutes, même si elles ne sont peut-être pas encore 100 % abouties.
-
-Envisagez de soutenir le développement sur https://www.patreon.com/magmaguy !
-
-Le contenu du pack de ressources exporté est sous licence CC0, sans aucune réserve de droits. Vous êtes libre d'utiliser, de distribuer et de modifier les informations de ce wiki à toutes fins sans restriction ni obligation d'attribution.
-
-# Utilisation de ce plugin
-
-## Que peut faire FreeMinecraftModels (FMM) pour les administrateurs de serveurs Minecraft ?
-
-Il peut :
-
-- Importer des modèles `.bbmodel` ou `.fmmodel` (format personnalisé de FMM)
-- Générer des packs de ressources avec des modèles qui dépassent les limites normales des modèles de packs de ressources Minecraft (jusqu'à ~~112x112x112~~ 106x106x106 unités ou 7x7x7 blocs dans le jeu)
-- Afficher ces modèles dans le jeu en utilisant la commande `/fmm spawn static <id>` où l'ID est le nom de fichier du modèle, en minuscules et sans l'extension de fichier
-- Animer ces modèles comme ils ont été configurés pour être animés dans Blockbench
-- Gérer les animations d'état par défaut sans nécessiter d'autres plugins (marche, inactivité, mort, attaque, spawn)
-
-### Comment ajouter un modèle existant ?
-
-Pour importer un modèle, faites simplement glisser le fichier `.bbmodel` vers le dossier `imports` et exécutez `/fmm reload`. Cela générera un fichier `.fmmodel` dans le dossier `models` et ajoutera le modèle au pack de ressources dans le dossier `outputs`.
-
-***Vous devrez utiliser ce pack de ressources pour voir correctement le modèle !*** Il s'agit d'un pack de ressources normal, il vous suffit donc de le placer dans votre dossier de pack de ressources. Les serveurs Minecraft ont un moyen d'héberger des packs de ressources sur des services tiers tels que Google Drive ou un service spécialisé tel que https://resourcepack.host/, ce dernier site Web étant peut-être le moyen le plus simple de le faire.
-
-### Comment visualiser le modèle dans le jeu ?
-
-Il existe deux (prévues) catégories de modèles.
-
-- Les modèles `Static` sont destinés aux modèles qui ne bougent pas (mais qui peuvent avoir des animations), et servent plutôt de décorations - pensez à quelque chose comme un lampadaire ou un sapin de Noël.
-- Les modèles `Dynamic` sont destinés aux modèles qui se comportent comme des mobs Minecraft, c'est-à-dire qu'ils se déplacent et exécutent divers comportements associés aux mobs. Pensez à quelque chose comme des modèles de boss personnalisés ou à l'ajout de nouveaux types d'entités à Minecraft.
-
-#### Visualisation des modèles statiques dans le jeu
-
-Pour visualiser des modèles statiques dans le jeu, utilisez la commande `/fmm spawn static <id>` où l'ID est le nom de fichier du modèle, en minuscules et sans l'extension de fichier.
-
-#### Visualisation des modèles dynamiques dans le jeu
-
-Pour visualiser des modèles dynamiques dans le jeu, utilisez la commande `/fmm spawn dynamic <id>` où l'ID est le nom de fichier du modèle, en minuscules et sans l'extension de fichier.
-
-## Que peut faire FreeMinecraftModels (FMM) pour les modélisateurs ?
-
-FMM suit les règles standard des packs de ressources pour la génération de packs de ressources. De plus, il essaie d'être aussi compatible que possible avec les modèles compatibles avec ModelEngine afin d'essayer de standardiser la création de modèles entre les plugins.
-
-### Fonctionnalités/restrictions de la génération de modèles
-
-Si vous avez déjà créé des modèles pour ModelEngine, vous connaîtrez beaucoup des restrictions de génération de packs de ressources Minecraft :
-
-#### **Cubes :**
-
-Les cubes sont les mêmes ici que dans Blockbench, ce sont les cubes qui composent le modèle.
-
-- Les cubes peuvent aller jusqu'à ~~112x112x112~~ 106x106x106 "pixels" (unités Blockbench) ou 7x7x7 blocs dans le jeu (restrictions Minecraft normales contournées à l'aide des tailles d'affichage, bientôt contournées pour 1.19.4+ grâce aux entités d'affichage)
-- Les rotations autorisées pour les cubes sont 0, 22.5, -22.5, 45 et -45. Aucune autre rotation ne fonctionne.
-- Les cubes ne tournent que sur un axe, ce qui signifie qu'une rotation de [22.5, 0, 0] est correcte, une rotation de [22.5, 0, 45] ne fonctionnera pas complètement et ne tournera que sur un axe.
-
-#### **Os :**
-
-Les os sont ce que Blockbench appelle des "groupes". Ils servent à regrouper les cubes, et doivent être utilisés pour regrouper les os pour les animations Blueprint.
-
-- Les os peuvent aller jusqu'à ~~112x112x112~~ 106x106x106 (devrait être 112, je ne sais pas pourquoi c'est le cas) "pixels" (unités Blockbench) ou 7x7x7 blocs dans le jeu. *Veuillez noter que la taille des os est définie par ce qu'ils contiennent. Donc, si vous avez des cubes qui sont séparés de plus de 7 blocs, vous dépasserez probablement cette limite de taille. Contourner cette limite est aussi simple que de placer les blocs dans un autre `boneBlueprint` qui n'est pas contenu dans le premier `boneBlueprint` !*
-- Peut avoir n'importe quelle rotation !
-
-Les os sont beaucoup plus flexibles que les cubes, mais vous devez utiliser le moins d'os possible ! Dans FMM, en raison de limitations de Minecraft, chaque `boneBlueprint` est une entité différente. À une certaine échelle, cela affectera les performances assez rapidement ! Utilisez toujours le moins d'os possible et soyez attentif au nombre de modèles de ce type que vous prévoyez de faire spawn - plus vous en avez, moins vous devez avoir d'os !
-
-#### **Os virtuels**
-
-Si vous venez de ModelEngine, vous voudrez probablement savoir si/comment les os virtuels sont implémentés dans FMM. Les os virtuels ont été prévus, mais ne sont pas encore implémentés au-delà des bases.
-
-Cependant, au moins, les os virtuels suivants seront compatibles avec FMM prochainement :
-
-- Hitboxes/hauteur des yeux : un `boneBlueprint` appelé "hitbox" avec un `cubeBlueprint` qui définit les limites et a la même valeur x et z (la plus grande valeur sera choisie si elles ne sont pas identiques) définit la hitbox. Le niveau des yeux est défini au point de pivot du `boneBlueprint` de la hitbox.
-- Balise de nom : un `boneBlueprint` dont le nom commence par "tag_". Honnêtement, je préférerais être plus spécifique au mode et utiliser "tag_name" afin d'utiliser des balises pour d'autres choses, mais cela sera sérieusement envisagé plus tard.
-
-Aucune autre fonctionnalité de `boneBlueprint` virtuel n'est garantie d'être ajoutée dans un avenir immédiat.
-
-## Fusion des packs de ressources
-
-Lorsque vous utilisez FMM, vous devrez probablement fusionner des packs de ressources.
-
-Vous pouvez fusionner des packs de ressources manuellement, mais nous vous recommandons d'utiliser un outil en ligne tel que [merge.elmakers](https://merge.elmakers.com/) pour fusionner vos packs de ressources.
-
-#### **Distribution de fichiers plus sûre, plus facile et non modifiable**
-
-Une des choses que FMM essaie de résoudre est le fait que les utilisateurs réutilisent des modèles qu'ils ont obtenus pour les modifier d'une manière que le créateur du modèle ne voulait pas qu'ils modifient, en particulier pour changer le skin ou modifier légèrement un modèle et éventuellement essayer de le revendre comme une création originale.
-
-À cette fin, FMM utilise le format de fichier `.fmmodel` qui vise à simplifier les fichiers `.bbmodel` au point où ils peuvent être utilisés par le plugin, mais ne peuvent pas être modifiés dans Blockbench.
-
-En tant que modélisateur, vous avez désormais le choix de diffuser un fichier `.fmmodel` non modifiable, un fichier `.bbmodel` modifiable ou même de faire des prix différentiels ou des conditions générales de distribution différentes pour les deux.
-
-Générer un fichier `.fmmodel` est aussi simple que de placer votre fichier `.bbmodel` dans le dossier `~/plugins/FreeMinecraftModels/imports` et de recharger le plugin avec `/fmm reload` ou de redémarrer le serveur. Votre fichier `.fmmodel` se trouvera ensuite dans le dossier `~/plugins/FreeMinecraftModels/models`.
-
-## Que peut faire FreeMinecraftModels (FMM) pour les développeurs qui souhaitent l'intégrer à leurs plugins ?
-
-FMM dispose d'un référentiel Maven !
-Maven :
-
-```xml
-
-<repository>
-    <id>ossrh-public</id>
-    <url>https://s01.oss.sonatype.org/content/groups/snapshots/</url>
-</repository>
-
-<dependency>
-<groupId>com.magmaguy</groupId>
-<artifactId>FreeMinecraftModels</artifactId>
-<version>1.1.3-SNAPSHOT</version>
-<scope>provided</scope>
-</dependency>
+```yaml
+# Définit le niveau maximum, +7, des jefes qui pueden dejar caer equipo de diamante generado por procedimientos en EliteMobs.
+# Il n'y a pas d'équipement en netherite généré de façon procédurale dans EliteMobs, uniquement du butin personnalisé.
+minimumProcedurallyGeneratedDiamondLootLevelPlusSeven: 10
+# Définit le mensaje que se muestra en el chat al conseguir botín con éxito a través del comando /em simloot <level> <times>.
+simlootMessageSuccess: '&8[EliteMobs] &2Rolled for loot and got $itemName &2!'
+# Définit le mensaje que se muestra en el chat al no obtener botín a través del comando /em simloot <level> <times>.
+simlootMessageFailure: '&8[EliteMobs] &cRolled for loot and got nothing!'
+# Définit le mensaje que reciben los jugadores cuando el botín de élite se deposita directamente en sus inventarios.
+directDropCustomLootMessage: '&8[EliteMobs] &2Obtained $itemName &2!'
+# Définit le mensaje que reciben los jugadores cuando el botín de vainilla se deposita directamente en sus inventarios.
+directDropMinecraftLootMessage: '&8[EliteMobs] &aObtained $itemName &a!'
+# Définit le mensaje que reciben los jugadores cuando las monedas de élite se depositan directamente en sus inventarios.
+directDropCoinMessage: '&8[EliteMobs] &aObtained &2$amount $currencyName &a!'
+# Establece si EliteMobs ocultará los atributos de vainilla de Minecraft.
+hideItemAttributes: true
+# Définit l'entrée de tradition spécifique aux armes sur un objet d'élite. Le marqueur de position $EDPS est remplacé par le DPS d'élite (dégâts par seconde) de l'arme.
+weaponEntry: '&7DPS d'élite : &2$EDPS'
+# Définit l'entrée de tradition spécifique aux armures sur un objet d'élite. Le marqueur de position $EDEF est remplacé par la DEF (défense) d'élite de l'arme.
+armorEntry: '&7Armure d'élite : &2$EDEF'
+# Définit le message envoyé lorsqu'un joueur tue un boss, mais que le niveau de l'équipement est trop différent du niveau du boss pour obtenir des pièces.
+levelRangeTooDifferent: '&8EM] &4Votre équipement est de niveau $playerLevel et le boss est de niveau
+  $bossLevel, la différence de niveau est trop élevée pour obtenir des pièces !'
 ```
 
-Gradle :
+</details>
 
-```kotlin
-compileOnly group : 'com.magmaguy', name: 'FreeMinecraftModels', version: '1.1.2-SNAPSHOT'
+---
+
+## MobCombatSettings.yml
+
+`MobCombatSettings.yml` contient tous les paramètres de configuration liés au système de combat personnalisé et la plupart des options de configuration généralement liées au fonctionnement des mobs d'élite.
+
+<details>
+
+<summary><b>Développer le tableau</b></summary>
+
+```yml
+# Définit si les élites générées naturellement apparaîtront. Remarque : les mobs d'événement comme le roi zombie ne sont pas des élites générées naturellement ! Vous devrez désactiver les événements si vous voulez désactiver les boss d'événement.
+doNaturalEliteMobSpawning: true
+# Définit si les apparitions générées à partir des générateurs de mobs peuvent être converties en élites. Non recommandé !
+doSpawnersSpawnEliteMobs: false
+# Définit le pourcentage de mobs générés naturellement qui sont convertis en mobs d'élite.
+eliteMobsSpawnPercentage: 0.05
+# Définit la plage des super mobs pour la recherche d'empilement de super mobs
+superMobStackRange: 15
+# Définit le niveau maximum auquel les élites peuvent apparaître.
+# Remarque : le niveau de mob d'élite est basé sur l'armure et les armes que les joueurs portent, et l'armure ne peut être mise à l'échelle que jusqu'au niveau 200.
+naturalEliteMobsLevelCap: 250
+# Définit si les élites porteront une armure en fonction de leur niveau. Ceci est uniquement à des fins visuelles et n'affecte pas le combat.
+doElitesWearArmor: true
+# Définit si les élites porteront des casques en fonction de leur niveau. Cela les empêchera de brûler facilement pendant la journée.
+doElitesWearHelmets: true
+# Définit si les élites auront des traînées visuelles autour d'elles, avertissant les joueurs des joueurs qu'elles possèdent.
+doNaturalEliteMobVisualEffects: true
+# Définit si les élites générées à partir de générateurs feront des effets visuels.
+doSpawnerEliteMobVisualEffects: false
+# Définit si certains pouvoirs feront la phase d'avertissement du pouvoir. Ceci est très important car les phases d'avertissement signifient généralement que le pouvoir peut être esquivé et l'élément visuel permet aux joueurs de savoir où esquiver.
+doPowerBuildupVisualEffects: true
+# Définit si des messages de mort personnalisés seront utilisés lorsque les joueurs meurent à cause des élites.
+doCustomEliteMobsDeathMessages: true
+# Définit si EliteMobs affichera des indicateurs de santé pour les élites.
+doDisplayMobHealthOnHit: true
+# Définit si EliteMobs affichera des indicateurs de dégâts pour les dégâts infligés aux élites.
+doDisplayMobDamageOnHit: true
+# Définit si le niveau des élites augmentera en fonction de la distance de l'apparition.
+# Il s'agit d'une valeur ajoutée en plus de leur niveau normal, ce qui signifie que si un joueur porte un équipement de niveau 100 près de l'apparition et que le boss a +1 de niveau en raison de la distance de l'apparition, le boss apparaîtra au niveau 101.
+# En général, cette option n'est pas recommandée, en particulier si vous avez un système de tp aléatoire sur votre serveur.
+doIncreaseEliteMobLevelBasedOnSpawnDistance: false
+# Définit la distance entre les incréments de niveau pour les augmentations de niveau basées sur la distance.
+distanceBetweenIncrements: 100.0
+# Définit le nombre de niveaux qui augmentent à chaque incrément de distance pour les augmentations de niveau basées sur la distance.
+levelIncreaseAtIncrements: 1.0
+# Définit si les pouvoirs des élites seront cachés jusqu'à ce qu'elles entrent en combat. Ceci est recommandé pour des raisons de performances.
+hideEliteMobPowersUntilAggro: true
+# Définit le multiplicateur pour les dégâts infligés à tous les boss générés par EliteMobs, sauf ceux qui utilisent le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent les dégâts infligés, ce qui facilite la mort des boss.
+# 2.0 = 200 %, 0.5 = 50 %
+damageToEliteMobMultiplierV2: 1.0
+# Définit le multiplicateur pour les dégâts infligés aux joueurs par les élites. Des valeurs plus élevées augmentent la quantité de dégâts infligés par les boss, sauf ceux qui utilisent le système de dégâts normalisé (boss de donjons régionaux), ce qui rend les boss plus difficiles à frapper.
+# 2.0 = 200 %, 0.5 = 50 %
+damageToPlayerMultiplierV2: 1.0
+# Définit si les boss spéciaux peuvent être suivis.
+showCustomBossLocation: true
+# Définit le message envoyé aux joueurs pour suivre l'emplacement d'un boss.
+bossLocationMessage: '&7[EM] &2[Cliquez pour suivre !]'
+# Définit les commandes qui s'exécutent lorsqu'une élite meurt. Les marqueurs de position valides sont :
+# $level pour le niveau du boss
+# $name pour le nom du boss
+# $players fera en sorte que la commande s'exécute pour chaque joueur qui a participé à la mort. Par exemple, si Bob et Steve ont tué un boss, 'broadcast $players a tué le boss !' exécutera 'bob a tué le boss' et 'steve a tué le boss !'
+commandsOnEliteMobDeath: []
+# Définit le message envoyé aux joueurs qui participent à de grandes mises à mort de boss.
+bossKillParticipationMessage: '&eVos dégâts : &2$playerDamage'
+# Définit si les boss régénéreront leur santé lorsqu'ils sortiront du combat. Fortement recommandé.
+regenerateCustomBossHealthOnCombatEnd: true
+# Définit le message envoyé aux joueurs qui tentent de suivre les boss qui se trouvent actuellement dans un monde différent.
+defaultOtherWorldBossLocationMessage: '$name : Dans un autre monde !'
+# Définit le préfixe ajouté aux indicateurs de dégâts lorsque les joueurs frappent un boss avec quelque chose contre lequel le boss est faible.
+weakTextColor: '&9'
+# Définit le préfixe ajouté aux indicateurs de dégâts lorsque les joueurs frappent un boss avec quelque chose contre lequel le boss est fort.
+resistTextColor: '&c'
+# Définit le message qui apparaît lorsque les joueurs frappent le boss avec quelque chose contre lequel le boss est faible.
+weakText: '&9&lFaible !'
+# Définit le message qui apparaît lorsque les joueurs frappent le boss avec quelque chose contre lequel le boss est fort.
+resistText: '&c&lRésistance !'
+# Définit si des visuels seront utilisés pour montrer qu'un boss est faible contre une attaque.
+doWeakEffect: true
+# Définit si des visuels seront utilisés pour montrer qu'un boss est fort contre une attaque.
+doResistEffect: true
+# Définit le multiplicateur pour les dégâts infligés aux boss utilisant le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent les dégâts infligés, ce qui facilite la mort des boss.
+# 2.0 = 200 %, 0.5 = 50 %
+damageToEliteMobMultiplier: 1.0
+# Définit le multiplicateur pour les dégâts infligés aux joueurs par les boss utilisant le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent la quantité de dégâts infligés par les boss, ce qui rend les boss plus difficiles à frapper.
+# 2.0 = 200 %, 0.5 = 50 %
+damageToPlayerMultiplier: 1.0
+# Définit les dégâts de référence pour les boss personnalisés utilisant les dégâts normalisés (généralement les boss régionaux de donjons).
+normalizedRegionalBossBaselineDamageV2: 3.0
+# Définit la santé de référence pour les boss personnalisés utilisant la santé normalisée (généralement les boss régionaux de donjons).
+normalizedRegionalBossBaselineHealthV3: 4.0
+# Définit si les boss régionaux utiliseront le système de combat normalisé.
+# Ceci est très fortement recommandé et le contenu préfabriqué ne sera pas équilibré correctement s'il est modifié.
+normalizeRegionalBosses: true
+# Définit le message qui apparaît lorsqu'un boss guérit en sortant du combat.
+fullHealMessage: '&2GUÉRISON COMPLÈTE !'
+# Définit les multiplicateurs appliqués aux attaques contre lesquelles les boss sont forts et faibles.
+strengthAndWeaknessDamageMultipliers: 2.0
+# Définit le multiplicateur appliqué à la réduction de dégâts de l'effet de potion de résistance pour les joueurs.
+resistanceDamageMultiplier: 1.0
+# Définit le multiplicateur appliqué à la réduction de dégâts lorsqu'un joueur tient un bouclier pour les attaques de mêlée (pouvoirs exclus).
+blockingDamageReduction: 0.8
 ```
 
-*Remarque : FreeMinecraftModels est destiné à être utilisé comme une API et nécessitera l'installation du plugin sur le serveur. Ne l'integrez pas à votre plugin !*
+</details>
 
-FMM vise à être aussi simple que possible à utiliser comme une API.
+---
 
-Pour le moment, il n'y a qu'une seule classe que vous devez connaître si vous souhaitez utiliser FMM comme une API pour votre plugin, et c'est `StaticEntity`.
+## ProceduralItemGenerationSettings.yml
 
-Voici un extrait pour gérer un modèle statique :
+`ProceduralItemGenerationSettings.yml` contient toutes les options de configuration pour la configuration des objets générés de façon procédurale.
 
-```java
-public class FreeMinecraftModelsModel {
-    private StaticEntity staticEntity = null;
+<details>
 
-    //Créer le modèle
-    public FreeMinecraftModelsModel(String id, Location location) {
-        //Cela fait spawn l'entité !
-        staticEntity = StaticEntity.create(id, location);
-        //Cela vérifie si l'entité a spawné correctement
-        if (staticEntity == null) Logger.warningMessage("FMM a échoué à trouver un modèle nommé " + id + " !");
-    }
+<summary><b>Développer le tableau</b></summary>
 
-    public void remove() {
-        //Cela supprime l'entité
-        staticEntity.remove();
-    }
-}
+```yml
+dropProcedurallyGeneratedItems: true
+customEnchantmentsChance: 0.5
+materialNames:
+  swordName: Épée
+  bowName: Arc
+  pickaxe: Pioche
+  spade: Pelle
+  hoe: Houe
+  axe: Hache
+  helmet: Casque
+  chestplate: Plastron
+  leggings: Jambières
+  boots: Bottes
+  shears: Cisailles
+  fishingRod: Canne à pêche
+  shield: Bouclier
+  trident: Trident
+  crossbow: Arbalète
+nameFormats:
+- $verb $itemType de $adjective $noun
+- $itemType de $adjective $noun
+- $noun's $adjective $verb $itemType
+- $verb $itemType
+- $adjective $verb $itemType
+- The $verb-er
+- The $adjective $verb-er
+nouns:
+- MagmaGuy
+- Aube
+...
+adjectives:
+- Adorable
+- Magnifique
+...
+verbs:
+- Tailler
+- Couper
+...
+verb-ers (noun):
+- Brise-monde
+- Brise-destructeur_de_monde
+...
+validMaterials:
+  DIAMOND_HELMET: true
+  DIAMOND_CHESTPLATE: true
+  DIAMOND_LEGGINGS: true
+  DIAMOND_BOOTS: true
+  DIAMOND_SWORD: true
+  DIAMOND_AXE: true
+  IRON_HELMET: true
+  IRON_CHESTPLATE: true
+  IRON_LEGGINGS: true
+  IRON_BOOTS: true
+  IRON_SWORD: true
+  IRON_AXE: true
+  GOLDEN_HELMET: true
+  GOLDEN_CHESTPLATE: true
+  GOLDEN_LEGGINGS: true
+  GOLDEN_BOOTS: true
+  GOLDEN_SWORD: true
+  GOLDEN_AXE: true
+  CHAINMAIL_HELMET: true
+  CHAINMAIL_CHESTPLATE: true
+  CHAINMAIL_LEGGINGS: true
+  CHAINMAIL_BOOTS: true
+  LEATHER_HELMET: true
+  LEATHER_CHESTPLATE: true
+  LEATHER_LEGGINGS: true
+  LEATHER_BOOTS: true
+  STONE_SWORD: true
+  STONE_AXE: true
+  WOODEN_SWORD: true
+  WOODEN_AXE: true
+  SHIELD: true
+  TURTLE_HELMET: true
+  TRIDENT: true
+  BOW: true
+  CROSSBOW: true
 ```
 
-Gardez à l'esprit que les modèles statiques sont destinés à rester en place et à servir d'éléments décoratifs à un emplacement fixe (les animations ne sont pas considérées comme des "déplacements" ici). S'il est possible de les déplacer, demandez-vous si vous ne voulez pas plutôt utiliser un modèle dynamique si tel est votre objectif.
-
-Et voici comment EliteMobs, mon plugin de boss personnalisé, utilise les entités dynamiques :
-
-```java
-package com.magmaguy.elitemobs.thirdparty.custommodels.freeminecraftmodels;
-
-import com.magmaguy.elitemobs.mobconstructor.custombosses.CustomBossEntity;
-import com.magmaguy.elitemobs.thirdparty.custommodels.CustomModelInterface;
-import com.magmaguy.freeminecraftmodels.api.ModeledEntityManager;
-import com.magmaguy.freeminecraftmodels.customentity.DynamicEntity;
-import lombok.Getter;
-import org.bukkit.entity.LivingEntity;
-
-public class CustomModelFMM implements CustomModelInterface {
-    @Getter
-    private DynamicEntity dynamicEntity;
-
-    public CustomModelFMM(LivingEntity livingEntity, String modelName, String nametagName) {
-        dynamicEntity = DynamicEntity.create(modelName, livingEntity);
-        if (dynamicEntity == null) return;
-        dynamicEntity.setName(nametagName);
-    }
-
-    public static void reloadModels() {
-        ModeledEntityManager.reload();
-    }
-
-    public static boolean modelExists(String modelName) {
-        return ModeledEntityManager.modelExists(modelName);
-    }
-
-    @Override
-    public void shoot() {
-        if (dynamicEntity.hasAnimation("attack_ranged")) dynamicEntity.playAnimation("attack_ranged", false);
-        else dynamicEntity.playAnimation("attack", false);
-    }
-
-    @Override
-    public void melee() {
-        if (dynamicEntity.hasAnimation("attack_melee")) dynamicEntity.playAnimation("attack_melee", false);
-        else dynamicEntity.playAnimation("attack", false);
-    }
-
-    @Override
-    public void playAnimationByName(String animationName) {
-        dynamicEntity.playAnimation(animationName, false);
-    }
-
-    @Override
-    public void setName(String nametagName, boolean visible) {
-        dynamicEntity.setName(nametagName);
-        dynamicEntity.setNameVisible(visible);
-    }
-
-    @Override
-    public void setNameVisible(boolean visible) {
-        dynamicEntity.setNameVisible(visible);
-    }
-
-    @Override
-    public void switchPhase() {
-        dynamicEntity.stopCurrentAnimations();
-    }
-}
-```
-
-Les modèles dynamiques sont construits sur une entité vivante, qui peut être fournie lors de l'utilisation de la méthode de création comme dans l'exemple ci-dessus, ou lors de l'exécution de la méthode de spawn sur une entité dynamique.
-
-Bien qu'il n'existe pas d'API formelle pour le moment, tous les éléments destinés à l'utilisation de l'API sont contenus dans `ModeledEntity` (la classe de base de toutes les entités), `StaticEntity`, `DynamicEntity` et `ModeledEntityManager`. 99 % des développeurs devraient trouver toutes les méthodes dont ils ont besoin réparties entre ces trois classes.
-
-# Contribution au projet FreeMinecraftModels (FMM) en tant que développeur
-
-FMM est distribué sous licence GPLV3 et les contributions de code sont les bienvenues. Voici les directives de contribution de base :
-
-- Suivez les conventions de nommage existantes, maintenez le niveau de verbosité existant et ajoutez suffisamment de documentation pour que votre contribution soit facile à comprendre.
-- Gardez les contributions pertinentes à la portée du plugin. Si vous ne savez pas si cela sera pertinent, n'hésitez pas à poser la question à l'avance.
-- Soyez attentif à l'impact de votre code sur les performances. Certaines contributions peuvent être refusées si elles sont soit trop peu optimisées, soit si elles ont un impact trop important sur les performances.
-
-## Schéma général du plugin
-
-Pour vous faire gagner du temps, voici une brève ventilation du flux logique de FMM :
-
-1) Lire le dossier `imports`
-2) Déplacer les fichiers du dossier `imports` vers le dossier `models`. Si le fichier est un fichier `.bbmodel`, il est converti en `.fmmodel` dans le dossier `models`.
-3) Lire les fichiers dans le dossier `models`.
-4) Interpréter toutes les structures de modèles, en créant des `Skeleton` qui contiennent des groupes de `Bone`, et ces os contiennent des groupes de `Bone` enfants et de `Cube`. Les `Cube` et les `Bone` génèrent les données JSON du pack de ressources auxquelles ils sont liés. Cela signifie que les `Cube` génèrent le JSON spécifique aux cubes et que les `Bone` génèrent les fichiers de contour et d'os individuels. Notez qu'un `boneBlueprint` génère un fichier de pack de ressources. Les modèles sont ajoutés à une liste au fur et à mesure qu'ils sont générés.
-5) Toujours dans le `Skeleton`, interpréter toutes les `Animations` du modèle, le cas échéant.
-6) Toutes les données ont maintenant été initialisées, le pack de ressources a été généré dans le dossier `outputs` et le plugin est prêt à être utilisé.
-
-## Astuces utilisées dans ce plugin :
-
-Les astuces utilisées ici sont assez bien établies et standardisées, mais seront néanmoins listées car elles peuvent être contre-intuitives.
-
-Veuillez noter que ces astuces sont toutes totalement invisibles aux utilisateurs et aux créateurs de modèles ; les restrictions et les solutions de contournement ne sont listées que pour vous aider à comprendre comment FMM contourne diverses limitations de Minecraft.
-
-- Tous les modèles sont agrandis de 4x, puis la taille et le point de pivot sont réajustés dans le code afin d'étendre la taille maximale théorique du modèle.
-- Étant donné que les modèles de packs de ressources ne peuvent avoir que des modèles allant de -16 à +32 en taille, les modèles sont décalés en arrière-plan. Cela est totalement invisible aux joueurs.
-- L'armure de cheval en cuir est utilisée pour créer des modèles avec une teinte qui peut être influencée par le code (par exemple, pour les indications de dégâts). L'armure de cheval doit être blanche pour afficher les bonnes couleurs !
-- Blockbench utilise un système d'ID spécifique pour les textures, mais lit en réalité les textures de manière séquentielle à partir de la configuration. Les ID sont attribués ici en fonction de leur position dans la liste des textures, en suivant la méthode de Blockbench.
-- Chaque `boneBlueprint` est une entité de support d'armure différente en raison de limitations de Minecraft.
-- L'armure de cheval en cuir est sur l'emplacement de la tête du support d'armure.
-- Les supports d'armure sont utilisés pour les objets statiques par défaut. //todo : Je devrai bientôt implémenter le nouveau système d'affichage alternatif de MC 1.19.4+, il est beaucoup plus efficace.
-- Pour éviter les collisions avec d'autres plugins qui modifient l'armure de cheval en cuir, FMM utilise des valeurs de données de modèle personnalisées à partir de 50 000.
-
-# Contribution au projet FreeMinecraftModels (FMM) en général
-
-FMM est en fait financé par le biais de dons par les adorables personnes de [https://www.patreon.com/magmaguy](https://www.patreon.com/magmaguy) ! Toutes les contributions aident plus que vous ne l'imaginez ;)
-
-# Fonctionnalités actuellement prévues :
-- Génération de RSP pour les clients Bedrock.
-- Gestion du RSP indépendant des propriétés du serveur avec intégration Geyser.
-- Entités personnalisées (?).
-- `tag_projectile` en tant qu'os méta à partir desquels des projectiles peuvent être tirés (peut en avoir plusieurs par modèle).
-
-# Limitations étranges actuelles qui doivent être corrigées :
-- Si le point de pivot (origine) d'un `boneBlueprint` est défini sur plus de 67 environ, le modèle commence à flotter.
-
-```
-
+</details>

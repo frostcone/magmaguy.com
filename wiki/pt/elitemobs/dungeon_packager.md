@@ -1,60 +1,64 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# O que são Masmorras?
+# O que são masmorras?
 
-Você pode encontrar informações sobre masmorras, incluindo informações sobre masmorras pré-fabricadas [aqui]($language$/elitemobs/dungeons.md).
+Podes encontrar informações sobre masmorras, incluindo informações sobre masmorras pré-feitas [aqui]($language$/elitemobs/dungeons.md).
 
 ***
 
 # O que é o empacotador de masmorras?
 
-O empacotador de masmorras permite que os administradores não apenas criem e empacotem masmorras, mas também empacotem qualquer tipo de conteúdo do EliteMobs. Isso inclui coisas como pacotes de eventos, pacotes de modelos, arenas, pacotes de NPCs, pacotes de itens e assim por diante.
+O empacotador de masmorras permite que os administradores não só criem e empacotem masmorras, mas também empacotem qualquer tipo de conteúdo EliteMobs. Isto inclui coisas como pacotes de eventos, pacotes de modelos, arenas, pacotes de npcs, pacotes de itens e assim por diante.
 
 <details>
 
 <summary>Por que usar pacotes de masmorras?</summary>
 
-- ***Masmorras instanciadas!*** Masmorras instanciadas só podem ser criadas por meio do sistema de pacotes de masmorras.
-- ***Cópias de segurança seguras de Mini-Masmorras!*** Se você criar um Pacote de Masmorras, poderá implantá-lo e reimplantá-lo em qualquer servidor que quiser, a qualquer momento e por qualquer motivo.
-- ***Fácil de ativar e desativar!*** Você sempre pode fazer `/em setup` e ativar ou desativar temporária ou permanentemente Pacotes de Masmorras.
-- ***Fácil de compartilhar!*** Se você deseja compartilhar suas criações, os Pacotes de Masmorras podem ser compactados e enviados para outras pessoas. Existe uma sala do Discord dedicada a criações da comunidade se você estiver interessado!
-- ***Teletransportes!*** Os pacotes de masmorras criam automaticamente localizações de teletransporte que podem ser acessadas na página Teletransportes do menu `/em`, o que pode ser muito útil em muitas configurações.
+- ***Masmorras instanciadas!*** Masmorras instanciadas só podem ser criadas através do sistema de pacotes de masmorras.
+- ***Backups seguros de Minimasmorras!*** Se criares um Pacote de Masmorras, poderás implementá-lo e reimplementá-lo em qualquer servidor que queiras, a qualquer momento e por qualquer razão.
+- ***Fácil de ligar e desligar!*** Podes sempre fazer `/em setup` e ligar e desligar temporariamente ou permanentemente os Pacotes de Masmorras.
+- ***Fácil de partilhar!*** Se desejares partilhar as tuas criações, os Pacotes de Masmorras podem ser simplesmente compactados e enviados para outras pessoas. Há uma sala no Discord dedicada às criações da comunidade, se estiveres interessado!
+- ***Teletransportes!*** Os pacotes de masmorras criam automaticamente locais de teletransporte que podem ser acedidos na página Teletransportes do menu `/em`, o que pode ser muito útil em muitas configurações.
 
 </details>
 
-# Criando Masmorras
+# Criar Masmorras
 
-As seguintes configurações são usadas para criar um arquivo de configuração que deve ir para a pasta `dungeonpackages`. Essas configurações são usadas para criar masmorras especificamente, e não são necessárias se você apenas quiser usar o empacotador de masmorras para distribuir conteúdo não relacionado a masmorras, como um pacote de itens ou eventos.
+As seguintes configurações são usadas para criar um ficheiro de configuração que deve ir para a pasta `content_packages`. Estas configurações são usadas para criar masmorras especificamente, e não são necessárias se apenas quiseres usar o empacotador de masmorras para distribuir conteúdo não relacionado com masmorras, como um pacote de itens ou eventos.
 
-## Plugins Necessários
+## Plugins obrigatórios
 
-Para usar o Empacotador de Masmorras, você precisará do seguinte plugin:
+Para usar o Empacotador de Masmorras, precisarás do seguinte plugin:
 
-[WorldGuard](https://dev.bukkit.org/projects/worldguard) - protege a Mini-Masmorra
+[WorldGuard](https://dev.bukkit.org/projects/worldguard) - protege a Minimasmorra
 
-## Criando uma masmorra, passo a passo
+## Criar uma masmorra, passo a passo
 
-O EliteMobs costumava ter dois tipos principais de masmorras: baseadas em mundo e baseadas em esquemático.
+O EliteMobs costumava ter dois tipos principais de masmorras: baseadas no mundo e baseadas em esquemas.
 
-As masmorras baseadas em esquemático estavam associadas a uma construção esquemática. Elas agora foram desativadas e não são mais suportadas.
+As masmorras baseadas em esquemas estavam associadas a uma construção esquemática. Elas foram agora eliminadas e já não são suportadas.
 
-Todas as masmorras do EliteMobs agora são baseadas em mundo.
+Todas as masmorras EliteMobs são agora baseadas no mundo.
+
+## Ficheiro pack.meta obrigatório
+
+O teu pacote de masmorras deve incluir um ficheiro `pack.meta`, que é simplesmente um ficheiro `.txt` renomeado com uma extensão `.meta`. Este ficheiro deve conter apenas uma palavra, indicando para qual plugin o pacote é (por exemplo, "elitemobs", escrito em minúsculas). O ficheiro `pack.meta` deve estar localizado no diretório raiz do teu pacote, juntamente com todas as outras pastas.
 
 ***
 
-### Valores Globais
+### Valores globais
 
-Os seguintes valores se aplicam a todas as masmorras
+Os seguintes valores aplicam-se a todas as masmorras
 
 <div align="center">
 
 ### isEnabled
 
-Define se o pacote de masmorras está habilitado.
+Define se o pacote de masmorras está ativado.
 
 | Chave         |      Valores       | Padrão | Obrigatório |
 |-------------|:-----------------:|:-------:|:---------:|
-| `isEnabled` | [Booleano](#boolean) | `false` |    ✅      |
+| `isEnabled` | [Booleano](#booleano) | `false` |    ✅      |
 
 <details> 
 
@@ -74,7 +78,7 @@ isEnabled: true
 
 ### name
 
-Define o nome do conteúdo. Suporta [Códigos de Cor](#color_codes).
+Define o nome do conteúdo. Suporta [Códigos de Cor](#códigos_de_cor).
 
 | Chave         |      Valores       | Padrão | Obrigatório |
 |-------------|:-----------------:|:-------:|:---------:|
@@ -87,7 +91,7 @@ Define o nome do conteúdo. Suporta [Códigos de Cor](#color_codes).
 <div align="left">
 
 ```yml
-name: '&c[lvl 999] &aThe Green Dungeon'
+name: '&c[nv. 999] &aA Masmorra Verde'
 ```
 
 <div align="center">
@@ -108,7 +112,7 @@ Define o tipo de localização que a masmorra usa.
 
 | Chave         |        Valores         | Padrão | Obrigatório |
 |-------------|:---------------------:|:-------:|:---------:|
-| `dungeonLocationType` | `WORLD` / `INSTANCED` |  nenhum   |    ✅      |
+| `dungeonLocationType` | `WORLD` / `INSTANCED` |  none   |    ✅      |
 
 <details> 
 
@@ -132,7 +136,7 @@ Define o tipo de masmorra.
 
 | Chave         |                    Valores                    | Padrão | Obrigatório |
 |-------------|:--------------------------------------------:|:-------:|:---------:|
-| `contentType` | `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` |  nenhum   |    ✅      |
+| `contentType` | `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` |  none   |    ✅      |
 
 <details> 
 
@@ -152,11 +156,11 @@ contentType: INSTANCED_DUNGEON
 
 ### customInfo
 
-Define as informações adicionais que aparecerão na tela do `/em setup`. Apenas para fins informativos. Suporta [Códigos de Cor](#color_codes).
+Define as informações adicionais que irão aparecer no ecrã `/em setup`. Apenas para fins informativos. Suporta [Códigos de Cor](#códigos_de_cor).
 
 | Chave         |           Valores            | Padrão | Obrigatório |
 |-------------|:---------------------------:|:-------:|:---------:|
-| `customInfo` | [Lista de Strings](#string_list) |  nenhum   |    ✅      |
+| `customInfo` | [Lista de Strings](#lista_de_strings) |  none   |    ✅      |
 
 <details> 
 
@@ -166,8 +170,8 @@ Define as informações adicionais que aparecerão na tela do `/em setup`. Apena
 
 ```yml
 customInfo:
-- '&aThe best dungeon.'
-- '&aMade by: CoolPlayer'
+- '&aA melhor masmorra.'
+- '&aFeita por: JogadorLegal'
 ```
 
 <div align="center">
@@ -184,11 +188,11 @@ customInfo:
 
 ### downloadLink
 
-Define o link de download quando o conteúdo não é baixado. Apenas para fins informativos.
+Define o link de download quando o conteúdo não é descarregado. Apenas para fins informativos.
 
 | Chave         |      Valores       | Padrão | Obrigatório |
 |-------------|:-----------------:|:-------:|:---------:|
-| `downloadLink` | [String](#string) |  nenhum   |    ❌      |
+| `downloadLink` | [String](#string) |  none   |    ❌      |
 
 <details> 
 
@@ -218,7 +222,7 @@ Define a categoria de tamanho do pacote de masmorras. Apenas para fins informati
 
 | Chave         |   Valores    | Padrão | Obrigatório |
 |-------------|:-----------:|:-------:|:---------:|
-| `dungeonSizeCategory` | Especial [1] |  nenhum   |    ✅      |
+| `dungeonSizeCategory` | Especial [1] |  none   |    ✅      |
 
 <details> 
 
@@ -250,16 +254,16 @@ dungeonSizeCategory: MINIDUNGEON
 
 | Chave | Descrição                                                                                                                                         |
 |-----|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `LAIR`    | Os Covis são um tipo de masmorra pequena que se concentra em uma grande luta contra o chefe.  |
-| `SANCTUM`    | Os Santuários são o equivalente a Covis instanciados. Isso significa que eles se concentram em torno de uma grande luta contra o chefe. |
-| `MINIDUNGEON`    | As Mini-Masmorras são um tipo de masmorra de tamanho médio que geralmente contém 3-15 minibosses e um grande chefe, além de muitos mobs "lixo" que são destinados a serem "farmados" por jogadores para obter moedas e equipamentos. |
-| `DUNGEON`    | As Masmorras são o equivalente a Mini-Masmorras instanciadas. Este é o tipo mais tradicional de masmorra de MMORPG, onde os jogadores se juntam em grupos e passam por um desafio de mobs lixo e minibosses para lutar contra um chefe final. |
+| `LAIR`    | Os covis são um tipo de masmorra pequena que se foca num grande combate contra um chefe.  |
+| `SANCTUM`    | Os santuários são o equivalente aos covis instanciados. Isto significa que se focam num combate contra um chefe enorme. |
+| `MINIDUNGEON`    | As minimasmorras são um tipo de masmorra de tamanho médio que geralmente contém 3-15 minibosses e um grande chefe, bem como muitos mobs "lixo" que se destinam a ser "farmados" por moedas e equipamento pelos jogadores. |
+| `DUNGEON`    | As masmorras são o equivalente às minimasmorras instanciadas. Este é o tipo de masmorra MMORPG mais tradicional, onde os jogadores se juntam em grupo e passam por uma série de mobs lixo e minibosses para lutarem contra um chefe final. |
 | `RAID`    | Em breve!|
-| `ADVENTURE`    | As Aventuras são mapas de aventura completos. Eles incluem linhas de missões, NPCs, grandes quantidades de minibosses e chefes e podem até conter suas próprias arenas ou masmorras dentro delas. |
-| `ARENA`    | As Arenas são áreas de sobrevivência baseadas em ondas em que os jogadores são recompensados por derrotar ondas. |
+| `ADVENTURE`    | As aventuras são mapas de aventura completos. Incluem linhas de missões, npcs, grandes quantidades de minibosses e chefes e podem até conter as suas próprias arenas ou masmorras dentro deles. |
+| `ARENA`    | As arenas são áreas de sobrevivência baseadas em ondas nas quais os jogadores são recompensados por derrotar ondas. |
 | `OTHER`    | Qualquer outra coisa que não se enquadre nas categorias anteriores. |
 
-Para descrições mais detalhadas, veja [Masmorras]($language$/elitemobs/dungeons.md)
+Para descrições mais detalhadas, consulta [Masmorras]($language$/elitemobs/dungeons.md)
 
 </div>
 
@@ -273,7 +277,7 @@ Define se o pacote de masmorras deve ser protegido pelo WorldGuard.
 
 | Chave         |      Valores       | Padrão | Obrigatório |
 |-------------|:-----------------:|:-------:|:---------:|
-| `protect` | [Booleano](#boolean) |  `true`   |    ❌      |
+| `protect` | [Booleano](#booleano) |  `true`   |    ❌      |
 
 <details> 
 
@@ -297,7 +301,7 @@ Define a versão do pacote de masmorras.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `dungeonVersion` | [Integer](#integer) |  nenhum   |    ✅      |
+| `dungeonVersion` | [Inteiro](#inteiro) |  none   |    ✅      |
 
 <details> 
 
@@ -317,13 +321,13 @@ dungeonVersion: 1
 
 ### playerInfo
 
-Define as informações que aparecem no menu. Suporta [Códigos de Cor](#colorcodes).
+Define as informações que aparecem no menu. Suporta [Códigos de Cor](#códigos_de_cor).
 
-*Funciona apenas quando o `/em` está definido para o modo de livro usando `/em alt`.*
+*Funciona apenas quando o `/em` está definido para o modo livro usando `/em alt`.*
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `playerInfo` | [String](#string) |  nenhum   |    ✅      |
+| `playerInfo` | [String](#string) |  none   |    ✅      |
 
 <details> 
 
@@ -332,7 +336,7 @@ Define as informações que aparecem no menu. Suporta [Códigos de Cor](#colorco
 <div align="left">
 
 ```yml
-playerInfo: 'Difficulty: &a1-man easy content!'
+playerInfo: 'Dificuldade: &aConteúdo fácil para 1 jogador!'
 ```
 
 <div align="center">
@@ -349,11 +353,11 @@ playerInfo: 'Difficulty: &a1-man easy content!'
 
 ### regionEnterMessage
 
-Define a mensagem que aparece quando um jogador entra na zona da masmorra. Suporta [Códigos de Cor](#colorcodes).
+Define a mensagem que aparece quando um jogador entra na zona da masmorra. Suporta [Códigos de Cor](#códigos_de_cor).
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `regionEnterMessage` | [String](#string) |  nenhum   |    ❌      |
+| `regionEnterMessage` | [String](#string) |  none   |    ❌      |
 
 <details> 
 
@@ -362,7 +366,7 @@ Define a mensagem que aparece quando um jogador entra na zona da masmorra. Supor
 <div align="left">
 
 ```yml
-regionEnterMessage: '&aYou have entered the dungeon!'
+regionEnterMessage: '&aEntraste na masmorra!'
 ```
 
 <div align="center">
@@ -379,11 +383,11 @@ regionEnterMessage: '&aYou have entered the dungeon!'
 
 ### regionLeaveMessage
 
-Define a mensagem que aparece quando um jogador deixa a zona da masmorra. Suporta [Códigos de Cor](#colorcodes).
+Define a mensagem que aparece quando um jogador sai da zona da masmorra. Suporta [Códigos de Cor](#códigos_de_cor).
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `regionLeaveMessage` | [String](#string) |  nenhum   |    ❌      |
+| `regionLeaveMessage` | [String](#string) |  none   |    ❌      |
 
 <details> 
 
@@ -392,7 +396,7 @@ Define a mensagem que aparece quando um jogador deixa a zona da masmorra. Suport
 <div align="left">
 
 ```yml
-regionLeaveMessage: '&aYou have left the dungeon!'
+regionLeaveMessage: '&aSaste da masmorra!'
 ```
 
 <div align="center">
@@ -409,11 +413,11 @@ regionLeaveMessage: '&aYou have left the dungeon!'
 
 ### hasCustomModels
 
-Define se o pacote de masmorras possui modelos personalizados (para ModelEngine ou FreeMinecraftModels).
+Define se o pacote de masmorras tem modelos personalizados (para ModelEngine ou FreeMinecraftModels).
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `hasCustomModels` | [Booleano](#boolean) |  nenhum   |    ❌      |
+| `hasCustomModels` | [Booleano](#booleano) |  none   |    ❌      |
 
 <details> 
 
@@ -433,13 +437,13 @@ hasCustomModels: false
 
 ### dungeonConfigFolderName
 
-Define o nome das pastas usadas para arquivos associados a esta masmorra. 
+Define o nome das pastas usadas para ficheiros associados a esta masmorra.
 
-**Obrigatório para masmorras instanciadas!**.
+**Obrigatório para masmorras instanciadas!.**
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `dungeonConfigFolderName` | [String](#string) |  nenhum   |    ❌      |
+| `dungeonConfigFolderName` | [String](#string) |  none   |    ❌      |
 
 <details> 
 
@@ -448,7 +452,7 @@ Define o nome das pastas usadas para arquivos associados a esta masmorra.
 <div align="left">
 
 ```yml
-dungeonConfigFolderName: my_dungeon_folder
+dungeonConfigFolderName: minha_pasta_da_masmorra
 ```
 
 </div>
@@ -463,7 +467,7 @@ Define o nível de conteúdo que a masmorra deve exibir no menu EM.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `contentLevel` | [Integer](#integer) |  nenhum   |    ❌      |
+| `contentLevel` | [Inteiro](#inteiro) |  none   |    ❌      |
 
 <details> 
 
@@ -487,7 +491,7 @@ Define se a masmorra deve ser uma masmorra de Desafio de Encantamento.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `enchantmentChallenge` | [Booleano](#boolean) | `false` |    ❌      |
+| `enchantmentChallenge` | [Booleano](#booleano) | `false` |    ❌      |
 
 <details> 
 
@@ -507,9 +511,9 @@ enchantmentChallenge: false
 
 ***
 
-### Pacotes de masmorras baseados em mundo
+### Pacotes de masmorras baseados no mundo
 
-Os seguintes valores só se aplicam a masmorras baseadas em mundo.
+Os seguintes valores aplicam-se apenas a masmorras baseadas no mundo.
 
 <div align="center">
 
@@ -521,7 +525,7 @@ Define o nome do mundo que deve ser empacotado.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `worldName` | [String](#string) |  nenhum   |    ✅      |
+| `worldName` | [String](#string) |  none   |    ✅      |
 
 <details> 
 
@@ -530,7 +534,7 @@ Define o nome do mundo que deve ser empacotado.
 <div align="left">
 
 ```yml
-worldName: my_minecraft_world
+worldName: meu_mundo_minecraft
 ```
 
 </div>
@@ -541,11 +545,11 @@ worldName: my_minecraft_world
 
 ### womholeWorldName
 
-Esta função define o nome do mundo do buraco de minhoca, que serve como um mundo secundário ligado ao mundo principal. É utilizado para recursos como centros de teletransporte ou câmaras de chefe únicas.
+Esta função define o nome do mundo do buraco de minhoca, que serve como um mundo secundário ligado ao mundo principal. É utilizado para funcionalidades como hubs de teletransporte ou câmaras de chefe únicas.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `womholeWorldName` | [String](#string) |  nenhum   |    ❌      |
+| `womholeWorldName` | [String](#string) |  none   |    ❌      |
 
 <details> 
 
@@ -554,7 +558,7 @@ Esta função define o nome do mundo do buraco de minhoca, que serve como um mun
 <div align="left">
 
 ```yml
-womholeWorldName: my_minecraft_world_wormhole
+womholeWorldName: meu_mundo_minecraft_buraco_de_minhoca
 ```
 
 </div>
@@ -569,7 +573,7 @@ Define o ambiente do mundo.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `environment` | [Ambiente](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) |  nenhum   |    ✅      |
+| `environment` | [Ambiente](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) |  none   |    ✅      |
 
 <details> 
 
@@ -589,11 +593,11 @@ environment: NORMAL
 
 ### teleportLocation
 
-Define a localização de teletransporte do pacote de masmorras. É para onde os jogadores serão teletransportados ao entrar na masmorra.
+Define a localização do teletransporte do pacote de masmorras. É para onde os jogadores serão teletransportados ao entrar na masmorra.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `teleportLocation` | [String](#string) |  nenhum   |    ✅      |
+| `teleportLocation` | [String](#string) |  none   |    ✅      |
 
 <details> 
 
@@ -602,7 +606,7 @@ Define a localização de teletransporte do pacote de masmorras. É para onde os
 <div align="left">
 
 ```yml
-teleportLocation: my_minecraft_world,-1.5,68,0.5,0.0,0.0
+teleportLocation: meu_mundo_minecraft,-1.5,68,0.5,0.0,0.0
 ```
 
 </div>
@@ -613,11 +617,11 @@ teleportLocation: my_minecraft_world,-1.5,68,0.5,0.0,0.0
 
 ### allowExplosionBlockDamage
 
-Permite ou impede que explosões causem danos a blocos em uma masmorra. As explosões são consideradas explosões elite, então qualquer dano aos blocos será regenerado em 2 minutos.
+Permite ou impede que as explosões danifiquem blocos numa masmorra. As explosões são consideradas explosões de elite, pelo que qualquer dano aos blocos será regenerado dentro de 2 minutos.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `allowExplosionBlockDamage` | [Booleano](#boolean) |  `false`   |    ❌      |
+| `allowExplosionBlockDamage` | [Booleano](#booleano) |  `false`   |    ❌      |
 
 <details> 
 
@@ -635,13 +639,13 @@ allowExplosionBlockDamage: true
 
 </div>
 
-#### Masmorras Instanciadas
+#### Masmorras instanciadas
 
-*As masmorras instanciadas criam um novo mundo a cada vez que um grupo de jogadores deseja completar uma masmorra e o exclui quando termina. Para que isso funcione corretamente, você deve colocar uma pasta seguindo o `dungeonConfigFolderName` na pasta `world_blueprints` da configuração do EliteMobs.*
+*As masmorras instanciadas criam um novo mundo para cada vez que um grupo de jogadores quer concluir uma masmorra e elimina-o quando termina. Para que isto funcione corretamente, deves colocar uma pasta seguindo o `dungeonConfigFolderName` na pasta de configuração `world_blueprints` do EliteMobs.*
 
-*Você então coloca o mundo que usará dentro da pasta que você criou, certificando-se de que o arquivo `session.lock` do mundo seja excluído.*
+*Depois, coloca o mundo que vais usar dentro da pasta que criaste, certificando-te de que o ficheiro `session.lock` do mundo é eliminado.*
 
-Os seguintes valores só se aplicam a masmorras instanciadas. Observe que todas as masmorras instanciadas são masmorras mundiais, então elas também usam os valores das masmorras mundiais.
+Os seguintes valores aplicam-se apenas a masmorras instanciadas. Observa que todas as masmorras instanciadas são masmorras de mundo, pelo que também usam os valores de masmorras de mundo.
 
 <div align="center">
 
@@ -653,7 +657,7 @@ Define a localização de teletransporte do ponto de partida da masmorra instanc
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `startLocation` | [String](#string) |  nenhum   |    ✅      |
+| `startLocation` | [String](#string) |  none   |    ✅      |
 
 <details> 
 
@@ -662,7 +666,7 @@ Define a localização de teletransporte do ponto de partida da masmorra instanc
 <div align="left">
 
 ```yml
-startLocation: my_minecraft_world,10.5,70,10.5,0.0,0.0
+startLocation: meu_mundo_minecraft,10.5,70,10.5,0.0,0.0
 ```
 
 </div>
@@ -677,7 +681,7 @@ Define a permissão necessária para entrar na instância da masmorra.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `permission` | [String](#string) |  nenhum   |    ❌      |
+| `permission` | [String](#string) |  none   |    ❌      |
 
 <details> 
 
@@ -686,7 +690,7 @@ Define a permissão necessária para entrar na instância da masmorra.
 <div align="left">
 
 ```yml
-permission: elitedungeon.mypermission
+permission: elitedungeon.minhapermissao
 ```
 
 </div>
@@ -697,11 +701,11 @@ permission: elitedungeon.mypermission
 
 ### minPlayerCount
 
-Define a contagem mínima de jogadores necessária para iniciar uma masmorra.
+Define o número mínimo de jogadores necessário para iniciar uma masmorra.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `minPlayerCount` | [Integer](#integer) |  `1`   |    ❌      |
+| `minPlayerCount` | [Inteiro](#inteiro) |  `1`   |    ❌      |
 
 <details> 
 
@@ -721,11 +725,11 @@ minPlayerCount: 1
 
 ### maxPlayerCount
 
-Define a contagem máxima de jogadores necessária para iniciar uma masmorra.
+Define o número máximo de jogadores necessário para iniciar uma masmorra.
 
 | Chave         |  Valores  | Padrão | Obrigatório |
 |-------------|:--------:|:-------:|:---------:|
-| `maxPlayerCount` | [Integer](#integer) |   `5`   |    ❌      |
+| `maxPlayerCount` | [Inteiro](#inteiro) |   `5`   |    ❌      |
 
 <details> 
 
@@ -745,11 +749,11 @@ maxPlayerCount: 5
 
 ### dungeonObjectives
 
-Define a lista de objetivos da masmorra necessários para que a masmorra seja considerada concluída.
+Define a lista de objetivos de masmorra necessários para que a masmorra seja considerada concluída.
 
 | Chave         |           Valores            | Padrão | Obrigatório |
 |-------------|:---------------------------:|:-------:|:---------:|
-| `dungeonObjectives` | [Lista de Strings](#string_list) |  nenhum   |    ✅      |
+| `dungeonObjectives` | [Lista de Strings](#lista_de_strings) |  none   |    ✅      |
 
 <details> 
 
@@ -760,7 +764,7 @@ Define a lista de objetivos da masmorra necessários para que a masmorra seja co
 Existem atualmente dois tipos de objetivos de masmorra:
 
 * Matar alvo: `filename=boss.yml:amount=X`
-* Matar porcentagem da masmorra: `clearpercentage=X.Y`
+* Matar percentagem da masmorra: `clearpercentage=X.Y`
 
 ```yml
 dungeonObjectives:
@@ -782,13 +786,13 @@ dungeonObjectives:
 
 ### difficulties
 
-Define a lista de dificuldades na masmorra instanciada. 
+Define a lista de dificuldades na masmorra instanciada.
 
 **Obrigatório para masmorras instanciadas!**
 
 | Chave         |   Valores    | Padrão | Obrigatório |
 |-------------|:-----------:|:-------:|:---------:|
-| `difficulties` | Especial [1] |  nenhum   |    ❌      |
+| `difficulties` | Especial [1] |  none   |    ❌      |
 
 <details> 
 
@@ -827,17 +831,17 @@ difficulties:
 
 <div align="center">
 
-Definir as dificuldades da masmorra instanciada criará automaticamente diferentes opções de dificuldade ao entrar na masmorra. 
+Definir dificuldades de masmorras instanciadas criará automaticamente diferentes opções de dificuldade ao entrar na masmorra.
 
-Os nomes de dificuldade definidos aqui serão os usados na pasta de chefes personalizados, onde você pode definir quais poderes os chefes têm com base na dificuldade.
+Os nomes de dificuldade definidos aqui serão os utilizados na pasta de chefes personalizados, onde poderás definir quais os poderes que os chefes têm com base na dificuldade.
 
-As dificuldades estão em um formato de lista que possui os seguintes campos:
+As dificuldades estão num formato de lista que tem os seguintes campos:
 
-|     Key     | Descrição                                                                                                                                                                                                                                                    | Valores | Obrigatório |
+|     Chave     | Descrição                                                                                                                                                                                                                                                    | Valores | Obrigatório |
 |:-----------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|:---------:|
-|   `name`    | Nome da dificuldade para os jogadores.                                                                                                                                                                                                                            |[String](#string)        |     ✅     |
-|    `id`     | ID da dificuldade, usado em chefes personalizados e itens personalizados para o recurso baseado em dificuldade.                                                                                                                                                                 |[String](#string)        |     ✅     |
-| `levelSync` | Define o nível do level sync, se houver. O level sync faz com que todo o equipamento do jogador atinja o valor definido, tornando impossível para os jogadores ficarem com nível superior a uma masmorra e mantendo-a relevante para runs posteriores. Baseado no sistema de level sync do Final Fantasy 14. |[Integer](#integer)        |     ❌     |
+|   `name`    | Nome da dificuldade para jogadores.                                                                                                                                                                                                                            |[String](#string)        |     ✅     |
+|    `id`     | ID da dificuldade, usado em chefes personalizados e itens personalizados para a funcionalidade baseada na dificuldade.                                                                                                                                   |[String](#string)        |     ✅     |
+| `levelSync` | Define o nível da sincronização de nível, se existir. A sincronização de nível faz com que todo o equipamento do jogador atinja o valor máximo definido, tornando impossível para os jogadores ficarem com níveis muito altos para uma masmorra e mantendo-a relevante para execuções posteriores. Baseado no sistema de sincronização de nível do Final Fantasy 14. |[Inteiro](#inteiro)        |     ❌     |
 
 
 </div>
@@ -845,196 +849,247 @@ As dificuldades estão em um formato de lista que possui os seguintes campos:
 </details>
 
 </div>
+
+***
+
+## Usar o ficheiro do pacote de masmorra meta_pack.yml para masmorras grandes.
+Claro, aqui está a versão traduzida para português (Portugal), mantendo a formatação markdown:
+
+Por vezes, podes estar a trabalhar numa masmorra grande que inclui outras masmorras menores dentro de si, permitindo aos jogadores viajarem entre elas através do mundo da masmorra principal. Um ótimo exemplo disto é a Masmorra de Aventura EliteMobs Primis.
+
+A Primis apresenta um vasto mundo onde os jogadores podem explorar e completar missões, mas também inclui duas masmorras instanciadas dentro do seu mundo – uma das quais serve como a luta contra o chefe final. Em casos como este, haverá vários ficheiros de pacotes de masmorra, mesmo que todos pertençam à mesma masmorra abrangente.
+
+Para gerir isto, usamos um ficheiro de pacote de meta masmorra. Este ficheiro funciona como um diretório central, especificando a masmorra principal e listando todo o conteúdo adicional de masmorra associado a ela.
+
+Vamos analisar mais detalhadamente como o pacote de meta masmorra Primis está estruturado:
+
+```yaml
+isEnabled: true
+name: '&2[000-020] A Aventura Primis!'
+customInfo:
+- A aventura tutorial para jogadores
+- novos no EliteMobs!
+downloadLinkV2: https://discord.gg/9f5QSka
+dungeonSizeCategory: LAIR
+environment: NORMAL
+protect: true
+contentType: META_PACKAGE
+containedPackages:
+- primis_adventure.yml
+- primis_blood_temple_sanctum.yml
+- primis_gladius_invasion_dungeon.yml
+setupMenuDescription:
+- '&2Uma aventura tutorial leve para jogadores entre os níveis 0-20!'
+- '&2As aventuras são mapas enormes com missões,'
+- '&2muitos chefes e npcs, entre outras coisas!'
+- '&2Também tem modelos personalizados!'
+dungeonVersion: 21 #adicionado o ficheiro de meta pacote da masmorra
+```
+
+Como podes ver, o ficheiro de pacote de meta masmorra é muito semelhante a um pacote de masmorra normal, com algumas diferenças importantes. O `contentType:` está definido para `META_PACKAGE`, e existe uma configuração adicional chamada `containedPackages:`. Esta configuração lista todos os outros pacotes de masmorra que fazem parte da masmorra maior.
+
+Ao criares o teu meta pacote, certifica-te de incluir a configuração `containedPackages:` e lista todos os pacotes de masmorra que fazem parte da tua masmorra maior. Isto garante que tudo está devidamente ligado e organizado dentro da estrutura geral.
+
+Ao versionar a tua masmorra, toda a versionagem deve ser gerida através do meta pacote. Isto acontece porque o meta pacote serve como o pacote principal que determina a versão de toda a masmorra e também é o pacote usado para exibir informações no menu `/em setup`.
+
+Tem em atenção que as masmorras individuais listadas no meta pacote ainda podem aparecer no menu `/em teleport`. Para evitar isto, terás de desativar manualmente as opções de teletransporte para cada uma dessas masmorras nos seus respetivos ficheiros de configuração.
+
+Por exemplo, no caso da masmorra Primis:
+
+Desativa as entradas de teletransporte no menu para `primis_blood_temple_sanctum.yml` e `primis_gladius_invasion_dungeon.yml`.
+Deixa as opções de teletransporte ativadas para `primis_adventure.yml`, pois esta serve como o hub principal onde os jogadores começam a sua jornada e acedem às outras masmorras.
+Esta configuração garante uma experiência tranquila para os jogadores, mantendo a estrutura e funcionalidade adequadas para o sistema de masmorras.
+
+Ao nomear o ficheiro, recomendamos a seguinte convenção de nomenclatura:
+
+`nome_da_tua_masmorra_meta_pack.yml`
 
 ***
 
 # Valores de Chefe Recomendados
 
-## Criando um mob de masmorra médio
+## Criar um mob de masmorra médio
 
-Recomendamos deixar a configuração normalizedCombat definida como true. Esta configuração normaliza todos os mobs para escalonar igualmente com saúde e dano, independentemente do tipo de entidade.
+Recomendamos que deixes a configuração normalizedCombat definida como verdadeira. Esta configuração normaliza todos os mobs para se escalarem igualmente com a vida e dano, independentemente do seu tipo de entidade.
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 1.0 #4 acertos para derrotar 
+healthMultiplier: 1.0 #4 hits para matar
 damageMultiplier: 1.0 #1.5 corações de dano
 ```
 
-Certamente, aqui está a versão revisada com clareza e formatação retidas:
+Claro, aqui está a versão revista com clareza e formatação mantidas:
 
-**Observação: Como `1.0` é o valor padrão para saúde e dano, você pode simplesmente omitir a definição de `healthMultiplier` ou `damageMultiplier` e definir `normalizedCombat` como `true`.**
+**Nota: Dado que `1.0` é o valor padrão para vida e dano, podes simplesmente omitir a definição de `healthMultiplier` ou `damageMultiplier` e definir `normalizedCombat` para `true`.**
 
-## Criando grupos de inimigos
+## Criar packs de lixo
 
-Grupos de inimigos são numerosos, mas não muito perigosos:
+Os packs de lixo são numerosos, mas não muito perigosos:
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 0.7 #3 acertos para derrotar 
+healthMultiplier: 0.7 #3 hits para matar
 damageMultiplier: 0.5 #0.5 corações de dano
 ```
 
-## Criando reforços
+## Criar reforços
 
-Os reforços devem morrer muito facilmente, mas representar um perigo em termos de dano (esses valores são recomendados para 4+ entidades de combate corpo a corpo, o uso real pode variar):
+Os reforços devem morrer muito facilmente, mas representam um perigo em termos de dano (estes valores são recomendados para 4+ entidades corpo a corpo, o uso real pode variar):
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 0.25 #1 acerto para derrotar 
+healthMultiplier: 0.25 #1 hit para matar
 damageMultiplier: 0.6 #1 coração de dano
 ```
 
-## Criando minibosses
+## Criar minibosses
 
-Os minibosses devem resistir e representar um desafio mecânico para os jogadores. Deve ser um teste de habilidade que dura um pouco, mas não algo extremamente mortal:
+Os minibosses devem manter a sua posição e representar um desafio mecânico para os jogadores. Deve ser um teste de habilidade que dure um pouco, mas não algo extremamente mortal:
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 3.0 #10 acertos para derrotar 
+healthMultiplier: 3.0 #10 hits para matar
 damageMultiplier: 1.2 #2 corações de dano
 ```
 
-## Criando chefes
+## Criar chefes
 
-Os chefes são um verdadeiro desafio, a conclusão de uma acumulação em uma masmorra e um verdadeiro teste de habilidade com tudo em jogo. Os encontros devem ser longos e a morte deve ser uma ameaça presente.
+Os chefes são um desafio real, a conclusão de uma acumulação numa masmorra e um verdadeiro teste de habilidade com tudo em risco. Os encontros devem ser longos e a morte deve ser uma ameaça presente.
 
 ```yaml
 normalizedCombat: true
-healthMultiplier: 7.0 #23 acertos para derrotar 
+healthMultiplier: 7.0 #23 hits para matar
 damageMultiplier: 1.4 #2.5 corações de dano
 ```
 
-**Esses valores recomendados são apenas estimativas aproximadas, e os valores finais devem ser ajustados de acordo com os encontros específicos.**
+**Estes valores recomendados são meramente estimativas aproximadas, e os valores finais devem ser ajustados de acordo com os encontros específicos.**
 
-**Isso é particularmente crucial para os chefes finais da masmorra; você pode querer exceder significativamente o valor recomendado de 7.0 para healthMultiplier para dar à última luta aquela sensação épica.**
+**Isto é particularmente crucial para os chefes finais da masmorra; podes querer exceder significativamente o valor recomendado de 7.0 para healthMultiplier para dar à última luta aquele sentimento épico.**
 
 ***
 
-# Empacotando conteúdo do EliteMobs para distribuição
+# Empacotar conteúdo EliteMobs para distribuição
 
-Por fim, você provavelmente desejará empacotar sua masmorra para armazenamento ou distribuição.
+Finalmente, provavelmente vais querer empacotar a tua masmorra para armazenamento ou distribuição.
 
-O EliteMobs possui um sistema de importação que permite que os administradores importem, instalem e desinstalem conteúdo rapidamente. [Você pode ver como funciona aqui.]($language$/elitemobs/setup.md)
+O EliteMobs tem um sistema de importação que permite aos administradores importar, instalar e desinstalar rapidamente conteúdo. [Podes ver como funciona aqui.]($language$/elitemobs/setup.md)
 
-## Cortando Mundos
+## Cortar Mundos
 
-Às vezes, você pode precisar reduzir o tamanho do seu mundo Minecraft para torná-lo mais leve e, consequentemente, mais fácil de distribuir. Isso pode ser feito por meio do uso do plugin [WorldBorder](https://www.spigotmc.org/resources/worldborder-1-15.80466/). Apesar do plugin estar listado como suportando apenas o MineCraft até a versão 1.19, ele funciona perfeitamente na versão mais recente do MineCraft em 25 de janeiro de 2024.
-
-<details>
-<summary>Dica</summary>
-Se você estiver fazendo isso pela primeira vez, pode ser uma boa ideia criar uma cópia de segurança do seu mundo, caso algo dê errado.
-</details>
-
-Depois que o plugin for instalado, navegue até o meio do mundo ou a área específica que você deseja cortar. Em seguida, execute o comando `/wb set x`, onde `x` representa o tamanho aproximado do raio que você deseja para sua área.
+Por vezes, podes precisar de reduzir o tamanho do teu mundo Minecraft para o tornar mais leve e, consequentemente, mais fácil de distribuir. Isto pode ser conseguido através do uso do [plugin WorldBorder](https://www.spigotmc.org/resources/worldborder-1-15.80466/). Apesar do plugin estar listado como suportando apenas o MineCraft até à versão 1.19, ele funciona perfeitamente na versão mais recente do MineCraft a partir de 25 de janeiro de 2024.
 
 <details>
 <summary>Dica</summary>
-Se <code>/wb</code> não estiver funcionando para você, tente <code>/worldborder:wb</code>.
+Se estiveres a fazer isto pela primeira vez, pode ser uma boa ideia criar uma cópia de segurança do teu mundo, caso algo corra mal.
 </details>
 
-Depois de executar este comando, voe até as bordas do seu mundo para verificar se a borda do mundo foi definida corretamente e cobre o tamanho pretendido. Você reconhecerá ao chegar à borda da borda do mundo quando for empurrado para trás, acompanhado por uma mensagem no chat.
+Uma vez que o plugin esteja instalado, navega para o meio do mundo ou para a área específica que pretendes cortar. Em seguida, executa o comando `/wb set x`, onde `x` representa o tamanho aproximado do raio que pretendes para a tua área.
+
+<details>
+<summary>Dica</summary>
+Se <code>/wb</code> não estiver a funcionar para ti, tenta <code>/worldborder:wb</code>.
+</details>
+
+Depois de executar este comando, voa até às bordas do teu mundo para verificar se a borda do mundo foi devidamente definida e cobre o tamanho pretendido. Irás reconhecer que atingiste a borda do mundo quando fores empurrado para trás, acompanhado por uma mensagem no chat.
 
 ![trim_pic_1.jpg](../../../img/wiki/trim_pic_1.jpg)
 
-Na imagem acima, queremos cortar o mundo ao redor dos blocos roxos, deixando apenas alguns chunks ao redor deles. Para conseguir isso, ficamos no meio da área roxa nos quadrados vermelhos e executamos `/wb set 50`, definindo a borda do mundo logo além da área roxa.
+Na imagem acima, pretendemos cortar o mundo em torno dos blocos roxos, deixando apenas alguns pedaços em torno deles. Para conseguir isto, ficamos no meio da área roxa nos quadrados vermelhos e executamos `/wb set 50`, definindo a borda do mundo apenas para além da área roxa.
 
-Em seguida, usamos o comando `/wb trim [freq] [pad]`, com a frequência definida como 200 e o pad como 20. O pad determina quantos chunks devem ser deixados ao redor da borda do mundo (a área roxa), e a frequência determina quantos chunks devem ser processados por segundo. Depois de executar `/wb trim 200 20`, seremos solicitados a confirmar executando `/wb trim confirm`. Confirmamos a ação e, após algum tempo, nosso mundo será cortado, reduzindo seu tamanho e tornando-o mais conveniente para distribuição.
+Em seguida, usamos o comando `/wb trim [freq] [pad]`, com a frequência definida para 200 e o pad para 20. O pad determina quantos pedaços devem ser deixados em torno da borda do mundo (a área roxa), e a frequência determina quantos pedaços devem ser processados por segundo. Depois de executar `/wb trim 200 20`, seremos solicitados a confirmar executando `/wb trim confirm`. Confirmamos a ação e, após algum tempo, o nosso mundo será cortado, reduzindo o seu tamanho e tornando-o mais conveniente para distribuição.
 
-Agora você pode remover a borda do mundo usando `/wb clear all` ou apenas deixá-la se quiser.
+Agora, podes remover a borda do mundo usando `/wb clear all` ou simplesmente deixá-la, se quiseres.
 
-## Cortando a pasta do mundo
+## Cortar a pasta do mundo
 
-Existem vários arquivos e pastas localizados na pasta do seu mundo que podemos descartar, pois os plugins não usam todos eles. Isso reduzirá o tamanho do seu mundo e tornará mais fácil a distribuição.
+Existem vários ficheiros e pastas localizadas na tua pasta do mundo que podemos descartar, uma vez que os plugins não usam todos eles. Isto irá reduzir o tamanho do teu mundo e torná-lo mais fácil de distribuir.
 
-Para um ambiente de mundo NORMAL:
+Para um Ambiente de mundo NORMAL:
 
-Para preparar seu mundo, mantenha os seguintes arquivos e pastas:
+Para preparar o teu mundo, mantém os seguintes ficheiros e pastas:
 
-1. pasta **region**
-2. **raids.dat** de dentro da pasta **data** (certifique-se de que ele seja colocado dentro da pasta **data** ao copiar)
-3. arquivo **level.dat**
+1. Pasta **region**
+2. **raids.dat** de dentro da pasta **data** (certifica-te de que está colocada dentro da pasta **data** ao copiar)
+3. Ficheiro **level.dat**
 
-Você pode excluir com segurança todos os outros arquivos e pastas localizados na pasta do mundo. Isso configurará seu mundo corretamente para o ambiente NORMAL.
+Podes eliminar em segurança todos os outros ficheiros e pastas localizados na pasta do mundo. Isto irá configurar o teu mundo corretamente para o ambiente NORMAL.
 
 Para ambientes de mundo NETHER e THE_END:
 
-Para preparar seu mundo, mantenha os seguintes arquivos e pastas:
+Para preparar o teu mundo, mantém os seguintes ficheiros e pastas:
 
-1. pasta **region** dentro da pasta **DIM-1** (certifique-se de que ele seja colocado dentro da pasta **DIM-1** ao copiar)
-2. **raids.dat** de dentro da pasta **data** (certifique-se de que ele seja colocado dentro da pasta **data** ao copiar)
-3. arquivo **level.dat**
+1. Pasta **region** dentro da pasta **DIM-1** (certifica-te de que está colocada dentro da pasta **DIM-1** ao copiar)
+2. **raids.dat** de dentro da pasta **data** (certifica-te de que está colocada dentro da pasta **data** ao copiar)
+3. Ficheiro **level.dat**
 
-Você pode excluir com segurança todos os outros arquivos e pastas localizados na pasta do mundo. Isso configurará seu mundo corretamente para os ambientes NETHER e THE_END.
+Podes eliminar em segurança todos os outros ficheiros e pastas localizados na pasta do mundo. Isto irá configurar o teu mundo corretamente para os ambientes NETHER e THE_END.
 
-## Executando o comando de pacote
+## Executar o comando de pacote
 
-O EliteMobs tem o comando **`/em package <dungeonName> <version>`**. Este comando percorre todas as pastas de configuração do EliteMobs e empacota automaticamente todo o conteúdo em pastas que correspondem ao `dungeonName` em um arquivo compactado e uma pasta normal na pasta `exports` do EliteMobs.
+O EliteMobs tem o comando **`/em package <nomeDaMasmorra> <versão>`**. Este comando percorre todas as pastas de configuração do EliteMobs e empacota automaticamente todo o conteúdo em pastas que correspondem ao `nomeDaMasmorra` para um ficheiro zipado e uma pasta normal na pasta `exports` do EliteMobs.
 
-***Por esse motivo, é altamente recomendável que você mantenha o conteúdo que deseja empacotar em pastas com o mesmo nome que o nome do seu pacote.*** Caso contrário, você terá que reunir e empacotar os arquivos manualmente na estrutura de arquivos para distribuição.
+***Por esta razão, é altamente recomendado que mantenhas o conteúdo que pretendes empacotar em pastas com o mesmo nome do nome do teu pacote.*** Caso contrário, terás de reunir e empacotar manualmente os ficheiros na estrutura de ficheiros para distribuição.
 
-## Adicionando o arquivo do pacote de masmorras
+## Adicionar o ficheiro de pacote de masmorra
 
-Se você estiver criando uma masmorra, precisará adicionar manualmente o arquivo do pacote de masmorras na pasta recém-gerada na pasta `exports`. Seu arquivo de configuração do pacote de masmorras deve seguir o formato descrito acima e ser colocado em uma pasta chamada `dungeonpackages`. [Verifique a estrutura de arquivos para saber mais sobre isso.](#file-structure).
+Se estiveres a criar uma masmorra, terás de adicionar manualmente o ficheiro de pacote de masmorra na pasta recentemente gerada na pasta exports. O teu ficheiro de configuração de pacote de masmorra deve seguir o formato descrito acima e ser colocado numa pasta chamada `content_packages`. [Consulta a estrutura de ficheiros para mais sobre isto.](#estrutura-de-ficheiros).
 
-**Certifique-se de compactar sua masmorra quando terminar!**
+**Certifica-te de que fazes o zip da tua masmorra quando terminares!**
 
-## Estrutura de Arquivos
+## Estrutura de ficheiros
 
-Se você fez tudo corretamente, a estrutura de arquivos deve ser semelhante a este exemplo, onde chamamos a masmorra de `my_cool_dungeon`:
+Se fizeste tudo corretamente, a estrutura de ficheiros deve ser semelhante a este exemplo, onde chamamos à masmorra `minha_masmorra_legal`:
 
 <details>
-<summary>Exemplo de Estrutura de Arquivos my_cool_dungeon</summary>
+<summary>Exemplo de Estrutura de Ficheiros minha_masmorra_legal</summary>
 
-- my_cool_dungeon.zip
-    * dungeonpackages
-        * my_cool_dungeon.yml <- É aqui que o arquivo de configuração do pacote da sua masmorra vai
+- minha_masmorra_legal.zip
+    * content_packages
+        * minha_masmorra_legal.yml <- É aqui que o teu ficheiro de configuração de pacote de masmorra vai
     * worldcontainer
-        * [Suas pastas de mundo vão aqui]
+        * [As tuas pastas de mundo vão aqui]
     * wormholes
-        * my_cool_dungeon
-            * [Seus buracos de minhoca vão aqui]
+        * minha_masmorra_legal
+            * [Os teus buracos de minhoca vão aqui]
     * npcs
-        * my_cool_dungeon
-            * [Seus NPCs vão aqui]
+        * minha_masmorra_legal
+            * [Os teus NPCs vão aqui]
     * customtreasurechests
-        * my_cool_dungeon
-            * [Seus baús do tesouro vão aqui]
+        * minha_masmorra_legal
+            * [Os teus baús de tesouro vão aqui]
     * customquests
-        * my_cool_dungeon
-            * [Suas missões vão aqui]
+        * minha_masmorra_legal
+            * [As tuas missões vão aqui]
     * customitems
-        * my_cool_dungeon
-            * [Seus itens personalizados vão aqui]
+        * minha_masmorra_legal
+            * [Os teus itens personalizados vão aqui]
     * custombosses
-        * my_cool_dungeon
-            * [Seus chefes personalizados vão aqui]
+        * minha_masmorra_legal
+            * [Os teus chefes personalizados vão aqui]
     * customarenas
-        * my_cool_dungeon
-            * [Suas arenas personalizadas vão aqui]
+        * minha_masmorra_legal
+            * [As tuas arenas personalizadas vão aqui]
     * powers
-        * my_cool_dungeon
-            * [Seus poderes personalizados vão aqui]
+        * minha_masmorra_legal
+            * [Os teus poderes personalizados vão aqui]
     * world_blueprints
-        * my_cool_dungeon
-            * [Sua pasta de mundo vai aqui, usada para masmorras instanciadas]
+        * minha_masmorra_legal
+            * [A tua pasta de mundo vai aqui, usada para masmorras instanciadas]
     * customevents
-        * my_cool_dungeon
-            * [Seus eventos personalizados vão aqui]
+        * minha_masmorra_legal
+            * [Os teus eventos personalizados vão aqui]
     * customspawns
-        * my_cool_dungeon
-            * [Suas gerações personalizadas vão aqui]
+        * minha_masmorra_legal
+            * [Os teus spawns personalizados vão aqui]
     * models
-        * [Seus modelos em formato bbmodel do ModelEngine vão aqui, aceita pastas]
+        * [Os teus modelos em formato ModelEngine bbmodel vão aqui, aceita pastas]
 
 </details>
 
-Isso permite que a maioria dos usuários arraste e solte arquivos diretamente em seu servidor e os tenha funcionando imediatamente.
+Isto permite que a maioria dos utilizadores arraste e largue ficheiros diretamente para o seu servidor e que tudo funcione imediatamente.
 
-***Importante: ao empacotar para distribuição, certifique-se de DESINSTALAR A MINIDUNGEON PRIMEIRO! Você não deseja distribuir mini-masmorras instaladas, você deseja que os administradores as configurem em seus servidores!***
+***Importante: ao empacotar para distribuição, certifica-te de que DESINSTALAS A MINIMASMORRA PRIMEIRO! Não queres distribuir minimasmorras instaladas, queres que os administradores as configurem nos seus servidores!***
 
-# Compartilhando Pacotes de Masmorras que você criou com a comunidade
+# Partilhar Pacotes de Masmorra que criaste com a comunidade
 
-O Discord contém uma seção [#community_dungeons](https://discord.gg/7Pnd7EjdZq "#community_dungeons") onde as pessoas podem compartilhar suas criações de Mini-Masmorras. Sinta-se à vontade para contribuir!
-
-
-
+O Discord contém uma secção [#community_dungeons](https://discord.gg/7Pnd7EjdZq "#community_dungeons") onde as pessoas podem partilhar as suas criações de Minimasmorras. Sente-te à vontade para contribuir!
