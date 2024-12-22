@@ -1,182 +1,145 @@
-# Construction pour EliteMobs
+# EliteMobs のための構築
 
-La page de wiki suivante vous aide à comprendre le processus requis pour créer des donjons et des arènes EliteMobs.
+以下の Wiki ページは、EliteMobs のダンジョンとアリーナを作成するために必要なプロセスを理解するのに役立ちます。
 
-Vocabulaire:
+語彙：
 
-- « Boss »: Grosse rencontre, destinée à être combattue par beaucoup de gens
-- « Mini-boss »: Rencontre plus petite, généralement capable d'être tuée par un seul joueur
-- « Chair à canon »: Mobs relativement faciles à tuer
+- 「ボス」- 大規模な戦闘、多くのプレイヤーで戦うことを想定
+- 「ミニボス」- 小規模な戦闘、通常は1人のプレイヤーで倒すことができる
+- 「雑魚」- 比較的倒しやすい敵
 
-## Comprendre les catégories de donjons d'EliteMobs
+## EliteMobs のダンジョンカテゴリについて
 
-### Repaires
+### ねぐら
 
-Catégorie de plus petite taille
+最小サイズのカテゴリ
 
-Les repaires sont généralement des structures à construction unique de 50x50, distribuées en tant que mondes, et
-contiennent généralement une grande rencontre de boss, bien que certains puissent également contenir un mini-boss et de
-la chair à canon.
+ねぐらは通常、50x50 の単一の建造物で、ワールドとして配布され、通常は1つの大きなボス戦を含みますが、ミニボスや雑魚が含まれる場合もあります。
 
-### Mini-donjons
+### ミニダンジョン
 
-Catégorie de taille moyenne
+中サイズのカテゴリ
 
-Les mini-donjons sont plus proches des structures 100x100 ou 150x150, souvent avec plusieurs structures ou des
-structures avec plusieurs sections. Ceux-ci ont 1 boss et généralement au moins 3 mini-boss ou plus. Ils ont également
-beaucoup de chair à canon.
+ミニダンジョンは、100x100 または 150x150
+の構造物に近く、多くの場合、複数の構造物または複数のセクションを持つ構造物を備えています。これらにはボスが1体、通常は3体以上のミニボスがいます。また、たくさんの雑魚もいます。
 
-### Aventures
+### アドベンチャー
 
-Les aventures sont des cartes d'aventure complètes, généralement non mesurées en blocs. Celles-ci sont de la taille
-d'une ville, voire plus grandes. Elles ont 1 boss et plus de 10 mini-boss, et des dizaines de chair à canon uniques, ce
-qui représente généralement des centaines ou des milliers au total sur la carte.
+アドベンチャーは、ブロック単位で測定されない、完全なアドベンチャーマップです。これらは都市サイズか、さらに大きいです。ボスが1体と10体以上のミニボス、そして通常はマップ全体で数百または数千に及ぶ数十のユニークな雑魚がいます。
 
-### Arènes
+### アリーナ
 
-Les arènes sont des défis d'arène de survie basés sur des vagues dans EliteMobs. Celles-ci mesurent généralement
-100x100. Elles peuvent avoir n'importe quel nombre de vagues, mais il n'est généralement pas recommandé de dépasser 50.
+アリーナは、EliteMobs のウェーブベースのサバイバルアリーナチャレンジです。これらは通常 100x100
+です。ウェーブの数は任意にできますが、通常は50を超えないことをお勧めします。
 
-### Donjons instanciés
+### インスタンスダンジョン
 
-Les donjons instanciés sont similaires aux mini-donjons, sauf qu'ils sont instanciés. Ce qui signifie que chaque fois
-qu'un joueur ou un groupe de joueurs souhaite accéder à un donjon instancié, un nouveau monde est généré uniquement pour
-eux.
+インスタンスダンジョンは、ミニダンジョンに似ていますが、インスタンス化されています。つまり、プレイヤーまたはプレイヤーグループがインスタンスダンジョンに行きたいときはいつでも、彼ら専用の新しいワールドが生成されます。
 
-Les donjons instanciés se comportent beaucoup comme les donjons instanciés que vous pourriez trouver dans votre MMO
-préféré. Ils ont généralement trois niveaux de difficulté avec des récompenses de plus en plus importantes au fur et à
-mesure que la difficulté augmente. Ils permettent aux joueurs d'assumer les rôles de Tank ou de DPS en équipant le butin
-qui est laissé tomber dans le donjon instancié. Les mobs utiliseront également différents ensembles de pouvoirs en
-fonction de la difficulté choisie lorsque les joueurs ont lancé l'instance. Tous les mobs tués dans une instance ne
-réapparaîtront pas pendant la durée de cette instance.
+インスタンスダンジョンは、お気に入りの MMO
+で見られるインスタンスダンジョンによく似た動作をします。通常、3つの難易度レベルがあり、難易度が高いほど報酬が良くなります。プレイヤーは、インスタンスダンジョン内でドロップする戦利品を装備することで、タンクまたは
+DPS の役割を担うことができます。敵も、プレイヤーがインスタンスを起動したときに選択した難易度に応じて、異なるパワーセットを使用します。インスタンス内で倒された敵は、そのインスタンスの期間中はリスポーンしません。
 
-Tout butin qui est laissé tomber dans un donjon instancié utilise le système d'avidité ou de besoin, ce qui signifie que
-les joueurs peuvent voter sur l'objet laissé tomber. Comme mentionné précédemment, le butin des donjons instanciés est
-spécialement conçu pour être soit axé sur la défense (tank), soit sur l'attaque (DPS).
+インスタンスダンジョン内でドロップした戦利品は、貪欲または必要システムを使用します。つまり、プレイヤーはドロップしたアイテムに投票できます。前述したように、インスタンスダンジョンの戦利品は、防御重視（タンク）または攻撃重視（DPS）のどちらかになるように特別に作られています。
 
-### Raids
+### レイド
 
-Contenu instancié - à venir
+インスタンスコンテンツ - 近日公開予定
 
-## Thème
+## テーマ設定
 
-La chose la plus importante concernant toute structure EliteMobs est le thème. Les thèmes influencent la conception de
-la construction, son contenu, son histoire et ses boss.
+EliteMobs の構造物で最も重要なのはテーマです。テーマは、建築のデザイン、内容、伝承、ボスに影響を与えます。
 
-Par exemple, vous pouvez voir [Le pôle Nord ici](https://magmaguy.itch.io/elitemobs-the-north-pole). Il avait le concept
-de placer des boss liés à Noël dans une boule à neige, ce qui a donné un endroit visuellement saisissant et
-mécaniquement intéressant.
+例として、[ここにある北極](https://magmaguy.itch.io/elitemobs-the-north-pole)
+をご覧ください。クリスマスのボスをスノーグローブに入れるというコンセプトで、視覚的に印象的でメカニズム的に興味深い場所になりました。
 
-Voici un autre exemple, [L'Oasis](https://magmaguy.itch.io/elitemobs-oasis). Il s'agissait de créer un lieu de l'Égypte
-ancienne envahi par des morts-vivants et des momies, et c'est l'une des constructions les plus populaires dans
-EliteMobs.
+もう一つの例、[オアシス](https://magmaguy.itch.io/elitemobs-oasis)があります。これは、古代エジプトの場所を不死者やミイラで埋め尽くすことを目的としたもので、EliteMobs
+で最も人気のある建築物の1つです。
 
-## Lieux de combat
+## 戦闘場所
 
-Les lieux de combat doivent éviter de créer des terrains qui sont facilement exploitables. Cela signifie qu'il faut
-éviter de créer des piliers sur lesquels les joueurs peuvent grimper pour se mettre en sécurité, des décorations qui
-peuvent être utilisées pour tromper l'IA et d'autres obstacles de ce type. Certains exploits seront toujours découverts,
-et ce n'est pas trop important, mais les emplacements des boss devraient être moins susceptibles de souffrir de ces
-exploits.
+戦闘場所は、簡単に悪用できる地形を作成することを避ける必要があります。つまり、プレイヤーが安全のために登ることができる柱、AI
+をだますために使用できる装飾品、その他の障害物を作ることを避ける必要があります。いくつかの悪用は常に見つかるでしょうし、それはそれほど重要ではありませんが、ボスの場所はこれらの悪用を受けにくいようにする必要があります。
 
-La zone de combat de boss idéale est relativement plate, sans obstruction, d'environ 30 blocs de rayon et peut contenir
-des piliers ou d'autres éléments de carte derrière lesquels les joueurs doivent se cacher pour effacer certaines
-mécaniques de boss.
+理想的なボスの戦闘エリアは、比較的平坦で、障害物がなく、半径約30ブロックで、プレイヤーが特定のボスのメカニズムをクリアするために隠れる必要がある柱やその他のマップ要素を含むことができます。
 
-Les couloirs doivent viser au moins 5 blocs de large s'ils sont censés contenir des ajouts. Les arènes de mini-boss
-peuvent avoir un rayon d'environ 15 blocs, selon les pouvoirs/thèmes qu'elles ont.
+通路には、雑魚が配置されることを意図している場合は、少なくとも5ブロックの幅があるようにする必要があります。ミニボスのアリーナは、パワー/テーマに応じて、半径15ブロック程度にすることができます。
 
-Veuillez noter qu'il s'agit de dimensions minimales. Il n'y a pas vraiment de problème si vous les dépassez.
+これらは最小寸法であることに注意してください。オーバーしても特に問題はありません。
 
-Gardez à l'esprit que vous pouvez sceller ou modifier les blocs d'environnement en utilisant
-soit [EliteScript]($language$/elitemobs/elitescript_actions.md&section=place_block),
-soit [Blocs transitifs]($language$elitemobs/creating_world_bosses.md&section=onspawnblockstates-and-onremoveblockstates).
-C'est un excellent moyen de s'assurer que les joueurs ne peuvent progresser davantage qu'une fois qu'ils ont vaincu un
-certain mob.
+[EliteScript]($language$/elitemobs/elitescript_actions.md&section=place_block)
+または[推移ブロック]($language$elitemobs/creating_world_bosses.md&section=onspawnblockstates-and-onremoveblockstates)
+を使用して、環境ブロックを封鎖または変更できることに注意してください。これは、プレイヤーが特定の敵を倒した後にのみ先に進めるようにするための優れた方法です。
 
-## Conception pour EliteMobs
+## EliteMobs のための設計
 
-Plus vous connaissez EliteMobs, meilleur sera le contenu que vous en ferez. Voici une liste des fonctionnalités
-d'EliteMobs qui vous aideront à trouver des choses intéressantes pour votre donjon:
+EliteMobs をよく知れば知るほど、それのために作成するコンテンツがより良くなります。以下は、ダンジョンで興味深いアイデアを思いつくのに役立つ
+EliteMobs の機能のリストです。
 
-- [Boss régionaux]($language$/elitemobs/creating_world_bosses.md): Chaque créature dans les donjons est un boss
-  régional, ce qui signifie qu'elle a une laisse (si elle dépasse une certaine distance, elle est ramenée à son point
-  d'apparition) et réapparaît avec un minuteur.
-- [Création de boss]($language$/elitemobs/creating_bosses.md) Ceci vous montrera tout ce qu'un boss peut faire et être,
-  comme les déguisements, les multiplicateurs de santé, s'il peut bouger et à quelle vitesse, les provocations et plus
-  encore!
-- [EliteScript]($language$/elitemobs/creating_powers.md) EliteScript est l'outil le plus puissant à votre disposition
-  lorsqu'il s'agit de créer des rencontres inoubliables où seule votre imagination est la limite.
-- [Coffres au trésor]($language$/elitemobs/creating_treasure_chests.md) Ceux-ci peuvent contenir des objets ou même se
-  transformer en ennemis
-- [Phases de boss]($language$/elitemobs/creating_boss_phases.md) - Les boss peuvent avoir des phases. Ce système est
-  très puissant car les boss peuvent se transformer en n'importe quoi entre les phases, y compris différents types
-  d'entités, différents déguisements, différents modèles personnalisés, etc.
-- [Blocs transitifs]($language$/elitemobs/creating_world_bosses.md&section=onspawnblockstates-and-onremoveblockstates):
-  Ce sont des blocs qui sont placés lorsqu'un boss apparaît ou meurt. Ils peuvent également être générés et effacés
-  lorsqu'un boss change de phase! Ceux-ci peuvent être utilisés pour créer des arènes dynamiques très intéressantes.
-- [Trous de ver]($language$/elitemobs/creating_wormholes.md) - portails sympas qui peuvent téléporter les joueurs vers
-  d'autres endroits.
+- [地域ボス]($language$/elitemobs/creating_world_bosses.md) -
+  ダンジョン内のすべてのクリーチャーは地域ボスです。つまり、リーシュ（一定の距離を超えるとスポーンポイントに戻されます）とタイマーでのリスポーンがあります。
+- [ボスの作成]($language$/elitemobs/creating_bosses.md) - これにより、ボスが偽装、ヘルス乗数、移動できるかどうかとその速度、挑発など、ボスができることとできることがすべてわかります。
+- [EliteScript]($language$/elitemobs/creating_powers.md) - EliteScript は、あなたの想像力だけが限界である忘れられない戦闘を作成する上で最も強力なツールです。
+- [宝箱]($language$/elitemobs/creating_treasure_chests.md) - これらにはアイテムを入れたり、敵に変身させたりすることができます。
+- [ボスのフェーズ]($language$/elitemobs/creating_boss_phases.md) -
+  ボスにはフェーズがあります。このシステムは非常に強力で、ボスはフェーズ間で、異なるエンティティタイプ、異なる偽装、異なるカスタムモデルなど、あらゆるものに変化できます。
+- [推移ブロック]($language$/elitemobs/creating_world_bosses.md&section=onspawnblockstates-and-onremoveblockstates) -
+  これらは、ボスがスポーンまたは死亡したときに配置されるブロックです。また、ボスがフェーズを変化させるときにスポーンおよびクリアすることもできます！これらは、非常に興味深いダイナミックなアリーナを作るために使用できます。
+- [ワームホール]($language$/elitemobs/creating_wormholes.md) - プレイヤーを別の場所にテレポートできるクールなポータル。
 
-## Conception de rencontre
+## 戦闘設計
 
-La conception des rencontres doit être une priorité lors de la conception de la zone de combat. Idéalement, vous auriez
-une idée des pouvoirs que vous voulez utiliser, ou du moins du thème des pouvoirs: quelque chose comme le feu, ou la
-foudre, ou la glace, ou des renforts, ou tout ce qui correspond aux pouvoirs d'EliteMobs. Une fois que vous savez quels
-doivent être les pouvoirs, vous pouvez concevoir la zone de combat en conséquence.
+戦闘設計は、戦闘エリアを設計する際の優先事項である必要があります。理想的には、使用したいパワー、または少なくともパワーのテーマ（炎、雷、氷、増援など、EliteMobs
+のパワーに合うもの）のアイデアを持っているでしょう。パワーがどのようなものにしたいのかがわかったら、それに応じて戦闘エリアを設計できます。
 
-Si les boss ont un pouvoir qui nécessite de s'enfuir, la zone doit être suffisamment grande pour s'adapter à cela. S'il
-existe un pouvoir où vous devez vous cacher derrière un obstacle, la structure a besoin de ce type d'obstacle. Il y a
-beaucoup de détails qui peuvent entrer dans la construction de ces arènes, et plus vous en tenez compte, meilleure sera
-la rencontre.
+ボスに逃げる必要があるパワーがある場合は、それを収容するのに十分な大きさのエリアが必要です。障害物の後ろに隠れる必要があるパワーがある場合は、その種の障害物が必要です。これらのアリーナを構築するには多くの詳細が含まれる可能性があり、考慮に入れるほど、戦闘はより良くなります。
 
-## Modification du pack de ressources EliteMobs
+## EliteMobs リソースパックの変更
 
-À partir de la version 1.21.4 de Minecraft et de la version 9.1.13 d'EliteMobs, le pack de ressources d'EliteMobs a été
-mis à jour pour s'aligner sur la nouvelle méthode de Minecraft d'utilisation des modèles personnalisés.
+Minecraft バージョン 1.21.4 および EliteMobs バージョン 9.1.13 の時点で、EliteMobs リソースパックは、カスタムモデルを使用するための
+Minecraft の新しい方法に沿って更新されました。
 
-La structure mise à jour du pack de ressources EliteMobs est la suivante:
+更新された EliteMobs リソースパックの構造は次のとおりです。
 
 **elitemobs_resource_pack**
-
 - **assets**
     - **elitemobs**
         - **items**
-            - Ce répertoire contient des fichiers JSON qui définissent les modèles personnalisés que Minecraft peut
-              utiliser. Les modèles réels sont stockés dans le dossier `models`.
-            - Sous-répertoires:
+            - このディレクトリには、Minecraft が使用できるカスタムモデルを定義する JSON
+              ファイルが含まれています。実際のモデルは `models` フォルダーに保存されます。
+            - サブディレクトリ:
                 - **coins**
                 - **equipment**
                 - **primis_map**
                 - **ui**
         - **models**
-            - Ce dossier contient les fichiers de modèle réels au format JSON.
-            - Sous-répertoires:
+            - このフォルダーには、実際のモデルファイルが JSON ファイルとして含まれています。
+            - サブディレクトリ:
                 - **coins**
                 - **equipment**
                 - **primis_map**
                 - **ui**
         - **textures**
-            - Ce dossier stocke toutes les textures, y compris celles utilisées par les modèles.
-            - Sous-répertoires:
+            - このフォルダーには、モデルで使用されるテクスチャを含むすべてのテクスチャが保存されます。
+            - サブディレクトリ:
                 - **blocks**
                 - **gui**
-                - **items** (c'est là que sont stockées les textures spécifiques au modèle)
+                - **items** (モデル固有のテクスチャが保存される場所です)
                 - **primis_map**
                 - **ui**
     - **minecraft**
         - **atlases**
         - **font**
         - **models**
-            - **items** (contient des fichiers JSON qui spécifient quels objets dans Minecraft doivent utiliser des
-              modèles personnalisés)
+            - **items** (Minecraft でどのアイテムがカスタムモデルを使用する必要があるかを指定する JSON
+              ファイルが含まれています)
         - **sounds**
-            - **custom** (stocke les fichiers sonores personnalisés)
+            - **custom** (カスタムサウンドファイルを保存します)
 
 ---
 
-Analysons comment un fichier JSON dans le dossier
-\*.minecraft\resourcepacks\elitemobs_resource_pack\assets\elitemobs\items\coins\* est structuré et ce qu'il fait:
+`*.minecraft\resourcepacks\elitemobs_resource_pack\assets\elitemobs\items\coins\*` フォルダー内の JSON
+ファイルがどのように構造化されているか、そしてそれが何をするかを分解してみましょう。
 
 ```
 {
@@ -187,62 +150,59 @@ Analysons comment un fichier JSON dans le dossier
 }
 ```
 
-Objectif:
-Ce fichier JSON indique à Minecraft qu'il s'agit d'un modèle, spécifie le type de modèle et indique l'emplacement du
-fichier de modèle.
+目的:
+この JSON ファイルは、これがモデルであることを Minecraft に伝え、モデルのタイプを指定し、モデルファイルの場所を示します。
 
-Champs clés:
+主要フィールド:
 
 `type: minecraft:model`
-Cela spécifie que le fichier représente un type de modèle.
+これは、ファイルがモデルタイプを表すことを指定します。
 `model: elitemobs:coins/coin1`
-Cela pointe vers l'emplacement du modèle dans le pack de ressources.
+これは、リソースパック内のモデルの場所を指します。
 
-Détails du chemin:
+パスの詳細:
 
-`elitemobs:` indique à Minecraft de rechercher dans le dossier elitemobs dans le répertoire assets.
-`coins/coin1` spécifie le sous-dossier et le nom du fichier du modèle.
+`elitemobs:` は、アセットディレクトリ内の elitemobs フォルダーを検索するように Minecraft に指示します。
+`coins/coin1` は、サブフォルダーとモデルファイル名を指定します。
 
-Le chemin d'accès complet au fichier de modèle référencé est:
+参照されるモデルファイルへの完全なパスは次のとおりです。
 `*.minecraft\resourcepacks\elitemobs_resource_pack\assets\elitemobs\models\coins\coin1.json`
 
 ---
 
-Un bon moyen de tester si vos modèles personnalisés fonctionnent correctement est d'utiliser la commande suivante:
+カスタムモデルが正しく動作しているかどうかをテストする良い方法は、次のコマンドを使用することです。
 
-/minecraft:give @p apple[item_model="elitemobs:coins/coin1"]
+`/minecraft:give @p apple[item_model="elitemobs:coins/coin1"]`
 
-Comment ça marche:
-Cette commande vous donne une pomme qui utilise le modèle `elitemobs:coins/coin1`. Si le pack de ressources est
-configuré correctement, vous devriez voir le modèle de pièce personnalisé appliqué à l'objet pomme.
+仕組み:
+このコマンドは、`elitemobs:coins/coin1` モデルを使用するリンゴを提供します。リソースパックが正しく設定されている場合、リンゴのアイテムにカスタムコインモデルが適用されているのがわかります。
 
-Test de votre propre modèle personnalisé:
-Si vous avez ajouté votre propre modèle personnalisé au pack de ressources, suivez ces étapes pour le tester:
+独自のカスタムモデルのテスト:
+独自のカスタムモデルをリソースパックに追加した場合は、次の手順に従ってテストします。
 
-1. **Créer le JSON de modèle**:
-   Placez votre fichier JSON dans le sous-dossier approprié du répertoire `items`.
-   Par exemple:
+1. **モデル JSON の作成**:
+   JSON ファイルを `items` ディレクトリ内の適切なサブフォルダーに配置します。
+   例:
    `assets/elitemobs/items/mymodel/myawesomemodel.json`
 
-2. **Ajouter le fichier de modèle**:
-   Ajoutez le fichier de modèle correspondant (`myawesomemodel.json`) au dossier `models` dans le même sous-dossier.
-   Par exemple:
+2. **モデルファイルの追加**:
+   対応するモデルファイル (`myawesomemodel.json`) を同じサブフォルダー内の `models` フォルダーに追加します。
+   例:
    `assets/elitemobs/models/mymodel/myawesomemodel.json`
 
-3. **Ajouter la texture**:
-   Ajoutez le fichier de texture pour le modèle dans le dossier `textures`.
-   Par exemple:
+3. **テクスチャの追加**:
+   モデルのテクスチャファイルを `textures` フォルダーに追加します。
+   例:
    `assets/elitemobs/textures/items/myawesomemodel.png`
 
 ---
 
-Une fois que tout est configuré, utilisez la commande ci-dessous pour tester votre modèle:
+すべて設定したら、次のコマンドを使用してモデルをテストします。
 
 `/minecraft:give @p apple[item_model="elitemobs:mymodel/myawesomemodel"]`
 
-Si tout a été fait correctement, vous recevrez une pomme dans votre main et elle affichera votre modèle personnalisé au
-lieu du modèle de pomme par défaut.
+すべてが正しく行われた場合、手の中にリンゴを受け取り、デフォルトのリンゴモデルの代わりにカスタムモデルが表示されます。
 
-## Des questions?
+## 質問は？
 
-[Posez-les à tout moment sur Discord !](https://discord.gg/9f5QSka)
+[いつでも Discord で質問してください！](https://discord.gg/9f5QSka)

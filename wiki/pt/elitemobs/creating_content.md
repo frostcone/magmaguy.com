@@ -2,7 +2,7 @@
 
 Criar conteúdo para EliteMobs é fácil e pode ser feito em apenas alguns minutos!
 
-Na barra lateral, encontrará links para criar todos os tipos de conteúdo, desde bosses a eventos e até dungeons inteiras!
+Irá encontrar na barra lateral links para criar todo o tipo de conteúdo, desde bosses, a eventos, a masmorras inteiras!
 
 ## Antes de começar
 
@@ -10,4 +10,7 @@ Pode criar todo o conteúdo através da [webapp](https://magmaguy.com/webapp/web
 
 Todos os ficheiros de configuração usam o formato de ficheiro yml/yaml. Este é o formato de ficheiro normal para ficheiros de configuração do Minecraft.
 
-YML é basicamente um ficheiro de texto que segue regras de formatação específicas para dados específicos. Se planeia criar muito conteúdo para EliteMobs e está apenas a começar, poderá querer verificar [esta página]($langage$/global/configuration_file_guide.md) que mostra como os ficheiros de texto devem ser escritos para estarem num formato yml válido.
+YML é basicamente um ficheiro de texto que segue regras de formatação específicas para dados específicos. Se planeia
+criar muito conteúdo para EliteMobs, e está apenas a começar, pode querer
+verificar [esta página]($langage$/global/configuration_file_guide.md) que mostra como os ficheiros de texto devem ser
+escritos para estarem num formato yml válido.

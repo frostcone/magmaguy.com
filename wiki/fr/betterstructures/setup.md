@@ -1,4 +1,4 @@
-# Vidéo de configuration
+# Vidéo d'installation
 
 <div class="outer-container">
 <div class="iframe-container">
@@ -13,18 +13,21 @@
 # Plugins recommandés
 
 - [EliteMobs](https://www.spigotmc.org/resources/%E2%9A%94elitemobs%E2%9A%94.40090/) pour les structures avec des combats de boss
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard) pour protéger les arènes de boss d'EliteMobs
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard) pour protéger les arènes de boss EliteMobs
 
-# Installation de contenu
+# Installation du contenu
 
-Vous pouvez créer votre propre contenu, cette étape n'est donc pas obligatoire, mais si vous souhaitez installer les centaines de constructions officielles BetterStructures préfabriquées, vous pouvez suivre ces étapes :
+Vous pouvez créer votre propre contenu, cette étape n'est donc pas obligatoire, mais si vous souhaitez installer les
+centaines de constructions officielles BetterStructures pré-faites, vous pouvez suivre ces étapes:
 
 1) Allez sur [magmaguy.itch.io](https://magmaguy.itch.io/) ou [patreon.com/magmaguy](https://www.patreon.com/magmaguy)
-2) Téléchargez le contenu que vous souhaitez
-3) Mettez le contenu - toujours zippé, tel que vous l'avez téléchargé - dans le dossier `~plugins/BetterStructures/imports`
+2) Téléchargez le contenu que vous voulez
+3) Placez le contenu - toujours zippé, tel que vous l'avez téléchargé - dans le
+   dossier `~plugins/BetterStructures/imports`
 4) Exécutez la commande `/bs reload`
 
-C'est terminé ! Les structures vont maintenant commencer à apparaître dans de ***nouveaux chunks***. *Les chunks que votre serveur a déjà générés ne pourront pas obtenir de structures !*
+C'est fait! Les structures commenceront maintenant à apparaître dans de ***nouveaux chunks***. *Les chunks que votre
+serveur a déjà générés ne pourront pas obtenir de structures!*
 
 # FAQ
 

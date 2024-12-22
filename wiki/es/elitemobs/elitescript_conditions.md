@@ -1,12 +1,11 @@
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
-
 # Condiciones de Elite Script
 
-Las condiciones permiten a los creadores de scripts hacer que los scripts y/o las acciones **no** se ejecuten en función de condiciones específicas.
+Las condiciones permiten a los scripters hacer que los scripts y/o acciones **no** se ejecuten según condiciones
+específicas.
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -14,7 +13,7 @@ Las condiciones permiten a los creadores de scripts hacer que los scripts y/o la
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Events:
     - EliteMobDamagedByPlayerEvent
     Conditions:
@@ -37,7 +36,9 @@ eliteScript:
       global: 20
 ```
 
-En este ejemplo, el script `Ejemplo` solo se ejecutará si la élite aún está viva y solo colocará un bloque de tierra 3 bloques por encima de la ubicación de la élite si ese bloque es un bloque de aire. Las acciones individuales pueden tener condiciones individuales.
+En este ejemplo, el script `Ejemplo` solo se ejecutará si el élite todavía está vivo, y solo colocará un bloque de
+tierra 3 bloques por encima de la ubicación del élite si ese bloque es un bloque de aire. Las acciones individuales
+pueden tener condiciones individuales.
 
 </div>
 
@@ -47,23 +48,31 @@ En este ejemplo, el script `Ejemplo` solo se ejecutará si la élite aún está 
 
 ## Objetivo
 
-Las condiciones utilizan el sistema [Objetivos]($language$/elitemobs/elitescript_targets.md) para apuntar a qué entidad o ubicación está sujeta a las condiciones. Esto significa que puede asociar condiciones al jefe o a los jugadores o a cualquier otra cosa a la que pueda apuntar.
+Las condiciones usan el sistema de [Objetivos]($language$/elitemobs/elitescript_targets.md) para apuntar a qué entidad o
+ubicación se somete a las condiciones. Esto significa que puedes asociar condiciones al jefe o a los jugadores o a
+cualquier otra cosa que puedas apuntar.
 
 ---
 
-## Tipo de condición
+## Tipo de Condición
 
 | Clave | Detalles | Valores |
 | --- | :-: | :-: |
 | `conditionType` | Establece el tipo de condición | `BLOCKING` / `FILTERING` |
 
-Hay dos tipos de condición: `BLOCKING` y `FILTERING`. Las condiciones `BLOCKING` hacen que los scripts o las acciones dejen de ejecutarse. Las condiciones `FILTERING` hacen que las acciones omitan los objetivos que no cumplen la condición. Esto significa que si solo desea dirigirse a bloques que no son de aire, querrá una condición `FILTERING`, pero si desea detener una acción si un jugador está muerto, querrá una condición `BLOCKING`.
+Hay dos tipos de condición: `BLOCKING` y `FILTERING`. Las condiciones `BLOCKING` hacen que los scripts o acciones dejen
+de ejecutarse. Las condiciones `FILTERING` hacen que las acciones omitan los objetivos que no cumplen la condición. Esto
+significa que si solo quieres apuntar a bloques que no son aire, querrás una condición `FILTERING`, pero si quieres
+detener una acción si un jugador está muerto, querrás una condición `BLOCKING`.
 
-**Las condiciones fuera de las acciones siempre son `BLOCKING`**. Las condiciones dentro de las acciones pueden ser `BLOCKING` o `FILTERING`.
+**Las condiciones fuera de las acciones son siempre `BLOCKING`**. Las condiciones dentro de las acciones pueden
+ser `BLOCKING` o `FILTERING`.
 
-_**Nota: si el objetivo es `SELF` (el jefe) y la comprobación de la condición es `isAlive`, la comprobación siempre es `BLOCKING`!**_ Esto se puede colocar dentro de una condición `FILTERING` y aún hará que esta parte específica se comporte como `BLOCKING`.
+_**Nota: si el objetivo es `SELF` (el jefe) y la comprobación de la condición es `isAlive`, la comprobación es
+siempre `BLOCKING`!**_ Esto se puede poner dentro de una condición `FILTERING` y aún así hará que esta parte específica
+se comporte como `BLOCKING`.
 
-Las condiciones dentro de las acciones están establecidas en `FILTERING` de forma predeterminada.
+Las condiciones dentro de las acciones se establecen en `FILTERING` por defecto.
 
 ---
 
@@ -71,15 +80,15 @@ Las condiciones dentro de las acciones están establecidas en `FILTERING` de for
 
 ### locationIsAir
 
-Establece la condición para que sea si la ubicación del objetivo es aire.
+Establece la condición para saber si la ubicación del objetivo es aire.
 
-| Clave | Detalles |        Valores         |
-| --- | :-: |:-------------------:|
-| `locationIsAir` | Establece la comprobación para comprobar si la ubicación es un bloque de aire (o lo contrario). | [Booleano](#booleano) |
+| Clave           |                                       Detalles                                        |        Valores        |
+|-----------------|:-------------------------------------------------------------------------------------:|:---------------------:|
+| `locationIsAir` | Establece si se debe comprobar si la ubicación es un bloque de aire (o lo contrario). | [Booleano](#booleano) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -87,7 +96,7 @@ Establece la condición para que sea si la ubicación del objetivo es aire.
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Conditions:
       locationIsAir: true
       Target:
@@ -95,7 +104,7 @@ eliteScript:
         offset: "0,3,0"
 ```
 
-Verifica si la ubicación 2 bloques por encima de donde está parado el jefe es aire.
+Comprueba si la ubicación 2 bloques por encima de donde está el jefe es aire.
 
 </div>
 
@@ -107,15 +116,16 @@ Verifica si la ubicación 2 bloques por encima de donde está parado el jefe es 
 
 ### isOnFloor
 
-Verifica si la ubicación está en el piso. Esto significa que el bloque en la ubicación no es sólido, pero el bloque debajo sí lo es.
+Comprueba si la ubicación está en el suelo. Esto significa que el bloque en la ubicación no es sólido, pero el bloque
+debajo de él sí lo es.
 
-| Clave | Detalles | Valores |
-| --- | :-: | :-: |
-| `isOnFloor` | Establece la comprobación para comprobar si la ubicación es una ubicación de suelo (o lo contrario). | [Booleano](#booleano) |
+| Clave       |                                          Detalles                                          |        Valores        |
+|-------------|:------------------------------------------------------------------------------------------:|:---------------------:|
+| `isOnFloor` | Establece si se debe comprobar si la ubicación es una ubicación de suelo (o lo contrario). | [Booleano](#booleano) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -123,7 +133,7 @@ Verifica si la ubicación está en el piso. Esto significa que el bloque en la u
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Conditions:
       isOnFloor: true
       Target:
@@ -140,15 +150,15 @@ eliteScript:
 
 ### isStandingOnMaterial
 
-Verifica si la ubicación debajo del objetivo es un tipo de material coincidente.
+Comprueba si la ubicación debajo del objetivo es un tipo de material coincidente.
 
-| Clave |                     Detalles                     |        Valores         |
-| --- |:-----------------------------------------------:|:---------------------:|
-| `isStandingOnMaterial` | Establece para qué tipo de material se debe comprobar. | [Material](#material) |
+| Clave                  |                     Detalles                      |        Valores        |
+|------------------------|:-------------------------------------------------:|:---------------------:|
+| `isStandingOnMaterial` | Establece qué tipo de material se debe comprobar. | [Material](#material) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -156,14 +166,14 @@ Verifica si la ubicación debajo del objetivo es un tipo de material coincidente
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Conditions:
       isStandingOnMaterial: BIRCH_WOOD
       Target:
         targetType: SELF
 ```
 
-Solo se ejecutará si el jefe está parado en BIRCH_WOOD.
+Solo se ejecutará si el jefe está de pie sobre BIRCH_WOOD.
 
 </div>
 
@@ -171,19 +181,19 @@ Solo se ejecutará si el jefe está parado en BIRCH_WOOD.
 
 </div>
 
-## Condiciones basadas en entidades
+## Condiciones basadas en la entidad
 
 ### isAlive
 
-Establece la condición para que sea si la entidad objetivo de la condición está viva.
+Establece la condición para saber si la entidad objetivo de la condición está viva.
 
-| Clave | Detalles | Valores |
-| --- | :-: | :-: |
-| `isAlive` | Establece la comprobación para comprobar si la entidad está viva (o muerta). | [Booleano](#booleano) |
+| Clave     |                              Detalles                              |        Valores        |
+|-----------|:------------------------------------------------------------------:|:---------------------:|
+| `isAlive` | Establece si se debe comprobar si la entidad está viva (o muerta). | [Booleano](#booleano) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -191,7 +201,7 @@ Establece la condición para que sea si la entidad objetivo de la condición est
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Conditions:
       isAlive: false
       Target:
@@ -210,15 +220,17 @@ Solo se ejecutará si el jefe está muerto.
 
 ### hasTags
 
-Verifica si la entidad de destino tiene etiquetas específicas. Los creadores de scripts pueden asignar y anular la asignación de cualquier etiqueta a través de acciones y utilizarlas como condiciones para un comportamiento posterior. Las etiquetas son solo cadenas (palabras) que puede asignar a un jefe.
+Comprueba si la entidad objetivo tiene etiquetas específicas. Los scripters pueden asignar y desasignar cualquier
+etiqueta a través de acciones y usarlas como condiciones para un comportamiento posterior. Las etiquetas son solo
+cadenas (palabras) que puedes asignar a un jefe.
 
-| Clave | Detalles |           Valores            |
-| --- | :-: |:---------------------------:|
-| `hasTags` | Establece la comprobación para comprobar si la entidad tiene una lista de etiquetas. | [Lista de cadenas](#string_list) |
+| Clave     |                                  Detalles                                  |                Valores                |
+|-----------|:--------------------------------------------------------------------------:|:-------------------------------------:|
+| `hasTags` | Establece si se debe comprobar si la entidad tiene una lista de etiquetas. | [Lista de Cadenas](#lista_de_cadenas) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -226,7 +238,7 @@ Verifica si la entidad de destino tiene etiquetas específicas. Los creadores de
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Conditions:
       hasTags:
       - isCool
@@ -243,19 +255,20 @@ Solo se ejecutará si el jefe tiene las etiquetas "isCool" y "hasANiceBeard".
 
 </div>
 
+
 ---
 
 ### doesNotHaveTags
 
-Igual que `hasTags`, pero verifica si el jefe no tiene estos valores.
+Igual que `hasTags`, pero comprueba si el jefe no tiene estos valores.
 
-| Clave | Detalles | Valores |
-| --- | :-: | :-: |
-| `doesNotHaveTags` | Establece la comprobación para comprobar si la entidad no tiene una lista de etiquetas. | [Lista de cadenas](#string_list) |
+| Clave             |                                   Detalles                                    |                Valores                |
+|-------------------|:-----------------------------------------------------------------------------:|:-------------------------------------:|
+| `doesNotHaveTags` | Establece si se debe comprobar si la entidad no tiene una lista de etiquetas. | [Lista de Cadenas](#lista_de_cadenas) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -263,7 +276,7 @@ Igual que `hasTags`, pero verifica si el jefe no tiene estos valores.
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Conditions:
       doesNotHaveTags:
       - isStinky
@@ -272,7 +285,7 @@ eliteScript:
         targetType: SELF
 ```
 
-Solo se ejecutará si el jefe no tiene las etiquetas "isStinky" e "isSus".
+Solo se ejecutará si el jefe no tiene las etiquetas "isStinky" y "isSus".
 
 </div>
 
@@ -286,19 +299,21 @@ Solo se ejecutará si el jefe no tiene las etiquetas "isStinky" e "isSus".
 
 Le da a la condición una posibilidad aleatoria de ser válida.
 
-| Clave | Detalles | Valores |
-| --- | :-: | :-: |
-| `randomChance` | Posibilidad de que la condición sea válida. | Número entre 0.0 y 1.0 |
+| Clave          |                   Detalles                   |        Valores         |
+|----------------|:--------------------------------------------:|:----------------------:|
+| `randomChance` | Probabilidad de que la condición sea válida. | Número entre 0.0 y 1.0 |
 
-Tenga en cuenta que esta condición es especial, ya que no requiere un objetivo.
+Ten en cuenta que esta condición es especial ya que no requiere un objetivo.
 
 ## Filtrar NEARBY con etiquetas
 
-Para filtrar `NEARBY_MOBS` o `NEARBY_PLAYERS` en función de etiquetas específicas, use `ACTION_TARGET` como el objetivo de la condición (si la condición se aplica a una acción y no al script en sí). Esto asegura que el script filtre con precisión solo a los mobs/jugadores con las etiquetas especificadas.
+Para filtrar `NEARBY_MOBS` o `NEARBY_PLAYERS` basándote en etiquetas específicas, utiliza `ACTION_TARGET` como objetivo
+de la condición (si la condición se aplica a una acción y no al script en sí). Esto asegura que el script filtre con
+precisión solo los mobs/jugadores con las etiquetas especificadas.
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -306,7 +321,7 @@ Para filtrar `NEARBY_MOBS` o `NEARBY_PLAYERS` en función de etiquetas específi
 
 ```yaml
 eliteScript:
-  Example:
+  Ejemplo:
     Actions:
     - action: SET_MOB_AI
       Target:
@@ -320,7 +335,7 @@ eliteScript:
           targetType: ACTION_TARGET
 ```
 
-Este script buscará cualquier mob cercano con la etiqueta `TurnOff` y, si tiene la etiqueta, desactivará su IA.
+Este script buscará cualquier mob cercano con la etiqueta `TurnOff` y, si la tienen, desactivará su IA.
 
 </div>
 

@@ -1,521 +1,240 @@
+# Qu'est-ce que LibsDisguises ?
+
+LibsDisguises est un plugin qui permet aux serveurs de déguiser n'importe quelle entité en n'importe quel autre type
+d'entité. Par exemple, vous pouvez déguiser des joueurs en moutons, ou déguiser des moutons en joueurs.
+
+Il existe une version [gratuite](https://www.spigotmc.org/resources/libs-disguises-free.81/) et une
+version [premium](https://www.spigotmc.org/resources/libs-disguises.32453/) de LibsDisguises. LibsDisguises a été créé
+et est maintenu par d'autres développeurs, veuillez donc ne pas demander d'aide à ce sujet dans les sections d'aide
+d'EliteMobs.
+
+# Comment puis-je déguiser une entité en joueur ?
+
+Pour déguiser un boss personnalisé (ou un boss régional, ou même un PNJ !) en joueur, il vous suffit d'ajouter la ligne
+suivante au fichier de configuration du boss:
+
+```yml
+disguise: player:nom
+```
+
+Par exemple, si vous voulez déguiser un boss avec l'apparence de mon joueur, la ligne de configuration ressemblerait à
+ceci :
+
+```yml
+disguise: player:magmaguy
+```
+
+# Comment puis-je déguiser une entité avec l'apparence d'un joueur, mais pas nécessairement en un joueur ?
+
+C'est la manière la plus flexible de déguiser une entité en joueur, car elle permet aux administrateurs d'utiliser des
+apparences en ligne ou même de créer les leurs pour déguiser un boss. C'est aussi un peu plus complexe à faire.
+
+Par souci de simplicité, les exemples présentés ici supposent que vous allez utiliser une apparence disponible en ligne.
+Libsdisguises propose différentes manières de désérialiser les apparences, y compris une où vous placez votre propre
+apparence personnalisée dans leur dossier. Consultez leur documentation si vous ne souhaitez pas utiliser une apparence
+déjà disponible en ligne.
+
+### 1. Définition du déguisement
+
+Pour le déguisement, vous devrez faire quelque chose comme ça:
+
 ```yaml
-# Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_PICKAXE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SHOVEL: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_HOE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SWORD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  SHIELD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  BOW: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_BOOTS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_LEGGINGS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_CHESTPLATE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_HELMET: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SWORD: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_AXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_PICKAXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SHOVEL: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_HOE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SHOVEL: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ENCHANTED_GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TRIDENT: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ELYTRA: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TURTLE_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_AXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_PICKAXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SHOVEL: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HOE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SWORD: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HELMET: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_CHESTPLATE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_LEGGINGS: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_BOOTS: 18.0
-  # Establece el valor de material predeterminado para objetos no definidos específicamente.
-  defaultMaterialWorth: 1.0
+disguise: custom:nom_unique_de_votre_apparence
 ```
 
-</details>
+### 2. Génération des données du déguisement
 
----
+C'est la partie délicate. Vous commencez par créer l'entrée de configuration suivante:
 
-## events.yml
+```yaml
+customDisguiseData: player nom_unique_de_votre_apparence setskin 
+```
 
-`events.yml` contient les options de configuration globales pour la création d'événements.
+*Il est crucial que le nom que vous définissez dans disguise pour le nom_unique_de_votre_apparence corresponde à celui
+de customDisguiseData!*
 
-_**Remarque :** ce ne sont que les paramètres globaux de base._
+Ensuite, vous devrez désérialiser une apparence de joueur. La façon la plus simple de le faire pour une apparence
+disponible publiquement en ligne est d'utiliser la commande grabskin de LibsDisguises.
 
-Vous pouvez modifier davantage des événements spécifiques dans le dossier `events`.
+Disons que vous voulez obtenir [cette apparence](https://www.minecraftskins.com/skin/18512841/buff-villager/).
+
+Pour ce faire, vous devez exécuter la
+commande `/grabskin https://www.minecraftskins.com/uploads/skins/2021/07/28/buff-villager-18512841.png?v437`
+
+**Remarque : vous devez fournir un lien direct vers le fichier d'apparence, et non vers la page contenant l'apparence.
+Notez où pointe le lien. Dans [skindex](https://www.minecraftskins.com/), vous pouvez obtenir le lien direct en appuyant
+sur le bouton "Lien image" qui se trouve en bas à droite de chaque apparence.**
+
+Une fois que vous avez réussi, LibsDisguises vous fournira environ 3 à 6 chiffres qui indiquent "Cliquez pour copier".
+Si vous cliquez dessus, une longue liste de chiffres et de lettres apparaîtra. Vous devez vous assurer de commencer à 1
+et de faire tous les nombres dans l'ordre. Pour les copier, appuyez sur ctrl-a puis sur ctrl-c, puis collez-les dans le
+fichier avec ctrl-v. Une fois terminé, cela devrait ressembler à ceci:
+
+```yaml
+customDisguiseData: player nom_unique_de_votre_apparence setskin {"id":"d1fbb77f-b184-4718-b0a2-c7ae866798d3","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYyNzU0ODkwMjQ0OSwKICAicHJvZmlsZUlkIiA6ICIxOTI1MjFiNGVmZGI0MjVjODkzMWYwMmE4NDk2ZTExYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJTZXJpYWxpemFibGUiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzlmYTZkMWFlODA2YTY2OGI0OTgzYmZhY2ZkMGUzMzQ5MGE5MGU4YTZmMWE2MmEwZGQ5YzQ1YjdkYjBiNjU1MyIKICAgIH0KICB9Cn0=","signature":"P/XSvxX45MUZGc5uuDKuVgmMUk2V1HADPI84Os5J4NnmURhLeS4jL4FSeShmz0cH7sBWmMg80g9ADP33R9PcOmzbHK4hJBFt2VYLJNgSYHK6VGp6qLGXDfdAa3vRNXN7jKtsrqVEANax7Gzv3xcWARLbq1FuQ6yYdXDY8Coc02Y/POMRG/i6iACtro5DQGhr2JgbL++95UhSBFxmU82Zef3UMHLfgt7lC4vWN4c4xrOAKllzF2mwohuMmEkoKzu/6s/eu5q4J4bBH08M8UN02/yJuEH5sTy/iVJfaoPs90ZfcVdRpUZvVDZh5eXapQN1/Q9/79Pc8YOXF/20iygZ/hpvTPKP8wbMP2b1cJSyAaEIUtG9I7mG3bAXbH7mcswM1CNFF3+GEFnZI5dPxzuOelJR/t2mtVl82a4zEm9KG9Fq7iGfuK9aiWR8Yot1KeuIddPbBL8JnxHy2wW9OySjzAbs8tUI/i5KKmZmQrPH0RmHrFIuVK4C849QtRt57sQaUr1+W6Vto3r7J5jhpZ30wIIfS9hvW/ReB9rbwUQWERWie5Lchfcp7YkKbzuuaddnIjPew2IQDESlXzVW84kXtYKCs8hFgYVn27wU8jqtBCVkr0iHW7YLQTl4SFUzTFCSgAx5KSFHGm/4kqXqpHNdjS687o13MWpxrxLkV1svIp4="}],"legacy":false}
+```
+
+Et c'est tout! `customDisguiseData` fonctionnera avec n'importe quel code d'apparence désérialisé, donc si vous trouvez
+d'autres façons de générer le même code dans LibsDisguises, vous pouvez l'utiliser ici.
+
+L'avantage de customDisguiseData est qu'il est autonome, ce qui signifie que vous n'avez pas à dépendre des joueurs en
+ligne, des joueurs avec des apparences spécifiques ou autre chose. EliteMobs l'utilise pour personnaliser tous les boss
+déguisés dans les packs de donjons!
+
+# Comment puis-je déguiser un boss personnalisé en un autre type d'entité ?
+
+Pour déguiser un boss personnalisé (ou un boss régional) en un autre type d'entité, il vous suffit d'ajouter la ligne
+suivante au fichier de configuration du boss:
+
+```yml
+disguise: TYPE_ENTITÉ
+```
+
+Par exemple, si vous voulez que votre boss personnalisé soit déguisé en mouton, vous feriez:
+
+```yml
+disguise: SHEEP
+```
+
+## Comment puis-je déguiser un boss personnalisé en bébé entité ?
+
+Pour déguiser un boss personnalisé (ou un boss régional) en bébé entité, il vous suffit d'ajouter la ligne suivante au
+fichier de configuration du boss:
+
+```yml
+disguise: HOGLIN:baby
+```
+
+Comme vous pouvez le voir dans cet exemple, notre boss serait déguisé en bébé Hoglin.
+
+# Comment puis-je déguiser une entité avec un déguisement personnalisé ?
+
+Pour déguiser un boss personnalisé (ou un boss régional) en une entité LibsDisguises personnalisée, vous devez d'abord
+créer le déguisement LibsDisguises.
+
+Une fois que cela est fait, la syntaxe correcte est:
+
+```yml
+disguise: custom:nom_de_votre_deguisement_personnalise
+```
+
+# Déguisements valides
+
+Il n'existe pas de liste officielle des types d'entités valides, mais voici une liste non officielle qui devrait
+fonctionner au moment de la rédaction de cet article (3 août 2020)
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>Développer la liste</b></summary>
 
-```yml
-# Définit si les événements ne seront diffusés que dans le monde dans lequel les événements se produisent.
-Only broadcast event message in event worlds: false
-# Définit le temps de pause minimum, en minutes, entre les événements temporisés
-actionEventMinimumCooldownMinutes: 240
-# Définit si les événements d'action se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#action-events
-actionEventsEnabled: true
-# Définit si les événements temporisés se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#timed-events
-timedEventsEnabled: true
+```
+    ARMOR_STAND
+    ARROW
+    BAT
+    BLAZE
+    BOAT
+    CAT
+    CAVE_SPIDER
+    CHICKEN
+    COD
+    COW
+    CREEPER
+    DOLPHIN
+    DONKEY
+    DRAGON_FIREBALL
+    DROWNED
+    DROPPED_ITEM
+    EGG
+    ELDER_GUARDIAN
+    ENDER_CRYSTAL
+    ENDER_DRAGON
+    ENDER_PEARL
+    ENDER_SIGNAL
+    ENDERMAN
+    ENDERMITE
+    EVOKER
+    EVOKER_FANGS
+    EXPERIENCE_ORB
+    FALLING_BLOCK
+    FIREBALL
+    FIREWORK
+    FISHING_HOOK
+    FOX
+    GHAST
+    GIANT
+    GUARDIAN
+    HOGLIN
+    HORSE
+    HUSK
+    ILLUSIONER
+    IRON_GOLEM
+    ITEM_FRAME
+    LLAMA
+    LLAMA_SPIT
+    LEASH_HITCH
+    MAGMA_CUBE
+    MINECART
+    MINECART_CHEST
+    MINECART_COMMAND
+    MINECART_FURNACE
+    MINECART_HOPPER
+    MINECART_MOB_SPAWNER
+    MINECART_TNT
+    MODDED_MISC
+    MODDED_LIVING
+    MULE
+    MUSHROOM_COW
+    OCELOT
+    PAINTING
+    PANDA
+    PARROT
+    PHANTOM
+    PIG
+    PIG_ZOMBIE
+    PIGLIN
+    PILLAGER
+    PLAYER
+    POLAR_BEAR
+    PRIMED_TNT
+    PUFFERFISH
+    RABBIT
+    RAVAGER
+    SALMON
+    SHEEP
+    SHULKER
+    SHULKER_BULLET
+    SILVERFISH
+    SKELETON
+    SKELETON_HORSE
+    SLIME
+    SMALL_FIREBALL
+    SNOWBALL
+    SNOWMAN
+    SPECTRAL_ARROW
+    SPLASH_POTION
+    SQUID
+    STRAY
+    STRIDER
+    THROWN_EXP_BOTTLE
+    TIPPED_ARROW
+    TRIDENT
+    TRADER_LLAMA
+    TROPICAL_FISH
+    TURTLE
+    VEX
+    VILLAGER
+    VINDICATOR
+    WANDERING_TRADER
+    WITCH
+    WITHER
+    WITHER_SKELETON
+    WITHER_SKULL
+    WOLF
+    ZOGLIN
+    ZOMBIE
+    ZOMBIE_HORSE
+    ZOMBIE_VILLAGER
+    ZOMBIFIED_PIGLIN
 ```
 
 </details>
-
----
-
-## ItemSettings.yml
-
-`ItemSettings.yml` contient tous les paramètres de configuration globaux pour les objets d'élite.
-
-<details>
-
-<summary><b>Développer le tableau</b></summary>
-
-```yml
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-noItemDurabilityMessage: '&8[EliteMobs] $item &4est cassé ! Il ne fonctionnera pas tant qu'il n'est pas réparé !'
-# Définit si un butin EliteMobs sera laissé tomber.
-# Comprend les pièces d'élite, les objets personnalisés, les objets générés de façon procédurale - tout !
-# Non recommandé ! Rend la progression du MMORPG impossible.
-doEliteMobsLoot: true
-# Définit si le butin généré de façon procédurale aura des couleurs différentes en fonction de la qualité de l'objet.
-doMMORPGColorsForItems: true
-# Définit si le placement d'objets personnalisés, comme les bannières ou les blocs, est empêché.
-# Ceci est recommandé : les objets personnalisés se cassent lorsqu'ils sont placés et ne peuvent pas être récupérés !
-preventCustomItemPlacement: true
-# Définit le format de l'histoire de tous les objets EliteMobs !
-# Les marqueurs de position suivants sont valides :
-# $itemLevel - affiche le niveau de l'objet
-# $prestigeLevel - affiche le niveau de prestige
-# $weaponOrArmorStats - affiche les statistiques de DPS d'élite ou d'armure d'élite, en fonction de l'objet
-# $soulbindInfo - affiche à qui, le cas échéant, l'objet est lié à l'âme
-# $itemSource - affiche d'où provient l'objet, comme un mob ou une boutique
-# $ifLore - fait apparaître une ligne uniquement si l'objet a une histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $customLore - affiche l'ensemble de l'histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $ifEnchantments - fait apparaître une ligne uniquement si l'objet possède des enchantements
-# $enchantments - affiche les enchantements sur l'objet
-# $eliteEnchantments - affiche les enchantements d'élite sur l'objet
-# $ifCustomEnchantments - affiche les enchantements personnalisés sur l'objet
-# $customEnchantments - affiche les enchantements personnalisés sur l'objet
-# $ifPotionEffects - affiche uniquement la ligne si l'objet a des effets de potion
-# $potionEffects - affiche les effets de potion sur l'objet
-# $loreResaleValue - affiche la valeur de l'objet. Pourrait afficher le prix d'achat ou de vente en fonction de l'endroit où il est visualisé
-# Important : plusieurs des marqueurs de position peuvent être davantage personnalisés par les paramètres de configuration ci-dessous
-itemLoreStructureV2:
-- §7§m§l---------§7<§lInfo. équipement§7>§m§l---------
-- '§7Niveau de l'objet : §f$itemLevel §7Prestige §6$prestigeLevel'
-- $weaponOrArmorStats
-- $soulbindInfo
-- $itemSource
-- $ifLore§7§m§l-----------§7< §f§lHistoire§7 >§m§l-----------
-- $customLore
-- $ifEnchantments§7§m§l--------§7<§9§lEnchantements§7>§m§l--------
-- $enchantments
-- $eliteEnchantments
-- $ifCustomEnchantments§7§m§l------§7< §3§lEnchants persos.§7 >§m§l------
-- $customEnchantments
-- $ifPotionEffects§7§m§l----------§7< §5§lEffets§7 >§m§l----------
-- $potionEffect
-- §7§l§m-----------------------------
-- $loreResaleValue
-# Définit la tradition de la source de la boutique pour les achats en magasin
-shopSourceItemLores: '&7Acheté dans une boutique'
-# Définit la tradition de la source de l'objet pour les objets pillés sur les boss
-mobSourceItemLores: '&7Pillé sur $mob'
-# Définit la tradition de valeur de l'objet
-loreWorths: '&7Vaut $worth $currencyName'
-# Définit la tradition de la valeur de revente de l'objet
-loreResaleValues: '&7Se vend pour $resale $currencyName'
-# Définit la possibilité de base que tout objet d'élite tombe des mobs d'élite
-flatDropRateV3: 0.2
-# Définit la possibilité de base que tout objet d'élite tombe des boss régionaux
-regionalBossNonUniqueDropRate: 0.05
-# Définit si les boss régionaux peuvent laisser tomber du butin vanilla
-regionalBossesDropVanillaLoot: false
-# Définit la quantité dont la possibilité qu'un objet d'élite tombe augmente en fonction du niveau du mob.
-# Le niveau du mob est multiplié par cette valeur et est ajouté à la possibilité de base.
-# Il n'est plus recommandé d'avoir une valeur supérieure à 0,0 !
-levelIncreaseDropRateV2: 0.0
-# Définit la possibilité pondérée qu'un objet généré de façon procédurale tombe.
-# Ce système utilise des probabilités pondérées ! Cherchez cela sur Google si vous ne savez pas ce que c'est.
-proceduralItemDropWeight: 90.0
-# Définit la possibilité relative qu'un objet pondéré tombe.
-# Les objets pondérés sont des objets personnalisés qui n'ont pas de poids dynamique, comme les amulettes.
-weighedItemDropWeight: 1.0
-# Définit la possibilité relative qu'un objet fixe tombe. Ce sont des objets personnalisés qui ne s'adaptent pas.
-fixedItemDropWeight: 10.0
-# Définit la possibilité relative qu'un objet limité tombe. Ce sont des objets personnalisés qui s'adaptent jusqu'à un niveau spécifique
-limitedItemDropWeight: 3.0
-# Définit la possibilité relative qu'un objet évolutif tombe. Ce sont des objets personnalisés qui peuvent s'adapter à n'importe quel niveau et sont les plus courants dans le plugin.
-scalableItemDropWeight: 6.0
-# Définit le multiplicateur pour le butin vanilla du mob, en fonction du niveau du mob.
-defaultLootMultiplier: 0.0
-# Définit le niveau maximum pour le multiplicateur de butin par défaut.
-levelCapForDefaultLootMultiplier: 200
-# Définit le multiplicateur d'expérience de Minecraft vanilla que laisse tomber le boss, en fonction du niveau du boss.
-defaultExperienceMultiplier: 1.0
-# Définit le niveau maximum pour le butin qui sera laissé tomber par EliteMobs. Il est fortement recommandé de le laisser à 200.
-maximumItemLevel: 200
-# Définit si les enchantements d'élite seront utilisés.
-# Les enchantements d'élite remplacent les enchantements vanilla lorsque les objets d'élite obtiennent des niveaux d'enchantement qui superent les limites de vanilla.
-# Exemple : si une épée d'élite est censée avoir une netteté de 10, étant donné que la limite de Minecraft est le niveau 5, elle aura une netteté de 5 et une netteté d'élite de 5.
-# La netteté d'élite n'affecte que les mobs générés par EliteMobs. Ceci est fait pour que le JcJ et le combat vanilla ne soient pas déséquilibrés.
-useEliteEnchantments: true
-# Définit le nom d'affichage qui sera utilisé pour les enchantements d'élite dans l'histoire de l'objet.
-eliteEnchantmentLoreStrings: Élite
-# Définit si EliteMobs considerará las azadas como armas válidas para los cálculos de daño.
-useHoesAsWeapons: false
-# Définit si EliteMobs fera apparaître des particules spéciales sur les objets qui tombent de haute qualité.
-enableRareItemParticleEffects: true
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe à l'entité qui reçoit le coup.
-potionEffectOnHitTargetLore: '&4⚔☠'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe au joueur qui frappe.
-potionEffectOnHitSelfLore: '&9⚔🛡'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion continuera de se réappliquer tant que le joueur le manie.
-potionEffectContinuousLore: '&6⟲'
-# Définit les caractères précédés d'enchantements d'élite dans l'histoire des objets.
-eliteEnchantmentLoreColor: '&9◇'
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-vanillaEnchantmentLoreColor: '&7◇'
-# Définit les caractères précédés d'enchantements personnalisés dans l'histoire des objets.
-customEnchantmentColor: '&3◇'
-# Définit les caractères précédés d'effets de potion dans l'histoire des objets.
-potionEffectLoreColor: '&5◇'
-# Définit le texte qui apparaîtra sur l'objet si l'objet n'est pas lié à l'âme.
-noSoulbindLore: '&7Non lié à l'âme !'
-# Définit si un objet d'élite peut être enchanté par des moyens vanilla. Ce n'est pas recommandé car EliteMobs possède son propre système d'enchantements personnalisés avec son propre équilibre !
-preventEliteItemEnchantment: true
-# Définit si les objets d'élite peuvent être désenchantés par des moyens vanilla.
-preventEliteItemDisenchantment: true
-# Définit le message qui apparaît pour les joueurs lorsqu'ils tentent de désenchanter un objet et que cela n'est pas autorisé.
-preventEliteItemDisenchantmentMessage: '&c[EliteMobs] Impossible de désenchanter des objets d'élite !'
-# Définit si les objets d'élite pourront être améliorés du diamant au netherite par des moyens vanilla. Non recommandé !
-preventEliteItemDiamondToNetheriteUpgrade: true
-# Définit si les objets d'élite ne perdront de la durabilité qu'en cas de mort.
-# Il s'agit d'un système important pour EliteMobs, et il est fortement recommandé car les combats de haut niveau sont presque impossibles sans lui !
-eliteItemsDurabilityLossOnlyOnDeath: true
-# Définit le multiplicateur de perte de durabilité pour les objets d'élite s'il est configuré pour perdre de la durabilité en cas de mort.
-# Les valeurs entre 0,0 et 1,0 diminuent la perte de durabilité et les valeurs supérieures à 1,0 l'augmentent.
-# Exemple : 0,5 inflige 50 % de la perte de durabilité, 2,0 inflige 200 % de la perte de durabilité.
-eliteItemsDurabilityLossMultiplier: 1.0
-# Définit le message qui apparaît lorsque la mise au rebut d'objets réussit.
-scrapSucceededMessageV2: '&8[EliteMobs] &2Mise au rebut réussie $amount fois !'
-# Définit le message qui apparaît lorsque la mise au rebut d'objets échoue.
-scrapFailedMessageV2: '&8[EliteMobs] &cLa mise au rebut a échoué $amount fois !'
-# Définit si le butin d'élite doit être placé directement dans les inventaires des joueurs.
-putLootDirectlyIntoPlayerInventory: false
-# Définit la différence de niveau maximale que les joueurs peuvent avoir avant qu'ils ne puissent plus piller des objets qui sont d'un niveau trop bas.
-# Ceci est calculé en fonction du niveau moyen du butin que porte le joueur.
-# Par exemple, si la valeur est définie sur 10 et qu'un joueur a un équipement de niveau 50, il ne pourra pas cultiver des jefes de niveau 39.
-lootLevelDifferenceLockout: 10
-# Définit si EliteMobs empêchera les objets d'élite de se casser lors de l'utilisation de la perte de durabilité du système en cas de mort.
-# Les joueurs ne pourront pas utiliser les objets sans durabilité de toute façon, ceci est simplement pour éviter la perte accidentelle d'objets de haut niveau mais de faible durabilité.
-preventEliteItemsFromBreaking: true
-# Définit le niveau minimum, +7, des jefes qui pueden dejar caer equipo de diamante generado por procedimientos en EliteMobs.
-# No hay equipo de netherite generado por procedimientos en EliteMobs, solo botín personalizado.
-minimumProcedurallyGeneratedDiamondLootLevelPlusSeven: 10
-# Définit le message qui se montre en el chat al conseguir botín con éxito a través del comando /em simloot <level> <times>.
-simlootMessageSuccess: '&8[EliteMobs] &2Rolled for loot and got $itemName &2!'
-# Définit le mensaje que se muestra en el chat al no obtener botín a través del comando /em simloot <level> <times>.
-simlootMessageFailure: '&8[EliteMobs] &cRolled for loot and got nothing!'
-# Définit le mensaje que reciben los jugadores cuando el botín de élite se deposita directamente en sus inventarios.
-directDropCustomLootMessage: '&8[EliteMobs] &2Obtained $itemName &2!'
-# Définit le mensaje que reciben los jugadores cuando el botín de vainilla se deposita directamente en sus inventarios.
-directDropMinecraftLootMessage: '&8[EliteMobs] &aObtained $itemName &a!'
-# Définit le mensaje que reciben los jugadores cuando las monedas de élite se depositan directamente en sus inventarios.
-directDropCoinMessage: '&8[EliteMobs] &aObtained &2$amount $currencyName &a!'
-# Establece si EliteMobs ocultará los atributos de vainilla de Minecraft.
-hideItemAttributes: true
-# Définit l'entrée de tradition spécifique aux armes sur un objet d'élite. Le marqueur de position $EDPS est remplacé par le DPS d'élite (dégâts par seconde) de l'arme.
-weaponEntry: '&7DPS d'élite : &2$EDPS'
-# Définit l'entrée de tradition spécifique aux armures sur un objet d'élite. Le marqueur de position $EDEF est remplacé par la DEF (défense) d'élite de l'arme.
-armorEntry: '&7Armure d'élite : &2$EDEF'
-# Définit le message envoyé lorsqu'un joueur tue un boss, mais que le niveau de l'équipement est trop différent du niveau du boss pour obtenir des pièces.
-levelRangeTooDifferent: '&8EM] &4Votre équipement est de niveau $playerLevel et le boss est de niveau
-  $bossLevel, la différence de niveau est trop élevée pour obtenir des pièces !'
-```
-
-</details>
-
----
-
-## MobCombatSettings.yml
-
-`MobCombatSettings.yml` contient toutes les options de configuration liées au système de combat personnalisé et la plupart des options de configuration généralement liées au fonctionnement des mobs d'élite.
-
-<details>
-
-<summary><b>Développer le tableau</b></summary>
-
-```yml
-# Définit si les élites générées naturellement apparaîtront. Remarque : les mobs d'événement comme le roi zombie ne sont pas des élites générées naturellement ! Vous devrez désactiver les événements si vous voulez désactiver les boss d'événement.
-doNaturalEliteMobSpawning: true
-# Définit si les apparitions générées à partir des générateurs de mobs peuvent être converties en élites. Non recommandé !
-doSpawnersSpawnEliteMobs: false
-# Définit le pourcentage de mobs générés naturellement qui sont convertis en mobs d'élite.
-eliteMobsSpawnPercentage: 0.05
-# Définit la plage des super mobs pour la recherche d'empilement de super mobs
-superMobStackRange: 15
-# Définit le niveau maximum auquel les élites peuvent apparaître.
-# Remarque : le niveau de mob d'élite est basé sur l'armure et les armes que les joueurs portent, et l'armure ne peut être mise à l'échelle que jusqu'au niveau 200.
-naturalEliteMobsLevelCap: 250
-# Définit si les élites porteront une armure en fonction de leur niveau. Ceci est uniquement à des fins visuelles et n'affecte pas le combat.
-doElitesWearArmor: true
-# Définit si les élites porteront des casques en fonction de leur niveau. Cela les empêchera de brûler facilement pendant la journée.
-doElitesWearHelmets: true
-# Définit si les élites auront des traînées visuelles autour d'elles, avertissant les joueurs des joueurs qu'elles possèdent.
-doNaturalEliteMobVisualEffects: true
-# Définit si les élites générées à partir de générateurs feront des effets visuels.
-doSpawnerEliteMobVisualEffects: false
-# Définit si certains pouvoirs feront la phase d'avertissement du pouvoir. Ceci est très important car les phases d'avertissement signifient généralement que le pouvoir peut être esquivé et l'élément visuel permet aux joueurs de savoir où esquiver.
-doPowerBuildupVisualEffects: true
-# Définit si des messages de mort personnalisés seront utilisés lorsque les joueurs meurent à cause des élites.
-doCustomEliteMobsDeathMessages: true
-# Définit si EliteMobs affichera des indicateurs de santé pour les élites.
-doDisplayMobHealthOnHit: true
-# Définit si EliteMobs affichera des indicateurs de dégâts pour les dégâts infligés aux élites.
-doDisplayMobDamageOnHit: true
-# Définit si le niveau des élites augmentera en fonction de la distance de l'apparition.
-# Il s'agit d'une valeur ajoutée en plus de leur niveau normal, ce qui signifie que si un joueur porte un équipement de niveau 100 près de l'apparition et que le boss a +1 de niveau en raison de la distance de l'apparition, le boss apparaîtra au niveau 101.
-# En général, cette option n'est pas recommandée, en particulier si vous avez un système de tp aléatoire sur votre serveur.
-doIncreaseEliteMobLevelBasedOnSpawnDistance: false
-# Définit la distance entre les incréments de niveau pour les augmentations de niveau basées sur la distance.
-distanceBetweenIncrements: 100.0
-# Définit le nombre de niveaux qui augmentent à chaque incrément de distance pour les augmentations de niveau basées sur la distance.
-levelIncreaseAtIncrements: 1.0
-# Définit si les pouvoirs des élites seront cachés jusqu'à ce qu'elles entrent en combat. Ceci est recommandé pour des raisons de performances.
-hideEliteMobPowersUntilAggro: true
-# Définit le multiplicateur pour les dégâts infligés à tous les boss générés par EliteMobs, sauf ceux qui utilisent le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent les dégâts infligés, ce qui facilite la mort des boss.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToEliteMobMultiplierV2: 1.0
-# Définit le multiplicateur pour les dégâts infligés aux joueurs par les élites. Des valeurs plus élevées augmentent la quantité de dégâts infligés par les boss, sauf ceux qui utilisent le système de dégâts normalisé (boss de donjons régionaux), ce qui rend les boss plus difficiles à frapper.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToPlayerMultiplierV2: 1.0
-# Définit si les boss spéciaux peuvent être suivis.
-showCustomBossLocation: true
-# Définit le message envoyé aux joueurs pour suivre l'emplacement d'un boss.
-bossLocationMessage: '&7[EM] &2[Cliquez pour suivre !]'
-# Définit les commandes qui s'exécutent lorsqu'une élite meurt. Les marqueurs de position valides sont :
-# $level pour le niveau du boss
-# $name pour le nom du boss
-# $players fera en sorte que la commande s'exécute pour chaque joueur qui a participé à la mort. Par exemple, si Bob et Steve ont tué un boss, 'broadcast $players a tué le boss !' exécutera 'bob a tué le boss' et 'steve a tué le boss !'
-commandsOnEliteMobDeath: []
-# Establece el mensaje enviado a los jugadores que participan en grandes asesinatos de jefes.
-bossKillParticipationMessage: '&eVos dégâts : &2$playerDamage'
-# Définit si les boss régénéreront leur santé lorsqu'ils sortiront du combat. Fortement recommandé.
-regenerateCustomBossHealthOnCombatEnd: true
-# Définit le message envoyé aux joueurs qui tentent de suivre les boss qui se trouvent actuellement dans un monde différent.
-defaultOtherWorldBossLocationMessage: '$name : Dans un autre monde !'
-# Définit le préfixe ajouté aux indicateurs de dégâts lorsque les joueurs frappent un boss avec quelque chose contre lequel le boss est faible.
-weakTextColor: '&9'
-# Définit le préfixe ajouté aux indicateurs de dégâts lorsque les joueurs frappent un boss avec quelque chose contre lequel le boss est fort.
-resistTextColor: '&c'
-# Définit le message qui apparaît lorsque les joueurs frappent le boss avec quelque chose contre lequel le boss est faible.
-weakText: '&9&lFaible !'
-# Définit le message qui apparaît lorsque les joueurs frappent le boss avec quelque chose contre lequel le boss est fort.
-resistText: '&c&lRésistance !'
-# Définit si des visuels seront utilisés pour montrer qu'un boss est faible contre une attaque.
-doWeakEffect: true
-# Définit si des visuels seront utilisés pour montrer qu'un boss est fort contre une attaque.
-doResistEffect: true
-# Définit le multiplicateur pour les dégâts infligés aux boss utilisant le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent les dégâts infligés, ce qui facilite la mort des boss.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToEliteMobMultiplier: 1.0
-# Définit le multiplicateur pour les dégâts infligés aux joueurs par les boss utilisant le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent la quantité de dégâts infligés par les boss, ce qui rend les boss plus difficiles à frapper.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToPlayerMultiplier: 1.0
-# Définit les dégâts de référence pour les boss personnalisés utilisant les dégâts normalisés (généralement les boss régionaux de donjons).
-normalizedRegionalBossBaselineDamageV2: 3.0
-# Définit la santé de référence pour les boss personnalisés utilisant la santé normalisée (généralement les boss régionaux de donjons).
-normalizedRegionalBossBaselineHealthV3: 4.0
-# Définit si les boss régionaux utiliseront le système de combat normalisé.
-# Ceci est très fortement recommandé, et le contenu préfabriqué ne sera pas équilibré correctement s'il est modifié.
-normalizeRegionalBosses: true
-# Définit le message qui apparaît lorsqu'un boss guérit en sortant du combat.
-fullHealMessage: '&2GUÉRISON COMPLÈTE !'
-# Définit les multiplicateurs appliqués aux attaques contre lesquelles les boss sont forts et faibles.
-strengthAndWeaknessDamageMultipliers: 2.0
-# Définit le multiplicateur appliqué à la réduction de dégâts de l'effet de potion de résistance pour les joueurs.
-resistanceDamageMultiplier: 1.0
-# Définit le multiplicateur appliqué à la réduction de dégâts lorsqu'un joueur tient un bouclier pour les attaques de mêlée (pouvoirs exclus).
-blockingDamageReduction: 0.8
-```
-
-</details>
-
----
-
-## ProceduralItemGenerationSettings.yml
-
-`ProceduralItemGenerationSettings.yml` contient toutes les options de configuration pour la configuration des objets générés de façon procédurale.
-
-<details>
-
-<summary><b>Développer le tableau</b></summary>
-
-```yml
-dropProcedurallyGeneratedItems: true
-customEnchantmentsChance: 0.5
-materialNames:
-  swordName: Épée
-  bowName: Arc
-  pickaxe: Pioche
-  spade: Pelle
-  hoe: Houe
-  axe: Hache
-  helmet: Casque
-  chestplate: Plastron
-  leggings: Jambières
-  boots: Bottes
-  shears: Cisailles
-  fishingRod: Canne à pêche
-  shield: Bouclier
-  trident: Trident
-  crossbow: Arbalète
-nameFormats:
-- $verb $itemType de $adjective $noun
-- $itemType de $adjective $noun
-- $noun's $adjective $verb $itemType
-- $verb $itemType
-- $adjective $verb $itemType
-- The $verb-er
-- The $adjective $verb-er
-nouns:
-- MagmaGuy
-- Aube
-...
-adjectives:
-- Adorable
-- Magnifique
-...
-verbs:
-- Tailler
-- Couper
-...
-verb-ers (noun):
-- Brise-monde
-- Brise-destructeur_de_monde
-...
-validMaterials:
-  DIAMOND_HELMET: true
-  DIAMOND_CHESTPLATE: true
-  DIAMOND_LEGGINGS: true
-  DIAMOND_BOOTS: true
-  DIAMOND_SWORD: true
-  DIAMOND_AXE: true
-  IRON_HELMET: true
-  IRON_CHESTPLATE: true
-  IRON_LEGGINGS: true
-  IRON_BOOTS: true
-  IRON_SWORD: true
-  IRON_AXE: true
-  GOLDEN_HELMET: true
-  GOLDEN_CHESTPLATE: true
-  GOLDEN_LEGGINGS: true
-  GOLDEN_BOOTS: true
-  GOLDEN_SWORD: true
-  GOLDEN_AXE: true
-  CHAINMAIL_HELMET: true
-  CHAINMAIL_CHESTPLATE: true
-  CHAINMAIL_LEGGINGS: true
-  CHAINMAIL_BOOTS: true
-  LEATHER_HELMET: true
-  LEATHER_CHESTPLATE: true
-  LEATHER_LEGGINGS: true
-  LEATHER_BOOTS: true
-  STONE_SWORD: true
-  STONE_AXE: true
-  WOODEN_SWORD: true
-  WOODEN_AXE: true
-  SHIELD: true
-  TURTLE_HELMET: true
-  TRIDENT: true
-  BOW: true
-  CROSSBOW: true
-```
-
-</details>
-
----
-
-## ValidWorlds.yml
-
-`ValidWorlds.yml` contient la liste des mondes qu'EliteMobs a détectés, ainsi que des options pour personnaliser les fonctionnalités d'EliteMobs sur ceux-ci.
-
-<details>
-
-<summary><b>Développer le tableau</b></summary>
-
-```yml
-# Définit la liste des mondes basés sur des zones.
-# LE MODE DE JEU BASÉ SUR LES ZONES EST DÉPASSÉ ET SERA BIENTÔT SUPPRIMÉ !
-zoneBasedWorlds: []
-# Définit la liste des mondes en mode cauchemar.
-# Les mondes en mode cauchemar sont un mode de jeu où les jours sont plus courts et les joueurs ne peuvent pas
-# dormir.
-# Les mondes de cau

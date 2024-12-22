@@ -1,48 +1,52 @@
-# Création de contenu
+# コンテンツの作成
 
 ***
 
-## Création de la construction
+## ビルドの作成
 
-Il n'y a pas de restrictions quant à ce que vous pouvez construire pour BetterStructures, bien qu'il soit recommandé de maintenir la taille des structures sous 100x100x100 blocs pour des raisons générales d'ajustement mondial et de performances. Cela dit, il peut facilement gérer des structures beaucoup plus grandes.
-
-***
-
-### Blocs spéciaux
-
-BetterStructures a deux blocs spéciaux : les barrières et le le le le le le le le bedrock. Tout autre bloc que WorldEdit/FAWE peut coller sera collé normalement, mais les barrières et les blocs de le le le le le le le bedrock sont l'exception. Au lieu de coller, ces blocs sont remplacés par les comportements personnalisés suivants :
+BetterStructuresで作成できるものに制限はありませんが、一般的な世界の適合性とパフォーマンス上の理由から、構造物のサイズを100x100x100ブロック未満にすることをお勧めします。とは言え、はるかに大きな構造物にも簡単に対応できます。
 
 ***
 
-#### Barrière
+### 特殊ブロック
 
-Les blocs de barrière font en sorte que le plugin ne place aucun bloc à cet emplacement. Cela signifie que tout bloc qui s'y trouvait à l'origine dans la génération normale du monde y restera.
-
-Les constructeurs peuvent utiliser cela pour arrondir les bords d'un collage, le rendant plus naturel, ou pour mouler des murs dans une grotte potentielle, entre autres astuces.
+BetterStructuresには、バリアと岩盤の2つの特殊ブロックがあります。WorldEdit/FAWEで貼り付けられるその他のブロックは通常どおり貼り付けられますが、バリアブロックと岩盤ブロックは例外です。これらのブロックは貼り付けられる代わりに、次のカスタム動作に置き換えられます。
 
 ***
 
-#### Le le le le le le le bedrock
+#### バリア
 
-Les blocs de le le le le le le le bedrock font en sorte que le plugin garantit qu'il y ait un bloc solide à cet emplacement. Cela signifie que si un bloc solide s'y trouve déjà dans la génération par défaut du monde, ce bloc ne sera pas modifié ; toutefois, si le bloc est de l'air ou du liquide, il sera remplacé par un bloc solide provenant du [piédestal](#pedestalmaterial).
+バリアブロックは、プラグインがその場所にブロックを配置しないようにします。これは、通常のワールド生成で元々そこにあったブロックがそのまま残ることを意味します。
 
-Les constructeurs peuvent utiliser cela pour créer des planchers avec des fonctionnalités telles que le plancher pour les rails de wagonnet ou pour garantir qu'un plancher existe sans remplacer les blocs solides potentiellement existants à cet emplacement dans le monde, rendant les constructions plus organiques.
-
-***
-
-### Panneaux d'apparition
-
-BetterStructures peut utiliser des panneaux avec du texte spécifique pour faire apparaître des mobs et même des boss d'EliteMobs et MythicMobs à des emplacements spécifiques de la construction.
+ビルド担当者はこれを利用して、貼り付けたエッジを丸くして、より自然に見せたり、壁を潜在的な洞窟に合わせたりするなど、さまざまな工夫を凝らすことができます。
 
 ***
 
-##### Génération de mobs vanilla
+#### 岩盤
 
-Si vous prenez un panneau normal et que vous le placez quelque part, assurez-vous que la première ligne indique `[spawn]` et que la deuxième ligne comporte le [nom du type d'entité suivant l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html), vous ferez apparaître une entité persistante à cet emplacement du type que vous avez spécifié.
+岩盤ブロックは、プラグインがその場所にソリッドブロックがあることを保証します。つまり、デフォルトのワールド生成ですでにソリッドブロックがある場合は、そのブロックは変更されません。ただし、ブロックが空気または液体の場合、[台座](#pedestalmaterial)
+からのソリッドブロックに置き換えられます。
 
-Par exemple, si vous avez un panneau qui indique `[spawn]` sur la première ligne et `ZOMBIE` sur la deuxième ligne, vous ferez apparaître un zombie à cet emplacement lorsque la construction sera placée. Cela peut également être utilisé pour les entités non vivantes telles que les supports d'armure ou les cristaux d'ender.
+ビルド担当者はこれを利用して、トロッコレールの床などの機能を持つ床を作成したり、ワールド内のその場所にすでに存在する可能性のあるソリッドブロックを上書きすることなく、床の存在を保証したりして、ビルドをより自然に見せることができます。
 
-<div class="minecraft-sign">
+***
+
+### スポーンサイン
+
+BetterStructuresでは、特定のテキストを含む看板を使用して、ビルドの特定の位置にEliteMobsやMythicMobsのmobやボスをスポーンさせることができます。
+
+***
+
+##### バニラのmobをスポーンさせる
+
+普通の看板をどこかに設置し、1行目に`[spawn]`
+と書き、2行目に[Spigot APIに従ったエンティティタイプ名](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html)
+を記述すると、指定したタイプの永続的なエンティティがその場所にスポーンします。
+
+たとえば、1行目に`[spawn]`、2行目に`ZOMBIE`
+と書かれた看板がある場合、ビルドが配置されると、その場所にゾンビがスポーンします。これは、鎧立てやエンドクリスタルのような生物以外のエンティティにも使用できます。
+
+<div class="minecraft-sign"> 
 <p>[spawn]</p>
 <p>ZOMBIE</p>
 <p></p>
@@ -51,17 +55,19 @@ Par exemple, si vous avez un panneau qui indique `[spawn]` sur la première lign
 
 ***
 
-##### Génération d'Elite Mobs (plugin de boss recommandé)
+##### EliteMobs (推奨されるボスプラグイン) をスポーンさせる
 
-BetterStructures a également une intégration avancée avec EliteMobs, ce qui lui permet de créer des arènes de boss basées sur des constructions et des panneaux d'apparition.
+BetterStructuresには、高度なEliteMobs統合機能も搭載されており、ビルドとスポーンサインに基づいてボスアリーナを作成できます。
 
-Si vous prenez un panneau normal et le placez quelque part, en faisant de la première ligne [elitemobs], vous pouvez utiliser toutes les autres lignes pour indiquer quel fichier de boss utiliser.
+普通の看板をどこかに設置し、1行目に`[elitemobs]`と書くと、他のすべての行を使用して、使用するボスファイルを指定できます。
 
-Par exemple, si vous faites `[elitemobs]` sur la première ligne, puis `test_boss.yml` sur la deuxième ligne, vous ferez apparaître le boss de test. Si vous avez un nom de fichier très long tel que boss_with_very_long_filename.yml, vous pouvez le diviser en plusieurs lignes, alors mettez la ligne 2 `boss_with_very_` puis la ligne 3 `long_filename.yml` et cela fonctionnera.
+たとえば、1行目に`[elitemobs]`、2行目に`test_boss.yml`
+と記述すると、テストボスがスポーンします。boss_with_very_long_filename.ymlのように非常に長いファイル名がある場合は、複数行に分割できます。2行目を`boss_with_very_`
+、3行目を`long_filename.yml`にすると機能します。
 
-Pour rappel, par défaut, les arènes de combat seront protégées jusqu'à ce que les joueurs tuent tous les boss de la construction si votre serveur utilise WorldGuard.
+念のためですが、サーバーがWorldGuardを使用している場合、デフォルトでは、戦闘アリーナはプレイヤーがビルド内のすべてのボスを倒すまで保護されます。
 
-<div class="minecraft-sign">
+<div class="minecraft-sign"> 
 <p>[elitemobs]</p>
 <p>test_boss_with</p>
 <p>_a_long_name</p>
@@ -70,11 +76,12 @@ Pour rappel, par défaut, les arènes de combat seront protégées jusqu'à ce q
 
 ***
 
-##### Génération de Mythic Mobs
+##### MythicMobsをスポーンさせる
 
-BetterStructures a également une intégration simple avec MythicMobs, ce qui lui permet de faire apparaître un mob de MythicMobs dans la construction. Sur la première ligne d'un panneau normal, écrivez `[mythicmobs]`, puis sur la deuxième ligne, utilisez le mob identifié. Vous pouvez utiliser un nombre sur la troisième ligne pour définir le niveau du mob.
+BetterStructuresには、MythicMobsをビルドにスポーンさせるシンプルなMythicMobs統合機能もあります。普通の看板の1行目に`[mythicmobs]`
+と書き、2行目にmobの識別子を使用します。3行目に数字を使用すると、mobのレベルを設定できます。
 
-<div class="minecraft-sign">
+<div class="minecraft-sign"> 
 <p>[mythicmobs]</p>
 <p>my_mythic_boss</p>
 <p>1</p>
@@ -83,86 +90,95 @@ BetterStructures a également une intégration simple avec MythicMobs, ce qui lu
 
 ***
 
-## Schémas
+## スケマティック
 
-Les schémas sont des fichiers générés par WorldEdit ou FastAsyncWorldEdit qui contiennent les blocs pour la construction que BetterStructures utilisera.
+スケマティックは、BetterStructuresで使用されるビルドのブロックを含むWorldEditまたはFastAsyncWorldEditによって生成されるファイルです。
 
-Des instructions détaillées sur la façon de créer un schéma ne sont pas incluses ici, car elles sont décrites en détail dans les documentations de WorldEdit et de FastAsyncWorldEdit, mais cela se fait généralement en :
+スケマティックの作成方法の詳細な手順は、WorldEditとFastAsyncWorldEditのドキュメントで詳しく説明されているため、ここでは含めません。通常は次の手順で作成します。
 
-1) choisir un coin de la construction et utiliser la commande `//pos1`
-2) choisir le coin diagonalement opposé et utiliser la commande `//pos2`
-3) utiliser la commande `//copy`
-4) utiliser la commande `/schem save <nomdeschéma>`, où `<nomdeschéma>` est le nom de fichier que vous souhaitez utiliser pour votre schéma.
+1) ビルドの角を選択し、コマンド`//pos1`を使用します
+2) 対角線上の反対側の角を選択し、コマンド`//pos2`を使用します
+3) `//copy`コマンドを使用します
+4) コマンド`/schem save <schematicname>`を使用します。ここで、`<schematicName>`はスケマティックに使用するファイル名です。
 
-<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="image de la documentation de worldedit à partir de leurs docs">
+<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="worldeditドキュメントの画像">
 
-*Assurez-vous d'exécuter la commande `//pos1` au point 1 et `//pos2` au point 2 !*
-
-***
-
-#### Point d'ancrage
-
-Les points d'ancrage sont l'endroit où vous exécutez la commande `//copy` pour le schéma. Lors du simple collage d'un schéma, il s'agit de l'endroit où vous vous trouvez par rapport à la construction.
-
-Il est important que les points d'ancrage soient corrects pour que les schémas fonctionnent correctement.
-
-* Pour les _constructions de surface_, il est recommandé de se tenir au point le plus bas du sol lors de la copie de la construction.
-* Pour les _constructions souterraines_, il est recommandé de se tenir au-dessus de la construction.
-* Pour les _constructions liquides_, il est recommandé de se tenir au-dessus de l'eau.
-* Pour les _constructions aériennes_, il est recommandé de se tenir au-dessus de la construction.
-
-**Veuillez noter que vous devez toujours être très près ou directement au-dessus des constructions lors de la copie : plus vous êtes éloigné, plus le collage sera lent lorsque la construction devra être collée.**
+*必ず、ポイント1でコマンド`//pos1`を実行し、ポイント2で`//pos2`を実行してください！*
 
 ***
 
-# Configurations de schémas
+#### アンカーポイント
 
-Chaque fichier de schéma a une configuration de schéma. Si un fichier de schéma vient d'être ajouté au serveur, la configuration sera générée après un redémarrage ou après une commande `/betterstructures reload`.
+アンカーポイントとは、スケマティックの`//copy`コマンドを実行する場所です。スケマティックを単純に貼り付ける場合、これらはビルドに対する自分の相対的な位置です。
 
-Ces configurations vous permettent de définir les paramètres suivants pour le collage du schéma :
+アンカーポイントは、スケマティックが正しく機能するために重要です。
+
+* _地表ビルド_の場合、ビルドをコピーするときは、床の最も低い位置に立つことをお勧めします。
+* _地下ビルド_の場合、ビルドの上に立つことをお勧めします。
+* _液体ビルド_の場合、水の上に立つことをお勧めします。
+* _空中ビルド_の場合、ビルドの上に立つことをお勧めします。
+
+**コピーするときは、必ずビルドのすぐ近くまたは真上にいる必要があります。離れるほど、ビルドを貼り付ける必要が生じたときにラグが発生します。
+**
+
+***
+
+# スケマティック構成
+
+すべてのスケマティックファイルには、スケマティック構成があります。スケマティックファイルがサーバーに追加されたばかりの場合、再起動後または`/betterstructures reload`
+後に構成が生成されます。
+
+これらの構成により、スケマティック貼り付けの次の設定を設定できます。
 
 ***
 
 ## isEnabled
 
-Définit si le schéma est activé. S'il est désactivé, il ne sera placé nulle part.
+スケマティックが有効かどうかを設定します。無効にすると、どこにも配置されません。
 
 ***
 
 ## weight
 
-Weight définit le poids du schéma en termes de probabilité qu'il soit choisi.
+ウェイトは、スケマティックが選択される可能性の点で、スケマティックのウェイトを設定します。
 
-La valeur par défaut est `1.0`. Si vous faites en sorte qu'une construction ait un poids de `2.0`, elle aura 2 fois plus de chances d'être sélectionnée que les autres constructions. Si vous la définissez sur `0.5`, elle aura deux fois moins de chances d'être choisie.
+デフォルト値は`1.0`です。ビルドのウェイトを`2.0`にすると、他のビルドよりも選択される可能性が2倍になります。`0.5`
+にすると、選択される可能性が半分になります。
 
-_**Remarque :** Gardez à l'esprit que les chances qu'une construction spécifique soit choisie changent considérablement en fonction du nombre total de constructions en compétition pour l'emplacement qui recevra une structure !_
+_**注：*
+*特定のビルドが選択される確率は、構造物が配置される場所を競合するビルドの合計数に基づいて大幅に変化することを忘れないでください！_
 
 ***
 
 ## pedestalMaterial
 
-**Important : champ facultatif !**
+**重要：オプションのフィールド！**
 
-Le matériau du piédestal définit le type de matériau des blocs de piédestal à l'aide des [noms de matériau de l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) : utilisez-les sinon cela ne fonctionnera pas !
+台座マテリアルは、[spigot apiマテリアル名](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)
+を使用して台座ブロックのマテリアルタイプを設定します。これを使用しないと機能しません！
 
-Les piédestaux sont les blocs qui sont placés sous les bâtiments de surface et souterrains pour combler tous les espaces d'air et améliorer l'ajustement d'un bâtiment avec le monde. Ce sont également les mêmes blocs qui remplacent les blocs de bedrock dans le schéma.
+台座は、地表および地下の建物に配置され、隙間を埋めて、建物がワールドにフィットするように改善するブロックです。これらは、スケマティック内の岩盤ブロックを置き換えるブロックと同じでもあります。
 
-Lorsque rien n'est défini dans la configuration, les blocs sous l'emplacement du collage sont analysés et l'ajustement le plus approprié est sélectionné comme matériau pour l'aspect le mieux intégré.
+構成に何も定義されていない場合、貼り付け場所の下にあるブロックが分析され、最も適合するものが最も一体感のある外観のマテリアルとして選択されます。
 
 ***
 
 ## generatorConfigFilename
 
-Cette option définit le nom du fichier de configuration, par nom de fichier, que le schéma utilisera. Cela nécessite le nom de fichier complet, y compris l'extension `.yml` à la fin. Par exemple, `generatorConfigFilename: generator_surface_global.yml` serait l'option correcte si vous souhaitez utiliser le générateur défini dans `generator_surface_global.yml` que vous pouvez trouver dans le dossier de configuration des générateurs.
+このオプションは、スケマティックが使用する構成ファイルの名前をファイル名で設定します。これには、末尾の`.yml`
+拡張子を含む完全なファイル名が必要です。例として、`generatorConfigFilename: generator_surface_global.yml`
+は、ジェネレータ構成フォルダにある`generator_surface_global.yml`で定義されたジェネレータを使用する場合の正しいオプションです。
 
 ***
 
 ## treasureFile
 
-Définit le [fichier de trésor]($language$/betterstructures/creating_treasure.md) que cette structure utilisera, en écrasant le fichier de trésor défini par le [générateur]($language$/betterstructures/creating_generators.md) de la structure. Ceci n'est généralement pas recommandé, sauf si c'est pour une construction très spéciale. Il est généralement préférable de modifier ou de créer un générateur à cette fin.
+この構造が使用する[トレジャーファイル]($language$/betterstructures/creating_treasure.md)
+を設定し、構造の[ジェネレータ]($language$/betterstructures/creating_generators.md)
+によって設定されたトレジャーファイルを上書きします。これは通常、非常に特別なビルドの場合を除いて推奨されません。一般的に、この目的のためにジェネレータを変更または作成することをお勧めします。
 
-# Personnalisation du contenu
+# コンテンツのカスタマイズ
 
-Tout ce qui est distribué dans BetterStructures est modifiable. Vous êtes libre de modifier tous les fichiers de schéma et les paramètres du générateur à votre guise.
+BetterStructuresで配布されるすべてのものは編集可能です。スケマティックファイルやジェネレータ設定をすべて自由に編集できます。
 
-Le guide de création de contenu ci-dessus est également un guide qui peut vous aider à modifier le contenu existant.
+上記のコンテンツ作成ガイドは、既存のコンテンツを編集するのに役立つガイドでもあります。

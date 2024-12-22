@@ -1,1239 +1,595 @@
-# Listes des pouvoirs prédéfinis
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-Un boss peut avoir un ou plusieurs pouvoirs. Nous vous recommandons de maintenir la quantité en dessous de 5. Une liste complète des pouvoirs se trouve dans le dossier `~/plugins/EliteMobs/powers`.
+Ce guide concerne EliteMobs 7.3.4 et les versions ultérieures.
 
-La liste suivante n'est pas nécessairement complète [puisque vous pouvez créer des pouvoirs personnalisés]($language$elitemobs/creating_powers.md) et certains donjons sont livrés avec leurs propres pouvoirs.
+# Que sont les Événements Personnalisés ?
 
-*Remarque : Cliquez [ici]($language$/elitemobs/creating_bosses.md&section=powers) pour savoir comment personnaliser les boss avec ces pouvoirs.*
+Les Événements Personnalisés font référence ici à des événements qui se produisent aléatoirement dans le jeu, qu'ils
+soient basés sur les actions du joueur ou qu'ils aient un déclencheur temporel. Le plugin est livré préchargé avec un
+certain nombre d'Événements Personnalisés, tels que l'événement Balrog, l'événement Kraken et les événements Gobelin au
+trésor, pour n'en citer que quelques-uns.
 
-Les GIF de puissance sont uniquement à des fins de démonstration. Veuillez noter que leur animation ne reflète **PAS** la vitesse réelle de l'animation des pouvoirs dans le jeu.
+Ce système est appelé Événements **Personnalisés** car les événements peuvent non seulement être personnalisés, mais
+aussi créés de toutes pièces. Ce qui suit est un guide sur la façon de créer et de personnaliser vos propres événements.
+
+# Paramètres de configuration courants
 
 <div align="center">
 
-## Feux d'artifice de flèches
+Les paramètres suivants peuvent/doivent être utilisés pour les événements d'action et les événements programmés.
 
-| Nom de fichier | Description |
-|----------|-------------|
-| `arrow_fireworks.yml`      | Le boss tire des feux d'artifice lorsqu'il est touché. |
+***
+
+### isEnabled
+
+Définit si l'événement est activé.
+
+| Clé         |       Valeurs       | Défaut |
+|-------------|:-------------------:|:------:|
+| `isEnabled` | [Booléen](#boolean) | `true` |
 
 <details>
 
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_arrowfireworks.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Pluie de flèches
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `arrow_rain.yml`      | Fait pleuvoir des flèches du ciel. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_arrowrain.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Flèche d'attaque
-
-| Nom de fichier | Description                                       |
-|----------|---------------------------------------------------|
-| `attack_arrow.yml`  | Fait que le boss tire une flèche devant lui. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackarrow.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Attaque aveuglante
-
-| Nom de fichier | Description                                       |
-|----------|---------------------------------------------------|
-| `attack_blinding.yml`  | Donne au joueur un effet de potion cécité lors d'une attaque. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackblinding.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Attaque perturbatrice
-
-| Nom de fichier | Description                                    |
-|----------|------------------------------------------------|
-| `attack_confusing.yml`  | Donne au joueur un effet de potion nausée lors d'une attaque. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackconfusing.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Attaque de feu
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_fire.yml`  | Met le feu aux joueurs lors de l'attaque. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackfire.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Boule de feu d'attaque
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_fireball.yml`  | Fait que le boss tire des boules de feu. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackfireball.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Attaque de gel
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_freeze.yml`  | Fait que le boss gèle tous les joueurs qu'il attaque. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackfreeze.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Gravité d'attaque
-
-| Nom de fichier | Description                                          |
-|----------|------------------------------------------------------|
-| `attack_gravity.yml`  | Donne au joueur un effet de potion de lévitation lors d'une attaque. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackgravity.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Éclair d'attaque
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_lightning.yml`  | Frappe la foudre sur les joueurs à proximité. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attacklightning.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Poison d'attaque
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_poison.yml`  | Applique du poison lors des attaques. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackpoison.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Attaque de poussée
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_push.yml`  | Augmente la répulsion des attaques. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackpush.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Attaque d'aspiration
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_vacuum.yml`  | Attire les joueurs à proximité vers le boss lors de l'attaque. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackpull.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Attaque de faiblesse
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_weakness.yml`  | Applique la potion de faiblesse lors de l'attaque. |
-
-***
-
-## Toile d'attaque
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_web.yml`  | Fait apparaître une toile à l'emplacement du joueur lors de l'attaque. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackweb.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Attaque de Wither
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `attack_wither.yml`  | Applique le poison de Wither lors des attaques. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_attackwither.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Bonus de pièces
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `bonus_coins.yml`  | Laisse tomber des pièces supplémentaires. |
-
-***
-
-## Butin bonus
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `bonus_loot.yml`  | Laisse tomber du butin supplémentaire. |
-
-***
-
-## Enfers de balles
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `bullet_hell.yml`  | Fait léviter le boss et tirer plusieurs flèches de suivi. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_bullethell.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Guérison canalisée
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `channel_healing.yml`  | Fait que le boss soigne d'autres boss proches. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_channelhealing.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Cadavre
-
-| Nom de fichier | Description                                                                 |
-|----------|-----------------------------------------------------------------------------|
-| `corpse.yml`  | Fait apparaître un bloc d'os à la mort du boss. Le bloc disparaîtra au bout d'un certain temps. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_corpse.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Tranche de la mort
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `death_slice.yml`  | Crée une zone de dégâts autour du boss. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_deathslice.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Boule de feu ciblée du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_aimed_fireball.yml`  | Fait que le dragon tire des boules de feu.  |
-
-***
-
-## Bombardement de flèches du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_arrow_bombardment.yml`  | Fait que le dragon tire des flèches. |
-
-***
-
-## Boules de feu disco du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_disco_fireballs.yml`  | Fait que le dragon fasse tourner des boules de feu autour de lui-même, puis les tire. |
-
-***
-
-## Foudre renforcée du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_empowered_lightning.yml`  | Fait frapper la foudre avec une animation de bloc personnalisé pour la destruction. |
-
-***
-
-## Bombardement de boules d'ender du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_ender_fireball_bombardment.yml`  | Fait que le dragon tire des boules de feu d'ender. |
-
-***
-
-## Bombardement d'endermites du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_endermite_bombardment.yml`  | Fait que le dragon génère des renforts d'endermites. |
-
-***
-
-## Bombardement de boules de feu du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_fireball_bombardment.yml`  | Fait que le dragon tire des boules de feu. |
-
-***
-
-## Bombardement de potion du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_potion_bombardment.yml`  | Fait que le dragon tire des potions. |
-
-***
-
-## Onde de choc du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_shockwave.yml`  | Fait que le dragon détruise l'arène de combat. |
-
-***
-
-## Tornade du dragon
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ender_dragon_tornado.yml`  | Fait que le dragon génère une tornade. |
-
-***
-
-## Tempête de feu
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `firestorm.yml`  | Fait apparaître plusieurs piliers de flammes qui infligent des dégâts. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_firestorm.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Barrage de feux d'artifice
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `fireworks_barrage.yml`  | Fait que le boss tire plusieurs fusées de feux d'artifice. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_fireworksbarrage.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Bûcher de flammes
-
-| Nom de fichier | Description                                  |
-|----------|----------------------------------------------|
-| `flame_pyre.yml`  | Fait apparaître un pilier de flammes autour du boss. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_flamepyre.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Lance-flammes
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `flamethrower.yml`  | Fait que le boss tire un lance-flammes.  |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_flamethrower.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Cône de glace
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `frost_cone.yml`  | Fait que le boss tire des boules de neige dans une direction. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_frostcone.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Marcheur de givre
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `frost_walker.yml`  | Donne au boss des bottes de marche sur la glace pour marcher sur l'eau. Gèlera tous les blocs d'eau qu'il touche. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_frostwalker.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Explosion d'or
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `gold_explosion.yml`  | Fait apparaître des pépites d'or dommageables provenant du boss. Peut être bloqué. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_goldexplosion.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Fusil de chasse doré
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `gold_shotgun.yml`  | Fait apparaître des pépites d'or dommageables dans une direction. Peut être bloqué. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_goldshotgun.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Coup de poing au sol
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `ground_pound.yml`  | Fait que le boss saute, puis tombe au sol avec force. Repoussera les joueurs. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_groundpound.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Butin hyper
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `hyper_loot.yml`  | Laisse tomber 10x le butin normal. |
-
-***
-
-## Implosion
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `implosion.yml`  | Attire toutes les entités proches vers le boss lors de sa mort. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_implosion.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Invisibilité
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `invisibility.yml`  | Rend le boss invisible. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_invis.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Invulnérabilité aux flèches
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `invulnerability_arrow.yml`  | Rend le boss immunisé aux projectiles. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_invularrow.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Invulnérabilité aux dégâts de chute
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `invulnerability_fall_damage.yml`  | Rend le boss immunisé aux dégâts de chute. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_invulfall.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Invulnérabilité au feu
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `invulnerability_fire.yml`  | Rend le boss immunisé aux dégâts de feu. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_invulfire.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Invulnérabilité aux feux d'artifice
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `invulnerability_fireworks.yml`  | Rend le boss immunisé aux feux d'artifice. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_invulfireworks.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Invulnérabilité à la projection
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `invulnerability_knockback.yml`  | Rend le boss immunisé à la projection de dégâts. |
-
-*Remarque : si vous activez ce pouvoir tout en ayant également configuré le boss pour qu'il utilise `ground_pound.yml`, le boss n'exécutera pas l'animation de saut pour `ground_pound.yml`.*
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_invulknockback.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Éclairs
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `lightning_bolts.yml`  | Fait apparaître des éclairs en ligne droite du boss à l'endroit où se tenait le joueur. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_lightbolts.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Pluie de météorites
-
-| Nom de fichier | Description                                           |
-|----------|-------------------------------------------------------|
-| `meteor_shower.yml`  | Fait apparaître plusieurs boules de feu qui tombent du ciel. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_meteorshower.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Marche lunaire
-
-| Nom de fichier | Description                                |
-|----------|--------------------------------------------|
-| `moonwalk.yml`  | Fait que le boss recule pour éviter les attaques. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_moonwalk.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Tirer
-
-| Nom de fichier | Description                            |
-|----------|----------------------------------------|
-| `pull.yml`  | Attire les joueurs à proximité vers le boss. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_pull.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Flèche réfléchissante
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `reflect_arrow.yml`  | Fait que le boss renvoie les flèches au joueur. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_reflectarrow.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Boule de feu réfléchissante
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `reflect_fireball.yml`  | Fait que le boss renvoie les boules de feu al jugador. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_reflectfireball.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Téléportation
-
-| Nom de fichier | Description                       |
-|----------|-----------------------------------|
-| `teleport.yml`  | Téléporte le boss au joueur qui l'a endommagé. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_teleport.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Boule de feu de suivi
-
-| Nom de fichier | Description  |
-|----------|--------------|
-| `tracking_fireball.yml` | Tire une boule de feu de suivi |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_trackingfireball.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Flèche de suivi
-
-| Nom de fichier | Description  |
-|----------|--------------|
-| `tracking_arrow.yml`  | Tire une flecha de seguimiento. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_trackingarrow.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Nigromicon zombie
-
-| Nom de fichier | Description                                                            |
-|----------|------------------------------------------------------------------------|
-| `zombie_necronomicon.yml`  | Fait que le boss invoque des renforts de zombies qui ciblent les joueurs. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_zombienecro.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Invocation de zombie
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `zombie_summon.yml`  | Fait que le boss invoque des zombis que son más poderosos pero tienen menos salud que los zombis predeterminados que aparecen con el poder del nigromicon.  |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_zombiespawn.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Padres zombies
-
-| Nom de fichier | Description |
-|----------|-------------|
-| `zombie_parents.yml`  | Fait que le boss invoque des renforts de parents zombies. |
-
-<details>
-
-<summary><b>Exemple visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_zombieparents.webm" type="video/webm">
-  Votre navigateur ne prend pas en charge la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-</div>
-
-***
-
-# Formato de script de élite
-
-Tenga en cuenta que algunos de los poderes están en el formato [Elite Script]($language$/elitemobs/creating_powers.md) y se pueden personalizar.
-
-Aquí hay un ejemplo del poder *attack_blinding.yml* y cómo se formatea utilizando el formato [Elite Script]($language$/elitemobs/creating_powers.md):
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
 isEnabled: true
-effect: SPELL_MOB
-powerType: MISCELLANEOUS
-eliteScript:
-  BlindPlayer:
-    Events:
-      - PlayerDamagedByEliteMobEvent
-    Actions:
-      - potionEffectType: blindness
-        amplifier: 0
-        action: POTION_EFFECT
-        duration: 60
-        Target:
-          targetType: DIRECT_TARGET
 ```
 
-Esta función le permite personalizar completamente el poder *attack_blinding.yml*. Puede especificar qué efecto de poción debe aplicarse, la duración del efecto, el objetivo y el evento que desencadena que el jefe use el poder.
+</div>
+
+</details>
+
+***
+
+### eventType
+
+Définit le type d'événement.
+
+| Clé         |                    Valeurs                     | Défaut |
+|-------------|:----------------------------------------------:|:------:|
+| `eventType` | `BREAK_BLOCK` / `FISH` / `TILL_SOIL` / `TIMED` | aucun  |
+
+*Notez que `BREAK_BLOCK`, `FISH` et `TILL_SOIL` sont des [Événements d'action](#action-events) et `TIMED` sont
+des [Événements programmés](#timed-events)*
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eventType: BREAK_BLOCK
+```
+
+</div>
+
+</details>
+
+***
+
+### bossFilenames
+
+Définit la liste des boss qui seront générés. **Obligatoire!**
+
+| Clé             |             Valeurs              | Défaut |
+|-----------------|:--------------------------------:|:------:|
+| `bossFilenames` | [Liste de chaînes](#string_list) | aucun  |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+bossFilenames:
+- balrog.yml
+- mon_boss_d_evenement.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### announcementPriority
+
+Définit la [priorité de l'annonce]($language$/elitemobs/creating_bosses.md&section=announcementpriority).
+
+| Clé                    |      Valeurs       | Défaut |
+|------------------------|:------------------:|:------:|
+| `announcementPriority` | [Entier](#integer) | aucun  |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+announcementPriority: 1
+```
+
+</div>
+
+</details>
+
+***
+
+### startMessage
+
+Définit le message envoyé au début de l'événement.
+
+| Clé            |      Valeurs      | Défaut |
+|----------------|:-----------------:|:------:|
+| `startMessage` | [Chaîne](#string) | aucun  |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+startMessage: Un événement a commencé !
+```
+
+<div align="center">
+
+![create_events_start_message.jpg](../../../img/wiki/create_events_start_message.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### endMessage
+
+Définit le message envoyé à la fin de l'événement.
+
+| Clé          |      Valeurs      | Défaut |
+|--------------|:-----------------:|:------:|
+| `endMessage` | [Chaîne](#string) | aucun  |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+endMessage: Un événement s'est terminé !
+```
+
+<div align="center">
+
+![create_events_end_message.jpg](../../../img/wiki/create_events_end_message.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### eventStartCommands
+
+Définit les commandes qui s'exécutent au début de l'événement.
+
+| Clé                  |             Valeurs              | Défaut |
+|----------------------|:--------------------------------:|:------:|
+| `eventStartCommands` | [Liste de chaînes](#string_list) | aucun  |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eventStartCommands:
+- say L'événement commence maintenant !!
+- "$chance=0.5$ say Quelle apparition !"
+```
+
+<div align="center">
+
+![create_events_start_commands.jpg](../../../img/wiki/create_events_start_commands.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### eventEndCommands
+
+Définit les commandes qui s'exécutent à la fin de l'événement.
+
+| Clé                |             Valeurs              | Défaut |
+|--------------------|:--------------------------------:|:------:|
+| `eventEndCommands` | [Liste de chaînes](#string_list) | aucun  |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eventEndCommands:
+- say L'événement se termine, c'est triste.
+- "$chance=0.5$ say Trop lent mon pote !"
+```
+
+<div align="center">
+
+![create_events_end_commands.jpg](../../../img/wiki/create_events_end_commands.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+<details>
+
+<summary align="center"><b>Exemple de configuration d'événement</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+bossFilenames:
+- "boss_cool.yml"
+- "autre_boss_cool.yml"
+announcementPriority: 3
+startMessage: "L'événement cool commence !"
+endMessage: "L'événement cool se termine !"
+eventStartCommands:
+- say L'événement a commencé !
+eventEndCommands:
+- say L'événement s'est terminé !
+```
+
+</div>
+
+</details>
+
+</div>
+
+## Événements d'action
+
+<div align="center">
+
+Événements qui ont une chance de se déclencher lorsqu'une action spécifique, telle que la destruction d'un bloc ou la
+pêche, se produit.
+
+### chance
+
+Définit la chance que l'événement se produise lorsque l'action se produit.
+
+| Clé      |           Valeurs           | Défaut |
+|----------|:---------------------------:|:------:|
+| `chance` | Valeur entre `0.0` et `1.0` |  `0`   |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+chance: 0.001
+```
+
+</div>
+
+</details>
+
+***
+
+### breakableMaterials
+
+Définit la liste des matériaux à vérifier si l'action est définie sur `BREAK_BLOCK`.
+
+| Clé                  |                                         Valeurs                                          | Défaut |
+|----------------------|:----------------------------------------------------------------------------------------:|:------:|
+| `breakableMaterials` | Liste des [matériaux](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | aucun  |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+breakableMaterials:
+- RUCHE
+- BOIS_DE_BOULEAU
+```
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+<details>
+
+<summary align="center"><b>Exemple de configuration</b></summary>
+
+<div align="left">
+
+```yml
+chance: 0.001
+breakableMaterials:
+- MINERAI_DE_CHARBON
+```
+
+</div>
+
+Définit une probabilité de 0,1 % de déclencher l'événement lorsqu'un bloc de minerai de charbon est détruit, en
+supposant que le type d'événement est `BREAK_BLOCK`.
+
+</details>
+
+</div>
+
+## Événements programmés
+
+<div align="center">
+
+Les événements programmés sont des événements qui se produisent à des intervalles de temps configurables. Une fois le
+temps de recharge d'un événement programmé terminé, un événement programmé aléatoire est choisi dans la liste des
+événements programmés en fonction du poids de l'événement.
+
+### spawnType
+
+Définit le [Spawn personnalisé]($language$/elitemobs/creating_spawns.md) utilisé par l'événement, qui définit l'endroit
+où le boss peut apparaître.
+
+| Clé         |           Valeurs           | Défaut |
+|-------------|:---------------------------:|:------:|
+| `spawnType` | [Nom de fichier](#filename) | aucun  |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+spawnType: nether_spawn.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### localCooldown
+
+Définit la durée, en minutes, avant que cet événement puisse être sélectionné à nouveau.
+
+| Clé             |      Valeurs       | Défaut |
+|-----------------|:------------------:|:------:|
+| `localCooldown` | [Entier](#integer) |  `0`   |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+localCooldown: 120
+```
+
+</div>
+
+</details>
+
+***
+
+### globalCooldown
+
+Définit la durée, en minutes, avant que l'événement suivant ne soit sélectionné.
+
+| Clé              |      Valeurs       | Défaut |
+|------------------|:------------------:|:------:|
+| `globalCooldown` | [Entier](#integer) |  `0`   |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+globalCooldown: 60
+```
+
+</div>
+
+</details>
+
+***
+
+### weight
+
+Définit le poids de l'événement, ce qui affecte la probabilité qu'il soit choisi par rapport à d'autres événements. *
+*Recommandé: 100**.
+
+| Clé      |      Valeurs      | Défaut |
+|----------|:-----------------:|:------:|
+| `weight` | [Double](#double) |  `0`   |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+weight: 60.5
+```
+
+</div>
+
+</details>
+
+***
+
+### eventDuration
+
+Définit la durée maximale de l'événement, en minutes.
+
+| Clé             |      Valeurs       | Défaut |
+|-----------------|:------------------:|:------:|
+| `eventDuration` | [Entier](#integer) |  `0`   |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eventDuration: 30
+```
+
+</div>
+
+</details>
+
+***
+
+### eventEndsWithBossDeath
+
+Définit si l'événement se termine avec la mort du boss.
+
+| Clé                      |       Valeurs       | Défaut |
+|--------------------------|:-------------------:|:------:|
+| `eventEndsWithBossDeath` | [Booléen](#boolean) | `true` |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eventEndsWithBossDeath: true
+```
+
+</div>
+
+</details>
+
+***
+
+### eventEndTime
+
+Définit l'heure de fin de l'événement dans le jeu.
+
+| Clé            |       Valeurs       | Défaut |
+|----------------|:-------------------:|:------:|
+| `eventEndTime` | [Booléen](#boolean) | `true` |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eventEndTime: true
+```
+
+</div>
+
+</details>
+
+***
+
+### minimumPlayerCount
+
+Définit le nombre minimum de joueurs en ligne avant que l'événement ne démarre.
+
+| Clé                  |      Valeurs       | Défaut |
+|----------------------|:------------------:|:------:|
+| `minimumPlayerCount` | [Entier](#integer) |  `1`   |
+
+<details>
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+minimumPlayerCount: true
+```
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+*Notez que les événements sont mis en file d'attente, ce qui signifie qu'ils ne démarreront qu'une fois les conditions
+définies dans le `customSpawn` remplies.*
+
+<details>
+
+<summary align="center"><b>Exemple de configuration d'événements</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+bossFilenames:
+- "boss_cool.yml"
+- "autre_boss_cool.yml"
+announcementPriority: 3
+startMessage: "L'événement cool commence !"
+endMessage: "L'événement cool se termine !"
+eventStartCommands:
+- say L'événement a commencé !
+eventEndCommands:
+- say L'événement s'est terminé !
+customSpawn: "monCoolSpawn.yml"
+localCooldown: 30
+globalCooldown: 15
+weight: 100
+eventDuration: 20
+eventEndsWithBossDeath: true
+eventEndTime: 10000
+minimumPlayerCount: 5
+```
+
+</div>
+
+</details>
 
 </div>

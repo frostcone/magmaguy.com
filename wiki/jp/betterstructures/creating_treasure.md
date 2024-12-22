@@ -1,60 +1,70 @@
-# Qu'est-ce qu'un fichier de trésor ?
+# トレジャーファイルとは？
 
-Les fichiers de trésor sont ce qui détermine les tables de butin pour les coffres de BetterStructures. Ils sont généralement attribués
-aux [générateurs]($language$/betterstructures/creating_generators.md&section=treasurefilename), mais ils peuvent également être définis au niveau d'une [configuration de construction individuelle]($language$/betterstructures/creating_structures.md&section=treasurefile).
+トレジャーファイルは、BetterStructuresのチェストのルートテーブルを決定するものです。通常は[ジェネレーター]($language$/betterstructures/creating_generators.md&section=treasurefilename)
+に割り当てられますが、[個別のビルド設定]($language$/betterstructures/creating_structures.md&section=treasurefile)
+のレベルでも設定できます。
 
-Ces tables de butin sont assez puissantes, mais nécessitent également la connaissance de quelques concepts statistiques de base pour les comprendre.
+これらのルートテーブルは非常に強力ですが、理解するには基本的な統計の概念に関する知識も必要です。
 
 <details>
 <summary>
-Lisez ces concepts ici, le reste de la page suppose que vous les comprenez !
+これらの概念についてここで読んでください。このページの残りの部分は、あなたがそれらを理解していることを前提としています！
 </summary>
 
-***Probabilité pondérée***
+***重み付け確率***
 
-BetterStructures et EliteMobs utilisent fréquemment le concept de probabilité pondérée. Il s'agit de résoudre un problème simple : comment pouvez-vous définir la probabilité de choisir un élément dans une liste d'éléments potentiellement infinie ?
+BetterStructuresとEliteMobsは、重み付け確率の概念を頻繁に使用します。これは、単純な問題を解決するためのものです。つまり、無限の可能性のあるアイテムのリストから1つのアイテムを選択する確率をどのように設定できるのか？
 
-La probabilité pondérée résout ce problème en attribuant un poids à chaque élément. Si vous avez 100 éléments et que chacun a un poids de 1, ils ont tous une chance égale - 1 % - d'être choisis. Si vous ajoutez un élément de plus, portant le total à 101 éléments, et que vous donnez à ce dernier élément une chance de 1, tous les éléments ont toujours la même chance - ~0,99 % - d'être choisis. Si vous donnez au dernier élément un poids de 2, la chance qu'il soit choisi augmente : le nouveau poids total est de 102, le dernier élément a un poids de 2 et 100/102 = ~0,98 %, donc 0,98 %+ 0,98 % = 1,96 % de chances d'être choisi. Si vous donnez au dernier élément un poids de 100, le nouveau poids est de 200 et, comme la moitié de ce poids est votre nouvel élément, votre nouvel élément a 50 % de chances d'être choisi.
+重み付け確率は、各アイテムに重みを与えることでこの問題を解決します。100個のアイテムがあり、それぞれに重みが1の場合、それらはすべて同じ確率 -
+1％ -
+で選択される可能性があります。合計101個のアイテムになるようにアイテムを1つ追加し、その最後のアイテムに1のチャンスを与えた場合、すべてのアイテムは同じ確率 -
+約0.99％ -
+で選択される可能性があります。最後のアイテムに2の重みを与えると、選択される確率が上がります。新しい合計重みは102になり、最後の要素の重みは2なので、100/102 =
+約0.98％となり、0.98％+0.98％= 1.96％の確率で選択されます。最後のアイテムに100の重みを与えると、新しい重みは200になり、その重みの半分が新しいアイテムなので、新しいアイテムが選択される確率は50％になります。
 
-Comme vous pouvez le voir, ceci est utile à utiliser lorsque vous pourriez avoir des listes de centaines de choses à choisir au hasard.
+ご覧のとおり、これは、ランダム化するものが数百個もある可能性がある場合に役立ちます。
 
-***Distribution gaussienne***
+***ガウス分布***
 
-Une distribution gaussienne est une fonction mathématique en forme de cloche.
+ガウス分布とは、ベル型の数学関数です。
 
 <img src="http://sfonline.barnard.edu/wp-content/uploads/2015/12/gaussian-distribution.jpg">
 
-Vous vous demandez peut-être en quoi cela est pertinent pour le système de butin. L'une des choses que BetterStructures doit décider lors de la configuration du butin dans les coffres est la quantité de butin qui apparaît dans ces coffres. La quantité doit être régulièrement autour d'un nombre spécifique, mais idéalement pas si prévisible qu'ouvrir un coffre pourrait devenir moins excitant.
+これがルートシステムにどのように関連するのか疑問に思われるかもしれません。BetterStructuresがチェストにルートを設定するときに決定しなければならないことの1つは、チェストにどれだけのルートが表示されるかです。その量は特定の数値付近で常に一定である必要がありますが、理想的にはチェストを開けるのがそれほどエキサイティングでなくなるほど予測可能であってはなりません。
 
-Pour obtenir cet effet semi-aléatoire, la distribution gaussienne est utilisée pour randomiser *le nombre* d'objets sélectionnés. Une fois que cette quantité est choisie, la *probabilité pondérée* choisit un élément dans la table de rareté au hasard et en tenant compte des poids.
+この半ランダムな効果を実現するために、ガウス分布を使用して、選択されるアイテムの*数*をランダム化します。この数が選択されると、
+*重み付け確率*は、重みを考慮に入れて、レアリティテーブルから1つの要素をランダムに選択します。
 
-Alors, comment fonctionne la distribution gaussienne ?
+では、ガウス分布はどのように機能するのでしょうか？
 
-Heureusement, vous n'avez pas à vous soucier du fonctionnement des mathématiques sous-jacentes, et vous pouvez vous concentrer sur les deux paramètres qui la modifient : la moyenne et l'écart type.
+幸いなことに、その背後にある数学がどのように機能するかを心配する必要はなく、代わりにそれを変更する2つの設定（平均と標準偏差）に焦点を当てることができます。
 
-*Moyenne*
+*平均*
 
-Pour faire simple, `mean` définit le milieu de la courbe gaussienne, ce qui signifie qu'il définit la quantité d'objets la plus probable qui apparaîtra dans un coffre. Essentiellement, si vous voulez que vos coffres aient habituellement 5 objets, définissez votre moyenne sur 5.
+簡単に言えば、`mean`はガウス曲線の真ん中を設定します。これは、チェストに表示される可能性が最も高いアイテムの数を設定することを意味します。基本的に、チェストに通常5つのアイテムを表示させたい場合は、平均を5に設定します。
 
-*Écart type*
+*標準偏差*
 
-Imaginez que le nombre moyen d'objets dans un coffre soit de 5. L'`standard deviation` permet de décider de combien ce nombre peut changer d'un coffre à l'autre.
+チェスト内のアイテムの平均数が5であると想像してください。`標準偏差`は、この数値が1つのチェストから別のチェストにどの程度変化するかを決定するのに役立ちます。
 
-`Écart type` faible (p. ex., 1) : Cela signifie que la plupart des coffres auront des objets très proches de la moyenne, comme 4, 5 ou 6 objets. C'est une expérience plus prévisible. Par exemple, si un coffre a un écart type de 1, vous pouvez vous attendre à ce que presque tous les coffres aient entre 4 et 6 objets.
+小さい`標準偏差`
+（例：1）：これは、ほとんどのチェストに、4、5、6個などの平均に非常に近いアイテムがあることを意味します。より予測可能な体験です。たとえば、チェストの標準偏差が1の場合、ほぼすべてのチェストに4〜6個のアイテムが含まれていると予想できます。
 
-`Écart type` moyen (p. ex., 2) : Ici, il y a plus de variété. Les coffres peuvent contenir de 3 à 7 objets. Bien que 5 objets soient toujours courants, il n'est pas rare de trouver des coffres avec un peu plus ou un peu moins d'objets. Donc, avec un écart type de 2, vous pourriez occasionnellement trouver un coffre avec seulement 3 objets, ou si vous avez de la chance, un coffre avec 7 objets.
+中程度の`標準偏差`
+（例：2）：ここでは、より多くの種類があります。チェストには3〜7個のアイテムがあるかもしれません。5つのアイテムはまだ一般的ですが、少し多いまたは少ないアイテムが含まれたチェストを見つけることも珍しくありません。したがって、標準偏差が2の場合、3つのアイテムしかないチェストを時々見つけたり、運が良ければ7つのアイテムがあるチェストを見つけることもできます。
 
-`Écart type` élevé (p. ex., 3 ou plus) : Maintenant, les choses deviennent vraiment surprenantes ! Les coffres pourraient avoir aussi peu que 2 objets ou jusqu'à 8 ou plus. Cela signifie que vous pourriez trouver un coffre avec seulement quelques objets, mais il y a aussi une chance de trouver un coffre rempli de friandises. Par exemple, avec un écart type de 3, un coffre pourrait avoir entre 2 et 8 objets, ce qui fait de chaque ouverture de coffre un pari passionnant.
+大きい`標準偏差`
+（例：3以上）：これで、事態は本当に驚くべきものになります！チェストには2つのアイテムしかない場合もあれば、8つ以上のアイテムがある場合もあります。これは、わずか2つのアイテムしかないチェストを見つける可能性もありますが、グッズがたくさん入ったチェストを見つける可能性もあることを意味します。たとえば、標準偏差が3の場合、チェストには2〜8個のアイテムが含まれている可能性があり、チェストを開けるたびにエキサイティングなギャンブルになります。
 
-***La moyenne par défaut est de 4 et l'écart type par défaut est de 3.***
+***デフォルトの平均は4、デフォルトの標準偏差は3です。***
 
 </details>
 
 ***
 
-# Format spécial
+# 特別なフォーマット
 
-Les fichiers de trésor ont un format spécial qui ressemble à ceci :
+トレジャーファイルには、次のような特別な形式があります。
 
 ```yml
 isEnabled: true
@@ -100,41 +110,46 @@ procedurallyGeneratedItemSettings:
       minLevel: 1
       maxLevel: 3
       chance: 0.2
+
 ```
 
-*Remarque : il s'agit d'une version très réduite du fichier, le fichier réel est de 2 599 lignes, car il couvre beaucoup plus de butin et tous les enchantements possibles.*
+*注：これはファイルの非常にトリミングされたバージョンであり、実際のファイルは、はるかに多くのルートと、可能なすべてのエンチャントをカバーしているため、2599行の長さです。*
 
 # isEnabled
 
-| Clé |       Valeurs        | Par défaut |
-|---|:-------------------:|---|
-| `isEnabled` | [Booléen](#booleano) | `true` |
+| キー          |          値          | デフォルト  |
+|-------------|:-------------------:|--------|
+| `isEnabled` | [Boolean](#boolean) | `true` |
 
 ***
 
 # mean
 
-| Clé    |      Valeurs       | Par défaut |
-|--------|:-----------------:|---------|
-| `mean` | [Double](#double) | `4`     |
+| キー     |         値         | デフォルト |
+|--------|:-----------------:|-------|
+| `mean` | [Double](#double) | `4`   |
 
-Définissez la `moyenne`. Lisez les détails à ce sujet [ici](https://magmaguy.com/wiki.html#lang=fr&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+`mean`
+を設定します。詳細については、[こちら](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)
+をご覧ください。
 
 ***
 
 # standardDeviation
 
-| Clé                 |      Valeurs       | Par défaut |
-|---------------------|:-----------------:|---------|
-| `standardDeviation` | [Double](#double) | `3`     |
+| キー                  |         値         | デフォルト |
+|---------------------|:-----------------:|-------|
+| `standardDeviation` | [Double](#double) | `3`   |
 
-Définissez l'`standardDeviation`. Lisez les détails à ce sujet [ici](https://magmaguy.com/wiki.html#lang=fr&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+`standardDeviation`
+を設定します。詳細については、[こちら](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)
+をご覧ください。
 
 ***
 
 # items
 
-C'est là que ça devient délicat, car de nombreuses options peuvent être définies par les administrateurs. Examinons de plus près l'exemple de fichier de configuration précédent.
+ここからがややこしくなります。多くのオプションは管理者によって設定できるためです。前の設定ファイル例を詳しく見てみましょう。
 
 ```yml
 items:
@@ -160,38 +175,42 @@ items:
       weight: 6.0
 ```
 
-Ici, vous pouvez voir que sous la clé de configuration `items`, nous avons une carte avec `common` et `rare`. Ce sont des `raretés` !
+ここでは、`items`設定キーの下に、`common`と`rare`を持つマップがあることがわかります。これらは`レアリティ`です！
 ***
 
-## raretés
+## レアリティ
 
-Les raretés n'ont pas de nom fixe. Vous pouvez les ajouter ou les supprimer et les personnaliser autant que vous le souhaitez, à condition d'utiliser le même format.
+レアリティには固定の名前はありません。それらを追加または削除したり、同じ形式を使用する限り、好きなようにカスタマイズしたりできます。
 
-Notez que ce qui rend ces tableaux de rareté plus ou moins rares, c'est le `weight` de la table de butin !
+これらのレアリティテーブルを多かれ少なかれ珍しくしているのは、ルートテーブルの`重み`であることに注意してください。
 
-Par défaut :
-- `common` a un `weight` par défaut de 60
-- `rare` a un `weight` par défaut de 30
-- `epic` a un `weight` par défaut de 10
+デフォルトでは：
 
-Ce qui fait que les objets courants ont 6 fois plus de chances de tomber que les objets épiques. Vous pouvez en savoir plus sur les `weight`s [ici](https://magmaguy.com/wiki.html#lang=fr&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?) !
+- `common`のデフォルトの`重み`は60
+- `rare`のデフォルトの`重み`は30
+- `epic`のデフォルトの`重み`は10
 
-En dehors du poids, chaque table de rareté a sa propre liste d'`items`.
+これにより、一般的なアイテムは、エピックアイテムよりも6倍ドロップする可能性が高くなります。`重み`
+の詳細については、[こちら](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)
+をご覧ください。
+
+重みとは別に、各レアリティテーブルには独自の`items`リストがあります。
 
 ***
 
-### items de rareté
+### レアリティアイテム
 
-Les éléments de rareté sont une [liste de cartes](https://magmaguy.com/wiki.html#lang=fr&article=global+configuration_file_guide.md&section=map-list) qui répertorie tous les éléments que possède la table de rareté.
+レアリティアイテムは、レアリティテーブルが持つすべてのアイテムをリストする[マップリスト](https://magmaguy.com/wiki.html#lang=en&article=global+configuration_file_guide.md&section=map-list)
+です。
 
-Ces éléments ont les paramètres suivants :
+これらのアイテムには、次の設定があります。
 
-| Clé                                |           Valeurs            | Par défaut  |
-|------------------------------------|:---------------------------:|----------|
-| `amount`                           | min-max [Entier](#integer) | variable |
-| `material`                         |    [Material](#Material)    | variable |
-| `procedurallyGenerateEnchantments` |     [Booléen](#boolean)     | variable |
-| `weight`                           |      [Double](#double)      | variable |
+| キー                                 |              値              | デフォルト |
+|------------------------------------|:---------------------------:|-------|
+| `amount`                           | min-max [Integer](#integer) | 可変    |
+| `material`                         |    [Material](#Material)    | 可変    |
+| `procedurallyGenerateEnchantments` |     [Boolean](#boolean)     | 可変    |
+| `weight`                           |      [Double](#double)      | 可変    |
 
 ***
 
@@ -199,35 +218,38 @@ Ces éléments ont les paramètres suivants :
 
 ***
 
-Définit la quantité à laisser tomber. Ceci est exprimé sous la forme d'une plage comme suit `amount: MIN-MAX`. Par exemple, pour faire tomber entre 1 et 5
-objets : `amount: 1-5`.
+ドロップする量を設定します。これは、次のように範囲で表されます。`amount: MIN-MAX`。たとえば、1〜5個の
+アイテムをドロップするには：`amount: 1-5`。
 
 #### material
 
-Définit le matériau à l'aide des [noms de l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) de
-l'objet à potentiellement laisser tomber.
+ドロップする可能性のあるアイテムの[Spigot API名](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)
+を使用してマテリアルを設定します。
 
 ***
 
-##### Cas spécial - sérialisé
+##### 特別なケース - シリアライズ
 
-Lors de l'utilisation de la commande lootify, au lieu d'un matériau, lootify fournira un paramètre `serialized`. Ceci est généré automatiquement par le plugin et ne doit pas être généré manuellement. Il est dans un format qui n'est pas lisible par l'homme.
+lootifyコマンドを使用する場合、マテリアルの代わりにlootifyは`serialized`
+設定を提供します。これはプラグインによって自動的に生成され、手動で生成しないでください。それは人間が読めない形式です。
 
 ***
 
 #### weight
 
-Définit le poids pour la probabilité pondérée. Plus d'informations à ce sujet [ici](https://magmaguy.com/wiki.html#lang=fr&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+重み付けされた確率の重みを設定します。詳細については、[こちら](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)
+をご覧ください。
 
 ***
 
 #### procedurallyGenerateItems
 
-Définit si l'objet doit être généré de manière procédurale en fonction des paramètres de configuration si `procedurallyGeneratedItemSettings`. Notez qu'en fonction des paramètres, cela pourrait entraîner la génération d'un objet sans enchantements malgré tout.
+`procedurallyGeneratedItemSettings`
+の構成設定に基づいて、アイテムをプロシージャルに生成する必要があるかどうかを設定します。設定によっては、エンチャントなしでアイテムが生成される場合があることに注意してください。
 
 # procedurallyGeneratedItemSettings
 
-Jetons un autre coup d'œil à notre exemple de fichier de configuration :
+設定ファイル例をもう一度見てみましょう。
 
 ```yml
 procedurallyGeneratedItemSettings:
@@ -242,32 +264,32 @@ procedurallyGeneratedItemSettings:
       chance: 0.2
 ```
 
-Comme vous pouvez le voir, ce fichier répertorie les types de matériaux, suivis des enchantements, puis suivis des niveaux minimum et maximum et d'une chance.
+ご覧のとおり、このファイルには、マテリアルタイプ、その後にエンチャント、さらに最小レベルと最大レベル、および確率がリストされています。
 
-Notez que vous ne pouvez pas ajouter de matériaux personnalisés provenant d'autres plugins dans ces paramètres, et vous ne pouvez probablement pas ajouter d'enchantements personnalisés provenant d'autres plugins, sauf si leur auteur indique explicitement qu'il a rendu son système compatible.
+これらの設定に他のプラグインからのカスタムマテリアルを追加することはできません。また、作成者がシステムを互換性があると明示的に述べない限り、他のプラグインからのカスタムエンチャントを追加することはできない可能性があります。
 
-En ce qui concerne les paramètres d'enchantement :
+エンチャントの設定については：
 
-| Clé        |       Valeurs        | Par défaut  |
-|------------|:-------------------:|----------|
-| `minLevel` | [Entier](#integer) | variable |
-| `maxLevel` | [Entier](#integer) | variable |
-| `chance`   |  [Chance](#chance)  | variable |
+| キー         |          値          | デフォルト |
+|------------|:-------------------:|-------|
+| `minLevel` | [Integer](#integer) | 可変    |
+| `maxLevel` | [Integer](#integer) | 可変    |
+| `chance`   |  [Chance](#chance)  | 可変    |
 
 ***
 
 ## minLevel
 
-Définit le niveau d'enchantement minimum.
+最小エンチャントレベルを設定します。
 
 ***
 
 ## maxLevel
 
-Définit le niveau d'enchantement maximum.
+最大エンチャントレベルを設定します。
 
 ***
 
 ## chance
 
-Définit la probabilité que l'enchantement se produise. Ceci n'utilise pas la probabilité pondérée, juste un jet de dés normal.
+エンチャントが発生する確率を設定します。これは、重み付け確率を使用するのではなく、通常のサイコロを振るだけです。

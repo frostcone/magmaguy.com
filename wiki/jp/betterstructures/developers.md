@@ -13,7 +13,7 @@
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>最新バージョンを確認してください!</version>
+  <version>最新バージョンを確認してください！</version>
   <scope>provided</scope>
 </dependency>
 ```
@@ -28,38 +28,39 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:最新バージョンを確認してください!'
+    implementation 'com.magmaguy:BetterStructures:最新バージョンを確認してください！'
 }
 ```
 
-注: `versionNumber` をプラグインの現在のバージョンに置き換えます。
+注: `versionNumber` をプラグインの現在のバージョンに置き換えてください。
 
 # イベント
 
-**注: イベントは com.magmaguy.betterstructures.api にあります**
+**注意: イベントは com.magmaguy.betterstructures.api にあります**
 
 ## BuildPlaceEvent
 
-ビルドが配置されようとしているときに呼び出されます。FitAnything オブジェクトを介して、配置されるビルドやその場所に関するデータなどが公開されます。
+ビルドが配置されようとするときに呼び出されます。FitAnythingオブジェクトを通して、どのビルドがどこに配置されるかなどに関するデータが公開されます。
 
-**配置されるビルドを修正しようとしないでください。** 小さなものを変更することはできますが、ビルド全体を変更すると、適切にフィットしないビルドになる可能性があります。
+**配置されるビルドを修正しようとしないでください！** 細かい変更はできますが、ビルド全体を変更すると、おそらくフィット感が悪いビルドになります。
 
 これはキャンセル可能です。
 
 ## ChestFillEvent
 
-チェストが満たされるときに呼び出されます。適用するデータを安全に保存するために、コンテナースナップショットインベントリを使用します。
+チェストが満たされるときに呼び出されます。コンテナスナップショットインベントリを使用して、適用されるデータを安全に保存します。
 
-戦利品の変更は、アイテムを追加または削除する Spigot メソッドを使用してスナップショットインベントリに行う必要があります。
+ルートの変更は、Spigotのアイテム追加または削除メソッドを使用してスナップショットインベントリに対して行う必要があります。
 
 これはキャンセル可能です。
 
-# 主要クラス
+# 主要なクラス
 
 ## FitAnything
 
-FitAnything クラスは、ビルドが貼り付けられたときにインスタンス化され、チェストへの充填やモブの生成など、貼り付けのあらゆる側面を処理するクラスです。
+FitAnythingクラスは、ビルドがペーストされたときにインスタンス化され、チェストの充填やモブのスポーンなど、ペーストのあらゆる側面を処理するクラスです。
 
 ## WorldGuard
 
-WorldGuard クラスは、WorldGuard リージョン保護を処理します。ユーティリティ メソッド `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` は、開発者が BetterStructures の上にカスタム リージョン保護スキームを簡単にフックできるようにするために用意されています。
+WorldGuardクラスは、WorldGuardのリージョン保護を処理します。ユーティリティメソッド `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)`
+は、開発者がBetterStructuresの上にカスタムリージョン保護スキームを簡単にフックできるように提供されています。

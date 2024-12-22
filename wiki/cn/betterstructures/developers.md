@@ -13,7 +13,7 @@
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>检查最新版本是什么！</version>
+  <version>检查最新的版本！</version>
   <scope>provided</scope>
 </dependency>
 ```
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:检查最新版本是什么！'
+    implementation 'com.magmaguy:BetterStructures:检查最新的版本!'
 }
 ```
 
@@ -36,30 +36,32 @@ dependencies {
 
 # 事件
 
-**注意：事件在 com.magmaguy.betterstructures.api 中**
+**注意：事件位于 com.magmaguy.betterstructures.api 中**
 
 ## BuildPlaceEvent
 
-当一个构建即将被放置时调用。通过 FitAnything 对象公开有关将要放置的构建以及放置位置等数据。
+当一个建筑即将被放置时调用。通过 FitAnything 对象，可以获取关于哪个建筑将被放置以及放置位置的数据。
 
-**不要尝试修改正在放置的构建！**您可以修改一些小的事情，但更改整个构建可能会导致构建不佳。
+**不要尝试修改正在放置的建筑！** 你可以修改一些小地方，但更改整个建筑可能会导致放置的建筑不合适。
 
-这是可取消的。
+这是可以取消的。
 
 ## ChestFillEvent
 
-当一个箱子被填充时调用。使用容器快照库存来安全地存储要应用的数据。
+当一个箱子被填充时调用。使用容器快照 inventory 安全地存储要应用的数据。
 
-对战利品的修改应通过添加或删除物品 Spigot 方法对快照库存进行。
+对战利品的修改应该通过添加或删除物品的 Spigot 方法对快照 inventory 进行。
 
-这是可取消的。
+这是可以取消的。
 
-# 关键类
+# 主要类
 
 ## FitAnything
 
-FitAnything 类是在构建被粘贴时实例化的类，并处理粘贴的各个方面，包括填充箱子和生成生物。
+FitAnything 类是在粘贴建筑时实例化的类，处理粘贴的每个方面，包括填充箱子和生成生物。
 
 ## WorldGuard
 
-WorldGuard 类处理 WorldGuard 区域保护。实用方法 `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` 可供开发人员使用，以便在 BetterStructures 的基础上轻松挂钩自定义区域保护方案。
+WorldGuard 类处理 WorldGuard
+区域保护。实用方法 `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)`
+可供开发人员轻松地在 BetterStructures 之上钩入自定义区域保护方案。

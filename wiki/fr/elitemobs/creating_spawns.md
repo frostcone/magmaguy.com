@@ -1,16 +1,18 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# ¿Qué son las generaciones personalizadas?
+# Que sont les Apparitions Personnalisées ?
 
-Las generaciones personalizadas son utilizadas por Eventos y refuerzos globales para establecer cómo, dónde y cuándo un evento debe generar al jefe para ese evento.
+Les apparitions personnalisées sont utilisées par les Événements et les renforts mondiaux pour définir comment, où et
+quand un événement doit faire apparaître le boss pour cet événement.
 
-Los eventos y refuerzos globales establecen qué generación están usando escribiendo su nombre de archivo.
+Les événements et les renforts mondiaux définissent l'apparition qu'ils utilisent en notant son nom de fichier.
 
-# Creación de generaciones personalizadas
+# Création d'Apparitions Personnalisées
 
-Las generaciones personalizadas van a la carpeta `customspawns`. Una generación personalizada puede ser utilizada por varios eventos al mismo tiempo, por lo que no tiene que crear una por evento.
+Les apparitions personnalisées sont placées dans le dossier `customspawns`. Une apparition personnalisée peut être
+utilisée par plusieurs événements en même temps, il n'est donc pas nécessaire d'en créer une par événement.
 
-Aquí hay un ejemplo de una generación personalizada:
+Voici un exemple d'apparition personnalisée:
 
 ```yaml
 isEnabled: true
@@ -21,18 +23,21 @@ bypassWorldGuard: false
 isSurfaceSpawn: true
 ```
 
-## Creación de una generación en cualquier lugar
-Para hacer que una generación pueda ocurrir **en cualquier lugar**, su configuración debe ser similar a la siguiente:
+## Création d'une Apparition N'importe Où
+
+Pour créer une apparition qui peut avoir lieu **n'importe où**, votre configuration doit ressembler à ce qui suit:
 
 ```yml
 isEnabled: true
 canSpawnInLight: true
 ```
-Esta configuración permite que los mobs aparezcan en cualquier ubicación, en cualquier mundo, en cualquier momento y durante cualquier fase lunar.
 
-Si está interesado en crear una generación más personalizada, siga leyendo a continuación.
+Cette configuration permet aux mobs d'apparaître n'importe où, dans n'importe quel monde, à n'importe quel moment et
+pendant n'importe quelle phase de la lune.
 
-## Valores
+Si vous souhaitez créer une apparition plus personnalisée, continuez à lire ci-dessous.
+
+## Valeurs
 
 <div align="center">
 
@@ -40,15 +45,15 @@ Si está interesado en crear una generación más personalizada, siga leyendo a 
 
 ### isEnabled
 
-Establece si la generación está habilitada.
+Définit si l'apparition est activée.
 
-| Clave       |       Valores        | Predeterminado |
-|-----------|:-------------------:|:-------:|
-| `isEnabled` | [Booleano](#booleano) | `true`  |
+| Clé         |       Valeurs       | Par Défaut |
+|-------------|:-------------------:|:----------:|
+| `isEnabled` | [Booléen](#boolean) |   `true`   |
 
-<details>
+<details> 
 
-<summary><b>Ejemplo</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
@@ -64,15 +69,15 @@ isEnabled: true
 
 ### lowestYLevel
 
-Establece el nivel Y (altitud) más bajo utilizado.
+Définit le niveau y le plus bas (hauteur de la carte) utilisé.
 
-| Clave       |       Valores        | Predeterminado |
-|-----------|:-------------------:|:-------:|
-| `lowestYLevel` | [Entero](#integer) |   `0`   |
+| Clé            |      Valeurs       | Par Défaut |
+|----------------|:------------------:|:----------:|
+| `lowestYLevel` | [Entier](#integer) |    `0`     |
 
-<details>
+<details> 
 
-<summary><b>Ejemplo</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
@@ -88,15 +93,15 @@ lowestYLevel: 0
 
 ### highestYLevel
 
-Establece el nivel Y (altitud) más bajo utilizado.
+Définit le niveau y le plus bas (hauteur de la carte) utilisé.
 
-| Clave       |       Valores        | Predeterminado |
-|-----------|:-------------------:|:-------:|
-| `highestYLevel` | [Entero](#integer) |  `320`  |
+| Clé             |      Valeurs       | Par Défaut |
+|-----------------|:------------------:|:----------:|
+| `highestYLevel` | [Entier](#integer) |   `320`    |
 
-<details>
+<details> 
 
-<summary><b>Ejemplo</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
@@ -112,25 +117,27 @@ highestYLevel: 320
 
 ### validWorlds
 
-Establece la lista de mundos en los que aparecerá la estructura. **Si no hay una lista presente, utilizará todos los mundos permitidos por el plugin**, a menos que esté limitado de otra manera (como por el tipo de entorno o los biomas).
+Définit la liste des mondes où l'apparition personnalisée peut avoir lieu. Ce paramètre peut être omis pour que **tous**
+vos mondes soient valides.
 
-| Clave       |           Valores            | Predeterminado |
-|-----------|:---------------------------:|:-------:|
-| `validWorlds` | [Lista de cadenas](#string_list) |  ninguno   |
+| Clé           |             Valeurs              | Par Défaut |
+|---------------|:--------------------------------:|:----------:|
+| `validWorlds` | [Liste de Chaînes](#string_list) |   aucun    |
 
-<details>
+<details> 
 
-<summary><b>Ejemplo</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
 validWorlds:
-- WORLD
-- FUN_LAND
+- MONDE
+- TERRE_DE_PLAISIR
 ```
 
-*Si desea que todos sus mundos sean válidos, simplemente no use la configuración o formatee de esta manera:*
+*Si vous voulez que tous vos mondes soient valides, vous pouvez simplement ne pas utiliser le paramètre ou le formater
+comme ceci:*
 
 ```yml
 validWorlds: []
@@ -144,25 +151,27 @@ validWorlds: []
 
 ### validWorldEnvironments
 
-Establece la lista de entornos mundiales en los que aparecerá la estructura. **Si no hay una lista presente, utilizará todos los entornos mundiales permitidos por el plugin**. Valores válidos: `NORMAL`, `NETHER`, `END` y `CUSTOM`.
+Définit la liste des environnements mondiaux valides où l'apparition personnalisée peut avoir lieu. Ce paramètre peut
+être omis pour que **tous** les environnements soient valides.
 
-| Clave       |           Valores            | Predeterminado |
-|-----------|:---------------------------:|:-------:|
-| `validWorldEnvironments` | [Lista de entornos](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html) |  ninguno   |
+| Clé                      |                                           Valeurs                                            | Par Défaut |
+|--------------------------|:--------------------------------------------------------------------------------------------:|:----------:|
+| `validWorldEnvironments` | [Liste d'Environnements](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html) |   aucun    |
 
-<details>
+<details> 
 
-<summary><b>Ejemplo</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
 validWorldEnvironments:
-- FLAT
-- LARGE_BIOMES
+- PLAT
+- GRANDS_BIOMES
 ```
 
-*Si desea que todos los entornos sean válidos, simplemente no use la configuración o formatee de esta manera:*
+*Si vous voulez que tous les environnements soient valides, vous pouvez simplement ne pas utiliser le paramètre ou le
+formater comme ceci:*
 
 ```yml
 validWorldEnvironments: []
@@ -176,27 +185,27 @@ validWorldEnvironments: []
 
 ### validBiomes
 
-Establece la lista de biomas válidos en los que aparecerá la estructura. **Si no se define una lista, ¡asumirá que todos los biomas son válidos!**.
+Définit la liste des biomes valides où l'apparition personnalisée peut avoir lieu. Ce paramètre peut être omis pour que
+**tous** les biomes soient valides.
 
-Esto requiere usar la lista de biomas según lo definido por la [API de Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html).
+| Clé           |                                         Valeurs                                         | Par Défaut |
+|---------------|:---------------------------------------------------------------------------------------:|:----------:|
+| `validBiomes` | [Liste de Biomes](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) |   aucun    |
 
-| Clave       |           Valores            | Predeterminado |
-|-----------|:---------------------------:|:-------:|
-| `validBiomes` | [Lista de biomas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) |  ninguno   |
+<details> 
 
-<details>
-
-<summary><b>Ejemplo</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
 validBiomes:
 - DESERT
-- MUSHROOM_FIELDS
+- CHAMPS_DE_CHAMPIGNONS
 ```
 
-*Si desea que todos los entornos sean válidos, simplemente no use la configuración o formatee de esta manera:*
+*Si vous voulez que tous les environnements soient valides, vous pouvez simplement ne pas utiliser le paramètre ou le
+formater comme ceci:*
 
 ```yml
 validBiomes: []
@@ -210,15 +219,15 @@ validBiomes: []
 
 ### earliestTime
 
-Establece la hora más temprana del juego en la que aparecerá la estructura.
+Définit l'heure la plus proche dans le jeu à laquelle l'apparition personnalisée peut avoir lieu.
 
-| Clave       |           Valores            | Predeterminado |
-|-----------|:---------------------------:|:-------:|
-| `earliestTime` | [Entero](#integer) |   `0`   |
+| Clé            |      Valeurs       | Par Défaut |
+|----------------|:------------------:|:----------:|
+| `earliestTime` | [Entier](#integer) |    `0`     |
 
-<details>
+<details> 
 
-<summary><b>Ejemplo</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
@@ -234,15 +243,15 @@ earliestTime: 0
 
 ### latestTime
 
-Establece la hora más reciente del juego en la que aparecerá la estructura.
+Définit l'heure la plus tardive dans le jeu à laquelle l'apparition personnalisée peut avoir lieu.
 
-| Clave       |           Valores            | Predeterminado |
-|-----------|:---------------------------:|:-------:|
-| `latestTime` | [Entero](#integer) | `24000` |
+| Clé          |      Valeurs       | Par Défaut |
+|--------------|:------------------:|:----------:|
+| `latestTime` | [Entier](#integer) |  `24000`   |
 
-<details>
+<details> 
 
-<summary><b>Ejemplo</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
@@ -258,15 +267,15 @@ latestTime: 24000
 
 ### moonPhase
 
-Establece la hora más reciente del juego en la que aparecerá la estructura.
+Définit l'heure la plus proche dans le jeu à laquelle l'apparition personnalisée peut avoir lieu.
 
-| Clave       |   Valores    | Predeterminado |
-|-----------|:-----------:|:-------:|
-| `moonPhase` | Especial [1] | `24000` |
+| Clé         |   Valeurs   | Par Défaut |
+|-------------|:-----------:|:----------:|
+| `moonPhase` | Spécial [1] |  `24000`   |
 
-<details>
+<details> 
 
-<summary><b>Ejemplo</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
@@ -278,38 +287,118 @@ moonPhase: 24000
 
 </details>
 
-**Especial [1]**
+**Spécial [1]**
 
-<details>
+<details> 
 
-<summary><b>Expandir tabla</b></summary>
+<summary><b>Développer le tableau</b></summary>
 
-| Fase lunar        | Vista previa  |
-|-------------------|:--------:|
-| `NEW_MOON`        |    🌑    |
-| `WAXING_CRESCENT` |    🌒    |
-| `FIRST_QUARTER`   |    🌓    |
-| `WAXING_GIBBOUS`  |    🌔    |
-| `FULL_MOON`       |    🌕    |
-| `WANING_GIBBOUS`  |    🌖    |
-| `WANING_CRESCENT` |    🌘    |
+| Phase de la Lune                | Aperçu |
+|---------------------------------|:------:|
+| `NOUVELLE_LUNE`                 |   🌑   |
+| `CROISSANT_DE_LUNE`             |   🌒   |
+| `PREMIER_QUARTIER`              |   🌓   |
+| `LUNE_GIBBEUSE_CROISSANTE`      |   🌔   |
+| `PLEINE_LUNE`                   |   🌕   |
+| `LUNE_GIBBEUSE_DÉCROISSANTE`    |   🌖   |
+| `CROISSANT_DE_LUNE_DÉCROISSANT` |   🌘   |
 
 </details>
 
 ***
 
-# elitemobs-maximum-level
+### bypassWorldGuard
 
-Sets the maximum level of elite mobs that can spawn in a region. Only affects naturally spawned elites (Custom Bosses ignore this). The level must be an integer value (no values like `1.5`, you have to use whole numbers like `1` or `2`).
+Définit si l'apparition personnalisée contournera les systèmes de protection tels que WorldGuard.
+
+| Clé                |       Valeurs       | Par Défaut |
+|--------------------|:-------------------:|:----------:|
+| `bypassWorldGuard` | [Booléen](#boolean) |  `false`   |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+bypassWorldGuard: false
+```
+
+</div>
+
+</details>
 
 ***
 
-# elitemobs-minimum-level
+### canSpawnInLight
 
-Sets the minimum level of elite mobs that can spawn in a region. Only affects naturally spawned elites (Custom Bosses ignore this). The level must be an integer value (no values like `1.5`, you have to use whole numbers like `1` or `2`).
+Indique si l'apparition personnalisée peut avoir lieu sur des blocs éclairés par des sources lumineuses.
+
+| Clé               |       Valeurs       | Par Défaut |
+|-------------------|:-------------------:|:----------:|
+| `canSpawnInLight` | [Booléen](#boolean) |  `false`   |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+canSpawnInLight: false
+```
+
+</div>
+
+</details>
 
 ***
 
-# elitemobs-dungeon
+### isSurfaceSpawn
 
-Sets the area to only allow normal mobs spawned with the CUSTOM spawn reason, as well as Regional Bosses and Custom Bosses. This is for use in minidungeons.
+Définit si l'apparition personnalisée ne peut avoir lieu qu'à la surface d'un monde.
+
+| Clé              |       Valeurs       | Par Défaut |
+|------------------|:-------------------:|:----------:|
+| `isSurfaceSpawn` | [Booléen](#boolean) |  `false`   |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+isSurfaceSpawn: false
+```
+
+</div>
+
+</details>
+
+***
+
+### isUndergroundSpawn
+
+Définit si l'apparition personnalisée ne peut avoir lieu que sous terre.
+
+| Clé                  |       Valeurs       | Par Défaut |
+|----------------------|:-------------------:|:----------:|
+| `isUndergroundSpawn` | [Booléen](#boolean) |  `false`   |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+isUndergroundSpawn: false
+```
+
+</div>
+
+</details>
+
+</div>

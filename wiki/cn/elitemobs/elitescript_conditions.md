@@ -1,12 +1,10 @@
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+# 精英脚本条件
 
-# Elite Script 条件
-
-条件允许脚本编写者基于特定条件使脚本和/或操作**不**运行。
+条件允许脚本编写者根据特定条件使脚本和/或动作**不**运行。
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -37,7 +35,7 @@ eliteScript:
       global: 20
 ```
 
-在此示例中，`Example` 脚本仅在精英仍然存活时运行，并且仅在方块为空气方块时才在精英位置上方 3 个方块处放置泥土方块。各个操作可以具有各自的条件。
+在这个例子中，`Example` 脚本只有在精英仍然存活时才会运行，并且只有当精英位置上方 3 个方块的位置是空气方块时才会放置一个泥土方块。单个动作可以有各自的条件。
 
 </div>
 
@@ -47,23 +45,27 @@ eliteScript:
 
 ## 目标
 
-条件使用[目标]($language$/elitemobs/elitescript_targets.md)系统来定位哪个实体或位置受到条件约束。这意味着您可以将条件与首领、玩家或其他您可以定位的任何对象相关联。
+条件使用 [目标]($language$/elitemobs/elitescript_targets.md) 系统来确定哪个实体或位置受到条件的约束。这意味着你可以将条件与
+Boss、玩家或任何你可以定位的东西关联起来。
 
 ---
 
 ## 条件类型
 
-| 键 | 详细信息 | 值 |
-| --- | :-: | :-: |
+| 键               |   详情   |            值             |
+|-----------------|:------:|:------------------------:|
 | `conditionType` | 设置条件类型 | `BLOCKING` / `FILTERING` |
 
-有两种类型的条件：`BLOCKING` 和 `FILTERING`。`BLOCKING` 条件使脚本或操作停止运行。`FILTERING` 条件使操作跳过不满足条件的目标。这意味着，如果您只想定位不是空气的方块，您将需要 `FILTERING` 条件，但如果您想在玩家死亡时停止操作，则需要 `BLOCKING` 条件。
+有两种条件类型：`BLOCKING` 和 `FILTERING`。`BLOCKING` 条件会使脚本或动作停止运行。`FILTERING`
+条件会使动作跳过不符合条件的目标。这意味着如果你只想定位不是空气的方块，你将需要一个 `FILTERING`
+条件，但如果你想在玩家死亡时停止一个动作，你将需要一个 `BLOCKING` 条件。
 
-**操作之外的条件始终是 `BLOCKING`**。操作内部的条件可以是 `BLOCKING` 或 `FILTERING`。
+**动作之外的条件始终为 `BLOCKING`**。动作内部的条件可以是 `BLOCKING` 或 `FILTERING`。
 
-_**注意：如果目标是 `SELF`（首领）并且条件检查为 `isAlive`，则检查始终为 `BLOCKING`！**_ 这可以放在 `FILTERING` 条件中，并且仍会使此特定部分的行为类似于 `BLOCKING`。
+_**注意：如果目标是 `SELF` (Boss) 并且条件检查是 `isAlive`，则检查始终是 `BLOCKING`！**_ 这可以放在一个 `FILTERING`
+条件中，但仍然会使这一特定部分表现为 `BLOCKING`。
 
-操作内部的条件默认设置为 `FILTERING`。
+动作内的条件默认设置为 `FILTERING`。
 
 ---
 
@@ -71,15 +73,15 @@ _**注意：如果目标是 `SELF`（首领）并且条件检查为 `isAlive`，
 
 ### locationIsAir
 
-设置条件以检查目标位置是否为空气。
+设置条件为目标的位置是否为空气。
 
-| 键 | 详细信息 | 值 |
-| --- | :-: |:-------------------:|
+| 键               |          详情          |        值        |
+|-----------------|:--------------------:|:---------------:|
 | `locationIsAir` | 设置为检查位置是否为空气方块（或相反）。 | [布尔值](#boolean) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -95,7 +97,7 @@ eliteScript:
         offset: "0,3,0"
 ```
 
-检查首领站立位置上方 2 个方块处的位置是否为空气。
+检查 Boss 站立位置上方 2 个方块的位置是否为空气。
 
 </div>
 
@@ -107,15 +109,15 @@ eliteScript:
 
 ### isOnFloor
 
-检查位置是否在地板上。这意味着该位置的方块不是实体方块，但其下方的方块是实体方块。
+检查位置是否在地面上。这意味着该位置的方块不是固体，但它下面的方块是固体。
 
-| 键 | 详细信息 | 值 |
-| --- | :-: | :-: |
-| `isOnFloor` | 设置为检查位置是否为地板位置（或相反）。 | [布尔值](#boolean) |
+| 键           |          详情          |        值        |
+|-------------|:--------------------:|:---------------:|
+| `isOnFloor` | 设置为检查位置是否为地面位置（或相反）。 | [布尔值](#boolean) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -140,15 +142,15 @@ eliteScript:
 
 ### isStandingOnMaterial
 
-检查目标下方的某个位置是否与材质类型匹配。
+检查目标下方的地点是否为匹配的材质类型。
 
-| 键 |                     详细信息                     |        值         |
-| --- |:-----------------------------------------------:|:---------------------:|
-| `isStandingOnMaterial` | 设置应检查的材质类型。 | [材质](#material) |
+| 键                      |     详情      |        值        |
+|------------------------|:-----------:|:---------------:|
+| `isStandingOnMaterial` | 设置要检查的材质类型。 | [材质](#material) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -163,7 +165,7 @@ eliteScript:
         targetType: SELF
 ```
 
-仅当首领站在 BIRCH_WOOD 上时才会运行。
+仅当 Boss 站在桦木木材上时才会运行。
 
 </div>
 
@@ -175,15 +177,15 @@ eliteScript:
 
 ### isAlive
 
-设置条件以检查条件目标实体是否存活。
+设置条件为条件目标实体是否存活。
 
-| 键 | 详细信息 | 值 |
-| --- | :-: | :-: |
+| 键         |        详情         |        值        |
+|-----------|:-----------------:|:---------------:|
 | `isAlive` | 设置为检查实体是否存活（或死亡）。 | [布尔值](#boolean) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -198,7 +200,7 @@ eliteScript:
         targetType: SELF
 ```
 
-仅当首领死亡时才会运行。
+仅当 Boss 死亡时才会运行。
 
 </div>
 
@@ -210,15 +212,16 @@ eliteScript:
 
 ### hasTags
 
-检查目标实体是否具有特定标签。脚本编写者可以通过操作分配和取消分配任何标签，并将其用作稍后行为的条件。标签只是您可以分配给首领的字符串（单词）。
+检查目标实体是否具有特定标签。脚本编写者可以通过动作分配和取消分配任何标签，并将其用作后续行为的条件。标签只是你可以分配给
+Boss 的字符串（单词）。
 
-| 键 | 详细信息 |           值            |
-| --- | :-: |:---------------------------:|
+| 键         |        详情        |           值           |
+|-----------|:----------------:|:---------------------:|
 | `hasTags` | 设置为检查实体是否具有标签列表。 | [字符串列表](#string_list) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -235,7 +238,7 @@ eliteScript:
         targetType: SELF
 ```
 
-仅当首领具有标签“isCool”和“hasANiceBeard”时才会运行。
+仅当 Boss 具有标签 "isCool" 和 "hasANiceBeard" 时才会运行。
 
 </div>
 
@@ -243,19 +246,20 @@ eliteScript:
 
 </div>
 
+
 ---
 
 ### doesNotHaveTags
 
-与 `hasTags` 相同，但会检查首领是否不具有这些值。
+与 `hasTags` 相同，但检查 Boss 是否没有这些值。
 
-| 键 | 详细信息 | 值 |
-| --- | :-: | :-: |
-| `doesNotHaveTags` | 设置为检查实体是否不具有标签列表。 | [字符串列表](#string_list) |
+| 键                 |        详情        |           值           |
+|-------------------|:----------------:|:---------------------:|
+| `doesNotHaveTags` | 设置为检查实体是否没有标签列表。 | [字符串列表](#string_list) |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -272,7 +276,7 @@ eliteScript:
         targetType: SELF
 ```
 
-仅当首领不具有标签“isStinky”和“isSus”时才会运行。
+仅当 Boss 没有标签 "isStinky" 和 "isSus" 时才会运行。
 
 </div>
 
@@ -284,21 +288,22 @@ eliteScript:
 
 ### randomChance
 
-使条件具有随机的机会使其有效。
+赋予条件随机的有效几率。
 
-| 键 | 详细信息 | 值 |
-| --- | :-: | :-: |
-| `randomChance` | 条件有效的机会。 | 介于 0.0 和 1.0 之间的数字 |
+| 键              |    详情    |        值        |
+|----------------|:--------:|:---------------:|
+| `randomChance` | 条件有效的几率。 | 0.0 到 1.0 之间的数字 |
 
 请注意，此条件很特殊，因为它不需要目标。
 
-## 使用标签筛选 NEARBY
+## 使用标签过滤附近的实体
 
-要基于特定标签筛选 `NEARBY_MOBS` 或 `NEARBY_PLAYERS`，请使用 `ACTION_TARGET` 作为条件的 target（如果该条件应用于操作而不是脚本本身）。这可确保脚本仅准确筛选具有指定标签的生物/玩家。
+要根据特定标签过滤 `NEARBY_MOBS` 或 `NEARBY_PLAYERS`，请使用 `ACTION_TARGET` 作为条件的
+目标（如果条件应用于动作而不是脚本本身）。这确保脚本准确地仅过滤具有指定标签的生物/玩家。
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -320,7 +325,7 @@ eliteScript:
           targetType: ACTION_TARGET
 ```
 
-此脚本将查找附近任何具有标签 `TurnOff` 的生物，并且如果它们具有该标签，则会关闭它们的 AI。
+此脚本将查找任何具有标签 `TurnOff` 的附近生物，如果它们具有该标签，则会关闭它们的 AI。
 
 </div>
 

@@ -1,16 +1,997 @@
-```yaml
-  - Prêt à relever un défi ?
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+
+# アリーナの作成
+
+<div align="center">
+
+### isEnabled
+
+アリーナが有効かどうかを設定します。
+
+| キー          |          値          | デフォルト  |
+|-------------|:-------------------:|:------:|
+| `isEnabled` | [Boolean](#boolean) | `true` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+```
+
+</div>
+
+</details>
+
+***
+
+### arenaName
+
+アリーナの名前を設定します。
+
+| キー          |         値         | デフォルト |
+|-------------|:-----------------:|:-----:|
+| `arenaName` | [String](#string) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+arenaName: ベッドロックアリーナ
+```
+
+<div align="center">
+
+![create_arena_name.jpg](../../../img/wiki/create_arena_name.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### corner1
+
+アリーナの最初のコーナーを設定します。
+
+| キー        |                値                 | デフォルト |
+|-----------|:--------------------------------:|:-----:|
+| `corner1` | [Location](#serialized_location) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+corner1: my_arena_world,10,50,-10,0,0
+```
+
+<div align="center">
+
+この画像では、`corner1`は*緑色の羊毛*で、`corner2`は*赤色の羊毛*で表されています。この構成は、それらの間の領域をアリーナとして指定し、
+*黄色の羊毛*で表されています。
+
+![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### corner2
+
+アリーナの2番目のコーナーを設定します。`corner1`から対角線上になければなりません。
+
+| キー        |                値                 | デフォルト |
+|-----------|:--------------------------------:|:-----:|
+| `corner2` | [Location](#serialized_location) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+corner2: my_arena_world,-10,50,10,0,0
+```
+
+<div align="center">
+
+この画像では、`corner1`は*緑色の羊毛*で、`corner2`は*赤色の羊毛*で表されています。この構成は、それらの間の領域をアリーナとして指定し、
+*黄色の羊毛*で表されています。
+
+![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### startLocation
+
+アリーナの開始位置を設定します。
+
+| キー              |                値                 | デフォルト |
+|-----------------|:--------------------------------:|:-----:|
+| `startLocation` | [Location](#serialized_location) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+startLocation: my_arena_world,1,50,1,0,0
+```
+
+</div>
+
+</details>
+
+***
+
+### exitLocation
+
+アリーナの終了位置を設定します。
+
+| キー             |                値                 | デフォルト |
+|----------------|:--------------------------------:|:-----:|
+| `exitLocation` | [Location](#serialized_location) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+exitLocation: my_world,1,50,1,0,0
+```
+
+</div>
+
+</details>
+
+***
+
+### waveCount
+
+アリーナのウェーブ数を設定します。
+
+| キー          |          値          | デフォルト |
+|-------------|:-------------------:|:-----:|
+| `waveCount` | [Integer](#integer) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+waveCount: 10
+```
+
+</div>
+
+</details>
+
+***
+
+### delayBetweenWaves
+
+ウェーブ間の遅延を秒単位で設定します。
+
+| キー                  |          値          | デフォルト |
+|---------------------|:-------------------:|:-----:|
+| `delayBetweenWaves` | [Integer](#integer) |  `0`  |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+delayBetweenWaves: 5
+```
+
+</div>
+
+</details>
+
+***
+
+### spawnPoints
+
+アリーナのボスのスポーン位置を設定します。
+
+| キー            |                値                | デフォルト |
+|---------------|:-------------------------------:|:-----:|
+| `spawnPoints` | [String List](#string_list) [1] |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+spawnPoints:
+- name=north:location=my_arena_world,219.5,71,273.5
+- name=south:location=my_arena_world,219.5,71,316.5
+- name=west:location=my_arena_world,197.5,71,295.5
+- name=east:location=my_arena_world,240.5,71,295.5
+- name=center:location=my_arena_world,219.5,71,295.5
+```
+
+</div>
+
+</details>
+
+***
+
+### bossList
+
+アリーナのウェーブ中に登場するボスのリストを設定します。EliteMobsアリーナは、アリーナでのMythic Mobsのスポーンをサポートしています。
+
+| キー         |                値                | デフォルト |
+|------------|:-------------------------------:|:-----:|
+| `bossList` | [String List](#string_list) [2] |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+bossList:
+- wave=1:spawnPoint=north:boss=my_boss_wave_1.yml
+- wave=1:spawnPoint=south:boss=my_boss_wave_1.yml
+- wave=2:spawnPoint=center:boss=my_mythicmobs_boss:mythicmob=true:level=10
+```
+
+この例では、ウェーブ1で北のスポーンポイントに1体のボスがスポーンし、南のスポーンポイントに1体のボスがスポーンします。次に、ウェーブ2では、レベル10のミシックボスが中央ポイントにスポーンします。
+
+EliteMobsのボスのレベルを強制することもできますが、構成ファイルでレベルを設定することをお勧めします。
+
+</div>
+
+</details>
+
+***
+
+### rawArenaReward
+
+ウェーブ終了時に与えられる報酬を設定します。
+
+| キー               |                                   値                                   | デフォルト |
+|------------------|:---------------------------------------------------------------------:|:-----:|
+| `rawArenaReward` | [Universal EliteMobs loot table]($language$/elitemobs/loot_tables.md) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+rawArenaReward:
+- filename=enchanted_book_damage_all.yml:wave=5:chance=0.25
+- filename=elite_scrap_tiny.yml:wave=1:chance=0.5:amount=5
+- currencyAmount=3:wave=3
+- level=5:filename=summon_merchant_scroll.yml:wave=5
+- filename=magmaguys_toothpick.yml:itemlevel=10:wave=10:chance=0.95
+```
+
+</div>
+
+</details>
+
+***
+
+### minimumPlayerCount
+
+アリーナを開始する前に必要な最小プレイヤー数を設定します。
+
+| キー                   |          値          | デフォルト |
+|----------------------|:-------------------:|:-----:|
+| `minimumPlayerCount` | [Integer](#integer) |  `1`  |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+minimumPlayerCount: 1
+```
+
+</div>
+
+</details>
+
+***
+
+### maximumPlayerCount
+
+アリーナに参加できる最大プレイヤー数を設定します。
+
+| キー                   |          値          | デフォルト |
+|----------------------|:-------------------:|:-----:|
+| `maximumPlayerCount` | [Integer](#integer) | `100` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+maximumPlayerCount: 100
+```
+
+</div>
+
+</details>
+
+***
+
+### arenaMessages
+
+ウェーブ間で実行されるメッセージを設定します。
+
+| キー              |      値      | デフォルト |
+|-----------------|:-----------:|:-----:|
+| `arenaMessages` | Special [3] |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+arenaMessages:
+- wave=1:message="&a[アリーナアナウンサー] &fウェーブ1の時間です！"
+- wave=2:message="&a[アリーナアナウンサー] &fもうウェーブ2だよ。"
+```
+
+<div align="center">
+
+![create_arena_messages.jpg](../../../img/wiki/create_arena_messages.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### cylindricalArena
+
+アリーナが円筒形を使用するかどうかを設定します（デフォルトは直方体）。
+
+| キー                 |          値          |  デフォルト  |
+|--------------------|:-------------------:|:-------:|
+| `cylindricalArena` | [Boolean](#boolean) | `false` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+cylindricalArena: false
+```
+
+</div>
+
+</details>
+
+***
+
+### permission
+
+アリーナを使用するために必要な権限を設定します。
+
+| キー           |         値          | デフォルト |
+|--------------|:------------------:|:-----:|
+| `permission` | [String](#integer) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+permission: mypermission.arena
+```
+
+</div>
+
+</details>
+
+***
+
+</div>
+
+## Special [1]
+
+スポーンポイント：次の形式を使用します：`name=ポイント名:location=ワールド名,x,y,z`。
+
+## Special [2]
+
+ボスリスト：次の形式を使用します：`wave=x:spawnPoint=Y:boss=bossfilename.yml`。
+
+## Special [3]
+
+アリーナメッセージ：次の形式を使用します：`wave=X:message=ここにメッセージを入力`。
+
+<details>
+
+<summary align="center"><b>アリーナ構成の例</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+arenaName: 例のアリーナ
+corner1: my_arena_world,0,0,0,0,0
+corner2: my_arena_world,50,50,50,0,0
+startLocation: my_arena_world,25,0,25,0,0
+exitLocation: my_minecraft_world,234,44,245,0,0
+waveCount: 5
+delayBetweenWaves: 5
+spawnPoints:
+  - name=north:location=my_arena_world,40.5,0,0
+  - name=south:location=my_arena_world,10.5,0,0
+  - name=west:location=my_arena_world,0,0,40.5
+  - name=east:location=my_arena_world,0,0,10.5
+  - name=center:location=my_arena_world,25.5,0,25.5
+bossList:
+  - wave=1:spawnPoint=north:boss=example_arena_wave_1_mob.yml
+  - wave=1:spawnPoint=center:boss=example_arena_wave_1_mob.yml
+  - wave=1:spawnPoint=south:boss=example_arena_wave_1_mob.yml
+  - wave=2:spawnPoint=center:boss=example_arena_wave_2_mob.yml
+  - wave=3:spawnPoint=east:boss=example_arena_wave_3_mob.yml
+  - wave=3:spawnPoint=west:boss=example_arena_wave_3_mob.yml
+  - wave=4:spawnPoint=center:boss=example_arena_wave_4_mob.yml
+  - wave=4:spawnPoint=center:boss=example_arena_wave_4_mob.yml
+  - wave=5:spawnPoint=center:boss=example_arena_wave_5_mob.yml
+  - wave=5:spawnPoint=south:boss=example_arena_wave_5_mob.yml
+  - wave=5:spawnPoint=west:boss=example_arena_wave_5_mob.yml
+rawArenaReward:
+  - currencyAmount=5:wave=1
+  - currencyAmount=10:wave=2
+  - currencyAmount=15:wave=3
+  - currencyAmount=20:wave=4
+  - currencyAmount=25:wave=5
+  - filename=magmaguys_toothpick.yml:itemlevel=5:wave=5:chance=0.5
+minimumPlayerCount: 1
+maximumPlayerCount: 3
+arenaMessages:
+  - wave=1:message=&d[アリーナNPC] &fすごい！ウェーブ1！
+  - wave=2:message=&d[アリーナNPC] &f驚くべきことにウェーブ2です！
+  - wave=3:message=&d[アリーナNPC] &fウェーブ3が始まりました！
+  - wave=4:message=&d[アリーナNPC] &fもうウェーブ4です！
+  - wave=5:message=&d[アリーナNPC] &fさて、これが終わったら全て終わります。
+cylindricalArena: false
+permission: arena.mypermission
+```
+
+</div>
+
+</details>
+
+<details>
+
+<summary align="center"><b>例の分解</b></summary>
+
+<div align="left">
+
+この例を最初から見て、このアリーナ構成が何をするかを説明しましょう。
+
+まず、`isEnabled`でアリーナが有効になり、`arenaName`
+設定を使用して例のアリーナと呼ばれることがわかります。この名前は、プレイヤーがアリーナに参加できるようにするアリーナNPC（後でアリーナNPCの作成方法について説明します）と対話するときに表示されます。corner1とcorner2は、アリーナのサイズを定義します。これらのコーナーは、アリーナに使用する予定の領域の反対側にある必要があります。
+
+`startLocation`
+は、アリーナに参加するときにプレイヤーがスポーンする場所です。例では、ワールドmy_arena_worldのアリーナの中心になります。`exitLocation`
+は、プレイヤーがアリーナに失敗または終了した後にテレポートされる場所です。この場合、ワールドmy_minecraft_worldと例の座標になります。
+
+`waveCount`
+は、アリーナが続くウェーブ数を単純に設定します。この場合、それは5つのウェーブになります。プレイヤーが5つのウェーブすべてを生き残ることができれば、アリーナを生き残ることができたことになります。`delayBetweenWaves`
+は、次のウェーブが開始されるまでの秒数を設定します。例では、プレイヤーは次のウェーブが開始されるまでに5秒間準備することができます。
+
+`spawnPoints`は、モブをスポーンさせることができる場所を設定します。必要なだけ作成して、好きなように名前を付けることができます。例では、5つのスポーンポイントを作成し、それらを北、南、中央、東、西と名付けることにしました。
+
+`bossList`
+は、どのボスがどのウェーブでどの場所でスポーンする必要があるかを定義する場所です。例では、ウェーブ1は、北、中央、南と名付けたスポーン位置からスポーンする3体のボスになります。3体すべてが同じボスファイルを使用するように設定されていますが、それぞれ異なるボスファイルを使用することもできました。
+
+`rawArenaReward`
+は、プレイヤーがウェーブを生き残る/倒すことに成功した後に配布される報酬を設定します。例でわかるように、ウェーブ1を倒すと、プレイヤーは5つのエリートコインを獲得できます。残りのウェーブを生き残り、ウェーブ5を倒すことができれば、25のエリートコインと、レベル5のマグマガイのつまようじを手に入れる50％のチャンスが与えられます。
+
+`minimumPlayerCount`
+は、アリーナが開始する前に必要な最小プレイヤー数を設定します。例では、この設定は1に設定されているため、アリーナが開始するには1人のプレイヤーのみが必要です。`maximumPlayerCount`
+は、アリーナに参加できる最大プレイヤー数を設定します。例では、この設定は3に設定されています。つまり、3人以上のプレイヤーがアリーナに参加しようとすると、3人以下のプレイヤーになるまでアリーナは開始されません。
+
+`arenaMessages`
+を使用すると、定義されたウェーブの開始時にチャットに表示されるフレーバーテキストを追加できます。例では、各ウェーブの開始時に短いメッセージを表示することにしました。また、各メッセージの先頭にNPC名を含めることで、テキストがアナウンサー（アリーナマスター）のセリフであるという錯覚を与えています。
+
+`cylindricalArena`この設定により、`corner1`と`corner2`
+で設定した定義済み領域を、直方体ではなく円筒形にするかどうかを切り替えることができます。例では、これを`false`
+に設定しました。つまり、例のアリーナは直方体です。
+
+`permission`
+を使用すると、プレイヤーがアリーナに参加/開始するために必要な権限を設定できます。例では、プレイヤーはアリーナを使用するために`arena.mypermission`
+権限を持っている必要があります。
+
+</div>
+
+</details>
+
+## アリーナNPCの作成
+
+<div align="center">
+
+### isEnabled
+
+NPCが有効かどうかを設定します。
+
+| キー          |          値          | デフォルト  |
+|-------------|:-------------------:|:------:|
+| `isEnabled` | [Boolean](#boolean) | `true` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+```
+
+</div>
+
+</details>
+
+***
+
+### name
+
+NPCの表示名を設定します。
+
+| キー     |         値         | デフォルト |
+|--------|:-----------------:|:-----:|
+| `name` | [String](#string) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+name: "&aグラディウス"
+```
+
+<div align="center">
+
+![create_arena_npc_name.jpg](../../../img/wiki/create_arena_npc_name.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### role
+
+NPC名の下に役割の表示を設定します。
+
+| キー     |         値         | デフォルト |
+|--------|:-----------------:|:-----:|
+| `role` | [String](#string) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+role: "&c<アリーナマスター>"
+```
+
+<div align="center">
+
+![create_arena_npc_role.jpg](../../../img/wiki/create_arena_npc_role.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### profession
+
+NPCのMineCraft職業を設定します。
+
+| キー           |                                                 値                                                 | デフォルト |
+|--------------|:-------------------------------------------------------------------------------------------------:|:-----:|
+| `profession` | [Profession](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+profession: ARMORER
+```
+
+<div align="center">
+
+*`diguise`を使用している場合はオーバーライドされます。*
+
+![create_arena_npc_profession.jpg](../../../img/wiki/create_arena_npc_profession.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### spawnLocation
+
+NPCのスポーン位置を設定します。
+
+| キー              |                値                 | デフォルト |
+|-----------------|:--------------------------------:|:-----:|
+| `spawnLocation` | [Location](#serialized_location) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+spawnLocation: my_world,1.5,50,1.5,-108,0
+```
+
+</div>
+
+</details>
+
+***
+
+### greetings
+
+NPCの挨拶のダイアログを設定します。
+
+| キー          |              値              | デフォルト |
+|-------------|:---------------------------:|:-----:|
+| `greetings` | [String List](#string_list) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+greetings:
+- アリーナへようこそ！
+- アリーナがあなたを歓迎します！
+```
+
+<div align="center">
+
+![create_arena_npc_greetings.jpg](../../../img/wiki/create_arena_npc_greetings.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### dialog
+
+プレイヤーがNPCと対話したときのダイアログを設定します。
+
+| キー       |              値              | デフォルト |
+|----------|:---------------------------:|:-----:|
+| `dialog` | [String List](#string_list) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+dialog:
+- 挑戦する準備はできていますか？
+- アリーナに立ち向かいますか？
+```
+
+<div align="center">
+
+![create_arena_npc_dialog.jpg](../../../img/wiki/create_arena_npc_dialog.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### farewell
+
+NPCのさよならダイアログを設定します。
+
+| キー         |              値              | デフォルト |
+|------------|:---------------------------:|:-----:|
+| `farewell` | [String List](#string_list) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
 farewell:
-  - Au revoir !
+- さようなら。
+- 盾を持って戻ってきてください、または盾の上に！
+```
+
+<div align="center">
+
+![create_arena_npc_farewell.jpg](../../../img/wiki/create_arena_npc_farewell.jpg)
+
+<div align="center">
+
+*文字列が長すぎる場合は、\nを使用して文字列を複数行に分割できます。*
+
+<div align="left">
+
+```yml
+farewell:
+- さようなら。
+- 盾を持って\n戻ってきてください、または盾の上に！
+```
+
+</div>
+
+![create_arena_npc_lines.jpg](../../../img/wiki/create_arena_npc_lines.jpg)
+
+</div>
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### canTalk
+
+NPCのさよならダイアログを設定します。
+
+| キー        |          値          | デフォルト  |
+|-----------|:-------------------:|:------:|
+| `canTalk` | [Boolean](#boolean) | `true` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+canTalk: true
+```
+
+</div>
+
+</details>
+
+***
+
+### activationRadius
+
+NPCが会話を開始する半径を設定します。
+
+| キー                 |         値         | デフォルト |
+|--------------------|:-----------------:|:-----:|
+| `activationRadius` | [Double](#double) | `3.0` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+activationRadius: 3.0
+```
+
+</div>
+
+</details>
+
+***
+
+### interactionType
+
+NPCが行うインタラクションのタイプを設定します。
+
+| キー                |      値      |     デフォルト      |
+|-------------------|:-----------:|:--------------:|
+| `interactionType` | Special [4] | `ARENA_MASTER` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+interactionType: ARENA_MASTER
+```
+
+</div>
+
+</details>
+
+***
+
+### disguise
+
+カスタムNPCの偽装を設定します。
+
+| キー         |                         値                         | デフォルト |
+|------------|:-------------------------------------------------:|:-----:|
+| `disguise` | [Disguise]($language$/elitemobs/libsdisguises.md) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+disguise: ZOMBIE
+```
+
+<div align="center">
+
+![create_arena_npc_disguise.jpg](../../../img/wiki/create_arena_npc_disguise.jpg)
+
+<div align="center">
+
+</div>
+
+</details>
+
+***
+
+### arena
+
+プレイヤーがテレポートされるアリーナを設定します。
+
+| キー      |           値           | デフォルト |
+|---------|:---------------------:|:-----:|
+| `arena` | [Filename](#filename) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+arena: my_arena.yml
+```
+
+</div>
+
+</details>
+
+***
+
+### teleportLocation
+
+NPCと対話した後にプレイヤーをテレポートする場所を設定します。この設定は、通常、プレイヤーをアリーナの専用ロビータイプのエリアにテレポートするために使用されます。ここでは、アリーナチャレンジを開始したり、他のプレイヤーがアリーナを通過するのを終了するまで待つことができます。
+
+| キー                 |           値           | デフォルト |
+|--------------------|:---------------------:|:-----:|
+| `teleportLocation` | [Location](#location) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+teleportLocation: my_arena_world,10,50,10,0,0
+```
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+<details>
+
+<summary align="center"><b>アリーナ構成の例</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
+name: 例のNPC
+role: <アリーナマスター>
+profession: ARMORER
+spawnLocation: my_minecraft_world,233,44,245,0,0
+greetings:
+  - アリーナへようこそ！
+dialog:
+```
+
+```yml
+- アリーナに入る準備はできましたか？
+farewell:
+  - さようなら！
 canTalk: true
 activationRadius: 3.0
 interactionType: ARENA_MASTER
 disguise: ZOMBIE
-arena: my_arena.yml
+arena: example_arena.yml
 ```
 
-This example shows a basic Arena NPC that will spawn in my_minecraft_world with a zombie disguise. Players can interact
-with this NPC to challenge the Example Arena.
+この例は、ゾンビの偽装でmy_minecraft_worldにスポーンする基本的なアリーナNPCを示しています。プレイヤーは、このNPCと対話して例のアリーナに挑戦できます。
 
 </div>
 
@@ -18,242 +999,26 @@ with this NPC to challenge the Example Arena.
 
 ## Special [4]
 
-The following is the list of valid NPC interaction types:
-
-| Type                          |                                Description                                |
-|-------------------------------|:-------------------------------------------------------------------------:|
-| `GUILD_GREETER`               |                     Open the adventurer's guild menu                      |
-| `CHAT`                        |                Right-clicking cycles through the `dialog`                 |
-| `CUSTOM_SHOP`                 |                        Opens the custom shop menu                         |
-| `PROCEDURALLY_GENERATED_SHOP` |                   Opens the procedurally generated shop                   |
-| `BAR`                         |                            Opens the bar menu                             |
-| `ARENA`                       |                           Opens the arena menu                            |
-| `QUEST_GIVER`                 |               Opens the procedurally generated quests menu                |
-| `CUSTOM_QUEST_GIVER`          |     Opens the quest menu for a specific quest set in `questFilenames`     |
-| `NONE`                        |                              No interactions                              |
-| `SELL`                        |                            Opens the sell menu                            |
-| `TELEPORT_BACK`               | Teleports players back to the last non-elitemobs world location they were |
-| `SCRAPPER`                    |                           Opens the scrap menu                            |
-| `SMELTER`                     |                           Opens the smelt menu                            |
-| `REPAIRMAN`                   |                           Opens the repair menu                           |
-| `ENHANCER`                    |                     Opens the item enhancements menu                      |
-| `REFINER`                     |                          Opens the refiner menu                           |
-| `UNBINDER`                    |                           Opens the unbind menu                           |
-| `ARENA_MASTER`                |         Opens the arena menu for the arena set in `arenaFilename`         |
-| `COMMAND`                     |                     Runs the command set in `command`                     |
-
-# Création de contenu
-
-***
-
-## Création de la construction
-
-Il n'y a pas de restrictions quant à ce que vous pouvez construire pour BetterStructures, bien qu'il soit recommandé de
-maintenir la taille des structures sous 100x100x100 blocs pour des raisons générales d'ajustement mondial et de
-performances. Cela dit, il peut facilement gérer des structures beaucoup plus grandes.
-
-***
-
-### Blocs spéciaux
-
-BetterStructures possède deux blocs spéciaux: les barrières et le bedrock. Tout autre bloc que WorldEdit/FAWE peut
-coller sera collé normalement, mais les barrières et les blocs de bedrock sont l'exception. Au lieu de coller, ces blocs
-sont remplacés par les comportements personnalisés suivants:
-
-***
-
-#### Barrière
-
-Les blocs de barrière font en sorte que le plugin ne place aucun bloc à cet emplacement. Cela signifie que tout bloc qui
-se trouvait à l'origine dans la génération normale du monde y restera.
-
-Les constructeurs peuvent utiliser cela pour arrondir les bords d'un collage, le rendant plus naturel, ou pour mouler
-des murs dans une grotte potentielle, entre autres astuces.
-
-***
-
-#### Le le le le le le le bedrock
-
-Les blocs de bedrock font en sorte que le plugin garantit qu'il y ait un bloc solide à cet emplacement. Cela signifie
-que si un bloc solide s'y trouve déjà dans la génération par défaut du monde, ce bloc ne sera pas modifié ; toutefois,
-si le bloc est de l'air ou du liquide, il sera remplacé par un bloc solide provenant du [piédestal](#pedestalmaterial).
-
-Les constructeurs peuvent utiliser cela pour créer des planchers avec des fonctionnalités telles que le plancher pour
-les rails de wagonnet ou pour garantir qu'un plancher existe sans remplacer les blocs solides potentiellement déjà
-existants à cet emplacement dans le monde, ce qui rend les constructions plus organiques.
-
-***
-
-### Panneaux d'apparition
-
-BetterStructures peut utiliser des panneaux avec du texte spécifique pour générer des mobs et même des boss d'EliteMobs
-et MythicMobs à des emplacements spécifiques de la construction.
-
-***
-
-##### Génération de mobs vanilla
-
-Si vous prenez un panneau normal et que vous le placez quelque part, assurez-vous que la première ligne
-indique `[spawn]` et que la deuxième ligne a
-le [nom du type d'entité suivant l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html),
-vous ferez apparaître une entité persistante à cet emplacement du type que vous avez spécifié.
-
-Par exemple, si vous avez un panneau qui indique `[spawn]` sur la première ligne et `ZOMBIE` sur la deuxième ligne, vous
-ferez apparaître un zombie à cet emplacement lorsque la construction sera placée. Cela peut également être utilisé pour
-les entités non vivantes, telles que les supports d'armure ou les cristaux d'ender.
-
-<div class="minecraft-sign">
-<p>[spawn]</p>
-<p>ZOMBIE</p>
-<p></p>
-<p></p>
-</div>
-
-***
-
-##### Génération d'Elite Mobs (plugin de boss recommandé)
-
-BetterStructures a également une intégration avancée avec EliteMobs, ce qui lui permet de créer des arènes de boss
-basées sur des constructions et des panneaux d'apparition.
-
-Si vous prenez un panneau normal et le placez quelque part, en faisant de la première ligne [elitemobs], vous pouvez
-utiliser toutes les autres lignes pour dire quel fichier de boss utiliser.
-
-Par exemple, si vous faites `[elitemobs]` sur la première ligne, puis `test_boss.yml` sur la deuxième ligne, vous ferez
-apparaître le boss de test. Si vous avez un nom de fichier très long, tel que boss_with_very_long_filename.yml, vous
-pouvez le diviser en plusieurs lignes, alors mettez la ligne 2 `boss_with_very_` puis la ligne 3 `long_filename.yml` et
-cela fonctionnera.
-
-Pour rappel, par défaut, les arènes de combat seront protégées jusqu'à ce que les joueurs tuent tous les boss de la
-construction si votre serveur utilise WorldGuard.
-
-<div class="minecraft-sign">
-<p>[elitemobs]</p>
-<p>test_boss_with</p>
-<p>_a_long_name</p>
-<p>.yml</p>
-</div>
-
-***
-
-##### Génération de Mythic Mobs
-
-BetterStructures a également une intégration simple avec MythicMobs, ce qui lui permet de faire apparaître un mob de
-MythicMobs dans la construction. Sur la première ligne d'un panneau normal, écrivez `[mythicmobs]`, puis sur la deuxième
-ligne, utilisez le mob identifié. Vous pouvez utiliser un nombre sur la troisième ligne pour définir le niveau du mob.
-
-<div class="minecraft-sign">
-<p>[mythicmobs]</p>
-<p>my_mythic_boss</p>
-<p>1</p>
-<p></p>
-</div>
-
-***
-
-## Schémas
-
-Les schémas sont des fichiers générés par WorldEdit ou FastAsyncWorldEdit qui contiennent les blocs pour la construction
-que BetterStructures utilisera.
-
-Des instructions détaillées sur la façon de créer un schéma ne sont pas incluses ici, car elles sont décrites en détail
-dans les documentations de WorldEdit et de FastAsyncWorldEdit, mais cela se fait généralement en:
-
-1) choisissant un coin de la construction et en utilisant la commande `//pos1`
-2) choisissant le coin diagonalement opposé et en utilisant la commande `//pos2`
-3) utilisant la commande `//copy`
-4) utilisant la commande `/schem save <nomdeschéma>`, où `<nomdeschéma>` est le nom de fichier que vous souhaitez
-   utiliser pour votre schéma.
-
-<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="image de la documentation worldedit provenant de leurs docs">
-
-*Assurez-vous d'exécuter la commande `//pos1` au point 1 et `//pos2` au point 2!*
-
-***
-
-#### Point d'ancrage
-
-Les points d'ancrage sont l'endroit où vous exécutez la commande `//copy` pour le schéma. Lors du simple collage d'un
-schéma, ce sont les points où vous vous trouvez par rapport à la construction.
-
-Il est important de bien régler les points d'ancrage pour que les schémas fonctionnent correctement.
-
-* Pour les _constructions de surface_, il est recommandé de se tenir au point le plus bas du sol lors de la copie de la
-  construction.
-* Pour les _constructions souterraines_, il est recommandé de se tenir au-dessus de la construction.
-* Pour les _constructions liquides_, il est recommandé de se tenir au-dessus de l'eau.
-* Pour les _constructions aériennes_, il est recommandé de se tenir au-dessus de la construction.
-
-**Veuillez noter que vous devez toujours être très près ou directement au-dessus des constructions lors de la copie ;
-plus vous êtes éloigné, plus la latence sera importante lorsque la construction devra être collée.**
-
-***
-
-# Configurations de schémas
-
-Chaque fichier de schéma possède une configuration de schéma. Si un fichier de schéma vient d'être ajouté au serveur, la
-configuration sera générée après un redémarrage ou après une commande `/betterstructures reload`.
-
-Ces configurations vous permettent de définir les paramètres suivants pour le collage du schéma:
-
-***
-
-## isEnabled
-
-Définit si le schéma est activé. S'il est désactivé, il ne sera placé nulle part.
-
-***
-
-## weight
-
-Weight définit le poids du schéma en termes de probabilité qu'il soit choisi.
-
-La valeur par défaut est `1.0`. Si vous faites en sorte qu'une construction ait un poids de `2.0`, elle aura 2 fois plus
-de chances d'être sélectionnée que les autres constructions. Si vous la définissez sur `0.5`, elle aura deux fois moins
-de chances d'être choisie.
-
-_**Remarque:** Gardez à l'esprit que les chances qu'une construction spécifique soit choisie changent radicalement en
-fonction du nombre total de constructions en compétition pour l'emplacement qui recevra une structure!_
-
-***
-
-## pedestalMaterial
-
-**Important: champ facultatif!**
-
-Le matériau du piédestal définit le type de matériau des blocs de piédestal à l'aide
-des [noms de matériaux de l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html): utilisez-les
-sinon cela ne fonctionnera pas!
-
-Les piédestaux sont les blocs qui sont placés sous les bâtiments de surface et souterrains pour combler les espaces
-d'air et améliorer l'ajustement d'un bâtiment avec le monde. Ce sont également les mêmes blocs qui remplacent les blocs
-de bedrock dans le schéma.
-
-Lorsque rien n'est défini dans la configuration, les blocs sous l'emplacement du collage sont analysés et l'ajustement
-le plus approprié est sélectionné comme matériau pour un aspect intégré optimal.
-
-***
-
-## generatorConfigFilename
-
-Cette option définit le nom du fichier de configuration, par nom de fichier, que le schéma utilisera. Cela nécessite le
-nom de fichier complet, y compris l'extension `.yml` à la fin. Par
-exemple, `generatorConfigFilename: generator_surface_global.yml` serait l'option correcte si vous souhaitez utiliser le
-générateur défini dans `generator_surface_global.yml` que vous pouvez trouver dans le dossier de configuration des
-générateurs.
-
-***
-
-## treasureFile
-
-Définit le [fichier de trésor]($language$/betterstructures/creating_treasure.md) que cette structure utilisera, en
-remplaçant le fichier de trésor défini par le [générateur]($language$/betterstructures/creating_generators.md) de la
-structure. Ceci n'est généralement pas recommandé, sauf si c'est pour une construction très spéciale. Il est
-généralement préférable de modifier ou de créer un générateur à cette fin.
-
-# Personnalisation du contenu
-
-Tout ce qui est distribué dans BetterStructures est modifiable. Vous êtes libre de modifier tous les fichiers de schéma
-et les paramètres du générateur à votre guise.
-
-Le guide de création de contenu ci-dessus est également un guide qui peut vous aider à modifier le contenu existant.
+以下は、有効なNPCインタラクションタイプのリストです。
+
+| タイプ                           |                       説明                       |
+|-------------------------------|:----------------------------------------------:|
+| `GUILD_GREETER`               |                冒険者ギルドメニューを開きます                 |
+| `CHAT`                        |            右クリックすると`dialog`が切り替わります            |
+| `CUSTOM_SHOP`                 |               カスタムショップメニューを開きます                |
+| `PROCEDURALLY_GENERATED_SHOP` |              手続き的に生成されたショップを開きます               |
+| `BAR`                         |                  バーメニューを開きます                   |
+| `ARENA`                       |                 アリーナメニューを開きます                  |
+| `QUEST_GIVER`                 |            手続き的に生成されたクエストメニューを開きます             |
+| `CUSTOM_QUEST_GIVER`          | `questFilenames`で設定された特定のクエストセットのクエストメニューを開きます |
+| `NONE`                        |                   インタラクションなし                   |
+| `SELL`                        |                  販売メニューを開きます                   |
+| `TELEPORT_BACK`               |    プレイヤーを最後にいたelitemobs以外のワールドの場所にテレポートさせます    |
+| `SCRAPPER`                    |                 スクラップメニューを開きます                 |
+| `SMELTER`                     |                  製錬メニューを開きます                   |
+| `REPAIRMAN`                   |                  修理メニューを開きます                   |
+| `ENHANCER`                    |                アイテム強化メニューを開きます                 |
+| `REFINER`                     |                リファイナーメニューを開きます                 |
+| `UNBINDER`                    |                アンバインドメニューを開きます                 |
+| `ARENA_MASTER`                |    `arenaFilename`で設定されたアリーナのアリーナメニューを開きます     |
+| `COMMAND`                     |           `command`で設定されたコマンドを実行します            |

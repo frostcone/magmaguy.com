@@ -1,599 +1,1021 @@
-  - Prêt à relever un défi ?
-farewell:
-  - Au revoir !
-canTalk: true
-activationRadius: 3.0
-interactionType: ARENA_MASTER
-disguise: ZOMBIE
-arena: my_arena.yml
+# Introduction
+
+Sur cette page, vous découvrirez divers exemples de pouvoirs de boss personnalisés créés avec EliteScript et
+l'[WebApp](https://magmaguy.com/webapp/webapp.html). Ces exemples simples illustrent comment utiliser plusieurs actions
+et d'autres fonctionnalités pour créer des pouvoirs de boss uniques.
+
+De plus, des démonstrations visuelles accompagnent chaque exemple, ce qui facilite la compréhension du fonctionnement du
+script dans le jeu.
+
+N'hésitez pas à copier n'importe lequel des exemples et à les utiliser dans vos propres donjons ou mondes.
+
+## Exemples de Pouvoirs
+
+### Coup au Sol
+
+Ce script fera se téléporter le boss 8 blocs au-dessus du joueur qui lui a infligé des dégâts, puis s'écrasera au sol.
+Ensuite, il appliquera l'effet de potion de lenteur à tous les joueurs situés à moins de 3 blocs du boss, et affichera
+le message "Étourdi" à l'écran pendant 3 secondes.
+
+<div align="center">
+
+<details>
+
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eliteScript:
+  SlamDown:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: TELEPORT
+      FinalTarget:
+        targetType: DIRECT_TARGET
+        offset: 0,8,0
+      Target:
+        targetType: SELF
+    - action: PUSH
+      vValue: 0,-5,0
+      Target:
+        targetType: SELF
+      wait: 15
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 60
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 3
+      wait: 20
+    - action: TITLE_MESSAGE
+      subtitle: "Étourdi !"
+      duration: 40
+      fadeIn: 10
+      fadeOut: 10
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 3
+      wait: 20
+    Cooldowns:
+      local: 180
+      global: 80
 ```
-Cet exemple montre un PNJ d'arène de base qui apparaîtra dans my_minecraft_world avec un déguisement de zombie. Les joueurs peuvent interagir avec ce PNJ pour défier l'arène d'exemple.
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_slamdown.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
 
 </div>
 
 </details>
 
-## Spécial [4]
-Voici la liste des types d'interaction de PNJ valides :
+</div>
 
-| Type | Description |
-| --- | :-: |
-| `GUILD_GREETER` | Ouvre le menu de la guilde des aventuriers |
-| `CHAT` | Un clic droit fait défiler le `dialog` |
-| `CUSTOM_SHOP` | Ouvre le menu de la boutique personnalisée |
-| `PROCEDURALLY_GENERATED_SHOP` | Ouvre la boutique générée par procédures |
-| `BAR` | Ouvre le menu du bar |
-| `ARENA` | Ouvre le menu de l'arène |
-| `QUEST_GIVER` | Ouvre le menu des quêtes générées de façon procédurale |
-| `CUSTOM_QUEST_GIVER` | Ouvre le menu de quête pour un ensemble de quêtes spécifique dans `questFilenames` |
-| `NONE` | Aucune interaction |
-| `SELL` | Ouvre le menu de vente |
-| `TELEPORT_BACK` | Téléporte les joueurs vers le dernier emplacement du monde non-elitemobs où ils se trouvaient |
-| `SCRAPPER` | Ouvre le menu de mise au rebut |
-| `SMELTER` | Ouvre le menu de fusion |
-| `REPAIRMAN` | Ouvre le menu de réparation |
-| `ENHANCER` | Ouvre le menu des améliorations d'objets |
-| `REFINER` | Ouvre le menu de raffineur |
-| `UNBINDER` | Ouvre le menu de dissociation |
-| `ARENA_MASTER` | Ouvre le menu de l'arène pour l'arène définie dans `arenaFilename` |
-| `COMMAND` | Exécute la commande définie dans `command` |
-```yaml
-    - Prêt à relever un défi ?
-farewell:
-  - Au revoir !
-canTalk: true
-activationRadius: 3.0
-interactionType: ARENA_MASTER
-disguise: ZOMBIE
-arena: my_arena.yml
+***
+
+### Repousser
+
+Ce script générera un dôme de 4 blocs autour du boss. Par la suite, il lancera un effet de particules à la limite de la
+zone, pendant une seconde, puis une autre action repoussera tous les joueurs à l'intérieur de la zone. En raison du
+paramètre de décalage pour la poussée, les joueurs seront légèrement propulsés vers le haut. Enfin, le script enverra un
+message à tous les joueurs à l'intérieur de la zone.
+
+<div align="center">
+
+<details>
+
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eliteScript:
+  PushAway:
+    Events:
+    - EliteMobDamagedEvent
+    Zone:
+      shape: DOME
+      radius: 4
+      borderRadius: 3
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 5
+      times: 4
+    - action: PUSH
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ACTION_TARGET
+        normalize: true
+        multiplier: 1.0
+        offset: 0,0.2,0
+      repeatEvery: 1
+      times: 20
+    - action: MESSAGE
+      sValue: "&cBoss cool!: &fPARTEZ !"
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 2
+    Cooldowns:
+      local: 140
+      global: 80
 ```
-Cet exemple montre un PNJ d'arène de base qui apparaîtra dans my_minecraft_world avec un déguisement de zombie. Les joueurs peuvent interagir avec ce PNJ pour défier l'arène d'exemple.
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_pushaway.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
 
 </div>
 
 </details>
 
-## Spécial [4]
-Voici la liste des types d'interaction de PNJ valides :
+</div>
 
-| Type | Description |
-| --- | :-: |
-| `GUILD_GREETER` | Ouvre le menu de la guilde des aventuriers |
-| `CHAT` | Un clic droit fait défiler le `dialog` |
-| `CUSTOM_SHOP` | Ouvre le menu de la boutique personnalisée |
-| `PROCEDURALLY_GENERATED_SHOP` | Ouvre la boutique générée par procédures |
-| `BAR` | Ouvre le menu du bar |
-| `ARENA` | Ouvre le menu de l'arène |
-| `QUEST_GIVER` | Ouvre le menu des quêtes générées de façon procédurale |
-| `CUSTOM_QUEST_GIVER` | Ouvre le menu de quête pour un ensemble de quêtes spécifique dans `questFilenames` |
-| `NONE` | Aucune interaction |
-| `SELL` | Ouvre le menu de vente |
-| `TELEPORT_BACK` | Téléporte les joueurs vers le dernier emplacement du monde non-elitemobs où ils se trouvaient |
-| `SCRAPPER` | Ouvre le menu de mise au rebut |
-| `SMELTER` | Ouvre le menu de fusion |
-| `REPAIRMAN` | Ouvre le menu de réparation |
-| `ENHANCER` | Ouvre le menu des améliorations d'objets |
-| `REFINER` | Ouvre le menu de raffineur |
-| `UNBINDER` | Ouvre le menu de dissociation |
-| `ARENA_MASTER` | Ouvre le menu de l'arène pour l'arène définie dans `arenaFilename` |
-| `COMMAND` | Exécute la commande définie dans `command` |
-```yaml
-# Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_PICKAXE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SHOVEL: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_HOE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SWORD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  SHIELD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  BOW: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_BOOTS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_LEGGINGS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_CHESTPLATE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_HELMET: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SWORD: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_AXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_PICKAXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SHOVEL: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_HOE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SHOVEL: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ENCHANTED_GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TRIDENT: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ELYTRA: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TURTLE_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_AXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_PICKAXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SHOVEL: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HOE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SWORD: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HELMET: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_CHESTPLATE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_LEGGINGS: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_BOOTS: 18.0
-  # Establece el valor de material predeterminado para objetos no definidos específicamente.
-  defaultMaterialWorth: 1.0
-```
+***
 
-</details>
+### Pluie de Flèches
 
----
+Crée un script qui dessinera un cercle au sol autour du joueur qui a endommagé le monstre, il affiche également un
+message à l'écran indiquant au joueur de sortir du cercle. Puis, 2 secondes plus tard, il tirera des flèches vers le bas
+au même endroit, mais à partir de 10 blocs au-dessus.
 
-## events.yml
-
-`events.yml` contient les options de configuration globales pour la création d'événements.
-
-_**Remarque :** ce ne sont que les paramètres globaux de base._
-
-Vous pouvez modifier davantage des événements spécifiques dans le dossier `events`.
+<div align="center">
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-# Définit si les événements ne seront diffusés que dans le monde dans lequel les événements se produisent.
-Only broadcast event message in event worlds: false
-# Définit le temps de pause minimum, en minutes, entre les événements temporisés
-actionEventMinimumCooldownMinutes: 240
-# Définit si les événements d'action se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#action-events
-actionEventsEnabled: true
-# Définit si les événements temporisés se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#timed-events
-timedEventsEnabled: true
+eliteScript:
+  MakeCircle:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CYLINDER
+      radius: 5
+      borderRadius: 4
+      height: 1
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_BORDER
+        track: false
+        coverage: 1.0
+      repeatEvery: 5
+      times: 8
+      particles:
+      - particle: FLAME
+    - action: TITLE_MESSAGE
+      Target:
+        targetType: DIRECT_TARGET
+      fadeOut: 10
+      duration: 20
+      fadeIn: 10
+      subtitle: Sortez de la zone !
+    - action: RUN_SCRIPT
+      scripts:
+      - "ArrowRain"
+    Cooldowns:
+      local: 160
+      global: 80
+  ArrowRain:
+    Zone:
+      shape: CYLINDER
+      radius: 5
+      borderRadius: 4
+      height: 1
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+        offset: 0,10,0
+    Actions:
+    - action: SUMMON_ENTITY
+      wait: 40
+      sValue: ARROW
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      vValue: 0,-1,0
+      repeatEvery: 10
+      times: 4
 ```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_arrowrain.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
+
+</div>
 
 </details>
 
----
+</div>
 
-## ItemSettings.yml
+***
 
-`ItemSettings.yml` contient tous les paramètres de configuration globaux pour les objets d'élite.
+### Aura de Feu
+
+Ceci créera un script qui fera apparaître des particules autour du boss en utilisant la zone cylindrique, cela durera 6
+secondes. Le boss recevra également l'étiquette `FireOn` pendant 6 secondes.
+
+Si les joueurs attaquent le boss lorsque l'étiquette est active, les joueurs seront mis en feu pendant 1 seconde. Ceci
+est fait en utilisant des conditions, le script `SetOnFire` ne pourra s'exécuter que si le boss a l'étiquette
+correspondante `FireOn`.
+
+<div align="center">
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-noItemDurabilityMessage: '&8[EliteMobs] $item &4est cassé ! Il ne fonctionnera pas tant qu'il n'est pas réparé !'
-# Définit si un butin EliteMobs sera laissé tomber.
-# Comprend les pièces d'élite, les objets personnalisés, les objets générés de façon procédurale - tout !
-# Non recommandé ! Rend la progression du MMORPG impossible.
-doEliteMobsLoot: true
-# Définit si le butin généré de façon procédurale aura des couleurs différentes en fonction de la qualité de l'objet.
-doMMORPGColorsForItems: true
-# Définit si le placement d'objets personnalisés, comme les bannières ou les blocs, est empêché.
-# Ceci est recommandé : les objets personnalisés se cassent lorsqu'ils sont placés et ne peuvent pas être récupérés !
-preventCustomItemPlacement: true
-# Définit le format de l'histoire de tous les objets EliteMobs !
-# Les marqueurs de position suivants sont valides :
-# $itemLevel - affiche le niveau de l'objet
-# $prestigeLevel - affiche le niveau de prestige
-# $weaponOrArmorStats - affiche les statistiques de DPS d'élite ou d'armure d'élite, en fonction de l'objet
-# $soulbindInfo - affiche à qui, le cas échéant, l'objet est lié à l'âme
-# $itemSource - affiche d'où provient l'objet, comme un mob ou une boutique
-# $ifLore - fait apparaître une ligne uniquement si l'objet a une histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $customLore - affiche l'ensemble de l'histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $ifEnchantments - fait apparaître une ligne uniquement si l'objet possède des enchantements
-# $enchantments - affiche les enchantements sur l'objet
-# $eliteEnchantments - affiche les enchantements d'élite sur l'objet
-# $ifCustomEnchantments - affiche les enchantements personnalisés sur l'objet
-# $customEnchantments - affiche les enchantements personnalisés sur l'objet
-# $ifPotionEffects - affiche uniquement la ligne si l'objet a des effets de potion
-# $potionEffects - affiche les effets de potion sur l'objet
-# $loreResaleValue - affiche la valeur de l'objet. Pourrait afficher le prix d'achat ou de vente en fonction de l'endroit où il est visualisé
-# Important : plusieurs des marqueurs de position peuvent être davantage personnalisés par les paramètres de configuration ci-dessous
-itemLoreStructureV2:
-- §7§m§l---------§7<§lInfo. équipement§7>§m§l---------
-- '§7Niveau de l'objet : §f$itemLevel §7Prestige §6$prestigeLevel'
-- $weaponOrArmorStats
-- $soulbindInfo
-- $itemSource
-- $ifLore§7§m§l-----------§7< §f§lHistoire§7 >§m§l-----------
-- $customLore
-- $ifEnchantments§7§m§l--------§7<§9§lEnchantements§7>§m§l--------
-- $enchantments
-- $eliteEnchantments
-- $ifCustomEnchantments§7§m§l------§7< §3§lEnchants persos.§7 >§m§l------
-- $customEnchantments
-- $ifPotionEffects§7§m§l----------§7< §5§lEffets§7 >§m§l----------
-- $potionEffect
-- §7§l§m-----------------------------
-- $loreResaleValue
-# Définit la tradition de la source de la boutique pour les achats en magasin
-shopSourceItemLores: '&7Acheté dans une boutique'
-# Définit la tradition de la source de l'objet pour les objets pillés sur les boss
-mobSourceItemLores: '&7Pillé sur $mob'
-# Définit la tradition de valeur de l'objet
-loreWorths: '&7Vaut $worth $currencyName'
-# Définit la tradition de la valeur de revente de l'objet
-loreResaleValues: '&7Se vend pour $resale $currencyName'
-# Définit la possibilité de base que tout objet d'élite tombe des mobs d'élite
-flatDropRateV3: 0.2
-# Définit la possibilité de base que tout objet d'élite tombe des boss régionaux
-regionalBossNonUniqueDropRate: 0.05
-# Définit si les boss régionaux peuvent laisser tomber du butin vanilla
-regionalBossesDropVanillaLoot: false
-# Définit la quantité dont la possibilité qu'un objet d'élite tombe augmente en fonction du niveau du mob.
-# Le niveau du mob est multiplié par cette valeur et est ajouté à la possibilité de base.
-# Il n'est plus recommandé d'avoir une valeur supérieure à 0,0 !
-levelIncreaseDropRateV2: 0.0
-# Définit la possibilité pondérée qu'un objet généré de façon procédurale tombe.
-# Ce système utilise des probabilités pondérées ! Cherchez cela sur Google si vous ne savez pas ce que c'est.
-proceduralItemDropWeight: 90.0
-# Définit la possibilité relative qu'un objet pondéré tombe.
-# Les objets pondérés sont des objets personnalisés qui n'ont pas de poids dynamique, comme les amulettes.
-weighedItemDropWeight: 1.0
-# Définit la possibilité relative qu'un objet fixe tombe. Ce sont des objets personnalisés qui ne s'adaptent pas.
-fixedItemDropWeight: 10.0
-# Définit la possibilité relative qu'un objet limité tombe. Ce sont des objets personnalisés qui s'adaptent jusqu'à un niveau spécifique
-limitedItemDropWeight: 3.0
-# Définit la possibilité relative qu'un objet évolutif tombe. Ce sont des objets personnalisés qui peuvent s'adapter à n'importe quel niveau et sont les plus courants dans le plugin.
-scalableItemDropWeight: 6.0
-# Définit le multiplicateur pour le butin vanilla du mob, en fonction du niveau du mob.
-defaultLootMultiplier: 0.0
-# Définit le niveau maximum pour le multiplicateur de butin par défaut.
-levelCapForDefaultLootMultiplier: 200
-# Définit le multiplicateur d'expérience de Minecraft vanilla que laisse tomber le boss, en fonction du niveau du boss.
-defaultExperienceMultiplier: 1.0
-# Définit le niveau maximum pour le butin qui sera laissé tomber par EliteMobs. Il est fortement recommandé de le laisser à 200.
-maximumItemLevel: 200
-# Définit si les enchantements d'élite seront utilisés.
-# Les enchantements d'élite remplacent les enchantements vanilla lorsque les objets d'élite obtiennent des niveaux d'enchantement qui superent les limites de vanilla.
-# Exemple : si une épée d'élite est censée avoir une netteté de 10, étant donné que la limite de Minecraft est le niveau 5, elle aura une netteté de 5 et une netteté d'élite de 5.
-# La netteté d'élite n'affecte que les mobs générés par EliteMobs. Ceci est fait pour que le JcJ et le combat vanilla ne soient pas déséquilibrés.
-useEliteEnchantments: true
-# Définit le nom d'affichage qui sera utilisé pour les enchantements d'élite dans l'histoire des objets.
-eliteEnchantmentLoreStrings: Élite
-# Définit si EliteMobs considerará las azadas como armas válidas para los cálculos de daño.
-useHoesAsWeapons: false
-# Définit si EliteMobs fera apparaître des particules spéciales sur les objets qui tombent de haute qualité.
-enableRareItemParticleEffects: true
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe à l'entité qui reçoit le coup.
-potionEffectOnHitTargetLore: '&4⚔☠'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe au joueur qui frappe.
-potionEffectOnHitSelfLore: '&9⚔🛡'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion continuera de se réappliquer tant que le joueur le manie.
-potionEffectContinuousLore: '&6⟲'
-# Définit les caractères précédés d'enchantements d'élite dans l'histoire des objets.
-eliteEnchantmentLoreColor: '&9◇'
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-vanillaEnchantmentLoreColor: '&7◇'
-# Définit les caractères précédés d'enchantements personnalisés dans l'histoire des objets.
-customEnchantmentColor: '&3◇'
-# Définit les caractères précédés d'effets de potion dans l'histoire des objets.
-potionEffectLoreColor: '&5◇'
-# Définit le texte qui apparaîtra sur l'objet si l'objet n'est pas lié à l'âme.
-noSoulbindLore: '&7Non lié à l'âme !'
-# Définit si un objet d'élite peut être enchanté par des moyens vanilla. Ce n'est pas recommandé car EliteMobs possède son propre système d'enchantements personnalisés avec son propre équilibre !
-preventEliteItemEnchantment: true
-# Définit si les objets d'élite peuvent être désenchantés par des moyens vanilla.
-preventEliteItemDisenchantment: true
-# Définit le message qui apparaît pour les joueurs lorsqu'ils tentent de désenchanter un objet et que cela n'est pas autorisé.
-preventEliteItemDisenchantmentMessage: '&c[EliteMobs] Impossible de désenchanter des objets d'élite !'
-# Définit si les objets d'élite pourront être améliorés du diamant au netherite par des moyens vanilla. Non recommandé !
-preventEliteItemDiamondToNetheriteUpgrade: true
-# Définit si les objets d'élite ne perdront de la durabilité qu'en cas de mort.
-# Il s'agit d'un système important pour EliteMobs, et il est fortement recommandé car les combats de haut niveau sont presque impossibles sans lui !
-eliteItemsDurabilityLossOnlyOnDeath: true
-# Définit le multiplicateur de perte de durabilité pour les objets d'élite s'il est configuré pour perdre de la durabilité en cas de mort.
-# Les valeurs entre 0,0 et 1,0 diminuent la perte de durabilité et les valeurs supérieures à 1,0 l'augmentent.
-# Exemple : 0,5 inflige 50 % de la perte de durabilité, 2,0 inflige 200 % de la perte de durabilité.
-eliteItemsDurabilityLossMultiplier: 1.0
-# Définit le message qui apparaît lorsque la mise au rebut d'objets réussit.
-scrapSucceededMessageV2: '&8[EliteMobs] &2Mise au rebut réussie $amount fois !'
-# Définit le message qui apparaît lorsque la mise au rebut d'objets échoue.
-scrapFailedMessageV2: '&8[EliteMobs] &cLa mise au rebut a échoué $amount fois !'
-# Définit si le butin d'élite doit être placé directement dans les inventaires des joueurs.
-putLootDirectlyIntoPlayerInventory: false
-# Définit la différence de niveau maximale que les joueurs peuvent avoir avant qu'ils ne puissent plus piller des objets qui sont d'un niveau trop bas.
-# Ceci est calculé en fonction du niveau moyen du butin que porte le joueur.
-# Par exemple, si la valeur est définie sur 10 et qu'un joueur a un équipement de niveau 50, il ne pourra pas cultiver des jefes de niveau 39.
-lootLevelDifferenceLockout: 10
-# Définit si EliteMobs empêchera les objets d'élite de se casser lors de l'utilisation de la perte de durabilité du système en cas de mort.
-# Les joueurs ne pourront pas utiliser les objets sans durabilité de toute façon, ceci est simplement pour éviter la perte accidentelle d'objets de haut niveau mais de faible durabilité.
-preventEliteItemsFromBreaking: true
-# Définit le niveau minimum, +7, des jefes qui pueden dejar caer equipo de diamante generado por procedimientos en EliteMobs.
-# Il n'y a pas d'équipement en netherite généré de façon procédurale dans EliteMobs, uniquement du butin personnalisé.
-minimumProcedurallyGeneratedDiamondLootLevelPlusSeven: 10
-# Définit le mensaje que se muestra en el chat al conseguir botín con éxito a través del comando /em simloot <level> <times>.
-simlootMessageSuccess: '&8[EliteMobs] &2Rolled for loot and got $itemName &2!'
-# Définit le mensaje que se muestra en el chat al no obtener botín a través del comando /em simloot <level> <times>.
-simlootMessageFailure: '&8[EliteMobs] &cRolled for loot and got nothing!'
-# Définit le mensaje que reciben los jugadores cuando el botín de élite se deposita directamente en sus inventarios.
-directDropCustomLootMessage: '&8[EliteMobs] &2Obtained $itemName &2!'
-# Définit le mensaje que reciben los jugadores cuando el botín de vainilla se deposita directamente en sus inventarios.
-directDropMinecraftLootMessage: '&8[EliteMobs] &aObtained $itemName &a!'
-# Définit le mensaje que reciben los jugadores cuando las monedas de élite se depositan directamente en sus inventarios.
-directDropCoinMessage: '&8[EliteMobs] &aObtained &2$amount $currencyName &a!'
-# Establece si EliteMobs ocultará los atributos de vainilla de Minecraft.
-hideItemAttributes: true
-# Définit l'entrée de tradition spécifique aux armes sur un objet d'élite. Le marqueur de position $EDPS est remplacé par le DPS d'élite (dégâts par seconde) de l'arme.
-weaponEntry: '&7DPS d'élite : &2$EDPS'
-# Définit l'entrée de tradition spécifique aux armures sur un objet d'élite. Le marqueur de position $EDEF est remplacé par la DEF (défense) d'élite de l'arme.
-armorEntry: '&7Armure d'élite : &2$EDEF'
-# Définit le message envoyé lorsqu'un joueur tue un boss, mais que le niveau de l'équipement est trop différent du niveau du boss pour obtenir des pièces.
-levelRangeTooDifferent: '&8EM] &4Votre équipement est de niveau $playerLevel et le boss est de niveau
-  $bossLevel, la différence de niveau est trop élevée pour obtenir des pièces !'
+eliteScript:
+  Visual:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      height: 3
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+      Target:
+        targetType: ZONE_FULL
+        track: true
+        coverage: 1.0
+      repeatEvery: 5
+      times: 24
+    - action: TAG
+      tags:
+      - "FireOn"
+      duration: 120
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 180
+      global: 80
+  SetOnFire:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_ON_FIRE
+      duration: 20
+      Target:
+        targetType: DIRECT_TARGET
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - "FireOn"
 ```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_fireaura.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
+
+</div>
 
 </details>
 
----
+</div>
 
-## MobCombatSettings.yml
+***
 
-`MobCombatSettings.yml` contient tous les paramètres de configuration liés au système de combat personnalisé et la plupart des options de configuration généralement liées au fonctionnement des mobs d'élite.
+### Lignes de Poison
+
+Ce script créera deux zones cuboïdes centrées sur le boss. L'IA du boss est désactivée pendant 2 secondes. Les zones
+cuboïdes sont configurées de manière à former un symbole plus au sol.
+
+Le script générera ensuite des particules de nuage pendant 2 secondes dans les zones, puis il générera des particules de
+fumée et appliquera l'effet de potion de poison aux zones pendant 3 secondes.
+
+<div align="center">
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-# Définit si les élites générées naturellement apparaîtront. Remarque : les mobs d'événement comme le roi zombie ne sont pas des élites générées naturellement ! Vous devrez désactiver les événements si vous voulez désactiver les boss d'événement.
-doNaturalEliteMobSpawning: true
-# Définit si les apparitions générées à partir des générateurs de mobs peuvent être converties en élites. Non recommandé !
-doSpawnersSpawnEliteMobs: false
-# Définit le pourcentage de mobs générés naturellement qui sont convertis en mobs d'élite.
-eliteMobsSpawnPercentage: 0.05
-# Définit la plage des super mobs pour la recherche d'empilement de super mobs
-superMobStackRange: 15
-# Définit le niveau maximum auquel les élites peuvent apparaître.
-# Remarque : le niveau de mob d'élite est basé sur l'armure et les armes que les joueurs portent, et l'armure ne peut être mise à l'échelle que jusqu'au niveau 200.
-naturalEliteMobsLevelCap: 250
-# Définit si les élites porteront une armure en fonction de leur niveau. Ceci est uniquement à des fins visuelles et n'affecte pas le combat.
-doElitesWearArmor: true
-# Définit si les élites porteront des casques en fonction de leur niveau. Cela les empêchera de brûler facilement pendant la journée.
-doElitesWearHelmets: true
-# Définit si les élites auront des traînées visuelles autour d'elles, avertissant les joueurs des joueurs qu'elles possèdent.
-doNaturalEliteMobVisualEffects: true
-# Définit si les élites générées à partir de générateurs feront des effets visuels.
-doSpawnerEliteMobVisualEffects: false
-# Définit si certains pouvoirs feront la phase d'avertissement du pouvoir. Ceci est très important car les phases d'avertissement signifient généralement que le pouvoir peut être esquivé et l'élément visuel permet aux joueurs de savoir où esquiver.
-doPowerBuildupVisualEffects: true
-# Définit si des messages de mort personnalisés seront utilisés lorsque les joueurs meurent à cause des élites.
-doCustomEliteMobsDeathMessages: true
-# Définit si EliteMobs affichera des indicateurs de santé pour les élites.
-doDisplayMobHealthOnHit: true
-# Définit si EliteMobs affichera des indicateurs de dégâts pour les dégâts infligés aux élites.
-doDisplayMobDamageOnHit: true
-# Définit si le niveau des élites augmentera en fonction de la distance de l'apparition.
-# Il s'agit d'une valeur ajoutée en plus de leur niveau normal, ce qui signifie que si un joueur porte un équipement de niveau 100 près de l'apparition et que le boss a +1 de niveau en raison de la distance de l'apparition, le boss apparaîtra au niveau 101.
-# En général, cette option n'est pas recommandée, en particulier si vous avez un système de tp aléatoire sur votre serveur.
-doIncreaseEliteMobLevelBasedOnSpawnDistance: false
-# Définit la distance entre les incréments de niveau pour les augmentations de niveau basées sur la distance.
-distanceBetweenIncrements: 100.0
-# Définit le nombre de niveaux qui augmentent à chaque incrément de distance pour les augmentations de niveau basées sur la distance.
-levelIncreaseAtIncrements: 1.0
-# Définit si les pouvoirs des élites seront cachés jusqu'à ce qu'elles entrent en combat. Ceci est recommandé pour des raisons de performances.
-hideEliteMobPowersUntilAggro: true
-# Définit le multiplicateur pour les dégâts infligés à tous les boss générés par EliteMobs, sauf ceux qui utilisent le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent les dégâts infligés, ce qui facilite la mort des boss.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToEliteMobMultiplierV2: 1.0
-# Définit le multiplicateur pour les dégâts infligés aux joueurs par les élites. Des valeurs plus élevées augmentent la quantité de dégâts infligés par les boss, sauf ceux qui utilisent le système de dégâts normalisé (boss de donjons régionaux), ce qui rend les boss plus difficiles à frapper.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToPlayerMultiplierV2: 1.0
-# Définit si les boss spéciaux peuvent être suivis.
-showCustomBossLocation: true
-# Définit le message envoyé aux joueurs pour suivre l'emplacement d'un boss.
-bossLocationMessage: '&7[EM] &2[Cliquez pour suivre !]'
-# Définit les commandes qui s'exécutent lorsqu'une élite meurt. Les marqueurs de position valides sont :
-# $level pour le niveau du boss
-# $name pour le nom du boss
-# $players fera en sorte que la commande s'exécute pour chaque joueur qui a participé à la mort. Par exemple, si Bob et Steve ont tué un boss, 'broadcast $players a tué le boss !' exécutera 'bob a tué le boss' et 'steve a tué le boss !'
-commandsOnEliteMobDeath: []
-# Establece el mensaje enviado a los jugadores que participan en grandes asesinatos de jefes.
-bossKillParticipationMessage: '&eVos dégâts : &2$playerDamage'
-# Définit si les boss régénéreront leur santé lorsqu'ils sortiront du combat. Fortement recommandé.
-regenerateCustomBossHealthOnCombatEnd: true
-# Définit le message envoyé aux joueurs qui tentent de suivre les boss qui se trouvent actuellement dans un monde différent.
-defaultOtherWorldBossLocationMessage: '$name : Dans un autre monde !'
-# Définit le préfixe ajouté aux indicateurs de dégâts lorsque les joueurs frappent un boss avec quelque chose contre lequel le boss est faible.
-weakTextColor: '&9'
-# Définit le préfixe ajouté aux indicateurs de dégâts lorsque les joueurs frappent un boss avec quelque chose contre lequel le boss est fort.
-resistTextColor: '&c'
-# Définit le message qui apparaît lorsque les joueurs frappent le boss avec quelque chose contre lequel le boss est faible.
-weakText: '&9&lFaible !'
-# Définit le message qui apparaît lorsque les joueurs frappent le boss avec quelque chose contre lequel le boss est fort.
-resistText: '&c&lRésistance !'
-# Définit si des visuels seront utilisés pour montrer qu'un boss est faible contre une attaque.
-doWeakEffect: true
-# Définit si des visuels seront utilisés pour montrer qu'un boss est fort contre une attaque.
-doResistEffect: true
-# Définit le multiplicateur pour les dégâts infligés aux boss utilisant le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent les dégâts infligés, ce qui facilite la mort des boss.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToEliteMobMultiplier: 1.0
-# Définit le multiplicateur pour les dégâts infligés aux joueurs par les boss utilisant le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent la quantité de dégâts infligés par les boss, ce qui rend les boss plus difficiles à frapper.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToPlayerMultiplier: 1.0
-# Définit les dégâts de référence pour les boss personnalisés utilisant les dégâts normalisés (généralement les boss régionaux de donjons).
-normalizedRegionalBossBaselineDamageV2: 3.0
-# Définit la santé de référence pour les boss personnalisés utilisant la santé normalisée (généralement les boss régionaux de donjons).
-normalizedRegionalBossBaselineHealthV3: 4.0
-# Définit si les boss régionaux utiliseront le système de combat normalisé.
-# Ceci est très fortement recommandé et le contenu préfabriqué ne sera pas équilibré correctement s'il est modifié.
-normalizeRegionalBosses: true
-# Définit le message qui apparaît lorsqu'un boss guérit en sortant du combat.
-fullHealMessage: '&2GUÉRISON COMPLÈTE !'
-# Définit les multiplicateurs appliqués aux attaques contre lesquelles les boss sont forts et faibles.
-strengthAndWeaknessDamageMultipliers: 2.0
-# Définit le multiplicateur appliqué à la réduction de dégâts de l'effet de potion de résistance pour les joueurs.
-resistanceDamageMultiplier: 1.0
-# Définit le multiplicateur appliqué à la réduction de dégâts lorsqu'un joueur tient un bouclier pour les attaques de mêlée (pouvoirs exclus).
-blockingDamageReduction: 0.8
+eliteScript:
+  PoisonLine1:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CUBOID
+      x: 20
+      y: 1
+      z: 2
+      Target:
+        targetType: SELF
+        track: false
+    Actions:
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 40
+      Target:
+        targetType: SELF
+      scripts:
+      - "PoisonLine2"
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1
+      repeatEvery: 5
+      times: 8
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1
+      wait: 40
+      repeatEvery: 5
+      times: 12
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 4
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      wait: 40
+      repeatEvery: 5
+      times: 12
+    Cooldowns:
+      local: 200
+      global: 80
+  PoisonLine2:
+    Zone:
+      shape: CUBOID
+      x: 2
+      y: 1
+      z: 20
+      Target:
+        targetType: SELF
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1
+      repeatEvery: 5
+      times: 8
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1
+      wait: 40
+      repeatEvery: 5
+      times: 12
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 4
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      wait: 40
+      repeatEvery: 5
+      times: 12
 ```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_poisonlines.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
+
+</div>
 
 </details>
 
----
+</div>
 
-## ProceduralItemGenerationSettings.yml
+***
 
-`ProceduralItemGenerationSettings.yml` contient toutes les options de configuration pour la configuration des objets générés de façon procédurale.
+### Rebond
+
+Ce script crée une zone cylindrique de 10 blocs centrée sur le boss, puis il applique des effets de particules et une
+poussée à la zone pendant 10 secondes.
+
+L'action de poussée pousse les joueurs légèrement vers le haut à chaque tic, créant l'illusion que les joueurs
+rebondissent lorsqu'ils se trouvent dans la zone.
+
+<div align="center">
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-dropProcedurallyGeneratedItems: true
-customEnchantmentsChance: 0.5
-materialNames:
-  swordName: Épée
-  bowName: Arc
-  pickaxe: Pioche
-  spade: Pelle
-  hoe: Houe
-  axe: Hache
-  helmet: Casque
-  chestplate: Plastron
-  leggings: Jambières
-  boots: Bottes
-  shears: Cisailles
-  fishingRod: Canne à pêche
-  shield: Bouclier
-  trident: Trident
-  crossbow: Arbalète
-nameFormats:
-- $verb $itemType de $adjective $noun
-- $itemType de $adjective $noun
-- $noun's $adjective $verb $itemType
-- $verb $itemType
-- $adjective $verb $itemType
-- The $verb-er
-- The $adjective $verb-er
-nouns:
-- MagmaGuy
-- Aube
-...
-adjectives:
-- Adorable
-- Magnifique
-...
-verbs:
-- Tailler
-- Couper
-...
-verb-ers (noun):
-- Brise-monde
-- Brise-destructeur_de_monde
-...
-validMaterials:
-  DIAMOND_HELMET: true
-  DIAMOND_CHESTPLATE: true
-  DIAMOND_LEGGINGS: true
-  DIAMOND_BOOTS: true
-  DIAMOND_SWORD: true
-  DIAMOND_AXE: true
-  IRON_HELMET: true
-  IRON_CHESTPLATE: true
-  IRON_LEGGINGS: true
-  IRON_BOOTS: true
-  IRON_SWORD: true
-  IRON_AXE: true
-  GOLDEN_HELMET: true
-  GOLDEN_CHESTPLATE: true
-  GOLDEN_LEGGINGS: true
-  GOLDEN_BOOTS: true
-  GOLDEN_SWORD: true
-  GOLDEN_AXE: true
-  CHAINMAIL_HELMET: true
-  CHAINMAIL_CHESTPLATE: true
-  CHAINMAIL_LEGGINGS: true
-  CHAINMAIL_BOOTS: true
-  LEATHER_HELMET: true
-  LEATHER_CHESTPLATE: true
-  LEATHER_LEGGINGS: true
-  LEATHER_BOOTS: true
-  STONE_SWORD: true
-  STONE_AXE: true
-  WOODEN_SWORD: true
-  WOODEN_AXE: true
-  SHIELD: true
-  TURTLE_HELMET: true
-  TRIDENT: true
-  BOW: true
-  CROSSBOW: true
+eliteScript:
+  Bounce:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CYLINDER
+      radius: 10
+      height: 2
+      Target:
+        targetType: SELF
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+      repeatEvery: 10
+      times: 20
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 0.2
+    - action: PUSH
+      vValue: 0,0.4,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+    Cooldowns:
+      local: 220
+      global: 80
 ```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_bounce.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
+
+</div>
 
 </details>
 
----
+</div>
 
-## ValidWorlds.yml
+***
 
-`ValidWorlds.yml` contient la liste des mondes qu'EliteMobs a détectés, ainsi que les options pour personnaliser les fonctionnalités d'EliteMobs sur ceux-ci.
+### Invoquer
+
+Ce script créera une zone cylindrique (positionnée 6 blocs au-dessus du joueur en raison du décalage appliqué) centrée
+autour du joueur qui a endommagé le boss. De plus, il affichera un message à l'écran à ce joueur.
+
+Après un délai de 2 secondes, des renforts apparaîtront dans la zone désignée. Cependant, seule une partie de la zone
+sera occupée par des renforts, car nous avons utilisé `coverage`. Si le joueur ne parvient pas à éliminer tous les
+renforts, ils disparaîtront automatiquement après 20 secondes (400 ticks).
+
+<div align="center">
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-# Définit la liste des mondes basés sur des zones.
-# LE MODE DE JEU BASÉ SUR LES ZONES EST DÉPASSÉ ET SERA BIENTÔT SUPPRIMÉ !
-zoneBasedWorlds: []
-# Définit la liste des mondes en mode cauchemar.
-# Les mondes en mode cauchemar sont un mode de jeu où les jours sont plus courts et les joueurs ne peuvent pas
-# dormir.
+eliteScript:
+  Summon:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CYLINDER
+      radius: 3
+      height: 1
+      Target:
+        targetType: DIRECT_TARGET
+        offset: 0,6,0
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      sValue: "fc_boss.yml"
+      duration: 400
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.2
+      wait: 40
+    - action: TITLE_MESSAGE
+      subtitle: "Amis ! À l'aide !!!"
+      duration: 30
+      fadeIn: 10
+      fadeOut: 10
+      Target:
+        targetType: DIRECT_TARGET
+    Cooldowns:
+      local: 333
+      global: 80
+```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_summon.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+### Zones de Potion
+
+Ce script est activé lorsqu'un joueur endommage le boss. Il exécute ensuite soit le script `PotionZoneBad`, soit le
+script `PotionZoneGood`.
+
+Dans le script `PotionZoneBad`, une zone cylindrique est générée autour des joueurs proches qui se trouvent à moins de
+20 blocs du boss. Il produit des effets de particules de nuage et de grande fumée avec une couverture spécifiée, inflige
+l'effet de potion de flétrissement et délivre un message aux joueurs proches.
+
+Dans le script `PotionZoneGood`, une zone cylindrique est générée autour des joueurs qui se trouvent à moins de 20 blocs
+du boss. Les effets de particules pour ce script sont inversés. Ce script applique un effet de potion de guérison au
+lieu du flétrissement et envoie un message aux joueurs proches.
+
+<div align="center">
+
+<details>
+
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - "PotionZoneBad"
+      - "PotionZoneGood"
+      onlyRunOneScript: true
+    Cooldowns:
+      local: 110
+      global: 80
+  PotionZoneBad:
+    Zone:
+      shape: CYLINDER
+      height: 2
+      radius: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.3
+        track: false
+      repeatEvery: 10
+      times: 4
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.3
+        track: false
+      wait: 40
+      repeatEvery: 10
+      times: 6
+    - action: POTION_EFFECT
+      potionEffectType: WITHER
+      amplifier: 3
+      duration: 80
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 40
+      repeatEvery: 10
+      times: 6
+    - action: MESSAGE
+      sValue: "&cBoss cool!: &fSentez la brûlure !"
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+  PotionZoneGood:
+    Zone:
+      shape: CYLINDER
+      height: 2
+      radius: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.3
+        track: false
+      repeatEvery: 10
+      times: 4
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.3
+        track: false
+      wait: 40
+      repeatEvery: 10
+      times: 6
+    - action: POTION_EFFECT
+      potionEffectType: HEAL
+      amplifier: 1
+      duration: 80
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 40
+      repeatEvery: 10
+      times: 6
+    - action: MESSAGE
+      sValue: "&cBoss cool!: &fSentez le... Attendez, ce n'est pas le bon."
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_potionzones.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+### Vagues Aveuglantes
+
+Ce script lance deux vagues de rayons au sol projetées dans les directions X positives et négatives, en partant du boss.
+
+Nous utilisons le paramètre `offset` pour déterminer la longueur et la taille des rayons, en définissant spécifiquement
+la valeur Z. De plus, nous spécifions la direction de propagation de la vague en définissant les valeurs X. (Ceci n'est
+qu'une explication de la façon dont ce script spécifique utilise ces valeurs, vous n'êtes pas obligé de faire les vôtres
+exactement comme ça)
+
+Bien qu'il soit possible d'ajuster les valeurs Y pour augmenter la hauteur des vagues de rayons, nous la laissons à 0
+pour permettre aux joueurs de sauter par-dessus les rayons.
+
+Le paramètre `animationDuration` détermine le temps nécessaire aux vagues de rayons pour se déplacer des cibles aux
+cibles finales. La réduction de cette valeur rendrait les rayons plus rapides et plus difficiles à éviter.
+
+Par la suite, des effets de particules et de potions sont appliqués. Les joueurs qui ne parviennent pas à éviter ou à
+sauter par-dessus les vagues de rayons seront aveuglés pendant 5 secondes (100 ticks).
+
+<div align="center">
+
+<details>
+
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eliteScript:
+  Blind:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: TRANSLATING_RAY
+      Target:
+        targetType: SELF
+        offset: 0,0,5
+        track: false
+      FinalTarget:
+        targetType: SELF
+        offset: 10,0,5
+        track: false
+      Target2:
+        targetType: SELF
+        offset: 0,0,-5
+        track: false
+      FinalTarget2:
+        targetType: SELF
+        offset: 10,0,-5
+        track: false
+      animationDuration: 100
+      ignoresSolidBlocks: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 1.0
+      repeatEvery: 5
+      times: 20
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 5
+      duration: 100
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      repeatEvery: 1
+      times: 100
+      scripts: "Blind2"
+    Cooldowns:
+      local: 200
+      global: 80
+  Blind2:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: TRANSLATING_RAY
+      Target:
+        targetType: SELF
+        offset: 0,0,5
+        track: false
+      FinalTarget:
+        targetType: SELF
+        offset: -10,0,5
+        track: false
+      Target2:
+        targetType: SELF
+        offset: 0,0,-5
+        track: false
+      FinalTarget2:
+        targetType: SELF
+        offset: -10,0,-5
+        track: false
+      animationDuration: 100
+      ignoresSolidBlocks: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 1.0
+      repeatEvery: 5
+      times: 20
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 5
+      duration: 100
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      repeatEvery: 1
+      times: 100
+```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_blindwaves.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+### Mur de Glace
+
+Ce script crée 3 rayons rotatifs centrés sur le boss. Nous avons besoin de 3 rayons rotatifs différents car nous ne
+pouvons pas définir la hauteur du rayon, nous utilisons donc plusieurs scripts et `offset` pour que les rayons
+s'empilent en hauteur afin qu'ils apparaissent comme un *mur* rotatif singulier.
+
+Les 3 scripts ont des zones identiques, sauf que le `offset` est différent. Ils sont configurés pour avoir une longueur
+de 6 blocs à partir du boss et sont configurés pour faire une rotation de 360 degrés sur l'axe des abscisses en 10
+secondes (200 ticks).
+
+Tous les scripts ont des effets de particules définis et appliqueront l'action `VISUAL_FREEZE` pendant 5 secondes (100
+ticks) à tous les joueurs qui sont *touchés* par les murs de rayons.
+
+<div align="center">
+
+<details>
+
+<summary><b>Développer l'Exemple</b></summary>
+
+<div align="left">
+
+```yml
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - "FreezeWall"
+      - "FreezeWall2"
+      - "FreezeWall3"
+    Cooldowns:
+      local: 300
+      global: 80      
+  FreezeWall:
+    Zone:
+      shape: ROTATING_RAY
+      Target:
+        targetType: SELF
+        track: false
+      Target2:
+        targetType: SELF
+        offset: 6,0,0
+        track: false
+      yawRotation: 360
+      animationDuration: 200
+      ignoresSolidBlocks: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SNOWFLAKE
+      repeatEvery: 10
+      times: 20
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 1.0
+    - action: VISUAL_FREEZE
+      duration: 100
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 200
+```
+
+<div align="center">
+
+<video autoplay loop muted>
+    <source src="../../../img/wiki/power_example_freezewall.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+```yml
+FreezeWall2:
+    Zone:
+      shape: ROTATING_RAY
+      Target:
+        targetType: SELF
+        track: false
+        offset: 0,1,0
+      Target2:
+        targetType: SELF
+        track: false
+        offset: 6,1,0
+      yawRotation: 360
+      animationDuration: 200
+      ignoresSolidBlocks: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SNOWFLAKE
+      repeatEvery: 10
+      times: 20
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 1.0
+    - action: VISUAL_FREEZE
+      duration: 100
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 200
+  FreezeWall3:
+    Zone:
+      shape: ROTATING_RAY
+      Target:
+        targetType: SELF
+        track: false
+        offset: 0,2,0
+      Target2:
+        targetType: SELF
+        track: false
+        offset: 6,2,0
+      yawRotation: 360
+      animationDuration: 200
+      ignoresSolidBlocks: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SNOWFLAKE
+      repeatEvery: 10
+      times: 20
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 1.0
+    - action: VISUAL_FREEZE
+      duration: 100
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 200
+```
+
+<div align="center">
+
+<video autoplay loop muted>
+  <source src="../../../img/wiki/power_example_freezewall.webm" type="video/webm">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+
+</div>
+
+</div>
+
+</details>
+
+</div>

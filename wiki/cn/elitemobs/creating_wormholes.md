@@ -2,36 +2,38 @@
 
 # 什么是虫洞？
 
-虫洞是一种高效的门户到门户传送系统。门户以视觉效果标记。
+虫洞是一种高效的门户到门户的传送系统。门户会用视觉效果进行标记。
 
 # 虫洞机制
 
 虫洞可以执行以下操作：
 
-*   穿过一个门户到达目标门户，并从目标门户返回到第一个门户。
-*   当玩家穿过它们时播放声音
-*   在玩家穿过它们时暂时使玩家失明以平滑过渡
-*   将玩家推出以避免陷入传送循环
-*   将玩家锁定在传送之外 5 秒钟，以避免陷入传送循环
-*   播放精心制作的视觉效果
+* 通过一个门户到达目标门户，并从目标门户返回到第一个门户。
+* 玩家通过时播放声音
+* 在玩家通过时暂时致盲，以平滑过渡
+* 将玩家推出，以避免陷入传送循环
+* 锁定玩家传送 5 秒，以避免陷入传送循环
+* 播放精细的视觉效果
 *   需要权限才能使用虫洞
 *   需要使用货币才能使用虫洞
-*   在目标门户不可用时通知玩家和管理员
+* 当目标门户不可用时通知玩家和管理员
 
 # 创建虫洞
 
-虫洞作为配置文件添加到 wormholes 文件夹。可以创建子文件夹，如果要在特定地下城中添加虫洞，建议使用格式 \`~/plugins/EliteMobs/wormholes/dungeonName/dungeonName\_identifier.yml\`。
+虫洞作为配置文件添加到 wormholes
+文件夹中。可以创建子文件夹，如果为特定地下城添加虫洞，建议采用以下格式 ` ~/plugins/EliteMobs/wormholes/dungeonName/dungeonName_identifier.yml`。
 
-### 弹出
+### 弹射
 
-`location1` 和 `location2` 中的偏航和俯仰（坐标中的最后两位数字）将设置玩家在穿过虫洞时将从何处弹出。让我们看一个例子：
+`location1` 和 `location2` 中的偏航和俯仰（坐标中的最后两位）将设置玩家通过虫洞时被弹出的位置。看下面这个例子：
 
 `location1: my_world,20,10,20,180,20`
 
-将偏航设置为 `180`，玩家将朝北弹出，并将俯仰设置为 `20`，他们也会略微向上弹出。如果您希望玩家在弹出时保持在与虫洞相同的方块中，则最好将俯仰设置为负数，以确保玩家不会从方块上滑落。
+偏航设置为 `180`，玩家将被弹出面朝北方，俯仰设置为 `20`，他们也会被稍微向上弹出。如果您希望玩家在被弹出时停留在与虫洞相同的方块中，那么最好将俯仰设置为负数，以确保玩家不会从方块上滑落。
 
 ## 虫洞配置
-以下是一个有效的虫洞配置示例：
+
+以下是有效的虫洞配置示例：
 
 ```yaml
 isEnabled: true
@@ -47,11 +49,11 @@ location2: em_primis,1288.5,-39,451.5,180,-1
 
 设置是否启用虫洞。
 
-| 键        |       值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `isEnabled` | [布尔值](#boolean) | `true`  |
+| 键           |        值        |  默认值   |
+|-------------|:---------------:|:------:|
+| `isEnabled` | [布尔值](#boolean) | `true` |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -71,11 +73,11 @@ isEnabled: true
 
 指定虫洞的第一个位置。
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `location1` | [字符串](#string) |  无   |
+| 键           |       值        | 默认值 |
+|-------------|:--------------:|:---:|
+| `location1` | [字符串](#string) |  无  |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -95,11 +97,11 @@ location1: world_one,50,100,50,0,0
 
 指定虫洞的第二个位置。
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `location2` | [字符串](#string) |  无   |
+| 键           |       值        | 默认值 |
+|-------------|:--------------:|:---:|
+| `location2` | [字符串](#string) |  无  |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -119,18 +121,18 @@ location2: world_two,100,33,100,0,0
 
 设置第一个位置的显示文本。
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `location1Text` | [字符串](#string) |  无   |
+| 键               |       值        | 默认值 |
+|-----------------|:--------------:|:---:|
+| `location1Text` | [字符串](#string) |  无  |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-location1Text: 世界一中的酷炫虫洞
+location1Text: 世界一中的超赞虫洞
 ```
 
 <div align="center">
@@ -149,18 +151,18 @@ location1Text: 世界一中的酷炫虫洞
 
 设置第二个位置的显示文本。
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `location2Text` | [字符串](#string) |  无   |
+| 键               |       值        | 默认值 |
+|-----------------|:--------------:|:---:|
+| `location2Text` | [字符串](#string) |  无  |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
 <div align="left">
 
 ```yml
-location2Text: 世界二中的酷炫虫洞
+location2Text: 世界二中的超赞虫洞
 ```
 
 <div align="center">
@@ -179,11 +181,11 @@ location2Text: 世界二中的酷炫虫洞
 
 设置使用虫洞所需的权限。
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `permission` | [字符串](#string) |  无   |
+| 键            |       值        | 默认值 |
+|--------------|:--------------:|:---:|
+| `permission` | [字符串](#string) |  无  |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -201,13 +203,13 @@ permission: elitemobs.mypermission
 
 ### coinCost
 
-设置使用虫洞的费用（以精英币为单位）。
+设置使用虫洞的精英币成本。
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `coinCost` | [双精度浮点数](#double) |  无   |
+| 键          |         值         | 默认值 |
+|------------|:-----------------:|:---:|
+| `coinCost` | [双精度浮点数](#double) |  无  |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -227,13 +229,14 @@ coinCost: 2.5
 
 设置虫洞的视觉形状。
 
-*构成这些形状的粒子可能会在某些客户端中引起延迟。要关闭粒子，请进入 **Wormholes.yml** 并将 `noParticlesMode` 设置为 `true`。*
+*构成这些形状的粒子可能会导致某些客户端出现延迟。要关闭粒子，请进入 **Wormholes.yml** 并将 `noParticlesMode`
+设置为 `true`。*
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `style` | `NONE` / `CRYSTAL` / `ISOCAHEDRON` / `CUBE` |  `CUBE`   |
+| 键       |                      值                      |  默认值   |
+|---------|:-------------------------------------------:|:------:|
+| `style` | `NONE` / `CRYSTAL` / `ISOCAHEDRON` / `CUBE` | `CUBE` |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -259,11 +262,11 @@ style: CRYSTAL
 
 设置 `style` 设置中使用的粒子的颜色。
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `particleColor` | [`0x` 后跟一个十六进制代码](https://www.w3schools.com/colors/colors_hexadecimal.asp) |  `0x800080`   |
+| 键               |                                     值                                      |    默认值     |
+|-----------------|:--------------------------------------------------------------------------:|:----------:|
+| `particleColor` | [`0x` 后跟一个十六进制代码](https://www.w3schools.com/colors/colors_hexadecimal.asp) | `0x800080` |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -287,13 +290,13 @@ particleColor: 0x9f5cdd
 
 ### blindPlayer
 
-设置门户是否会使玩家失明以实现更平滑的传送。
+设置门户是否会使玩家暂时失明，以实现更平滑的传送。
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
+| 键             |        值        |   默认值   |
+|---------------|:---------------:|:-------:|
 | `blindPlayer` | [布尔值](#boolean) | `false` |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -317,13 +320,13 @@ blindPlayer: true
 
 ### sizeMultiplier
 
-将门户和 `style` 设置设置的形状的大小相乘。
+乘以门户和 `style` 设置的形状的大小。
 
-| 键        |      值        | 默认值 |
-|-----------|:---------------:|:------:|
-| `sizeMultiplier` | [乘数](#multiplier) |   `1`   |
+| 键                |         值         | 默认值 |
+|------------------|:-----------------:|:---:|
+| `sizeMultiplier` | [乘数](#multiplier) | `1` |
 
-<details>
+<details> 
 
 <summary><b>示例</b></summary>
 
@@ -333,7 +336,7 @@ blindPlayer: true
 sizeMultiplier: 3
 ```
 
-*请记住，应用大小乘数后，您将必须调整虫洞的 Y 坐标。*
+*请记住，应用大小乘数后，您必须调整虫洞的 Y 坐标。*
 
 <div align="center">
 
@@ -355,20 +358,20 @@ sizeMultiplier: 3
 
 <div align="left">
 
-在此示例中，我们将制作一个简单的虫洞，将我们从一个世界带到另一个世界。请不要忘记，虫洞也可以只是将玩家传送到同一世界中的不同位置。
+在此示例中，我们将创建一个简单的虫洞，将我们从一个世界带到另一个世界。不要忘记，虫洞也可以将玩家传送到同一世界中的不同位置。
 
 ```yml
-isEnabled: true #我们通过将此值设置为 true 来启用蠕虫
-location1: my_world,1.5,11.0,1.5,108.0,5.0 #这是蠕虫洞在 my_world 中出现的位置
-location2: my_other_world,766.5,29.0,517.5,-136.0,5.0 #这是蠕虫洞在 my_other_world 中出现的位置
-location1Text: "&a前往我的世界" #在虫洞 location1 上方显示漂亮的显示文本
-location2Text: "&a前往我的另一个世界" #在虫洞 location2 上方显示漂亮的显示文本
-permission: eliteperm.coolplayers #只有具有此权限的玩家才能使用虫洞，包括 location1 和 location2
-coinCost: 2 #玩家需要支付 12 个精英币才能使用蠕虫洞
-style: CRYSTAL #此蠕虫洞的形状为水晶
-particleColor: 0x00ff00 #这将设置蠕虫洞粒子为绿色
-blindPlayer: true #虫洞传送将使玩家在短时间内失明，以使过渡不那么刺耳
-sizeMultiplier: 1.0 #设置虫洞形状应有多大
+isEnabled: true #通过将此值设置为 true 来启用虫洞
+location1: my_world,1.5,11.0,1.5,108.0,5.0 #这是虫洞将出现在 my_world 中的位置
+location2: my_other_world,766.5,29.0,517.5,-136.0,5.0 #这是虫洞将出现在 my_other_world 中的位置
+location1Text: "&a前往我的世界" #在虫洞位置 1 上方显示漂亮的文本
+location2Text: "&a前往我的其他世界" #在虫洞位置 2 上方显示漂亮的文本
+permission: eliteperm.coolplayers #只有拥有此权限的玩家才能使用虫洞，位置 1 和位置 2 都是如此
+coinCost: 2 #玩家需要支付 12 个精英币才能使用虫洞
+style: CRYSTAL #此虫洞的形状为水晶
+particleColor: 0x00ff00 #这将把虫洞粒子设置为绿色
+blindPlayer: true #虫洞传送会让玩家暂时失明，以使过渡不那么刺耳
+sizeMultiplier: 1.0 #设置虫洞形状的大小
 ```
 
 </div>
@@ -377,4 +380,5 @@ sizeMultiplier: 1.0 #设置虫洞形状应有多大
 
 #### 性能问题
 
-蠕虫洞粒子可能会对正在运行基岩版的玩家造成客户端性能问题。如果您想关闭蠕虫洞粒子，可以转到 `~plugins\EliteMobs\Wormholes.yml` 并将 `noParticlesMode` 设置更改为 `true`。
+对于运行基岩版的玩家，虫洞粒子可能会导致客户端性能问题。如果您想关闭虫洞粒子，可以转到 `~plugins\EliteMobs\Wormholes.yml`
+并将 `noParticlesMode` 设置更改为 `true`。

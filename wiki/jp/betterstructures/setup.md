@@ -12,20 +12,21 @@
 
 # 推奨プラグイン
 
-- ボス戦のある構造の場合 : [EliteMobs](https://www.spigotmc.org/resources/%E2%9A%94elitemobs%E2%9A%94.40090/)
-- EliteMobs ボスアリーナを保護するための [WorldGuard](https://dev.bukkit.org/projects/worldguard)
+- ボス戦のある構造物には[EliteMobs](https://www.spigotmc.org/resources/%E2%9A%94elitemobs%E2%9A%94.40090/)
+- EliteMobsのボスアリーナを保護するには[WorldGuard](https://dev.bukkit.org/projects/worldguard)
 
 # コンテンツのインストール
 
-独自のコンテンツを作成できるため、この手順は必須ではありませんが、何百もの既製の公式 BetterStructures ビルドをインストールする場合は、次の手順に従うことができます。
+独自のコンテンツを作成することもできるので、このステップは必須ではありません。しかし、何百もの既製公式BetterStructuresビルドをインストールしたい場合は、以下の手順に従ってください。
 
 1) [magmaguy.itch.io](https://magmaguy.itch.io/) または [patreon.com/magmaguy](https://www.patreon.com/magmaguy) にアクセスします。
-2) 必要なコンテンツをダウンロードします
-3) ダウンロードしたままの状態で、コンテンツを `~plugins/BetterStructures/imports` フォルダーに入れます。
-4) コマンド `/bs reload` を実行します
+2) 必要なコンテンツをダウンロードします。
+3) ダウンロードしたままのzipファイルを、`~plugins/BetterStructures/imports`フォルダに入れます。
+4) コマンド `/bs reload` を実行します。
 
-完了です! 構造が***新しいチャンク***で生成を開始します。*サーバーがすでに生成したチャンクは、構造を取得できません!*
+これで完了です！構造物は***新しいチャンク***にスポーンし始めます。
+*サーバーがすでに生成したチャンクには構造物が生成されません！*
 
 # FAQ
 
-問題や質問がありますか？[FAQ]($language$/betterstructures/faq.md)を確認してください!
+問題や質問がありますか？[FAQ]($language$/betterstructures/faq.md)をご確認ください！

@@ -1,59 +1,59 @@
 # Commandes BetterStructures
 
-Vous trouverez ci-dessous une liste complète des commandes disponibles pour une utilisation avec le plugin
-BetterStructures, ainsi que leurs autorisations requises respectives.
+Ci-dessous, vous trouverez une liste complète des commandes disponibles pour le plugin BetterStructures, ainsi que leurs
+permissions respectives.
 
 ## Commande Reload
 
-**Commande:** `/betterstructures reload`
+**Commande :** `/betterstructures reload`
 
-**Autorisation:** `betterstructures.*`
+**Permission :** `betterstructures.*`
 
-**Description:** Recharge le plugin. Importe également toutes les structures qui doivent être importées.
+**Description :** Recharge le plugin. Importe également toutes les structures qui doivent être importées.
 
 ## Commande Lootify
 
-**Commande:** `/betterstructures lootify <nom de fichier de trésor> <rareté> <quantitéMin> <quantitéMax> <poids>`
+**Commande :** `/betterstructures lootify <nom du fichier de trésor> <rareté> <quantitéMin> <quantitéMax> <poids>`
 
-**Autorisation:** `betterstructures.*`
+**Permission :** `betterstructures.*`
 
-**Description:** Ajoute l’objet actuellement tenu à la table de `rareté` spécifique du `générateur` spécifique, en
-randomisant la quantité de l’objet qui peut être trouvée dans un coffre entre `quantitéMin` et `quantitéMax`, avec
+**Description :** Ajoute l'objet actuellement tenu à la table de `rareté` spécifiée du `générateur` spécifié, en
+randomisant la quantité de l'objet qui peut être trouvée dans un coffre entre `quantitéMin` et `quantitéMax`, avec
 le `poids` spécifié.
 
-Il s’agit d’un système très spécifique. Pour plus de détails sur le fonctionnement de ces valeurs, vous pouvez
+C'est un système très spécifique. Pour plus de détails sur le fonctionnement de ces valeurs, vous pouvez
 consulter [cette page]($language$/betterstructures/creating_structures.md).
 
 ## Commande Place
 
-**Commande:** `/betterstructures place <nom de fichier de structure> <type de générateur>`
+**Commande :** `/betterstructures place <nom du fichier de structure> <type de générateur>`
 
-**Autorisation:** `betterstructures.*`
+**Permission :** `betterstructures.*`
 
-**Description:** Force le placement de la structure sélectionnée à votre emplacement.
+**Description :** Force le placement de la structure sélectionnée à votre emplacement.
 
 ## Commande Teleportcoords
 
-**Commande:** `/betterstructures teleporttocoords <nom du monde> <x> <y> <z>`
+**Commande :** `/betterstructures teleporttocoords <nomDuMonde> <x> <y> <z>`
 
-**Autorisation:** `betterstructures.*`
+**Permission :** `betterstructures.*`
 
-**Description:** N’est pas destiné à être utilisé directement, il s’agit de la commande qui s’exécute lorsqu’un
-administrateur clique sur un avertissement de chat qui lui permet de se téléporter vers une structure.
+**Description :** N'est pas destinée à être utilisée directement, il s'agit de la commande qui s'exécute lorsqu'un
+administrateur clique sur un avertissement dans le chat qui lui permet de se téléporter vers une structure.
 
 ## Commande Version
 
-**Commande:** `/betterstructures version`
+**Commande :** `/betterstructures version`
 
-**Autorisation:** `betterstructures.*`
+**Permission :** `betterstructures.*`
 
-**Description:** Affiche la version du plugin dans le chat.
+**Description :** Affiche la version du plugin dans le chat.
 
 ## Commande Silent
 
-**Commande:** `/betterstructures silent`
+**Commande :** `/betterstructures silent`
 
-**Autorisation:** `betterstructures.*`
+**Permission :** `betterstructures.*`
 
-**Description:** Active ou désactive le silence des avertissements apparaissant dans le chat pour les opérateurs de
-serveur concernant les structures générées dans le serveur.
+**Description :** Active ou désactive les avertissements qui apparaissent dans le chat pour les opérateurs du serveur
+concernant les structures générées sur le serveur.

@@ -1,139 +1,386 @@
-# Comment créer une carte EternalTD personnalisée
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-## Création du fichier level.yml pour votre carte
+# ワームホールとは？
 
-Commencez à créer votre carte en créant un fichier de configuration de niveau en suivant ces étapes simples :
+ワームホールは、非常に効率的なポータル間のテレポートシステムの一種です。ポータルは視覚効果でマークされています。
 
-1. Commencez par créer un nouveau document texte et donnez-lui un nom comme *nom_de_votre_niveau.yml* (remplacez "nom_de_votre_niveau" par le nom réel de votre niveau/carte).
+# ワームホールの仕組み
 
-2. Ouvrez le fichier dans votre éditeur de texte préféré.
+ワームホールは次のことができます。
 
-3. Commençons par la partie amusante ! Ajoutez le nom de votre niveau en utilisant ce paramètre :
+* 1つのポータルを通って目的地のポータルに到達し、目的地のポータルから最初のポータルに戻ることができます。
+* プレイヤーがワームホールを通過する際に音を鳴らします
+* スムーズな移行のために、通過中に一時的にプレイヤーを盲目にします
+* テレポートのループに巻き込まれるのを防ぐために、プレイヤーを押し出します
+* テレポートのループに巻き込まれるのを防ぐために、5秒間テレポートをロックします
+* 手の込んだ視覚効果を表示します
+* ワームホールを使用するための権限を必要とします
+* ワームホールを使用するために通貨を必要とします
+* 目的地のポータルが利用できない場合に、プレイヤーと管理者に通知します
+
+# ワームホールの作成
+
+ワームホールは、ワームホールフォルダに構成ファイルとして追加されます。サブフォルダを作成することもできます。特定のダンジョンのワームホールを追加する場合は、` ~/plugins/EliteMobs/wormholes/dungeonName/dungeonName_identifier.yml`
+の形式でサブフォルダを作成することをお勧めします。
+
+### 排出
+
+`location1` および `location2` のヨーとピッチ（座標の最後の2桁）は、プレイヤーがワームホールを通過する際にどこから排出されるかを設定します。次の例を見てみましょう。
+
+`location1: my_world,20,10,20,180,20`
+
+ヨーが `180` に設定されている場合、プレイヤーは北を向いて排出され、ピッチが `20`
+に設定されている場合は、少し上向きにも排出されます。プレイヤーを排出時にワームホールと同じブロックにとどめたい場合は、ピッチを負の値に設定して、プレイヤーがブロックから滑り落ちないようにすることをお勧めします。
+
+## ワームホール設定
+
+以下は、有効なワームホール設定の例です。
+
 ```yaml
-levelName: "&aMon niveau génial"
+isEnabled: true
+location1: em_primis,1288.5,19,452.5,135,-23
+location2: em_primis,1288.5,-39,451.5,180,-1
 ```
-N'hésitez pas à le pimenter avec des couleurs Minecraft ou d'autres modificateurs de texte.
 
-4. Maintenant, donnez du caractère à votre niveau avec une description cool :
-```yaml
-levelDescription:
-- "&aMon niveau est plutôt cool."
-- "&aJ'espère que vous apprécierez !"
+***
+
+<div align="center">
+
+### isEnabled
+
+ワームホールが有効かどうかを設定します。
+
+| キー          |          値          | デフォルト  |
+|-------------|:-------------------:|:------:|
+| `isEnabled` | [Boolean](#boolean) | `true` |
+
+<details> 
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+isEnabled: true
 ```
-Vous pouvez ajouter plus de lignes à la description, mais il est conseillé de la garder brève.
 
-5. Place aux vagues ! Spécifiez quelles vagues d'EternalTD votre niveau doit utiliser :
-```yaml
-wavesConfigFile: my_waves.yml
+</div>
+
+</details>
+
+***
+
+### location1
+
+ワームホールの最初の位置を指定します。
+
+| キー          |         値         | デフォルト |
+|-------------|:-----------------:|:-----:|
+| `location1` | [String](#string) |  なし   |
+
+<details> 
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+location1: world_one,50,100,50,0,0
 ```
-N'oubliez pas d'utiliser le nom réel de votre fichier de vagues. Une vague par niveau !
 
-6. Définissez le monde (construction) que votre niveau utilisera :
-```yaml
-worldName: my_world_folder_name
+</div>
+
+</details>
+
+***
+
+### location2
+
+ワームホールの2番目の位置を指定します。
+
+| キー          |         値         | デフォルト |
+|-------------|:-----------------:|:-----:|
+| `location2` | [String](#string) |  なし   |
+
+<details> 
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+location2: world_two,100,33,100,0,0
 ```
-Utilisez le nom réel du monde trouvé dans le dossier *worlds* d'EternalTD.
 
-7. Enfin, choisissez l'environnement parfait pour le paramètre de votre niveau :
-```yaml
-environment: NORMAL
+</div>
+
+</details>
+
+***
+
+### location1Text
+
+最初の位置の表示テキストを設定します。
+
+| キー              |         値         | デフォルト |
+|-----------------|:-----------------:|:-----:|
+| `location1Text` | [String](#string) |  なし   |
+
+<details> 
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+location1Text: ワールド1にあるすごいワームホール
 ```
-Vous pouvez choisir entre NORMAL, NETHER ou THE_END. Faites votre choix.
 
-Votre fichier de configuration de niveau est prêt ! Le reste du fichier sera complété par les commandes d'EternalTD que nous utiliserons dans les étapes suivantes lorsque nous allons mapper la construction.
+<div align="center">
 
-## Préparation de votre construction
-Avant de mapper votre construction pour une utilisation avec EternalTD, il est essentiel de la configurer de la manière suivante :
+![create_wormhole_location1text.jpg](../../../img/wiki/create_wormhole_location1text.jpg)
 
-- Configurez-la dans un monde vide. Si vous utilisez Multiverse, vous pouvez utiliser la commande :
-  ```
-  /mvcreate votrenomdemondeici NORMAL -g VoidGen:.
-  ```
-- Ayez une bordure de monde étroite autour de la construction.
-- Créez un cylindre de barrière à quelques blocs sous la construction avec une hauteur d'un bloc et un rayon suffisamment grand pour atteindre la bordure du monde (rayon de 200 blocs recommandé). En utilisant WorldEdit, vous pouvez exécuter :
-  ```
-  //cyl barrier 200 1
-  ```
-- Définissez le point d'apparition pour qu'il soit au centre de la construction dans un endroit sûr.
-- Appliquez les règles suivantes :
-    - /gamerule doWeatherCycle false
-    - /gamerule doDaylightCycle false
-    - /gamerule doMobSpawning false
-    - /gamerule doFireTick false
-    - /gamerule fireDamage false
-    - /gamerule mobGriefing false
-    - /gamerule disableRaids true
-    - /gamerule announceAdvancements false
-- L'aire de jeu de la carte doit se trouver sur le même niveau Y. Tout ce qui est plus haut ou plus bas sera ignoré lorsque nous commencerons le processus de mappage.
+</div>
 
-## Mappage de la construction pour une utilisation avec EternalTD
-Pour mapper l'aire de jeu de votre construction pour une utilisation avec EternalTD, suivez ces étapes :
+</div>
 
-1. Mesurez manuellement la construction, en vous assurant d'inclure uniquement l'aire de jeu et rien d'autre. Anotez les coordonnées au fur et à mesure que vous mesurez.
-<br>L'aire de jeu doit inclure les sections de début (apparition de monstres) et de fin de la carte. Le début est généralement construit à l'aide de blocs verts et les blocs rouges pour la fin.
+</details>
 
-2. Commencez par mesurer les axes X, Y et Z de la construction. Tenez-vous à un coin de l'aire de jeu de vos cartes sur l'axe X et écrivez la coordonnée indiquée (vous pouvez utiliser les coordonnées de bloc pour cela). Déplacez-vous du côté opposé de l'axe X et écrivez cette coordonnée.
+***
 
-3. Pour l'axe Y, tenez-vous sur l'**aire de jeu** et écrivez la coordonnée indiquée.
+### location2Text
 
-4. Répétez le même processus que celui effectué pour l'axe X pour mesurer l'axe Z. Vous pouvez jeter un coup d'œil à cette image d'exemple pour vous aider à comprendre ce que nous essayons de réaliser ici :
-   ![Exemple de mappage](https://i.imgur.com/IZfh2Nt.jpeg)
-   Remarquez comment nous ne mesurons que les coordonnées où nous voulons que se trouve notre aire de jeu et en ignorant le reste. Comme dans l'exemple, assurez-vous d'inclure le début et la fin lors de la mesure de l'aire de jeu. <br>Si l'aire de jeu que vous mesurez est plus large à une extrémité et plus étroite à l'autre, vous devez mesurer la section la plus large.
+2番目の位置の表示テキストを設定します。
 
-5. Après avoir terminé les mesures, vous devriez avoir quelque chose comme ceci :
-   ```
-   Axe X : -57, 56
-   Axe Y : 65
-   Axe Z : 34, -34
-   ```
+| キー              |         値         | デフォルト |
+|-----------------|:-----------------:|:-----:|
+| `location2Text` | [String](#string) |  なし   |
 
-6. Réorganisez ces nombres du plus élevé au plus bas pour obtenir deux ensembles complets de coordonnées XYZ :
-   ```
-   56 65 34 (valeurs XYZ les plus élevées)
-   -57 65 -34 (valeurs XYZ les plus basses)
-   ```
+<details> 
 
-7. Utilisez la commande suivante pour sélectionner les coordonnées :
-   ```
-   /etd selectfloorcoordinate Xhaut Y Zhaut Xbas Y Zbas
-   Exemple : /etd selectfloorcoordinate 56 65 34 -57 65 -34
-   ```
+<summary><b>例</b></summary>
 
-8. Les coordonnées ont maintenant été sélectionnées et sont en mémoire. Si vous obtenez une erreur, cela signifie que votre mesure était incorrecte ou que l'aire de jeu n'a pas été correctement construite. Pour vérifier si nous avons mappé correctement l'aire de jeu, exécutez la commande suivante :
-   ```
-   /etd register votre_nom_de_niveau.yml test
-   ```
-   Remplacez "votre_nom_de_niveau" par le nom réel du niveau/mapa que vous essayez de créer. Si tout a été fait correctement, vous devriez voir des barrières marquant chaque tuile de votre aire de jeu.
+<div align="left">
 
-9. Examinez l'aire de jeu et assurez-vous que tout semble correct, puis exécutez à nouveau la commande, mais cette fois sans le *test* à la fin.
-   ````
-   /etd register votre_nom_de_niveau.yml
-   ````
-   Cela enregistrera maintenant l'aire de jeu dans votre fichier de niveau et votre fichier de niveau devrait maintenant être prêt à l'emploi.
+```yml
+location2Text: ワールド2にあるすごいワームホール
+```
 
-## Recorte du dossier du monde
-Il y a plusieurs fichiers et dossiers situés dans votre dossier de monde que nous pouvons supprimer car EternalTD ne les utilise pas tous. Cela réduira la taille de votre monde et facilitera sa distribution.
+<div align="center">
 
-Pour un environnement NORMAL :
+![create_wormhole_location2text.jpg](../../../img/wiki/create_wormhole_location2text.jpg)
 
-Pour préparer votre monde, **conservez** les fichiers et dossiers suivants :
+</div>
 
-1. dossier **region**
+</div>
 
-2.  **raids.dat** à partir du dossier **data** (assurez-vous qu'il se trouve à l'intérieur du dossier **data** lors de la copie)
+</details>
 
-3.  fichier **level.dat**
+***
 
-Vous pouvez supprimer en toute sécurité tous les autres fichiers et dossiers situés dans le dossier du monde. Cela configurera correctement votre monde pour l'environnement NORMAL.
+### permission
 
-Pour les environnements NETHER et THE_END :
+ワームホールを使用するために必要な権限を設定します。
 
-Pour préparer votre monde, conservez les fichiers et dossiers suivants :
+| キー           |         値         | デフォルト |
+|--------------|:-----------------:|:-----:|
+| `permission` | [String](#string) |  なし   |
 
-1. dossier **region** à l'intérieur du dossier **DIM-1** (assurez-vous qu'il se trouve à l'intérieur du dossier **DIM-1** lors de la copie)
+<details> 
 
-2.  **raids.dat** à partir du dossier **data** (assurez-vous qu'il se trouve à l'intérieur du dossier **data** lors de la copie)
+<summary><b>例</b></summary>
 
-3.  fichier **level.dat**
+<div align="left">
 
-Vous pouvez supprimer en toute sécurité tous les autres fichiers et dossiers situés dans le dossier du monde. Cela configurera correctement votre monde pour les environnements NETHER et THE_END.
+```yml
+permission: elitemobs.mypermission
+```
+
+</div>
+
+</details>
+
+***
+
+### coinCost
+
+ワームホールを使用するためのエリートコインでのコストを設定します。
+
+| キー         |         値         | デフォルト |
+|------------|:-----------------:|:-----:|
+| `coinCost` | [Double](#double) |  なし   |
+
+<details> 
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+coinCost: 2.5
+```
+
+</div>
+
+</details>
+
+***
+
+### style
+
+ワームホールの視覚的な形状を設定します。
+
+*これらの形状を構成するパーティクルは、特定のクライアントでラグを引き起こす可能性があります。パーティクルをオフにするには、
+**Wormholes.yml** に移動して `noParticlesMode` を `true` に設定します。*
+
+| キー      |                      値                      | デフォルト  |
+|---------|:-------------------------------------------:|:------:|
+| `style` | `NONE` / `CRYSTAL` / `ISOCAHEDRON` / `CUBE` | `CUBE` |
+
+<details> 
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+style: CRYSTAL
+```
+
+<div align="center">
+
+![create_wormhole_style.jpg](../../../img/wiki/create_wormhole_style.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### particleColor
+
+`style` 設定で使用されるパーティクルの色を設定します。
+
+| キー              |                                     値                                      |   デフォルト    |
+|-----------------|:--------------------------------------------------------------------------:|:----------:|
+| `particleColor` | [`0x` に続けて16進コード](https://www.w3schools.com/colors/colors_hexadecimal.asp) | `0x800080` |
+
+<details> 
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+particleColor: 0x9f5cdd
+```
+
+<div align="center">
+
+![create_wormhole_particlecolor.jpg](../../../img/wiki/create_wormhole_particlecolor.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### blindPlayer
+
+ポータルがよりスムーズなテレポートのためにプレイヤーを盲目にするかどうかを設定します。
+
+| キー            |          値          |  デフォルト  |
+|---------------|:-------------------:|:-------:|
+| `blindPlayer` | [Boolean](#boolean) | `false` |
+
+<details> 
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+blindPlayer: true
+```
+
+<div align="center">
+
+![create_wormhole_blind.jpg](../../../img/wiki/create_wormhole_blind.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### sizeMultiplier
+
+ポータルと `style` で設定された形状のサイズを乗算します。
+
+| キー               |             値             | デフォルト |
+|------------------|:-------------------------:|:-----:|
+| `sizeMultiplier` | [Multiplier](#multiplier) |  `1`  |
+
+<details> 
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+sizeMultiplier: 3
+```
+
+*サイズ乗数を適用した後、ワームホールの Y 座標を調整する必要があることに注意してください。*
+
+<div align="center">
+
+![create_wormhole_size.jpg](../../../img/wiki/create_wormhole_size.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+<details>
+
+<summary align="center"><b>ワームホール設定の例</b></summary>
+
+<div align="left">
+
+この例では、あるワールドから別のワールドに移動する単純なワームホールを作成します。ワームホールは、同じワールド内の別の場所にプレイヤーをテレポートすることもできることを忘れないでください。
+
+```yml
+isEnabled: true #この値を true に設定することでワームを有効にします
+location1: my_world,1.5,11.0,1.5,108.0,5.0 #これは、ワームホールが my_world に表示される場所です
+location2: my_other_world,766.5,29.0,517.5,-136.0,5.0 #これは、ワームホールが my_other_world に表示される場所です
+location1Text: "&aマイワールドへ" #ワームホール location1 の上に素敵な表示テキストを作成します
+location2Text: "&aマイアザーワールドへ" #ワームホール location2 の上に素敵な表示テキストを作成します
+permission: eliteperm.coolplayers #この権限を持つプレイヤーのみが、location1 と location2 の両方でワームホールを使用できます
+coinCost: 2 #プレイヤーは、ワームホールを使用するために 12 個のエリートコインを支払う必要があります
+style: CRYSTAL #このワームホールはクリスタルの形状になります
+particleColor: 0x00ff00 #これにより、ワームホールのパーティクルが緑色に設定されます
+blindPlayer: true #ワームホールのテレポートは、移行をよりスムーズにするために、プレイヤーを短時間盲目にします
+sizeMultiplier: 1.0 #ワームホールの形状の大きさを設定します
+```
+
+</div>
+
+</details>
+
+#### パフォーマンスの問題
+
+ワームホールのパーティクルは、Bedrock
+を実行しているプレイヤーにとってクライアントのパフォーマンスの問題を引き起こす可能性があります。ワームホールのパーティクルをオフにしたい場合は、`~plugins\EliteMobs\Wormholes.yml`
+に移動して、`noParticlesMode` 設定を `true` に変更できます。

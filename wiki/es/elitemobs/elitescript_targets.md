@@ -1,35 +1,34 @@
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+# Objetivos de Script de Élite
 
-# Objetivos de Elite Script
+Los objetivos son una parte central de los Scripts de Élite y son necesarios para que las Acciones y las Zonas
+funcionen.
 
-Los objetivos son una parte central de los scripts de élite y son necesarios para que funcionen las acciones y las zonas.
+## Tipos de Objetivos
 
-## Tipos de objetivo
+Los tipos de objetivos establecen qué entidades o ubicaciones son el objetivo de un script.
 
-Los tipos de objetivo establecen qué entidades o ubicaciones son el objetivo de un script.
-
-| Tipo de objetivo                  |                                    Detalles                                     |                                                                                                   Especial                                                                                                   |
-|------------------------------|:------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `NEARBY_PLAYERS`             | Jugadores en [rango]($language$/elitemobs/elitescript_targets.md&section=range)  |                                                                Requiere [`range`]($language$/elitemobs/elitescript_targets.md&section=range)                                                                |
-| `NEARBY_MOBS`                |       Mobs en [rango]($language$/elitemobs/elitescript_targets.md&section=range)        |                                                                Requiere [`range`]($language$/elitemobs/elitescript_targets.md&section=range)                                                                |
-| `WORLD_PLAYERS`              |                                Jugadores en el mundo                                |                                                                                                      ❌                                                                                                      |
-| `ALL_PLAYERS`                |                             Jugadores en el servidor                              |                                                                                                      ❌                                                                                                      |
-| `DIRECT_TARGET`              |                                Jugadores en el evento                                |                                                                   [Requiere evento compatible]($language$/elitemobs/elitescript_events.md)                                                                   |
-| `SELF`                       |                               Élite usando el poder                                |                                                                                                      ❌                                                                                                      |
-| `SELF_SPAWN`                 |                      Apunta a la ubicación de aparición de un jefe                      |                                                                                                      ❌                                                                                                      |
-| `LOCATION`                   |                               Ubicación específica                                |                                                             Requiere [`location`]($language$/elitemobs/elitescript_targets.md&section=location)                                                             |
-| `LOCATIONS`                  |                           Varias ubicaciones específicas                           |                                                            Requiere [`locations`]($language$/elitemobs/elitescript_targets.md&section=locations)                                                            |
-| `ZONE_FULL`                  |                             Objetivos dentro de la zona                             |                                                                        Requiere [`Zona`]($language$/elitemobs/elitescript_zones.md)                                                                         |
-| `ZONE_BORDER`                |                             Objetivos en el borde de la zona                             |                                                                        Requiere [`Zona`]($language$/elitemobs/elitescript_zones.md)                                                                         |
-| `ACTION_TARGET`              |                      Hereda los objetivos de una acción.                      |                 **¡Solo se puede usar para [condiciones] de acción ($language$/elitemobs/elitescript_conditions.md) y [Vectores relativos]($language$/elitemobs/elitescript_relative_vectors.md)!**                 |
-| `LANDING_LOCATION`           |                     Apunta a la ubicación en la que cayó un bloque.                      |                                        **¡Solo se puede usar para la acción [`SPAWN_FALLING_BLOCK`]($language$/elitemobs/elitescript_actions.md&section=spawn_falling_block)!**                                         |
-| `INHERIT_SCRIPT_TARGET`      |           Hereda el objetivo del script que ejecuta este script            |                                                                          ¡Solo puede ejecutarse si el script fue llamado por otro script!                                                                          |
-| `INHERIT_SCRIPT_ZONE_FULL`   |     Objetivos dentro de la zona heredada del script que ejecuta este script     |                                                 Requiere [`Zona`]($language$/elitemobs/elitescript_zones.md) **en el script que llama a este script!**                                                  |
-| `INHERIT_SCRIPT_ZONE_BORDER` |     Objetivos en el borde de la zona heredada del script que ejecuta este script     |                                                 Requiere [`Zona`]($language$/elitemobs/elitescript_zones.md) **en el script que llama a este script!**                                                  |
+| Tipo de Objetivo             |                                    Detalles                                     |                                                                                       Especial                                                                                       |
+|------------------------------|:-------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| `NEARBY_PLAYERS`             | Jugadores en [rango]($language$/elitemobs/elitescript_targets.md&section=range) |                                                    Requiere [`rango`]($language$/elitemobs/elitescript_targets.md&section=range)                                                     |
+| `NEARBY_MOBS`                |   Mobs en [rango]($language$/elitemobs/elitescript_targets.md&section=range)    |                                                    Requiere [`rango`]($language$/elitemobs/elitescript_targets.md&section=range)                                                     |
+| `WORLD_PLAYERS`              |                              Jugadores en el mundo                              |                                                                                          ❌                                                                                           |
+| `ALL_PLAYERS`                |                            Jugadores en el servidor                             |                                                                                          ❌                                                                                           |
+| `DIRECT_TARGET`              |                             Jugadores en el evento                              |                                                       [Requiere evento compatible]($language$/elitemobs/elitescript_events.md)                                                       |
+| `SELF`                       |                              Élite usando el poder                              |                                                                                          ❌                                                                                           |
+| `SELF_SPAWN`                 |                 Apunta a la ubicación de generación de un jefe                  |                                                                                          ❌                                                                                           |
+| `LOCATION`                   |                              Ubicación específica                               |                                                 Requiere [`ubicación`]($language$/elitemobs/elitescript_targets.md&section=location)                                                 |
+| `LOCATIONS`                  |                         Varias ubicaciones específicas                          |                                               Requiere [`ubicaciones`]($language$/elitemobs/elitescript_targets.md&section=locations)                                                |
+| `ZONE_FULL`                  |                           Objetivos dentro de la zona                           |                                                             Requiere [`Zona`]($language$/elitemobs/elitescript_zones.md)                                                             |
+| `ZONE_BORDER`                |                        Objetivos en el borde de la zona                         |                                                             Requiere [`Zona`]($language$/elitemobs/elitescript_zones.md)                                                             |
+| `ACTION_TARGET`              |                       Hereda los objetivos de una acción.                       | **¡Solo se puede usar para [condiciones] de acción ($language$/elitemobs/elitescript_conditions.md) y [Vectores Relativos]($language$/elitemobs/elitescript_relative_vectors.md)!!** |
+| `LANDING_LOCATION`           |                   Apunta a la ubicación donde cayó un bloque.                   |                       **¡Solo se puede usar para la acción [`SPAWN_FALLING_BLOCK`]($language$/elitemobs/elitescript_actions.md&section=spawn_falling_block)!**                       |
+| `INHERIT_SCRIPT_TARGET`      |              Hereda el objetivo del script que ejecuta este script              |                                                           ¡Solo puede ejecutarse si el script fue llamado por otro script!                                                           |
+| `INHERIT_SCRIPT_ZONE_FULL`   |     Objetivos dentro de la zona heredada del script que ejecuta este script     |                                        Requiere [`Zona`]($language$/elitemobs/elitescript_zones.md) **en el script que llama a este script!**                                        |
+| `INHERIT_SCRIPT_ZONE_BORDER` |  Objetivos en el borde de la zona heredada del script que ejecuta este script   |                                        Requiere [`Zona`]($language$/elitemobs/elitescript_zones.md) **en el script que llama a este script!**                                        |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -37,12 +36,12 @@ Los tipos de objetivo establecen qué entidades o ubicaciones son el objetivo de
 
 ```yaml
 eliteScript:
-  Example:
-    Events:
+  Ejemplo:
+    Eventos:
     - EliteMobDeathEvent
-    Actions:
-      - action: MESSAGE
-        Target:
+    Acciones:
+      - action: MENSAJE
+        Objetivo:
           targetType: ALL_PLAYERS
         sValue: "&2¡Hola Mundo!"
 ```
@@ -57,17 +56,17 @@ Esto envía un mensaje al objetivo. Dado que el objetivo está establecido en `A
 
 ---
 
-## Atributos compartidos
+## Atributos Compartidos
 
-Las siguientes configuraciones se pueden aplicar a todos los objetivos.
+Los siguientes ajustes se pueden aplicar a todos los objetivos.
 
-| Valores | Detalles | Especial |
-| --- | :-: | :-: |
-| `offset` | Establece el desplazamiento para la ubicación del objetivo. | ¡No puede dirigirse a entidades! |
+| Valores  |                          Detalles                           |            Especial            |
+|----------|:-----------------------------------------------------------:|:------------------------------:|
+| `offset` | Establece el desplazamiento para la ubicación del objetivo. | ¡No puede apuntar a entidades! |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -75,19 +74,21 @@ Las siguientes configuraciones se pueden aplicar a todos los objetivos.
 
 ```yaml
 eliteScript:
-  Example:
-    Events:
+  Ejemplo:
+    Eventos:
     - EliteMobDeathEvent
-    Actions
-    - action: STRIKE_LIGHTNING
-      Target:
+    Acciones
+    - action: GOLPE_RAYO
+      Objetivo:
         targetType: SELF
         offset: "0,2,0"
 ```
 
-Esto genera un rayo 2 bloques por encima del jefe. Tenga en cuenta que STRIKE_LIGHTNING utiliza ubicaciones y no afecta a las entidades, por lo que puede tener desplazamientos.
+Esto golpea un rayo 2 bloques por encima del jefe. Ten en cuenta que GOLPE_RAYO utiliza ubicaciones y no afecta a las
+entidades, por lo que puede tener desplazamientos.
 
-No puede establecer un desplazamiento para enviar un mensaje, ya que los mensajes se envían a los jugadores. Sin embargo, puede establecer un desplazamiento a una zona que luego pueda apuntar a entidades.
+No puedes establecer un desplazamiento para enviar un mensaje, ya que los mensajes se envían a los jugadores. Sin
+embargo, puedes establecer un desplazamiento a una zona que luego puede apuntar a las entidades.
 
 </div>
 
@@ -97,17 +98,17 @@ No puede establecer un desplazamiento para enviar un mensaje, ya que los mensaje
 
 ---
 
-## range
+## rango
 
 Establece el rango para buscar jugadores cercanos en el tipo de objetivo `NEARBY_PLAYERS`.
 
-| Valores | Detalles | Predeterminado |
-| --- | :-: | :-: |
-| `range` | Establece el rango, en bloques, para buscar objetivos de jugador. | `20.0` |
+| Valores |                              Detalles                               | Predeterminado |
+|---------|:-------------------------------------------------------------------:|:--------------:|
+| `range` | Establece el rango, en bloques, para buscar objetivos de jugadores. |     `20.0`     |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -115,18 +116,18 @@ Establece el rango para buscar jugadores cercanos en el tipo de objetivo `NEARBY
 
 ```yaml
 eliteScript:
-  Example:
-    Events:
+  Ejemplo:
+    Eventos:
     - EliteMobDeathEvent
-    Actions:
-      - action: MESSAGE
-        Target:
+    Acciones:
+      - action: MENSAJE
+        Objetivo:
           targetType: NEARBY_PLAYERS
           range: 25.0
-        sValue: "&2¡Jugadores objetivo dentro de los 25 bloques!"
+        sValue: "&2¡Jugadores objetivo dentro de 25 bloques!"
 ```
 
-Esto envía un mensaje a los jugadores dentro de los 25 bloques del jefe cuando el jefe muere.
+Esto envía un mensaje a los jugadores que se encuentran a 25 bloques del jefe cuando el jefe muere.
 
 </div>
 
@@ -134,21 +135,23 @@ Esto envía un mensaje a los jugadores dentro de los 25 bloques del jefe cuando 
 
 </div>
 
-## location
+## ubicación
 
 Establece la ubicación para el tipo de objetivo `LOCATION`.
 
-| Valores | Detalles | Predeterminado |
-| --- | :-: | :-: |
-| `location` | Establece la ubicación del mundo a la que se dirigirá. | `ninguno` |
+| Valores    |                       Detalles                       | Predeterminado |
+|------------|:----------------------------------------------------:|:--------------:|
+| `location` | Establece la ubicación mundial que será el objetivo. |     `none`     |
 
-Esto utiliza el formato `location: nombremundo,x,y,z,cabeceo,guiñada` para la ubicación.
+Esto utiliza el formato `location: nombre_del_mundo,x,y,z,pitch,yaw` para la ubicación.
 
-**Tenga en cuenta que `same_as_boss` es un marcador de posición válido para el nombre del mundo, como `same_as_boss,100,64,100,0,0` sería una ubicación válida que apuntaría al mismo mundo en el que se encuentra el jefe.**
+**Ten en cuenta que `same_as_boss` es un marcador de posición válido para el nombre del mundo, por
+ejemplo, `same_as_boss,100,64,100,0,0` sería una ubicación válida que apuntaría al mismo mundo donde se encuentra el
+jefe.**
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -156,12 +159,12 @@ Esto utiliza el formato `location: nombremundo,x,y,z,cabeceo,guiñada` para la u
 
 ```yaml
 eliteScript:
-  Example:
-    Events:
+  Ejemplo:
+    Eventos:
     - EliteMobDeathEvent
-    Actions
-    - action: STRIKE_LIGHTNING
-      Target:
+    Acciones
+    - action: GOLPE_RAYO
+      Objetivo:
         targetType: LOCATION
         location: "miMundo,100,64,200,0,0"
 ```
@@ -176,21 +179,23 @@ Esto genera un rayo en la ubicación x=100, y=64, z=200 de un mundo llamado `miM
 
 ---
 
-## locations
+## ubicaciones
 
 Establece las ubicaciones para el tipo de objetivo `LOCATIONS`.
 
-| Valores | Detalles | Predeterminado |
-| --- | :-: | :-: |
-| `locations` | Establece la lista de ubicaciones del mundo a las que se dirigirá. | `ninguno` |
+| Valores     |                              Detalles                              | Predeterminado |
+|-------------|:------------------------------------------------------------------:|:--------------:|
+| `locations` | Establece la lista de ubicaciones mundiales que serán el objetivo. |     `none`     |
 
-Esto utiliza el formato `nombremundo,x,y,z,cabeceo,guiñada` para la ubicación.
+Esto utiliza el formato `nombre_del_mundo,x,y,z,pitch,yaw` para la ubicación.
 
-**Tenga en cuenta que `same_as_boss` es un marcador de posición válido para el nombre del mundo, como `same_as_boss,100,64,100,0,0` sería una ubicación válida que apuntaría al mismo mundo en el que se encuentra el jefe.**
+**Ten en cuenta que `same_as_boss` es un marcador de posición válido para el nombre del mundo, por
+ejemplo, `same_as_boss,100,64,100,0,0` sería una ubicación válida que apuntaría al mismo mundo donde se encuentra el
+jefe.**
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -198,12 +203,12 @@ Esto utiliza el formato `nombremundo,x,y,z,cabeceo,guiñada` para la ubicación.
 
 ```yaml
 eliteScript:
-  Example:
-    Events:
+  Ejemplo:
+    Eventos:
     - EliteMobDeathEvent
-    Actions
-    - action: STRIKE_LIGHTNING
-      Target:
+    Acciones
+    - action: GOLPE_RAYO
+      Objetivo:
         targetType: LOCATIONS
         locations:
         - "miMundo,100,64,200,0,0"
@@ -220,19 +225,21 @@ Esto genera un rayo en la ubicación x=100, y=64, z=200 de un mundo llamado `miM
 
 ---
 
-## Zonas objetivo
+## Zonas de Objetivo
 
-[Las zonas]($language$/elitemobs/elitescript_zones.md) tienen múltiples objetivos y es importante entender cómo funcionan para usar Elite Scripting en todo su potencial.
+Las [Zonas]($language$/elitemobs/elitescript_zones.md) tienen varios objetivos, y es importante comprender cómo
+funcionan para aprovechar al máximo los Scripts de Élite.
 
 Las zonas funcionan en dos partes:
 
 ### Parte 1: Establecer dónde va la zona
 
-Las zonas necesitan saber dónde se supone que deben estar y, para ello, utiliza el sistema de objetivos de la misma manera que lo haría para cualquier otro efecto basado en la ubicación, como un rayo.
+Las zonas necesitan saber dónde se supone que están y, para ello, se utiliza el sistema de objetivos de la misma manera
+que se haría para cualquier otro efecto basado en la ubicación, como un rayo.
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -240,22 +247,26 @@ Las zonas necesitan saber dónde se supone que deben estar y, para ello, utiliza
 
 ```yaml
 eliteScript:
-  VisualCylinder:
-    Events:
+  CilindroVisual:
+    Eventos:
     - EliteMobDamagedEvent
-    Zone:
+    Zona:
       radius: 10.0
-      shape: CYLINDER
+      shape: CILINDRO
       height: 1
-      filter: PLAYER
+      filter: JUGADOR
       borderRadius: 5.0
-      Target:
+      Objetivo:
         targetType: SELF
 ```
 
-Esto genera una zona cilíndrica alrededor del jefe. Tenga en cuenta que aún no se han establecido acciones en este ejemplo, eso se cubre a continuación.
+Esto genera una zona cilíndrica alrededor del jefe. Ten en cuenta que en este ejemplo aún no se han establecido
+acciones, eso se trata a continuación.
 
-Algunas zonas, como [STATIC_RAY]($language$/elitemobs/elitescript_zones.md&section=static_ray), tienen dos o más objetivos. Esto se debe a que los rayos son líneas y las líneas se definen por dos puntos. Esto se trata de forma más extensa en la página de [zonas]($language$/elitemobs/elitescript_zones.md), pero fundamentalmente todas funcionan de la misma manera.
+Algunas zonas, como [RAYO_ESTÁTICO]($language$/elitemobs/elitescript_zones.md&section=static_ray), tienen dos o más
+objetivos. Esto se debe a que los rayos son líneas, y las líneas se definen por dos puntos. Esto se trata más
+extensamente en la [página de zonas]($language$/elitemobs/elitescript_zones.md), pero fundamentalmente todas funcionan
+de la misma manera.
 
 </div>
 
@@ -269,7 +280,7 @@ Ahora que la zona sabe dónde está, necesitamos que la acción sepa que su obje
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -277,31 +288,32 @@ Ahora que la zona sabe dónde está, necesitamos que la acción sepa que su obje
 
 ```yaml
 eliteScript:
-  VisualCylinder:
-    Events:
+  CilindroVisual:
+    Eventos:
     - EliteMobDamagedEvent
-    Zone:
+    Zona:
       radius: 10.0
-      shape: CYLINDER
+      shape: CILINDRO
       height: 1
-      filter: PLAYER
+      filter: JUGADOR
       borderRadius: 5.0
-      Target:
+      Objetivo:
         targetType: SELF
-    Actions:
-    - action: SPAWN_PARTICLE
+    Acciones:
+    - action: GENERAR_PARTÍCULA
       times: 12
       repeatEvery: 5
       particles:
-      - particle: SMOKE_NORMAL
-      Target:
+      - particle: HUMO_NORMAL
+      Objetivo:
         targetType: ZONE_FULL
-        track: false
 ```
 
-Usando la misma zona de la primera parte, ahora agregamos la acción. El objetivo para esta acción es `ZONE_FULL`, lo que significa que generará partículas dentro de toda la zona.
+Usando la misma zona de la primera parte, ahora añadimos la acción. El objetivo de esta acción es `ZONE_FULL`, lo que
+significa que generará partículas dentro de toda la zona.
 
-Tenga en cuenta que ZONE_BORDER no está disponible para todas las zonas. Más información sobre esto en la página de [zonas de script]($language$/elitemobs/elitescript_zones.md).
+Ten en cuenta que `ZONE_BORDER` no está disponible para todas las zonas. Más información sobre esto en la
+página [zonas de script]($language$/elitemobs/elitescript_zones.md).
 
 </div>
 
@@ -309,19 +321,21 @@ Tenga en cuenta que ZONE_BORDER no está disponible para todas las zonas. Más i
 
 </div>
 
-### Rastrear zona
+### Rastreo de zona
 
-Establece si la zona se moverá con el objetivo, como si la zona se mueve cuando el jefe se mueve para `targetType: SELF`.
+Establece si la zona se moverá con el objetivo, por ejemplo, si la zona se moverá cuando el jefe se mueva
+para `targetType: SELF`.
 
-| Valores | Detalles | Predeterminado |
-| --- | :-: | :-: |
-| `track` | Establece si la zona se moverá con el objetivo. | `true` |
+| Valores |                    Detalles                     | Predeterminado |
+|---------|:-----------------------------------------------:|:--------------:|
+| `track` | Establece si la zona se moverá con el objetivo. |     `true`     |
 
-Tenga en cuenta que las zonas animables no se pueden rastrear. [Más información sobre esto aquí.]($language$/elitemobs/elitescript_zones.md&section=animatable)
+Ten en cuenta que las zonas animadas no se pueden
+rastrear. [Más información aquí.]($language$/elitemobs/elitescript_zones.md&section=animatable)
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -329,39 +343,52 @@ Tenga en cuenta que las zonas animables no se pueden rastrear. [Más informació
 
 ```yaml
 eliteScript:
-  VisualCylinder:
-    Events:
+  CilindroVisual:
+    Eventos:
     - EliteMobDamagedEvent
-    Zone:
+    Zona:
       radius: 10.0
-      shape: CYLINDER
+      shape: CILINDRO
       height: 1
-      filter: PLAYER
+      filter: JUGADOR
       borderRadius: 5.0
-      Target:
+      Objetivo:
         targetType: SELF
-    Actions:
-    - action: SPAWN_PARTICLE
+    Acciones:
+    - action: GENERAR_PARTÍCULA
       times: 12
       repeatEvery: 5
       particles:
-      - particle: SMOKE_NORMAL
-      Target:
+      - particle: HUMO_NORMAL
+      Objetivo:
         targetType: ZONE_FULL
         track: false
 ```
 
-En el mismo ejemplo de la parte 1 y la parte 2, la zona ahora está establecida para que no se rastree. Esto significa que la zona aparecerá en la ubicación del jefe, pero incluso cuando el jefe siga alejándose, la zona permanecerá donde apareció por primera vez.
+</div>
 
-Por último, tenga en cuenta que si una zona está establecida para que no se rastree, registrará su ubicación en el momento en que se llame al script.
+</details>
 
-Como ejemplo, si desea tener una fase de advertencia y una fase de daño para su script, deberá asegurarse de ejecutar todas las acciones al principio y establecer un tiempo de espera en todas las acciones relacionadas con el daño que desea ejecutar más adelante individualmente. No debe retrasar todo un script que llame a través de `RUN_SCRIPT` por razones técnicas.
+</div>
 
-El siguiente es un ejemplo correcto de un poder con una advertencia y una fase de daño tomado del Santuario del Palacio de Hielo.
+Utilizando el mismo ejemplo de la parte 1 y la parte 2, la zona ahora está configurada para que no rastree. Esto
+significa que la zona se generará en la ubicación del jefe, pero incluso cuando el jefe siga alejándose, la zona
+permanecerá donde se generó por primera vez.
+
+Por último, ten en cuenta que si una zona está configurada para no rastrear, registrará su ubicación en el momento en
+que se llame al script.
+
+Por ejemplo, si quieres tener una fase de advertencia y una fase de daño para tu script, tendrás que asegurarte de
+ejecutar todas las acciones al principio y poner un tiempo de espera en todas las acciones relacionadas con el daño que
+quieres ejecutar más adelante individualmente. No deberías retrasar todo un script que llamas a través de `RUN_SCRIPT`
+por razones técnicas.
+
+El siguiente es un ejemplo correcto de un poder con una fase de advertencia y una fase de daño tomado del Santuario del
+Palacio de Hielo.
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -369,126 +396,126 @@ El siguiente es un ejemplo correcto de un poder con una advertencia y una fase d
 
 ```yaml
 eliteScript:
-  VisualCylinder:
-    Events:
+  CilindroVisual:
+    Eventos:
     - EliteMobDamagedEvent
-    Zone:
+    Zona:
       radius: 10.0
-      shape: CYLINDER
+      shape: CILINDRO
       height: 1
-      filter: PLAYER
+      filter: JUGADOR
       borderRadius: 5.0
-      Target:
+      Objetivo:
         targetType: SELF
-    Actions:
-    - action: SPAWN_PARTICLE
+    Acciones:
+    - action: GENERAR_PARTÍCULA
       times: 12
       repeatEvery: 5
       particles:
-      - particle: SMOKE_NORMAL
-      Target:
+      - particle: HUMO_NORMAL
+      Objetivo:
         targetType: ZONE_FULL
         track: false
-    - action: SPAWN_PARTICLE
+    - action: GENERAR_PARTÍCULA
       wait: 60
       times: 13
       repeatEvery: 3
       particles:
-      - particle: FLAME
+      - particle: LLAMA
         amount: 0
         x: 0
         y: 1
         z: 0
         speed: 0.2
-      - particle: FLAME
+      - particle: LLAMA
         amount: 0
         x: 0.5
         y: 1
         z: 0.5
         speed: 0.2
-      - particle: FLAME
+      - particle: LLAMA
         amount: 0
         x: 0
         y: 1
         z: 0.5
         speed: 0.2
-      - particle: FLAME
+      - particle: LLAMA
         amount: 0
         x: 0.5
         y: 1
         z: 0
         speed: 0.2
-      - particle: FLAME
+      - particle: LLAMA
         amount: 0
         x: -0.5
         y: 1
         z: -0.5
         speed: 0.2
-      - particle: FLAME
+      - particle: LLAMA
         amount: 0
         x: -0.5
         y: 1
         z: 0
         speed: 0.2
-      - particle: FLAME
+      - particle: LLAMA
         amount: 0
         x: 0
         y: 1
         z: -0.5
         speed: 0.2
-      - particle: FLAME
+      - particle: LLAMA
         amount: 0
         x: -0.5
         y: 1
         z: 0.5
         speed: 0.2
-      - particle: FLAME
+      - particle: LLAMA
         amount: 0
         x: 0.5
         y: 1
         z: -0.5
         speed: 0.2
-      Target:
+      Objetivo:
         targetType: ZONE_FULL
         track: false
     - action: RUN_SCRIPT
       scripts:
-      - DamageCylinder
-    - action: PLAY_ANIMATION
-      sValue: fire_zone
-      Target:
+      - CilindroDeDaño
+    - action: REPRODUCIR_ANIMACIÓN
+      sValue: zona_fuego
+      Objetivo:
         targetType: SELF
-    - action: SET_MOB_AI
+    - action: ESTABLECER_IA_MOB
       duration: 100
       bValue: false
-      Target:
+      Objetivo:
         targetType: SELF
     Cooldowns:
       local: 1200
       global: 300
-  DamageCylinder:
-    Zone:
+  CilindroDeDaño:
+    Zona:
       radius: 10.0
-      shape: CYLINDER
+      shape: CILINDRO
       height: 10
-      filter: PLAYER
+      filter: JUGADOR
       borderRadius: 5.0
-      Target:
+      Objetivo:
         targetType: SELF
         offset: 0,-1,0
-    Actions:
-    - action: DAMAGE
+    Acciones:
+    - action: DAÑO
       wait: 60
       repeatEvery: 10
       times: 4
       multiplier: 4
-      Target:
+      Objetivo:
         targetType: ZONE_FULL
         track: false
-    - action: SET_ON_FIRE
+    - action: PRENDER_EN_FUEGO
       wait: 60
       duration: 80
-      Target:
+      Objetivo:
         targetType: ZONE_FULL
         track: false
 ```
@@ -499,29 +526,32 @@ eliteScript:
 
 </div>
 
-Este script hace muchas cosas, pero está separado en dos scripts claros: `VisualCylinder` y `DamageCylinder`.
+Este script hace muchas cosas, pero está separado en dos scripts claros: `CilindroVisual` y `CilindroDeDaño`.
 
-VisualCylinder se ejecuta primero y tiene la acción `RUN_SCRIPT` que también ejecuta inmediatamente `DamageCylinder` al mismo tiempo que se está ejecutando `VisualCylinder`.
+`CilindroVisual` se ejecuta primero y tiene la acción `RUN_SCRIPT` que también ejecuta inmediatamente
+el `CilindroDeDaño` al mismo tiempo que se está ejecutando el `CilindroVisual`.
 
-Sin embargo, cada acción en `DamageCylinder` está establecida para esperar 60 ticks, o 3 segundos.
+Sin embargo, cada acción en `CilindroDeDaño` está configurada para esperar 60 ticks, o 3 segundos.
 
-Esto significa que el jefe tiene una fase de advertencia de 3 segundos y luego hace una fase de daño, y aunque las zonas están configuradas para que no rastreen, la zona de advertencia y la zona de daño estarán en la misma ubicación.
+Esto significa que el jefe tiene una fase de advertencia de 3 segundos y luego hace una fase de daño, e incluso aunque
+las zonas estén configuradas para no rastrear, la zona de advertencia y la zona de daño estarán en la misma ubicación.
 
-### Propiedades de destino específicas de zona
+### Propiedades de objetivos específicas de la zona
 
 Las zonas tienen las siguientes propiedades específicas:
 
-#### coverage
+#### cobertura
 
-Establece el porcentaje de la zona que realmente se utilizará para la acción. Solo funciona para objetivos de ubicación (no funcionará al dirigirse a jugadores u otras entidades).
+Establece el porcentaje de la zona que se utilizará realmente para la acción. Solo funciona para objetivos de
+ubicación (no funciona al apuntar a jugadores u otras entidades).
 
-| Valores | Detalles | Predeterminado |
-| --- | :-: | :-: |
-| `coverage` | Establece el porcentaje de la zona que se cubrirá. | `1.0` |
+| Valores    |                      Detalles                      | Predeterminado |
+|------------|:--------------------------------------------------:|:--------------:|
+| `coverage` | Establece el porcentaje de la zona que se cubrirá. |     `1.0`      |
 
 <div align="center">
 
-<details>
+<details> 
 
 <summary><b>Ejemplo</b></summary>
 
@@ -529,30 +559,30 @@ Establece el porcentaje de la zona que realmente se utilizará para la acción. 
 
 ```yaml
 eliteScript:
-  VisualCylinder:
-    Events:
+  CilindroVisual:
+    Eventos:
     - EliteMobDamagedEvent
-    Zone:
+    Zona:
       radius: 10.0
-      shape: CYLINDER
+      shape: CILINDRO
       height: 1
-      filter: PLAYER
+      filter: JUGADOR
       borderRadius: 5.0
-      Target:
+      Objetivo:
         targetType: SELF
-    Actions:
-    - action: SPAWN_PARTICLE
+    Acciones:
+    - action: GENERAR_PARTÍCULA
       times: 12
       repeatEvery: 5
       particles:
-      - particle: SMOKE_NORMAL
-      Target:
+      - particle: HUMO_NORMAL
+      Objetivo:
         targetType: ZONE_FULL
         track: false
         coverage: 0.5
 ```
 
-En este caso, solo el 50 % de la zona estará cubierta de partículas.
+En este caso, solo el 50% de la zona se cubrirá con partículas.
 
 </div>
 
@@ -560,181 +590,72 @@ En este caso, solo el 50 % de la zona estará cubierta de partículas.
 
 </div>
 
-### Herencia de objetivos
+### Heredar objetivos
 
-Cuando un script ejecuta otro script (o "llama" a ese script), es posible pasar información de zona y objetivo del primer script al segundo.
+Cuando un script ejecuta otro script (o "llama" a ese script), es posible pasar información de zona y objetivos del
+primer script al segundo.
 
-**Usos de ejemplo**
+**Ejemplos de uso**
 
 1. **Ejecutores de scripts mejorados**
 
-Los ejecutores de scripts son scripts cuya única función es ejecutar muchos otros scripts. Se utilizan para facilitar la gestión de los scripts, especialmente cuando se manejan varios scripts que requieren una temporización precisa.
+Los ejecutores de scripts son scripts cuya única función es ejecutar muchos otros scripts. Se utilizan para facilitar la
+gestión de scripts, especialmente cuando se manejan varios scripts que requieren una temporización precisa.
 
-Con la herencia de objetivos, varios scripts pueden usar la misma zona u objetivo, lo que reduce potencialmente cientos de líneas de scripting repetitivo.
+Con la herencia de objetivos, varios scripts pueden utilizar la misma zona u objetivo, reduciendo potencialmente cientos
+de líneas de scripts repetitivos.
 
-2. **Filtrado de objetivos de matryoshka/filtrado de objetivos de muñecas rusas**
+2. **Filtrado de objetivos de Matryoshka / Filtrado de objetivos de muñeca rusa**
 
-Las condiciones de filtrado se pueden aplicar a los objetivos en una acción. Al pasar los objetivos a un script diferente con diferentes filtros, se hace posible superponer las condiciones y aplicar diferentes efectos al mismo grupo de objetivos en función de criterios cada vez más específicos.
+Las condiciones de filtrado se pueden aplicar a los objetivos de una acción. Al pasar los objetivos a un script
+diferente con diferentes filtros, es posible superponer las condiciones y aplicar diferentes efectos al mismo grupo de
+objetivos basados en criterios cada vez más específicos.
 
-Como ejemplo, es posible crear una zona que busque jugadores y realizar una acción que verifique si todos los jugadores en la zona tienen una etiqueta específica. Luego, los objetivos válidos se pueden pasar a otro script donde otra acción puede ejecutar una condición de verificación aleatoria y aplicar un efecto en función de esa posibilidad. Luego, los objetivos se pueden pasar a otro script donde otra condición puede hacer una verificación para ver si los objetivos todavía están vivos y realizar algún comportamiento especial si están muertos.
+Por ejemplo, es posible crear una zona que busque jugadores y realizar una acción que compruebe si todos los jugadores
+de la zona tienen una etiqueta específica. Los objetivos válidos se pueden pasar a otro script donde otra acción puede
+ejecutar una condición de comprobación aleatoria y aplicar un efecto basado en esa probabilidad. A continuación, los
+objetivos se pueden pasar a otro script donde otra condición puede comprobar si los objetivos siguen vivos y realizar
+algún comportamiento especial si están muertos.
 
 Estos son, por supuesto, solo ejemplos. Es un sistema muy flexible.
 
 3. **Zonas complejas**
 
-Finalmente, es posible superponer objetivos para crear zonas complejas, opcionalmente utilizando condiciones si es necesario, e incluso es posible crear zonas semialeatorias utilizando las condiciones de script y la capacidad de ejecutar solo uno de los scripts enumerados de las acciones de script.
+Por último, es posible superponer objetivos para crear zonas complejas, opcionalmente utilizando condiciones si es
+necesario, e incluso es posible crear zonas semi-aleatorias utilizando las condiciones del script y la capacidad de
+ejecutar solo uno de los scripts listados en las acciones del script.
 
-**Nota:** Para esta sección, **"script principal"** se refiere al script que ejecuta el **"script de herencia"**, que es el script que utilizará los objetivos heredados.
-[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
+**Nota:** Para esta sección, **"script padre"** se refiere al script que ejecuta el **"script heredero"**, que es el
+script que utilizará los objetivos heredados.
+Cuando se utiliza la herencia de objetivos, es importante examinar cuidadosamente el _script padre_ para asegurarse de
+que los datos correctos se están pasando.
 
-# Vectores relativos de Elite Script
+#### INHERIT_SCRIPT_TARGET
 
-## Para qué sirven
+Cuando se utiliza `INHERIT_SCRIPT_TARGET`, los objetivos del _script padre_ se pasarán al script heredero. Esto tiene un
+par de advertencias:
 
-Los vectores relativos son vectores que son relativos a una ubicación específica pero dinámica.
+- Al pasar **objetivos de entidad**, es posible ejecutar acciones que requieren ubicaciones (como generar partículas) ya
+  que se utilizará la ubicación de las entidades. Por supuesto, también es posible utilizar acciones que requieran
+  entidades.
 
-Para explicar mejor lo que son, consideremos el siguiente caso: desea empujar a un jugador hacia el jefe como parte de un poder. Dado que tanto el jefe como el jugador se mueven durante el combate, no es posible confiar en un vector específico para lograr este efecto; necesitará un vector que vaya desde el jugador hacia el jefe. (Imagine una línea corta con una flecha que va desde el jugador hacia el jefe).
+- Al pasar **objetivos de ubicación**, solo es posible utilizar ubicaciones. **La única forma de obtener una entidad a
+  partir de una ubicación es creando una zona en esa ubicación y buscando entidades.** Por lo tanto, aunque no es
+  imposible pasar una ubicación y luego obtener entidades, requerirá un poco de trabajo extra.
 
-Los vectores relativos se pueden usar de tantas maneras que sería imposible enumerarlas todas, pero entre ellas se encuentran: disparar entidades (como proyectiles) hacia un jugador o mob específico; generar refuerzos detrás de un jugador; disparar un bloque que cae en una dirección específica; crear rayos que se disparan hacia un jugador y mucho más.
+#### Herencia de zonas
 
-## ¿Cómo funcionan los vectores?
+Cuando se utiliza `INHERIT_SCRIPT_ZONE_FULL` o `INHERIT_SCRIPT_ZONE_BORDER`, es imprescindible que el _script padre_
+defina una zona, o de lo contrario el _script heredero_ no podrá ejecutarse correctamente.
 
-Si no sabe o no recuerda qué son los vectores o cómo funcionan, puede pensar en los vectores como flechas que apuntan desde un punto a otro.
+Además, las zonas pueden, opcionalmente,
+ser [rastreadas]($language$/elitemobs/elitescript_targets.md&section=zone-track). Esto también se pasará junto con la
+zona.
 
-Como tal, una de las propiedades de los vectores es su longitud. Esta longitud es importante; en el caso de las flechas, esta longitud es la velocidad a la que se dispara una flecha, en el caso de intentar obtener puntos de desplazamiento desde una ubicación específica es la distancia desde ese punto. Las cosas que están más lejos tendrán longitudes de vector mayores y las cosas más cercanas tendrán longitudes más cortas.
+- Una zona **no rastreada** siempre creará una zona donde se defina en el _script heredero_. Esto significa que los
+  ajustes de la zona serán utilizados por las acciones en los _scripts herederos_ para crear zonas nuevas cada vez que
+  se ejecuta una acción, y la ubicación de esas zonas será definida por la acción.
 
-Para algunas mecánicas, es probable que no desee depender de la distancia entre dos puntos, ya que solo desea obtener una dirección. Afortunadamente, puede utilizar la normalización de vectores, que garantiza que se conserve la dirección, pero cambia la longitud para que sea 1.0. Luego, puede usar multiplicadores para modificar fácilmente el vector hasta que esté satisfecho con el desplazamiento que proporciona o la velocidad que da.
-
-## Propiedades
-
-| Valor |                                                 Detalles                                                  | ¿Obligatorio? | Valor predeterminado |
-| --- |:--------------------------------------------------------------------------------------------------------:| :-: | :-: |
-| `SourceTarget` | [Objetivo]($language$/elitemobs/elitescript_targets.md) en el punto desde el que comenzará el vector | ✅ | `ninguno` |
-| `DestinationTarget` |          [Objetivo]($language$/elitemobs/elitescript_targets.md) en el punto final del vector           | ✅ | `ninguno` |
-| `normalize` |                                 Establece si el vector debe normalizarse                                  | ❌ | `false` |
-| `multiplier` |                                      Multiplica la longitud del vector                                      | ❌ | `1.0` |
-| `offset` |                          Permite insertar un desplazamiento fijo manual a este desplazamiento                           | ❌ | `ninguno` |
-
-<div align="center">
-
-<details>
-
-<summary><b>Ejemplo</b></summary>
-
-<div align="left">
-
-```yaml
-eliteScript:
-  ShootChicken:
-    Events:
-    - EliteMobDamagedByPlayerEvent
-    Actions:
-    - action: SUMMON_ENTITY
-      sValue: CHICKEN
-      Target:
-        targetType: SELF
-      RelativeVector:
-        SourceTarget:
-          targetType: SELF
-        DestinationTarget:
-          targetType: DIRECT_TARGET
-        normalize: true
-        multiplier: 2.0
-```
-
-Dispara un pollo
-
-***
-
-```yaml
-eliteScript:
-  ShootArrow:
-    Events:
-    - EliteMobDamagedByPlayerEvent
-    Actions:
-    - action: SUMMON_ENTITY
-      sValue: ARROW
-      Target:
-        targetType: SELF
-      RelativeVector:
-        SourceTarget:
-          targetType: SELF
-        DestinationTarget:
-          targetType: DIRECT_TARGET
-        normalize: true
-        multiplier: 2.0
-```
-
-Dispara una flecha
-
-***
-
-```yaml
-eliteScript:
-  SpawnReinforcement:
-    Events:
-    - EliteMobDamagedByPlayerEvent
-    Actions:
-    - action: SUMMON_ENTITY
-      sValue: ZOMBIE
-      Target:
-        targetType: SELF
-      RelativeOffset:
-        SourceTarget:
-          targetType: SELF
-        DestinationTarget:
-          targetType: DIRECT_TARGET
-        normalize: true
-        multiplier: 2.0
-```
-
-Genera un zombi 2 bloques detrás del jugador, en relación con el jefe.
-
-***
-
-```yaml
-eliteScript:
-  Example:
-    Events:
-    - EliteMobDamagedByPlayerEvent
-    Zone:
-      Shape: SPHERE
-      target:
-        targetType: SELF_SPAWN
-        offset: 0,0,0
-        track: false
-      filter: PLAYER
-      radius: 6
-    Actions:
-    - action: SPAWN_PARTICLE
-      repeatEvery: 38
-      times: 5
-      Target:
-        targetType: ZONE_FULL
-        track: false
-        coverage: 0.9
-      particles:
-      - particle: FLAME
-        RelativeVector:
-          SourceTarget:
-            targetType: ACTION_TARGET
-            track: true
-          DestinationTarget:
-            targetType: SELF_SPAWN
-            offset: 0,-0.5,0
-        speed: 0.05
-```
-
-Crea una esfera de llamas animada que se reduce hasta la ubicación de aparición.
-
-</div>
-
-</details>
-
-</div>
-
-### Orden de operaciones
-
-El orden de las operaciones al aplicar las propiedades es el siguiente:
-
-Cálculo de vector -> `normalize` -> `multiplier` -> `offset`
+- Una zona **rastreada** puede pasar la misma ubicación exacta de la zona a todos los _scripts herederos_ si el _script
+  padre_ está configurado para apuntar a `ZONE_FULL` o `ZONE_BORDER`. Esto significa que cada script estará actuando
+  sobre las mismas ubicaciones.

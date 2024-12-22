@@ -2,8 +2,8 @@
 
 # EliteScript
 
-Elitescriptは、MagmaGuyのプラグイン用のスクリプトシステムで、Minecraftのボスやその他のエンティティの動的な挙動を作成するための高度なカスタマイズオプションを提供します。
+Elitescriptは、MagmaGuyのプラグイン用のスクリプトシステムで、Minecraftのボスやその他のエンティティに動的な動作を作成するための高度なカスタマイズオプションを提供します。
 
-Elite Scriptは、パワーファイルとして、またはカスタムボスファイルに追加することができ、実装の柔軟性を提供します。スクリプトには、イベント、条件、ゾーン、アクション、およびクールダウンの定義が含まれます。
+Eliteスクリプトは、パワーファイルとして、またはカスタムボスファイルに追加でき、実装に柔軟性をもたらします。スクリプトには、イベント、条件、ゾーン、アクション、およびクールダウンの定義が含まれます。
 
-[EliteScriptの詳細はこちらをクリックしてください]($language$/elitemobs/creating_powers.md)
+[EliteScriptの詳細はこちら]($language$/elitemobs/creating_powers.md)

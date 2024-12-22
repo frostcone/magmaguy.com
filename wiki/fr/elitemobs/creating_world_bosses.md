@@ -1,519 +1,303 @@
+# Création de Boss Mondiaux
+
+*Les Boss Mondiaux sont parfois appelés Boss Régionaux.*
+
+## Que sont-ils ?
+
+Les Boss Mondiaux sont des Boss personnalisés configurés pour apparaître à un endroit spécifique, avec un délai
+spécifique. Ce sont également les boss utilisés dans les donjons. Cependant, dans cette section, nous discuterons
+spécifiquement de la création de Boss Mondiaux à utiliser en dehors des donjons.
+
+## À quoi servent-ils ?
+
+Les Boss Mondiaux permettent aux joueurs de relever un défi fixe en sachant que le butin sera gratifiant.
+
+## De quoi ai-je besoin pour créer un Boss Mondial ?
+
+1. **Un emplacement**. Une salle de boss est recommandée, avec un rayon d'environ 15 blocs (30 blocs de diamètre) en
+   raison de la portée d'aggro de Minecraft. De plus, assurez-vous que le terrain est protégé par une
+   région [WorldGuard](https://dev.bukkit.org/projects/worldguard) (afin que les joueurs ne puissent pas construire de
+   pièges) et que le terrain ne puisse pas être exploité pour le combat.
+2. **Un temps de réapparition**. Le minuteur de réapparition est essentiel. Je ne recommande pas de faire moins de 30
+   minutes de temps de réapparition, car sinon, la réapparition du boss sera moins un événement. 1 heure est un temps
+   assez correct, mais vous pouvez également faire en sorte que le boss réapparaisse une fois par jour, voire une fois
+   par semaine.
+3. **Un temps de fuite**. Plus la réapparition est longue, plus le temps de fuite doit être long. Tenez également compte
+   du fait que le temps de fuite doit être suffisamment long pour que les gens puissent affronter confortablement le
+   boss. Les minuteurs de fuite sont importants si vous ne voulez pas permettre aux joueurs de se suicider pour tuer le
+   boss. Ce n'est ni obligatoire, ni même recommandé si vous voulez faire des boss de réapparition massifs sur une
+   semaine.
+4. **Un Boss personnalisé**. Les Boss Mondiaux ne sont en fait que des Boss personnalisés avec des règles d'apparition
+   personnalisées. Assurez-vous de sélectionner des pouvoirs avec une bonne compatibilité de combat pour une taille de
+   raid.
+5. **Un butin intéressant**. Le grand attrait des Boss Mondiaux, au-delà du défi, est le butin. Assurez-vous que les
+   joueurs peuvent obtenir quelque chose qu'ils ne peuvent tout simplement pas obtenir ailleurs.
+6. **Un thème**. Un bon boss régional doit avoir un thème, avec un emplacement thématique et un butin thématique.
+
+## Options de configuration de boss personnalisées pour les Boss Mondiaux :
+
+Ces paramètres sont ajoutés aux fichiers de configuration de Boss personnalisés
+normaux. [Une page wiki détaillée à ce sujet se trouve ici]($language$/elitemobs/creating_bosses.md).
+
+<div align="center">
+
+***
+
+### isRegionalBoss
+
+Définit si le boss est un boss régional. Les boss régionaux sont un autre nom pour les Boss Mondiaux, vous devez donc
+définir cette valeur sur `true`.
+
+| Clé              |       Valeurs       | Par défaut |
+|------------------|:-------------------:|:----------:|
+| `isRegionalBoss` | [Booléen](#boolean) |  `false`   |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+isRegionalBoss: true
+```
+
+</div>
+
+</details>
+
+***
+
+### spawnLocations
+
+Les emplacements d'apparition doivent être définis en jeu à l'aide de la
+commande `/em addSpawnLocation <nomdefichier.yml>`.
+
+Bien qu'il soit possible d'ajouter manuellement des emplacements à partir de la configuration, je ne recommande pas
+d'essayer de le faire, car il est trop facile de se tromper.
+
+| Clé              |             Valeurs              | Par défaut |
+|------------------|:--------------------------------:|:----------:|
+| `spawnLocations` | [Liste de chaînes](#string_list) |   aucun    |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+Emplacements dans les fichiers de configuration (pour les utilisateurs avancés) Les fichiers de configuration du boss
+régional stockent toutes les instances de ce boss régional dans un seul fichier en stockant plusieurs emplacements
+d'apparition ainsi que les minuteurs de réapparition.
+
+En termes pratiques, cela signifie que cette entrée:
+
 ```yaml
-# Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_PICKAXE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SHOVEL: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_HOE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SWORD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  SHIELD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  BOW: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_BOOTS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_LEGGINGS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_CHESTPLATE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_HELMET: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SWORD: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_AXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_PICKAXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SHOVEL: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_HOE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SHOVEL: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ENCHANTED_GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TRIDENT: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ELYTRA: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TURTLE_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_AXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_PICKAXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SHOVEL: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HOE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SWORD: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HELMET: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_CHESTPLATE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_LEGGINGS: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_BOOTS: 18.0
-  # Establece el valor de material predeterminado para objetos no definidos específicamente.
-  defaultMaterialWorth: 1.0
+spawnLocations:
+- elitemobs_sewer_maze,-70.17178578884845,168.2,-173.17112099568718,-271.24023,64.19999:1610710903931
+- elitemobs_sewer_maze,-135.02262355317436,168.2,-153.28849346821508,-98.53906,60.750263:1609026066482
+- elitemobs_sewer_maze,-70.43846307626053,168.2,-174.13499832314378,-271.24023,64.19999:1610710886530
+- elitemobs_sewer_maze,-130.39762674971664,168.2,-171.67396911490718,-47.532227,51.900173:1609026066482
+- elitemobs_sewer_maze,-117.12782160766056,162.2,-166.40989416757444,-71.37402,-1.4997427:1610710974882
+- elitemobs_sewer_maze,-105.13138759611667,168.2,-169.85898023126538,-124.34766,41.24988:1610710945331
+- elitemobs_sewer_maze,-106.21847515732084,169.2,-152.3609257554766,-170.86523,21.450315:1610537606222
 ```
+
+contient 7 boss régionaux différents, à différents endroits et avec différents minuteurs de réapparition.
+
+Décomposons les détails en examinant le premier boss régional:
+
+```yaml
+- elitemobs_sewer_maze,-70.17178578884845,168.2,-173.17112099568718,-271.24023,64.19999:1610710903931
+```
+
+Puisque cela suit le format `monde,x,y,z,pitch,yaw:unixTimeStamp`, le boss apparaît dans un monde
+appelé `elitemobs_sewer_maze` à x = `-70.17178578884845`, y = `168.2`, z = `-173.17112099568718`, pitch = `-271.24023`,
+yaw = `64.19999`.
+
+L'horodatage Unix stocke l'heure, en temps Unix, à laquelle le boss réapparaîtra. Ceci est utilisé pour stocker les
+temps de réapparition lors des redémarrages. Si vous souhaitez savoir à quelle heure cela correspond, il existe
+d'innombrables outils de conversion du temps Unix en temps réel que vous pouvez trouver en ligne.
+
+Si vous souhaitez qu'un boss spécifique réapparaisse après un rechargement ou un redémarrage, il vous suffit d'effacer
+l'entrée `:unixTimeStamp`.
+
+</div>
 
 </details>
 
----
+***
 
-## events.yml
+### spawnCooldown
 
-`events.yml` contient les options de configuration globales pour la création d'événements.
+Définit le temps nécessaire à la réapparition du boss, en **minutes**.
 
-_**Remarque :** ce ne sont que les paramètres globaux de base._
+**Remarque: des réapparitions plus longues sont recommandées pour les gros boss!**.
 
-Vous pouvez modifier davantage des événements spécifiques dans le dossier `events`.
+| Clé             |      Valeurs       | Par défaut |
+|-----------------|:------------------:|:----------:|
+| `spawnCooldown` | [Entier](#integer) |   aucun    |
 
-<details>
+<details> 
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-# Définit si les événements ne seront diffusés que dans le monde dans lequel les événements se produisent.
-Only broadcast event message in event worlds: false
-# Définit le temps de pause minimum, en minutes, entre les événements temporisés
-actionEventMinimumCooldownMinutes: 240
-# Définit si les événements d'action se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#action-events
-actionEventsEnabled: true
-# Définit si les événements temporisés se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#timed-events
-timedEventsEnabled: true
+spawnCooldown: 20
 ```
+
+</div>
 
 </details>
 
----
+***
 
-## ItemSettings.yml
+### leashRadius
 
-`ItemSettings.yml` contient tous les paramètres de configuration globaux pour les objets d'élite.
+Définit le rayon à partir du `spawnLocation` que le Boss Mondial atteindra avant d'être téléporté vers son point d'
+apparition. Cela empêche les joueurs de traîner le boss vers un endroit où il pourrait être plus facile de le combattre.
 
-<details>
+**Remarque: essayez d'éviter de créer des zones de combat qui nécessitent des laisses de moins de 20 blocs, car cela
+rendra le combat pire.**
 
-<summary><b>Développer le tableau</b></summary>
+| Clé           |      Valeurs       | Par défaut |
+|---------------|:------------------:|:----------:|
+| `leashRadius` | [Entier](#integer) |   aucun    |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-noItemDurabilityMessage: '&8[EliteMobs] $item &4est cassé ! Il ne fonctionnera pas tant qu'il n'est pas réparé !'
-# Définit si un butin EliteMobs sera laissé tomber.
-# Comprend les pièces d'élite, les objets personnalisés, les objets générés de façon procédurale - tout !
-# Non recommandé ! Rend la progression du MMORPG impossible.
-doEliteMobsLoot: true
-# Définit si le butin généré de façon procédurale aura des couleurs différentes en fonction de la qualité de l'objet.
-doMMORPGColorsForItems: true
-# Définit si le placement d'objets personnalisés, comme les bannières ou les blocs, est empêché.
-# Ceci est recommandé : les objets personnalisés se cassent lorsqu'ils sont placés et ne peuvent pas être récupérés !
-preventCustomItemPlacement: true
-# Définit le format de l'histoire de tous les objets EliteMobs !
-# Les marqueurs de position suivants sont valides :
-# $itemLevel - affiche le niveau de l'objet
-# $prestigeLevel - affiche le niveau de prestige
-# $weaponOrArmorStats - affiche les statistiques de DPS d'élite ou d'armure d'élite, en fonction de l'objet
-# $soulbindInfo - affiche à qui, le cas échéant, l'objet est lié à l'âme
-# $itemSource - affiche d'où provient l'objet, comme un mob ou une boutique
-# $ifLore - fait apparaître une ligne uniquement si l'objet a une histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $customLore - affiche l'ensemble de l'histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $ifEnchantments - fait apparaître une ligne uniquement si l'objet possède des enchantements
-# $enchantments - affiche les enchantements sur l'objet
-# $eliteEnchantments - affiche les enchantements d'élite sur l'objet
-# $ifCustomEnchantments - affiche les enchantements personnalisés sur l'objet
-# $customEnchantments - affiche les enchantements personnalisés sur l'objet
-# $ifPotionEffects - affiche uniquement la ligne si l'objet a des effets de potion
-# $potionEffects - affiche les effets de potion sur l'objet
-# $loreResaleValue - affiche la valeur de l'objet. Pourrait afficher le prix d'achat ou de vente en fonction de l'endroit où il est visualisé
-# Important : plusieurs des marqueurs de position peuvent être davantage personnalisés par les paramètres de configuration ci-dessous
-itemLoreStructureV2:
-- §7§m§l---------§7<§lInfo. équipement§7>§m§l---------
-- '§7Niveau de l'objet : §f$itemLevel §7Prestige §6$prestigeLevel'
-- $weaponOrArmorStats
-- $soulbindInfo
-- $itemSource
-- $ifLore§7§m§l-----------§7< §f§lHistoire§7 >§m§l-----------
-- $customLore
-- $ifEnchantments§7§m§l--------§7<§9§lEnchantements§7>§m§l--------
-- $enchantments
-- $eliteEnchantments
-- $ifCustomEnchantments§7§m§l------§7< §3§lEnchants persos.§7 >§m§l------
-- $customEnchantments
-- $ifPotionEffects§7§m§l----------§7< §5§lEffets§7 >§m§l----------
-- $potionEffect
-- §7§l§m-----------------------------
-- $loreResaleValue
-# Définit la tradition de la source de la boutique pour les achats en magasin
-shopSourceItemLores: '&7Acheté dans une boutique'
-# Définit la tradition de la source de l'objet pour les objets pillés sur les boss
-mobSourceItemLores: '&7Pillé sur $mob'
-# Définit la tradition de valeur de l'objet
-loreWorths: '&7Vaut $worth $currencyName'
-# Définit la tradition de la valeur de revente de l'objet
-loreResaleValues: '&7Se vend pour $resale $currencyName'
-# Définit la possibilité de base que tout objet d'élite tombe des mobs d'élite
-flatDropRateV3: 0.2
-# Définit la possibilité de base que tout objet d'élite tombe des boss régionaux
-regionalBossNonUniqueDropRate: 0.05
-# Définit si les boss régionaux peuvent laisser tomber du butin vanilla
-regionalBossesDropVanillaLoot: false
-# Définit la quantité dont la possibilité qu'un objet d'élite tombe augmente en fonction du niveau du mob.
-# Le niveau du mob est multiplié par cette valeur et est ajouté à la possibilité de base.
-# Il n'est plus recommandé d'avoir une valeur supérieure à 0,0 !
-levelIncreaseDropRateV2: 0.0
-# Définit la possibilité pondérée qu'un objet généré de façon procédurale tombe.
-# Ce système utilise des probabilités pondérées ! Cherchez cela sur Google si vous ne savez pas ce que c'est.
-proceduralItemDropWeight: 90.0
-# Définit la possibilité relative qu'un objet pondéré tombe.
-# Les objets pondérés sont des objets personnalisés qui n'ont pas de poids dynamique, comme les amulettes.
-weighedItemDropWeight: 1.0
-# Définit la possibilité relative qu'un objet fixe tombe. Ce sont des objets personnalisés qui ne s'adaptent pas.
-fixedItemDropWeight: 10.0
-# Définit la possibilité relative qu'un objet limité tombe. Ce sont des objets personnalisés qui s'adaptent jusqu'à un niveau spécifique
-limitedItemDropWeight: 3.0
-# Définit la possibilité relative qu'un objet évolutif tombe. Ce sont des objets personnalisés qui peuvent s'adapter à n'importe quel niveau et sont les plus courants dans le plugin.
-scalableItemDropWeight: 6.0
-# Définit le multiplicateur pour le butin vanilla du mob, en fonction du niveau du mob.
-defaultLootMultiplier: 0.0
-# Définit le niveau maximum pour le multiplicateur de butin par défaut.
-levelCapForDefaultLootMultiplier: 200
-# Définit le multiplicateur d'expérience de Minecraft vanilla que laisse tomber le boss, en fonction du niveau du boss.
-defaultExperienceMultiplier: 1.0
-# Définit le niveau maximum pour le butin qui sera laissé tomber par EliteMobs. Il est fortement recommandé de le laisser à 200.
-maximumItemLevel: 200
-# Définit si les enchantements d'élite seront utilisés.
-# Les enchantements d'élite remplacent les enchantements vanilla lorsque les objets d'élite obtiennent des niveaux d'enchantement qui superent les limites de vanilla.
-# Exemple : si une épée d'élite est censée avoir une netteté de 10, étant donné que la limite de Minecraft est le niveau 5, elle aura une netteté de 5 et une netteté d'élite de 5.
-# La netteté d'élite n'affecte que les mobs générés par EliteMobs. Ceci est fait pour que le JcJ et le combat vanilla ne soient pas déséquilibrés.
-useEliteEnchantments: true
-# Définit le nom d'affichage qui sera utilisé pour les enchantements d'élite dans l'histoire de l'objet.
-eliteEnchantmentLoreStrings: Élite
-# Définit si EliteMobs considérera les houes comme des armes valides pour les calculs de dégâts.
-useHoesAsWeapons: false
-# Définit si EliteMobs fera apparaître des particules spéciales sur les objets qui tombent de haute qualité.
-enableRareItemParticleEffects: true
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe à l'entité qui reçoit le coup.
-potionEffectOnHitTargetLore: '&4⚔☠'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe au joueur qui frappe.
-potionEffectOnHitSelfLore: '&9⚔🛡'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion continuera de se réappliquer tant que le joueur le manie.
-potionEffectContinuousLore: '&6⟲'
-# Définit les caractères précédés d'enchantements d'élite dans l'histoire des objets.
-eliteEnchantmentLoreColor: '&9◇'
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-vanillaEnchantmentLoreColor: '&7◇'
-# Définit les caractères précédés d'enchantements personnalisés dans l'histoire des objets.
-customEnchantmentColor: '&3◇'
-# Définit les caractères précédés d'effets de potion dans l'histoire des objets.
-potionEffectLoreColor: '&5◇'
-# Définit le texte qui apparaîtra sur l'objet si l'objet n'est pas lié à l'âme.
-noSoulbindLore: '&7Non lié à l'âme !'
-# Définit si un objet d'élite peut être enchanté par des moyens vanilla. Ce n'est pas recommandé car EliteMobs possède son propre système d'enchantements personnalisés avec son propre équilibre !
-preventEliteItemEnchantment: true
-# Définit si les objets d'élite peuvent être désenchantés par des moyens vanilla.
-preventEliteItemDisenchantment: true
-# Définit le message qui apparaît pour les joueurs lorsqu'ils tentent de désenchanter un objet et que cela n'est pas autorisé.
-preventEliteItemDisenchantmentMessage: '&c[EliteMobs] Impossible de désenchanter des objets d'élite !'
-# Définit si les objets d'élite pourront être améliorés du diamant au netherite par des moyens vanilla. Non recommandé !
-preventEliteItemDiamondToNetheriteUpgrade: true
-# Définit si les objets d'élite ne perdront de la durabilité qu'en cas de mort.
-# Il s'agit d'un système important pour EliteMobs, et il est fortement recommandé car les combats de haut niveau sont presque impossibles sans lui !
-eliteItemsDurabilityLossOnlyOnDeath: true
-# Définit le multiplicateur de perte de durabilité pour les objets d'élite s'il est configuré pour perdre de la durabilité en cas de mort.
-# Les valeurs entre 0,0 et 1,0 diminuent la perte de durabilité et les valeurs supérieures à 1,0 l'augmentent.
-# Exemple : 0,5 inflige 50 % de la perte de durabilité, 2,0 inflige 200 % de la perte de durabilité.
-eliteItemsDurabilityLossMultiplier: 1.0
-# Définit le message qui apparaît lorsque la mise au rebut d'objets réussit.
-scrapSucceededMessageV2: '&8[EliteMobs] &2Mise au rebut réussie $amount fois !'
-# Définit le message qui apparaît lorsque la mise au rebut d'objets échoue.
-scrapFailedMessageV2: '&8[EliteMobs] &cLa mise au rebut a échoué $amount fois !'
-# Définit si le butin d'élite doit être placé directement dans les inventaires des joueurs.
-putLootDirectlyIntoPlayerInventory: false
-# Définit la différence de niveau maximale que les joueurs peuvent avoir avant qu'ils ne puissent plus piller des objets qui sont d'un niveau trop bas.
-# Ceci est calculé en fonction du niveau moyen du butin que porte le joueur.
-# Par exemple, si la valeur est définie sur 10 et qu'un joueur a un équipement de niveau 50, il ne pourra pas cultiver des boss de niveau 39.
-lootLevelDifferenceLockout: 10
-# Définit si EliteMobs empêchera les objets d'élite de se casser lors de l'utilisation de la perte de durabilité du système en cas de mort.
-# Les joueurs ne pourront pas utiliser les objets sans durabilité de toute façon, ceci est simplement pour éviter la perte accidentelle d'objets de haut niveau mais de faible durabilité.
-preventEliteItemsFromBreaking: true
-# Définit le niveau minimum, +7, des boss qui peuvent laisser tomber de façon procédurale du butin de diamant dans EliteMobs.
-# Il n'y a pas d'équipement en netherite généré de façon procédurale dans EliteMobs, uniquement du butin personnalisé.
-minimumProcedurallyGeneratedDiamondLootLevelPlusSeven: 10
-# Définit le mensaje que se muestra en el chat al conseguir botín con éxito a través del comando /em simloot <level> <times>.
-simlootMessageSuccess: '&8[EliteMobs] &2¡Obtuvo botín y consiguió $itemName &2!'
-# Définit le mensaje que se muestra en el chat al no obtener botín a través del comando /em simloot <level> <times>.
-simlootMessageFailure: '&8[EliteMobs] &c¡Intentó obtener botín y no obtuvo nada!'
-# Définit le mensaje que reciben los jugadores cuando el botín de élite se deposita directamente en sus inventarios.
-directDropCustomLootMessage: '&8[EliteMobs] &2¡Obtuvo $itemName &2!'
-# Définit le mensaje que reciben los jugadores cuando el botín de vainilla se deposita directamente en sus inventarios.
-directDropMinecraftLootMessage: '&8[EliteMobs] &a¡Obtuvo $itemName &a!'
-# Définit le mensaje que reciben los jugadores cuando las monedas de élite se depositan directamente en sus inventarios.
-directDropCoinMessage: '&8[EliteMobs] &aObtuvo &2$amount $currencyName &a!'
-# Establece si EliteMobs ocultará los atributos de vainilla de Minecraft.
-hideItemAttributes: true
-# Définit l'entrée de tradition spécifique aux armes sur un objet d'élite. Le marqueur de position $EDPS est remplacé par le DPS d'élite (dégâts par seconde) de l'arme.
-weaponEntry: '&7DPS d'élite : &2$EDPS'
-# Définit l'entrée de tradition spécifique aux armures sur un objet d'élite. Le marqueur de position $EDEF est remplacé par la DEF (défense) d'élite de l'arme.
-armorEntry: '&7Armure d'élite : &2$EDEF'
-# Définit le message envoyé lorsqu'un joueur tue un boss, mais que le niveau de l'équipement est trop différent du niveau du boss pour obtenir des pièces.
-levelRangeTooDifferent: '&8EM] &4Votre équipement est de niveau $playerLevel et le boss est de niveau
-  $bossLevel, la différence de niveau est trop élevée pour obtenir des pièces !'
+leashRadius: 30
 ```
+
+</div>
 
 </details>
 
----
+***
 
-## MobCombatSettings.yml
+### Blocs transitifs
 
-`MobCombatSettings.yml` contient tous les paramètres de configuration liés au système de combat personnalisé et la plupart des options de configuration généralement liées au fonctionnement des mobs d'élite.
+Également connus sous les noms de `onSpawnBlockStates` et `onRemoveBlockStates`.
 
-<details>
+Ces valeurs permettent aux Boss Régionaux de faire apparaître des blocs lorsqu'ils entrent en combat et de les supprimer
+lorsqu'ils sont supprimés, c'est-à-dire lorsqu'ils s'échappent en raison d'un délai d'attente ou lorsqu'ils meurent.
 
-<summary><b>Développer le tableau</b></summary>
+**C'est ainsi que vous pouvez faire en sorte que les boss ouvrent ou ferment des portes/zones ou même modifient une
+arène pendant le combat si vous l'utilisez avec des boss de phase!**
 
-```yml
-# Définit si les élites générées naturellement apparaîtront. Remarque : les mobs d'événement comme le roi zombie ne sont pas des élites générées naturellement ! Vous devrez désactiver les événements si vous voulez désactiver les boss d'événement.
-doNaturalEliteMobSpawning: true
-# Définit si les apparitions générées à partir des générateurs de mobs peuvent être converties en élites. Non recommandé !
-doSpawnersSpawnEliteMobs: false
-# Définit le pourcentage de mobs générés naturellement qui sont convertis en mobs d'élite.
-eliteMobsSpawnPercentage: 0.05
-# Définit la plage des super mobs pour la recherche d'empilement de super mobs
-superMobStackRange: 15
-# Définit le niveau maximum auquel les élites peuvent apparaître.
-# Remarque : le niveau de mob d'élite est basé sur l'armure et les armes que les joueurs portent, et l'armure ne peut être mise à l'échelle que jusqu'au niveau 200.
-naturalEliteMobsLevelCap: 250
-# Définit si les élites porteront une armure en fonction de leur niveau. Ceci est uniquement à des fins visuelles et n'affecte pas le combat.
-doElitesWearArmor: true
-# Définit si les élites porteront des casques en fonction de leur niveau. Cela les empêchera de brûler facilement pendant la journée.
-doElitesWearHelmets: true
-# Définit si les élites auront des traînées visuelles autour d'elles, avertissant les joueurs des joueurs qu'elles possèdent.
-doNaturalEliteMobVisualEffects: true
-# Définit si les élites générées à partir de générateurs feront des effets visuels.
-doSpawnerEliteMobVisualEffects: false
-# Définit si certains pouvoirs feront la phase d'avertissement du pouvoir. Ceci est très important car les phases d'avertissement signifient généralement que le pouvoir peut être esquivé et l'élément visuel permet aux joueurs de savoir où esquiver.
-doPowerBuildupVisualEffects: true
-# Définit si des messages de mort personnalisés seront utilisés lorsque les joueurs meurent à cause des élites.
-doCustomEliteMobsDeathMessages: true
-# Définit si EliteMobs affichera des indicateurs de santé pour les élites.
-doDisplayMobHealthOnHit: true
-# Définit si EliteMobs affichera des indicateurs de dégâts pour les dégâts infligés aux élites.
-doDisplayMobDamageOnHit: true
-# Définit si le niveau des élites augmentera en fonction de la distance de l'apparition.
-# Il s'agit d'une valeur ajoutée en plus de leur niveau normal, ce qui signifie que si un joueur porte un équipement de niveau 100 près de l'apparition et que le boss a +1 de niveau en raison de la distance de l'apparition, le boss apparaîtra au niveau 101.
-# En général, cette option n'est pas recommandée, en particulier si vous avez un système de tp aléatoire sur votre serveur.
-doIncreaseEliteMobLevelBasedOnSpawnDistance: false
-# Définit la distance entre les incréments de niveau pour les augmentations de niveau basées sur la distance.
-distanceBetweenIncrements: 100.0
-# Définit le nombre de niveaux qui augmentent à chaque incrément de distance pour les augmentations de niveau basées sur la distance.
-levelIncreaseAtIncrements: 1.0
-# Définit si les pouvoirs des élites seront cachés jusqu'à ce qu'elles entrent en combat. Ceci est recommandé pour des raisons de performances.
-hideEliteMobPowersUntilAggro: true
-# Définit le multiplicateur pour les dégâts infligés à tous les boss générés par EliteMobs, sauf ceux qui utilisent le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent les dégâts infligés, ce qui facilite la mort des boss.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToEliteMobMultiplierV2: 1.0
-# Définit le multiplicateur pour les dégâts infligés aux joueurs par les élites. Des valeurs plus élevées augmentent la quantité de dégâts infligés par les boss, sauf ceux qui utilisent le système de dégâts normalisé (boss de donjons régionaux), ce qui rend les boss plus difficiles à frapper.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToPlayerMultiplierV2: 1.0
-# Définit si les boss spéciaux peuvent être suivis.
-showCustomBossLocation: true
-# Définit le message envoyé aux joueurs pour suivre l'emplacement d'un boss.
-bossLocationMessage: '&7[EM] &2[Cliquez pour suivre !]'
-# Définit les commandes qui s'exécutent lorsqu'une élite meurt. Les marqueurs de position valides sont :
-# $level pour le niveau du boss
-# $name pour le nom du boss
-# $players fera en sorte que la commande s'exécute pour chaque joueur qui a participé à la mort. Par exemple, si Bob et Steve ont tué un boss, 'broadcast $players a tué le boss !' exécutera 'bob a tué le boss' et 'steve a tué le boss !'
-commandsOnEliteMobDeath: []
-# Définit le message envoyé aux joueurs qui participent à de grandes mises à mort de boss.
-bossKillParticipationMessage: '&eVos dégâts : &2$playerDamage'
-# Définit si les boss régénéreront leur santé lorsqu'ils sortiront du combat. Fortement recommandé.
-regenerateCustomBossHealthOnCombatEnd: true
-# Définit le message envoyé aux joueurs qui tentent de suivre les boss qui se trouvent actuellement dans un monde différent.
-defaultOtherWorldBossLocationMessage: '$name : Dans un autre monde !'
-# Définit le préfixe ajouté aux indicateurs de dégâts lorsque les joueurs frappent un boss avec quelque chose contre lequel le boss est faible.
-weakTextColor: '&9'
-# Définit le préfixe ajouté aux indicateurs de dégâts lorsque les joueurs frappent un boss avec quelque chose contre lequel le boss est fort.
-resistTextColor: '&c'
-# Définit le message qui apparaît lorsque les joueurs frappent le boss avec quelque chose contre lequel le boss est faible.
-weakText: '&9&lFaible !'
-# Définit le message qui apparaît lorsque les joueurs frappent le boss avec quelque chose contre lequel le boss est fort.
-resistText: '&c&lRésistance !'
-# Définit si des visuels seront utilisés pour montrer qu'un boss est faible contre une attaque.
-doWeakEffect: true
-# Définit si des visuels seront utilisés pour montrer qu'un boss est fort contre une attaque.
-doResistEffect: true
-# Définit le multiplicateur pour les dégâts infligés aux boss utilisant le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent les dégâts infligés, ce qui facilite la mort des boss.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToEliteMobMultiplier: 1.0
-# Définit le multiplicateur pour les dégâts infligés aux joueurs par les boss utilisant le système de dégâts normalisé (boss de donjons régionaux). Des valeurs plus élevées augmentent la quantité de dégâts infligés par les boss, ce qui rend les boss plus difficiles à frapper.
-# 2.0 = 200 %, 0.5 = 50 %
-damageToPlayerMultiplier: 1.0
-# Définit les dégâts de référence pour les boss personnalisés utilisant les dégâts normalisés (généralement les boss régionaux de donjons).
-normalizedRegionalBossBaselineDamageV2: 3.0
-# Définit la santé de référence pour les boss personnalisés utilisant la santé normalisée (généralement les boss régionaux de donjons).
-normalizedRegionalBossBaselineHealthV3: 4.0
-# Définit si les boss régionaux utiliseront le système de combat normalisé.
-# Ceci est très fortement recommandé, et le contenu préfabriqué ne sera pas équilibré correctement s'il est modifié.
-normalizeRegionalBosses: true
-# Définit le message qui apparaît lorsqu'un boss guérit en sortant du combat.
-fullHealMessage: '&2GUÉRISON COMPLÈTE !'
-# Définit les multiplicateurs appliqués aux attaques contre lesquelles les boss sont forts et faibles.
-strengthAndWeaknessDamageMultipliers: 2.0
-# Définit le multiplicateur appliqué à la réduction de dégâts de l'effet de potion de résistance pour les joueurs.
-resistanceDamageMultiplier: 1.0
-# Définit le multiplicateur appliqué à la réduction de dégâts lorsqu'un joueur tient un bouclier pour les attaques de mêlée (pouvoirs exclus).
-blockingDamageReduction: 0.8
-```
+| Clé       |          Valeurs          | Par défaut |
+|-----------|:------------------------:|:-------:|
+| `onSpawnBlockStates` | Voir l'explication détaillée |  aucun   |
+
+| Clé       | Valeurs  | Par défaut |
+|-----------|:-------:|:-------:|
+| `onRemoveBlockStates` | Voir l'explication détaillée |  aucun   |
+
+<details> 
+
+<summary><b>Explication détaillée</b></summary>
+
+<div align="left">
+
+**Tous les blocs sont relatifs à l'emplacement d'apparition. Assurez-vous d'avoir votre emplacement d'apparition final
+avant de commencer à définir des blocs.**
+
+</br>Si vous avez déjà créé une grande zone de bloc transitive et que vous devez maintenant déplacer le boss, mais que
+vous ne voulez pas refaire les blocs transitifs. Ensuite, vous pouvez utiliser l'action
+EliteScript [Teleport]($language$/elitemobs/elitescript_actions.md&section=teleport) pour déplacer le boss vers
+l'emplacement correct après son apparition. N'oubliez pas que vous devrez ajuster votre laisse en conséquence.
+
+En raison de la complexité de la définition des blocs, il n'est pas recommandé de le faire manuellement. Vous devez
+utiliser les commandes suivantes pour le faire:
+
+- /em registerblocks <fichier\_boss\_régional.yml> <on\_spawn/on\_remove>
+- /em registerblocksedit <fichier\_boss\_régional.yml> <on\_spawn/on\_remove>
+- /em registerblocksarea <fichier\_boss\_régional.yml> <on\_spawn/on\_remove>
+- /em registerblocksareaedit <fichier\_boss\_régional.yml> <on\_spawn/on\_remove>
+- /em cancelblocks
+
+Décomposons cela.
+
+**/em registerblocks <fichier\_boss\_régional.yml> <on\_spawn/on\_remove>**
+
+La commande la plus basique. Il s'agit d'un commutateur que vous exécutez une fois pour démarrer, puis à nouveau pour
+valider. Tout comme toutes les autres commandes, vous choisissez si vous définissez ces blocs pour qu'ils soient
+modifiés pour l'état `on_spawn` ou `on_remove`.
+
+Si vous enregistrez le on\_spawn, cela modifiera les blocs lorsque le boss apparaît ou réapparaît. Si vous enregistrez
+le on\_remove, cela modifiera les blocs lorsque le boss meurt ou expire en utilisant le mécanisme de délai d'attente de
+Boss personnalisé.
+
+Pour enregistrer des blocs, placez ou supprimez simplement les blocs que vous souhaitez modifier pendant que ce
+paramètre est activé.
+
+**/em registerblocksedit <fichier\_boss\_régional.yml> <on\_spawn/on\_remove>**
+
+Si vous souhaitez modifier des blocs déjà définis, vous pouvez utiliser cette commande. Fonctionne de manière très
+similaire à `/em registerblocks <fichier_boss_régional.yml> <on_spawn/on_remove>`.
+
+**/em registerblocksarea <fichier\_boss\_régional.yml> <on\_spawn/on\_remove>**
+
+Tout comme `/em registerblocks <fichier_boss_régional.yml> <on_spawn/on_remove>`, cela vous permet d'enregistrer des
+blocs, mais il permet de les sélectionner en obtenant deux coins diamétralement opposés (identique à la sélection de
+région worldedit / worldguard) au lieu de sélectionner individuellement des blocs.
+
+Pour des raisons de sécurité, il existe une limite de 200 blocs (par défaut, modifiable dans config.yml) pour les
+sélections régionales. N'oubliez pas que chaque bloc est modifié sur le même tick, donc si vous modifiez beaucoup de
+terrain, vous commencerez probablement à voir de gros pics de lag lors de l'exécution de ces modifications.
+
+**/em registerblocksareaedit <fichier\_boss\_régional.yml> <on\_spawn/on\_remove>**
+
+Fonctionne de la même manière que `/em registerblocksedit` mais pour les zones. Peut être utilisé pour dépasser la
+limite d'enregistrement de bloc de 200 (par défaut) pour les zones.
+
+**/em cancelblocks**
+
+À tout moment, si une erreur est commise lors de l'enregistrement de blocs, vous pouvez exécuter cette commande pour
+annuler l'enregistrement. Cela annulera toutes les modifications que vous avez commencé à enregistrer sur cette
+modification / enregistrement.
+
+</div>
 
 </details>
 
----
+</div>
 
-## ProceduralItemGenerationSettings.yml
+***
 
-`ProceduralItemGenerationSettings.yml` contient toutes les options de configuration pour la configuration des objets générés de façon procédurale.
+## Conseils de pro pour créer un bon et gros combat de boss régional
 
-<details>
+1. **Réfléchissez réellement à la manière dont les pouvoirs de votre Boss personnalisé se complètent**. Vous ne voulez
+   pas que votre boss passe la plupart de son temps à être arrêté parce qu'il lance quelque chose, car cela peut en fait
+   rendre le combat très facile. Vous ne voulez pas non plus que le boss ait toutes les attaques à distance et aucun
+   pouvoir de mêlée ou l'inverse, à moins que vous ne conceviez quelque chose de très spécifique. Le playtesting est
+   important.
 
-<summary><b>Développer le tableau</b></summary>
 
-```yml
-dropProcedurallyGeneratedItems: true
-customEnchantmentsChance: 0.5
-materialNames:
-  swordName: Épée
-  bowName: Arc
-  pickaxe: Pioche
-  spade: Pelle
-  hoe: Houe
-  axe: Hache
-  helmet: Casque
-  chestplate: Plastron
-  leggings: Jambières
-  boots: Bottes
-  shears: Cisailles
-  fishingRod: Canne à pêche
-  shield: Bouclier
-  trident: Trident
-  crossbow: Arbalète
-nameFormats:
-- $verb $itemType de $adjective $noun
-- $itemType de $adjective $noun
-- $noun's $adjective $verb $itemType
-- $verb $itemType
-- $adjective $verb $itemType
-- The $verb-er
-- The $adjective $verb-er
-nouns:
-- MagmaGuy
-- Aube
-...
-adjectives:
-- Adorable
-- Magnifique
-...
-verbs:
-- Tailler
-- Couper
-...
-verb-ers (noun):
-- Brise-monde
-- Brise-destructeur_de_monde
-...
-validMaterials:
-  DIAMOND_HELMET: true
-  DIAMOND_CHESTPLATE: true
-  DIAMOND_LEGGINGS: true
-  DIAMOND_BOOTS: true
-  DIAMOND_SWORD: true
-  DIAMOND_AXE: true
-  IRON_HELMET: true
-  IRON_CHESTPLATE: true
-  IRON_LEGGINGS: true
-  IRON_BOOTS: true
-  IRON_SWORD: true
-  IRON_AXE: true
-  GOLDEN_HELMET: true
-  GOLDEN_CHESTPLATE: true
-  GOLDEN_LEGGINGS: true
-  GOLDEN_BOOTS: true
-  GOLDEN_SWORD: true
-  GOLDEN_AXE: true
-  CHAINMAIL_HELMET: true
-  CHAINMAIL_CHESTPLATE: true
-  CHAINMAIL_LEGGINGS: true
-  CHAINMAIL_BOOTS: true
-  LEATHER_HELMET: true
-  LEATHER_CHESTPLATE: true
-  LEATHER_LEGGINGS: true
-  LEATHER_BOOTS: true
-  STONE_SWORD: true
-  STONE_AXE: true
-  WOODEN_SWORD: true
-  WOODEN_AXE: true
-  SHIELD: true
-  TURTLE_HELMET: true
-  TRIDENT: true
-  BOW: true
-  CROSSBOW: true
-```
+2. **Santé: beaucoup de santé**. Ce multiplicateur de santé devrait probablement être à un solide 10 si vous voulez que
+   les gens se regroupent pour combattre le boss.
 
-</details>
 
----
+3. **Dégâts: pas trop**. Les EliteMobs sont déjà extrêmement mortels par défaut, et les pouvoirs ont tendance à être
+   exponentiellement plus mortels. Au lieu d'augmenter les dégâts à des niveaux extrêmes, envisagez d'utiliser des
+   pouvoirs pour rendre le boss plus puissant.
 
-## ValidWorlds.yml
 
-`ValidWorlds.yml` contient la liste des mondes qu'EliteMobs a détectés, ainsi que des options pour personnaliser les fonctionnalités d'EliteMobs sur ceux-ci.
+4. **Exploits, partout**. Assurez-vous que le terrain n'est pas exploitable. Placez le boss dans une pièce fermée pour
+   empêcher les gens d'essayer de le sniper de loin. Le pouvoir d'invulnérabilité aux flèches est probablement
+   extrêmement important pour beaucoup de Boss Mondiaux, car les créatures de Minecraft ne peuvent pas gérer le fait
+   d'être snippées de loin, donc si vous voulez autoriser les attaques à l'arc, assurez-vous que les arcs ne peuvent pas
+   être exploités.
 
-<details>
 
-<summary><b>Développer le tableau</b></summary>
-
-```yml
-# Définit la liste des mondes basés sur des zones.
-# LE MODE DE JEU BASÉ SUR LES ZONES EST DÉPASSÉ ET SERA BIENTÔT SUPPRIMÉ !
-zoneBasedWorlds: []
-# Définit la liste des mondes en mode cauchemar.
-# Les mondes en mode cauchemar sont un mode de jeu où
+5. **Connaissez le plugin**. Il existe de nombreuses petites astuces pour battre les EliteMobs, comme la façon dont
+   certains pouvoirs peuvent être contrés en utilisant des boucliers, tandis que d'autres doivent être contrés en
+   esquivant ou même en fuyant temporairement le boss. Plus vous savez comment les pouvoirs fonctionnent et comment ils
+   sont contrés, meilleurs seront les boss que vous créerez.

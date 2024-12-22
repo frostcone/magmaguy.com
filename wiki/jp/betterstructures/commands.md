@@ -1,42 +1,42 @@
-# BetterStructures のコマンド
+# BetterStructures コマンド
 
-以下は、BetterStructures プラグインで使用可能なコマンドの包括的なリストと、それらに対応する必要な権限です。
+以下は、BetterStructures プラグインで使用可能なコマンドの包括的なリストと、それぞれの必要な権限です。
 
-## リロード コマンド
+## リロードコマンド
 
 **コマンド:** `/betterstructures reload`
 
 **権限:** `betterstructures.*`
 
-**説明:** プラグインを再読み込みします。また、インポートが必要な構造もインポートします。
+**説明:** プラグインをリロードします。また、インポートが必要な構造物をインポートします。
 
 ## Lootify コマンド
 
-**コマンド:** `/betterstructures lootify <treasure filename> <rarity> <minAmount> <maxAmount> <weight>`
+**コマンド:** `/betterstructures lootify <宝ファイル名> <レア度> <最小量> <最大量> <重み>`
 
 **権限:** `betterstructures.*`
 
-**説明:** 現在保持しているアイテムを特定の `ジェネレーター` の特定の `rarity` テーブルに追加し、`minAmount`
-と `maxAmount` の間でチェストで見つけられるアイテムの量をランダム化し、指定された `weight` を使用します。
+**説明:** 現在手に持っているアイテムを、特定の `generator` の特定の `レア度`
+テーブルに追加します。チェスト内で見つかるアイテムの量が `最小量` と `最大量` の間でランダムになり、`重み` で指定した確率で出現します。
 
-これは非常に特殊なシステムであり、これらの値の仕組みの詳細については、[このページ]($language$/betterstructures/creating_structures.md)
+これは非常に特殊なシステムです。これらの値がどのように機能するかの詳細については、[このページ]($language$/betterstructures/creating_structures.md)
 を参照してください。
 
 ## Place コマンド
 
-**コマンド:** `/betterstructures place <structure filename> <generator type>`
+**コマンド:** `/betterstructures place <構造ファイル名> <ジェネレータータイプ>`
 
 **権限:** `betterstructures.*`
 
-**説明:** 選択した構造を現在地に強制的に配置します。
+**説明:** 選択した構造物を現在地に強制的に配置します。
 
 ## Teleportcoords コマンド
 
-**コマンド:** `/betterstructures teleporttocoords <worldName> <x> <y> <z>`
+**コマンド:** `/betterstructures teleporttocoords <ワールド名> <x> <y> <z>`
 
 **権限:** `betterstructures.*`
 
-**説明:** 直接使用することを意図したものではありません。これは、管理者が構造体にテレポートできるチャット警告をクリックしたときに実行されるコマンドです。
+**説明:** 直接使用することを意図していません。これは、管理者が構造物へのテレポートを可能にするチャット警告をクリックしたときに実行されるコマンドです。
 
 ## Version コマンド
 
@@ -44,7 +44,7 @@
 
 **権限:** `betterstructures.*`
 
-**説明:** プラグインのバージョンをチャットに出力します。
+**説明:** チャットにプラグインのバージョンを出力します。
 
 ## Silent コマンド
 
@@ -52,4 +52,4 @@
 
 **権限:** `betterstructures.*`
 
-**説明:** サーバーオペレーターがサーバーで生成されている構造に関するチャットに表示される警告をミュートまたはミュート解除します。
+**説明:** サーバーで構造物が生成されることに関するサーバーオペレーター向けのチャット警告のサイレント化またはサイレント解除を行います。

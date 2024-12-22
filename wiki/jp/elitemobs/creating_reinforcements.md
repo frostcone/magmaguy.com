@@ -1,467 +1,425 @@
+# カスタム援軍の作成
+
+戦闘中にエリートを召喚してボスを強化することに興味があるなら、このガイドで詳しく説明します。
+
+## カスタムボス作成の手順：
+
+1. カスタムボスを召喚するメインのカスタムボスを作成します。
+2. 援軍用のカスタムボスを作成します。カスタムボスはバニラのモブよりも強くすることもできますが、弱くすることもできます。
+3. 設定ファイルに正しい援軍行を追加します。
+
+## 援軍行の作成
+
+次の形式のカスタムボスがあると仮定しましょう。
+
 ```yaml
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_PICKAXE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SHOVEL: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_HOE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SWORD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  SHIELD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  BOW: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_BOOTS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_LEGGINGS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_CHESTPLATE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_HELMET: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SWORD: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_AXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_PICKAXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SHOVEL: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_HOE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SHOVEL: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ENCHANTED_GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TRIDENT: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ELYTRA: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TURTLE_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_AXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_PICKAXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SHOVEL: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HOE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SWORD: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HELMET: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_CHESTPLATE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_LEGGINGS: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_BOOTS: 18.0
-  # Establece el valor de material predeterminado para objetos no definidos específicamente.
-  defaultMaterialWorth: 1.0
+isEnabled: true
+entityType: ENDER_DRAGON
+name: $eventBossLevel &e世界の束縛者
+level: 200
+powers:
+- ender_dragon_arrow_bombardment.yml
 ```
 
-</details>
+そして、これに援軍を追加したいとします。以下は、そのような援軍の例です。
 
----
+```yaml
+- summonType: ON_COMBAT_ENTER
+  filename: binder_of_worlds_phase_1_parkour_reinforcement.yml
+```
 
-## events.yml
+そして、それを有効にするには、powersリストに追加します。
 
-`events.yml` contient les options de configuration globales pour la création d'événements.
+```yaml
+isEnabled: true
+entityType: ENDER_DRAGON
+name: $eventBossLevel &e世界の束縛者
+level: 200
+powers:
+- ender_dragon_arrow_bombardment.yml
+- summonType: ON_COMBAT_ENTER
+  filename: binder_of_worlds_phase_1_parkour_reinforcement.yml
+```
 
-_**Remarque :** ce ne sont que les paramètres globaux de base._
+これで、援軍がボスエンティティに追加されました。ただし、ご覧のとおり、ここではカスタマイズできるオプションがいくつかあります。それらを見ていきましょう。
 
-Vous pouvez modifier davantage des événements spécifiques dans le dossier `events`.
+## すべてのカスタム援軍オプション
+
+*ヒント:
+EliteScriptを使用して援軍を召喚することもできます。詳細については、[こちら]($language$/elitemobs/elitescript_actions.md&section=summon_reinforcement)
+をご覧ください。*
+
+<div align="center">
+
+### summonType
+
+これは必須フィールドです。援軍をいつスポーンさせるかを設定します。
+
+| キー           |   値    |  デフォルト   |
+|--------------|:------:|:--------:|
+| `summonType` | 特殊 [1] | `ON_HIT` |
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>例</b></summary>
+
+<div align="left">
 
 ```yml
-# Définit si les événements ne seront diffusés que dans le monde dans lequel les événements se produisent.
-Only broadcast event message in event worlds: false
-# Définit le temps de pause minimum, en minutes, entre les événements temporisés
-actionEventMinimumCooldownMinutes: 240
-# Définit si les événements d'action se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#action-events
-actionEventsEnabled: true
-# Définit si les événements temporisés se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#timed-events
-timedEventsEnabled: true
+summonType: ON_HIT
 ```
+
+</div>
 
 </details>
 
----
+#### 特殊 [1]
 
-## ItemSettings.yml
+| キー                              | 説明                                                                                                                |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| `ONCE`                          | ボスが最初に攻撃されたときに、一度だけ援軍をスポーンさせます（発生する確率に依存できます）。                                                                    |
+| `ON_HIT`                        | ボスが攻撃されるたびに援軍をスポーンさせます（発生する確率に依存できます）。                                                                            |
+| `ON_COMBAT_ENTER`               | ボスが戦闘状態になったときに援軍をスポーンさせます (1)。                                                                                    |
+| `ON_COMBAT_ENTER_PLACE_CRYSTAL` | 特別：これは、ボスが戦闘状態になったときにドラゴン戦のためにエンドクリスタルを設置するためのものです(1)。                                                            |
+| `GLOBAL`                        | ボスと同じワールド内のすべてのプレイヤーに援軍をスポーンさせます。援軍は、ボスからどれだけ離れていても、プレイヤーの近くにスポーンします。これには、`customSpawn`フィールドを機能させるために設定する必要があります！ |
 
-`ItemSettings.yml` contient tous les paramètres de configuration globaux pour les objets d'élite.
+_(1) ボスは、プレイヤーに攻撃されたとき、または範囲内にプレイヤーを検出したときに戦闘状態になります。_
+
+***
+
+### filename
+
+これは必須フィールドであり、どの援軍をスポーンさせるかを設定します。このフィールドを必須にしない唯一の例外は、`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`
+設定を使用する場合です。エンドクリスタルはエリートではないためです。
+
+| キー         |         値          | デフォルト |
+|------------|:------------------:|:-----:|
+| `filename` | [ファイル名](#filename) |  なし   |
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>例</b></summary>
+
+<div align="left">
 
 ```yml
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-noItemDurabilityMessage: '&8[EliteMobs] $item &4est cassé ! Il ne fonctionnera pas tant qu'il n'est pas réparé !'
-# Définit si un butin EliteMobs sera laissé tomber.
-# Comprend les pièces d'élite, les objets personnalisés, les objets générés de façon procédurale - tout !
-# Non recommandé ! Rend la progression du MMORPG impossible.
-doEliteMobsLoot: true
-# Définit si le butin généré de façon procédurale aura des couleurs différentes en fonction de la qualité de l'objet.
-doMMORPGColorsForItems: true
-# Définit si le placement d'objets personnalisés, comme les bannières ou les blocs, est empêché.
-# Ceci est recommandé : les objets personnalisés se cassent lorsqu'ils sont placés et ne peuvent pas être récupérés !
-preventCustomItemPlacement: true
-# Définit le format de l'histoire de tous les objets EliteMobs !
-# Les marqueurs de position suivants sont valides :
-# $itemLevel - affiche le niveau de l'objet
-# $prestigeLevel - affiche le niveau de prestige
-# $weaponOrArmorStats - affiche les statistiques de DPS d'élite ou d'armure d'élite, en fonction de l'objet
-# $soulbindInfo - affiche à qui, le cas échéant, l'objet est lié à l'âme
-# $itemSource - affiche d'où provient l'objet, comme un mob ou une boutique
-# $ifLore - fait apparaître une ligne uniquement si l'objet a une histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $customLore - affiche l'ensemble de l'histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $ifEnchantments - fait apparaître une ligne uniquement si l'objet possède des enchantements
-# $enchantments - affiche les enchantements sur l'objet
-# $eliteEnchantments - affiche les enchantements d'élite sur l'objet
-# $ifCustomEnchantments - affiche les enchantements personnalisés sur l'objet
-# $customEnchantments - affiche les enchantements personnalisés sur l'objet
-# $ifPotionEffects - affiche uniquement la ligne si l'objet a des effets de potion
-# $potionEffects - affiche les effets de potion sur l'objet
-# $loreResaleValue - affiche la valeur de l'objet. Pourrait afficher le prix d'achat ou de vente en fonction de l'endroit où il est visualisé
-# Important : plusieurs des marqueurs de position peuvent être davantage personnalisés par les paramètres de configuration ci-dessous
-itemLoreStructureV2:
-- §7§m§l---------§7<§lInfo. équipement§7>§m§l---------
-- '§7Niveau de l'objet : §f$itemLevel §7Prestige §6$prestigeLevel'
-- $weaponOrArmorStats
-- $soulbindInfo
-- $itemSource
-- $ifLore§7§m§l-----------§7< §f§lHistoire§7 >§m§l-----------
-- $customLore
-- $ifEnchantments§7§m§l--------§7<§9§lEnchantements§7>§m§l--------
-- $enchantments
-- $eliteEnchantments
-- $ifCustomEnchantments§7§m§l------§7< §3§lEnchants persos.§7 >§m§l------
-- $customEnchantments
-- $ifPotionEffects§7§m§l----------§7< §5§lEffets§7 >§m§l----------
-- $potionEffect
-- §7§l§m-----------------------------
-- $loreResaleValue
-# Définit la tradition de la source de la boutique pour les achats en magasin
-shopSourceItemLores: '&7Acheté dans une boutique'
-# Définit la tradition de la source de l'objet pour les objets pillés sur les boss
-mobSourceItemLores: '&7Pillé sur $mob'
-# Définit la tradition de valeur de l'objet
-loreWorths: '&7Vaut $worth $currencyName'
-# Définit la tradition de la valeur de revente de l'objet
-loreResaleValues: '&7Se vend pour $resale $currencyName'
-# Définit la possibilité de base que tout objet d'élite tombe des mobs d'élite
-flatDropRateV3: 0.2
-# Définit la possibilité de base que tout objet d'élite tombe des boss régionaux
-regionalBossNonUniqueDropRate: 0.05
-# Définit si les boss régionaux peuvent laisser tomber du butin vanilla
-regionalBossesDropVanillaLoot: false
-# Définit la quantité dont la possibilité qu'un objet d'élite tombe augmente en fonction du niveau du mob.
-# Le niveau du mob est multiplié par cette valeur et est ajouté à la possibilité de base.
-# Il n'est plus recommandé d'avoir une valeur supérieure à 0,0 !
-levelIncreaseDropRateV2: 0.0
-# Définit la possibilité pondérée qu'un objet généré de façon procédurale tombe.
-# Ce système utilise des probabilités pondérées ! Cherchez cela sur Google si vous ne savez pas ce que c'est.
-proceduralItemDropWeight: 90.0
-# Définit la possibilité relative qu'un objet pondéré tombe.
-# Les objets pondérés sont des objets personnalisés qui n'ont pas de poids dynamique, comme les amulettes.
-weighedItemDropWeight: 1.0
-# Définit la possibilité relative qu'un objet fixe tombe. Ce sont des objets personnalisés qui ne s'adaptent pas.
-fixedItemDropWeight: 10.0
-# Définit la possibilité relative qu'un objet limité tombe. Ce sont des objets personnalisés qui s'adaptent jusqu'à un niveau spécifique
-limitedItemDropWeight: 3.0
-# Définit la possibilité relative qu'un objet évolutif tombe. Ce sont des objets personnalisés qui peuvent s'adapter à n'importe quel niveau et sont les plus courants dans le plugin.
-scalableItemDropWeight: 6.0
-# Définit le multiplicateur pour le butin vanilla du mob, en fonction du niveau du mob.
-defaultLootMultiplier: 0.0
-# Définit le niveau maximum pour le multiplicateur de butin par défaut.
-levelCapForDefaultLootMultiplier: 200
-# Définit le multiplicateur d'expérience de Minecraft vanilla que laisse tomber le boss, en fonction du niveau du boss.
-defaultExperienceMultiplier: 1.0
-# Définit le niveau maximum pour le butin qui sera laissé tomber par EliteMobs. Il est fortement recommandé de le laisser à 200.
-maximumItemLevel: 200
-# Définit si les enchantements d'élite seront utilisés.
-# Les enchantements d'élite remplacent les enchantements vanilla lorsque les objets d'élite obtiennent des niveaux d'enchantement qui dépassent les limites de vanilla.
-# Exemple : si une épée d'élite est censée avoir une netteté de 10, étant donné que la limite de Minecraft est le niveau 5, elle aura une netteté de 5 et une netteté d'élite de 5.
-# La netteté d'élite n'affecte que les mobs générés par EliteMobs. Ceci est fait pour que le JcJ et le combat vanilla ne soient pas déséquilibrés.
-useEliteEnchantments: true
-# Définit le nom d'affichage qui sera utilisé pour les enchantements d'élite dans l'histoire des objets.
-eliteEnchantmentLoreStrings: Élite
-# Définit si EliteMobs considerará las azadas como armas válidas para los cálculos de daño.
-useHoesAsWeapons: false
-# Définit si EliteMobs fera apparaître des particules spéciales sur les objets qui tombent de haute qualité.
-enableRareItemParticleEffects: true
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe à l'entité qui reçoit le coup.
-potionEffectOnHitTargetLore: '&4⚔☠'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe au joueur qui frappe.
-potionEffectOnHitSelfLore: '&9⚔🛡'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion continuera de se réappliquer tant que le joueur le manie.
-potionEffectContinuousLore: '&6⟲'
-# Définit les caractères précédés d'enchantements d'élite dans l'histoire des objets.
-eliteEnchantmentLoreColor: '&9◇'
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-vanillaEnchantmentLoreColor: '&7◇'
-# Définit les caractères précédés d'enchantements personnalisés dans l'histoire des objets.
-customEnchantmentColor: '&3◇'
-# Définit les caractères précédés d'effets de potion dans l'histoire des objets.
-potionEffectLoreColor: '&5◇'
-# Définit le texte qui apparaîtra sur l'objet si l'objet n'est pas lié à l'âme.
-noSoulbindLore: '&7Non lié à l'âme !'
-# Définit si un objet d'élite peut être enchanté par des moyens vanilla. Ce n'est pas recommandé car EliteMobs possède son propre système d'enchantements personnalisés avec son propre équilibre !
-preventEliteItemEnchantment: true
-# Définit si les objets d'élite peuvent être désenchantés par des moyens vanilla.
-preventEliteItemDisenchantment: true
-# Définit le message qui apparaît pour les joueurs lorsqu'ils tentent de désenchanter un objet et que cela n'est pas autorisé.
-preventEliteItemDisenchantmentMessage: '&c[EliteMobs] Impossible de désenchanter des objets d'élite !'
-# Définit si les objets d'élite pourront être améliorés du diamant au netherite par des moyens vanilla. Non recommandé !
-preventEliteItemDiamondToNetheriteUpgrade: true
-# Définit si les objets d'élite ne perdront de la durabilité qu'en cas de mort.
-# Il s'agit d'un système important pour EliteMobs, et il est fortement recommandé car les combats de haut niveau sont presque impossibles sans lui !
-eliteItemsDurabilityLossOnlyOnDeath: true
-# Définit le multiplicateur de perte de durabilité pour les objets d'élite s'il est configuré pour perdre de la durabilité en cas de mort.
-# Les valeurs entre 0,0 et 1,0 diminuent la perte de durabilité et les valeurs supérieures à 1,0 l'augmentent.
-# Exemple : 0,5 inflige 50 % de la perte de durabilité, 2,0 inflige 200 % de la perte de durabilité.
-eliteItemsDurabilityLossMultiplier: 1.0
-# Définit le message qui apparaît lorsque la mise au rebut d'objets réussit.
-scrapSucceededMessageV2: '&8[EliteMobs] &2Mise au rebut réussie $amount fois !'
-# Définit le message qui apparaît lorsque la mise au rebut d'objets échoue.
-scrapFailedMessageV2: '&8[EliteMobs] &cLa mise au rebut a échoué $amount fois !'
-# Définit si le butin d'élite doit être placé directement dans les inventaires des joueurs.
-putLootDirectlyIntoPlayerInventory: false
-# Définit la différence de niveau maximale que les joueurs peuvent avoir avant qu'ils ne puissent plus piller des objets qui sont d'un niveau trop bas.
-# Ceci est calculé en fonction du niveau moyen du butin que porte le joueur.
-# Par exemple, si la valeur est définie sur 10 et qu'un joueur a un équipement de niveau 50, il ne pourra pas cultiver des jefes de niveau 39.
-lootLevelDifferenceLockout: 10
-# Définit si EliteMobs empêchera les objets d'élite de se casser lors de l'utilisation de la perte de durabilité du système en cas de mort.
-# Les joueurs ne pourront pas utiliser les objets sans durabilité de toute façon, ceci est simplement pour éviter la perte accidentelle d'objets de haut niveau mais de faible durabilité.
-preventEliteItemsFromBreaking: true
-# Définit le niveau minimum, +7, des jefes qui pueden dejar caer equipo de diamante generado por procedimientos en EliteMobs.
-# No hay equipo de netherite generado por procedimientos en EliteMobs, solo botín personalizado.
-minimumProcedurallyGeneratedDiamondLootLevelPlusSeven: 10
-# Définit le mensaje que se muestra en el chat al conseguir botín con éxito a través del comando /em simloot <level> <times>.
-simlootMessageSuccess: '&8[EliteMobs] &2Rolled for loot and got $itemName &2!'
-# Définit le mensaje que se muestra en el chat al no obtener botín a través del comando /em simloot <level> <times>.
-simlootMessageFailure: '&8[EliteMobs] &cRolled for loot and got nothing!'
-# Définit le mensaje que reciben los jugadores cuando el botín de élite se deposita directamente en sus inventarios.
-directDropCustomLootMessage: '&8[EliteMobs] &2Obtained $itemName &2!'
-# Définit le mensaje que reciben los jugadores cuando el botín de vainilla se deposita directamente en sus inventarios.
-directDropMinecraftLootMessage: '&8[EliteMobs] &aObtained $itemName &a!'
-# Définit le mensaje que reciben los jugadores cuando las monedas de élite se depositan directamente en sus inventarios.
-directDropCoinMessage: '&8[EliteMobs] &aObtained &2$amount $currencyName &a!'
-# Establece si EliteMobs ocultará los atributos de vainilla de Minecraft.
-hideItemAttributes: true
-# Définit l'entrée de tradition spécifique aux armes sur un objet d'élite. Le marqueur de position $EDPS est remplacé par le DPS d'élite (dégâts par seconde) de l'arme.
-weaponEntry: '&7DPS d'élite : &2$EDPS'
-# Définit l'entrée de tradition spécifique aux armures sur un objet d'élite. Le marqueur de position $EDEF est remplacé par la DEF (défense) d'élite de l'arme.
-armorEntry: '&7Armure d'élite : &2$EDEF'
-# Définit le message envoyé lorsqu'un joueur tue un boss, mais que le niveau de l'équipement est trop différent du niveau du boss pour obtenir des pièces.
-levelRangeTooDifferent: '&8EM] &4Votre équipement est de niveau $playerLevel et le boss est de niveau
-  $bossLevel, la différence de niveau est trop élevée pour obtenir des pièces !'
+filename: test_boss.yml
 ```
+
+</div>
 
 </details>
 
----
+</div>
 
-## AntiExploit.yml
+***
 
-`AntiExploit.yml` Allows admins to customize different aspects of the AntiExploit system. The AntiExploit system exists to prevent players from using things such as mob grinders to easily farm for coins and loot, and pushes them to do real fights and minidungeons instead of afk clicking their way to the top of the plugin.
+**最小限の実行可能性**
 
-This is a critical system to keep on if you don't want people to just afk grind the entire plugin and want to actually have them interact with minidungeons.
+`summonType: SUMMON_TYPE`と`filename: filename.yml`だけで、カスタム援軍を作成するのに十分です。次の例がこれを示しています。
+
+<div align="center">
 
 <details>
 
-<summary><b>Expand Table</b></summary>
+<summary><b>例</b></summary>
 
-```yml
-# Sets the message that shows up when the antiexploit is triggered.
-AntiExploit message: '&c[EM AntiExploit] &7Nearby elite won''t drop special loot.'
-# Sets if the darkroom antiexploit 1 is enabled.
-# Specific antiexploit features are not documented intentionally. Server operators can see what antiexploit type got triggered, but further information as to how it specifically works is not made available.
-Enable darkroom antiexploit 1: true
-# Sets if the darkroom antiexploit 2 is enabled.
-# Specific antiexploit features are not documented intentionally. Server operators can see what antiexploit type got triggered, but further information as to how it specifically works is not made available.
-Enable darkroom antiexploit 2: true
-# Sets if the darkroom antiexploit 3 is enabled.
-# Specific antiexploit features are not documented intentionally. Server operators can see what antiexploit type got triggered, but further information as to how it specifically works is not made available.
-Enable darkroom antiexploit 3: true
-# Sets if the large darkroom antiexploit 1 is enabled.
-# Specific antiexploit features are not documented intentionally. Server operators can see what antiexploit type got triggered, but further information as to how it specifically works is not made available.
-Enable large darkroom antiexploit 1: true
-# Sets if the enderman height antiexploit is enabled.
-# Specific antiexploit features are not documented intentionally. Server operators can see what antiexploit type got triggered, but further information as to how it specifically works is not made available.
-Enable enderman height antiexploit: true
-# Sets if the mount antiexploit is enabled.
-# Specific antiexploit features are not documented intentionally. Server operators can see what antiexploit type got triggered, but further information as to how it specifically works is not made available.
-Enable mount antiexploit: true
-# Sets if elite mobs can pick items up
-preventItemPickupByMobs: true
-# Sets if the ambient damage antiexploit is enabled.
-# Specific antiexploit features are not documented intentionally. Server operators can see what antiexploit type got triggered, but further information as to how it specifically works is not made available.
-Enable ambient damage antiexploit: true
-# Sets if the honey block antiexploit is enabled.
-# Specific antiexploit features are not documented intentionally. Server operators can see what antiexploit type got triggered, but further information as to how it specifically works is not made available.
-Enable honey block antiexploit: true
-# Sets the threshold for antiexploit activation. Higher values make it more tolerant. Modifying this is not recommended.
-antiExploitThreshold: 10
-# Sets if the no path antiexploit is enabled
-nPathExploit: true
+<div align="left">
+
+```yaml
+isEnabled: true
+entityType: ENDER_DRAGON
+name: $eventBossLevel &e世界の束縛者
+level: 200
+powers:
+- ender_dragon_arrow_bombardment.yml
+- summonType: ON_COMBAT_ENTER
+  filename: binder_of_worlds_phase_1_parkour_reinforcement.yml
 ```
+
+*ただし、もっと複雑なものが必要な場合は、以下を読み進めて、これらのオプションで他に何ができるかを確認してください。*
+
+</div>
 
 </details>
 
----
+</div>
 
-## CombatTag.yml
+<div align="center">
 
-`CombatTag.yml` contains the config settings for the Combat Tag system. This system is still very far from being complete, but it attempts to manage player behavior once they enter combat.
+***
+
+### chance
+
+これは、`summonType` `ONCE`および`ON_HIT`オプションを補完するために作成されたオプションの設定フィールドです。これは、ボスが攻撃されたときにカスタム援軍がスポーンする確率を表します。
+
+| キー       |       値        | デフォルト |
+|----------|:--------------:|:-----:|
+| `chance` | [ダブル](#double) |  なし   |
 
 <details>
 
-<summary><b>Expand Table</b></summary>
+<summary><b>例</b></summary>
+
+<div align="left">
 
 ```yml
-# Sets if the combat tag is enabled.
-# When enabled, flying players that engage in combat are set to stop flying.
-Enable combat tag: true
-# Sets the message sent when the combat tag is activated.
-Combat tag message: '&c[EliteMobs] Combat tag activated!'
-# Sets if the /ag command will have a timer before teleportation
-Enable adventurers guild teleport timer: true
-# Sets the action message set while waiting for the teleport timer.
-Teleport time left: '&7[EM] Teleporting in &a$time &7seconds...'
-# Sets the message sent when players move while waiting for teleportation.
-Teleport cancelled: '&7[EM] &cTeleport interrupted!'
+chance: 0.5
 ```
+
+*カスタム援軍をスポーンさせる確率が50％であることを表します。*
+
+</div>
 
 </details>
 
----
+***
 
-## DiscordSRV.yml
+### location
 
-`DiscordSRV.yml` contains the configuration settings for DiscordSRV. If you want to see how to configure this feature, [click here!]($language$/elitemobs/discordsrv.md)
+`location: x,y,z`はオプションの設定フィールドで、管理者が援軍の位置をブロック数でオフセットできます。このオプションについて知っておくべき重要な概念を以下に示します。
+
+**オフセットされた場所は相対的です。** これは、`location: 0,10,0`がボスからちょうど10ブロック上にボスをスポーンし、ワールド座標0,10,0にはスポーンしないことを意味します。
+
+**相対位置は、リージョナルボスでは異なります。**
+リージョナルボスは常にスポーンポイントを相対位置の原点として使用します。つまり、ボスのスポーンポイントがわかっていてブロックを数えれば、ドラゴンのボスがどこにいても、非常に特定のブロック位置にチャレンジタワーのボスをスポーンさせることができます。
+
+**距離の測定に失敗すると、ボスはブロックの中にスポーンします。**
+
+| キー         |       値        | デフォルト |
+|------------|:--------------:|:-----:|
+| `location` | [文字列](#string) |  なし   |
 
 <details>
 
-<summary><b>Expand Table</b></summary>
+<summary><b>例</b></summary>
+
+<div align="left">
 
 ```yml
-# Documentation can be found here: https://magmaguy.com/wiki.html#lang=en&article=elitemobs+discordsrv.md
-announcementRoomName: YOU_NEED_TO_PUT_THE_NAME_OF_THE_DISCORD_ROOM_YOU_WANT_ELITEMOBS_ANNOUNCEMENTS_TO_BE_BROADCASTED_IN_AS_YOU_HAVE_IN_YOUR_DISCORDSRV_CONFIGURATION_FILE_CHECK_ELITEMOBS_WIKI_FOR_DETAILS
-
+location: 0,10,0
 ```
+
+*リージョナルでないカスタムボスの場合、ボスがどこにいても、ボスのちょうど10ブロック上に援軍をスポーンさせます。*
+
+*リージョナルカスタムボスの場合、ボスがどこにいても、リージョナルボスのスポーンポイントのちょうど10ブロック上に援軍をスポーンさせます。*
+
+</div>
 
 </details>
 
----
+_**重要な注意点：これは特に`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`には必須のフィールドです！**_
 
-## EconomySettings.yml
+***
 
-`EconomySettings.yml` contains the configuration settings for the EliteMobs economy.
+### lightningRod
+
+これは、`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`でのみ役立つ特別な設定です。これにより、エンドクリスタルが遅延して周囲の床を打ち付ける能力が得られます。
+
+他のカスタム援軍では使用できません。これらの能力にはパワーを使用する必要があるためです。
+
+| キー             |        値         |  デフォルト  |
+|----------------|:----------------:|:-------:|
+| `lightningRod` | [ブール値](#boolean) | `false` |
 
 <details>
 
-<summary><b>Expand Table</b></summary>
+<summary><b>例</b></summary>
+
+<div align="left">
 
 ```yml
-# Sets if the EliteMobs economy is enabled. This means elite coins, the ability to buy and sell gear and the ability to upgrade guild ranks
-# If disabled, players will not be able to progress in the plugin!
-enableEconomy: true
-# Sets the resale item of items, as a % of the original price. 5 is 5%
-itemResaleValue: 5.0
-# Sets the in-game name of the currency used.
-currencyName: Elite Coins
-# Sets the plugin to use Vault. THIS IS NOT RECOMMENDED! Read why here: https://github.com/MagmaGuy/EliteMobs/wiki/%5BThird-party-support%5D-Vault
-useVault - not recommended: false
-# Sets if elites will drop coins based on their level.
-enableCurrencyShower: true
-# Sets the multiplier for the currency dropped by elites.
-currencyShowerTierMultiplier: 1.0
-# Sets the message sent when players pick up elite currency.
-chatCurrencyShowerMessage: '&7[EM] You''ve picked up &a$amount $currency_name!'
-# Sets the action bar message sent when players pick up elite currency.
-actionbarCurrencyShowerMessage: '&7[EM] You''ve picked up &a$amount $currency_name!'
-# Send the message players get after looting currency. Useful for tutorial purposes.
-adventurersGuildNotificationMessages: '&7[EM] Extra spending money? Try &a/ag !'
-# Sets the tax rate for transactions between players.
-# Strongly recommended for balance reasons, as high level players can gain up to 6x more currency and try to use other players to bypass prestige currency resets.
-playerToPlayerPaymentTaxes: 0.2
-# Message sent when sending elite currency to other players.
-Economy pay message v2: '&2You have paid &2$amount_sent $currency_name &2to $receiver&2,
-  who got $amount_received after taxes!'
-# Message sent after players send currency.
-Economy currency left message: You now have &2$amount_left $currency_name
-# Message received when receiving currency.
-Economy money from payment message: You have received &2$amount_received $currency_name
-  &ffrom $sender
-# Message sent when players try to send an amount of coins they do not have.
-Economy payment insufficient currency: '&cYou don''t have enough $currency_name to
-  do that!'
-# /em balance message
-Wallet command message: You have &2$balance $currency_name
-# Confirmation message sent when players try to send currency to another player.
-Tax confirmation message: '&cSending a payment will cost $percentage% in taxes. &aDo
-  &9$command &ato proceed!'
-# Message sent when a player buys from a shop.
-Shop buy message: '&aYou have bought $item_name &afor $item_value $currency_name!'
-# Message sent when a player interacts with a shop.
-Shop current balance message: '&aYou have $currency_amount $currency_name.'
-# Message sent when players don't have enough currency to purchase an item
-Shop insufficient funds message: '&cYou don''t have enough $currency_name!'
-# Second part of message sent when players try to purchase an item they can not afford.
-Shop item cost message: That item costs &c$item_value $currency_name.
-# Message sent upon selling an item to a shop.
-Shop sell message: '&aYou have sold $item_name &afor $currency_amount $currency_name!'
-# Message sent upon trying to sell an item that does not belong to that player.
-Shop sale player items warning: '&cYou can''t sell items that are not currently soulbound
-  to you! This includes items from other prestige tiers!'
-# Message sent upon trying to sell a non-EliteMobs item
-Shop sale instructions: '&cYou can only sell EliteMobs loot here! (Armor / weapons
-  dropped from elites showing a value on their lore)'
-# Message sent upon selling a batch of elite items.
-shopBatchSellItem: '&aYou have sold your items &afor $currency_amount $currency_name!'
+lightningRod: false
 ```
 
+</div>
+
 </details>
+
+***
+
+### inheritAggro
+
+これは、カスタム援軍がボスの脅威レベルを継承するオプションの設定フィールドです。
+
+これは、スポーンする援軍に最大のダメージを与えている人をターゲットにさせたい場合に特に役立ちます。
+
+| キー             |        値         |  デフォルト  |
+|----------------|:----------------:|:-------:|
+| `inheritAggro` | [ブール値](#boolean) | `false` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+inheritAggro: false
+```
+
+</div>
+
+</details>
+
+***
+
+### amount
+
+これは、スポーンする援軍の量を設定するオプションの設定フィールドです。
+
+| キー       |       値        | デフォルト |
+|----------|:--------------:|:-----:|
+| `amount` | [整数](#integer) |  `1`  |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+amount: 1
+```
+
+</div>
+
+</details>
+
+***
+
+### spawnNearby
+
+これは、カスタム援軍をボスの上または特定の相対位置ではなく、近くにスポーンさせるかどうかを設定するオプションの設定フィールドです。
+
+この方法は地形の変動を正しく考慮に入れ、壁の中にボスをスポーンさせることはありませんが、一部の設定では、戦闘エリアが小さすぎると壁の後ろにスポーンする可能性があります。半径は約30ブロックです。
+
+| キー            |        値         |  デフォルト  |
+|---------------|:----------------:|:-------:|
+| `spawnNearby` | [ブール値](#boolean) | `false` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+spawnNearby: false
+```
+
+</div>
+
+</details>
+
+***
+
+### inheritLevel
+
+これは、カスタム援軍が強化するカスタムボスのレベルを継承するかどうかを設定するオプションの設定フィールドです。
+
+| キー             |        値         |  デフォルト  |
+|----------------|:----------------:|:-------:|
+| `inheritLevel` | [ブール値](#boolean) | `false` |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+inheritLevel: false
+```
+
+</div>
+
+</details>
+
+***
+
+### customSpawn
+
+これは、グローバル援軍にのみ使用される設定フィールドです。カスタムスポーン設定を使用して、援軍がスポーンできる場所を設定します。
+
+これは、援軍を地表、光のある場所、特定のバイオームなどにスポーンできるようにするために使用できます。詳細については、[カスタムスポーン]($language$/elitemobs/creating_spawns.md)
+に関するウィキページを確認してください。
+
+| キー            |         値          | デフォルト |
+|---------------|:------------------:|:-----:|
+| `customSpawn` | [ファイル名](#filename) |  なし   |
+
+<details>
+
+<summary><b>例</b></summary>
+
+<div align="left">
+
+```yml
+customSpawn: normal_surface_spawn.yml
+```
+
+</div>
+
+</details>
+
+</div>
+
+## 大規模な援軍の構築
+
+前のフィールドのほとんどを使用して、援軍の例を作成してみましょう。
+
+```yaml
+- summonType: ON_COMBAT_ENTER
+  filename: test_boss.yml
+  spawnNearby: true
+  inheritAggro: true
+  inheritLevel: true
+```
+
+これは次のことを行います。
+
+- カスタム援軍を作成します。
+- カスタム援軍は、カスタムボスが戦闘状態になるとスポーンします（`summonType: ON_COMBAT_ENTER`）。
+- 召喚されるカスタム援軍は、`test_boss.yml`のものです（`filename: test_boss.yml`）。
+- カスタム援軍は、カスタムボスの現在の場所から30ブロック以内にスポーンします（`spawnNearby: true`）。
+-
+カスタム援軍は、強化するカスタムボスのターゲットを継承します。つまり、最大のダメージを与えたプレイヤーを攻撃します（`inheritAggro: true`）。
+- `test_boss.yml`の設定に関係なく、カスタム援軍は、強化するカスタムボスと同じレベルになります（`inheritLevel: true`）。
+
+```yaml
+- summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL
+  location: -80,10,0
+  lightningRod: true
+```
+
+これは次のことを行います。
+
+- カスタム援軍を作成します。
+-
+カスタム援軍は、戦闘が開始されたときに設置されるエンドクリスタルになります（`summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL`）。
+- エンドクリスタルは、遅延して周囲の地面を打ち付けます（`lightningRod: true`）。
+
+これをカスタムボスに適用するには：
+
+```yaml
+isEnabled: true
+entityType: ENDER_DRAGON
+name: $eventBossLevel &e世界の束縛者
+level: 200
+powers:
+  - ender_dragon_arrow_bombardment.yml
+  - summonType: ON_COMBAT_ENTER
+    filename: test_boss.yml
+    spawnNearby: true
+    inheritAggro: true
+    inheritLevel: true
+  - summonType: ON_COMBAT_ENTER_PLACE_CRYSTAL
+    location: -80,10,0
+    lightningRod: true
+```
+
+これで完了です！以下にさらにいくつかのヒントを示します。
+
+- フィールドは任意の順序で設定できますが、常に最初に`summonable`を設定することをお勧めします。
+- これは、古くてリストにない援軍システムの大幅な改善です。将来機能しなくなる可能性があるため、現時点では依存することはお勧めしません。

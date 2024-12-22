@@ -1,48 +1,64 @@
-# Creación de contenido
+# Création de contenu
 
 ***
 
-## Creación de la compilación
+## Création de la structure
 
-No hay restricciones en cuanto a lo que puede construir para BetterStructures, aunque se recomienda mantener el tamaño de las estructuras por debajo de 100x100x100 bloques por razones generales de ajuste mundial y rendimiento. Dicho esto, puede manejar fácilmente estructuras mucho más grandes.
-
-***
-
-### Bloques especiales
-
-BetterStructures tiene dos bloques especiales: barreras y lechos de roca. Cualquier otro bloque que WorldEdit / FAWE pueda pegar se pegará normalmente, pero las barreras y los bloques de lecho de roca son la excepción. En lugar de pegar, estos bloques se reemplazan con los siguientes comportamientos personalizados:
+Il n'y a aucune restriction quant à ce que vous pouvez construire pour BetterStructures, bien qu'il soit recommandé de
+maintenir la taille des structures sous les 100x100x100 blocs pour l'adaptation générale au monde et des raisons de
+performances. Cela étant dit, il peut facilement gérer des structures beaucoup plus grandes.
 
 ***
 
-#### Barrera
+### Blocs spéciaux
 
-Los bloques de barrera hacen que el plugin no coloque ningún bloque en esa ubicación. Esto significa que cualquier bloque que estuviera originalmente allí en la generación normal del mundo permanecerá allí.
-
-Los constructores pueden usar esto para redondear los bordes de un pegado, haciéndolo parecer más natural, o para moldear paredes a una cueva potencial, entre otros trucos.
-
-***
-
-#### Lecho de roca
-
-Los bloques de lecho de roca hacen que el plugin garantice que haya un bloque sólido en esa ubicación. Esto significa que si ya existe un bloque sólido en la generación predeterminada del mundo, ese bloque no se modificará; sin embargo, si el bloque es aire o líquido, se reemplazará con un bloque sólido del [pedestal](#pedestalmaterial).
-
-Los constructores pueden usar esto para crear pisos con características como el piso para rieles de vagonetas o garantizar que exista un piso sin anular los bloques sólidos que ya puedan existir en esa ubicación en el mundo, haciendo que las construcciones parezcan más orgánicas.
+BetterStructures a deux blocs spéciaux: les barrières et le bedrock. Tout autre bloc que WorldEdit / FAWE peut coller
+sera collé normalement, mais les barrières et les blocs de bedrock sont l'exception. Au lieu d'être collés, ces blocs
+sont remplacés par les comportements personnalisés suivants:
 
 ***
 
-### Carteles de generación
+#### Barrière
 
-BetterStructures puede usar carteles con texto específico para generar mobs e incluso jefes de EliteMobs y MythicMobs en ubicaciones específicas de la compilación.
+Les blocs de barrière font en sorte que le plugin ne place aucun bloc à cet endroit. Cela signifie que le bloc qui était
+à l'origine là lors de la génération normale du monde restera là.
+
+Les constructeurs peuvent utiliser cela pour arrondir les bords d'un collage, le rendant plus naturel, ou pour mouler
+des murs sur une grotte potentielle, parmi d'autres astuces.
 
 ***
 
-##### Generación de mobs de vainilla
+#### Bedrock
 
-Si toma un cartel normal y lo coloca en algún lugar, asegúrese de que la primera línea diga `[spawn]` y la segunda línea tenga el [nombre del tipo de entidad siguiendo la API de Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html), generará una entidad persistente en esa ubicación del tipo que especificó.
+Les blocs de bedrock font en sorte que le plugin garantisse qu'il y a un bloc solide à cet emplacement. Cela signifie
+que si un bloc solide est déjà présent dans la génération du monde par défaut, ce bloc ne sera pas modifié ; cependant,
+si le bloc est de l'air ou du liquide, il sera remplacé par un bloc solide du [piédestal](#pedestalmaterial).
 
-Como ejemplo, si tiene un cartel que dice `[spawn]` en la primera línea y `ZOMBIE` en la segunda línea, generará un zombi en esa ubicación cuando se coloque la compilación. Esto también se puede utilizar para entidades no vivas, como soportes de armadura o cristales de ender.
+Les constructeurs peuvent utiliser cela pour créer des sols avec des fonctionnalités telles que le sol pour les rails de
+chariot de mine ou garantir qu'un sol existe sans remplacer les blocs solides potentiellement déjà existants à cet
+endroit dans le monde, ce qui rend les constructions plus organiques.
 
-<div class="minecraft-sign"> 
+***
+
+### Panneaux d'apparition
+
+BetterStructures peut utiliser des panneaux avec un texte spécifique pour faire apparaître des créatures et même des
+boss d'EliteMobs et MythicMobs à des endroits spécifiques de la construction.
+
+***
+
+##### Faire apparaître des créatures vanille
+
+Si vous prenez un panneau normal et que vous le placez quelque part, assurez-vous que la première ligne
+indique `[spawn]` et que la deuxième ligne contient
+le [nom du type d'entité suivant l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html),
+vous ferez apparaître une entité persistante à cet endroit du type que vous avez spécifié.
+
+Par exemple, si vous avez un panneau qui dit `[spawn]` sur la première ligne et `ZOMBIE` sur la deuxième ligne, vous
+ferez apparaître un zombie à cet endroit lorsque la construction sera placée. Cela peut également être utilisé pour des
+entités non vivantes telles que des présentoirs d'armure ou des cristaux d'Ender.
+
+<div class="minecraft-sign">
 <p>[spawn]</p>
 <p>ZOMBIE</p>
 <p></p>
@@ -51,17 +67,23 @@ Como ejemplo, si tiene un cartel que dice `[spawn]` en la primera línea y `ZOMB
 
 ***
 
-##### Generación de mobs de élite (plugin de jefes recomendado)
+##### Faire apparaître des Elite Mobs (plugin de boss recommandé)
 
-BetterStructures también tiene una integración avanzada con EliteMobs, que le permite crear arenas de jefes basadas en compilaciones y carteles de generación.
+BetterStructures dispose également d'une intégration avancée d'EliteMobs, qui lui permet de créer des arènes de boss
+basées sur des constructions et des panneaux d'apparition.
 
-Si toma un cartel normal y lo coloca en algún lugar, haciendo que la primera línea sea [elitemobs], puede usar todas las demás líneas para decir qué archivo de jefe usar.
+Si vous prenez un panneau normal et que vous le placez quelque part, en mettant [elitemobs] sur la première ligne, vous
+pouvez utiliser toutes les autres lignes pour indiquer quel fichier de boss utiliser.
 
-Como ejemplo, si hace `[elitemobs]` en la primera línea y luego `test_boss.yml`, en la segunda línea, generará el jefe de prueba. Si tiene un nombre de archivo muy largo, como boss_with_very_long_filename.yml, puede dividirlo en varias líneas, así que haga la línea 2 `boss_with_very_` y luego la línea 3 `long_filename.yml` y eso funcionará.
+Par exemple, si vous mettez `[elitemobs]` sur la première ligne, puis `test_boss.yml` sur la deuxième ligne, vous ferez
+apparaître le boss test. Si vous avez un nom de fichier très long tel que boss_avec_un_nom_de_fichier_tres_long.yml,
+vous pouvez le diviser en plusieurs lignes, donc mettez la ligne 2 `boss_avec_un_nom_de_` et ensuite la ligne
+3 `fichier_tres_long.yml` et cela fonctionnera.
 
-Como recordatorio, de forma predeterminada, las arenas de combate estarán protegidas hasta que los jugadores maten a todos los jefes de la compilación si su servidor está utilizando WorldGuard.
+Pour rappel, par défaut, les arènes de combat seront protégées jusqu'à ce que les joueurs tuent tous les boss de la
+construction si votre serveur utilise WorldGuard.
 
-<div class="minecraft-sign"> 
+<div class="minecraft-sign">
 <p>[elitemobs]</p>
 <p>test_boss_with</p>
 <p>_a_long_name</p>
@@ -70,11 +92,14 @@ Como recordatorio, de forma predeterminada, las arenas de combate estarán prote
 
 ***
 
-##### Generación de Mythic Mobs
+##### Faire apparaître des Mythic Mobs
 
-BetterStructures también tiene una integración simple con MythicMobs, que le permite generar un mob de MythicMobs en la compilación. En la primera línea de un cartel normal, escriba `[mythicmobs]`, luego en la segunda línea use el mob identificado. Puede usar un número en la tercera línea para establecer el nivel del mob.
+BetterStructures dispose également d'une intégration simple de MythicMobs, qui lui permet de faire apparaître une
+créature de MythicMobs dans la construction. Sur la première ligne d'un panneau normal, écrivez `[mythicmobs]`, puis sur
+la deuxième ligne, utilisez l'identifiant de créature. Vous pouvez utiliser un nombre sur la troisième ligne pour
+définir le niveau de la créature.
 
-<div class="minecraft-sign"> 
+<div class="minecraft-sign">
 <p>[mythicmobs]</p>
 <p>my_mythic_boss</p>
 <p>1</p>
@@ -83,86 +108,108 @@ BetterStructures también tiene una integración simple con MythicMobs, que le p
 
 ***
 
-## Esquemas
+## Schémas
 
-Los esquemas son archivos generados por WorldEdit o FastAsyncWorldEdit que contienen los bloques para la compilación que utilizará BetterStructures.
+Les schémas sont des fichiers générés par WorldEdit ou FastAsyncWorldEdit qui contiennent les blocs de la construction
+que BetterStructures utilisera.
 
-Aquí no se incluyen instrucciones detalladas sobre cómo hacer un esquema, ya que se detallan minuciosamente en las documentaciones de WorldEdit y FastAsyncWorldEdit, pero generalmente se hace mediante:
+Des instructions détaillées sur la manière de créer un schéma ne sont pas incluses ici, car elles sont détaillées de
+manière approfondie dans les documentations de WorldEdit et FastAsyncWorldEdit, mais cela se fait généralement en:
 
-1) elija una esquina de la compilación y use el comando `//pos1`
-2) elija la esquina diagonalmente opuesta y use el comando `//pos2`
-3) use el comando `//copy`
-4) use el comando `/schem save <nombreEsquema>`, donde `<nombreEsquema>` es el nombre de archivo que desea utilizar para su esquema.
+1) Choisir un coin de la construction et utiliser la commande `//pos1`
+2) Choisir le coin diagonalement opposé et utiliser la commande `//pos2`
+3) Utiliser la commande `//copy`
+4) Utiliser la commande `/schem save <nom_du_schéma>` où `<nom_du_schéma>` est le nom de fichier que vous voulez
+   utiliser pour votre schéma.
 
-<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="imagen de la documentación de worldedit de sus documentos">
+<img src="https://worldedit.enginehub.org/en/latest/_images/cuboid.png" alt="image de documentation worldedit de leurs docs">
 
-*¡Asegúrese de ejecutar el comando `//pos1` en el punto 1 y `//pos2` en el punto 2!*
-
-***
-
-#### Punto de anclaje
-
-Los puntos de anclaje son donde ejecuta el comando `//copy` para el esquema. Al simplemente pegar un esquema, estos son donde está parado en relación con la compilación.
-
-Es importante que los puntos de anclaje sean correctos para que los esquemas funcionen correctamente.
-
-* Para las _compilaciones de superficie_, se recomienda pararse en el punto más bajo del piso al copiar la compilación.
-* Para las _compilaciones subterráneas_, se recomienda pararse encima de la compilación.
-* Para las _compilaciones de líquido_, se recomienda pararse encima del agua.
-* Para las _compilaciones aéreas_, se recomienda que se pare encima de la compilación.
-
-**Tenga en cuenta que siempre debe estar muy cerca o directamente encima de las compilaciones al copiarlas; cuanto más lejos esté, más lento será cuando sea necesario pegar la compilación.**
+*Assurez-vous d'exécuter la commande `//pos1` sur le point 1 et `//pos2` sur le point 2!*
 
 ***
 
-# Configuraciones de esquemas
+#### Point d'ancrage
 
-Cada archivo de esquema tiene una configuración de esquema. Si un archivo de esquema acaba de agregarse al servidor, la configuración se generará después de un reinicio o después de un `/betterstructures reload`.
+Les points d'ancrage sont l'endroit où vous exécutez la commande `//copy` pour le schéma. Lorsque vous collez simplement
+un schéma, c'est là que vous vous tenez par rapport à la construction.
 
-Estas configuraciones le permiten establecer las siguientes configuraciones para el pegado del esquema:
+Les points d'ancrage sont importants pour que les schémas fonctionnent correctement.
+
+* Pour les _constructions de surface_, il est recommandé de se tenir au point le plus bas du sol lors de la copie de la
+  construction.
+* Pour les _constructions souterraines_, il est recommandé de se tenir au-dessus de la construction.
+* Pour les _constructions liquides_, il est recommandé de se tenir au-dessus de l'eau.
+* Pour les _constructions aériennes_, il est recommandé de se tenir au-dessus de la construction.
+
+**Veuillez noter que vous devez toujours être très près ou directement au-dessus des constructions lors de la copie -
+plus vous êtes loin, plus il y aura de latence lorsque la construction devra être collée.**
+
+***
+
+# Configurations de schéma
+
+Chaque fichier de schéma a une configuration de schéma. Si un fichier de schéma vient d'être ajouté au serveur, la
+configuration sera générée après un redémarrage ou après un `/betterstructures reload`.
+
+Ces configurations vous permettent de définir les paramètres suivants pour le collage du schéma:
 
 ***
 
 ## isEnabled
 
-Establece si el esquema está habilitado. Si está deshabilitado, no se colocará en ningún lugar.
+Détermine si le schéma est activé. S'il est désactivé, il ne sera placé nulle part.
 
 ***
 
 ## weight
 
-Peso establece el peso del esquema en términos de la probabilidad de que se elija.
+Le poids définit le poids du schéma en termes de probabilité d'être choisi.
 
-El valor predeterminado es `1.0`. Si hace que una compilación tenga un peso de `2.0`, será 2 veces más probable que se seleccione que las otras compilaciones. Si lo hace `0.5`, tendrá la mitad de posibilidades de ser elegido.
+La valeur par défaut est `1.0`. Si vous donnez à une construction un poids de `2.0`, elle aura 2x plus de chances d'être
+sélectionnée que les autres constructions. Si vous mettez `0.5`, elle aura la moitié des chances d'être choisie.
 
-_**Nota:** ¡Tenga en cuenta que las probabilidades de que se elija una compilación específica cambian drásticamente según la cantidad de compilaciones que compiten por la ubicación que recibirá una estructura!_
+_**Remarque:** N'oubliez pas que les probabilités qu'une construction spécifique soit choisie changent considérablement
+en fonction du nombre total de constructions en compétition pour l'emplacement qui recevra une structure!_
 
 ***
 
 ## pedestalMaterial
 
-**Importante: ¡campo opcional!**
+**Important: champ facultatif!**
 
-El material del pedestal establece el tipo de material de los bloques del pedestal utilizando los [nombres de materiales de la api de spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) - ¡utilícelos o no funcionará!
+Le matériau du piédestal définit le type de matériau des blocs de piédestal à l'aide
+des [noms de matériau de l'API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) - utilisez-les
+ou cela ne fonctionnera pas!
 
-Los pedestales son los bloques que se colocan debajo de las construcciones de superficie y subterráneas para ajustar cualquier espacio de aire y mejorar el ajuste de una construcción con el mundo. Estos son también los mismos bloques que reemplazan los bloques de lecho de roca en el esquema.
+Les piédestaux sont les blocs qui sont placés sous les bâtiments de surface et souterrains pour combler les espaces
+vides et améliorer l'ajustement d'un bâtiment avec le monde. Ce sont également les mêmes blocs qui remplacent les blocs
+de bedrock dans le schéma.
 
-Cuando no se define nada en la configuración, se analizan los bloques debajo de la ubicación para el pegado y se selecciona el que mejor se ajuste como material para la mejor apariencia integrada.
+Lorsque rien n'est défini dans la configuration, les blocs situés sous l'emplacement du collage sont analysés et le
+meilleur ajustement est sélectionné comme matériau pour un aspect mieux intégré.
 
 ***
 
 ## generatorConfigFilename
 
-Esta opción establece el nombre del archivo de configuración, por nombre de archivo, que utilizará el esquema. Esto requiere el nombre de archivo completo, incluida la extensión `.yml` al final. Como ejemplo, `generatorConfigFilename: generator_surface_global.yml` sería la opción correcta si desea utilizar el generador definido en `generator_surface_global.yml` que puede encontrar en la carpeta de configuración de generadores.
+Cette option définit le nom du fichier de configuration, par nom de fichier, que le schéma utilisera. Cela nécessite le
+nom de fichier complet, y compris l'extension `.yml` à la fin. Par
+exemple, `generatorConfigFilename: generator_surface_global.yml` serait l'option correcte si vous voulez utiliser le
+générateur défini dans `generator_surface_global.yml` que vous pouvez trouver dans le dossier de configuration des
+générateurs.
 
 ***
 
 ## treasureFile
 
-Establece el [archivo de tesoro]($language$/betterstructures/creating_treasure.md) que utilizará esta estructura, sobrescribiendo el archivo de tesoro establecido por el [generador]($language$/betterstructures/creating_generators.md) de la estructura. Esto generalmente no se recomienda a menos que sea para una construcción muy especial. Generalmente es mejor modificar o crear un generador para este propósito.
+Définit le [fichier de trésor]($language$/betterstructures/creating_treasure.md) que cette structure utilisera, en
+remplaçant le fichier de trésor défini par le [générateur]($language$/betterstructures/creating_generators.md) de la
+structure. Ceci n'est généralement pas recommandé, sauf s'il s'agit d'une construction très spéciale. Il est
+généralement préférable de modifier ou de créer un générateur à cette fin.
 
-# Personalización del contenido
+# Personnalisation du contenu
 
-Todo lo que se distribuye en BetterStructures es editable. Puede modificar cualquier archivo de esquema y configuración del generador a su gusto.
+Tout ce qui est distribué dans BetterStructures est modifiable. Vous pouvez modifier tous les fichiers de schémas et les
+paramètres du générateur à votre guise.
 
-La guía de creación de contenido anterior también es una guía que puede ayudarlo a editar contenido existente.
+Le guide de création de contenu ci-dessus est également un guide qui peut vous aider à modifier le contenu existant.

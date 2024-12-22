@@ -1,4 +1,4 @@
-# Désactivation des dégâts d’explosion
+# Désactivation des dégâts d'explosion
 
 ## Désactivation des dégâts aux blocs
 
@@ -8,10 +8,10 @@ Exécutez la commande `/gamerule mobGriefing false`. Cela empêche tous les dég
 
 ### Utilisation de WorldGuard
 
-Définissez l’indicateur `ghast-fireball` sur « refuser ». Cela empêche tous les dégâts des boules de feu de Ghast.
+Définissez le flag `ghast-fireball` sur deny. Cela empêche tous les dégâts causés par les boules de feu des Ghasts.
 
 ## Désactivation des boules de feu d'EliteMobs :
 
-1. Accédez au dossier *~plugins\EliteMobs\powers*.
-2. Accédez à *attack_fireball.yml* et définissez `isEnabled` sur `false`.
-3. Accédez à *tracking_fireball.yml* et définissez `isEnabled` sur `false`.
+1. Allez dans le dossier *~plugins\EliteMobs\powers*.
+2. Allez dans *attack_fireball.yml* et mettez `isEnabled` sur `false`.
+3. Allez dans *tracking_fireball.yml* et mettez `isEnabled` sur `false`.

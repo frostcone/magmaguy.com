@@ -2,16 +2,16 @@
 
 ## ブロックダメージの無効化
 
-### gameruleを使う
+### gamerule を使用する
 
-コマンド `/gamerule mobGriefing false` を実行してください。これにより、爆発によるすべてのブロックダメージを防ぎます。
+`/gamerule mobGriefing false` コマンドを実行します。これにより、爆発によるすべてのブロックダメージを防ぎます。
 
-### WorldGuardを使う
+### WorldGuard を使用する
 
-`ghast-fireball` フラグを deny に設定してください。これにより、ガストの火の玉によるすべてのダメージを防ぎます。
+`ghast-fireball` フラグを deny に設定します。これにより、ガストの火球によるすべてのダメージを防ぎます。
 
-## EliteMobsの火の玉の無効化:
+## EliteMobs の火球の無効化
 
-1. *~plugins\EliteMobs\powers* フォルダに移動してください。
-2. *attack_fireball.yml* に移動し、`isEnabled` を `false` に設定してください。
-3. *tracking_fireball.yml* に移動し、`isEnabled` を `false` に設定してください。
+1. *~plugins\EliteMobs\powers* フォルダに移動します。
+2. *attack_fireball.yml* に移動し、`isEnabled` を `false` に設定します。
+3. *tracking_fireball.yml* に移動し、`isEnabled` を `false` に設定します。

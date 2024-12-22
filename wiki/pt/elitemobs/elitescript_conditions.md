@@ -1,6 +1,7 @@
-# Condições de Script Elite
+# Condições do Script Elite
 
-As condições permitem que os criadores de scripts façam com que os scripts e/ou ações **não** sejam executados com base em condições específicas.
+As condições permitem que os scripters façam com que os scripts e/ou ações **não** sejam executados com base em
+condições específicas.
 
 <div align="center">
 
@@ -20,17 +21,17 @@ eliteScript:
       Alvo:
         targetType: SELF
     Ações:
-    - ação: PLACE_BLOCK
+    - action: PLACE_BLOCK
       Alvo:
         targetType: DIRECT_TARGET
-      duração: 20
+      duration: 20
       material: DIRT
       offset: 0,3,0
       Condições:
         locationIsAir: true
         Alvo:
           targetType: ACTION_TARGET
-    TemposDeRecarga:
+    Cooldowns:
       local: 60
       global: 20
 ```
@@ -45,7 +46,9 @@ Neste exemplo, o script `Exemplo` só será executado se o elite ainda estiver v
 
 ## Alvo
 
-As condições usam o sistema de [Alvos]($language$/elitemobs/elitescript_targets.md) para direcionar qual entidade ou localização está sujeita às condições. Isso significa que você pode associar condições ao boss, aos jogadores ou a qualquer outra coisa que você possa direcionar.
+As condições usam o sistema de [Alvos]($language$/elitemobs/elitescript_targets.md) para definir qual entidade ou
+localização está sujeita às condições. Isto significa que pode associar condições ao boss ou a jogadores ou a qualquer
+outra coisa que possa definir como alvo.
 
 ---
 
@@ -55,21 +58,27 @@ As condições usam o sistema de [Alvos]($language$/elitemobs/elitescript_target
 | --- | :-: | :-: |
 | `conditionType` | Define o tipo de condição | `BLOCKING` / `FILTERING` |
 
-Existem dois tipos de condição: `BLOCKING` e `FILTERING`. As condições `BLOCKING` fazem com que os scripts ou ações parem de ser executados. As condições `FILTERING` fazem com que as ações ignorem alvos que não atendam à condição. Isso significa que se você quiser apenas direcionar blocos que não sejam de ar, você vai querer uma condição `FILTERING`, mas se você quiser interromper uma ação se um jogador estiver morto, você vai querer uma condição `BLOCKING`.
+Existem dois tipos de condições: `BLOCKING` e `FILTERING`. As condições `BLOCKING` fazem com que scripts ou ações parem
+de ser executados. As condições `FILTERING` fazem com que as ações ignorem alvos que não cumpram a condição. Isto
+significa que, se pretender ter como alvo apenas blocos que não sejam ar, vai querer uma condição `FILTERING`, mas se
+pretender impedir uma ação se um jogador estiver morto, vai querer uma condição `BLOCKING`.
 
-**Condições fora das ações são sempre `BLOCKING`**. Condições dentro de ações podem ser `BLOCKING` ou `FILTERING`.
+**As condições fora das ações são sempre `BLOCKING`**. As condições dentro das ações podem ser `BLOCKING`
+ou `FILTERING`.
 
-_**Nota: se o alvo for `SELF` (o boss) e a verificação da condição for `isAlive`, a verificação é sempre `BLOCKING`!**_ Isso pode ser colocado dentro de uma condição `FILTERING` e ainda fará com que esta parte específica se comporte como `BLOCKING`.
+_**Nota: se o alvo for `SELF` (o boss) e a verificação da condição for `isAlive`, a verificação é sempre `BLOCKING`!**_
+Isto pode ser colocado dentro de uma condição `FILTERING` e ainda assim fará com que esta parte específica se comporte
+como `BLOCKING`.
 
 As condições dentro das ações são definidas como `FILTERING` por padrão.
 
 ---
 
-## Condições baseadas em localização
+## Condições baseadas na localização
 
 ### locationIsAir
 
-Define a condição para ser se a localização do alvo é ar.
+Define a condição para verificar se a localização do alvo é ar.
 
 | Chave | Detalhes |       Valores        |
 | --- | :-: |:-------------------:|
@@ -105,11 +114,12 @@ Verifica se a localização 2 blocos acima de onde o boss está é ar.
 
 ### isOnFloor
 
-Verifica se a localização está no chão. Isso significa que o bloco na localização não é sólido, mas o bloco abaixo dele é sólido.
+Verifica se a localização está no chão. Isto significa que o bloco na localização não é sólido, mas o bloco abaixo é
+sólido.
 
-| Chave | Detalhes | Valores |
-| --- | :-: | :-: |
-| `isOnFloor` | Define para verificar se a localização é uma localização de chão (ou o oposto). | [Boolean](#boolean) |
+| Chave       |                                    Detalhes                                     |       Valores       |
+|-------------|:-------------------------------------------------------------------------------:|:-------------------:|
+| `isOnFloor` | Define para verificar se a localização é uma localização no chão (ou o oposto). | [Boolean](#boolean) |
 
 <div align="center">
 
@@ -138,11 +148,11 @@ eliteScript:
 
 ### isStandingOnMaterial
 
-Verifica se a localização abaixo do alvo é um tipo de material correspondente.
+Verifica se a localização por baixo do alvo corresponde a um tipo de material.
 
-| Chave |                     Detalhes                     |        Valores         |
-| --- |:-----------------------------------------------:|:---------------------:|
-| `isStandingOnMaterial` | Define qual tipo de material deve ser verificado. | [Material](#material) |
+| Chave                  |                        Detalhes                         |        Valores        |
+|------------------------|:-------------------------------------------------------:|:---------------------:|
+| `isStandingOnMaterial` | Define qual o tipo de material que deve ser verificado. | [Material](#material) |
 
 <div align="center">
 
@@ -169,11 +179,11 @@ Só será executado se o boss estiver em cima de BIRCH_WOOD.
 
 </div>
 
-## Condições baseadas em entidade
+## Condições baseadas na entidade
 
 ### isAlive
 
-Define a condição para ser se a entidade alvo da condição está viva.
+Define a condição para verificar se a entidade alvo da condição está viva.
 
 | Chave | Detalhes | Valores |
 | --- | :-: | :-: |
@@ -208,11 +218,13 @@ Só será executado se o boss estiver morto.
 
 ### hasTags
 
-Verifica se a entidade alvo tem tags específicas. Os criadores de scripts podem atribuir e remover qualquer tag por meio de ações e usá-las como condições para comportamentos posteriores. Tags são apenas strings (palavras) que você pode atribuir a um boss.
+Verifica se a entidade alvo tem etiquetas específicas. Os scripters podem atribuir e remover qualquer etiqueta através
+de ações e usá-las como condições para um comportamento posterior. As etiquetas são apenas strings (palavras) que pode
+atribuir a um boss.
 
-| Chave | Detalhes |           Valores            |
-| --- | :-: |:---------------------------:|
-| `hasTags` | Define para verificar se a entidade tem uma lista de tags. | [Lista de Strings](#string_list) |
+| Chave     |                            Detalhes                             |           Valores           |
+|-----------|:---------------------------------------------------------------:|:---------------------------:|
+| `hasTags` | Define para verificar se a entidade tem uma lista de etiquetas. | [String List](#string_list) |
 
 <div align="center">
 
@@ -233,7 +245,7 @@ eliteScript:
         targetType: SELF
 ```
 
-Só será executado se o boss tiver as tags "isCool" e "hasANiceBeard".
+Só será executado se o boss tiver as etiquetas "isCool" e "hasANiceBeard".
 
 </div>
 
@@ -241,16 +253,15 @@ Só será executado se o boss tiver as tags "isCool" e "hasANiceBeard".
 
 </div>
 
-
 ---
 
 ### doesNotHaveTags
 
-O mesmo que `hasTags`, mas verifica se o boss não tem esses valores.
+Igual a `hasTags`, mas verifica se o boss não tem estes valores.
 
-| Chave | Detalhes | Valores |
-| --- | :-: | :-: |
-| `doesNotHaveTags` | Define para verificar se a entidade não tem uma lista de tags. | [Lista de Strings](#string_list) |
+| Chave             |                              Detalhes                               |           Valores           |
+|-------------------|:-------------------------------------------------------------------:|:---------------------------:|
+| `doesNotHaveTags` | Define para verificar se a entidade não tem uma lista de etiquetas. | [String List](#string_list) |
 
 <div align="center">
 
@@ -271,7 +282,7 @@ eliteScript:
         targetType: SELF
 ```
 
-Só será executado se o boss não tiver as tags "isStinky" e "isSus".
+Só será executado se o boss não tiver as etiquetas "isStinky" e "isSus".
 
 </div>
 
@@ -283,17 +294,19 @@ Só será executado se o boss não tiver as tags "isStinky" e "isSus".
 
 ### randomChance
 
-Dá à condição uma chance aleatória de ser válida.
+Dá à condição uma probabilidade aleatória de ser válida.
 
-| Chave | Detalhes | Valores |
-| --- | :-: | :-: |
-| `randomChance` | Chance de a condição ser válida. | Número entre 0.0 e 1.0 |
+| Chave          |                Detalhes                 |        Valores         |
+|----------------|:---------------------------------------:|:----------------------:|
+| `randomChance` | Probabilidade de a condição ser válida. | Número entre 0.0 e 1.0 |
 
-Observe que esta condição é especial, pois não requer um alvo.
+Note que esta condição é especial, pois não requer um alvo.
 
-## Filtrar NEARBY com tags
+## Filtrar NEARBY com etiquetas
 
-Para filtrar `NEARBY_MOBS` ou `NEARBY_PLAYERS` com base em tags específicas, use `ACTION_TARGET` como o alvo da condição (se a condição for aplicada a uma ação e não ao próprio script). Isso garante que o script filtre com precisão apenas os mobs/jogadores com as tags especificadas.
+Para filtrar `NEARBY_MOBS` ou `NEARBY_PLAYERS` com base em etiquetas específicas, utilize `ACTION_TARGET` como alvo da
+condição (se a condição for aplicada a uma ação e não ao próprio script). Isto garante que o script filtra corretamente
+apenas os mobs/jogadores com as etiquetas especificadas.
 
 <div align="center">
 
@@ -307,7 +320,7 @@ Para filtrar `NEARBY_MOBS` ou `NEARBY_PLAYERS` com base em tags específicas, us
 eliteScript:
   Exemplo:
     Ações:
-    - ação: SET_MOB_AI
+    - action: SET_MOB_AI
       Alvo:
         targetType: NEARBY_MOBS
         range: 40
@@ -319,7 +332,8 @@ eliteScript:
           targetType: ACTION_TARGET
 ```
 
-Este script procurará quaisquer mobs próximos com a tag `TurnOff` e, se eles tiverem a tag, desativará a IA deles.
+Este script irá procurar quaisquer mobs nas proximidades com a etiqueta `TurnOff` e, se tiverem a etiqueta, irá então
+desativar a sua IA.
 
 </div>
 

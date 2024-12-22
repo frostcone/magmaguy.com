@@ -1,49 +1,73 @@
-Remarque : cette section parle de la génération normale de mobs d'élite, pas de boss personnalisés. Elle suppose également que vous utilisez les paramètres de configuration par défaut.
+Note: Cette section traite de l’apparition normale des mobs d’élite, et non des boss personnalisés. Elle suppose
+également que vous utilisez les paramètres de configuration par défaut.
 
-# Quand un mob d'élite apparaît-il ?
+# Quand un mob d’élite apparaît-il ?
 
-Lorsqu'un mob normal apparaît près d'un joueur portant une armure. Seule une armure d'au moins niveau 1 entraînera l'apparition de mobs d'élite. Les armures de niveau supérieur génèrent des mobs de niveau supérieur.
-<br>Ils apparaissent en fonction d'un pourcentage de chance, qui est configurable dans le fichier MobCombatSettings.yml.
+Lorsqu’un mob normal apparaît près d’un joueur portant une armure. Seule une armure d’au moins niveau 1 permettra
+l’apparition de mobs d’élite. Les armures de niveau supérieur font apparaître des mobs de niveau supérieur.
+<br>Leur apparition repose sur une probabilité en pourcentage, qui est configurable dans le fichier
+MobCombatSettings.yml.
 
-**Si l'équipement du joueur n'est pas assez bon, aucun mob d'élite n'apparaîtra. Si vous vous promenez simplement dans la nature sans aucun équipement, vous ne trouverez aucun mob d'élite.**
+**Si l’équipement du joueur n’est pas assez bon, aucun mob d’élite n’apparaîtra. Si vous vous contentez de parcourir les
+terres sauvages sans aucun équipement, vous ne trouverez aucun mob d’élite.**
 
-## Qu'est-ce qui détermine le niveau du mob d'élite ?
+## Qu’est-ce qui détermine le niveau d’un mob d’élite ?
 
-* Le niveau du mob est le même que le niveau moyen de l'équipement que porte le joueur.
+* Le niveau du mob est identique au niveau moyen de l’équipement porté par le joueur.
 
-## Qu'est-ce qui détermine le niveau d'un objet ?
+## Qu’est-ce qui détermine le niveau d’un objet ?
 
-* Les objets qui ne sont pas d'élite ont des niveaux égaux au niveau du matériau (indiqué ci-dessous). Les objets d'élite ont des niveaux qui sont *généralement* basés sur le niveau de l'élite tuée.
+* Les objets non élites ont des niveaux égaux au niveau du matériau (listé ci-dessous). Les objets élites ont des
+  niveaux qui sont *habituellement* basés sur le niveau de l’élite tué.
 
-### Niveaux de matériaux
-* Matériau du trident : Niveau 9
-* Matériau de netherite : Niveau 8
-* Matériau de diamant : Niveau 7
-* Matériau de fer : Niveau 6
-* Matériau de pierre/maille : Niveau 5
+### Niveaux des matériaux
+
+* Matériau trident: Niveau 9
+* Matériau Netherite: Niveau 8
+* Matériau diamant: Niveau 7
+* Matériau fer: Niveau 6
+* Matériau pierre/chaîne: Niveau 5
 * Matériau or/bois/cuir : Niveau 3
 
 ***
 
-# Quel type de récompenses puis-je obtenir des mobs d'élite ?
-Avant de parler des récompenses spéciales, il est important de noter que **seuls les mobs d'élite générés naturellement laisseront tomber un butin spécial**. Vous ne pouvez pas utiliser les générateurs de mobs pour obtenir un butin spécial. De plus, les mécanismes anti-triche peuvent supprimer l'éligibilité d'un mob d'élite à laisser tomber un butin spécial.
+# Quel type de récompenses puis-je obtenir avec les mobs d’élite ?
 
-Cela signifie que si le système détecte que vous combattez un mob d'élite qui est piégé ou qui ne peut pas vous atteindre pour une raison quelconque (vous volez / sur une tour / il est dans un trou), il cessera de montrer sa traînée de puissance et ne laissera plus tomber de butin spécial.
+Avant de parler des récompenses spéciales, il est important de noter que **seuls les mobs d’élite apparus naturellement
+laisseront tomber du butin spécial**. Vous ne pouvez pas utiliser les générateurs de mobs pour obtenir du butin spécial.
+De plus, les mécanismes anti-triche peuvent supprimer l’admissibilité d’un mob d’élite à laisser tomber du butin
+spécial.
 
-Les mobs d'élite peuvent laisser tomber trois types d'objets spéciaux : les objets générés de manière procédurale, les objets personnalisés et les objets uniques. De plus, ils laissent tomber plus de butin vanilla que les mobs ordinaires. La probabilité de chute n'est pas de 100 %, mais les chances d'obtenir du butin augmentent avec le niveau du mob.
+Cela signifie que si le système détecte que vous combattez un mob d’élite qui est piégé ou qui ne peut pas vous
+atteindre pour une raison quelconque (vous volez/êtes sur une tour/il est dans un trou), il cessera d’afficher sa
+traînée de puissance et ne laissera plus tomber de butin spécial.
 
-## Qu'est-ce qu'un objet généré de façon procédurale ?
-Les objets générés de manière procédurale sont des objets qui sont générés de manière semi-aléatoire en fonction des paramètres de configuration du serveur. Il existe une quantité presque infinie de possibilités pour les objets générés de manière procédurale.
+Les mobs d’élite peuvent laisser tomber trois types d’objets spéciaux: des objets générés de manière procédurale, des
+objets personnalisés et des objets uniques. De plus, ils laissent tomber plus de butin vanille que les mobs ordinaires.
+La probabilité de butin n’est pas de 100 %, mais les chances d’obtenir du butin augmentent avec le niveau du mob.
 
-Habituellement, les objets générés de manière procédurale sont des armures, des armes et des outils de toute qualité de matériau avec des quantités et des niveaux d'enchantement variables.
+## Qu’est-ce qu’un objet généré de manière procédurale ?
 
-## Qu'est-ce qu'un objet personnalisé ?
-Les objets personnalisés sont des objets soit préchargés dans le plugin (tels que le cure-dent et les charmes de MagmaGuy), soit ajoutés par les administrateurs. Ces objets sont entièrement personnalisés et peuvent donner aux joueurs des effets de potion lorsqu'ils sont portés ou tenus dans la main principale ou secondaire.
+Les objets générés de manière procédurale sont des objets qui sont générés de manière semi-aléatoire en fonction des
+paramètres de configuration du serveur. Il existe une quantité quasi infinie de possibilités d’objets générés de manière
+procédurale.
 
-## Qu'est-ce qu'un objet unique ?
-Les objets uniques sont des butins spéciaux de boss personnalisés qui sont similaires aux objets personnalisés. Ils peuvent parfois avoir des pouvoirs uniques, comme le pouvoir de lance-flammes de la hache du Roi Zombie.
+Habituellement, les objets générés de manière procédurale sont des armures, des armes et des outils de toute qualité de
+matériau avec des quantités et des niveaux d’enchantement variables.
+
+## Qu’est-ce qu’un objet personnalisé ?
+
+Les objets personnalisés sont des objets préchargés dans le plugin (comme le cure-dent et les charmes de MagmaGuy) ou
+ajoutés par les administrateurs. Ces objets sont entièrement personnalisés et peuvent donner aux joueurs des effets de
+potion lorsqu’ils sont portés ou tenus dans la main principale ou secondaire.
+
+## Qu’est-ce qu’un objet unique ?
+
+Les objets uniques sont des butins spéciaux de boss personnalisés qui sont semblables aux objets personnalisés. Ils
+peuvent parfois aussi avoir des pouvoirs uniques, tels que le pouvoir lance-flammes pour la hache du roi zombie.
 
 ***
 
 # Comment puis-je obtenir un meilleur butin ?
-Plus le niveau du mob d'élite tué est élevé, meilleur est l'objet laissé tomber !
+
+Plus le niveau du mob d’élite tué est élevé, meilleur sera l’objet laissé tomber!

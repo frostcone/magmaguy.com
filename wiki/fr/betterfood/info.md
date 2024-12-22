@@ -1,44 +1,50 @@
-Un plugin très petit et simple qui permet aux joueurs de manger automatiquement les aliments cuits et fabriqués à partir de leurs inventaires.
+Un plugin très petit et simple qui fait automatiquement manger aux joueurs les aliments cuisinés et fabriqués à partir
+de leurs inventaires.
 
 <div align="center">
 
-La liste des objets valides est la suivante :
+La liste des articles valides est la suivante :
 
 </div>
 
-|    Objets valides    |
-|:------------------:|
-|      Pommes       |
-|   Pommes de terre au four   |
-|   Soupe de betterave    |
-|       Pain        |
-|    Bœuf cuit     |
-|   Poulet cuit   |
-|    Morue cuite   |
-|   Mouton cuit    |
-|   Côtelette de porc cuite   |
-|    Lapin cuit    |
-|    Saumon cuit    |
-|     Biscuits       |
-|    Kelp séché    |
+|    Articles Valides    |
+|:----------------------:|
+|         Pommes         |
+| Pommes de terre cuites |
+|   Soupe de betterave   |
+|          Pain          |
+|       Boeuf cuit       |
+|      Poulet cuit       |
+|      Morue cuite       |
+|      Mouton cuit       |
+|   Côte de porc cuite   |
+|       Lapin cuit       |
+|      Saumon cuit       |
+|        Cookies         |
+|      Algue séchée      |
 |   Tranches de melon    |
-|   Ragoût de champignons    |
-|   Tarte à la citrouille    |
-|    Ragoût de lapin    |
-|   Baies sucrées   |
+| Ragoût de champignons  |
+| Tarte à la citrouille  |
+|    Ragoût de lapin     |
+|     Baies sucrées      |
 
 # Pourquoi ?
 
-Honnêtement, je n'ai jamais aimé la façon dont Mojang a mis en œuvre le système alimentaire. Il sort constamment les joueurs de ce qu'ils font afin de remplir une barre dénuée de sens.
-<br>Je comprends que la nourriture est importante pour un jeu de survie, mais je pense que maintenir le clic droit pendant quelques secondes toutes les deux minutes ne constitue pas une mécanique de jeu convaincante.
+Honnêtement, je n'ai jamais aimé la façon dont Mojang a mis en œuvre le système alimentaire. Il interrompt constamment
+les joueurs dans ce qu'ils font afin de remplir une barre insignifiante.
+<br>Je comprends que la nourriture est importante pour un jeu de survie, mais je pense que maintenir le clic droit
+enfoncé pendant quelques secondes toutes les quelques minutes ne constitue pas une mécanique de jeu convaincante.
 
 Qu'en est-il des autres aliments ?
-Les aliments crus et les aliments qui donnent des améliorations sont mieux gérés par le joueur. Je ne voudrais pas que les joueurs gaspillent des aliments crus qu'ils récoltent pour la cuisson, et je ne crée pas non plus ce plugin pour rendre les gens plus paresseux en ce qui concerne la nourriture.
+Les aliments crus et les aliments qui donnent des buffs sont mieux laissés à la gestion du joueur. Je ne voudrais pas
+que les joueurs gaspillent de la nourriture crue qu'ils récoltent pour la cuisiner, et je ne crée pas ce plugin pour que
+les gens soient plus paresseux en ce qui concerne la nourriture.
 
-Si les gens sont prêts à faire l'effort de cuisiner ou de fabriquer leurs aliments, ils pourront les remplir automatiquement. Cela ressemble à un bon équilibre, n'est-ce pas ?
+Si les gens sont prêts à faire l'effort de cuisiner ou de fabriquer leurs aliments, ils peuvent les remplir
+automatiquement. Cela semble être un bon équilibre, n'est-ce pas ?
 
-# Autorisations/Commandes/Configurations :
+# Permissions/Commandes/Configurations :
 
-- betterfood.user - Le plugin ne s'applique qu'aux joueurs ayant cette autorisation.
-- /betterfood toggleEating - Active/désactive la guérison automatique pour le joueur.
-- /betterfood toggleMessage - Active/désactive les messages de consommation pour le joueur.
+- betterfood.user - Le plugin ne s'applique qu'aux joueurs ayant cette permission.
+- /betterfood toggleEating - Active ou désactive la guérison automatique pour le joueur.
+- /betterfood toggleMessage - Active ou désactive les messages de consommation pour le joueur.

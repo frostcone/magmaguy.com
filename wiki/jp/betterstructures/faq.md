@@ -1,58 +1,71 @@
-# コマンドの使用方法
-- ヘルプについては、コマンド ページを参照してください: [コマンド ページ]($language$/betterstructures/commands.md)
+# コマンドの使い方
 
-# 構造物が現れる場所の確認
-- サーバー管理者であり、警告をオフにしていない場合は、構造物が現れるとチャットで通知されます。
-- チャット メッセージをクリックして、構造体にテレポートします (Bedrock エディションの場合ではありません)。
-- `/betterstructures warn` で警告をオン/オフにします。
+- ヘルプについてはコマンドページを参照してください: [コマンドページ]($language$/betterstructures/commands.md)
 
-# 構造物が表示されない理由
-- 通常、構造物はすでに探索されたエリアには表示されません。構造体を探して新しいエリアを訪れてください。
+# ストラクチャーの出現場所の確認
 
-<details>
-<summary>詳細情報</summary>
+- サーバー管理者で、警告をオフにしていない場合は、ストラクチャーが出現するとチャットで通知されます。
+- チャットメッセージをクリックするとストラクチャーにテレポートします（Bedrock版は除く）。
+- 警告のオン/オフは、`/betterstructures warn` で切り替えます。
 
-構造物がすでに探索されたエリアに表示されないのは、それらを過度に埋め尽くし、プレイヤーの建物を損傷するのを避けるためです。BetterStructures は、エリアがインストール前に探索されたかどうかを認識しており、そこに構造物を配置しません。BetterStructures をインストールする前にワールドが完全に探索された場合は、再生成するか、新しいワールドを作成する必要があります。
+# ストラクチャーが出現しない理由
+
+- 通常、ストラクチャーはすでに探索されたエリアには出現しません。新しいエリアに足を運んでストラクチャーを探してください。
+
+<details> 
+<summary>詳細</summary>
+
+ストラクチャーが既に探索されたエリアに出現しないのは、そこを埋め尽くしすぎたり、プレイヤーの建物を損壊したりするのを避けるためです。BetterStructuresは、エリアがインストール前に探索されたかどうかを認識し、そこにストラクチャーを配置しません。もしワールドがBetterStructuresをインストールする前に完全に探索済みの場合、ワールドを再生成するか、新しいワールドを作成する必要があります。
 
 </details>
 
-# EliteMobs と BetterStructures
+# EliteMobsとBetterStructures
 
-## EliteMobs が提供するもの
-- EliteMobs について学ぶ: [EliteMobs Wiki](#)
-- 構造体にボスを追加します。
+## EliteMobsが提供するもの
 
-## 事前に作成された EliteMobs コンテンツの入手
-- [magmaguy.itch.io](https://magmaguy.itch.io/) および [patreon.com/magmaguy](https://www.patreon.com/magmaguy) で入手可能
+- EliteMobsについて学ぶ: [EliteMobs Wiki](#)
+- ストラクチャーにボスを追加します。
 
-## 他の機能を使用せずに EliteMobs を使用する
-- 他の EliteMobs 機能をオフにすることができます。無効にするには、次の設定を変更します。
-    - events.yml: `timedEventsEnabled: false` および `actionEventsEnabled: false` は、すべてのイベントを無効にします
-    - MobCombatSettings.yml: `doNaturalMobSpawning: false` は、自然なエリート スポーンを無効にします
+## 事前に作成されたEliteMobsコンテンツの入手
 
-## EliteMobs ボスを構造体に追加する
+- [magmaguy.itch.io](https://magmaguy.itch.io/) および [patreon.com/magmaguy](https://www.patreon.com/magmaguy) で入手できます。
 
-- サインの最初の行に `[elitemobs]` を追加します。
-- サインの 2 番目/3 番目/4 番目の行に、`test_boss.yml` のようにボスのファイル名を追加します。
-- 詳細については [こちら]($language$/betterstructures/creating_structures.md) を参照してください。
+## 他の機能を使用せずにEliteMobsを使用する
 
-# BetterStructures とその他のプラグイン
+- 他のEliteMobsの機能をオフにすることができます。無効にするには、次の設定を変更してください:
+    - events.yml: `timedEventsEnabled: false` と `actionEventsEnabled: false` で全てのイベントを無効にします。
+    - MobCombatSettings.yml: `doNaturalMobSpawning: false` で自然なエリートスポーンを無効にします。
+
+## EliteMobsのボスをストラクチャーに追加する
+
+- 看板の1行目に `[elitemobs]` を追加します
+- 看板の2/3/4行目にボスファイルの名前を `test_boss.yml` のように追加します
+- 詳細は [こちら]($language$/betterstructures/creating_structures.md) を参照してください。
+
+# BetterStructuresと他のプラグイン
 
 ## MythicMobs
-- `[mythicmobs]` が記述されたサインを使用し、サインの他の行に続けてモブ識別子を使用して、神話のモブをスポーンします。
-- EliteMobs は、両方を作成したため、BetterStructures を持つボスに適しています。
+
+- 看板に `[mythicmobs]` を追加し、他の行にmob識別子を追加することで、MythicMobsをスポーンさせます。
+- EliteMobsはBetterStructuresのボスに適しています。なぜなら両方とも私が作ったからです。
 
 ## MMOItems
-- トレジャー設定ファイルに `mmoitems=<TYPE>@<ITEM-ID>` を使用して MMOItems を追加します。
 
-## 他のプラグインのカスタム アイテム
-- lootify コマンドを使用して、任意のアイテムをチェストに追加します。[コマンド ページ]($language$/betterstructures/commands.md)を参照してください。
+- トレジャー設定ファイルに `mmoitems=<TYPE>@<ITEM-ID>` を追加してMMOItemsを追加します。
 
-# 独自の構造を作成する
-- 方法を学ぶ: [構造作成ガイド]($language$/betterstructures/creating_structures.md)
+## 他のプラグインのカスタムアイテム
+
+-
+lootifyコマンドを使用して、任意のアイテムをチェストに追加します。[コマンドページ]($language$/betterstructures/commands.md)
+を参照してください。
+
+# 独自のストラクチャーの作成
+
+- 方法はこちらを参照してください: [ストラクチャー作成ガイド]($language$/betterstructures/creating_structures.md)
 
 # パフォーマンスへの影響と最小化
-- 多くの構造物を生成すると、サーバーの速度が低下する可能性があります。
-- [Chunky](https://www.spigotmc.org/resources/chunky.81534/) を使用してワールドを事前生成し、パフォーマンスの問題を回避します。
-- EliteMobs を使用しない場合は、ワールドの生成後に BetterStructures を削除できます。
-- EliteMobs を使用する場合は、パフォーマンスへの影響を最小限に抑えながら、BetterStructures を保護されたエリアの管理のために維持します。
+
+- 多数のストラクチャーを生成すると、サーバーの動作が遅くなる可能性があります。
+- [Chunky](https://www.spigotmc.org/resources/chunky.81534/) を使用してワールドを事前に生成し、パフォーマンスの問題を回避してください。
+- EliteMobsを使用しない場合は、ワールド生成後にBetterStructuresを削除できます。
+- EliteMobsを使用する場合は、保護されたエリア管理のためにBetterStructuresを維持してください（影響は最小限です）。

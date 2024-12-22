@@ -1,4 +1,4 @@
-# Video de configuración
+# Configuración del video
 
 <div class="outer-container">
 <div class="iframe-container">
@@ -15,17 +15,20 @@
 - [EliteMobs](https://www.spigotmc.org/resources/%E2%9A%94elitemobs%E2%9A%94.40090/) para estructuras con batallas de jefes
 - [WorldGuard](https://dev.bukkit.org/projects/worldguard) para proteger las arenas de jefes de EliteMobs
 
-# Instalación de contenido
+# Instalando contenido
 
-Puede crear su propio contenido, por lo que este paso no es obligatorio, pero si desea instalar los cientos de compilaciones oficiales prefabricadas de BetterStructures, puede seguir estos pasos:
+Puedes crear tu propio contenido, así que este paso no es obligatorio, pero si deseas instalar los cientos de
+construcciones oficiales prefabricadas de BetterStructures, puedes seguir estos pasos:
 
-1) Vaya a [magmaguy.itch.io](https://magmaguy.itch.io/) o [patreon.com/magmaguy](https://www.patreon.com/magmaguy)
-2) Descargue el contenido que desee
-3) Ponga el contenido, aún comprimido, tal como lo descargó, en la carpeta `~plugins/BetterStructures/imports`
-4) Ejecute el comando `/bs reload`
+1) Ve a [magmaguy.itch.io](https://magmaguy.itch.io/) o [patreon.com/magmaguy](https://www.patreon.com/magmaguy)
+2) Descarga el contenido que quieras
+3) Coloca el contenido, aún comprimido en zip, tal como lo descargaste, en la
+   carpeta `~plugins/BetterStructures/imports`
+4) Ejecuta el comando `/bs reload`
 
-¡Ya está! Las estructuras ahora comenzarán a aparecer en ***nuevos fragmentos***. *¡Los fragmentos que su servidor ya ha generado no podrán obtener estructuras!*
+¡Listo! Las estructuras ahora comenzarán a aparecer en ***nuevos chunks***. *¡Los chunks que tu servidor ya ha generado
+no podrán obtener estructuras!*
 
 # Preguntas frecuentes
 
-¿Tiene algún problema o pregunta? ¡Consulte las [Preguntas frecuentes]($language$/betterstructures/faq.md)!
+¿Tienes algún problema o pregunta? ¡Consulta las [Preguntas frecuentes]($language$/betterstructures/faq.md)!

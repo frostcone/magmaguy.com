@@ -1,656 +1,1173 @@
-```yaml
-# Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_PICKAXE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SHOVEL: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_HOE: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  IRON_SWORD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  SHIELD: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  BOW: 16.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_BOOTS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_LEGGINGS: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_CHESTPLATE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  CHAINMAIL_HELMET: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SWORD: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_AXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_PICKAXE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_SHOVEL: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  STONE_HOE: 15.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_SHOVEL: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ENCHANTED_GOLDEN_APPLE: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_BOOTS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_LEGGINGS: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_CHESTPLATE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  LEATHER_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_SWORD: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_AXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_HOE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  WOODEN_PICKAXE: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TRIDENT: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  ELYTRA: 17.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  TURTLE_HELMET: 13.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_AXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_PICKAXE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SHOVEL: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HOE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_SWORD: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_HELMET: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_CHESTPLATE: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_LEGGINGS: 18.0
-  # Establece el valor de este material para el sistema de moneda de elitemobs.
-  NETHERITE_BOOTS: 18.0
-  # Establece el valor de material predeterminado para objetos no definidos específicamente.
-  defaultMaterialWorth: 1.0
-```
+[![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-</details>
+# Que sont les donjons ?
 
----
+Vous pouvez trouver des informations sur les donjons, y compris des informations sur les donjons
+préfabriqués [ici]($language$/elitemobs/dungeons.md).
 
-## events.yml
+***
 
-`events.yml` contient les options de configuration globales pour la création d'événements.
+# Qu'est-ce que l'emballeur de donjons ?
 
-_**Remarque :** ce ne sont que les paramètres globaux de base._
-
-Vous pouvez modifier davantage des événements spécifiques dans le dossier `events`.
+L'emballeur de donjons permet aux administrateurs non seulement de créer et d'emballer des donjons, mais aussi
+d'emballer tout type de contenu EliteMobs. Cela inclut des éléments tels que les packs d'événements, les packs de
+modèles, les arènes, les packs de PNJ, les packs d'objets, etc.
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary>Pourquoi utiliser des packages de donjons ?</summary>
 
-```yml
-# Définit si les événements ne seront diffusés que dans le monde dans lequel les événements se produisent.
-Only broadcast event message in event worlds: false
-# Définit le temps de pause minimum, en minutes, entre les événements temporisés
-actionEventMinimumCooldownMinutes: 240
-# Définit si les événements d'action se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#action-events
-actionEventsEnabled: true
-# Définit si les événements temporisés se produiront.
-# https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#timed-events
-timedEventsEnabled: true
-```
+- ***Donjons instanciés !*** Les donjons instanciés ne peuvent être créés que via le système de package de donjons.
+- ***Sauvegardes sécurisées de Minidonjons !*** Si vous créez un package de donjons, vous pourrez le déployer et le
+  redéployer dans n'importe quel serveur, à tout moment et pour n'importe quelle raison.
+- ***Facile à activer et à désactiver !*** Vous pouvez toujours faire `/em setup` et activer et désactiver
+  temporairement ou définitivement les packages de donjons.
+- ***Facile à partager !*** Si vous souhaitez partager vos créations, les packages de donjons peuvent simplement être
+  compressés et envoyés à d'autres personnes. Il existe une salle Discord dédiée aux créations de la communauté si cela
+  vous intéresse !
+- ***Téléportations !*** Les packages de donjons créent automatiquement des lieux de téléportation auxquels on peut
+  accéder dans la page Téléportations du menu `/em`, ce qui peut être très utile dans de nombreuses configurations.
 
 </details>
 
----
+# Création de donjons
 
-## ItemSettings.yml
+Les paramètres suivants sont utilisés pour créer un fichier de configuration qui doit aller dans le
+dossier `content_packages`. Ces paramètres sont utilisés pour créer des donjons spécifiquement et ne sont pas
+nécessaires si vous voulez simplement utiliser l'emballeur de donjons pour distribuer du contenu autre qu'un donjon tel
+qu'un pack d'objets ou d'événements.
 
-`ItemSettings.yml` contient tous les paramètres de configuration globaux pour les objets d'élite.
+## Plugins requis
 
-<details>
+Pour utiliser l'emballeur de donjons, vous aurez besoin du plugin suivant :
 
-<summary><b>Développer le tableau</b></summary>
+[WorldGuard](https://dev.bukkit.org/projects/worldguard) - protège le minidonjon
 
-```yml
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-noItemDurabilityMessage: '&8[EliteMobs] $item &4est cassé ! Il ne fonctionnera pas tant qu'il n'est pas réparé !'
-# Définit si un butin EliteMobs sera laissé tomber.
-# Comprend les pièces d'élite, les objets personnalisés, les objets générés de façon procédurale - tout !
-# Non recommandé ! Rend la progression du MMORPG impossible.
-doEliteMobsLoot: true
-# Définit si le butin généré de façon procédurale aura des couleurs différentes en fonction de la qualité de l'objet.
-doMMORPGColorsForItems: true
-# Définit si le placement d'objets personnalisés, comme les bannières ou les blocs, est empêché.
-# Ceci est recommandé : les objets personnalisés se cassent lorsqu'ils sont placés et ne peuvent pas être récupérés !
-preventCustomItemPlacement: true
-# Définit le format de l'histoire de tous les objets EliteMobs !
-# Les marqueurs de position suivants sont valides :
-# $itemLevel - affiche le niveau de l'objet
-# $prestigeLevel - affiche le niveau de prestige
-# $weaponOrArmorStats - affiche les statistiques de DPS d'élite ou d'armure d'élite, en fonction de l'objet
-# $soulbindInfo - affiche à qui, le cas échéant, l'objet est lié à l'âme
-# $itemSource - affiche d'où provient l'objet, comme un mob ou une boutique
-# $ifLore - fait apparaître une ligne uniquement si l'objet a une histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $customLore - affiche l'ensemble de l'histoire personnalisée. S'applique uniquement aux objets personnalisés
-# $ifEnchantments - fait apparaître une ligne uniquement si l'objet possède des enchantements
-# $enchantments - affiche les enchantements sur l'objet
-# $eliteEnchantments - affiche les enchantements d'élite sur l'objet
-# $ifCustomEnchantments - affiche les enchantements personnalisés sur l'objet
-# $customEnchantments - affiche les enchantements personnalisés sur l'objet
-# $ifPotionEffects - affiche uniquement la ligne si l'objet a des effets de potion
-# $potionEffects - affiche les effets de potion sur l'objet
-# $loreResaleValue - affiche la valeur de l'objet. Pourrait afficher le prix d'achat ou de vente en fonction de l'endroit où il est visualisé
-# Important : plusieurs des marqueurs de position peuvent être davantage personnalisés par les paramètres de configuration ci-dessous
-itemLoreStructureV2:
-- §7§m§l---------§7<§lInfo. équipement§7>§m§l---------
-- '§7Niveau de l'objet : §f$itemLevel §7Prestige §6$prestigeLevel'
-- $weaponOrArmorStats
-- $soulbindInfo
-- $itemSource
-- $ifLore§7§m§l-----------§7< §f§lHistoire§7 >§m§l-----------
-- $customLore
-- $ifEnchantments§7§m§l--------§7<§9§lEnchantements§7>§m§l--------
-- $enchantments
-- $eliteEnchantments
-- $ifCustomEnchantments§7§m§l------§7< §3§lEnchants persos.§7 >§m§l------
-- $customEnchantments
-- $ifPotionEffects§7§m§l----------§7< §5§lEffets§7 >§m§l----------
-- $potionEffect
-- §7§l§m-----------------------------
-- $loreResaleValue
-# Définit la tradition de la source de la boutique pour les achats en magasin
-shopSourceItemLores: '&7Acheté dans une boutique'
-# Définit la tradition de la source de l'objet pour les objets pillés sur les boss
-mobSourceItemLores: '&7Pillé sur $mob'
-# Définit la tradition de valeur de l'objet
-loreWorths: '&7Vaut $worth $currencyName'
-# Définit la tradition de la valeur de revente de l'objet
-loreResaleValues: '&7Se vend pour $resale $currencyName'
-# Définit la possibilité de base que tout objet d'élite tombe des mobs d'élite
-flatDropRateV3: 0.2
-# Définit la possibilité de base que tout objet d'élite tombe des boss régionaux
-regionalBossNonUniqueDropRate: 0.05
-# Définit si les boss régionaux peuvent laisser tomber du butin vanilla
-regionalBossesDropVanillaLoot: false
-# Définit la quantité dont la possibilité qu'un objet d'élite tombe augmente en fonction du niveau du mob.
-# Le niveau du mob est multiplié par cette valeur et est ajouté à la possibilité de base.
-# Il n'est plus recommandé d'avoir une valeur supérieure à 0,0 !
-levelIncreaseDropRateV2: 0.0
-# Définit la possibilité pondérée qu'un objet généré de façon procédurale tombe.
-# Ce système utilise des probabilités pondérées ! Cherchez cela sur Google si vous ne savez pas ce que c'est.
-proceduralItemDropWeight: 90.0
-# Définit la possibilité relative qu'un objet pondéré tombe.
-# Les objets pondérés sont des objets personnalisés qui n'ont pas de poids dynamique, comme les amulettes.
-weighedItemDropWeight: 1.0
-# Définit la possibilité relative qu'un objet fixe tombe. Ce sont des objets personnalisés qui ne s'adaptent pas.
-fixedItemDropWeight: 10.0
-# Définit la possibilité relative qu'un objet limité tombe. Ce sont des objets personnalisés qui s'adaptent jusqu'à un niveau spécifique
-limitedItemDropWeight: 3.0
-# Définit la possibilité relative qu'un objet évolutif tombe. Ce sont des objets personnalisés qui peuvent s'adapter à n'importe quel niveau et sont les plus courants dans le plugin.
-scalableItemDropWeight: 6.0
-# Définit le multiplicateur pour le butin vanilla du mob, en fonction du niveau du mob.
-defaultLootMultiplier: 0.0
-# Définit le niveau maximum pour le multiplicateur de butin par défaut.
-levelCapForDefaultLootMultiplier: 200
-# Définit le multiplicateur d'expérience de Minecraft vanilla que laisse tomber le boss, en fonction du niveau du boss.
-defaultExperienceMultiplier: 1.0
-# Définit le niveau maximum pour le butin qui sera laissé tomber par EliteMobs. Il est fortement recommandé de le laisser à 200.
-maximumItemLevel: 200
-# Définit si les enchantements d'élite seront utilisés.
-# Les enchantements d'élite remplacent les enchantements vanilla lorsque les objets d'élite obtiennent des niveaux d'enchantement qui superent les limites de vanilla.
-# Exemple : si une épée d'élite est censée avoir une netteté de 10, étant donné que la limite de Minecraft est le niveau 5, elle aura une netteté de 5 et une netteté d'élite de 5.
-# La netteté d'élite n'affecte que les mobs générés par EliteMobs. Ceci est fait pour que le JcJ et le combat vanilla ne soient pas déséquilibrés.
-useEliteEnchantments: true
-# Définit le nom d'affichage qui sera utilisé pour les enchantements d'élite dans l'histoire de l'objet.
-eliteEnchantmentLoreStrings: Élite
-# Définit si EliteMobs considérera les houes comme des armes valides pour les calculs de dégâts.
-useHoesAsWeapons: false
-# Définit si EliteMobs fera apparaître des particules spéciales sur les objets qui tombent de haute qualité.
-enableRareItemParticleEffects: true
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe à l'entité qui reçoit le coup.
-potionEffectOnHitTargetLore: '&4⚔☠'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion s'applique en cas de frappe au joueur qui frappe.
-potionEffectOnHitSelfLore: '&9⚔🛡'
-# Définit les symboles qui seront utilisés dans l'histoire des objets pour montrer qu'un effet de potion continuera de se réappliquer tant que le joueur le manie.
-potionEffectContinuousLore: '&6⟲'
-# Définit les caractères précédés d'enchantements d'élite dans l'histoire des objets.
-eliteEnchantmentLoreColor: '&9◇'
-# Définit les caractères précédés d'enchantements de vanilla dans l'histoire des objets.
-vanillaEnchantmentLoreColor: '&7◇'
-# Définit les caractères précédés d'enchantements personnalisés dans l'histoire des objets.
-customEnchantmentColor: '&3◇'
-# Définit les caractères précédés d'effets de potion dans l'histoire des objets.
-potionEffectLoreColor: '&5◇'
-# Définit le texte qui apparaîtra sur l'objet si l'objet n'est pas lié à l'âme.
-noSoulbindLore: '&7Non lié à l'âme !'
-# Définit si un objet d'élite peut être enchanté par des moyens vanilla. Ce n'est pas recommandé car EliteMobs possède son propre système d'enchantements personnalisés avec son propre équilibre !
-preventEliteItemEnchantment: true
-# Définit si les objets d'élite peuvent être désenchantés par des moyens vanilla.
-preventEliteItemDisenchantment: true
-# Définit le message qui apparaît pour les joueurs lorsqu'ils tentent de désenchanter un objet et que cela n'est pas autorisé.
-preventEliteItemDisenchantmentMessage: '&c[EliteMobs] Impossible de désenchanter des objets d'élite !'
-# Définit si les objets d'élite pourront être améliorés du diamant au netherite par des moyens vanilla. Non recommandé !
-preventEliteItemDiamondToNetheriteUpgrade: true
-# Définit si les objets d'élite ne perdront de la durabilité qu'en cas de mort.
-# Il s'agit d'un système important pour EliteMobs, et il est fortement recommandé car les combats de haut niveau sont presque impossibles sans lui !
-eliteItemsDurabilityLossOnlyOnDeath: true
-# Définit le multiplicateur de perte de durabilité pour les objets d'élite s'il est configuré pour perdre de la durabilité en cas de mort.
-# Les valeurs entre 0,0 et 1,0 diminuent la perte de durabilité et les valeurs supérieures à 1,0 l'augmentent.
-# Exemple : 0,5 inflige 50 % de la perte de durabilité, 2,0 inflige 200 % de la perte de durabilité.
-eliteItemsDurabilityLossMultiplier: 1.0
-# Définit le message qui apparaît lorsque la mise au rebut d'objets réussit.
-scrapSucceededMessageV2: '&8[EliteMobs] &2Mise au rebut réussie $amount fois !'
-# Définit le message qui apparaît lorsque la mise au rebut d'objets échoue.
-scrapFailedMessageV2: '&8[EliteMobs] &cLa mise au rebut a échoué $amount fois !'
-# Définit si le butin d'élite doit être placé directement dans les inventaires des joueurs.
-putLootDirectlyIntoPlayerInventory: false
-# Définit la différence de niveau maximale que les joueurs peuvent avoir avant qu'ils ne puissent plus piller des objets qui sont d'un niveau trop bas.
-# Ceci est calculé en fonction du niveau moyen du butin que porte le joueur.
-# Par exemple, si la valeur est définie sur 10 et qu'un joueur a un équipement de niveau 50, il ne pourra pas cultiver des boss de niveau 39.
-lootLevelDifferenceLockout: 10
-# Définit si EliteMobs empêchera les objets d'élite de se casser lors de l'utilisation de la perte de durabilité du système en cas de mort.
-# Les joueurs ne pourront pas utiliser les objets sans durabilité de toute façon, ceci est simplement pour éviter la perte accidentelle d'objets de haut niveau mais de faible durabilité.
-preventEliteItemsFromBreaking: true
-# Définit le niveau minimum, +7, des jefes qui peuvent laisser tomber de façon procédurale du matériel de diamant dans EliteMobs.
-# Il n'y a pas d'équipement en netherite généré de façon procédurale dans EliteMobs, uniquement du butin personnalisé.
-minimumProcedurallyGeneratedDiamondLootLevelPlusSeven: 10
-# Définit le mensaje que se muestra en el chat al conseguir botín con éxito a través del comando /em simloot <level> <times>.
-simlootMessageSuccess: '&8[EliteMobs] &2Rolled for loot and got $itemName &2!'
-# Définit le mensaje que se muestra en el chat al no obtener botín a través del comando /em simloot <level> <times>.
-simlootMessageFailure: '&8[EliteMobs] &cRolled for loot and got nothing!'
-# Définit le mensaje que reciben los jugadores cuando el botín de élite se deposita directamente en sus inventarios.
-directDropCustomLootMessage: '&8[EliteMobs] &2Obtained $itemName &2!'
-# Définit le mensaje que reciben los jugadores cuando el botín de vainilla se deposita directamente en sus inventarios.
-directDropMinecraftLootMessage: '&8[EliteMobs] &aObtained $itemName &a!'
-# Définit le mensaje que reciben los jugadores cuando las monedas de élite se depositan directamente en sus inventarios.
-directDropCoinMessage: '&8[EliteMobs] &aObtained &2$amount $currencyName &a!'
-# Establece si EliteMobs ocultará los atributos de vainilla de Minecraft.
-hideItemAttributes: true
-# Définit l'entrée de tradition spécifique aux armes sur un objet d'élite. Le marqueur de position $EDPS est remplacé par le DPS d'élite (dégâts par seconde) de l'arme.
-weaponEntry: '&7DPS d'élite : &2$EDPS'
-# Définit l'entrée de tradition spécifique aux armures sur un objet d'élite. Le marqueur de position $EDEF est remplacé par la DEF (défense) d'élite de l'arme.
-armorEntry: '&7Armure d'élite : &2$EDEF'
-# Définit le message envoyé lorsqu'un joueur tue un boss, mais que le niveau de l'équipement est trop différent du niveau du boss pour obtenir des pièces.
-levelRangeTooDifferent: '&8EM] &4Votre équipement est de niveau $playerLevel et le boss est de niveau
-  $bossLevel, la différence de niveau est trop élevée pour obtenir des pièces !'
-```
+## Création d'un donjon, étape par étape
 
-</details>
+EliteMobs avait autrefois deux types principaux de donjons: basés sur le monde et basés sur des schémas.
 
----
+Les donjons basés sur des schémas étaient associés à une construction schématique. Ils sont désormais supprimés et ne
+sont plus pris en charge.
 
-## EliteMobs configuration settings
-There are various configuration files that EliteMobs uses.
+Tous les donjons EliteMobs sont désormais basés sur le monde.
 
-The following information will help you with modifying those settings.
+## Fichier pack.meta requis
+
+Votre package de donjon doit inclure un fichier `pack.meta`, qui est simplement un fichier `.txt` renommé avec une
+extension `.meta`. Ce fichier ne doit contenir qu'un seul mot, indiquant pour quel plugin est destiné le package (par
+exemple, "elitemobs", écrit en minuscules). Le fichier `pack.meta` doit être situé dans le répertoire racine de votre
+package, à côté de tous les autres dossiers.
+
+***
+
+### Valeurs globales
+
+Les valeurs suivantes s'appliquent à tous les donjons
 
 <div align="center">
 
-### Boolean
+### isEnabled
 
-Boolean values are simple, they are either true or false. Here are some examples:
+Définit si le package de donjon est activé.
+
+| Clé         |       Valeurs       | Par défaut | Obligatoire |
+|-------------|:-------------------:|:----------:|:-----------:|
+| `isEnabled` | [Booléen](#booléen) |  `false`   |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
 ```yml
 isEnabled: true
 ```
-or
-```yml
-isEnabled: false
-```
+
+</div>
+
+</details>
 
 ***
 
-### Integer
+### name
 
-Integer values can be any whole number, including negatives. Here are some examples:
+Définit le nom du contenu. Prend en charge les [Codes de couleur](#codes_de_couleur).
+
+| Clé    |      Valeurs      | Par défaut | Obligatoire |
+|--------|:-----------------:|:----------:|:-----------:|
+| `name` | [Chaîne](#chaîne) |   `faux`   |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-level: 200
+name: '&c[niv 999] &aLe Donjon Vert'
 ```
-or
-```yml
-level: -100
-```
+
+<div align="center">
+
+![create_packager_name.jpg](../../../img/wiki/create_packager_name.jpg)
+
+</div>
+
+</div>
+
+</details>
 
 ***
 
-### String
+### dungeonLocationType
 
-String values are a sequence of characters or words. They are set as follows:
+Définit le type d'emplacement utilisé par le donjon.
+
+| Clé                   |        Valeurs        | Par défaut | Obligatoire |
+|-----------------------|:---------------------:|:----------:|:-----------:|
+| `dungeonLocationType` | `WORLD` / `INSTANCED` |   aucun    |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-name: hello world
+dungeonLocationType: WORLD
 ```
 
-or
+</div>
 
-```yml
-message: "hello world, this contains a quotation mark "" "
-```
-Note: For strings that you write in your config, you do not need to add quotes around strings unless your string has a special character in it, such as a quotation mark or a colon.
+</details>
 
 ***
 
-### Double
+### contentType
 
-Double values are a number that can include a fractional part.
+Définit le type de donjon.
+
+| Clé           |                   Valeurs                    | Par défaut | Obligatoire |
+|---------------|:--------------------------------------------:|:----------:|:-----------:|
+| `contentType` | `OPEN_DUNGEON` / `INSTANCED_DUNGEON` / `HUB` |   aucun    |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-damageMultiplier: 1.2
+contentType: INSTANCED_DUNGEON
 ```
-or
-```yml
-damageMultiplier: 0.5
-```
+
+</div>
+
+</details>
 
 ***
 
-### Color Codes
+### customInfo
 
-Color codes are set with a `&`, as an example `&a` for green, `&b` for cyan, `&c` for red, and so on. There are special formatting codes too.
+Définit les informations supplémentaires qui apparaîtront dans l'écran `/em setup`. Uniquement à des fins d'information.
+Prend en charge les [Codes de couleur](#codes_de_couleur).
 
-| Code | Result |
-| --- | :-: |
-| `&0` | Black|
-| `&1` | Dark Blue|
-| `&2` | Dark Green|
-| `&3` | Dark Cyan |
-| `&4` | Dark Red|
-| `&5` | Dark Purple |
-| `&6` | Gold |
-| `&7` | Gray |
-| `&8` | Dark Gray |
-| `&9` | Blue |
-| `&a` | Green |
-| `&b` | Cyan |
-| `&c` | Red |
-| `&d` | Pink |
-| `&e` | Yellow |
-| `&f` | White |
-| `&k` | Magic / Obfuscated |
-| `&l` | Bold |
-| `&m` | Strikethrough |
-| `&n` | Underlined |
-| `&o` | Italic |
-| `&r` | Reset Formatting |
+| Clé          |                Valeurs                | Par défaut | Obligatoire |
+|--------------|:-------------------------------------:|:----------:|:-----------:|
+| `customInfo` | [Liste de chaînes](#liste_de_chaînes) |   aucun    |      ✅      |
 
-Combine multiple formatting codes. Example:
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
 ```yml
-name: '&a&lCool boss!'
+customInfo:
+- '&aLe meilleur donjon.'
+- '&aFait par : CoolPlayer'
 ```
-This would render as **Cool boss!** in bright green.
+
+<div align="center">
+
+![create_packager_custominfo.jpg](../../../img/wiki/create_packager_custominfo.jpg)
+
+</div>
+
+</div>
+
+</details>
 
 ***
 
-### String List
+### downloadLink
 
-A list of strings is formatted as follows:
+Définit le lien de téléchargement lorsque le contenu n'est pas téléchargé. Uniquement à des fins d'information.
+
+| Clé            |      Valeurs      | Par défaut | Obligatoire |
+|----------------|:-----------------:|:----------:|:-----------:|
+| `downloadLink` | [Chaîne](#chaîne) |   aucun    |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
 ```yml
-messages:
-- hello world!
-- my name is $playerName!
+downloadLink: http://www.example.org
 ```
+
+<div align="center">
+
+![create_packager_downloadlink.jpg](../../../img/wiki/create_packager_downloadlink.jpg)
+
+</div>
+
+</div>
+
+</details>
 
 ***
 
-### Map List
+### dungeonSizeCategory
 
-A map list is structured like this:
+Définit la catégorie de taille du package de donjon. Uniquement à des fins d'information.
+
+| Clé                   |   Valeurs   | Par défaut | Obligatoire |
+|-----------------------|:-----------:|:----------:|:-----------:|
+| `dungeonSizeCategory` | Spécial [1] |   aucun    |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-list:
-  map1:
-    value1: value
-    value2: value
-  map2:
-    value3: value
-    value4: value
+dungeonSizeCategory: MINIDUNGEON
 ```
+
+<div align="center">
+
+![create_packager_size.jpg](../../../img/wiki/create_packager_size.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+**Spécial [1]**
+
+<details> 
+
+<summary><b>Développer le tableau</b></summary>
+
+<div align="center">
+
+| Clé           | Description                                                                                                                                                                                                                                                       |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `LAIR`        | Les repaires sont un type de petit donjon qui se concentre sur un grand combat de boss.                                                                                                                                                                           |
+| `SANCTUM`     | Les sanctuaires sont l'équivalent des repaires instanciés. Cela signifie qu'ils se concentrent autour d'un énorme combat de boss.                                                                                                                                 |
+| `MINIDUNGEON` | Les minidonjons sont un type de donjon de taille moyenne qui contient généralement 3 à 15 mini-boss et un grand boss, ainsi qu'un grand nombre de monstres « poubelles » destinés à être « cultivés » pour obtenir des pièces et de l'équipement par les joueurs. |
+| `DUNGEON`     | Les donjons sont l'équivalent des minidonjons instanciés. C'est le type de donjon MMORPG le plus traditionnel, où les joueurs se regroupent et traversent un défi de monstres poubelles et de mini-boss pour combattre un boss final.                             |
+| `RAID`        | Bientôt disponible !                                                                                                                                                                                                                                              |
+| `ADVENTURE`   | Les aventures sont des cartes d'aventure complètes. Elles comprennent des séries de quêtes, des PNJ, de grandes quantités de mini-boss et de boss et peuvent même contenir leurs propres arènes ou donjons à l'intérieur.                                         |
+| `ARENA`       | Les arènes sont des zones de survie basées sur des vagues dans lesquelles les joueurs sont récompensés pour avoir vaincu des vagues.                                                                                                                              |
+| `OTHER`       | Tout ce qui n'entre pas déjà dans les catégories précédentes.                                                                                                                                                                                                     |
+
+Pour des descriptions plus détaillées, voir [Donjons]($language$/elitemobs/dungeons.md)
+
+</div>
+
+</details>
 
 ***
 
-### Material
+### protect
 
-Material values should be a valid Minecraft material type which can be found [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html).
+Définit si le package de donjon doit être protégé par WorldGuard.
 
-```yml
-material: DIAMOND_SWORD
-```
-***
+| Clé       |       Valeurs       | Par défaut | Obligatoire |
+|-----------|:-------------------:|:----------:|:-----------:|
+| `protect` | [Booléen](#booléen) |   `true`   |      ❌      |
 
-### Filename
+<details> 
 
-Filename values should be a yml file that resides inside of EliteMobs plugin folder.
+<summary><b>Exemple</b></summary>
 
-```yml
-filename: test_boss.yml
-```
-
-***
-
-### Multiplier
-
-A multiplier value is any number that is positive and greater than 0.
+<div align="left">
 
 ```yml
-damageMultiplier: 2.0
+protect: true
 ```
 
-```yml
-damageMultiplier: 0.5
-```
-or even
+</div>
 
-```yml
-damageMultiplier: 3.14159
-```
+</details>
 
 ***
 
-### Serialized Location
+### dungeonVersion
 
-A serialized location is a text value formatted as follows: `worldName,x,y,z,pitch,yaw`.
-Pitch and yaw are the direction players are facing as set by the game.
+Définit la version du package de donjon.
+
+| Clé              |      Valeurs      | Par défaut | Obligatoire |
+|------------------|:-----------------:|:----------:|:-----------:|
+| `dungeonVersion` | [Entier](#entier) |   aucun    |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
 ```yml
-location1: my_world,10.5,60,10.5,0,0
+dungeonVersion: 1
 ```
-or, if you only care about the coordinates, you can set the last two values to `0`:
-```yml
-location1: my_world,10.5,60,10.5,0,0
-```
-Note:
-- Some location fields like in custom boss reinforcement locations only require a relative location, which doesn't need the world name:
-```yml
-location: 10,10,10
-```
+
+</div>
+
+</details>
 
 ***
 
-### Chance
+### playerInfo
 
-Chance is any value that is set between 0.0 and 1.0
+Définit les informations qui apparaissent dans le menu. Prend en charge les [Codes de couleur](#codes_de_couleur).
+
+*Fonctionne uniquement lorsque le `/em` est défini en mode livre en utilisant `/em alt`.*
+
+| Clé          |      Valeurs      | Par défaut | Obligatoire |
+|--------------|:-----------------:|:----------:|:-----------:|
+| `playerInfo` | [Chaîne](#chaîne) |   aucun    |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
 
 ```yml
-chance: 0.1
+playerInfo: 'Difficulté : &aContenu facile pour 1 personne !'
 ```
-or
-```yml
-chance: 0.8
-```
+
+<div align="center">
+
+![create_packager_playerinfo.jpg](../../../img/wiki/create_packager_playerinfo.jpg)
+
+</div>
+
+</div>
+
+</details>
 
 ***
 
-### Location
+### regionEnterMessage
 
-Location is a text value formatted as follows: `worldName,x,y,z,pitch,yaw`.
-Pitch and yaw are the direction players are facing as set by the game.
+Définit le message qui apparaît lorsqu'un joueur entre dans la zone du donjon. Prend en charge
+les [Codes de couleur](#codes_de_couleur).
+
+| Clé                  |      Valeurs      | Par défaut | Obligatoire |
+|----------------------|:-----------------:|:----------:|:-----------:|
+| `regionEnterMessage` | [Chaîne](#chaîne) |   aucun    |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
 ```yml
-teleportLocation: my_world,10.5,60,10.5,0,0
+regionEnterMessage: '&aVous êtes entré dans le donjon !'
 ```
-or, if you only care about the coordinates, you can set the last two values to `0`:
+
+<div align="center">
+
+![create_packager_enter.jpg](../../../img/wiki/create_packager_enter.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+***
+
+### regionLeaveMessage
+
+Définit le message qui apparaît lorsqu'un joueur quitte la zone du donjon. Prend en charge
+les [Codes de couleur](#codes_de_couleur).
+
+| Clé                  |      Valeurs      | Par défaut | Obligatoire |
+|----------------------|:-----------------:|:----------:|:-----------:|
+| `regionLeaveMessage` | [Chaîne](#chaîne) |   aucun    |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
 ```yml
-teleportLocation: my_world,10.5,60,10.5,0,0
+regionLeaveMessage: '&aVous avez quitté le donjon !'
 ```
-# Comment créer une carte EternalTD personnalisée
 
-## Création du fichier level.yml pour votre carte
+<div align="center">
 
-Commencez à créer votre carte en créant un fichier de configuration de niveau en suivant ces étapes simples :
+![create_packager_leave.jpg](../../../img/wiki/create_packager_leave.jpg)
 
-1. Commencez par créer un nouveau document texte et donnez-lui un nom comme *nom_de_votre_niveau.yml* (remplacez "nom_de_votre_niveau" par le nom réel de votre niveau/carte).
+</div>
 
-2. Ouvrez le fichier dans votre éditeur de texte préféré.
+</div>
 
-3. Commençons par la partie amusante ! Ajoutez le nom de votre niveau en utilisant ce paramètre :
-```yaml
-levelName: "&aMon super niveau"
+</details>
+
+***
+
+### hasCustomModels
+
+Indique si le package de donjon possède des modèles personnalisés (pour ModelEngine ou FreeMinecraftModels).
+
+| Clé               |       Valeurs       | Par défaut | Obligatoire |
+|-------------------|:-------------------:|:----------:|:-----------:|
+| `hasCustomModels` | [Booléen](#booléen) |   aucun    |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+hasCustomModels: false
 ```
-N'hésitez pas à l'agrémenter de quelques couleurs Minecraft ou d'autres modificateurs de texte.
 
-4. Maintenant, donnez du caractère à votre niveau avec une description cool :
-```yaml
-levelDescription:
-- "&aMon niveau est plutôt cool."
-- "&aJ'espère que vous apprécierez !"
+</div>
+
+</details>
+
+***
+
+### dungeonConfigFolderName
+
+Définit le nom des dossiers utilisés pour les fichiers associés à ce donjon.
+
+**Obligatoire pour les donjons instanciés!**
+
+| Clé                       |      Valeurs      | Par défaut | Obligatoire |
+|---------------------------|:-----------------:|:----------:|:-----------:|
+| `dungeonConfigFolderName` | [Chaîne](#chaîne) |   aucun    |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+dungeonConfigFolderName: mon_dossier_de_donjon
 ```
-Vous pouvez ajouter plus de lignes à la description, mais il est conseillé de la garder brève.
 
-5. Place aux vagues ! Spécifiez quelles vagues d'EternalTD votre niveau doit utiliser :
-```yaml
-wavesConfigFile: my_waves.yml
+</div>
+
+</details>
+
+***
+
+### contentLevel
+
+Définit le niveau de contenu que le donjon doit afficher dans le menu EM.
+
+| Clé            |      Valeurs      | Par défaut | Obligatoire |
+|----------------|:-----------------:|:----------:|:-----------:|
+| `contentLevel` | [Entier](#entier) |   aucun    |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+contentLevel: 20
 ```
-N'oubliez pas d'utiliser le nom réel de votre fichier de vagues. Une vague par niveau !
 
-6. Définissez le monde (construction) que votre niveau utilisera :
-```yaml
-worldName: my_world_folder_name
+</div>
+
+</details>
+
+***
+
+### enchantmentChallenge
+
+Indique si le donjon doit être un donjon Défi d'enchantement.
+
+| Clé                    |       Valeurs       | Par défaut | Obligatoire |
+|------------------------|:-------------------:|:----------:|:-----------:|
+| `enchantmentChallenge` | [Booléen](#booléen) |  `false`   |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+enchantmentChallenge: false
 ```
-Utilisez le nom réel du monde trouvé dans le dossier *worlds* d'EternalTD.
 
-7. Enfin, choisissez l'environnement parfait pour la configuration de votre niveau :
-```yaml
+</div>
+
+</details>
+
+</div>
+
+***
+
+### Packages de donjons basés sur le monde
+
+Les valeurs suivantes s'appliquent uniquement aux donjons basés sur le monde.
+
+<div align="center">
+
+***
+
+### worldName
+
+Définit le nom du monde qui doit être emballé.
+
+| Clé         |      Valeurs      | Par défaut | Obligatoire |
+|-------------|:-----------------:|:----------:|:-----------:|
+| `worldName` | [Chaîne](#chaîne) |   aucun    |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+worldName: mon_monde_minecraft
+```
+
+</div>
+
+</details>
+
+***
+
+### womholeWorldName
+
+Cette fonction définit le nom du monde du trou de ver, qui sert de monde secondaire lié au monde principal. Il est
+utilisé pour des fonctionnalités telles que des hubs de téléportation ou des chambres de boss uniques.
+
+| Clé                |      Valeurs      | Par défaut | Obligatoire |
+|--------------------|:-----------------:|:----------:|:-----------:|
+| `womholeWorldName` | [Chaîne](#chaîne) |   aucun    |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+womholeWorldName: mon_monde_minecraft_troudever
+```
+
+</div>
+
+</details>
+
+***
+
+### environment
+
+Définit l'environnement du monde.
+
+| Clé           |                                           Valeurs                                           | Par défaut | Obligatoire |
+|---------------|:-------------------------------------------------------------------------------------------:|:----------:|:-----------:|
+| `environment` | [Environnement](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.Environment.html) |   aucun    |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
 environment: NORMAL
 ```
-Vous pouvez choisir entre NORMAL, NETHER ou THE_END. Faites votre choix.
 
-Votre fichier de configuration de niveau est prêt ! Le reste du fichier sera rempli par les commandes EternalTD que nous utiliserons dans les étapes suivantes lors du mappage de la construction.
+</div>
 
-## Préparation de votre construction
-Avant de mapper votre construction pour l'utiliser avec EternalTD, il est essentiel de la configurer de la manière suivante :
+</details>
 
-- Configurez-la dans un monde vide. Si vous utilisez Multiverse, vous pouvez utiliser la commande :
-  ```
-  /mvcreate nomdemondevousici NORMAL -g VoidGen:.
-  ```
-- Ayez une bordure de monde étroite autour de la construction.
-- Créez un cylindre de barrière à quelques blocs sous la construction avec une hauteur d'un bloc et un rayon suffisamment grand pour atteindre la bordure du monde (rayon de 200 blocs recommandé). En utilisant WorldEdit, vous pouvez exécuter :
-  ```
-  //cyl barrier 200 1
-  ```
-- Définissez le point d'apparition pour qu'il soit au centre de la construction dans un endroit sûr.
-- Appliquez les règles suivantes :
-    - /gamerule doWeatherCycle false
-    - /gamerule doDaylightCycle false
-    - /gamerule doMobSpawning false
-    - /gamerule doFireTick false
-    - /gamerule fireDamage false
-    - /gamerule mobGriefing false
-    - /gamerule disableRaids true
-    - /gamerule announceAdvancements false
-- La zone de jeu de la carte doit se trouver au même niveau Y. Tout ce qui est plus haut ou plus bas sera ignoré lorsque nous commencerons le processus de mappage.
+***
 
-## Mappage de la construction pour une utilisation avec EternalTD
-Pour mapper la zone de jeu de votre construction pour une utilisation avec EternalTD, suivez ces étapes :
+### teleportLocation
 
-1. Mesurez manuellement la construction, en vous assurant d'inclure uniquement la zone de jeu et rien d'autre. Notez les coordonnées au fur et à mesure que vous mesurez.
-<br>La zone de jeu doit inclure les sections de départ (apparition de monstres) et de fin de la carte. Le départ est généralement construit à l'aide de blocs verts et de blocs rouges pour la fin.
+Définit l'emplacement de téléportation du package de donjon. C'est là où les joueurs seront téléportés lorsqu'ils
+entreront dans le donjon.
 
-2. Commencez par mesurer les axes X, Y et Z de la construction. Tenez-vous à un coin de la zone de jeu de votre carte sur l'axe X et écrivez la coordonnée indiquée (vous pouvez utiliser les coordonnées des blocs pour cela). Déplacez-vous du côté opposé de l'axe X et écrivez cette coordonnée.
+| Clé                |      Valeurs      | Par défaut | Obligatoire |
+|--------------------|:-----------------:|:----------:|:-----------:|
+| `teleportLocation` | [Chaîne](#chaîne) |   aucun    |      ✅      |
 
-3. Pour l'axe Y, tenez-vous sur la **zone de jeu** et écrivez la coordonnée indiquée.
+<details> 
 
-4. Répétez le même processus que celui effectué pour l'axe X pour mesurer l'axe Z. Vous pouvez jeter un coup d'œil à cette image d'exemple pour vous aider à comprendre ce que nous essayons de réaliser ici :
-   ![Ejemplo de mapeo](https://i.imgur.com/IZfh2Nt.jpeg)
-   Remarquez comment nous ne mesurons que les coordonnées où nous voulons que se trouve notre zone de jeu et en ignorant le reste. Comme dans l'exemple, assurez-vous d'inclure le début et la fin lors de la mesure de la zone de jeu. <br>Si la zone de jeu que vous mesurez est plus large à une extrémité et plus étroite à l'autre, vous devez mesurer la section la plus large.
+<summary><b>Exemple</b></summary>
 
-5. Après avoir terminé les mesures, vous devriez obtenir quelque chose comme ceci :
-   ```
-   Axe X : -57, 56
-   Axe Y : 65
-   Axe Z : 34, -34
-   ```
+<div align="left">
 
-6. Réorganisez ces nombres du plus élevé au plus bas pour obtenir deux ensembles complets de coordonnées XYZ :
-   ```
-   56 65 34 (valeurs XYZ les plus élevées)
-   -57 65 -34 (valeurs XYZ les plus basses)
-   ```
+```yml
+teleportLocation: mon_monde_minecraft,-1.5,68,0.5,0.0,0.0
+```
 
-7. Utilisez la commande suivante pour sélectionner les coordonnées :
-   ```
-   /etd selectfloorcoordinate Xhaut Y Zhaut Xbas Y Zbas
-   Exemple : /etd selectfloorcoordinate 56 65 34 -57 65 -34
-   ```
+</div>
 
-8. Les coordonnées ont maintenant été sélectionnées et sont en mémoire. Si vous obtenez une erreur, c'est que votre mesure était incorrecte ou que la zone de jeu n'a pas été correctement construite. Pour vérifier si nous avons mappé correctement la zone de jeu, exécutez la commande suivante :
-   ```
-   /etd register votre_nom_de_niveau.yml test
-   ```
-   Remplacez "votre_nom_de_niveau" par le nom réel du niveau/mapa que vous essayez de créer. Si tout a été fait correctement, vous devriez voir des barrières marquant chaque tuile de votre zone de jeu.
+</details>
 
-9. Examinez la zone de jeu et assurez-vous que tout ressemble à ce qu'il devrait être, puis exécutez à nouveau la commande, mais cette fois sans le *test* à la fin.
-   ````
-   /etd register votre_nom_de_niveau.yml
-   ````
-   Cela enregistrera maintenant la zone de jeu dans votre fichier de niveau et votre fichier de niveau devrait maintenant être prêt à l'emploi.
+***
 
-## Recorte du dossier du monde
-Il y a plusieurs fichiers et dossiers situés dans votre dossier de monde que nous pouvons supprimer car EternalTD ne les utilise pas tous. Cela réduira la taille de votre monde et facilitera sa distribution.
+### allowExplosionBlockDamage
 
-Pour un environnement NORMAL :
+Autorise ou empêche les explosions d'endommager les blocs dans un donjon. Les explosions sont considérées comme des
+explosions d'élite, de sorte que tout dommage aux blocs sera régénéré en moins de 2 minutes.
 
-Pour préparer votre monde, **conservez** les fichiers et dossiers suivants :
+| Clé                         |       Valeurs       | Par défaut | Obligatoire |
+|-----------------------------|:-------------------:|:----------:|:-----------:|
+| `allowExplosionBlockDamage` | [Booléen](#booléen) |  `false`   |      ❌      |
 
-1.  dossier **region**
+<details> 
 
-2.  **raids.dat** à partir du dossier **data** (assurez-vous qu'il se trouve à l'intérieur du dossier **data** lors de la copie)
+<summary><b>Exemple</b></summary>
 
-3.  fichier **level.dat**
+<div align="left">
+
+```yml
+allowExplosionBlockDamage: true
+```
+
+</div>
+
+</details>
+
+</div>
+
+#### Donjons instanciés
+
+*Les donjons instanciés créent un nouveau monde à chaque fois qu'un groupe de joueurs veut terminer un donjon, et le
+supprime une fois terminé. Pour que cela fonctionne correctement, vous devez placer un dossier suivant
+le `dungeonConfigFolderName` dans le dossier de configuration `world_blueprints` d'EliteMobs.*
+
+*Vous placez ensuite le monde que vous utiliserez à l'intérieur du dossier que vous avez créé, en vous assurant que le
+fichier `session.lock` du monde est supprimé.*
+
+Les valeurs suivantes s'appliquent uniquement aux donjons instanciés. Notez que tous les donjons instanciés sont des
+donjons du monde, ils utilisent donc également les valeurs des donjons du monde.
+
+<div align="center">
+
+***
+
+### startLocation
+
+Définit l'emplacement de téléportation du point de départ du donjon instancié. C'est là que les joueurs seront
+téléportés lorsqu'ils commenceront le donjon instancié avec `/em start`.
+
+| Clé             |      Valeurs      | Par défaut | Obligatoire |
+|-----------------|:-----------------:|:----------:|:-----------:|
+| `startLocation` | [Chaîne](#chaîne) |   aucun    |      ✅      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+startLocation: mon_monde_minecraft,10.5,70,10.5,0.0,0.0
+```
+
+</div>
+
+</details>
+
+***
+
+### permission
+
+Définit l'autorisation requise pour entrer dans l'instance de donjon.
+
+| Clé          |      Valeurs      | Par défaut | Obligatoire |
+|--------------|:-----------------:|:----------:|:-----------:|
+| `permission` | [Chaîne](#chaîne) |   aucun    |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+permission: elitedungeon.monautorisation
+```
+
+</div>
+
+</details>
+
+***
+
+### minPlayerCount
+
+Définit le nombre minimum de joueurs requis pour démarrer un donjon.
+
+| Clé              |      Valeurs      | Par défaut | Obligatoire |
+|------------------|:-----------------:|:----------:|:-----------:|
+| `minPlayerCount` | [Entier](#entier) |    `1`     |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+minPlayerCount: 1
+```
+
+</div>
+
+</details>
+
+***
+
+### maxPlayerCount
+
+Définit le nombre minimum de joueurs requis pour démarrer un donjon.
+
+| Clé              |      Valeurs      | Par défaut | Obligatoire |
+|------------------|:-----------------:|:----------:|:-----------:|
+| `maxPlayerCount` | [Entier](#entier) |    `5`     |      ❌      |
+
+<details> 
+
+<summary><b>Exemple</b></summary>
+
+<div align="left">
+
+```yml
+maxPlayerCount: 5
+```
+
+</div>
+
+</details>
+
+***
+
+### dungeonObjectives
+
+Définit la liste des objectifs de donjon requis pour que le donjon soit considéré comme terminé.
+
+| Clé                 |                Valeurs                | Par défaut | Obligatoire |
+|---------------------|:-------------------------------------:|:----------:|:-----------:|
+| `dungeonObjectives` | [Liste de chaînes](#liste_de_chaînes) |   aucun    |      ✅      |
+
+<details> 
+
+<summary><b>Exemples</b></summary>
+
+<div align="left">
+
+Il existe actuellement deux types d'objectifs de donjon:
+
+* Tuer la cible: `filename=boss.yml:amount=X`
+* Tuer un pourcentage du donjon: `clearpercentage=X.Y`
+
+```yml
+dungeonObjectives:
+- filename=donjon_boss_final.yml
+- filename=donjon_mini_boss_un.yml
+- filename=donjon_mini_boss_deux.yml
+```
+
+```yml
+dungeonObjectives: 
+- clearpercentage=0.8
+```
+
+</div>
+
+</details>
+
+***
+
+### difficulties
+
+Définit la liste des difficultés dans le donjon instancié.
+
+**Obligatoire pour les donjons instanciés!**
+
+| Clé            |   Valeurs   | Par défaut | Obligatoire |
+|----------------|:-----------:|:----------:|:-----------:|
+| `difficulties` | Spécial [1] |   aucun    |      ❌      |
+
+<details> 
+
+<summary><b>Exemples</b></summary>
+
+<div align="left">
+
+```yml
+difficulties:
+- levelSync: 25
+  id: 0
+  name: normal
+- levelSync: 20
+  id: 1
+  name: difficile
+- levelSync: 15
+  id: 2
+  name: mythique
+```
+
+<div align="center">
+
+![create_packager_difficulty.jpg](../../../img/wiki/create_packager_difficulty.jpg)
+
+</div>
+
+</div>
+
+</details>
+
+**Spécial [1]**
+
+<details>
+
+<summary><b>Développer le tableau</b></summary>
+
+<div align="center">
+
+La définition des difficultés de donjon instancié créera automatiquement différentes options de difficulté lors de
+l'entrée dans le donjon.
+
+Les noms de difficulté définis ici seront ceux utilisés dans le dossier des boss personnalisés, où vous pouvez définir
+les pouvoirs que les boss ont en fonction de la difficulté.
+
+Les difficultés sont dans un format de liste qui comporte les champs suivants:
+
+|     Clé     | Description                                                                                                                                                                                                                                                                                                                                                      | Valeurs           | Obligatoire |
+|:-----------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|:-----------:|
+|   `name`    | Nom de la difficulté pour les joueurs.                                                                                                                                                                                                                                                                                                                           | [Chaîne](#chaîne) |      ✅      |
+|    `id`     | ID de la difficulté, utilisé dans les boss personnalisés et les éléments personnalisés pour la fonctionnalité basée sur la difficulté.                                                                                                                                                                                                                           | [Chaîne](#chaîne) |      ✅      |
+| `levelSync` | Définit le niveau de la synchronisation de niveau, le cas échéant. La synchronisation de niveau fait que tout l'équipement du joueur atteint la valeur définie, ce qui empêche les joueurs d'être trop sur-nivelés pour un donjon et maintient la pertinence pour les courses ultérieures. Basé sur le système de synchronisation de niveau de Final Fantasy 14. | [Entier](#entier) |      ❌      |
+
+</div>
+
+</details>
+
+</div>
+
+***
+
+## Utilisation du fichier de package de donjon meta_pack.yml pour les grands donjons.
+
+Parfois, vous pouvez travailler sur un grand donjon qui inclut d'autres donjons plus petits à l'intérieur, permettant
+aux joueurs de voyager entre eux via le monde du donjon principal. Un excellent exemple en est le donjon d'aventure
+EliteMobs Primis.
+
+Primis propose un vaste monde où les joueurs peuvent explorer et accomplir des quêtes, mais il comprend également deux
+donjons instanciés dans son monde ; l'un d'eux sert de combat de boss final. Dans des cas comme celui-ci, il y aura
+plusieurs fichiers de package de donjon, même s'ils appartiennent tous au même donjon global.
+
+Pour gérer cela, nous utilisons un fichier de package de méta-donjon. Ce fichier agit comme un répertoire central,
+spécifiant le donjon principal et répertoriant tous les contenus de donjon supplémentaires qui lui sont associés.
+
+Examinons de plus près la structure du package de méta-donjon de Primis:
+
+```yaml
+isEnabled: true
+name: '&2[000-020] L'aventure Primis !'
+customInfo:
+- L'aventure tutorielle pour les joueurs
+- qui débutent avec EliteMobs !
+downloadLinkV2: https://discord.gg/9f5QSka
+dungeonSizeCategory: REPAIRE
+environment: NORMAL
+protect: true
+contentType: META_PACKAGE
+containedPackages:
+- primis_aventure.yml
+- primis_temple_de_sang_sanctum.yml
+- primis_invasion_gladius_donjon.yml
+setupMenuDescription:
+- '&2Une aventure tutorielle facile pour les joueurs entre les niveaux 0 et 20 !'
+- '&2Les aventures sont des cartes massives avec des quêtes,'
+- '&2de nombreux boss et PNJ, entre autres !'
+- '&2Possède également des modèles personnalisés !'
+dungeonVersion: 21 #Fichier de méta-package de donjon ajouté
+```
+
+Comme vous pouvez le constater, le fichier de package de méta-donjon est très similaire à un package de donjon standard,
+avec quelques différences essentielles. Le `contentType :` est défini sur `META_PACKAGE`, et il existe un paramètre
+supplémentaire appelé `containedPackages :`. Ce paramètre répertorie tous les autres packages de donjon qui font partie
+du donjon plus grand.
+
+Lorsque vous créez votre méta-package, assurez-vous d'inclure le paramètre `containedPackages :` et de répertorier
+chaque package de donjon qui fait partie de votre donjon plus grand. Cela garantit que tout est correctement lié et
+organisé dans la structure globale.
+
+Lors du versionnage de votre donjon, tout le versionnage doit être géré via le méta-package. En effet, le méta-package
+sert de package principal qui détermine la version de l'ensemble du donjon et constitue également le package utilisé
+pour afficher des informations dans le menu `/em setup`.
+
+Gardez à l'esprit que les donjons individuels répertoriés dans le méta-package peuvent toujours apparaître dans le
+menu `/em teleport`. Pour éviter cela, vous devrez désactiver manuellement les options de téléportation pour chacun de
+ces donjons dans leurs fichiers de configuration respectifs.
+
+Par exemple, dans le cas du donjon Primis:
+
+Désactivez les entrées de téléportation dans le menu pour `primis_temple_de_sang_sanctum.yml`
+et `primis_invasion_gladius_donjon.yml`.
+Laissez les options de téléportation activées pour `primis_aventure.yml`, car cela sert de hub principal où les joueurs
+commencent leur voyage et accèdent aux autres donjons.
+Cette configuration garantit une expérience fluide pour les joueurs tout en maintenant une structure et des
+fonctionnalités appropriées pour le système de donjon.
+
+Lors du nommage du fichier, nous recommandons la convention d'attribution de noms suivante:
+
+`votre_nom_de_donjon_meta_pack.yml`
+
+***
+
+# Valeurs de boss recommandées
+
+## Création d'un mob de donjon moyen
+
+Nous recommandons de laisser le paramètre normalizedCombat défini sur true. Ce paramètre normalise tous les monstres
+pour qu'ils évoluent de manière égale avec la santé et les dégâts, quel que soit leur type d'entité.
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 1.0 #4 coups pour tuer
+damageMultiplier: 1.0 #1,5 cœurs de dégâts
+```
+
+Certes, voici la version révisée avec clarté et mise en forme conservées:
+
+**Remarque: étant donné que `1.0` est la valeur par défaut pour la santé et les dégâts, vous pouvez simplement omettre
+de définir `healthMultiplier` ou `damageMultiplier` et définir `normalizedCombat` sur `true`.**
+
+## Création de packs de monstres poubelles
+
+Les packs de monstres poubelles sont nombreux mais pas très dangereux:
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 0.7 #3 coups pour tuer
+damageMultiplier: 0.5 #0,5 cœurs de dégâts
+```
+
+## Création de renforts
+
+Les renforts doivent mourir très facilement, mais représentent un danger en termes de dégâts (ces valeurs sont
+recommandées pour 4 entités de mêlée ou plus, l'utilisation réelle peut varier):
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 0.25 #1 coup pour tuer
+damageMultiplier: 0.6 #1 cœur de dégâts
+```
+
+## Création de mini-boss
+
+Les mini-boss doivent tenir bon et poser un défi mécanique aux joueurs. Ce devrait être un test de compétence qui dure
+un peu, mais pas quelque chose d'extrêmement mortel:
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 3.0 #10 coups pour tuer
+damageMultiplier: 1.2 #2 cœurs de dégâts
+```
+
+## Création de boss
+
+Les boss sont un véritable défi, la conclusion d'une montée en puissance dans un donjon et un véritable test de
+compétence avec tout ce qui est en jeu. Les rencontres doivent être longues et la mort doit être une menace présente.
+
+```yaml
+normalizedCombat: true
+healthMultiplier: 7.0 #23 coups pour tuer
+damageMultiplier: 1.4 #2,5 cœurs de dégâts
+```
+
+**Ces valeurs recommandées ne sont que de simples estimations, et les valeurs finales doivent être ajustées en fonction
+des rencontres spécifiques.**
+
+**Ceci est particulièrement crucial pour les boss de donjon final ; vous voudrez peut-être dépasser considérablement la
+valeur recommandée de 7.0 pour healthMultiplier afin de donner au dernier combat cette sensation épique.**
+
+***
+
+# Emballage du contenu EliteMobs pour la distribution
+
+Enfin, vous voudrez probablement emballer votre donjon pour le stockage ou la distribution.
+
+EliteMobs possède un système d'importation qui permet aux administrateurs d'importer, d'installer et de désinstaller
+rapidement du contenu. [Vous pouvez voir comment cela fonctionne ici.]($language$/elitemobs/setup.md)
+
+## Réduction des mondes
+
+Parfois, vous devrez peut-être réduire la taille de votre monde Minecraft pour le rendre plus léger et, par conséquent,
+plus facile à distribuer. Cela peut être réalisé grâce à l'utilisation
+du [plugin WorldBorder](https://www.spigotmc.org/resources/worldborder-1-15.80466/). Bien que le plugin soit indiqué
+comme ne prenant en charge MineCraft que jusqu'à la version 1.19, il fonctionne de manière transparente sur la dernière
+version de MineCraft au 25 janvier 2024.
+
+<details>
+<summary>Conseil</summary>
+Si vous faites cela pour la première fois, il pourrait être judicieux de créer une sauvegarde de votre monde au cas où quelque chose tournerait mal.
+</details>
+
+Une fois le plugin installé, naviguez vers le milieu du monde ou la zone spécifique que vous souhaitez réduire. Ensuite,
+exécutez la commande `/wb set x`, où `x` représente la taille approximative du rayon que vous souhaitez pour votre zone.
+
+<details>
+<summary>Conseil</summary>
+Si <code>/wb</code> ne fonctionne pas pour vous, essayez <code>/worldborder:wb</code>.
+</details>
+
+Après avoir exécuté cette commande, volez jusqu'aux bords de votre monde pour vérifier que la bordure du monde a été
+correctement définie et couvre la taille prévue. Vous reconnaîtrez que vous avez atteint le bord de la bordure du monde
+lorsque vous serez repoussé, accompagné d'un message dans le chat.
+
+![trim_pic_1.jpg](../../../img/wiki/trim_pic_1.jpg)
+
+Dans l'image ci-dessus, nous visons à réduire le monde autour des blocs violets, en ne laissant que quelques morceaux
+autour d'eux. Pour ce faire, nous nous tenons au milieu de la zone violette sur les carrés rouges et
+exécutons `/wb set 50`, en définissant la bordure du monde juste au-delà de la zone violette.
+
+Ensuite, nous utilisons la commande `/wb trim [freq] [pad]`, avec la fréquence définie sur 200 et le pad sur 20. Le pad
+détermine combien de morceaux doivent être laissés autour de la bordure du monde (la zone violette), et la fréquence
+détermine combien de morceaux doivent être traités par seconde. Après avoir exécuté `/wb trim 200 20`, nous serons
+invités à confirmer en exécutant `/wb trim confirm`. Nous confirmons l'action, et après un certain temps, notre monde
+sera réduit, ce qui réduira sa taille et le rendra plus pratique pour la distribution.
+
+Vous pouvez maintenant supprimer la bordure du monde en utilisant `/wb clear all` ou la laisser si vous le souhaitez.
+
+## Réduction du dossier du monde
+
+Il existe plusieurs fichiers et dossiers situés dans votre dossier de monde que nous pouvons ignorer car les plugins ne
+les utilisent pas tous. Cela réduira la taille de votre monde et le rendra plus facile à distribuer.
+
+Pour un environnement de monde NORMAL:
+
+Pour préparer votre monde, conservez les fichiers et dossiers suivants:
+
+1. Dossier **region**
+2. **raids.dat** du dossier **data** (assurez-vous qu'il est placé à l'intérieur du dossier **data** lors de la copie)
+3. Fichier **level.dat**
 
 Vous pouvez supprimer en toute sécurité tous les autres fichiers et dossiers situés dans le dossier du monde. Cela configurera correctement votre monde pour l'environnement NORMAL.
 
-Pour les environnements NETHER et THE_END :
+Pour les environnements de monde NETHER et THE_END:
 
 Pour préparer votre monde, conservez les fichiers et dossiers suivants :
 
-1.  dossier **region** à l'intérieur du dossier **DIM-1** (assurez-vous qu'il se trouve à l'intérieur du dossier **DIM-1** lors de la copie)
-
-2.  **raids.dat** à partir du dossier **data** (assurez-vous qu'il se trouve à l'intérieur du dossier **data** lors de la copie)
-
-3.  fichier **level.dat**
+1. Dossier **region** à l'intérieur du dossier **DIM-1** (assurez-vous qu'il est placé à l'intérieur du dossier **DIM-1
+   ** lors de la copie)
+2. **raids.dat** du dossier **data** (assurez-vous qu'il est placé à l'intérieur du dossier **data** lors de la copie)
+3. Fichier **level.dat**
 
 Vous pouvez supprimer en toute sécurité tous les autres fichiers et dossiers situés dans le dossier du monde. Cela configurera correctement votre monde pour les environnements NETHER et THE_END.
+
+## Exécution de la commande package
+
+EliteMobs possède la commande **`/em package <nomDuDonjon> <version>`**. Cette commande parcourt tous les dossiers de
+configuration d'EliteMobs et regroupe automatiquement tout le contenu des dossiers qui correspondent au `nomDuDonjon`
+dans un fichier compressé et un dossier normal dans le dossier `exports` d'EliteMobs.
+
+***Pour cette raison, il est fortement recommandé de conserver le contenu que vous souhaitez emballer dans des dossiers
+portant le même nom que le nom de votre package.*** Sinon, vous devrez rassembler et emballer manuellement les fichiers
+dans la structure de fichiers pour la distribution.
+
+## Ajout du fichier de package de donjon
+
+Si vous créez un donjon, vous devrez ajouter manuellement le fichier de package de donjon dans le dossier nouvellement
+généré dans le dossier exports. Votre fichier de configuration de package de donjon doit respecter le format décrit
+ci-dessus et être placé dans un dossier
+appelé `content_packages`. [Consultez la structure des fichiers pour plus d'informations.](#structure-des-fichiers).
+
+**Assurez-vous de compresser votre donjon une fois terminé!**
+
+## Structure des fichiers
+
+Si vous avez tout fait correctement, la structure du fichier doit être similaire à cet exemple, où nous avons appelé le
+donjon `mon_donjon_cool`:
+
+<details>
+<summary>Exemple de structure de fichiers mon_donjon_cool</summary>
+
+- mon_donjon_cool.zip
+    * content_packages
+        * mon_donjon_cool.yml <- C'est là que va votre fichier de configuration de package de donjon
+    * worldcontainer
+        * [Vos dossiers de monde vont ici]
+    * wormholes
+        * mon_donjon_cool
+            * [Vos trous de ver vont ici]
+    * npcs
+        * mon_donjon_cool
+            * [Vos PNJ vont ici]
+    * customtreasurechests
+        * mon_donjon_cool
+            * [Vos coffres au trésor vont ici]
+    * customquests
+        * mon_donjon_cool
+            * [Vos quêtes vont ici]
+    * customitems
+        * mon_donjon_cool
+            * [Vos éléments personnalisés vont ici]
+    * custombosses
+        * mon_donjon_cool
+            * [Vos boss personnalisés vont ici]
+    * customarenas
+        * mon_donjon_cool
+            * [Vos arènes personnalisées vont ici]
+    * powers
+        * mon_donjon_cool
+            * [Vos pouvoirs personnalisés vont ici]
+    * world_blueprints
+        * mon_donjon_cool
+            * [Votre dossier de monde va ici, utilisé pour les donjons instanciés]
+    * customevents
+        * mon_donjon_cool
+            * [Vos événements personnalisés vont ici]
+    * customspawns
+        * mon_donjon_cool
+            * [Vos apparitions personnalisées vont ici]
+    * models
+        * [Vos modèles au format bbmodel ModelEngine vont ici, accepte les dossiers]
+
+</details>
+
+Cela permet à la plupart des utilisateurs de faire glisser et de déposer des fichiers directement sur leur serveur et de
+le faire fonctionner immédiatement.
+
+***Important: lorsque vous emballez pour la distribution, assurez-vous de DÉSINSTALLER D'ABORD LE MINIDONJON! Vous ne
+voulez pas distribuer des minidonjons installés, vous voulez que les administrateurs les configurent sur leurs serveurs!
+***
+
+# Partage des packages de donjon que vous avez créés avec la communauté
+
+Discord contient une section [#community_dungeons](https://discord.gg/7Pnd7EjdZq "#community_dungeons") où les gens
+peuvent partager leurs créations de minidonjons. N'hésitez pas à contribuer!

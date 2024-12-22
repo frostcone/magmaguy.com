@@ -1,4 +1,4 @@
-# Repositorio público
+# Repositorio Público
 
 ## Maven
 ```xml
@@ -13,7 +13,7 @@
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>¡Verifica cuál es la última versión!</version>
+  <version>¡Comprueba cuál es la última versión!</version>
   <scope>provided</scope>
 </dependency>
 ```
@@ -28,11 +28,11 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:¡Verifica cuál es la última versión!'
+    implementation 'com.magmaguy:BetterStructures:¡Comprueba cuál es la última versión!'
 }
 ```
 
-Nota: Reemplace `versionNumber` con la versión actual del plugin.
+Nota: reemplaza `versionNumber` con la versión actual del plugin.
 
 # Eventos
 
@@ -40,19 +40,23 @@ Nota: Reemplace `versionNumber` con la versión actual del plugin.
 
 ## BuildPlaceEvent
 
-Se llama cuando está a punto de colocarse una construcción. Expone datos sobre qué construcción se va a colocar y dónde, entre otras cosas, a través del objeto FitAnything.
+Se llama cuando una construcción está a punto de colocarse. Expone datos sobre qué construcción se va a colocar y dónde,
+entre otras cosas, a través del objeto FitAnything.
 
-**¡No intente modificar la construcción que se está colocando!** Puede modificar cosas menores, pero cambiar toda la construcción probablemente resultará en una construcción con un ajuste deficiente.
+**¡No intentes modificar la construcción que se está colocando!** Puedes modificar cosas menores, pero cambiar toda la
+construcción probablemente resultará en una construcción con un ajuste deficiente.
 
-Esto se puede cancelar.
+Este evento es cancelable.
 
 ## ChestFillEvent
 
-Se llama cuando se llena un cofre. Utiliza el inventario de instantáneas del contenedor para almacenar de forma segura los datos que se van a aplicar.
+Se llama cuando se llena un cofre. Utiliza el inventario de instantánea del contenedor para almacenar de forma segura
+los datos que se van a aplicar.
 
-Las modificaciones al botín deben realizarse en el inventario de instantáneas a través del método Spigot de agregar o eliminar elementos.
+Las modificaciones al botín deben realizarse en el inventario de instantáneas a través del método Spigot para agregar o
+eliminar elementos.
 
-Esto se puede cancelar.
+Este evento es cancelable.
 
 # Clases clave
 
@@ -62,4 +66,7 @@ La clase FitAnything es la clase que se instancia cuando se pega una construcci�
 
 ## WorldGuard
 
-La clase WorldGuard maneja las protecciones de región de WorldGuard. El método de utilidad `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` está disponible para que los desarrolladores se conecten fácilmente en un esquema de protección de región personalizado sobre BetterStructures.
+La clase WorldGuard maneja las protecciones de región de WorldGuard. El método de
+utilidad `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` está
+disponible para que los desarrolladores puedan conectar fácilmente un esquema de protección de región personalizado
+además de BetterStructures.

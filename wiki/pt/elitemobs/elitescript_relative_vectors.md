@@ -4,27 +4,39 @@
 
 Vetores relativos são vetores que são relativos a uma localização específica, mas dinâmica.
 
-Para melhor explicar o que são, vamos considerar o seguinte caso: você quer empurrar um jogador em direção ao chefe como parte de um poder. Como tanto o chefe quanto o jogador se movem durante o combate, não é possível depender de um vetor específico para realizar esse efeito - você precisará de um vetor que vá do jogador em direção ao chefe. (Imagine uma linha curta com uma seta indo do jogador em direção ao chefe.)
+Para melhor explicar o que são, vamos considerar o seguinte caso: você quer empurrar um jogador em direção ao chefe como
+parte de um poder. Como tanto o chefe quanto o jogador se movem durante o combate, não é possível confiar em um vetor
+específico para realizar esse efeito - você precisará de um vetor que vá do jogador em direção ao chefe. (Imagine uma
+linha curta com uma seta indo do jogador em direção ao chefe.)
 
-Vetores relativos podem ser usados de tantas maneiras que seria impossível listá-las todas, mas entre elas estão: disparar entidades (como projéteis) em direção a um jogador ou mob específico; gerar reforços atrás de um jogador; atirar um bloco caindo em uma direção específica; criar raios que são disparados em direção a um jogador e muito mais.
+Vetores relativos podem ser usados de tantas maneiras que seria impossível listá-las todas, mas entre elas estão: lançar
+entidades (como projéteis) em direção a um jogador ou mob específico; gerar reforços atrás de um jogador; disparar um
+bloco caindo em uma direção específica; criar raios que são disparados em direção a um jogador e muito mais.
 
 ## Como os vetores funcionam?
 
-Se você não sabe ou não se lembra do que são vetores ou como eles funcionam, pode pensar em vetores como flechas que apontam de um ponto para outro ponto.
+Se você não sabe ou não se lembra do que são vetores ou como eles funcionam, pode pensar em vetores como setas que
+apontam de um ponto para outro ponto.
 
-Como tal, uma das propriedades dos vetores é o seu comprimento. Este comprimento é importante; no caso de flechas, este comprimento é a velocidade com que uma flecha é disparada, no caso de tentar obter pontos de deslocamento a partir de uma localização específica é a distância desse ponto. Coisas mais distantes terão comprimentos de vetor maiores e coisas mais próximas terão comprimentos menores.
+Como tal, uma das propriedades dos vetores é o seu comprimento. Este comprimento é importante; no caso de setas, este
+comprimento é a velocidade com que uma seta é disparada, no caso de tentar obter pontos de deslocamento de uma
+localização específica, é a distância desse ponto. Coisas mais distantes terão comprimentos de vetor maiores, e coisas
+mais próximas terão comprimentos mais curtos.
 
-Para algumas mecânicas, você provavelmente não vai querer depender de quão distantes dois pontos estão, pois você só quer obter uma direção. Felizmente, você pode usar a normalização de vetores, o que garante que a direção seja preservada, mas muda o comprimento para ser 1.0. Você pode então usar multiplicadores para modificar facilmente o vetor até ficar satisfeito com o deslocamento que ele fornece ou a velocidade que ele dá.
+Para algumas mecânicas, você provavelmente não vai querer confiar em quão distantes dois pontos estão, pois você só quer
+obter uma direção. Felizmente, você pode usar a normalização de vetores, que garante que a direção seja preservada, mas
+altera o comprimento para ser 1.0. Você pode então usar multiplicadores para modificar facilmente o vetor até que esteja
+satisfeito com o deslocamento que ele fornece ou a velocidade que ele dá.
 
 ## Propriedades
 
-| Valor |                                                 Detalhes                                                  | Obrigatório? | Valor padrão |
-| --- |:--------------------------------------------------------------------------------------------------------:| :-: | :-: |
-| `SourceTarget` | [Alvo]($language$/elitemobs/elitescript_targets.md) no ponto de onde o vetor começará | ✅ | `none` |
-| `DestinationTarget` | [Alvo]($language$/elitemobs/elitescript_targets.md) no ponto final do vetor | ✅ | `none` |
-| `normalize` |                                 Define se o vetor deve ser normalizado                                  | ❌ | `false` |
-| `multiplier` |                                      Multiplica o comprimento do vetor                                      | ❌ | `1.0` |
-| `offset` |                          Permite inserir um deslocamento fixo manual a este deslocamento                           | ❌ | `none` |
+| Valor               |                                       Detalhes                                        | Obrigatório? | Valor padrão |
+|---------------------|:-------------------------------------------------------------------------------------:|:------------:|:------------:|
+| `SourceTarget`      | [Alvo]($language$/elitemobs/elitescript_targets.md) no ponto de onde o vetor começará |      ✅       |    `none`    |
+| `DestinationTarget` |    [Alvo]($language$/elitemobs/elitescript_targets.md) no ponto final para o vetor    |      ✅       |    `none`    |
+| `normalize`         |                        Define se o vetor deve ser normalizado                         |      ❌       |   `false`    |
+| `multiplier`        |                           Multiplica o comprimento do vetor                           |      ❌       |    `1.0`     |
+| `offset`            |            Permite inserir um deslocamento fixo manual a este deslocamento            |      ❌       |    `none`    |
 
 <div align="center">
 
@@ -136,7 +148,7 @@ eliteScript:
         speed: 0.05
 ```
 
-Cria uma esfera de chamas animada que encolhe até a localização de geração.
+Cria uma esfera de chama animada que encolhe até a localização de geração.
 
 </div>
 

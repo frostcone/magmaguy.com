@@ -1,10 +1,15 @@
 ## Generadores
 
-Los generadores son la parte más poderosa del sistema de configuración de BetterStructures. De forma predeterminada, hay 27 generadores que gestionan colectivamente más de 200 construcciones actualmente distribuidas por BetterStructures, y si bien puede crear sus propios generadores, también puede usar los existentes como un atajo.
+Los generadores son la parte más poderosa del sistema de configuración para BetterStructures. Por defecto, hay 27
+generadores que gestionan colectivamente más de 200 construcciones actualmente distribuidas por BetterStructures, y
+aunque puedes crear tus propios generadores, también puedes usar los existentes como atajo.
 
-Los generadores le dicen al plugin dónde exactamente deberían aparecer las cosas y definen las tablas de botín. Los generadores predeterminados también tienen nombres que deberían ser muy fáciles de adivinar lo que hacen.
+Los generadores le indican al plugin dónde exactamente deben aparecer las cosas y definen tablas de botín. Los
+generadores predeterminados también están nombrados de manera que debería ser muy fácil adivinar qué hacen.
 
-El único campo obligatorio para los generadores es la configuración de `structureType`, que le dice al plugin si el edificio está destinado a aparecer en el cielo, en las profundidades subterráneas, en las profundidades subterráneas, en la superficie o en la superficie líquida.
+El único campo obligatorio para los generadores es la configuración `structureType`, que le indica al plugin si la
+construcción está destinada a aparecer en el cielo, subterránea poco profunda, subterránea profunda, en la superficie o
+en la superficie líquida.
 
 ***
 
@@ -16,51 +21,58 @@ Establece si el generador está habilitado.
 
 ### structureType
 
-Establece qué tipo de estructura es la construcción. **¡Tenga en cuenta que puede crear una lista de varios tipos!**
+Establece qué tipo de estructura es la construcción. **¡Ten en cuenta que puedes hacer una lista de varios tipos!**
 
-Los siguientes son valores de tipo de estructura válidos:
+Los siguientes son valores válidos de tipo de estructura:
 
 ***
 
 #### surface
 
 ```yml
-structureType: 
+structureType:
 - SURFACE
 ```
 
-Las estructuras de superficie aparecen en la superficie del mundo. La única excepción es el entorno del Nether, donde aparece en puntos que el plugin considera suficientemente similares a la superficie.
+Las estructuras de superficie aparecen en la superficie del mundo. La única excepción es el entorno del Nether, donde
+aparece en puntos que el plugin considera que son suficientemente parecidos a la superficie.
 
 ***
 
 #### sky
 
 ```yml
-structureType: 
+structureType:
 - SKY
 ```
 
-Las estructuras del cielo aparecen entre 80 y 120 bloques sobre el aire, configurable en config.yml. La única excepción es el entorno del Nether, donde aparece en puntos que el plugin considera suficientemente similares al aire.
+Las estructuras del cielo aparecen entre 80 y 120 bloques por encima del aire, configurable en config.yml. La única
+excepción es el entorno del Nether, donde aparece en puntos que el plugin considera que son suficientemente parecidos al
+aire.
 
 ***
 
 #### underground_shallow
 
 ```yml
-structureType: 
+structureType:
 - UNDERGROUND_SHALLOW
 ```
 
-Las estructuras subterráneas superficiales aparecen entre y=0 e y=60 en el supramundo, y=60 e y=120 en el nether y cualquier altura subterránea válida en el End.
+Las estructuras subterráneas poco profundas aparecen entre y=0 e y=60 en el supramundo, y=60 e y=120 en el nether y
+cualquier altura subterránea válida en el End.
 
-_**Nota:** Notará que hay dos configuraciones subterráneas. Esto se debe a que tener solo una resulta en tener un subsuelo muy disperso, ya que Minecraft tiene mucho espacio subterráneo y los jugadores a menudo se pierden la estructura subterránea simplemente porque no se metieron en ella. Esto también garantiza que haya una distribución uniforme en diferentes profundidades._
+_**Nota:** Notarás que hay dos configuraciones subterráneas. Esto se debe a que tener solo una resulta en tener un
+subsuelo muy disperso, ya que Minecraft tiene mucho espacio subterráneo y los jugadores a menudo se pierden estructuras
+subterráneas simplemente porque no las extrajeron. Esto también garantiza que haya una distribución uniforme en
+diferentes profundidades._
 
 ***
 
 #### underground_deep
 
 ```yml
-structureType: 
+structureType:
 - UNDERGROUND_DEEP
 ```
 
@@ -71,7 +83,7 @@ Las estructuras subterráneas profundas aparecen entre y=-64 e y=0 en el supramu
 #### liquid_surface
 
 ```yml
-structureType: 
+structureType:
 - LIQUID_SURFACE
 ```
 
@@ -81,19 +93,20 @@ Las estructuras de superficie líquida aparecerán en líquidos. En el caso del 
 
 ### lowestYLevel
 
-Establece el nivel Y (altitud) más bajo en el que aparecerá la estructura.
+Establece el nivel Y más bajo (altitud) en el que aparecerá la estructura.
 
 ***
 
 ### highestYLevel
 
-Establece el nivel Y (altitud) más alto en el que aparecerá la estructura.
+Establece el nivel Y más alto (altitud) en el que aparecerá la estructura.
 
 ***
 
 ### validWorlds
 
-Establece la lista de mundos en los que aparecerá la estructura. **Si no hay una lista presente, utilizará todos los mundos permitidos por el plugin**, a menos que esté limitado de otra manera (como por el tipo de entorno o los biomas).
+Establece la lista de mundos en los que aparecerá la estructura. **Si no hay una lista presente, utilizará todos los
+mundos permitidos por el plugin**, a menos que esté limitado de otra manera (como por el tipo de entorno o biomas).
 
 ***
 
@@ -105,12 +118,17 @@ Establece la lista de entornos mundiales en los que aparecerá la estructura. **
 
 ### validBiomes
 
-Establece la lista de biomas válidos en los que aparecerá la estructura. **Si no se define una lista, ¡asumirá que todos los biomas son válidos!**.
+Establece la lista de biomas válidos en los que aparecerá la estructura. **Si no se define ninguna lista, ¡se asumirá
+que todos los biomas son válidos!**
 
-Esto requiere usar la lista de biomas según lo definido por la [API de Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html).
+Esto requiere usar la lista de biomas tal como la define
+la [API de Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html).
 
 ***
 
 ### treasureFilename
 
-Establece el archivo de tesoro que utilizará el generador. Esto establece lo que aparece en los cofres para todas las construcciones que usan este generador, a menos que se establezca un valor diferente en una [configuración esquemática de `treasureFile`]($language$/betterstructures/creating_structures.md&section=treasurefile).
+Establece el archivo de tesoro que utilizará el generador. Esto establece lo que aparece en los cofres para todas las
+construcciones que utilizan este generador, a menos que se establezca un valor diferente en la
+configuración `treasureFile` de
+una [configuración esquemática]($language$/betterstructures/creating_structures.md&section=treasurefile).
