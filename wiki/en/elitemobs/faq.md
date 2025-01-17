@@ -3,6 +3,28 @@ in the wiki!
 
 # Setup and Installation FAQ
 
+### How can I disable loot or coin drops from EliteMobs, and should I do it?
+
+<details>
+<summary>
+Info
+</summary>
+
+EliteMobs allows you to control loot and coin drops, but before making changes, it's important to understand how these drops affect gameplay and progression:
+
+- **Loot and Coin Drops:**  
+Loot drops are a core feature of EliteMobs, tied to the gear players wear. Disabling loot will make it impossible for players to acquire the better gear needed to face higher-level Elites, halting progression entirely.
+
+Coins are vital to the in-game economy, used for buying and upgrading gear. Disabling coin drops will severely disrupt this system, negatively affecting player experience and balance.
+
+To disable loot and coin drops, open `ItemSettings.yml` and set `doEliteMobsLoot` to `false`.
+
+- **Custom Boss Loot in Dungeons:**
+Custom bosses have loot defined in their config files, located in `~/elitemobs/custombosses`. Disabling these drops will remove their unique rewards, disrupting the intended experience.
+
+</details>
+
+
 ### How do I set up custom models?
 
 <details>
