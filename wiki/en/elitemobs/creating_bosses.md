@@ -1406,7 +1406,7 @@ Sets a custom disguise from skindex. [Check this page]($language$/elitemobs/libs
 
 ### customModel
 
-Sets the custom model to use, if you have a custom model and ModelEngine. [More info here.]($language$/elitemobs/custom_models.md)
+Sets the custom model to use, if you have a custom model and the FreeMinecraftModels or ModelEngine plugins. [More info on making and using custom models here.]($language$/elitemobs/custom_models.md)
 
 | Key | Values | Default |
 |-|:-:|-|
