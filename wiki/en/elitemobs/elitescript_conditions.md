@@ -65,6 +65,103 @@ Conditions inside of actions are set to `FILTERING` by default.
 
 ---
 
+## Condition Block Placement
+
+
+You can place or nest condition blocks in two ways:
+
+1. **Under individual actions** – The condition will apply only to a specific action. If the condition is met, the action executes; otherwise, it does not.
+
+2. **Under the entire script** – The condition applies to all actions within the script. If the condition is not met, none of the actions will execute.
+
+Below are examples demonstrating how to nest condition blocks for both individual actions and the entire script.
+
+**Under individual actions:**
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: MESSAGE
+      Target: 
+        targetType: NEARBY_PLAYERS
+        range: 10
+      sValue: "&2Hello World!"
+    - action: SET_WEATHER
+      Target:
+        targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        locationIsAir: true
+        Target:
+          targetType: SELF
+          offset: "0,3,0"
+```
+
+Check if the location 2 blocks above where the boss is standing is air and if it is then run the SET_WEATHER action when the mob is hit. Otherwise block the SET_WEATHER action. But the boss will always run the MESSAGE action when hit since no conditions are being applied to it.
+
+</div>
+
+</details>
+
+</div>
+
+**Under the entire script:**
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: MESSAGE
+      Target: 
+        targetType: NEARBY_PLAYERS
+        range: 10
+      sValue: "&2Hello World!"
+    - action: SET_WEATHER
+      Target:
+        targetType: SELF
+      weather: THUNDER
+      duration: 120
+    Conditions:
+      conditionType: BLOCKING
+      locationIsAir: true
+      Target:
+        targetType: SELF
+        offset: "0,3,0"
+```
+
+If the block located two spaces above where the boss is standing is air, then allow all scripts to run when the mob is hit. Otherwise, block the entire script from executing including the SET_WEATHER and MESSAGE actions.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
 ## Location-based conditions
 
 ### locationIsAir
@@ -86,14 +183,23 @@ Sets the condition to be whether the location of the target is air.
 ```yaml
 eliteScript:
   Example:
-    Conditions:
-      locationIsAir: true
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
       Target:
         targetType: SELF
-        offset: "0,3,0"
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        locationIsAir: true
+        Target:
+          targetType: SELF
+          offset: "0,3,0"
 ```
 
-Check if the location 2 blocks above where the boss is standing is air.
+Check if the location 2 blocks above where the boss is standing is air and if it is then do not block the weather script from running when the mob is hit. Otherwise block the action.
 
 </div>
 
@@ -122,11 +228,22 @@ Checks if the location is on the floor. This means the block at the location is 
 ```yaml
 eliteScript:
   Example:
-    Conditions:
-      isOnFloor: true
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
       Target:
         targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        isOnFloor: true
+        Target:
+          targetType: SELF
 ```
+
+Check if the boss is on a solid block, if they are, then run the script otherwise block the script from running.
 
 </div>
 
@@ -155,13 +272,22 @@ Checks if the location underneath the target is a matching material type.
 ```yaml
 eliteScript:
   Example:
-    Conditions:
-      isStandingOnMaterial: BIRCH_WOOD
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
       Target:
         targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        isStandingOnMaterial: BIRCH_WOOD
+        Target:
+          targetType: SELF
 ```
 
-Will only run if the boss is standing on BIRCH_WOOD.
+Will only run if the boss is standing on a BIRCH_WOOD block otherwise the script will be blocked from running.
 
 </div>
 
@@ -190,13 +316,22 @@ Sets the condition to be whether the condition target entity is alive.
 ```yaml
 eliteScript:
   Example:
-    Conditions:
-      isAlive: false
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
       Target:
         targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
 ```
 
-Will only run if the boss is dead.
+Will only run if the boss is currently alive otherwise the script will be blocked.
 
 </div>
 
@@ -225,15 +360,24 @@ Checks if the target entity has specific tags. Scripters can assign and unassign
 ```yaml
 eliteScript:
   Example:
-    Conditions:
-      hasTags:
-      - isCool
-      - hasANiceBeard
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
       Target:
         targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        hasTags:
+        - isCool
+        - hasANiceBeard
+        Target:
+          targetType: SELF
 ```
 
-Will only run if the boss has the tags "isCool" and "hasANiceBeard".
+Will only run if the boss has the tags "isCool" and "hasANiceBeard" otherwise the script will be blocked.
 
 </div>
 
@@ -263,15 +407,24 @@ Same as `hasTags`, but checks if the boss does not have these values.
 ```yaml
 eliteScript:
   Example:
-    Conditions:
-      doesNotHaveTags:
-      - isStinky
-      - isSus
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
       Target:
         targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        doesNotHaveTags:
+        - isStinky
+        - isSus
+        Target:
+          targetType: SELF
 ```
 
-Will only run if the boss does not have the tags "isStinky" and "isSus".
+Will only run if the boss does not have the tags "isStinky" and "isSus" otherwise the script will be blocked.
 
 </div>
 
@@ -288,6 +441,40 @@ Gives the condition a random chance to be valid.
 | Key | Details | Values |
 | --- | :-: | :-: |
 | `randomChance` | Chance that the condition will be valid. | Number between 0.0 and 1.0 |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
+      Target:
+        targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        randomChance: 0.1
+        Target: # Not required
+          targetType: SELF # Not required
+```
+
+This will give the script a 10% chance of running otherwise the script will be blocked.
+
+</div>
+
+</details>
+
+</div>
 
 Note that this condition is special as it does not require a target.
 
@@ -313,6 +500,7 @@ eliteScript:
         range: 40
       bValue: false
       Conditions:
+        conditionType: FILTERING
         hasTags:
           - TurnOff
         Target:

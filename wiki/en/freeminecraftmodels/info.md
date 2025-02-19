@@ -25,11 +25,23 @@ It can:
 - Animate these models as they were configured to be animated in Blockbench
 - Handle default state animations without requiring other plugins (walk, idle, death, attack, spawn)
 
-### How do you add an existing model?
+### How do you add an existing model? 
 
-To import a model, just drag the .bbmodel to the imports folder and do `/fmm reload`. This will generate a .fmmodel file in the `models` folder and add the model to the resource pack in the `outputs` folder.
+Steps to Import a Model:
+1. Drag the `.bbmodel` file into the `/plugins/FreeMinecraftModels/imports` folder.
+2. Run the following command in-game or in the console: `/fmm reload`
+3. This process will:
+- Generate a corresponding `.fmmodel` file in the `/plugins/FreeMinecraftModels/models` folder.
+- Add the model to the resource pack, which will be stored in the `/plugins/FreeMinecraftModels/outputs` folder.
 
-***You will need to use that resource pack to view the model correctly!*** It is a normal resource pack, so all you need to do is put it in your resource pack folder. Minecraft servers have a way to host resource packs on third party services such as google drive or a specialized service such as https://resourcepack.host/, that last website might be the easiest way of doing it.
+Once completed, the model is ready for use in FreeMinecraftModels.  
+***You will need to use that resource pack to view the model correctly!*** It functions as a normal resource pack, so simply place it in your resource pack folder.  
+
+### Hosting the Resource Pack  
+Minecraft servers allow resource packs to be hosted using third-party services such as **Google Drive** or dedicated services like [resourcepack.host](https://resourcepack.host/), which may be the easiest option.  
+
+For a fully automated solution, consider using **ResourcePackManager**, a plugin that automatically merges, hosts, and sends resource packs to players when they log in. This eliminates the need for manual hosting and ensures that all players receive the correct pack. Learn more here: [ResourcePackManager on SpigotMC](https://www.spigotmc.org/resources/resource-pack-manager.118574/)  
+
 
 ### How do you view the model in-game?
 
