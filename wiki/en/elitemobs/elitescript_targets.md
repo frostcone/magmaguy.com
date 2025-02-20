@@ -520,7 +520,7 @@ Sets the percentage of the zone that will actually be used for the action. Only 
 
 | Values | Details | Default |
 | --- | :-: | :-: |
-| `coverage` | Sets the percentage of the zone that will be covered. | `1.0` |
+| `coverage` | Sets the percentage of the zone that will be covered. You can randomize this value by using `~` example: `1.0~0.3`. | `1.0` |
 
 <div align="center">
 
