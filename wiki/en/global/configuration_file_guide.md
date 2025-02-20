@@ -106,7 +106,7 @@ value: 10.01
 You can randomize these values for scripts by using `~`. Example:
 
 ```yml
-value: 1~10
+value: 1.0~10.01
 ```
 
 `Double`s can also happen to be whole numbers like integers, like `10.0` or even represented as `10`.
@@ -126,7 +126,7 @@ value: 10.42452
 You can randomize these values for scripts by using `~`. Example:
 
 ```yml
-value: 1~10.42452
+value: 1.0~10.42452
 ```
 
 `Double`s can also happen to be whole numbers like integers, like `10.0` or even represented as `10`.
