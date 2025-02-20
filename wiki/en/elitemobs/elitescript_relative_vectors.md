@@ -23,8 +23,8 @@ For some mechanics, you will probably not want to rely on how far apart two poin
 | `SourceTarget` | [Target]($language$/elitemobs/elitescript_targets.md) at the point from which the vector will start from | ✅ | `none` |
 | `DestinationTarget` |          [Target]($language$/elitemobs/elitescript_targets.md) at the end point for the vector           | ✅ | `none` |
 | `normalize` |                                 Sets if the vector should be normalized                                  | ❌ | `false` |
-| `multiplier` |                                      Multiplies the vector's length                                      | ❌ | `1.0` |
-| `offset` |                          Allows inserting a manual fixed offset to this offset                           | ❌ | `none` |
+| `multiplier` |                                      Multiplies the vector's length. You can randomize this value by using `~`. Example: `1.0~2.5`.                                      | ❌ | `1.0` |
+| `offset` |                          Allows inserting a manual fixed offset to this offset. You can randomize this value by using `~`. Example: `0~5,0~2,0~10`.                         | ❌ | `none` |
 
 <div align="center">
 
