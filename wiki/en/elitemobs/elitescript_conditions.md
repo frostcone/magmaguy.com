@@ -17,6 +17,7 @@ eliteScript:
     - EliteMobDamagedByPlayerEvent
     Conditions:
       isAlive: true
+      conditionType: BLOCKING
       Target:
         targetType: SELF
     Actions:
@@ -28,6 +29,7 @@ eliteScript:
       offset: 0,3,0
       Conditions:
         locationIsAir: true
+        conditionType: BLOCKING
         Target:
           targetType: ACTION_TARGET
     Cooldowns:
