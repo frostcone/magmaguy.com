@@ -357,12 +357,13 @@ If you want to permanently disable protection for a specific dungeon, follow the
 
 > **Note:** Elite damage effects are only active within the EliteMobs system. Scroll-enhanced items will not be overpowered in general gameplay outside of EliteMobs content.
 
-### How to Enable Elite Scrolls
+#### How to Enable Elite Scrolls
 
 By default, Elite Scrolls are **disabled**. To enable them:
 
 1. Open the configuration file:  
    `plugins/EliteMobs/ItemSettings.yml`
 2. Set the following option to `true`:  
-   ```yml
-   useEliteItemScrolls: true
+   `useEliteItemScrolls`
+3. Then run the following command:
+   `/em reload`
