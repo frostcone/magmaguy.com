@@ -8,8 +8,9 @@
 
 # Required plugins
 
-- [WorldEdit](https://dev.bukkit.org/projects/worldedit) ***or*** [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)
-
+- **[WorldEdit](https://dev.bukkit.org/projects/worldedit)**  
+  *Note: FastAsyncWorldEdit (FAWE) is NOT supported.*
+  
 # Recommended plugins
 
 - [EliteMobs](https://www.spigotmc.org/resources/%E2%9A%94elitemobs%E2%9A%94.40090/) for structures with boss battles
