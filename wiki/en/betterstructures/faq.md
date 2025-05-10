@@ -38,10 +38,6 @@ Structures won't appear in already explored areas to avoid filling them too much
 
 # BetterStructures with other plugins
 
-## MythicMobs
-- Spawn mythic mobs using signs with `[mythicmobs]` followed by the mob identifier on the other lines of the sign.
-- EliteMobs is better for bosses with BetterStructures because I made both.
-
 ## MMOItems
 - Add MMOItems with `mmoitems=<TYPE>@<ITEM-ID>` in the treasure configuration file.
 
