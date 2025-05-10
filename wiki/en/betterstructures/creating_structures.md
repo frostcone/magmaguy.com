@@ -10,7 +10,7 @@ There are no restrictions with what you can build for BetterStructures, although
 
 ### Special blocks
 
-BetterStructures has two special blocks: barriers and bedrock. Any other block that WorldEdit / FAWE can paste will be pasted normally, but barriers and bedrock blocks are the exception. Instead of pasting, these blocks get replaced with the following custom behaviors:
+BetterStructures has two special blocks: barriers and bedrock. Any other block that WorldEdit can paste will be pasted normally, but barriers and bedrock blocks are the exception. Instead of pasting, these blocks get replaced with the following custom behaviors:
 
 ***
 
