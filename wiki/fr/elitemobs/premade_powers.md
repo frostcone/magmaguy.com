@@ -1,25 +1,21 @@
-# Liste des Pouvoirs Préfabriqués
+```markdown
+# Liste des Pouvoirs Prédéfinis
 
-Un boss peut avoir un ou plusieurs pouvoirs. Nous vous recommandons de ne pas dépasser 5. Une liste complète des
-pouvoirs se trouve dans le dossier `~/plugins/EliteMobs/powers`.
+Un boss peut avoir un ou plusieurs pouvoirs. Nous vous recommandons de ne pas dépasser 5. Une liste complète des pouvoirs se trouve dans le dossier `~/plugins/EliteMobs/powers`.
 
-La liste suivante n'est pas nécessairement
-complète [car vous pouvez créer des pouvoirs personnalisés]($language$elitemobs/creating_powers.md) et certains donjons
-ont leurs propres pouvoirs.
+La liste suivante n'est pas nécessairement complète [car vous pouvez créer des pouvoirs personnalisés]($language$elitemobs/creating_powers.md) et certains donjons ont leurs propres pouvoirs.
 
-*Remarque : Cliquez [ici]($language$/elitemobs/creating_bosses.md&section=powers) pour apprendre comment personnaliser
-les boss avec ces pouvoirs.*
+*Note : Cliquez [ici]($language$/elitemobs/creating_bosses.md&section=powers) pour apprendre comment personnaliser les boss avec ces pouvoirs.*
 
-Les GIFs des pouvoirs sont uniquement à des fins de démonstration. Veuillez noter que leur animation ne reflète **PAS**
-la vitesse d'animation réelle des pouvoirs en jeu.
+Les GIFs des pouvoirs sont uniquement à des fins de démonstration. Veuillez noter que leur animation ne reflète **PAS** la vitesse d'animation réelle des pouvoirs en jeu.
 
 <div align="center">
 
 ## Feux d'Artifice de Flèches
 
-| Nom de fichier        | Description                                            |
-|-----------------------|--------------------------------------------------------|
-| `arrow_fireworks.yml` | Le boss tire des feux d'artifice lorsqu'il est touché. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `arrow_fireworks.yml`      | Le boss tire des feux d'artifice lorsqu'il est touché.         |
 
 
 <details>
@@ -41,9 +37,9 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Pluie de Flèches
 
-| Nom de fichier   | Description                        |
-|------------------|------------------------------------|
-| `arrow_rain.yml` | Fait pleuvoir des flèches du ciel. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `arrow_rain.yml`      | Fait pleuvoir des flèches du ciel.         |
 
 
 <details>
@@ -63,11 +59,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Flèche d'Attaque
+## Attaque Flèche
 
-| Nom de fichier     | Description                               |
-|--------------------|-------------------------------------------|
-| `attack_arrow.yml` | Fait tirer une flèche au boss devant lui. |
+| Nom du Fichier | Description                                       |
+|----------|---------------------------------------------------|
+| `attack_arrow.yml`  | Fait tirer une flèche par le boss devant lui. |
+
 
 <details>
 
@@ -88,9 +85,9 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Attaque Aveuglante
 
-| Nom de fichier        | Description                                                    |
-|-----------------------|----------------------------------------------------------------|
-| `attack_blinding.yml` | Donne au joueur l'effet de potion de cécité lors de l'attaque. |
+| Nom du Fichier | Description                                       |
+|----------|---------------------------------------------------|
+| `attack_blinding.yml`  | Applique l'effet de potion Cécité au joueur lors de l'attaque. |
 
 <details>
 
@@ -109,11 +106,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque Perturbante
+## Attaque Confusion
 
-| Nom de fichier         | Description                                                    |
-|------------------------|----------------------------------------------------------------|
-| `attack_confusing.yml` | Donne au joueur l'effet de potion de nausée lors de l'attaque. |
+| Nom du Fichier | Description                                    |
+|----------|------------------------------------------------|
+| `attack_confusing.yml`  | Applique l'effet de potion Nausée au joueur lors de l'attaque. |
+
 
 <details>
 
@@ -132,11 +130,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque de Feu
+## Attaque Feu
 
-| Nom de fichier    | Description                               |
-|-------------------|-------------------------------------------|
-| `attack_fire.yml` | Met les joueurs en feu lors de l'attaque. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `attack_fire.yml`  | Enflamme les joueurs lors de l'attaque.   |
+
 
 <details>
 
@@ -155,11 +154,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque de Boule de Feu
+## Attaque Boule de Feu
 
-| Nom de fichier        | Description                           |
-|-----------------------|---------------------------------------|
-| `attack_fireball.yml` | Fait tirer des boules de feu au boss. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `attack_fireball.yml`  | Fait tirer des boules de feu par le boss.   |
+
 
 <details>
 
@@ -178,11 +178,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque de Gel
+## Attaque Gel
 
-| Nom de fichier      | Description                                 |
-|---------------------|---------------------------------------------|
-| `attack_freeze.yml` | Fait geler les joueurs que le boss attaque. |
+| Nom du Fichier | Description                                   |
+|----------|-----------------------------------------------|
+| `attack_freeze.yml`  | Fait geler les joueurs attaqués par le boss. |
+
 
 <details>
 
@@ -201,11 +202,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque de Gravité
+## Attaque Gravité
 
-| Nom de fichier       | Description                                                        |
-|----------------------|--------------------------------------------------------------------|
-| `attack_gravity.yml` | Donne au joueur l'effet de potion de lévitation lors de l'attaque. |
+| Nom du Fichier | Description                                          |
+|----------|------------------------------------------------------|
+| `attack_gravity.yml`  | Applique l'effet de potion Lévitation au joueur lors de l'attaque. |
+
 
 <details>
 
@@ -224,11 +226,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque de Foudre
+## Attaque Foudre
 
-| Nom de fichier         | Description                                    |
-|------------------------|------------------------------------------------|
-| `attack_lightning.yml` | Fait tomber la foudre sur les joueurs proches. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `attack_lightning.yml`  | Frappe la foudre sur les joueurs proches.   |
+
 
 <details>
 
@@ -247,11 +250,11 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque de Poison
+## Attaque Poison
 
-| Nom de fichier      | Description                           |
-|---------------------|---------------------------------------|
-| `attack_poison.yml` | Applique du poison lors des attaques. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `attack_poison.yml`  | Applique du poison lors des attaques.   |
 
 
 <details>
@@ -271,11 +274,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque de Poussée
+## Attaque Poussée
 
-| Nom de fichier    | Description                     |
-|-------------------|---------------------------------|
-| `attack_push.yml` | Augmente le recul des attaques. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `attack_push.yml`  | Augmente le recul des attaques.   |
+
 
 <details>
 
@@ -294,11 +298,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque d'Aspiration
+## Attaque Aspiration
 
-| Nom de fichier      | Description                                        |
-|---------------------|----------------------------------------------------|
-| `attack_vacuum.yml` | Attire les joueurs vers le boss lors de l'attaque. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `attack_vacuum.yml`  | Attire les joueurs vers le boss lors de l'attaque.   |
+
 
 <details>
 
@@ -317,19 +322,20 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque de Faiblesse
+## Attaque Faiblesse
 
-| Nom de fichier        | Description                                                |
-|-----------------------|------------------------------------------------------------|
-| `attack_weakness.yml` | Applique l'effet de potion de faiblesse lors de l'attaque. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `attack_weakness.yml`  | Applique l'effet de potion Faiblesse lors de l'attaque.   |
 
 ***
 
-## Attaque de Toile
+## Attaque Toile
 
-| Nom de fichier   | Description                                                                    |
-|------------------|--------------------------------------------------------------------------------|
-| `attack_web.yml` | Fait apparaître une toile à l'emplacement du joueur lors des dégâts au joueur. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `attack_web.yml`  | Fait apparaître une toile à l'emplacement du joueur lorsqu'il subit des dégâts.   |
+
 
 <details>
 
@@ -348,11 +354,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Attaque de Flétrissement
+## Attaque Flétrissement
 
-| Nom de fichier      | Description                                                    |
-|---------------------|----------------------------------------------------------------|
-| `attack_wither.yml` | Applique l'effet de potion de flétrissement lors de l'attaque. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `attack_wither.yml`  | Applique l'effet de potion Flétrissement lors de l'attaque.   |
+
 
 <details>
 
@@ -371,27 +378,28 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Pièces Bonus
+## Bonus Pièces
 
-| Nom de fichier    | Description                       |
-|-------------------|-----------------------------------|
-| `bonus_coins.yml` | Lâche des pièces supplémentaires. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `bonus_coins.yml`  | Laisse tomber des pièces supplémentaires.   |
 
 ***
 
-## Butin Bonus
+## Bonus Butin
 
-| Nom de fichier   | Description                    |
-|------------------|--------------------------------|
-| `bonus_loot.yml` | Lâche du butin supplémentaire. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `bonus_loot.yml`  | Laisse tomber du butin supplémentaire.   |
 
 ***
 
 ## Enfer de Balles
 
-| Nom de fichier    | Description                                              |
-|-------------------|----------------------------------------------------------|
-| `bullet_hell.yml` | Fait léviter le boss et tirer plusieurs flèches à suivi. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `bullet_hell.yml`  | Fait léviter le boss et tirer plusieurs flèches traqueuses.   |
+
 
 <details>
 
@@ -410,11 +418,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Soin Canalisation
+## Canalisation de Soin
 
-| Nom de fichier        | Description                                       |
-|-----------------------|---------------------------------------------------|
-| `channel_healing.yml` | Fait soigner les autres boss proches par le boss. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `channel_healing.yml`  | Fait soigner les autres boss proches par le boss.   |
+
 
 <details>
 
@@ -435,9 +444,9 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Cadavre
 
-| Nom de fichier | Description                                                                 |
+| Nom du Fichier | Description                                                                 |
 |----------|-----------------------------------------------------------------------------|
-| `corpse.yml`  | Fait apparaître un bloc d'os à la mort du boss. Le bloc disparaîtra au bout d'un certain temps. |
+| `corpse.yml`  | Fait apparaître un bloc d'os à la mort du boss. Le bloc disparaîtra après un certain temps. |
 
 
 <details>
@@ -457,11 +466,11 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Tranche de Mort
+## Tranche Mortelle
 
-| Nom de fichier    | Description                             |
-|-------------------|-----------------------------------------|
-| `death_slice.yml` | Crée une zone de dégâts autour du boss. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `death_slice.yml`  | Crée une zone de dégâts autour du boss.   |
 
 
 <details>
@@ -481,91 +490,92 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Boule de Feu Visée par le Dragon
+## Boule de Feu Visée du Dragon
 
-| Nom de fichier                    | Description                             |
-|-----------------------------------|-----------------------------------------|
-| `ender_dragon_aimed_fireball.yml` | Fait tirer des boules de feu au dragon. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_aimed_fireball.yml`  | Fait tirer des boules de feu par le dragon.   |
 
 ***
 
 ## Bombardement de Flèches du Dragon
 
-| Nom de fichier                       | Description                       |
-|--------------------------------------|-----------------------------------|
-| `ender_dragon_arrow_bombardment.yml` | Fait tirer des flèches au dragon. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_arrow_bombardment.yml`  | Fait tirer des flèches par le dragon.   |
 
 ***
 
 ## Boules de Feu Disco du Dragon
 
-| Nom de fichier                     | Description                                                           |
-|------------------------------------|-----------------------------------------------------------------------|
-| `ender_dragon_disco_fireballs.yml` | Fait tourner des boules de feu autour du dragon, puis les fait tirer. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_disco_fireballs.yml`  | Fait tourner des boules de feu autour du dragon, puis les tire.   |
 
 ***
 
-## Foudre Renforcée du Dragon
+## Foudre Amplifiée du Dragon
 
-| Nom de fichier                         | Description                                                                         |
-|----------------------------------------|-------------------------------------------------------------------------------------|
-| `ender_dragon_empowered_lightning.yml` | Fait tomber la foudre avec une animation de bloc personnalisée pour la destruction. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_empowered_lightning.yml`  | Fait frapper la foudre avec une animation de bloc personnalisée pour la destruction.   |
 
 ***
 
 ## Bombardement de Boules d'Ender du Dragon
 
-| Nom de fichier                                | Description                                     |
-|-----------------------------------------------|-------------------------------------------------|
-| `ender_dragon_ender_fireball_bombardment.yml` | Fait tirer des boules de feu d'ender au dragon. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_ender_fireball_bombardment.yml`  | Fait tirer des boules d'ender par le dragon.   |
 
 ***
 
 ## Bombardement d'Endermites du Dragon
 
-| Nom de fichier                           | Description                                          |
-|------------------------------------------|------------------------------------------------------|
-| `ender_dragon_endermite_bombardment.yml` | Fait apparaître des renforts d'endermites au dragon. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_endermite_bombardment.yml`  | Fait apparaître des renforts d'endermites par le dragon.   |
 
 ***
 
 ## Bombardement de Boules de Feu du Dragon
 
-| Nom de fichier                          | Description                             |
-|-----------------------------------------|-----------------------------------------|
-| `ender_dragon_fireball_bombardment.yml` | Fait tirer des boules de feu au dragon. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_fireball_bombardment.yml`  | Fait tirer des boules de feu par le dragon.   |
 
 ***
 
 ## Bombardement de Potions du Dragon
 
-| Nom de fichier                        | Description                       |
-|---------------------------------------|-----------------------------------|
-| `ender_dragon_potion_bombardment.yml` | Fait tirer des potions au dragon. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_potion_bombardment.yml`  | Fait tirer des potions par le dragon.   |
 
 ***
 
 ## Onde de Choc du Dragon
 
-| Nom de fichier               | Description                                    |
-|------------------------------|------------------------------------------------|
-| `ender_dragon_shockwave.yml` | Fait détruire l'arène de combat par le dragon. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_shockwave.yml`  | Fait détruire l'arène de combat par le dragon.   |
 
 ***
 
 ## Tornade du Dragon
 
-| Nom de fichier             | Description                            |
-|----------------------------|----------------------------------------|
-| `ender_dragon_tornado.yml` | Fait apparaître une tornade au dragon. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `ender_dragon_tornado.yml`  | Fait apparaître une tornade par le dragon.  |
 
 ***
 
 ## Tempête de Feu
 
-| Nom de fichier  | Description                                                |
-|-----------------|------------------------------------------------------------|
-| `firestorm.yml` | Fait apparaître plusieurs piliers de flammes dommageables. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `firestorm.yml`  | Fait apparaître plusieurs piliers de flammes infligeant des dégâts.  |
+
 
 <details>
 
@@ -586,9 +596,10 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Barrage de Feux d'Artifice
 
-| Nom de fichier          | Description                                             |
-|-------------------------|---------------------------------------------------------|
-| `fireworks_barrage.yml` | Fait tirer plusieurs fusées de feux d'artifice au boss. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `fireworks_barrage.yml`  | Fait tirer plusieurs fusées de feux d'artifice par le boss.  |
+
 
 <details>
 
@@ -609,7 +620,7 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Bûcher de Flammes
 
-| Nom de fichier | Description                                  |
+| Nom du Fichier | Description                                  |
 |----------|----------------------------------------------|
 | `flame_pyre.yml`  | Fait apparaître un pilier de flammes autour du boss. |
 
@@ -633,9 +644,10 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Lance-Flammes
 
-| Nom de fichier     | Description                          |
-|--------------------|--------------------------------------|
-| `flamethrower.yml` | Fait tirer un lance-flammes au boss. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `flamethrower.yml`  | Fait tirer un lance-flammes par le boss.  |
+
 
 <details>
 
@@ -654,11 +666,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Cône de Gel
+## Cône de Givre
 
-| Nom de fichier   | Description                                                |
-|------------------|------------------------------------------------------------|
-| `frost_cone.yml` | Fait tirer des boules de neige au boss dans une direction. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `frost_cone.yml`  | Fait tirer des boules de neige dans une direction par le boss.  |
+
 
 <details>
 
@@ -677,11 +690,12 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Marcheur de Gel
+## Marcheur des Glaces
 
-| Nom de fichier     | Description                                                                                                       |
-|--------------------|-------------------------------------------------------------------------------------------------------------------|
-| `frost_walker.yml` | Donne au boss des bottes de marche sur le gel pour marcher sur l'eau. Gèlera tous les blocs d'eau qu'il touchera. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `frost_walker.yml`  | Donne au boss des bottes de marche sur la glace pour marcher sur l'eau. Gèlera tous les blocs d'eau qu'il touche. |
+
 
 <details>
 
@@ -702,9 +716,9 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Explosion d'Or
 
-| Nom de fichier       | Description                                                                     |
-|----------------------|---------------------------------------------------------------------------------|
-| `gold_explosion.yml` | Fait apparaître des pépites d'or dommageables depuis le boss. Peut être bloqué. |
+| Nom du Fichier | Description                                                 |
+|----------|-------------------------------------------------------------|
+| `gold_explosion.yml`  | Fait apparaître des pépites d'or infligeant des dégâts depuis le boss. Peut être bloqué. |
 
 <details>
 
@@ -725,9 +739,9 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Fusil à Pompe d'Or
 
-| Nom de fichier | Description                                                  |
+| Nom du Fichier | Description                                                  |
 |----------|--------------------------------------------------------------|
-| `gold_shotgun.yml`  | Fait apparaître des pépites d'or dommageables dans une direction. Peut être bloqué. |
+| `gold_shotgun.yml`  | Fait apparaître des pépites d'or infligeant des dégâts dans une direction. Peut être bloqué. |
 
 <details>
 
@@ -746,11 +760,11 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Coup au Sol
+## Frappe au Sol
 
-| Nom de fichier     | Description                                                                   |
-|--------------------|-------------------------------------------------------------------------------|
-| `ground_pound.yml` | Fait sauter le boss, puis retomber au sol avec force. Repoussera les joueurs. |
+| Nom du Fichier | Description                                                                             |
+|----------|-----------------------------------------------------------------------------------------|
+| `ground_pound.yml`  | Fait sauter le boss puis retomber au sol avec force. Repoussera les joueurs. |
 
 <details>
 
@@ -771,17 +785,17 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Butin Hyper
 
-| Nom de fichier   | Description                |
-|------------------|----------------------------|
-| `hyper_loot.yml` | Lâche 10x le butin normal. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `hyper_loot.yml`  | Laisse tomber 10 fois le butin normal.  |
 
 ***
 
 ## Implosion
 
-| Nom de fichier  | Description                                               |
-|-----------------|-----------------------------------------------------------|
-| `implosion.yml` | Attire toutes les entités proches vers le boss à sa mort. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `implosion.yml`  | Attire toutes les entités proches vers le boss à sa mort.  |
 
 <details>
 
@@ -802,9 +816,9 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Invisibilité
 
-| Nom de fichier     | Description             |
-|--------------------|-------------------------|
-| `invisibility.yml` | Rend le boss invisible. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `invisibility.yml`  | Rend le boss invisible.  |
 
 <details>
 
@@ -823,11 +837,11 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ***
 
-## Flèche d'Invulnérabilité
+## Invulnérabilité aux Flèches
 
-| Nom de fichier              | Description                            |
-|-----------------------------|----------------------------------------|
-| `invulnerability_arrow.yml` | Rend le boss immunisé aux projectiles. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `invulnerability_arrow.yml`  | Rend le boss immunisé aux projectiles.  |
 
 <details>
 
@@ -848,9 +862,9 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Invulnérabilité aux Dégâts de Chute
 
-| Nom de fichier                    | Description                                |
-|-----------------------------------|--------------------------------------------|
-| `invulnerability_fall_damage.yml` | Rend le boss immunisé aux dégâts de chute. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `invulnerability_fall_damage.yml`  | Rend le boss immunisé aux dégâts de chute.  |
 
 <details>
 
@@ -871,9 +885,9 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Invulnérabilité au Feu
 
-| Nom de fichier             | Description                              |
-|----------------------------|------------------------------------------|
-| `invulnerability_fire.yml` | Rend le boss immunisé aux dégâts de feu. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `invulnerability_fire.yml`  | Rend le boss immunisé aux dégâts de feu.  |
 
 <details>
 
@@ -894,9 +908,9 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Invulnérabilité aux Feux d'Artifice
 
-| Nom de fichier                  | Description                                |
-|---------------------------------|--------------------------------------------|
-| `invulnerability_fireworks.yml` | Rend le boss immunisé aux feux d'artifice. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `invulnerability_fireworks.yml`  | Rend le boss immunisé aux feux d'artifice.  |
 
 <details>
 
@@ -917,12 +931,11 @@ la vitesse d'animation réelle des pouvoirs en jeu.
 
 ## Invulnérabilité au Recul
 
-| Nom de fichier                  | Description                                |
-|---------------------------------|--------------------------------------------|
-| `invulnerability_knockback.yml` | Rend le boss immunisé au recul des dégâts. |
+| Nom du Fichier | Description |
+|----------|-------------|
+| `invulnerability_knockback.yml`  | Rend le boss immunisé au recul des dégâts.  |
 
-*Remarque : Activer ce pouvoir tout en ayant également le boss configuré pour utiliser `ground_pound.yml` empêchera le
-boss d'exécuter l'animation de saut pour `ground_pound.yml`.*
+*Note : Activer ce pouvoir alors que le boss est également configuré pour utiliser `ground_pound.yml` aura pour conséquence que le boss n'exécutera pas l'animation de saut pour `ground_pound.yml`.*
 
 <details>
 
@@ -943,495 +956,6 @@ boss d'exécuter l'animation de saut pour `ground_pound.yml`.*
 
 ## Éclairs
 
-| Nom de fichier        | Description                                                                                |
-|-----------------------|--------------------------------------------------------------------------------------------|
-| `lightning_bolts.yml` | Fait apparaître des éclairs en ligne droite, du boss à l'endroit où se trouvait le joueur. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_lightbolts.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Pluie de Météores
-
-| Nom de fichier | Description                                           |
-|----------|-------------------------------------------------------|
-| `meteor_shower.yml`  | Fait apparaître plusieurs boules de feu qui tombent du ciel. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_meteorshower.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Moonwalk
-
-| Nom de fichier | Description                    |
-|----------------|--------------------------------|
-| `moonwalk.yml` | Fait sauter le boss très haut. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_moonwalk.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Vitesse de Déplacement
-
-| Nom de fichier       | Description               |
-|----------------------|---------------------------|
-| `movement_speed.yml` | Rend le boss très rapide. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_movespeed.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Rayon Photon
-
-| Nom de fichier   | Description                                                     |
-|------------------|-----------------------------------------------------------------|
-| `photon_ray.yml` | Fait apparaître un rayon dommageable qui rebondit sur les murs. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_photonray.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Lanceur de Plasma
-
-| Nom de fichier       | Description                                                               |
-|----------------------|---------------------------------------------------------------------------|
-| `plasma_blaster.yml` | Fait apparaître un projectile dommageable qui visera les joueurs proches. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_plasmablaster.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Mur de Boucliers
-
-| Nom de fichier    | Description                                                                                                                                                           |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `shield_wall.yml` | Fait apparaître des boucliers qui protégeront le boss d'une direction spécifique jusqu'à ce qu'ils soient détruits. Frappez **le boss** pour supprimer les boucliers. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_shieldwall.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Pilier de Squelettes
-
-| Nom de fichier        | Description                                                                          |
-|-----------------------|--------------------------------------------------------------------------------------|
-| `skeleton_pillar.yml` | Fait apparaître deux piliers de particules qui endommagent les joueurs dans la zone. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_skeletonpill.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Flèche à Suivi de Squelette
-
-| Nom de fichier                | Description                         |
-|-------------------------------|-------------------------------------|
-| `skeleton_tracking_arrow.yml` | Fait apparaître une flèche à suivi. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_skeletonarrow.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Marche Spirituelle
-
-| Nom de fichier    | Description                                                                                                       |
-|-------------------|-------------------------------------------------------------------------------------------------------------------|
-| `spirit_walk.yml` | Fait téléporter le boss vers un endroit sûr proche s'il continue d'être touché sans pouvoir endommager un joueur. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_spiritwalk.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Invoquer des Braises
-
-| Nom de fichier      | Description                    |
-|---------------------|--------------------------------|
-| `summon_embers.yml` | Invoque le renfort de braises. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_summonembers.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Invoquer les Revenants
-
-| Nom de fichier            | Description                       |
-|---------------------------|-----------------------------------|
-| `summon_the_returned.yml` | Invoque le renfort des revenants. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_summonreturned.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-## Provocation
-
-***
-
-| Nom de fichier | Description                           |
-|----------------|---------------------------------------|
-| `taunt.yml`    | Provoque le joueur avec des messages. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_taunt.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Électrocution
-
-| Nom de fichier | Description                                                |
-|----------------|------------------------------------------------------------|
-| `taze.yml`     | Électrocute le joueur, le choquant et appliquant un recul. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_taze.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Orage
-
-| Nom de fichier     | Description                                       |
-|--------------------|---------------------------------------------------|
-| `thunderstorm.yml` | Fait apparaître plusieurs éclairs autour du boss. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_thunderstorm.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Boule de Feu à Suivi
-
-| Nom de fichier          | Description                                          |
-|-------------------------|------------------------------------------------------|
-| `tracking_fireball.yml` | Fait apparaître une boule de feu qui suit un joueur. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_trackingfball.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Ballonnement de Zombie
-
-| Nom de fichier     | Description                        |
-|--------------------|------------------------------------|
-| `zombie_bloat.yml` | Repousse les joueurs loin du boss. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_zombiebloat.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Amis Zombies
-
-| Nom de fichier       | Description                        |
-|----------------------|------------------------------------|
-| `zombie_friends.yml` | Invoque le renfort d'amis zombies. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_zombiefriends.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Nécronomicon de Zombie
-
-| Nom de fichier            | Description                          |
-|---------------------------|--------------------------------------|
-| `zombie_necronomicon.yml` | Fait canaliser des renforts au boss. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_zombienecro.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-## Parents Zombies
-
-| Nom de fichier       | Description                            |
-|----------------------|----------------------------------------|
-| `zombie_parents.yml` | Invoque le renfort de parents zombies. |
-
-<details>
-
-<summary><b>Exemple Visuel</b></summary>
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/boss_powers_zombieparents.webm" type="video/webm">
-  Votre navigateur ne supporte pas la balise vidéo.
-</video>
-
-</div>
-
-</details>
-
-***
-
-</div>
-
-***
-
-# Format de Script Elite
-
-Notez que certains pouvoirs sont au format [Script Elite]($language$/elitemobs/creating_powers.md), et peuvent être
-personnalisés.
-
-Voici un exemple du pouvoir *attack_blinding.yml* et de la manière dont il est formaté en utilisant le
-format [Script Elite]($language$/elitemobs/creating_powers.md) :
-
-<div align="left">
-
-```yml
-isEnabled: true
-effect: SPELL_MOB
-powerType: MISCELLANEOUS
-eliteScript:
-  BlindPlayer:
-    Events:
-      - PlayerDamagedByEliteMobEvent
-    Actions:
-      - potionEffectType: blindness
-        amplifier: 0
-        action: POTION_EFFECT
-        duration: 60
-        Target:
-          targetType: DIRECT_TARGET
-```
-
-Cette fonctionnalité vous permet de personnaliser entièrement le pouvoir *attack_blinding.yml*. Vous pouvez spécifier quel effet de potion doit être appliqué, la durée de l'effet, la cible et l'événement qui déclenche l'utilisation du pouvoir par le boss.
-
-</div>
+| Nom du Fichier | Description                                                                                            |
+|----------|--------------------------------------------------------------------------------------------------------|
+```Please specify the language you would like the text translated into. I will then translate it while retaining the markdown formatting.

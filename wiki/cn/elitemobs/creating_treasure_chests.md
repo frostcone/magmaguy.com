@@ -1,24 +1,25 @@
+```markdown
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-宝箱是一项功能，允许管理员创建可以掉落战利品或生成一个模仿怪（敌对） Boss 的箱子。
+宝箱是一项允许管理员创建宝箱的功能，这些宝箱可以掉落战利品或生成一个拟态怪（敌对）首领。
 
 <div align="center">
 
 <div align="left">
 
-## 数值
+## 值
 
 </div>
 
 ### isEnabled
 
-设置是否启用宝箱。
+设置宝箱是否启用。
 
-| 键           |        值        |  默认值   |
-|-------------|:---------------:|:------:|
-| `isEnabled` | [布尔值](#boolean) | `true` |
+| Key       |       Values        | Default |
+|-----------|:-------------------:|:-------:|
+| `isEnabled` | [Boolean](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -36,13 +37,13 @@ isEnabled: true
 
 ### chestType
 
-设置箱子材料的类型。
+设置宝箱的材质类型。
 
-| 键           |        值        |   默认值   |
-|-------------|:---------------:|:-------:|
-| `chestType` | [材料](#material) | `CHEST` |
+| Key       |        Values         | Default |
+|-----------|:---------------------:|:-------:|
+| `chestType` | [Material](#material) | `CHEST` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -51,8 +52,7 @@ isEnabled: true
 ```yml
 chestType: CHEST
 ```
-
-*这需要是有效的箱子材料，例如 `CHEST` 或 `BARREL`*。
+*这需要是一个有效的宝箱材质，例如 `CHEST` 或 `BARREL`*。
 
 <div align="center">
 
@@ -68,13 +68,13 @@ chestType: CHEST
 
 ### facing
 
-设置箱子的朝向。
+设置宝箱的朝向。
 
-| 键        |   值    |   默认值   |
-|----------|:------:|:-------:|
+| Key       |   Values    | Default |
+|-----------|:-----------:|:-------:|
 | `facing` | 特殊 [1] | `CHEST` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -83,8 +83,7 @@ chestType: CHEST
 ```yml
 facing: CHEST
 ```
-
-*这需要是有效的箱子材料，例如 `CHEST` 或 `BARREL`*。
+*这需要是一个有效的宝箱材质，例如 `CHEST` 或 `BARREL`*。
 
 </div>
 
@@ -92,7 +91,7 @@ facing: CHEST
 
 **特殊 [1]**
 
-<details> 
+<details>
 
 <summary><b>展开表格</b></summary>
 
@@ -110,15 +109,15 @@ facing: CHEST
 
 ### dropStyle
 
-设置箱子是为单个玩家掉落还是为多个玩家掉落。
+设置宝箱是为单个玩家还是多个玩家掉落。
 
-`SINGLE` 箱子在打开后消失，并在重新补充时重新出现。`GROUP` 箱子会一直存在，并让各个玩家知道它们正处于冷却中。
+`SINGLE` 宝箱在被打开后消失，并在补货时重新出现。`GROUP` 宝箱会保留，并告知单个玩家他们正处于冷却中。
 
-| 键           |         值          |   默认值    |
-|-------------|:------------------:|:--------:|
+| Key       |       Values       | Default |
+|-----------|:------------------:|:-------:|
 | `dropStyle` | `SINGLE` / `GROUP` | `SINGLE` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -136,13 +135,13 @@ dropStyle: SINGLE
 
 ### lootList
 
-列出宝箱在打开时应掉落的战利品。
+列出宝箱打开时应掉落的战利品。
 
-| 键          |                       值                       | 默认值  |
-|------------|:---------------------------------------------:|:----:|
-| `lootList` | [EM 掉落表]($language$/elitemobs/loot_tables.md) | none |
+| Key       |                        Values                        | Default |
+|-----------|:----------------------------------------------------:|:-------:|
+| `lootList` | [EM 战利品表]($language$/elitemobs/loot_tables.md) |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -162,13 +161,13 @@ lootList:
 
 ### mimicChance
 
-设置生成敌对 Boss 而不是掉落战利品的几率。
+设置生成敌对首领而不是掉落战利品的几率。
 
-| 键             |         值         | 默认值 |
-|---------------|:-----------------:|:---:|
-| `mimicChance` | [双精度浮点数](#double) | `0` |
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `mimicChance` | [Double](#double) |   `0`   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -186,15 +185,15 @@ mimicChance: 0.5
 
 ### mimicCustomBossesList
 
-指定可用于生成的敌对 Boss 列表。将从此列表中随机选择一个 Boss 进行生成。
+指定可用于生成的敌对首领列表。将从此列表中随机选择一个首领进行生成。
 
-该列表还支持权重系统，您可以实现该系统以确保某些 Boss 比其他 Boss 更频繁地被选中。
+该列表还支持权重系统，您可以实现该系统以确保某些首领比其他首领更频繁地被选中。
 
-| 键                       |           值           | 默认值  |
-|-------------------------|:---------------------:|:----:|
-| `mimicCustomBossesList` | [字符串列表](#string_list) | none |
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `mimicCustomBossesList` | [String List](#string_list) |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -205,8 +204,7 @@ mimicCustomBossesList:
 - my_cool_mimic_boss.yml
 - weak_mimic_boss.yml
 ```
-
-*如果要为 Boss 分配权重，列表应格式化如下：*
+*如果您希望为首领分配权重，列表应按以下格式设置：*
 
 ```yml
 mimicCustomBossesList:
@@ -214,7 +212,7 @@ mimicCustomBossesList:
 - weak_mimic_boss.yml:40
 ```
 
-*在此配置中，`my_cool_mimic_boss.yml` 比 `weak_mimic_boss.yml` 更容易被选择生成。*
+*在此配置中，`my_cool_mimic_boss.yml` 比 `weak_mimic_boss.yml` 更可能被选中生成。*
 
 </div>
 
@@ -224,13 +222,13 @@ mimicCustomBossesList:
 
 ### restockTimer
 
-设置箱子重新装满战利品之前的时间，以分钟为单位。
+设置宝箱重新装满战利品所需的时间，单位为分钟。
 
-| 键              |       值        | 默认值 |
-|----------------|:--------------:|:---:|
-| `restockTimer` | [整数](#integer) | `0` |
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `restockTimer` | [Integer](#integer) |   `0`   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -248,13 +246,13 @@ restockTimer: 30
 
 ### effects
 
-设置箱子将产生的粒子效果。
+设置宝箱将产生的粒子效果。
 
-| 键         |                                    值                                    | 默认值  |
-|-----------|:-----------------------------------------------------------------------:|:----:|
-| `effects` | [粒子](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) | none |
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `effects` | [Particle](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -282,13 +280,13 @@ effects:
 
 设置宝箱将生成的地点。
 
-可以通过 `/em addTreasureChest <treasurechestfilename.yml>` 更轻松地设置地点。
+地点可以通过 `/em addTreasureChest <treasurechestfilename.yml>` 更容易地设置。
 
-| 键           |           值           | 默认值  |
-|-------------|:---------------------:|:----:|
-| `locations` | [字符串列表](#string_list) | none |
+| Key       |           Values            | Default |
+|-----------|:---------------------------:|:-------:|
+| `locations` | [String List](#string_list) |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -308,13 +306,13 @@ locations:
 
 ### chestTier
 
-设置打开箱子所需的最低公会等级。
+设置打开宝箱所需的最低公会等级。
 
-| 键           |       值        | 默认值  |
-|-------------|:--------------:|:----:|
-| `chestTier` | [整数](#integer) | none |
+| Key       |           Values            | Default |
+|-----------|:---------------------------:|:-------:|
+| `chestTier` | [Integer](#integer) |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -333,16 +331,16 @@ chestTier: 3
 
 ### instanced
 
-设置箱子是否应为实例化的（用于实例化的地牢）。
-当箱子放置在地牢中时，所有重新补充计时器都将被禁用。
+设置宝箱是否为副本化（用于副本）。
+当宝箱放置在副本中时，所有补货计时器都将禁用。
 
 **请勿手动设置此值**。
 
-| 键           |        值        |   默认值   |
-|-------------|:---------------:|:-------:|
-| `instanced` | [布尔值](#boolean) | `false` |
+| Key       |     Values     | Default |
+|-----------|:--------------:|:-------:|
+| `instanced` | [Boolean](#boolean) |  `false`   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -362,15 +360,15 @@ instanced: true
 
 ### restockTime
 
-在箱子被掠夺后，插件将写入此键以跟踪重新补充时间。
+宝箱被掠夺后，插件将写入此键以跟踪补货时间。
 
 **请勿手动设置此值**。
 
-| 键             |    值     | 默认值  |
-|---------------|:--------:|:----:|
-| `restockTime` | Unix 时间戳 | none |
+| Key       |     Values     | Default |
+|-----------|:--------------:|:-------:|
+| `restockTime` | Unix 时间戳 |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -388,7 +386,7 @@ restockTime: 1707394380
 
 ***
 
-<details> 
+<details>
 
 <summary align="center"><b>宝箱配置示例</b></summary>
 
@@ -421,3 +419,4 @@ locations:
 </div>
 
 </details>
+```

@@ -1,3 +1,5 @@
+日本語に翻訳します。
+
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
 # アリーナの作成
@@ -6,11 +8,11 @@
 
 ### isEnabled
 
-アリーナが有効かどうかを設定します。
+アリーナを有効にするかどうかを設定します。
 
-| キー          |          値          | デフォルト  |
-|-------------|:-------------------:|:------:|
-| `isEnabled` | [Boolean](#boolean) | `true` |
+| キー        |      値       | デフォルト |
+|-----------|:-------------:|:--------:|
+|`isEnabled`| [Boolean](#boolean) | `true`     |
 
 <details>
 
@@ -32,9 +34,9 @@ isEnabled: true
 
 アリーナの名前を設定します。
 
-| キー          |         値         | デフォルト |
-|-------------|:-----------------:|:-----:|
-| `arenaName` | [String](#string) |  なし   |
+| キー        |      値       | デフォルト |
+|-----------|:-------------:|:--------:|
+|`arenaName`| [String](#string) | none     |
 
 <details>
 
@@ -43,7 +45,7 @@ isEnabled: true
 <div align="left">
 
 ```yml
-arenaName: ベッドロックアリーナ
+arenaName: Bedrock Arena
 ```
 
 <div align="center">
@@ -60,11 +62,11 @@ arenaName: ベッドロックアリーナ
 
 ### corner1
 
-アリーナの最初のコーナーを設定します。
+アリーナの最初の角を設定します。
 
-| キー        |                値                 | デフォルト |
-|-----------|:--------------------------------:|:-----:|
-| `corner1` | [Location](#serialized_location) |  なし   |
+| キー        |             値              | デフォルト |
+|-----------|:---------------------------:|:--------:|
+|`corner1`| [Location](#serialized_location) | none     |
 
 <details>
 
@@ -78,8 +80,7 @@ corner1: my_arena_world,10,50,-10,0,0
 
 <div align="center">
 
-この画像では、`corner1`は*緑色の羊毛*で、`corner2`は*赤色の羊毛*で表されています。この構成は、それらの間の領域をアリーナとして指定し、
-*黄色の羊毛*で表されています。
+この画像では、`corner1`は*緑色の羊毛*で、`corner2`は*赤色の羊毛*で表されています。この設定により、それらの間の領域がアリーナとして指定され、*黄色の羊毛*で表されています。
 
 ![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
 
@@ -93,11 +94,11 @@ corner1: my_arena_world,10,50,-10,0,0
 
 ### corner2
 
-アリーナの2番目のコーナーを設定します。`corner1`から対角線上になければなりません。
+アリーナの2番目の角を設定します。`corner1`と対角線上に位置する必要があります。
 
-| キー        |                値                 | デフォルト |
-|-----------|:--------------------------------:|:-----:|
-| `corner2` | [Location](#serialized_location) |  なし   |
+| キー        |             値              | デフォルト |
+|-----------|:---------------------------:|:--------:|
+| `corner2` | [Location](#serialized_location) | none     |
 
 <details>
 
@@ -111,8 +112,7 @@ corner2: my_arena_world,-10,50,10,0,0
 
 <div align="center">
 
-この画像では、`corner1`は*緑色の羊毛*で、`corner2`は*赤色の羊毛*で表されています。この構成は、それらの間の領域をアリーナとして指定し、
-*黄色の羊毛*で表されています。
+この画像では、`corner1`は*緑色の羊毛*で、`corner2`は*赤色の羊毛*で表されています。この設定により、それらの間の領域がアリーナとして指定され、*黄色の羊毛*で表されています。
 
 ![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
 
@@ -128,9 +128,9 @@ corner2: my_arena_world,-10,50,10,0,0
 
 アリーナの開始位置を設定します。
 
-| キー              |                値                 | デフォルト |
-|-----------------|:--------------------------------:|:-----:|
-| `startLocation` | [Location](#serialized_location) |  なし   |
+| キー          |             値              | デフォルト |
+|---------------|:---------------------------:|:--------:|
+| `startLocation` | [Location](#serialized_location) | none     |
 
 <details>
 
@@ -152,9 +152,9 @@ startLocation: my_arena_world,1,50,1,0,0
 
 アリーナの終了位置を設定します。
 
-| キー             |                値                 | デフォルト |
-|----------------|:--------------------------------:|:-----:|
-| `exitLocation` | [Location](#serialized_location) |  なし   |
+| キー         |             値              | デフォルト |
+|--------------|:---------------------------:|:--------:|
+| `exitLocation` | [Location](#serialized_location) | none     |
 
 <details>
 
@@ -176,9 +176,9 @@ exitLocation: my_world,1,50,1,0,0
 
 アリーナのウェーブ数を設定します。
 
-| キー          |          値          | デフォルト |
-|-------------|:-------------------:|:-----:|
-| `waveCount` | [Integer](#integer) |  なし   |
+| キー        |      値       | デフォルト |
+|-----------|:-------------:|:--------:|
+| `waveCount` | [Integer](#integer) | none     |
 
 <details>
 
@@ -200,9 +200,9 @@ waveCount: 10
 
 ウェーブ間の遅延を秒単位で設定します。
 
-| キー                  |          値          | デフォルト |
-|---------------------|:-------------------:|:-----:|
-| `delayBetweenWaves` | [Integer](#integer) |  `0`  |
+| キー              |      値       | デフォルト |
+|-------------------|:-------------:|:--------:|
+| `delayBetweenWaves` | [Integer](#integer) | `0`      |
 
 <details>
 
@@ -222,11 +222,11 @@ delayBetweenWaves: 5
 
 ### spawnPoints
 
-アリーナのボスのスポーン位置を設定します。
+アリーナのボスが出現する場所を設定します。
 
-| キー            |                値                | デフォルト |
-|---------------|:-------------------------------:|:-----:|
-| `spawnPoints` | [String List](#string_list) [1] |  なし   |
+| キー          |             値              | デフォルト |
+|---------------|:---------------------------:|:--------:|
+| `spawnPoints` | [String List](#string_list) [1] | none     |
 
 <details>
 
@@ -251,11 +251,11 @@ spawnPoints:
 
 ### bossList
 
-アリーナのウェーブ中に登場するボスのリストを設定します。EliteMobsアリーナは、アリーナでのMythic Mobsのスポーンをサポートしています。
+アリーナのウェーブ中に出現するボスのリストを設定します。EliteMobs Arenasは、Mythic Mobsがアリーナに出現するのをサポートしています。
 
-| キー         |                値                | デフォルト |
-|------------|:-------------------------------:|:-----:|
-| `bossList` | [String List](#string_list) [2] |  なし   |
+| キー       |             値              | デフォルト |
+|------------|:---------------------------:|:--------:|
+| `bossList` | [String List](#string_list) [2] | none     |
 
 <details>
 
@@ -270,9 +270,9 @@ bossList:
 - wave=2:spawnPoint=center:boss=my_mythicmobs_boss:mythicmob=true:level=10
 ```
 
-この例では、ウェーブ1で北のスポーンポイントに1体のボスがスポーンし、南のスポーンポイントに1体のボスがスポーンします。次に、ウェーブ2では、レベル10のミシックボスが中央ポイントにスポーンします。
+この例では、ウェーブ1で北のスポーンポイントと南のスポーンポイントにそれぞれ1体ずつボスが出現します。次に、ウェーブ2では、レベル10のMythic Bossが中央のポイントに出現します。
 
-EliteMobsのボスのレベルを強制することもできますが、構成ファイルでレベルを設定することをお勧めします。
+EliteMobsのボスに対してもレベルを強制できますが、設定ファイルでレベルを設定することをお勧めします。
 
 </div>
 
@@ -284,9 +284,9 @@ EliteMobsのボスのレベルを強制することもできますが、構成�
 
 ウェーブ終了時に与えられる報酬を設定します。
 
-| キー               |                                   値                                   | デフォルト |
-|------------------|:---------------------------------------------------------------------:|:-----:|
-| `rawArenaReward` | [Universal EliteMobs loot table]($language$/elitemobs/loot_tables.md) |  なし   |
+| キー             |                      値                       | デフォルト |
+|------------------|:---------------------------------------------:|:--------:|
+| `rawArenaReward` | [Universal EliteMobs loot table]($language$/elitemobs/loot_tables.md) | none     |
 
 <details>
 
@@ -311,11 +311,11 @@ rawArenaReward:
 
 ### minimumPlayerCount
 
-アリーナを開始する前に必要な最小プレイヤー数を設定します。
+アリーナが開始する前に必要な最小プレイヤー数を設定します。
 
-| キー                   |          値          | デフォルト |
-|----------------------|:-------------------:|:-----:|
-| `minimumPlayerCount` | [Integer](#integer) |  `1`  |
+| キー                 |      値       | デフォルト |
+|----------------------|:-------------:|:--------:|
+| `minimumPlayerCount` | [Integer](#integer) | `1`      |
 
 <details>
 
@@ -337,9 +337,9 @@ minimumPlayerCount: 1
 
 アリーナに参加できる最大プレイヤー数を設定します。
 
-| キー                   |          値          | デフォルト |
-|----------------------|:-------------------:|:-----:|
-| `maximumPlayerCount` | [Integer](#integer) | `100` |
+| キー                 |      値       | デフォルト |
+|----------------------|:-------------:|:--------:|
+| `maximumPlayerCount` | [Integer](#integer) | `100`    |
 
 <details>
 
@@ -359,11 +359,11 @@ maximumPlayerCount: 100
 
 ### arenaMessages
 
-ウェーブ間で実行されるメッセージを設定します。
+ウェーブ間に実行されるメッセージを設定します。
 
-| キー              |      値      | デフォルト |
-|-----------------|:-----------:|:-----:|
-| `arenaMessages` | Special [3] |  なし   |
+| キー            |     値     | デフォルト |
+|-----------------|:----------:|:--------:|
+| `arenaMessages` | Special [3] | none     |
 
 <details>
 
@@ -373,8 +373,8 @@ maximumPlayerCount: 100
 
 ```yml
 arenaMessages:
-- wave=1:message="&a[アリーナアナウンサー] &fウェーブ1の時間です！"
-- wave=2:message="&a[アリーナアナウンサー] &fもうウェーブ2だよ。"
+- wave=1:message="&a[Arena Announcer] &fTime for wave one!"
+- wave=2:message="&a[Arena Announcer] &fWow, wave two already."
 ```
 
 <div align="center">
@@ -391,11 +391,11 @@ arenaMessages:
 
 ### cylindricalArena
 
-アリーナが円筒形を使用するかどうかを設定します（デフォルトは直方体）。
+アリーナが円筒形を使用するかどうかを設定します（デフォルトは直方体です）。
 
-| キー                 |          値          |  デフォルト  |
-|--------------------|:-------------------:|:-------:|
-| `cylindricalArena` | [Boolean](#boolean) | `false` |
+| キー               |      値       | デフォルト |
+|--------------------|:-------------:|:--------:|
+| `cylindricalArena` | [Boolean](#boolean) | `false`  |
 
 <details>
 
@@ -417,9 +417,9 @@ cylindricalArena: false
 
 アリーナを使用するために必要な権限を設定します。
 
-| キー           |         値          | デフォルト |
-|--------------|:------------------:|:-----:|
-| `permission` | [String](#integer) |  なし   |
+| キー         |      値       | デフォルト |
+|--------------|:-------------:|:--------:|
+| `permission` | [String](#integer) | none     |
 
 <details>
 
@@ -439,27 +439,24 @@ permission: mypermission.arena
 
 </div>
 
-## Special [1]
+## 特殊 [1]
+スポーンポイント: 以下の形式を使用します: `name=pointName:location=world_name,x,y,z`。
 
-スポーンポイント：次の形式を使用します：`name=ポイント名:location=ワールド名,x,y,z`。
+## 特殊 [2]
+ボスリスト: 以下の形式を使用します: `wave=x:spawnPoint=Y:boss=bossfilename.yml`。
 
-## Special [2]
-
-ボスリスト：次の形式を使用します：`wave=x:spawnPoint=Y:boss=bossfilename.yml`。
-
-## Special [3]
-
-アリーナメッセージ：次の形式を使用します：`wave=X:message=ここにメッセージを入力`。
+## 特殊 [3]
+アリーナメッセージ: 以下の形式を使用します: `wave=X:message=your message here`。
 
 <details>
 
-<summary align="center"><b>アリーナ構成の例</b></summary>
+<summary align="center"><b>アリーナ設定例</b></summary>
 
 <div align="left">
 
 ```yml
 isEnabled: true
-arenaName: 例のアリーナ
+arenaName: Example Arena
 corner1: my_arena_world,0,0,0,0,0
 corner2: my_arena_world,50,50,50,0,0
 startLocation: my_arena_world,25,0,25,0,0
@@ -494,60 +491,45 @@ rawArenaReward:
 minimumPlayerCount: 1
 maximumPlayerCount: 3
 arenaMessages:
-  - wave=1:message=&d[アリーナNPC] &fすごい！ウェーブ1！
-  - wave=2:message=&d[アリーナNPC] &f驚くべきことにウェーブ2です！
-  - wave=3:message=&d[アリーナNPC] &fウェーブ3が始まりました！
-  - wave=4:message=&d[アリーナNPC] &fもうウェーブ4です！
-  - wave=5:message=&d[アリーナNPC] &fさて、これが終わったら全て終わります。
+  - wave=1:message=&d[Arena NPC] &fWow! Wave 1!
+  - wave=2:message=&d[Arena NPC] &fAmazing it is wave 2!
+  - wave=3:message=&d[Arena NPC] &fWave 3 is now on!
+  - wave=4:message=&d[Arena NPC] &fWave 4 already!
+  - wave=5:message=&d[Arena NPC] &fWell it is all over after this one.
 cylindricalArena: false
 permission: arena.mypermission
 ```
-
 </div>
 
 </details>
 
 <details>
 
-<summary align="center"><b>例の分解</b></summary>
+<summary align="center"><b>例の解説</b></summary>
 
 <div align="left">
 
-この例を最初から見て、このアリーナ構成が何をするかを説明しましょう。
+この例を最初から見て、このアリーナ設定が何をするのかを説明しましょう。
 
-まず、`isEnabled`でアリーナが有効になり、`arenaName`
-設定を使用して例のアリーナと呼ばれることがわかります。この名前は、プレイヤーがアリーナに参加できるようにするアリーナNPC（後でアリーナNPCの作成方法について説明します）と対話するときに表示されます。corner1とcorner2は、アリーナのサイズを定義します。これらのコーナーは、アリーナに使用する予定の領域の反対側にある必要があります。
+まず、`isEnabled`でアリーナが有効になっており、`arenaName`設定を使用してExample Arenaと呼ばれていることがわかります。この名前は、アリーナNPC（アリーナNPCの作成方法については後述します）とインタラクトする際に表示され、プレイヤーはアリーナに参加できるようになります。`corner1`と`corner2`はアリーナのサイズを定義します。これらの角は、アリーナとして使用する領域の対角線上に位置する必要があります。
 
-`startLocation`
-は、アリーナに参加するときにプレイヤーがスポーンする場所です。例では、ワールドmy_arena_worldのアリーナの中心になります。`exitLocation`
-は、プレイヤーがアリーナに失敗または終了した後にテレポートされる場所です。この場合、ワールドmy_minecraft_worldと例の座標になります。
+`startLocation`は、プレイヤーがアリーナに参加した際に出現する場所です。例では、my_arena_worldワールドのアリーナの中央になります。`exitLocation`は、プレイヤーがアリーナに失敗または完了した後にテレポートされる場所です。この例では、my_minecraft_worldワールドの例に示された座標になります。
 
-`waveCount`
-は、アリーナが続くウェーブ数を単純に設定します。この場合、それは5つのウェーブになります。プレイヤーが5つのウェーブすべてを生き残ることができれば、アリーナを生き残ることができたことになります。`delayBetweenWaves`
-は、次のウェーブが開始されるまでの秒数を設定します。例では、プレイヤーは次のウェーブが開始されるまでに5秒間準備することができます。
+`waveCount`は、アリーナが続くウェーブ数を単純に設定します。この場合、5ウェーブになります。プレイヤーが5ウェーブすべてを生き残ることができれば、アリーナを生き残ったことになります。`delayBetweenWaves`は、次のウェーブが開始するまでの秒数を設定します。例では、プレイヤーは次のウェーブが開始する前に5秒間準備する時間があります。
 
-`spawnPoints`は、モブをスポーンさせることができる場所を設定します。必要なだけ作成して、好きなように名前を付けることができます。例では、5つのスポーンポイントを作成し、それらを北、南、中央、東、西と名付けることにしました。
+`spawnPoints`は、モブが出現できる場所を設定します。好きなだけ作成し、好きなように名前を付けることができます。例では、5つのスポーンポイントを作成し、それぞれnorth、south、center、east、westと名付けました。
 
-`bossList`
-は、どのボスがどのウェーブでどの場所でスポーンする必要があるかを定義する場所です。例では、ウェーブ1は、北、中央、南と名付けたスポーン位置からスポーンする3体のボスになります。3体すべてが同じボスファイルを使用するように設定されていますが、それぞれ異なるボスファイルを使用することもできました。
+`bossList`は、どのボスがどのウェーブでどの場所に出現するかを定義する場所です。例では、ウェーブ1では、north、center、southと名付けたスポーン場所から3体のボスが出現します。3体すべてが同じボスファイルを使用するように設定されていますが、それぞれに異なるボスファイルを使用することもできます。
 
-`rawArenaReward`
-は、プレイヤーがウェーブを生き残る/倒すことに成功した後に配布される報酬を設定します。例でわかるように、ウェーブ1を倒すと、プレイヤーは5つのエリートコインを獲得できます。残りのウェーブを生き残り、ウェーブ5を倒すことができれば、25のエリートコインと、レベル5のマグマガイのつまようじを手に入れる50％のチャンスが与えられます。
+`rawArenaReward`は、プレイヤーがウェーブを生き残る/クリアした後に配布される報酬を設定します。例に見られるように、ウェーブ1をクリアすると、プレイヤーは5つのエリートコインを獲得します。残りのウェーブを生き残り、ウェーブ5をクリアすると、25個のエリートコインと、レベル5のMagmaGuy's Toothpickを50%の確率で獲得できます。
 
-`minimumPlayerCount`
-は、アリーナが開始する前に必要な最小プレイヤー数を設定します。例では、この設定は1に設定されているため、アリーナが開始するには1人のプレイヤーのみが必要です。`maximumPlayerCount`
-は、アリーナに参加できる最大プレイヤー数を設定します。例では、この設定は3に設定されています。つまり、3人以上のプレイヤーがアリーナに参加しようとすると、3人以下のプレイヤーになるまでアリーナは開始されません。
+`minimumPlayerCount`は、アリーナが開始する前に必要な最小プレイヤー数を設定します。例では、この設定は1に設定されているため、アリーナを開始するにはプレイヤーが1人だけ必要です。`maximumPlayerCount`は、アリーナに参加できる最大プレイヤー数を設定します。例では、この設定は3に設定されているため、3人を超えるプレイヤーがアリーナに参加しようとすると、プレイヤーが3人以下になるまでアリーナは開始しません。
 
-`arenaMessages`
-を使用すると、定義されたウェーブの開始時にチャットに表示されるフレーバーテキストを追加できます。例では、各ウェーブの開始時に短いメッセージを表示することにしました。また、各メッセージの先頭にNPC名を含めることで、テキストがアナウンサー（アリーナマスター）のセリフであるという錯覚を与えています。
+`arenaMessages`を使用すると、定義されたウェーブの開始時にチャットに表示されるフレーバーテキストを追加できます。例では、各ウェーブの開始時に短いメッセージを表示することにしました。また、各メッセージの冒頭にNPC名を含めることで、テキストがアナウンサー（アリーナマスター）による話し言葉であるかのような錯覚を与えています。
 
-`cylindricalArena`この設定により、`corner1`と`corner2`
-で設定した定義済み領域を、直方体ではなく円筒形にするかどうかを切り替えることができます。例では、これを`false`
-に設定しました。つまり、例のアリーナは直方体です。
+`cylindricalArena`この設定により、`corner1`と`corner2`で設定した定義済みの領域が、直方体ではなく円筒形になるかどうかを切り替えることができます。例では、これを`false`に設定しているため、例のアリーナは直方体です。
 
-`permission`
-を使用すると、プレイヤーがアリーナに参加/開始するために必要な権限を設定できます。例では、プレイヤーはアリーナを使用するために`arena.mypermission`
-権限を持っている必要があります。
+`permission`を使用すると、プレイヤーがアリーナに参加/開始するために必要となる権限を設定できます。例では、プレイヤーはアリーナを使用するために`arena.mypermission`権限が必要になります。
 
 </div>
 
@@ -559,11 +541,11 @@ permission: arena.mypermission
 
 ### isEnabled
 
-NPCが有効かどうかを設定します。
+NPCを有効にするかどうかを設定します。
 
-| キー          |          値          | デフォルト  |
-|-------------|:-------------------:|:------:|
-| `isEnabled` | [Boolean](#boolean) | `true` |
+| キー        |      値       | デフォルト |
+|-----------|:-------------:|:--------:|
+| `isEnabled` | [Boolean](#boolean) | `true`   |
 
 <details>
 
@@ -585,9 +567,9 @@ isEnabled: true
 
 NPCの表示名を設定します。
 
-| キー     |         値         | デフォルト |
-|--------|:-----------------:|:-----:|
-| `name` | [String](#string) |  なし   |
+| キー   |      値       | デフォルト |
+|--------|:-------------:|:--------:|
+| `name` | [String](#string) | none     |
 
 <details>
 
@@ -596,7 +578,7 @@ NPCの表示名を設定します。
 <div align="left">
 
 ```yml
-name: "&aグラディウス"
+name: "&aGladius"
 ```
 
 <div align="center">
@@ -613,11 +595,11 @@ name: "&aグラディウス"
 
 ### role
 
-NPC名の下に役割の表示を設定します。
+NPC名の下に表示される役割を設定します。
 
-| キー     |         値         | デフォルト |
-|--------|:-----------------:|:-----:|
-| `role` | [String](#string) |  なし   |
+| キー   |      値       | デフォルト |
+|--------|:-------------:|:--------:|
+| `role` | [String](#string) | none     |
 
 <details>
 
@@ -626,9 +608,8 @@ NPC名の下に役割の表示を設定します。
 <div align="left">
 
 ```yml
-role: "&c<アリーナマスター>"
+role: "&c<Arena Master>"
 ```
-
 <div align="center">
 
 ![create_arena_npc_role.jpg](../../../img/wiki/create_arena_npc_role.jpg)
@@ -643,11 +624,11 @@ role: "&c<アリーナマスター>"
 
 ### profession
 
-NPCのMineCraft職業を設定します。
+NPCのMinecraftの職業を設定します。
 
-| キー           |                                                 値                                                 | デフォルト |
-|--------------|:-------------------------------------------------------------------------------------------------:|:-----:|
-| `profession` | [Profession](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) |  なし   |
+| キー         |                         値                          | デフォルト |
+|--------------|:---------------------------------------------------:|:--------:|
+| `profession` | [Profession](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) | none     |
 
 <details>
 
@@ -661,7 +642,7 @@ profession: ARMORER
 
 <div align="center">
 
-*`diguise`を使用している場合はオーバーライドされます。*
+*`disguise`が使用されている場合は上書きされます。*
 
 ![create_arena_npc_profession.jpg](../../../img/wiki/create_arena_npc_profession.jpg)
 
@@ -675,11 +656,11 @@ profession: ARMORER
 
 ### spawnLocation
 
-NPCのスポーン位置を設定します。
+NPCの出現場所を設定します。
 
-| キー              |                値                 | デフォルト |
-|-----------------|:--------------------------------:|:-----:|
-| `spawnLocation` | [Location](#serialized_location) |  なし   |
+| キー          |             値              | デフォルト |
+|---------------|:---------------------------:|:--------:|
+| `spawnLocation` | [Location](#serialized_location) | none     |
 
 <details>
 
@@ -699,11 +680,11 @@ spawnLocation: my_world,1.5,50,1.5,-108,0
 
 ### greetings
 
-NPCの挨拶のダイアログを設定します。
+NPCの挨拶ダイアログを設定します。
 
-| キー          |              値              | デフォルト |
-|-------------|:---------------------------:|:-----:|
-| `greetings` | [String List](#string_list) |  なし   |
+| キー        |             値              | デフォルト |
+|-------------|:---------------------------:|:--------:|
+| `greetings` | [String List](#string_list) | none     |
 
 <details>
 
@@ -713,8 +694,8 @@ NPCの挨拶のダイアログを設定します。
 
 ```yml
 greetings:
-- アリーナへようこそ！
-- アリーナがあなたを歓迎します！
+- Welcome to the Arena!
+- The Arena welcomes you!
 ```
 
 <div align="center">
@@ -731,11 +712,11 @@ greetings:
 
 ### dialog
 
-プレイヤーがNPCと対話したときのダイアログを設定します。
+プレイヤーがNPCとインタラクトしたときのダイアログを設定します。
 
-| キー       |              値              | デフォルト |
-|----------|:---------------------------:|:-----:|
-| `dialog` | [String List](#string_list) |  なし   |
+| キー     |             値              | デフォルト |
+|----------|:---------------------------:|:--------:|
+| `dialog` | [String List](#string_list) | none     |
 
 <details>
 
@@ -745,8 +726,8 @@ greetings:
 
 ```yml
 dialog:
-- 挑戦する準備はできていますか？
-- アリーナに立ち向かいますか？
+- Ready for a challenge?
+- Face the Arena?
 ```
 
 <div align="center">
@@ -763,11 +744,11 @@ dialog:
 
 ### farewell
 
-NPCのさよならダイアログを設定します。
+NPCの別れのダイアログを設定します。
 
-| キー         |              値              | デフォルト |
-|------------|:---------------------------:|:-----:|
-| `farewell` | [String List](#string_list) |  なし   |
+| キー       |             値              | デフォルト |
+|------------|:---------------------------:|:--------:|
+| `farewell` | [String List](#string_list) | none     |
 
 <details>
 
@@ -777,8 +758,8 @@ NPCのさよならダイアログを設定します。
 
 ```yml
 farewell:
-- さようなら。
-- 盾を持って戻ってきてください、または盾の上に！
+- Bye.
+- Return with your shield, or on it!
 ```
 
 <div align="center">
@@ -793,10 +774,9 @@ farewell:
 
 ```yml
 farewell:
-- さようなら。
-- 盾を持って\n戻ってきてください、または盾の上に！
+- Bye.
+- Return with your\nshield, or on it!
 ```
-
 </div>
 
 ![create_arena_npc_lines.jpg](../../../img/wiki/create_arena_npc_lines.jpg)
@@ -813,11 +793,11 @@ farewell:
 
 ### canTalk
 
-NPCのさよならダイアログを設定します。
+NPCが話すことができるかどうかを設定します。
 
-| キー        |          値          | デフォルト  |
-|-----------|:-------------------:|:------:|
-| `canTalk` | [Boolean](#boolean) | `true` |
+| キー      |      値       | デフォルト |
+|-----------|:-------------:|:--------:|
+| `canTalk` | [Boolean](#boolean) | `true`   |
 
 <details>
 
@@ -837,11 +817,11 @@ canTalk: true
 
 ### activationRadius
 
-NPCが会話を開始する半径を設定します。
+NPCが話し始める半径を設定します。
 
-| キー                 |         値         | デフォルト |
-|--------------------|:-----------------:|:-----:|
-| `activationRadius` | [Double](#double) | `3.0` |
+| キー               |     値      | デフォルト |
+|--------------------|:-----------:|:--------:|
+| `activationRadius` | [Double](#double) | `3.0`    |
 
 <details>
 
@@ -863,8 +843,8 @@ activationRadius: 3.0
 
 NPCが行うインタラクションのタイプを設定します。
 
-| キー                |      値      |     デフォルト      |
-|-------------------|:-----------:|:--------------:|
+| キー              |     値     | デフォルト |
+|-------------------|:----------:|:--------:|
 | `interactionType` | Special [4] | `ARENA_MASTER` |
 
 <details>
@@ -887,9 +867,9 @@ interactionType: ARENA_MASTER
 
 カスタムNPCの偽装を設定します。
 
-| キー         |                         値                         | デフォルト |
-|------------|:-------------------------------------------------:|:-----:|
-| `disguise` | [Disguise]($language$/elitemobs/libsdisguises.md) |  なし   |
+| キー       |                      値                       | デフォルト |
+|------------|:---------------------------------------------:|:--------:|
+| `disguise` | [Disguise]($language$/elitemobs/libsdisguises.md) | none     |
 
 <details>
 
@@ -917,9 +897,9 @@ disguise: ZOMBIE
 
 プレイヤーがテレポートされるアリーナを設定します。
 
-| キー      |           値           | デフォルト |
-|---------|:---------------------:|:-----:|
-| `arena` | [Filename](#filename) |  なし   |
+| キー    |      値       | デフォルト |
+|---------|:-------------:|:--------:|
+| `arena` | [Filename](#filename) | none     |
 
 <details>
 
@@ -932,93 +912,4 @@ arena: my_arena.yml
 ```
 
 </div>
-
-</details>
-
-***
-
-### teleportLocation
-
-NPCと対話した後にプレイヤーをテレポートする場所を設定します。この設定は、通常、プレイヤーをアリーナの専用ロビータイプのエリアにテレポートするために使用されます。ここでは、アリーナチャレンジを開始したり、他のプレイヤーがアリーナを通過するのを終了するまで待つことができます。
-
-| キー                 |           値           | デフォルト |
-|--------------------|:---------------------:|:-----:|
-| `teleportLocation` | [Location](#location) |  なし   |
-
-<details>
-
-<summary><b>例</b></summary>
-
-<div align="left">
-
-```yml
-teleportLocation: my_arena_world,10,50,10,0,0
-```
-
-</div>
-
-</details>
-
-</div>
-
-***
-
-<details>
-
-<summary align="center"><b>アリーナ構成の例</b></summary>
-
-<div align="left">
-
-```yml
-isEnabled: true
-name: 例のNPC
-role: <アリーナマスター>
-profession: ARMORER
-spawnLocation: my_minecraft_world,233,44,245,0,0
-greetings:
-  - アリーナへようこそ！
-dialog:
-```
-
-```yml
-- アリーナに入る準備はできましたか？
-farewell:
-  - さようなら！
-canTalk: true
-activationRadius: 3.0
-interactionType: ARENA_MASTER
-disguise: ZOMBIE
-arena: example_arena.yml
-```
-
-この例は、ゾンビの偽装でmy_minecraft_worldにスポーンする基本的なアリーナNPCを示しています。プレイヤーは、このNPCと対話して例のアリーナに挑戦できます。
-
-</div>
-
-</details>
-
-## Special [4]
-
-以下は、有効なNPCインタラクションタイプのリストです。
-
-| タイプ                           |                       説明                       |
-|-------------------------------|:----------------------------------------------:|
-| `GUILD_GREETER`               |                冒険者ギルドメニューを開きます                 |
-| `CHAT`                        |            右クリックすると`dialog`が切り替わります            |
-| `CUSTOM_SHOP`                 |               カスタムショップメニューを開きます                |
-| `PROCEDURALLY_GENERATED_SHOP` |              手続き的に生成されたショップを開きます               |
-| `BAR`                         |                  バーメニューを開きます                   |
-| `ARENA`                       |                 アリーナメニューを開きます                  |
-| `QUEST_GIVER`                 |            手続き的に生成されたクエストメニューを開きます             |
-| `CUSTOM_QUEST_GIVER`          | `questFilenames`で設定された特定のクエストセットのクエストメニューを開きます |
-| `NONE`                        |                   インタラクションなし                   |
-| `SELL`                        |                  販売メニューを開きます                   |
-| `TELEPORT_BACK`               |    プレイヤーを最後にいたelitemobs以外のワールドの場所にテレポートさせます    |
-| `SCRAPPER`                    |                 スクラップメニューを開きます                 |
-| `SMELTER`                     |                  製錬メニューを開きます                   |
-| `REPAIRMAN`                   |                  修理メニューを開きます                   |
-| `ENHANCER`                    |                アイテム強化メニューを開きます                 |
-| `REFINER`                     |                リファイナーメニューを開きます                 |
-| `UNBINDER`                    |                アンバインドメニューを開きます                 |
-| `ARENA_MASTER`                |    `arenaFilename`で設定されたアリーナのアリーナメニューを開きます     |
-| `COMMAND`                     |           `command`で設定されたコマンドを実行します            |
+Please specify the language you would like me to translate the text into.

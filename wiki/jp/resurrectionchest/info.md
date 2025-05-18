@@ -1,38 +1,38 @@
 ResurrectionChestとは何ですか？
 
 <p>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/zgpSsu9NoXA?si=Vy9Hb9BoZxNhjnmj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/zgpSsu9NoXA?si=Vy9HbBoZxNhjnmj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </p>
 
-動画による説明
+動画解説
 
-ResurrectionChestは非常にシンプルなデスチェストプラグインです。プレイヤーは事前に特定の場所にチェストと看板を使ってデスチェストを設置し、死亡時にドロップするはずだったアイテムを代わりにチェストに転送します。
+ResurrectionChestは非常にシンプルなDeathChestプラグインです。プレイヤーは事前にチェストと看板を使って特定の場所にデスチェストを設定し、死亡時にドロップするはずだったアイテムが代わりにそのチェストに転送されるようになります。
 
-チェストが満杯の場合、アイテムは失われます。ダブルチェストとホッパーに対応しています。
+チェストがいっぱいの場合、アイテムは失われます。ラージチェストやホッパーに対応しています。
 
-ResurrectionChestはどのように設置するのですか？
+プレイヤーはどのようにResurrectionChestを設定しますか？
 
 <p>
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/unMSW2WL2AE?si=9uqtEM9u0MlEUvkC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </p>
 動画ガイド
 
-チェストを設置します（ダブルチェストも可能です。この最初のバージョンでは、通常のチェストのみが機能し、シュルカーボックスやトラップチェストは機能しません）。
+チェストを設置します（ラージチェストでも構いません。この最初のバージョンでは、通常のチェストのみが機能し、シュルカーボックスやトラップチェストは機能しません）。
 スニークしながら、チェストに看板を設置します。
-看板に「[deathchest]」と書き込みます（看板の最初の数行で機能します）。
-以上です！
+看板に [deathchest] と書きます（看板の最初の数行で機能します）。
+これだけです！
 
-このプラグインのインストール方法は？
+このプラグインをインストールするにはどうすればよいですか？
 
 ResurrectionChest.jarファイルをpluginsフォルダにドラッグアンドドロップするだけです！依存関係はありません。
 
 権限とコマンド：
-権限はresurrectionchest.useのみです。デフォルトではtrueなので、グループまたはプレイヤーに対して無効にするには、負の権限（-resurrectionchest.use）を追加する必要があります。コマンドはありません。
+権限は resurrectionchest.use の1つだけです。これはデフォルトでtrueになっているため、グループやプレイヤーに対して無効にするには否定的な権限（-resurrectionchest.use）を追加する必要があります。コマンドはありません。
 
-Xワールド/チェスト保護システムとの互換性は？
+Xのワールド/チェスト保護システムと互換性がありますか？
 
-このプラグインは、できるだけ多くのプラグインの競合を避けるように設計されました。プレイヤーがチェストを適切に設定した場合に、チェストにアイテムを追加するだけです。ほとんどの保護システムとの競合はなく、デスチェストは他のプラグインによって問題なく保護されるはずです。
+このプラグインは、可能な限り多くのプラグインの競合を避けるように設計されています。プレイヤーがチェストを適切に設定した場合、そのチェストにアイテムを追加するだけです。ほとんどの保護システムとの競合はなく、デスチェストは他のプラグインによって問題なく保護されるはずです。
 
 どの程度設定/カスタマイズできますか？
 
-これはプラグインの初期リリースであり、十分な関心があれば、さらにカスタマイズオプションを追加します。
+これはプラグインの初期リリースです。十分な関心があれば、より多くのカスタマイズオプションを追加します。

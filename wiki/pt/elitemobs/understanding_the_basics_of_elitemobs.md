@@ -1,107 +1,66 @@
-Aqui está, descrito da forma mais breve possível, o ciclo de jogo pretendido para o EliteMobs. Este guia destina-se a
-novos administradores que queiram perceber o que o EliteMobs pode fazer.
+Aqui encontrará descrito o mais brevemente possível o ciclo de jogo pretendido para o EliteMobs. Este guia destina-se a novos administradores que desejam ter uma ideia do que o EliteMobs pode fazer.
 
-# Passo 1: O Primeiro Encontro do Jogador
+# Passo 1: Primeiro encontro do jogador
+Um jogador no seu servidor irá adquirir armadura durante o jogo normal. Assim que tiver algo de nível ferro ou superior, começará a enfrentar Elite Mobs que surgem naturalmente à sua volta com base na armadura que os jogadores estão a usar.
 
-Um jogador no teu servidor irá adquirir armadura durante o jogo normal. Assim que tiver qualquer coisa de nível ferro ou
-melhor, começará a enfrentar Elite Mobs que surgem naturalmente à sua volta com base na armadura que os jogadores estão
-a usar.
+Os jogadores também podem optar por não participar, diminuindo o seu [Rank de Guilda]($language$/elitemobs/adventurers_guild_world.md).
+<br>Estes Elite Mobs (quando o seu nível é suficientemente alto e o sistema antiexploit não é acionado) podem largar três tipos de saque:
 
-Os jogadores também podem optar por não participar, diminuindo o
-seu [Rank da Guilda]($language$/elitemobs/adventurers_guild_world.md).
-<br>Estes Elite Mobs (quando o seu nível é suficientemente alto e o sistema anti-exploit não é acionado) podem largar
-três tipos de loot:
+* Saque gerado proceduralmente (o tipo mais comum)
+* Saque personalizado (um pouco raro)
+* Elite Coins
 
-* Loot gerado processualmente (o tipo mais comum)
-* Loot personalizado (um pouco raro)
-* Moedas Elite
+(Nota: Pode ler mais sobre o surgimento e recompensas dos Elite Mobs [aqui]($language$/elitemobs/spawning_tiers_loot.md))
 
-(Nota: Podes ler mais sobre o aparecimento e recompensas dos Elite
-Mob [aqui]($language$/elitemobs/spawning_tiers_loot.md))
+Ao saquear, o jogador será informado pelo plugin que as moedas podem ser usadas e os itens vendidos na loja na [Guilda de Aventureiros]($language$/elitemobs/adventurers_guild_world.md).
 
-Ao saquear, o jogador será informado pelo plugin de que as moedas podem ser usadas e os itens vendidos na loja
-da [Guilda dos Aventureiros]($language$/elitemobs/adventurers_guild_world.md).
+# Passo 2: Descobrindo a economia
+Assim que o jogador obtiver a informação sobre a venda de itens, será naturalmente atraído a vendê-los. Se o mundo estiver configurado, encontrará então os NPCs da Guilda de Aventureiros (detalhes para download e configuração do mundo estão na publicação de recursos do spigot).
 
-# Passo 2: Descobrindo a Economia
+Descobrirá que o EliteMobs usa a sua própria moeda, que é necessária por razões de equilíbrio. Descobrirá também que pode desbloquear ranks de guilda, e mais tarde descobrirá que isto é necessário se desejar progredir para além de Elite Mobs de nível 10, pois não obterá saque para além do tier 10 sem desbloquear mais ranks.
 
-Assim que o jogador tiver informações sobre como vender itens, será naturalmente levado a vendê-los. Se o mundo estiver
-configurado, encontrará os NPCs da Guilda dos Aventureiros (detalhes para o download e configuração do mundo e na
-publicação do recurso spigot).
-
-Eles descobrirão que o EliteMobs usa sua própria moeda, o que é necessário por razões de equilíbrio. Eles também
-descobrirão que podem desbloquear ranks de guilda e, posteriormente, descobrirão que isso é necessário se quiserem
-progredir além do nível 10 de elite mobs, pois não receberão loot além do nível 10 sem desbloquear mais ranks.
-
-Eles também poderão descobrir o sistema de missões e começar a cumprir missões para obter moeda extra, o que os levará
-naturalmente a procurar oponentes que, de outra forma, evitariam. Eles também podem encontrar o NPC Instrutor de
-Combate, que lhes dará dicas sobre o sistema de combate. Globalmente, todos os NPCs dão aos jogadores conselhos
-importantes à medida que interagem com eles.
+Também poderá descobrir o sistema de missões e começar a cumprir missões para obter moeda extra, o que naturalmente o levará a procurar oponentes que de outra forma evitaria. Poderá também encontrar o NPC Instrutor de Combate, que lhe dará dicas sobre o sistema de combate. Globalmente, todos os NPCs dão conselhos importantes aos jogadores à medida que interagem com eles.
 
 # Passo 3: Progressão
+Agora que os jogadores têm uma ideia do que está à sua frente, lutarão contra Elite Mobs cada vez mais fortes à medida que progridem pelos tiers de itens.
 
-Agora que os jogadores têm uma ideia do que os espera, lutarão contra Elite Mobs cada vez mais fortes à medida que
-avançam pelos níveis de itens.
+Quando chegarem ao tier de diamante, encontrar-se-ão limitados pelo seu rank de guilda, o que deverá incentivá-los a desbloquear tiers adicionais.
+<br>Além disso, encontrarão eventos aleatórios que deverão aumentar o seu interesse nas várias mecânicas que o plugin tem para oferecer, especialmente no que diz respeito a [encantamentos personalizados]($language$/elitemobs/custom_enchantments_list.md), como o lança-chamas.
 
-Quando atingirem o nível de diamante, descobrirão que estão limitados pelo seu rank na guilda, o que deve incentivá-los
-a desbloquear níveis adicionais.
-<br>Além disso, eles encontrarão eventos aleatórios que devem aumentar o seu interesse nas várias mecânicas que o plugin
-tem para oferecer, especialmente no que diz respeito
-a [encantamentos personalizados]($language$/elitemobs/custom_enchantments_list.md) como o lança-chamas.
+# Passo 4: Tiers Elevados
+Assim que o jogador tiver progredido até cerca do tier de item 80 (ou rank de guilda 8), começará a atingir a dificuldade máxima do EliteMobs (por agora). O combate de alto nível requer bastante mais estratégia, planeamento e execução de combate do que níveis inferiores, pois os mobs têm até 7 poderes diferentes nessa fase.
 
-# Passo 4: Níveis Altos
+Serão capazes de distinguir qual saque querem manter e qual querem descartar, e terão uma boa ideia de quais são os seus itens personalizados favoritos. Recomendo vivamente que crie muitos itens personalizados, pois estes são atualmente o foco principal dos jogadores de EliteMobs de nível médio a alto.
 
-Assim que o jogador progredir para cerca do nível de item 80 (ou rank de guilda 8), começará a atingir a dificuldade
-máxima do EliteMobs (por agora). O combate de alto nível requer muito mais estratégia, planeamento e execução do combate
-do que os níveis mais baixos, pois os mobs têm até 7 poderes diferentes nessa fase.
+# (Mini)Dungeoneering
+Assumindo que instalou os recomendados [Minidungeons & Lairs]($language$/elitemobs/dungeons.md) em algum momento - possivelmente até bastante cedo - os jogadores provavelmente serão atraídos a desafiar Lairs, Minidungeons e Adventures.
 
-Eles serão capazes de dizer qual loot querem manter e qual querem descartar, e terão uma boa ideia de quais são os seus
-itens personalizados favoritos. Eu recomendo vivamente que faças muitos itens personalizados, pois estes são atualmente
-o foco principal dos jogadores de nível médio a superior do EliteMobs.
+Estas são localizações onde Bosses Personalizados surgem e, após serem mortos, reaparecem com um atraso, criando uma localização centralizada onde os jogadores podem desafiar bosses difíceis de forma justa.
 
-# (Mini)Exploração de Masmorras
+Aqui estão os principais pontos de venda dos minidungeons:
 
-Assumindo que instalaste os recomendados [Mini-Masmorras e Covis]($language$/elitemobs/dungeons.md) em algum momento -
-possivelmente até mais cedo - os jogadores provavelmente serão levados a desafiar Covis, Mini-Masmorras e Aventuras.
+* Como o terreno é pré-fabricado e protegido, e os bosses também, o combate não pode ser explorado.
+* Como centraliza o combate, pode ter taxas de surgimento mais baixas para mobs naturais e acabar com um impacto geral menor no desempenho.
+* Como o saque é pré-fabricado, geralmente é bastante especial, e os jogadores aprendem a ir a certos locais para farmar equipamento específico de que possam gostar.
+* Como os bosses são pré-fabricados, as batalhas são equilibradas manualmente e resultam em lutas muito mais interessantes e desafiadoras, mas justas.
+* No caso das adventures, são mapas de aventura maciços completos com vastas linhas de missões, missões secundárias e, por vezes, até arenas e dungeons dentro de dungeons!
+* Tem um ótimo aspeto e os jogadores adoram passar dias neles.
 
-Estes são locais onde Chefes Personalizados aparecem e, depois de serem mortos, reaparecem com um atraso, criando um
-local centralizado onde os jogadores podem desafiar chefes difíceis de forma justa.
+[Mais sobre minidungeons!]($language$/elitemobs/dungeons.md)
 
-Aqui estão os principais argumentos de venda das mini-masmorras:
-
-* Uma vez que o terreno é pré-feito e protegido, assim como os chefes, o combate não pode ser explorado.
-* Uma vez que centraliza o combate, podes ter taxas de spawn mais baixas para mobs naturais e acabar com um impacto
-  geral de desempenho menor.
-* Como o loot é pré-feito, geralmente é bastante especial, e os jogadores aprendem a ir a certos locais para cultivar
-  equipamento específico de que possam gostar.
-* Como os chefes são pré-feitos, as batalhas são equilibradas manualmente e resultam em lutas muito mais interessantes e
-  desafiantes, mas justas.
-* No caso das aventuras, são mapas de aventura maciços com vastas missões, missões secundárias e, às vezes, até arenas e
-  masmorras dentro de masmorras!
-* Parece ótimo e os jogadores adoram passar dias neles.
-
-[Mais sobre mini-masmorras!]($language$/elitemobs/dungeons.md)
-
-# Exploração de Masmorras em Instância
-
-Algumas masmorras são desafios com instância. Isto significa que um mundo é criado quando um grupo entra na masmorra e,
-assim que o grupo inicia a masmorra, os jogadores não poderão juntar-se, a não ser para a observar.
+# Dungeoneering Instanciado
+Algumas dungeons são desafios instanciados. Isto significa que um mundo é criado quando um grupo se junta à dungeon, e assim que o grupo inicia a dungeon, os jogadores não poderão juntar-se, a não ser para a espetar.
 <br>Existe um sistema dedicado para reaparecer que dá aos jogadores 3 mortes cada antes de serem eliminados.
 
-As masmorras são o conteúdo mais equilibrado e desenvolvido do EliteMobs, pois são significativamente mais difíceis de
-explorar do que qualquer outro conteúdo.
+As dungeons são o conteúdo mais equilibrado e desenvolvido no EliteMobs, pois são significativamente mais difíceis de explorar do que qualquer outro conteúdo.
 
-As masmorras têm dificuldades que os jogadores podem escolher, e as dificuldades mais altas são os desafios mais
-difíceis do EliteMobs, mas também os mais recompensadores!
+As dungeons têm dificuldades que os jogadores podem escolher, e as dificuldades mais altas são os desafios mais difíceis no EliteMobs, mas também os mais recompensadores!
 
-[Mais sobre masmorras!]($language$/elitemobs/dungeons.md)
+[Mais sobre dungeons!]($language$/elitemobs/dungeons.md)
 
 # Arenas
+O EliteMobs também tem arenas que os jogadores podem desafiar. Estes são desafios baseados em ondas que os jogadores devem superar por uma quantidade predefinida de ondas. Recompensam os jogadores por alcançarem ondas de arena específicas.
 
-O EliteMobs também tem arenas que os jogadores podem desafiar. Estes são desafios baseados em ondas que os jogadores
-devem superar durante uma quantidade predefinida de ondas. Eles recompensam os jogadores por atingir ondas específicas
-da arena.
+Este conteúdo também é instanciado, e as limitações de entrada e reaparecimento da secção de Dungeoneering também se aplicam aqui.
 
-Este conteúdo também tem instância, e as limitações de entrada e reaparecimento da secção de Exploração de Masmorras
-também se aplicam aqui.
-
-As arenas podem ser bastante difíceis de vencer, por isso tornam-se um desafio divertido e recompensador!
+As arenas podem ser bastante difíceis de vencer, por isso constituem um desafio divertido e recompensador!

@@ -1,18 +1,16 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# O Que São Spawns Personalizados?
+# O que são Spawns Personalizados?
 
-Spawns Personalizados são utilizados por Eventos e reforços globais para definir como, onde e quando um evento deve
-gerar o boss para esse evento.
+Spawns Personalizados são usados por Eventos e reforços globais para definir como, onde e quando um evento deve gerar o boss para esse evento.
 
-Eventos e reforços globais definem qual spawn estão a usar ao escrever o nome do ficheiro.
+Eventos e reforços globais definem qual spawn estão a usar escrevendo o nome do seu ficheiro.
 
 # Criar Spawns Personalizados
 
-Spawns Personalizados são colocados na pasta `customspawns`. Um Spawn Personalizado pode ser usado por vários eventos ao
-mesmo tempo, por isso não precisa de criar um por evento.
+Spawns Personalizados vão para a pasta `customspawns`. Um Spawn Personalizado pode ser usado por vários eventos ao mesmo tempo, para que não tenha de criar um por evento.
 
-Aqui está um exemplo de um Spawn Personalizado:
+Aqui está um exemplo de Spawn Personalizado:
 
 ```yaml
 isEnabled: true
@@ -24,16 +22,13 @@ isSurfaceSpawn: true
 ```
 
 ## Criar um Spawn em Qualquer Lugar
-
-Para criar um spawn que possa ocorrer **em qualquer lugar**, a sua configuração deve ser semelhante a seguinte:
+Para criar um spawn que pode ocorrer **em qualquer lugar**, a sua configuração deve ser semelhante à seguinte:
 
 ```yml
 isEnabled: true
 canSpawnInLight: true
 ```
-
-Esta configuração permite que mobs apareçam em qualquer local, em qualquer mundo, a qualquer hora e durante qualquer
-fase da lua.
+Esta configuração permite que mobs apareçam em qualquer localização, em qualquer mundo, a qualquer hora e durante qualquer fase da lua.
 
 Se estiver interessado em criar um spawn mais personalizado, continue a ler abaixo.
 
@@ -45,13 +40,13 @@ Se estiver interessado em criar um spawn mais personalizado, continue a ler abai
 
 ### isEnabled
 
-Define se o spawn está ativo.
+Define se o spawn está ativado.
 
 | Chave       |       Valores        | Padrão |
-|-------------|:--------------------:|:------:|
+|-----------|:--------------------:|:------:|
 | `isEnabled` | [Booleano](#boolean) | `true` |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -69,13 +64,13 @@ isEnabled: true
 
 ### lowestYLevel
 
-Define o nível y (altura do mapa) mais baixo utilizado.
+Define o nível Y mais baixo (altura do mapa) utilizado.
 
-| Chave          |       Valores       | Padrão |
-|----------------|:-------------------:|:------:|
+| Chave        |        Valores        | Padrão |
+|------------|:---------------------:|:------:|
 | `lowestYLevel` | [Inteiro](#integer) |  `0`   |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -93,13 +88,13 @@ lowestYLevel: 0
 
 ### highestYLevel
 
-Define o nível y (altura do mapa) mais baixo utilizado.
+Define o nível Y mais alto (altura do mapa) utilizado.
 
-| Chave           |       Valores       | Padrão |
-|-----------------|:-------------------:|:------:|
+| Chave         |        Valores        | Padrão |
+|-------------|:---------------------:|:------:|
 | `highestYLevel` | [Inteiro](#integer) | `320`  |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -117,13 +112,13 @@ highestYLevel: 320
 
 ### validWorlds
 
-Define a lista dos mundos onde o spawn personalizado pode acontecer. Esta configuração pode ser omitida para permitir que **todos** os seus mundos sejam válidos.
+Define a lista de mundos onde o spawn personalizado pode ocorrer. Esta configuração pode ser omitida para permitir que **todos** os seus mundos sejam válidos.
 
-| Chave         |             Valores              | Padrão |
-|---------------|:--------------------------------:|:------:|
-| `validWorlds` | [Lista de Strings](#string_list) | nenhum |
+| Chave         |            Valores             | Padrão |
+|-------------|:------------------------------:|:------:|
+| `validWorlds` | [Lista de Strings](#string_list) |  nenhum |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -149,13 +144,13 @@ validWorlds: []
 
 ### validWorldEnvironments
 
-Define a lista de ambientes de mundo válidos onde o spawn personalizado pode acontecer. Esta configuração pode ser omitida para permitir que **todos** os ambientes sejam válidos.
+Define a lista de ambientes de mundo válidos onde o spawn personalizado pode ocorrer. Esta configuração pode ser omitida para permitir que **todos** os ambientes sejam válidos.
 
-| Chave       |           Valores            | Padrão |
-|-----------|:---------------------------:|:-------:|
-| `validWorldEnvironments` | [Lista de Ambientes](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html) |  nenhum   |
+| Chave                  |             Valores              | Padrão |
+|------------------------|:--------------------------------:|:------:|
+| `validWorldEnvironments` | [Lista de Ambientes](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html) |  nenhum |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -181,13 +176,13 @@ validWorldEnvironments: []
 
 ### validBiomes
 
-Define a lista de biomas válidos onde o spawn personalizado pode acontecer. Esta configuração pode ser omitida para permitir que **todos** os biomas sejam válidos.
+Define a lista de biomas válidos onde o spawn personalizado pode ocorrer. Esta configuração pode ser omitida para permitir que **todos** os biomas sejam válidos.
 
-| Chave       |           Valores            | Padrão |
-|-----------|:---------------------------:|:-------:|
-| `validBiomes` | [Lista de Biomas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) |  nenhum   |
+| Chave        |             Valores              | Padrão |
+|------------|:--------------------------------:|:------:|
+| `validBiomes` | [Lista de Biomas](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) |  nenhum |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -213,13 +208,13 @@ validBiomes: []
 
 ### earliestTime
 
-Define a hora mais cedo no jogo em que o spawn personalizado pode acontecer.
+Define a hora mais cedo no jogo em que o spawn personalizado pode ocorrer.
 
-| Chave          |       Valores       | Padrão |
-|----------------|:-------------------:|:------:|
+| Chave          |        Valores        | Padrão |
+|--------------|:---------------------:|:------:|
 | `earliestTime` | [Inteiro](#integer) |  `0`   |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -237,13 +232,13 @@ earliestTime: 0
 
 ### latestTime
 
-Define a hora mais tardia no jogo em que o spawn personalizado pode acontecer.
+Define a hora mais tardia no jogo em que o spawn personalizado pode ocorrer.
 
-| Chave        |       Valores       | Padrão  |
-|--------------|:-------------------:|:-------:|
+| Chave        |        Valores        | Padrão |
+|------------|:---------------------:|:------:|
 | `latestTime` | [Inteiro](#integer) | `24000` |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -261,13 +256,13 @@ latestTime: 24000
 
 ### moonPhase
 
-Define a hora mais cedo no jogo em que o spawn personalizado pode acontecer.
+Define a fase da lua em que o spawn personalizado pode ocorrer.
 
-| Chave       |   Valores    | Padrão |
-|-----------|:-----------:|:-------:|
+| Chave       |   Valores    | Padrão  |
+|-----------|:------------:|:-------:|
 | `moonPhase` | Especial [1] | `24000` |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -283,19 +278,19 @@ moonPhase: 24000
 
 **Especial [1]**
 
-<details> 
+<details>
 
 <summary><b>Expandir Tabela</b></summary>
 
-| Fase da Lua       | Visualização |
-|-------------------|:------------:|
-| `NEW_MOON`        |      🌑      |
-| `WAXING_CRESCENT` |      🌒      |
-| `FIRST_QUARTER`   |      🌓      |
-| `WAXING_GIBBOUS`  |      🌔      |
-| `FULL_MOON`       |      🌕      |
-| `WANING_GIBBOUS`  |      🌖      |
-| `WANING_CRESCENT` |      🌘      |
+| Fase da Lua       | Pré-visualização |
+|-------------------|:----------------:|
+| `NEW_MOON`        |        🌑        |
+| `WAXING_CRESCENT` |        🌒        |
+| `FIRST_QUARTER`   |        🌓        |
+| `WAXING_GIBBOUS`  |        🌔        |
+| `FULL_MOON`       |        🌕        |
+| `WANING_GIBBOUS`  |        🌖        |
+| `WANING_CRESCENT` |        🌘        |
 
 </details>
 
@@ -305,11 +300,11 @@ moonPhase: 24000
 
 Define se o spawn personalizado irá ignorar sistemas de proteção como o WorldGuard.
 
-| Chave              |       Valores        | Padrão  |
-|--------------------|:--------------------:|:-------:|
+| Chave            |        Valores        | Padrão  |
+|------------------|:---------------------:|:-------:|
 | `bypassWorldGuard` | [Booleano](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -329,11 +324,11 @@ bypassWorldGuard: false
 
 Especifica se o spawn personalizado pode ocorrer em blocos iluminados por fontes de luz.
 
-| Chave             |       Valores        | Padrão  |
-|-------------------|:--------------------:|:-------:|
+| Chave           |        Valores        | Padrão  |
+|-----------------|:---------------------:|:-------:|
 | `canSpawnInLight` | [Booleano](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -351,13 +346,13 @@ canSpawnInLight: false
 
 ### isSurfaceSpawn
 
-Define se o spawn personalizado só pode acontecer na superfície de um mundo.
+Define se o spawn personalizado só pode ocorrer na superfície de um mundo.
 
-| Chave            |       Valores        | Padrão  |
-|------------------|:--------------------:|:-------:|
+| Chave          |        Valores        | Padrão  |
+|----------------|:---------------------:|:-------:|
 | `isSurfaceSpawn` | [Booleano](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -375,13 +370,13 @@ isSurfaceSpawn: false
 
 ### isUndergroundSpawn
 
-Define se o spawn personalizado só pode acontecer no subsolo.
+Define se o spawn personalizado só pode ocorrer no subsolo.
 
-| Chave                |       Valores        | Padrão  |
-|----------------------|:--------------------:|:-------:|
+| Chave            |        Valores        | Padrão  |
+|------------------|:---------------------:|:-------:|
 | `isUndergroundSpawn` | [Booleano](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 

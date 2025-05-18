@@ -1,59 +1,63 @@
-截至 EliteMobs 7.3.0 版本，玩家可以通过多种独特的方式与精英物品进行互动。本页面旨在帮助玩家和管理员了解这些系统的工作原理，并在稍后向管理员解释系统的平衡性。
+好的，我将把输入的文本翻译成简体中文，并保留 Markdown 格式。
+
+---
+
+自 EliteMobs 7.3.0 版本起，玩家可以通过多种独特的方式与精英物品互动。本页面旨在帮助玩家和管理员了解这些系统的工作原理，并稍后为管理员解释系统的平衡性。
 
 ***
 
 # 解绑物品
 
-如果你拥有解绑卷轴，你可以使用解绑 NPC 将 1 个卷轴与 1 件物品组合以解绑该物品。
+如果你有一张物品解绑卷轴，你可以使用解绑 NPC 将 1 张卷轴与 1 件物品结合来解绑它。
 
-***注意：在撰写本文时，玩家无法在没有被给予或添加到特定 Boss 的情况下获得卷轴。该卷轴将从本月发布的末影龙战斗中掉落。***
+***注意：截至本文撰写时，玩家除了被给予或添加到特定 Boss 掉落列表外，没有其他方式获得此卷轴。本月将发布的末影龙战斗将掉落此卷轴。***
 
-该卷轴只能使用一次。一旦解绑，物品就可以出售或给予其他玩家，或在转生后使用。
-
-***
-
-# 报废物品
-
-精英物品可以在报废 NPC 处报废。当报废物品时，根据物品的等级，你将获得以下报废品：
-
-- 等级 0-50：微小报废品。
-- 等级 50-100：小型报废品。
-- 等级 100-150：中型报废品。
-- 等级 150-200：巨型报废品。
-
-报废品是其余物品系统的基础。
+卷轴只能使用一次。解绑后，物品可以出售或赠送给其他玩家，或在转生后使用。
 
 ***
 
-# 修复精英物品
+# 拆解物品
 
-精英物品可以使用报废品在修理工 NPC 处修复。物品的损坏程度决定了修复它所需的报废品的数量和大小。
+精英物品可以在拆解 NPC 处拆解。拆解物品时，根据物品的等级，你将获得以下废料：
+
+- 等级 0-50：微小废料 (Tiny Scrap)。
+- 等级 50-100：小型废料 (Small Scrap)。
+- 等级 100-150：中型废料 (Medium Scrap)。
+- 等级 150-200：巨型废料 (Huge Scrap)。
+
+废料是其他物品系统的基础。
 
 ***
 
-# 为精英物品附魔
+# 修理精英物品
 
-在开始描述如何为物品附魔之前，建议先熟悉附魔所需的物品并了解其功能。
+精英物品可以在修理工 NPC 处使用废料修理。物品损坏的程度决定了修理所需的废料数量和大小。
+
+***
+
+# 附魔精英物品
+
+在继续描述如何附魔物品之前，建议先熟悉附魔所需的物品并了解它们的功能。
 
 **精英物品**
-</br>精英物品包括在 EliteMobs 商店中可获得的任何战利品、由精英怪物掉落的战利品，或作为完成任务的奖励而获得的物品等。
+</br>精英物品包括 EliteMobs 商店中可用的任何战利品、精英怪物掉落的物品，或完成任务获得的奖励等来源。
 
 **附魔书**
-</br>附魔书通常由精英怪物掉落或作为竞技场或任务中的奖励赠予玩家。它们包含玩家可以转移到其所需物品上的附魔。
+</br>附魔书通常由精英怪物掉落，或作为竞技场或任务的奖励授予玩家。它们包含玩家可以转移到所需物品上的附魔。
 
 **幸运券**
-</br>幸运券通常从精英怪物获得或作为竞技场或任务的奖励，使玩家在附魔物品时成功几率加倍。
+</br>幸运券通常从精英怪物处获得，或作为竞技场或任务的奖励获得，它们使玩家在附魔物品时有机会将成功率翻倍。
 
-玩家可以通过访问[冒险者公会]($language$/elitemobs/adventurers_guild_world.md)中的附魔师 NPC 或使用 `/em` 菜单来访问附魔菜单。
+玩家可以通过访问 [冒险者协会]($language$/elitemobs/adventurers_guild_world.md) 中的附魔师 NPC 或使用 `/em` 菜单来访问附魔菜单。
 
-使用精英物品和附魔书，玩家可以尝试将书中存储的附魔添加到他们的物品上。每次尝试都会花费玩家一些精英币。如果玩家有幸运券，他们也可以使用幸运券使成功几率加倍。
+拥有精英物品和附魔书后，玩家可以尝试将书中的附魔添加到他们的物品上。每次尝试都会花费玩家一些精英币。如果他们有幸运券，他们也可以使用它来将成功率翻倍。
 
-要开始附魔，玩家可以将一件精英物品、一本附魔书和一张幸运券（如果有）放入附魔窗口，然后尝试附魔他们的物品。之后，他们将遇到以下结果之一：
+要开始附魔，玩家将一件精英物品、一本附魔书和一张幸运券（如果他们有）放入附魔窗口，然后尝试附魔他们的物品。之后，他们将遇到以下结果之一：
 
-- **成功：** 附魔已成功添加到物品中。
-- **失败：** 尝试失败，导致损失附魔书和精英币。
-- **严重失败：** 更严重的失败，导致损失附魔书、精英币以及精英物品本身。
-- **挑战：** 进行 Boss 战斗，失败后有 10% 的几率发生严重失败。如果玩家获胜，则物品会被附魔。
+- **成功：** 附魔成功添加到物品上。
+- **失败：** 尝试失败，导致附魔书和精英币丢失。
+- **严重失败：** 更严重的失败，导致附魔书、精英币和精英物品本身丢失。
+- **挑战：** 进行一场 Boss 战，如果失败有 10% 的几率发生严重失败。如果玩家获胜，物品将被附魔。
 
 <details>
 
@@ -63,7 +67,7 @@
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/enchant_example.webm" type="video/webm">
-  你的浏览器不支持 video 标签。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -73,7 +77,7 @@
 ***
 
 <details>
-  <summary>MagmaGuy 的视频解释了一些系统。</summary>
+  <summary>MagmaGuy 解释部分系统的视频。</summary>
 
   <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/MtfeS6fq0Pw" frameborder="0" allowfullscreen></iframe>
@@ -91,13 +95,13 @@
 
 ### isEnabled
 
-设置是否启用该物品。
+设置物品是否启用。
 
-| 键           |        值        |  默认值   |
-|-------------|:---------------:|:------:|
-| `isEnabled` | [布尔值](#boolean) | `true` |
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `isEnabled` | [Boolean](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -115,13 +119,13 @@ isEnabled: true
 
 ### name
 
-设置物品的名称。支持[颜色代码](#color_codes)。
+设置物品的名称。支持 [颜色代码](#color_codes)。
 
-| 键      |       值        | 默认值 |
-|--------|:--------------:|:---:|
-| `name` | [字符串](#string) |  无  |
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `name` | [String](#string) |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -145,13 +149,13 @@ name: '&a精英自定义附魔书'
 
 ### lore
 
-设置物品的描述。支持[颜色代码](#color_codes)。
+设置物品的描述。支持 [颜色代码](#color_codes)。
 
-| 键      |           值           | 默认值 |
-|--------|:---------------------:|:---:|
-| `lore` | [字符串列表](#string_list) |  无  |
+| Key         |           Values            | Default |
+|-------------|:---------------------------:|:-------:|
+| `lore` | [String List](#string_list) |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -159,7 +163,7 @@ name: '&a精英自定义附魔书'
 
 ```yml
 lore:
-- '&2使用此自定义书来'
+- '&2使用这本自定义书来'
 - '&2在附魔师处附魔物品！'
 ```
 
@@ -177,13 +181,13 @@ lore:
 
 ### material
 
-设置物品应该使用的 MineCraft 材料。
+设置物品应使用的 MineCraft 材料。
 
-| 键          |        值        |  默认值   |
-|------------|:---------------:|:------:|
-| `material` | [材料](#material) | `BOOK` |
+| Key         |      Values       | Default |
+|-------------|:-----------------:|:-------:|
+| `material` | [Material](#material) | `BOOK`  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -207,13 +211,13 @@ material: BOOK
 
 ### enchantments
 
-设置物品应具有的附魔。
+设置物品应包含哪些附魔。
 
-| 键              |                                                                                  值                                                                                   | 默认值 |
-|----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---:|
-| `enchantments` | [MineCraft 附魔](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) 或 [EliteMobs 附魔]($language$/elitemobs/custom_enchantments_list.md) |  无  |
+| Key         |    Values    | Default |
+|-------------|:------------:|:-------:|
+| `enchantments` | [MineCraft Enchantments](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) 或 [EliteMobs Enchantments]($language$/elitemobs/custom_enchantments_list.md) |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -239,15 +243,15 @@ enchantments:
 
 ### itemType
 
-设置可以从中获取物品的位置。如果你希望你的书由随机精英掉落并在商店出售，你可以将其设置为 `custom`。
+设置你可以从哪里获得该物品。如果你希望你的书由随机精英掉落并在商店出售，你可以将其设置为 `custom`。
 
-否则，你可以将其设置为 `unique`，使其仅从配置的掉落表中掉落。
+否则，你可以将其设置为 `unique`，使其仅从配置的战利品表中掉落。
 
-| 键          |                              值                               | 默认值 |
-|------------|:------------------------------------------------------------:|:---:|
-| `itemType` | [值]($language$/elitemobs/creating_items.md&section=itemtype) |  无  |
+| Key         |    Values    | Default |
+|-------------|:------------:|:-------:|
+| `itemType` | [Values]($language$/elitemobs/creating_items.md&section=itemtype) |  none   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -265,13 +269,13 @@ itemType: custom
 
 ### soulbound
 
-设置它们是否可以与其他玩家交易。
+设置物品是否可以与其他玩家交易。
 
-| 键           |        值        |  默认值   |
-|-------------|:---------------:|:------:|
-| `soulbound` | [布尔值](#boolean) | `true` |
+| Key         |    Values    | Default |
+|-------------|:------------:|:-------:|
+| `soulbound` | [Boolean](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -291,7 +295,7 @@ soulbound: true
 
 <div align="center">
 
-<details> 
+<details>
 
 <summary><b>附魔书配置示例</b></summary>
 
@@ -300,7 +304,7 @@ soulbound: true
 ```yml
 isEnabled: true
 material: BOOK
-name: '&5卓越的挖矿附魔书'
+name: '&5优秀的挖掘附魔书'
 lore:
 - '&2用于在附魔师处附魔物品！'
 enchantments:
@@ -310,12 +314,11 @@ itemType: UNIQUE
 soulbound: false
 ```
 
-正如你所看到的，制作你自己的附魔书并不复杂。大多数设置是你创建[物品]($language$/elitemobs/creating_items.md)时会使用的常规设置。
+正如你所见，制作你的附魔书并不复杂。大多数设置都是你在创建 [物品]($language$/elitemobs/creating_items.md) 时会使用的常规设置。
 
-当然，除了这里我们的主要重点是 `enchantments` 部分。我们的示例书有一个 MineCraft 附魔 `MENDING` 和一个 EliteMobs
-附魔 `DRILLING`。
+当然，这里我们的主要关注点是 `enchantments` 部分。我们的示例书包含一个 MineCraft 附魔 `MENDING` 和一个 EliteMobs 附魔 `DRILLING`。
 
-这将使我们的示例书成为你想要在镐上使用的优秀书籍。
+这将使我们的示例书成为一本非常适合用于镐子的优秀附魔书。
 
 </div>
 

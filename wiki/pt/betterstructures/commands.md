@@ -1,7 +1,7 @@
-# Comandos do BetterStructures
+```markdown
+# Comandos BetterStructures
 
-Abaixo encontra-se uma lista completa de comandos disponíveis para uso com o plugin BetterStructures, juntamente com as
-suas respetivas permissões necessárias.
+Abaixo está uma lista completa dos comandos disponíveis para uso com o plugin BetterStructures, juntamente com as suas respetivas permissões necessárias.
 
 ## Comando Reload
 
@@ -9,21 +9,17 @@ suas respetivas permissões necessárias.
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Recarrega o plugin. Também importa quaisquer estruturas que necessitem ser importadas.
+**Descrição:** Recarrega o plugin. Também importa quaisquer estruturas que precisem de ser importadas.
 
 ## Comando Lootify
 
-**Comando:
-** `/betterstructures lootify <nome do ficheiro do tesouro> <raridade> <quantidadeMínima> <quantidadeMáxima> <peso>`
+**Comando:** `/betterstructures lootify <nome do ficheiro do tesouro> <raridade> <quantidade mínima> <quantidade máxima> <peso>`
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Adiciona o item atualmente segurado à tabela de `raridade` específica do `gerador` específico,
-aleatorizando a quantidade do item que pode ser encontrada num baú entre `quantidadeMínima` e `quantidadeMáxima`, com
-o `peso` especificado.
+**Descrição:** Adiciona o item atualmente na mão à tabela de `raridade` específica do `gerador` específico, randomizando a quantidade do item que pode ser encontrada num baú entre `quantidade mínima` e `quantidade máxima`, com o `peso` especificado.
 
-Este é um sistema muito específico, para mais detalhes sobre como estes valores funcionam pode
-ler [esta página]($language$/betterstructures/creating_structures.md).
+Este é um sistema muito específico, para mais detalhes sobre como estes valores funcionam, pode ler [esta página]($language$/betterstructures/creating_structures.md).
 
 ## Comando Place
 
@@ -35,12 +31,11 @@ ler [esta página]($language$/betterstructures/creating_structures.md).
 
 ## Comando Teleportcoords
 
-**Comando:** `/betterstructures teleporttocoords <nomeDoMundo> <x> <y> <z>`
+**Comando:** `/betterstructures teleporttocoords <nome do mundo> <x> <y> <z>`
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Não se destina a ser usado diretamente, este é o comando que é executado quando um administrador clica
-num aviso de chat que o permite teletransportar para uma estrutura.
+**Descrição:** Não se destina a ser usado diretamente, este é o comando que é executado quando um administrador clica num aviso no chat que lhes permite teletransportar-se para uma estrutura.
 
 ## Comando Version
 
@@ -48,7 +43,7 @@ num aviso de chat que o permite teletransportar para uma estrutura.
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Exibe a versão do plugin no chat.
+**Descrição:** Apresenta a versão do plugin no chat.
 
 ## Comando Silent
 
@@ -56,5 +51,5 @@ num aviso de chat que o permite teletransportar para uma estrutura.
 
 **Permissão:** `betterstructures.*`
 
-**Descrição:** Silencia ou remove o silêncio de avisos que aparecem no chat para os operadores do servidor sobre
-estruturas a serem geradas no servidor.
+**Descrição:** Silencia ou remove o silêncio dos avisos que aparecem no chat para os operadores do servidor sobre estruturas que estão a ser geradas no servidor.
+```

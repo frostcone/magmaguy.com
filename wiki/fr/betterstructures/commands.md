@@ -1,7 +1,8 @@
+Voici la traduction en français, en conservant le formatage markdown :
+
 # Commandes BetterStructures
 
-Ci-dessous, vous trouverez une liste complète des commandes disponibles pour le plugin BetterStructures, ainsi que leurs
-permissions respectives.
+Voici une liste complète des commandes disponibles pour le plugin BetterStructures, ainsi que les permissions requises correspondantes.
 
 ## Commande Reload
 
@@ -9,24 +10,21 @@ permissions respectives.
 
 **Permission :** `betterstructures.*`
 
-**Description :** Recharge le plugin. Importe également toutes les structures qui doivent être importées.
+**Description :** Recharge le plugin. Importe également toutes les structures qui doivent l'être.
 
 ## Commande Lootify
 
-**Commande :** `/betterstructures lootify <nom du fichier de trésor> <rareté> <quantitéMin> <quantitéMax> <poids>`
+**Commande :** `/betterstructures lootify <nom_fichier_tresor> <rarity> <minAmount> <maxAmount> <weight>`
 
 **Permission :** `betterstructures.*`
 
-**Description :** Ajoute l'objet actuellement tenu à la table de `rareté` spécifiée du `générateur` spécifié, en
-randomisant la quantité de l'objet qui peut être trouvée dans un coffre entre `quantitéMin` et `quantitéMax`, avec
-le `poids` spécifié.
+**Description :** Ajoute l'objet actuellement tenu à la table de `rarity` spécifique du `generator` spécifique, en randomisant la quantité de l'objet qui peut être trouvée dans un coffre entre `minAmount` et `maxAmount`, avec le `weight` spécifié.
 
-C'est un système très spécifique. Pour plus de détails sur le fonctionnement de ces valeurs, vous pouvez
-consulter [cette page]($language$/betterstructures/creating_structures.md).
+C'est un système très spécifique. Pour plus de détails sur le fonctionnement de ces valeurs, vous pouvez lire [cette page]($language$/betterstructures/creating_structures.md).
 
 ## Commande Place
 
-**Commande :** `/betterstructures place <nom du fichier de structure> <type de générateur>`
+**Commande :** `/betterstructures place <nom_fichier_structure> <type_generateur>`
 
 **Permission :** `betterstructures.*`
 
@@ -34,12 +32,11 @@ consulter [cette page]($language$/betterstructures/creating_structures.md).
 
 ## Commande Teleportcoords
 
-**Commande :** `/betterstructures teleporttocoords <nomDuMonde> <x> <y> <z>`
+**Commande :** `/betterstructures teleporttocoords <nom_monde> <x> <y> <z>`
 
 **Permission :** `betterstructures.*`
 
-**Description :** N'est pas destinée à être utilisée directement, il s'agit de la commande qui s'exécute lorsqu'un
-administrateur clique sur un avertissement dans le chat qui lui permet de se téléporter vers une structure.
+**Description :** N'est pas destinée à être utilisée directement. C'est la commande qui s'exécute lorsqu'un administrateur clique sur un avertissement dans le chat lui permettant de se téléporter à une structure.
 
 ## Commande Version
 
@@ -55,5 +52,4 @@ administrateur clique sur un avertissement dans le chat qui lui permet de se té
 
 **Permission :** `betterstructures.*`
 
-**Description :** Active ou désactive les avertissements qui apparaissent dans le chat pour les opérateurs du serveur
-concernant les structures générées sur le serveur.
+**Description :** Active ou désactive le silence des avertissements apparaissant dans le chat pour les opérateurs de serveur concernant la génération de structures sur le serveur.

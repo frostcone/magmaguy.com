@@ -1,77 +1,55 @@
+Claro, aqui está a tradução para português (Portugal), mantendo a formatação markdown:
+
 # O que é um ficheiro de tesouro?
 
-Ficheiros de tesouro são o que determinam as tabelas de saque para os baús de BetterStructures. Geralmente são
-atribuídos
-a [geradores]($language$/betterstructures/creating_generators.md&section=treasurefilename), mas também podem ser
-definidos no
-nível de uma [configuração de construção individual]($language$/betterstructures/creating_structures.md&section=treasurefile).
+Os ficheiros de tesouro são o que determina as tabelas de saque para os baús do BetterStructures. São geralmente atribuídos
+a [geradores](pt/betterstructures/creating_generators.md&section=treasurefilename) mas também podem ser definidos ao
+nível de uma [configuração de construção individual](pt/betterstructures/creating_structures.md&section=treasurefile).
 
-Estas tabelas de saque são bastante poderosas, mas também exigem o conhecimento de alguns conceitos básicos de
-estatística para serem compreendidas.
+Estas tabelas de saque são bastante poderosas, mas também requerem conhecimento de alguns conceitos básicos de estatística para serem compreendidas.
 
 <details>
 <summary>
-Leia sobre esses conceitos aqui, o resto da página pressupõe que os entende!
+Leia sobre esses conceitos aqui, o resto da página assume que os compreende!
 </summary>
 
 ***Probabilidade ponderada***
 
-BetterStructures e EliteMobs usam frequentemente o conceito de probabilidade ponderada. Isto serve para resolver um
-problema simples: como pode definir a probabilidade de escolher um item de uma lista de itens potencialmente infinitos?
+BetterStructures e EliteMobs frequentemente usam o conceito de probabilidade ponderada. Isto é para resolver um problema simples: como pode definir a chance de escolher um item de uma lista de itens potencialmente infinitos?
 
-A probabilidade ponderada resolve este problema atribuindo um peso a cada item. Se tiver 100 itens e cada um tiver um
-peso de 1, todos têm a mesma probabilidade - 1% - de serem escolhidos. Se adicionar mais um item, elevando o total para
-101 itens, e atribuir a esse último item uma probabilidade de 1, todos os itens ainda têm a mesma probabilidade - ~
-0,99% - de serem escolhidos. Se atribuir ao último item um peso de 2, a probabilidade de ser escolhido aumenta - o novo
-peso total é 102, o último elemento tem um peso de 2 e 100/102 = ~0,98%, portanto 0,98%+0,98% = 1,96% de probabilidade
-de ser escolhido. Se atribuir ao último item um peso de 100, o novo peso é 200 e, como metade desse peso é o seu novo
-item, o seu novo item tem uma probabilidade de 50% de ser escolhido.
+A probabilidade ponderada resolve este problema dando a cada item um peso (weight). Se tiver 100 itens e cada um tiver um weight de 1, então todos têm a mesma chance - 1% - de serem escolhidos. Se adicionar mais um item, elevando o total para 101 itens, e der a esse último item uma chance de 1, todos os itens ainda têm a mesma chance - ~0.99% - de serem escolhidos. Se der ao último item um weight de 2, a chance de ele ser escolhido aumenta - o novo weight total é 102, o último elemento tem um weight de 2 e 100/102 = ~0.98%, então 0.98%+0.98% = 1.96% de chance de ser escolhido. Se der ao último item um weight de 100, o novo weight é 200, e como metade desse weight é o seu novo item, o seu novo item tem 50% de chance de ser escolhido.
 
-Como pode ver, isto é bom para usar quando tem listas de centenas de coisas para aleatorizar.
+Como pode ver, isto é bom para usar quando pode ter listas de centenas de coisas para sortear.
 
-***Distribuição gaussiana***
+***Distribuição Gaussiana***
 
 Uma distribuição gaussiana é uma função matemática em forma de sino.
 
 <img src="http://sfonline.barnard.edu/wp-content/uploads/2015/12/gaussian-distribution.jpg">
 
-Pode estar a perguntar-se como é que isto é relevante para o sistema de saque. Uma coisa que o BetterStructures tem de
-decidir quando define o saque nos baús é quanto saque aparece nesses baús. A quantidade deve ser consistentemente em
-torno de um número específico, mas, idealmente, não tão previsível que abrir um baú se torne menos emocionante.
+Pode estar a perguntar-se como isto é relevante para o sistema de saque. Uma coisa que o BetterStructures tem de decidir ao definir o saque nos baús é a quantidade de saque que aparece nesses baús. A quantidade deve ser consistentemente em torno de um número específico, mas idealmente não tão previsível que abrir um baú possa tornar-se menos emocionante.
 
-Para conseguir este efeito semialeatório, a distribuição gaussiana é usada para aleatorizar *quantos* itens são
-escolhidos. Assim que esta quantidade é escolhida, a *probabilidade ponderada* escolhe um elemento da tabela de raridade
-aleatoriamente, tendo em conta os pesos.
+Para alcançar este efeito semi-aleatório, a distribuição gaussiana é usada para sortear *quantos* itens são escolhidos. Uma vez que esta quantidade é escolhida, a *probabilidade ponderada* escolhe um elemento da tabela de raridade aleatoriamente e tendo os weights em conta.
 
 Então, como funciona a distribuição gaussiana?
 
-Felizmente, não tem de se preocupar com o funcionamento da matemática por trás e pode, em vez disso, concentrar-se nas
-duas configurações que a modificam: média e desvio padrão.
+Felizmente, não precisa de se preocupar com a matemática por trás dela, e pode focar-se nas duas configurações que a modificam: mean (média) e standard deviation (desvio padrão).
 
-*Média*
+*Mean (Média)*
 
-De forma simples, a `média` define o meio da curva gaussiana, o que significa que define a quantidade mais provável de
-itens que irão aparecer num baú. Essencialmente, se quiser que os seus baús tenham normalmente 5 itens, defina a sua
-média para 5.
+Simplificando, `mean` define o meio da curva gaussiana, o que significa que define a quantidade mais provável de itens que aparecerão num baú. Essencialmente, se quiser que os seus baús geralmente tenham 5 itens, defina a sua mean para 5.
 
-*Desvio padrão*
+*Standard deviation (Desvio padrão)*
 
-Imagine que o número médio de itens num baú é 5. O `desvio padrão` ajuda a decidir o quanto este número pode mudar de um baú para outro.
+Imagine que o número médio de itens num baú é 5. O `standard deviation` ajuda a decidir o quanto este número pode mudar de um baú para outro.
 
-`Desvio Padrão` pequeno (por exemplo, 1): Isto significa que a maioria dos baús terá itens muito próximos da média, como
-4, 5 ou 6 itens. É uma experiência mais previsível. Por exemplo, se um baú tiver um desvio padrão de 1, pode esperar que
-quase todos os baús tenham entre 4 e 6 itens.
+`Standard Deviation` pequeno (por exemplo, 1): Isto significa que a maioria dos baús terá itens muito próximos da média, como 4, 5 ou 6 itens. É uma experiência mais previsível. Por exemplo, se um baú tiver um standard deviation de 1, pode esperar que quase todos os baús tenham entre 4 a 6 itens.
 
-`Desvio Padrão` médio (por exemplo, 2): Aqui, há mais variedade. Os baús podem ter entre 3 e 7 itens. Embora 5 itens
-ainda sejam comuns, não é incomum encontrar baús com um pouco mais ou menos. Portanto, com um desvio padrão de 2, pode
-ocasionalmente encontrar um baú com apenas 3 itens ou, se tiver sorte, um com 7 itens.
+`Standard Deviation` médio (por exemplo, 2): Aqui, há mais variedade. Os baús podem ter de 3 a 7 itens. Embora 5 itens ainda sejam comuns, não é incomum encontrar baús com um pouco mais ou menos. Assim, com um standard deviation de 2, pode ocasionalmente encontrar um baú com apenas 3 itens, ou se tiver sorte, um com 7 itens.
 
-`Desvio Padrão` grande (por exemplo, 3 ou mais): Agora as coisas tornam-se realmente surpreendentes! Os baús podem ter
-tão poucos como 2 itens ou tantos como 8 ou mais. Significa que pode encontrar um baú com apenas alguns itens, mas
-também há uma hipótese de encontrar um baú cheio de guloseimas. Por exemplo, com um desvio padrão de 3, um baú pode ter
-entre 2 e 8 itens, tornando cada abertura de baú uma aposta emocionante.
+`Standard Deviation` grande (por exemplo, 3 ou mais): Agora as coisas ficam realmente surpreendentes! Os baús podem ter tão poucos quanto 2 itens ou tantos quanto 8 ou mais. Significa que pode encontrar um baú com apenas alguns itens, mas também há a chance de encontrar um baú carregado de guloseimas. Por exemplo, com um standard deviation de 3, um baú pode ter entre 2 a 8 itens, tornando cada abertura de baú uma aposta emocionante.
 
-***A média padrão é 4 e o desvio padrão é 3.***
+***A média padrão é 4, e o desvio padrão padrão é 3.***
 
 </details>
 
@@ -128,43 +106,39 @@ procedurallyGeneratedItemSettings:
 
 ```
 
-*Nota: esta é uma versão muito reduzida do ficheiro, o ficheiro real tem 2599 linhas, pois cobre muito mais saque e
-todos os encantamentos possíveis.*
+*Nota: esta é uma versão muito reduzida do ficheiro, o ficheiro real tem 2599 linhas, pois cobre muito mais saque e todos os encantamentos possíveis.*
 
 # isEnabled
 
-| Chave       |       Valores       | Padrão |
-|-------------|:-------------------:|--------|
-| `isEnabled` | [Boolean](#boolean) | `true` |
+| Chave |       Valores        | Padrão |
+|-|:-------------------:|-|
+| `isEnabled` | [Booleano](#boolean) | `true` |
 
 ***
 
 # mean
 
-| Chave  |      Valores      | Padrão |
-|--------|:-----------------:|--------|
-| `mean` | [Double](#double) | `4`    |
+| Chave    |      Valores       | Padrão |
+|--------|:-----------------:|---------|
+| `mean` | [Duplo](#double) | `4`     |
 
-Defina a `média`. Leia os detalhes sobre
-isso [aqui](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+Define a `mean`. Leia os detalhes sobre isso [aqui](https://magmaguy.com/wiki.html#lang=pt&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # standardDeviation
 
-| Chave               |      Valores      | Padrão |
-|---------------------|:-----------------:|--------|
-| `standardDeviation` | [Double](#double) | `3`    |
+| Chave                 |      Valores       | Padrão |
+|---------------------|:-----------------:|---------|
+| `standardDeviation` | [Duplo](#double) | `3`     |
 
-Defina o `desvio padrão`. Leia os detalhes sobre
-isso [aqui](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+Define o `standardDeviation`. Leia os detalhes sobre isso [aqui](https://magmaguy.com/wiki.html#lang=pt&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # items
 
-É aqui que se torna complicado, pois muitas das opções podem ser definidas pelos administradores. Vamos analisar o
-exemplo do ficheiro de configuração anterior.
+É aqui que fica complicado, pois muitas das opções podem ser definidas pelos administradores. Vamos analisar o exemplo de ficheiro de configuração anterior.
 
 ```yml
 items:
@@ -190,42 +164,38 @@ items:
       weight: 6.0
 ```
 
-Aqui, pode ver que, sob a chave de configuração `items`, temos um mapa com `common` e `rare`. Estas são `raridades`!
+Aqui, pode ver que sob a chave de configuração `items` temos um mapa com `common` e `rare`. Estas são `raridades`!
 ***
 
 ## raridades
 
-As raridades não têm um nome fixo. Pode adicioná-las ou removê-las e personalizá-las tanto quanto quiser, desde que use
-o mesmo formato.
+As raridades não têm um nome fixo. Pode adicioná-las ou removê-las, e personalizá-las tanto quanto quiser, desde que use o mesmo formato.
 
-Note que o que torna estas tabelas de raridade mais ou menos raras é o `peso` da tabela de saque!
+Note que o que torna estas tabelas de raridade mais ou menos raras é o `weight` da tabela de saque!
 
-Por defeito:
-- `common` tem um `peso` padrão de 60
-- `rare` tem um `peso` padrão de 30
-- `epic` tem um `peso` padrão de 10
+Por padrão:
+- `common` tem um `weight` padrão de 60
+- `rare` tem um `weight` padrão de 30
+- `epic` tem um `weight` padrão de 10
 
-Tornando os itens comuns 6x mais prováveis de cair do que os itens épicos. Pode ler mais
-sobre `pesos` [aqui](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)!
+Tornando os itens common 6x mais prováveis de cair do que os itens epic. Pode ler mais sobre `weight`s [aqui](https://magmaguy.com/wiki.html#lang=pt&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)!
 
-Além do peso, cada tabela de raridade tem a sua própria lista de `items`.
+Além do weight, cada tabela de raridade tem a sua própria lista de `items`.
 
 ***
 
-### rarity items
+### items de raridade
 
-Os itens de raridade são
-uma [lista de mapas](https://magmaguy.com/wiki.html#lang=en&article=global+configuration_file_guide.md&section=map-list)
-que lista todos os itens que a tabela de raridade tem.
+Os items de raridade são uma [lista de mapa](https://magmaguy.com/wiki.html#lang=pt&article=global+configuration_file_guide.md&section=map-list) que lista todos os items que a tabela de raridade tem.
 
-Estes itens têm as seguintes configurações:
+Estes items têm as seguintes configurações:
 
-| Chave                              |           Valores           | Padrão   |
+| Chave                                |           Valores            | Padrão   |
 |------------------------------------|:---------------------------:|----------|
-| `amount`                           | min-max [Integer](#integer) | variável |
+| `amount`                           | min-max [Inteiro](#integer) | variável |
 | `material`                         |    [Material](#Material)    | variável |
-| `procedurallyGenerateEnchantments` |     [Boolean](#boolean)     | variável |
-| `weight`                           |      [Double](#double)      | variável |
+| `procedurallyGenerateEnchantments` |     [Booleano](#boolean)     | variável |
+| `weight`                           |      [Duplo](#double)      | variável |
 
 ***
 
@@ -233,40 +203,36 @@ Estes itens têm as seguintes configurações:
 
 ***
 
-Define a quantidade a cair. Isto é expresso como um intervalo da seguinte forma `amount: MIN-MAX`. Como exemplo, para
-cair entre 1 a 5
-itens: `amount: 1-5`.
+Define a quantidade a cair. Isto é expresso como um intervalo da seguinte forma `amount: MIN-MAX`. Como exemplo, para cair entre 1 a 5
+items: `amount: 1-5`.
 
 #### material
 
 Define o material usando os [nomes da API Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) do
-item a cair potencialmente.
+item que pode cair.
 
 ***
 
-##### Caso especial - serializado
+##### Caso especial - serialized
 
-Ao usar o comando lootify, em vez de um material, o lootify irá fornecer uma configuração `serialized`. Isto é gerado
-automaticamente pelo plugin e não deve ser gerado manualmente. Está num formato que não é legível por humanos.
+Ao usar o comando lootify, em vez de um material, o lootify fornecerá uma configuração `serialized`. Isto é gerado automaticamente pelo plugin e não deve ser gerado manualmente. Está num formato que não é legível por humanos.
 
 ***
 
 #### weight
 
-Define o peso para a probabilidade ponderada. Mais sobre
-isso [aqui](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+Define o weight para a probabilidade ponderada. Mais sobre isso [aqui](https://magmaguy.com/wiki.html#lang=pt&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 #### procedurallyGenerateItems
 
-Define se o item deve ser gerado processualmente com base nas configurações de configuração,
-se `procedurallyGeneratedItemSettings`. Note que, com base nas configurações, isto pode resultar num item a ser gerado
-sem encantamentos, independentemente disso.
+Define se o item deve ser gerado proceduralmente com base nas configurações se `procedurallyGeneratedItemSettings`. Note que, com base nas configurações, isto pode resultar na geração de um item sem encantamentos, independentemente.
+
 
 # procedurallyGeneratedItemSettings
 
-Vamos analisar mais uma vez o nosso exemplo de ficheiro de configuração:
+Vamos dar outra olhada no nosso exemplo de ficheiro de configuração:
 
 ```yml
 procedurallyGeneratedItemSettings:
@@ -281,19 +247,16 @@ procedurallyGeneratedItemSettings:
       chance: 0.2
 ```
 
-Como pode ver, este ficheiro lista os tipos de materiais, seguidos pelos encantamentos e depois seguidos pelos níveis
-mínimo e máximo e uma probabilidade.
+Como pode ver, este ficheiro lista tipos de material, seguidos por encantamentos e depois seguidos por níveis mínimo e máximo e uma chance.
 
-Note que não pode adicionar materiais personalizados de outros plugins nestas configurações e provavelmente não
-conseguirá adicionar encantamentos personalizados de outros plugins, a menos que o seu autor diga explicitamente que
-tornou o seu sistema compatível.
+Note que não pode adicionar materiais personalizados de outros plugins nestas configurações, e provavelmente não conseguirá adicionar encantamentos personalizados de outros plugins, a menos que o autor deles diga explicitamente que tornou o seu sistema compatível.
 
 Quanto às configurações de encantamento:
 
-| Chave      |       Valores       | Padrão   |
+| Chave        |       Valores        | Padrão   |
 |------------|:-------------------:|----------|
-| `minLevel` | [Integer](#integer) | variável |
-| `maxLevel` | [Integer](#integer) | variável |
+| `minLevel` | [Inteiro](#integer) | variável |
+| `maxLevel` | [Inteiro](#integer) | variável |
 | `chance`   |  [Chance](#chance)  | variável |
 
 ***
@@ -312,5 +275,4 @@ Define o nível máximo de encantamento.
 
 ## chance
 
-Define a probabilidade de o encantamento acontecer. Isto não está a usar a probabilidade ponderada, apenas um lançamento
-de dados normal.
+Define a chance do encantamento acontecer. Isto não usa probabilidade ponderada, apenas um lançamento de dado normal.

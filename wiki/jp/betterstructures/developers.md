@@ -1,3 +1,5 @@
+日本語に翻訳します。Markdownの書式は維持します。
+
 # 公開リポジトリ
 
 ## Maven
@@ -13,7 +15,7 @@
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>最新バージョンを確認してください！</version>
+  <version>Check what the latest version is!</version>
   <scope>provided</scope>
 </dependency>
 ```
@@ -28,7 +30,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:最新バージョンを確認してください！'
+    implementation 'com.magmaguy:BetterStructures:Check what the latest version is!'
 }
 ```
 
@@ -36,31 +38,30 @@ dependencies {
 
 # イベント
 
-**注意: イベントは com.magmaguy.betterstructures.api にあります**
+**注: イベントは com.magmaguy.betterstructures.api にあります**
 
 ## BuildPlaceEvent
 
-ビルドが配置されようとするときに呼び出されます。FitAnythingオブジェクトを通して、どのビルドがどこに配置されるかなどに関するデータが公開されます。
+ビルドが配置されようとしているときに呼び出されます。FitAnything オブジェクトを介して、どのビルドがどこに配置されるかなどのデータが公開されます。
 
-**配置されるビルドを修正しようとしないでください！** 細かい変更はできますが、ビルド全体を変更すると、おそらくフィット感が悪いビルドになります。
+**配置されるビルドを変更しようとしないでください！** 細かい変更は可能ですが、ビルド全体を変更すると、おそらくうまくフィットしないビルドになります。
 
 これはキャンセル可能です。
 
 ## ChestFillEvent
 
-チェストが満たされるときに呼び出されます。コンテナスナップショットインベントリを使用して、適用されるデータを安全に保存します。
+チェストが満たされたときに呼び出されます。適用されるデータを安全に保存するために、コンテナスナップショットインベントリを使用します。
 
-ルートの変更は、Spigotのアイテム追加または削除メソッドを使用してスナップショットインベントリに対して行う必要があります。
+ルートの変更は、Spigot のアイテム追加または削除メソッドを介してスナップショットインベントリに対して行う必要があります。
 
 これはキャンセル可能です。
 
-# 主要なクラス
+# 主要クラス
 
 ## FitAnything
 
-FitAnythingクラスは、ビルドがペーストされたときにインスタンス化され、チェストの充填やモブのスポーンなど、ペーストのあらゆる側面を処理するクラスです。
+FitAnything クラスは、ビルドが貼り付けられたときにインスタンス化され、チェストの充填やモブのスポーンを含む、貼り付けのあらゆる側面を処理するクラスです。
 
 ## WorldGuard
 
-WorldGuardクラスは、WorldGuardのリージョン保護を処理します。ユーティリティメソッド `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)`
-は、開発者がBetterStructuresの上にカスタムリージョン保護スキームを簡単にフックできるように提供されています。
+WorldGuard クラスは、WorldGuard のリージョン保護を処理します。ユーティリティメソッド `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)` は、開発者が BetterStructures の上にカスタムリージョン保護スキームを簡単にフックできるように提供されています。

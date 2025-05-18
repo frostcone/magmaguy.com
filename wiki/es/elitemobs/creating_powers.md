@@ -2,38 +2,32 @@
 
 # Sistema de Scripting de EliteMobs
 
-La siguiente página cubre cómo crear Scripts de Elite.
+La siguiente página cubre cómo crear Scripts de Élite!
 
-¡Esta es una función avanzada y requiere un conocimiento profundo de EliteMobs!
+Esta es una característica avanzada y requiere un conocimiento profundo de EliteMobs.
 
-**Nota: ¡Los Scripts de Elite se pueden agregar como archivos de poder o a archivos de jefes personalizados!** Si se
-usan como archivos de poder, puede agregarlos como poderes normales a los jefes usando la
-configuración [powers]($language$/elitemobs/creating_bosses.md&section=powers) de Jefes Personalizados, como de
-costumbre.
+**Nota: ¡Los Scripts de Élite se pueden añadir como archivos de poder o a archivos de jefes personalizados!** Si se usan como archivos de poder, puedes añadirlos como poderes normales a los jefes usando la configuración [powers](es/elitemobs/creating_bosses.md&section=powers) de Jefes Personalizados, como de costumbre.
 
-## Agregando un EliteScript
+## Añadiendo un EliteScript
 
-Para comenzar a agregar un EliteScript a un jefe, agregue la siguiente entrada al archivo del jefe:
+Para empezar a añadir un EliteScript a un jefe, añade la siguiente entrada al archivo del jefe:
 
 ```yml
 eliteScript:
 ```
 
-**Nota: ¡Lo siguiente es extremadamente sensible a mayúsculas y espacios! ¡Asegúrese de que sus espacios, saltos de
-línea y formato general coincidan con los ejemplos!**
+**Nota: ¡Lo siguiente es extremadamente sensible a mayúsculas/minúsculas y espacios! Asegúrate de que tus espacios, saltos de línea y formato general coincidan con los ejemplos!**
 
-Ahora que tiene declarado el inicio de su script, puede agregar su script específico. Para este ejemplo, vamos a crear
-un script llamado `Example`:
+Ahora que has declarado el inicio de tu script, puedes añadir tu script específico. Para este ejemplo, vamos a crear un script llamado `Example`:
 
 ```yml
 eliteScript:
   Example:
 ```
 
-Los EliteScripts tienen 5 secciones diferentes: `Events`, `Conditions`, `Zones`, `Actions` y `Cooldowns`. Solo `Actions`
-es obligatorio.
+Los EliteScripts tienen 5 secciones diferentes: `Events`, `Conditions`, `Zones`, `Actions` y `Cooldowns`. Solo `Actions` son obligatorias.
 
-Echemos un vistazo a un ejemplo simple:
+Veamos un ejemplo simple:
 
 ```yml
 eliteScript:
@@ -50,56 +44,53 @@ eliteScript:
       global: 20
 ```
 
-Este script hace que un élite sea empujado hacia arriba cuando es golpeado por un jugador, y no lo volverá a hacer
-durante 3 segundos (y evitará que otros poderes se activen durante 1 segundo debido a la configuración que tenemos
-establecida en la sección Cooldowns).
+Este script hace que un élite sea empujado hacia arriba cuando es golpeado por un jugador, y no lo hará de nuevo durante 3 segundos (y detendrá la activación de otros poderes durante 1 segundo debido a la configuración que hemos establecido en la sección Cooldowns).
 
-Ahora que conoce el formato general de cómo se estructuran los scripts, ¡es hora de aprender lo que puede hacer con cada sección!
+Ahora que conoces el formato general de cómo se estructuran los scripts, ¡es hora de aprender qué puedes hacer con cada sección!
 
 ----
 
 # Eventos
 
-[Eventos]($language$/elitemobs/elitescript_events.md)
+[Eventos](es/elitemobs/elitescript_events.md)
 
-¡Haga clic en el enlace de arriba para aprender cómo usar eventos!
+¡Haz clic en el enlace de arriba para aprender a usar eventos!
 
 # Objetivos
 
-[Objetivos]($language$/elitemobs/elitescript_targets.md)
+[Objetivos](es/elitemobs/elitescript_targets.md)
 
-¡Haga clic en el enlace de arriba para aprender cómo usar objetivos!
+¡Haz clic en el enlace de arriba para aprender a usar objetivos!
 
 # Acciones
 
-[Acciones]($language$/elitemobs/elitescript_actions.md)
+[Acciones](es/elitemobs/elitescript_actions.md)
 
-¡Haga clic en el enlace de arriba para aprender cómo usar acciones!
+¡Haz clic en el enlace de arriba para aprender a usar acciones!
 
 # Zonas
 
-[Zonas]($language$/elitemobs/elitescript_zones.md)
+[Zonas](es/elitemobs/elitescript_zones.md)
 
-¡Haga clic en el enlace de arriba para aprender cómo usar zonas!
+¡Haz clic en el enlace de arriba para aprender a usar zonas!
 
 # Condiciones
 
-[Condiciones]($language$/elitemobs/elitescript_conditions.md)
+[Condiciones](es/elitemobs/elitescript_conditions.md)
 
-¡Haga clic en el enlace de arriba para aprender cómo usar condiciones!
+¡Haz clic en el enlace de arriba para aprender a usar condiciones!
 
-# Tiempos de Enfriamiento
+# Tiempos de Recarga
 
-[Tiempos de Enfriamiento]($language$/elitemobs/elitescript_cooldowns.md)
+[Tiempos de Recarga](es/elitemobs/elitescript_cooldowns.md)
 
-¡Haga clic en el enlace de arriba para aprender cómo usar los tiempos de enfriamiento!
+¡Haz clic en el enlace de arriba para aprender a usar tiempos de recarga!
 
 ----
 
-## Agregando múltiples EliteScripts
+## Añadiendo múltiples EliteScripts
 
-Puede tener múltiples acciones en un evento, pero ¿qué sucede si desea múltiples scripts en el mismo jefe? ¡Esto es tan
-simple como crear una nueva entrada de script! Ampliemos el ejemplo anterior y agreguemos otro script:
+Puedes tener múltiples acciones en un evento, pero ¿qué pasa si quieres múltiples scripts en el mismo jefe? ¡Esto es tan simple como crear una nueva entrada de script! Ampliemos el ejemplo anterior y añadamos otro script:
 
 ```yml
 eliteScript:
@@ -125,18 +116,11 @@ eliteScript:
       local: 200
       global: 60
 ```
-
-En este ejemplo, hemos agregado un segundo script llamado Ejemplo2. El Ejemplo2 incendiará al jugador que resulte dañado
-por el jefe, esto se debe a que el targetType está configurado
-en [DIRECT_TARGET]($language$/elitemobs/elitescript_targets.md&section=target-types). </br>El tiempo de enfriamiento
-para este script está establecido en 200 ticks, lo que significa que el jefe solo podrá incendiar a los jugadores cada
-10 segundos.
+En este ejemplo hemos añadido un segundo script llamado Example2. Example2 prenderá fuego al jugador que sea dañado por el jefe, esto se debe a que targetType está configurado como [DIRECT_TARGET](es/elitemobs/elitescript_targets.md&section=target-types). </br>El tiempo de recarga para este script está configurado a 200 ticks, lo que significa que el jefe solo podrá prender fuego a los jugadores cada 10 segundos.
 
 ## Creando poderes independientes
 
-Los poderes independientes están casi totalmente compuestos por el Script de Elite. Solo hay dos campos que son
-opcionales. No olvide que para que los poderes independientes funcionen, deben colocarse en la
-carpeta `~plugins/EliteMobs/powers`. </br>Ejemplo de poder independiente:
+Los poderes independientes están compuestos casi en su totalidad por el Elite Script. Solo hay dos campos que son opcionales. No olvides que para que los poderes independientes funcionen, deben colocarse en la carpeta `~plugins/EliteMobs/powers`. </br>Ejemplo de poder independiente:
 
 ```yml
 isEnabled: true
@@ -157,13 +141,12 @@ eliteScript:
 
 ### isEnabled
 
-Igual que en cualquier otra parte del complemento, establece si el poder está habilitado.
+Igual que en cualquier otra parte del plugin, establece si el poder está habilitado.
 
 ### powerType
 
 El tipo de poder establece cómo se asigna el poder. Los valores son:
 
-- `UNIQUE`: El poder solo se aplicará a jefes personalizados que tengan el poder establecido en la sección de poderes.
-- `DEFENSIVE` / `MISCELLANEOUS` / `OFFENSIVE`: CUALQUIER élite podrá obtener estos poderes y contarán para un subconjunto específico de poderes.
-- `MAJOR_ZOMBIE`, `MAJOR_SKELETON`, `MAJOR_BLAZE`, `MAJOR_ENDERMAN`, `MAJOR_GHAST`: Solo las élites del tipo de entidad
-  adecuado podrán aparecer naturalmente con estos poderes y contarán para los poderes mayores.
+- `UNIQUE`: El poder solo se aplicará a los jefes personalizados que tengan el poder configurado en la sección powers.
+- `DEFENSIVE` / `MISCELLANEOUS` / `OFFENSIVE`: CUALQUIER élite podrá obtener estos poderes, y contarán para un subconjunto específico de poderes.
+- `MAJOR_ZOMBIE`, `MAJOR_SKELETON`, `MAJOR_BLAZE`, `MAJOR_ENDERMAN`, `MAJOR_GHAST`: Solo las élites del tipo de entidad adecuado podrán aparecer naturalmente con estos poderes, y contarán para los poderes mayores.

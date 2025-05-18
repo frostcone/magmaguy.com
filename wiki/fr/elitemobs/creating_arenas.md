@@ -1,6 +1,8 @@
+Voici la traduction en français, en conservant le formatage markdown :
+
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# Création d'arènes
+# Créer des arènes
 
 <div align="center">
 
@@ -8,11 +10,11 @@
 
 Définit si l'arène est activée.
 
-| Clé         |       Valeurs       | Défaut |
-|-------------|:-------------------:|:------:|
-| `isEnabled` | [Booléen](#boolean) | `true` |
+| Clé       |      Valeurs      | Défaut  |
+|-----------|:-----------------:|:-------:|
+|`isEnabled`| [Boolean](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -32,18 +34,18 @@ isEnabled: true
 
 Définit le nom de l'arène.
 
-| Clé         |             Valeurs             | Défaut |
-|-------------|:-------------------------------:|:------:|
-| `arenaName` | [Chaîne de caractères](#string) | aucun  |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+|`arenaName`| [String](#string) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-arenaName: Arène Bedrock
+arenaName: Bedrock Arena
 ```
 
 <div align="center">
@@ -62,24 +64,23 @@ arenaName: Arène Bedrock
 
 Définit le premier coin de l'arène.
 
-| Clé       |               Valeurs               | Défaut |
-|-----------|:-----------------------------------:|:------:|
-| `corner1` | [Emplacement](#serialized_location) | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+|`corner1`| [Location](#serialized_location) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-corner1: mon_monde_arene,10,50,-10,0,0
+corner1: my_arena_world,10,50,-10,0,0
 ```
 
 <div align="center">
 
-Sur cette image, `corner1` est représenté par de la *laine verte* et `corner2` est représenté par de la *laine rouge*.
-Cette configuration désigne la zone entre les deux comme étant l'arène, représentée par de la *laine jaune*.
+Dans cette image, `corner1` est représenté par de la *laine verte* et `corner2` est représenté par de la *laine rouge*. Cette configuration désigne la zone entre eux comme l'arène, représentée par de la *laine jaune*.
 
 ![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
 
@@ -93,26 +94,25 @@ Cette configuration désigne la zone entre les deux comme étant l'arène, repr�
 
 ### corner2
 
-Définit le deuxième coin de l'arène, il doit être diamétralement opposé à `corner1`.
+Définit le deuxième coin de l'arène, doit être diamétralement opposé à `corner1`.
 
-| Clé       |               Valeurs               | Défaut |
-|-----------|:-----------------------------------:|:------:|
-| `corner2` | [Emplacement](#serialized_location) | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+| `corner2` | [Location](#serialized_location) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-corner2: mon_monde_arene,-10,50,10,0,0
+corner2: my_arena_world,-10,50,10,0,0
 ```
 
 <div align="center">
 
-Sur cette image, `corner1` est représenté par de la *laine verte* et `corner2` est représenté par de la *laine rouge*.
-Cette configuration désigne la zone entre les deux comme étant l'arène, représentée par de la *laine jaune*.
+Dans cette image, `corner1` est représenté par de la *laine verte* et `corner2` est représenté par de la *laine rouge*. Cette configuration désigne la zone entre eux comme l'arène, représentée par de la *laine jaune*.
 
 ![create_arena_corner.jpg](../../../img/wiki/create_arena_corner.jpg)
 
@@ -128,18 +128,18 @@ Cette configuration désigne la zone entre les deux comme étant l'arène, repr�
 
 Définit l'emplacement de départ de l'arène.
 
-| Clé             |               Valeurs               | Défaut |
-|-----------------|:-----------------------------------:|:------:|
-| `startLocation` | [Emplacement](#serialized_location) | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+| `startLocation` | [Location](#serialized_location) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-startLocation: mon_monde_arene,1,50,1,0,0
+startLocation: my_arena_world,1,50,1,0,0
 ```
 
 </div>
@@ -152,18 +152,18 @@ startLocation: mon_monde_arene,1,50,1,0,0
 
 Définit l'emplacement de sortie de l'arène.
 
-| Clé            |               Valeurs               | Défaut |
-|----------------|:-----------------------------------:|:------:|
-| `exitLocation` | [Emplacement](#serialized_location) | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+| `exitLocation` | [Location](#serialized_location) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-exitLocation: mon_monde,1,50,1,0,0
+exitLocation: my_world,1,50,1,0,0
 ```
 
 </div>
@@ -174,13 +174,13 @@ exitLocation: mon_monde,1,50,1,0,0
 
 ### waveCount
 
-Définit le nombre de vagues de l'arène.
+Définit le nombre de vagues que l'arène possède.
 
-| Clé         |      Valeurs       | Défaut |
-|-------------|:------------------:|:------:|
-| `waveCount` | [Entier](#integer) | aucun  |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+| `waveCount` | [Integer](#integer) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -200,11 +200,11 @@ waveCount: 10
 
 Définit le délai, en secondes, entre les vagues.
 
-| Clé                 |      Valeurs       | Défaut |
-|---------------------|:------------------:|:------:|
-| `delayBetweenWaves` | [Entier](#integer) |  `0`   |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+| `delayBetweenWaves` | [Integer](#integer) | `0`    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -222,13 +222,13 @@ delayBetweenWaves: 5
 
 ### spawnPoints
 
-Définit les emplacements d'apparition des boss de l'arène.
+Définit les emplacements d'apparition pour les boss de l'arène.
 
-| Clé           |                      Valeurs                       | Défaut |
-|---------------|:--------------------------------------------------:|:------:|
-| `spawnPoints` | [Liste de chaînes de caractères](#string_list) [1] | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+| `spawnPoints` | [String List](#string_list) [1] | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -236,11 +236,11 @@ Définit les emplacements d'apparition des boss de l'arène.
 
 ```yml
 spawnPoints:
-- name=nord:location=mon_monde_arene,219.5,71,273.5
-- name=sud:location=mon_monde_arene,219.5,71,316.5
-- name=ouest:location=mon_monde_arene,197.5,71,295.5
-- name=est:location=mon_monde_arene,240.5,71,295.5
-- name=centre:location=mon_monde_arene,219.5,71,295.5
+- name=north:location=my_arena_world,219.5,71,273.5
+- name=south:location=my_arena_world,219.5,71,316.5
+- name=west:location=my_arena_world,197.5,71,295.5
+- name=east:location=my_arena_world,240.5,71,295.5
+- name=center:location=my_arena_world,219.5,71,295.5
 ```
 
 </div>
@@ -251,14 +251,13 @@ spawnPoints:
 
 ### bossList
 
-Définit la liste des boss qui apparaissent pendant les vagues de l'arène. Les arènes EliteMobs prennent en charge
-l'apparition de Mythic Mobs dans les arènes.
+Définit la liste des boss qui apparaissent pendant les vagues de l'arène. Les arènes EliteMobs prennent en charge l'apparition de Mythic Mobs dans les arènes.
 
-| Clé        |                      Valeurs                       | Défaut |
-|------------|:--------------------------------------------------:|:------:|
-| `bossList` | [Liste de chaînes de caractères](#string_list) [2] | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+| `bossList` | [String List](#string_list) [2] | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -266,16 +265,14 @@ l'apparition de Mythic Mobs dans les arènes.
 
 ```yml
 bossList:
-- wave=1:spawnPoint=nord:boss=mon_boss_vague_1.yml
-- wave=1:spawnPoint=sud:boss=mon_boss_vague_1.yml
-- wave=2:spawnPoint=centre:boss=mon_boss_mythicmobs:mythicmob=true:level=10
+- wave=1:spawnPoint=north:boss=my_boss_wave_1.yml
+- wave=1:spawnPoint=south:boss=my_boss_wave_1.yml
+- wave=2:spawnPoint=center:boss=my_mythicmobs_boss:mythicmob=true:level=10
 ```
 
-Dans cet exemple, la vague 1 fera apparaître un boss au point d'apparition nord et un boss au point d'apparition sud.
-Ensuite, à la vague 2, un boss mythique apparaîtra, au niveau 10, au point central.
+Dans cet exemple, la vague 1 fera apparaître un boss au point d'apparition nord et un boss au point d'apparition sud. Ensuite, à la vague 2, un boss mythique apparaîtra, au niveau 10, au point central.
 
-Notez que vous pouvez également forcer un niveau pour les boss EliteMobs, mais il est recommandé de définir leur niveau
-dans leur fichier de configuration.
+Notez que vous pouvez également forcer un niveau pour les boss EliteMobs, mais il est recommandé de définir leur niveau dans leur fichier de configuration.
 
 </div>
 
@@ -287,11 +284,11 @@ dans leur fichier de configuration.
 
 Définit les récompenses données à la fin des vagues.
 
-| Clé              |                                   Valeurs                                   | Défaut |
-|------------------|:---------------------------------------------------------------------------:|:------:|
-| `rawArenaReward` | [Tableau de butin universel EliteMobs]($language$/elitemobs/loot_tables.md) | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+| `rawArenaReward` | [Universal EliteMobs loot table](fr/elitemobs/loot_tables.md) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -299,11 +296,11 @@ Définit les récompenses données à la fin des vagues.
 
 ```yml
 rawArenaReward:
-- filename=livre_enchante_degats_tous.yml:wave=5:chance=0.25
-- filename=ferraille_elite_minuscule.yml:wave=1:chance=0.5:amount=5
+- filename=enchanted_book_damage_all.yml:wave=5:chance=0.25
+- filename=elite_scrap_tiny.yml:wave=1:chance=0.5:amount=5
 - currencyAmount=3:wave=3
-- level=5:filename=parchemin_invocation_marchand.yml:wave=5
-- filename=cure_dent_magmaguy.yml:itemlevel=10:wave=10:chance=0.95
+- level=5:filename=summon_merchant_scroll.yml:wave=5
+- filename=magmaguys_toothpick.yml:itemlevel=10:wave=10:chance=0.95
 ```
 
 </div>
@@ -314,13 +311,13 @@ rawArenaReward:
 
 ### minimumPlayerCount
 
-Définit le nombre minimum de joueurs qu'une arène doit avoir avant de démarrer.
+Définit le nombre minimum de joueurs qu'une arène doit avoir avant de commencer.
 
-| Clé                  |      Valeurs       | Défaut |
-|----------------------|:------------------:|:------:|
-| `minimumPlayerCount` | [Entier](#integer) |  `1`   |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+| `minimumPlayerCount` | [Integer](#integer) | `1`    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -340,11 +337,11 @@ minimumPlayerCount: 1
 
 Définit le nombre maximum de joueurs qu'une arène peut avoir.
 
-| Clé                  |      Valeurs       | Défaut |
-|----------------------|:------------------:|:------:|
-| `maximumPlayerCount` | [Entier](#integer) | `100`  |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+| `maximumPlayerCount` | [Integer](#integer) | `100`  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -364,11 +361,11 @@ maximumPlayerCount: 100
 
 Définit les messages qui s'affichent entre les vagues.
 
-| Clé             |   Valeurs   | Défaut |
-|-----------------|:-----------:|:------:|
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
 | `arenaMessages` | Spécial [3] | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -376,8 +373,8 @@ Définit les messages qui s'affichent entre les vagues.
 
 ```yml
 arenaMessages:
-- wave=1:message="&a[Annonceur de l'arène] &fC'est l'heure de la vague un !"
-- wave=2:message="&a[Annonceur de l'arène] &fWow, déjà la vague deux."
+- wave=1:message="&a[Arena Announcer] &fTime for wave one!"
+- wave=2:message="&a[Arena Announcer] &fWow, wave two already."
 ```
 
 <div align="center">
@@ -394,13 +391,13 @@ arenaMessages:
 
 ### cylindricalArena
 
-Définit si l'arène utilise une forme cylindrique (la valeur par défaut est cuboïde).
+Définit si l'arène utilise une forme cylindrique (par défaut, elle est cuboïde).
 
-| Clé                |       Valeurs       | Défaut  |
-|--------------------|:-------------------:|:-------:|
-| `cylindricalArena` | [Booléen](#boolean) | `false` |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+| `cylindricalArena` | [Boolean](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -418,20 +415,20 @@ cylindricalArena: false
 
 ### permission
 
-Définit l'autorisation requise pour utiliser l'arène.
+Définit la permission requise pour utiliser l'arène.
 
-| Clé          |             Valeurs              | Défaut |
-|--------------|:--------------------------------:|:------:|
-| `permission` | [Chaîne de caractères](#integer) | aucun  |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+| `permission` | [String](#integer) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-permission: monautorisation.arene
+permission: mypermission.arena
 ```
 
 </div>
@@ -443,18 +440,15 @@ permission: monautorisation.arene
 </div>
 
 ## Spécial [1]
-
-Points d'apparition: Utilise le format suivant: `name=nom_point:location=nom_monde,x,y,z`.
+Points d'apparition : Utilise le format suivant : `name=nomDuPoint:location=nom_du_monde,x,y,z`.
 
 ## Spécial [2]
-
-Liste des boss: Utilise le format suivant: `wave=x:spawnPoint=Y:boss=nomdefichierboss.yml`.
+Liste des boss : Utilise le format suivant : `wave=x:spawnPoint=Y:boss=nomDuFichierBoss.yml`.
 
 ## Spécial [3]
+Messages de l'arène : Utilise le format suivant : `wave=X:message=votre message ici`.
 
-Messages de l'arène: Utilise le format suivant: `wave=X:message=votre message ici`.
-
-<details> 
+<details>
 
 <summary align="center"><b>Exemple de configuration d'arène</b></summary>
 
@@ -462,115 +456,86 @@ Messages de l'arène: Utilise le format suivant: `wave=X:message=votre message i
 
 ```yml
 isEnabled: true
-arenaName: Arène d'exemple
-corner1: mon_monde_arene,0,0,0,0,0
-corner2: mon_monde_arene,50,50,50,0,0
-startLocation: mon_monde_arene,25,0,25,0,0
-exitLocation: mon_monde_minecraft,234,44,245,0,0
+arenaName: Example Arena
+corner1: my_arena_world,0,0,0,0,0
+corner2: my_arena_world,50,50,50,0,0
+startLocation: my_arena_world,25,0,25,0,0
+exitLocation: my_minecraft_world,234,44,245,0,0
 waveCount: 5
 delayBetweenWaves: 5
 spawnPoints:
-  - name=nord:location=mon_monde_arene,40.5,0,0
-  - name=sud:location=mon_monde_arene,10.5,0,0
-  - name=ouest:location=mon_monde_arene,0,0,40.5
-  - name=est:location=mon_monde_arene,0,0,10.5
-  - name=centre:location=mon_monde_arene,25.5,0,25.5
+  - name=north:location=my_arena_world,40.5,0,0
+  - name=south:location=my_arena_world,10.5,0,0
+  - name=west:location=my_arena_world,0,0,40.5
+  - name=east:location=my_arena_world,0,0,10.5
+  - name=center:location=my_arena_world,25.5,0,25.5
 bossList:
-  - wave=1:spawnPoint=nord:boss=mob_exemple_vague_1.yml
-  - wave=1:spawnPoint=centre:boss=mob_exemple_vague_1.yml
-  - wave=1:spawnPoint=sud:boss=mob_exemple_vague_1.yml
-  - wave=2:spawnPoint=centre:boss=mob_exemple_vague_2.yml
-  - wave=3:spawnPoint=est:boss=mob_exemple_vague_3.yml
-  - wave=3:spawnPoint=ouest:boss=mob_exemple_vague_3.yml
-  - wave=4:spawnPoint=centre:boss=mob_exemple_vague_4.yml
-  - wave=4:spawnPoint=centre:boss=mob_exemple_vague_4.yml
-  - wave=5:spawnPoint=centre:boss=mob_exemple_vague_5.yml
-  - wave=5:spawnPoint=sud:boss=mob_exemple_vague_5.yml
-  - wave=5:spawnPoint=ouest:boss=mob_exemple_vague_5.yml
+  - wave=1:spawnPoint=north:boss=example_arena_wave_1_mob.yml
+  - wave=1:spawnPoint=center:boss=example_arena_wave_1_mob.yml
+  - wave=1:spawnPoint=south:boss=example_arena_wave_1_mob.yml
+  - wave=2:spawnPoint=center:boss=example_arena_wave_2_mob.yml
+  - wave=3:spawnPoint=east:boss=example_arena_wave_3_mob.yml
+  - wave=3:spawnPoint=west:boss=example_arena_wave_3_mob.yml
+  - wave=4:spawnPoint=center:boss=example_arena_wave_4_mob.yml
+  - wave=4:spawnPoint=center:boss=example_arena_wave_4_mob.yml
+  - wave=5:spawnPoint=center:boss=example_arena_wave_5_mob.yml
+  - wave=5:spawnPoint=south:boss=example_arena_wave_5_mob.yml
+  - wave=5:spawnPoint=west:boss=example_arena_wave_5_mob.yml
 rawArenaReward:
   - currencyAmount=5:wave=1
   - currencyAmount=10:wave=2
   - currencyAmount=15:wave=3
   - currencyAmount=20:wave=4
   - currencyAmount=25:wave=5
-  - filename=cure_dent_magmaguy.yml:itemlevel=5:wave=5:chance=0.5
+  - filename=magmaguys_toothpick.yml:itemlevel=5:wave=5:chance=0.5
 minimumPlayerCount: 1
 maximumPlayerCount: 3
 arenaMessages:
-  - wave=1:message=&d[PNJ de l'arène] &fWow ! Vague 1 !
-  - wave=2:message=&d[PNJ de l'arène] &fIncroyable, c'est la vague 2 !
-  - wave=3:message=&d[PNJ de l'arène] &fLa vague 3 est lancée !
-  - wave=4:message=&d[PNJ de l'arène] &fDéjà la vague 4 !
-  - wave=5:message=&d[PNJ de l'arène] &fEh bien, tout est fini après celle-ci.
+  - wave=1:message=&d[Arena NPC] &fWow! Wave 1!
+  - wave=2:message=&d[Arena NPC] &fAmazing it is wave 2!
+  - wave=3:message=&d[Arena NPC] &fWave 3 is now on!
+  - wave=4:message=&d[Arena NPC] &fWave 4 already!
+  - wave=5:message=&d[Arena NPC] &fWell it is all over after this one.
 cylindricalArena: false
-permission: arene.monautorisation
+permission: arena.mypermission
 ```
-
 </div>
 
 </details>
 
-<details> 
+<details>
 
 <summary align="center"><b>Analyse de l'exemple</b></summary>
 
 <div align="left">
 
-Passons en revue cet exemple du début et expliquons ce que fait cette configuration d'arène.
+Passons en revue cet exemple depuis le début et expliquons ce que fait cette configuration d'arène.
 
-Tout d'abord, l'arène est activée avec `isEnabled`, et nous pouvons voir qu'elle est appelée Arène d'exemple à l'aide du
-paramètre `arenaName`. Le nom sera affiché lorsque vous interagirez avec le PNJ de l'arène (nous verrons comment créer
-un PNJ d'arène plus bas) qui permettra aux joueurs de rejoindre l'arène. corner1 et corner2 définissent la taille de
-l'arène. Ces coins doivent être aux côtés opposés l'un de l'autre dans la zone que vous prévoyez d'utiliser pour l'
-arène.
+Tout d'abord, l'arène est activée avec `isEnabled`, et nous pouvons voir qu'elle s'appelle Example Arena en utilisant le paramètre `arenaName`. Le nom sera affiché lorsque vous interagirez avec le PNJ de l'arène (nous expliquons comment créer un PNJ d'arène plus loin) qui permettra aux joueurs de rejoindre l'arène. `corner1` et `corner2` définissent la taille de l'arène. Ces coins doivent être aux côtés opposés l'un de l'autre dans la zone que vous prévoyez d'utiliser pour l'arène.
 
-`startLocation` est l'endroit où les joueurs apparaîtront lorsqu'ils rejoindront l'arène, dans l'exemple, ce serait au
-centre de l'arène dans le monde mon_monde_arene. `exitLocation` est l'endroit où les joueurs seront téléportés après
-avoir échoué ou terminé l'arène. Dans ce cas, ce serait le monde mon_monde_minecraft et les coordonnées dans l'exemple.
+`startLocation` est l'endroit où les joueurs apparaîtront lorsqu'ils rejoindront l'arène ; dans l'exemple, ce serait au centre de l'arène dans le monde `my_arena_world`. `exitLocation` est l'endroit où les joueurs seront téléportés après avoir échoué ou terminé l'arène. Dans ce cas, ce serait le monde `my_minecraft_world` et les coordonnées de l'exemple.
 
-`waveCount` définit simplement le nombre de vagues que durera l'arène. Dans ce cas, ce serait 5 vagues. Si les joueurs
-parviennent à survivre aux 5 vagues, ils auront réussi à survivre à l'arène. `delayBetweenWaves` définira le nombre de
-secondes avant le début de la vague suivante. Dans notre exemple, les joueurs auraient 5 secondes pour se préparer avant
-le début de la vague suivante.
+`waveCount` définit simplement le nombre de vagues que durera l'arène. Dans ce cas, ce serait 5 vagues. Si les joueurs parviennent à survivre aux 5 vagues, ils ont réussi à survivre à l'arène. `delayBetweenWaves` définira le nombre de secondes avant le début de la vague suivante. Dans notre exemple, les joueurs auraient 5 secondes pour se préparer avant le début de la vague suivante.
 
-`spawnPoints` définit les emplacements où nous pouvons faire apparaître nos monstres. Nous pouvons en créer autant que
-nous voulons et les nommer comme nous le souhaitons. Dans l'exemple, nous avons décidé de créer 5 points d'apparition et
-de les nommer nord, sud, centre, est et ouest.
+`spawnPoints` définit les emplacements où nos mobs peuvent apparaître. Nous pouvons en créer autant que nous le souhaitons et les nommer comme nous le souhaitons. Dans l'exemple, nous avons décidé de créer 5 points d'apparition et de les nommer nord, sud, centre, est et ouest.
 
-`bossList` est l'endroit où nous définissons quel boss doit apparaître à quelle vague et à quel endroit. Dans l'exemple,
-la vague 1 aura 3 boss apparaissant aux emplacements que nous avons nommés nord, centre et sud. Tous les trois sont
-configurés pour utiliser le même fichier de boss, mais nous aurions pu utiliser des fichiers de boss différents pour
-chacun.
+`bossList` est l'endroit où nous définissons quel boss doit apparaître à quelle vague et à quel endroit. Dans l'exemple, la vague 1 aura 3 boss apparaissant depuis les points d'apparition que nous avons nommés nord, centre et sud. Les trois sont configurés pour utiliser le même fichier de boss, mais nous aurions pu utiliser des fichiers de boss différents pour chacun.
 
-`rawArenaReward` définit les récompenses qui seront distribuées après qu'un joueur a réussi à survivre/vaincre une
-vague. Comme nous pouvons le voir dans l'exemple, le fait de battre la vague 1 récompensera le joueur avec 5 pièces
-d'élite. S'ils parviennent à survivre au reste des vagues et à battre la vague 5, ils seront récompensés par 25 pièces
-d'élite et 50 % de chance d'obtenir un Cure-dent de MagmaGuy de niveau 5.
+`rawArenaReward` définit les récompenses qui seront distribuées après qu'un joueur ait réussi à survivre/battre une vague. Comme nous pouvons le voir dans l'exemple, battre la vague 1 récompensera le joueur avec 5 pièces d'élite. S'ils parviennent à survivre au reste des vagues et à battre la vague 5, ils seront récompensés par 25 pièces d'élite et une chance de 50 % d'obtenir un MagmaGuy's Toothpick de niveau 5.
 
-`minimumPlayerCount` définit le nombre minimum de joueurs nécessaires avant que l'arène ne démarre. Dans notre exemple,
-ce paramètre est réglé sur 1, donc un seul joueur est nécessaire pour que l'arène démarre. `maximumPlayerCount` définit
-le nombre maximum de joueurs qui peuvent participer à l'arène. Dans notre exemple, ce paramètre est réglé sur 3, ce qui
-signifie que si plus de 3 joueurs essaient de participer à l'arène, l'arène ne démarrera pas tant qu'il n'y aura pas 3
-joueurs ou moins.
+`minimumPlayerCount` définit le nombre minimum de joueurs requis avant que l'arène ne commence. Dans notre exemple, ce paramètre est défini sur 1, donc un seul joueur est nécessaire pour que l'arène commence. `maximumPlayerCount` définit le nombre maximum de joueurs pouvant participer à l'arène. Dans notre exemple, ce paramètre est défini sur 3, ce qui signifie que si plus de 3 joueurs essaient de participer à l'arène, l'arène ne commencera pas tant qu'il n'y aura pas 3 joueurs ou moins.
 
-`arenaMessages` vous permet d'ajouter un texte descriptif qui sera affiché dans le chat au début des vagues définies.
-Dans notre exemple, nous avons décidé d'afficher un court message au début de chaque vague. Nous avons également décidé
-d'inclure le nom du PNJ au début de chaque message en donnant l'illusion que le texte est un dialogue prononcé par
-l'annonceur (maître de l'arène).
+`arenaMessages` vous permet d'ajouter du texte d'ambiance qui sera affiché dans le chat au début des vagues définies. Dans notre exemple, nous avons décidé d'afficher un court message au début de chaque vague. Nous avons également décidé d'inclure le nom du PNJ au début de chaque message, donnant l'illusion que le texte est un dialogue parlé par l'annonceur (maître d'arène).
 
-`cylindricalArena` Ce paramètre nous permettra de basculer si la zone définie que nous avons définie avec `corner1`
-et `corner2` doit être une forme cylindrique au lieu d'une forme cuboïde. Dans notre exemple, nous avons défini ceci
-sur `false`, ce qui signifie que l'arène d'exemple est une forme cuboïde.
+`cylindricalArena` ce paramètre nous permettra de basculer si la zone définie que nous avons configurée avec `corner1` et `corner2` doit être de forme cylindrique au lieu de cuboïde. Dans notre exemple, nous l'avons défini sur `false`, ce qui signifie que l'arène de l'exemple est de forme cuboïde.
 
-`permission` nous permet de définir une autorisation que les joueurs devront avoir pour pouvoir rejoindre/démarrer
-l'arène. Dans notre exemple, les joueurs auront besoin de l'autorisation `arene.monautorisation` pour pouvoir utiliser
-l'arène.
+`permission` nous permet de définir une permission que les joueurs devront avoir pour pouvoir rejoindre/démarrer l'arène. Dans notre exemple, les joueurs auront besoin de la permission `arena.mypermission` pour pouvoir utiliser l'arène.
 
 </div>
 
 </details>
 
-## Création du PNJ de l'arène
+## Créer le PNJ de l'arène
 
 <div align="center">
 
@@ -578,11 +543,11 @@ l'arène.
 
 Définit si le PNJ est activé.
 
-| Clé         |       Valeurs       | Défaut |
-|-------------|:-------------------:|:------:|
-| `isEnabled` | [Booléen](#boolean) | `true` |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+| `isEnabled` | [Boolean](#boolean) | `true` |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -602,11 +567,11 @@ isEnabled: true
 
 Définit le nom d'affichage du PNJ.
 
-| Clé    |             Valeurs             | Défaut |
-|--------|:-------------------------------:|:------:|
-| `name` | [Chaîne de caractères](#string) | aucun  |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+| `name` | [String](#string) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -632,20 +597,19 @@ name: "&aGladius"
 
 Définit le rôle affiché sous le nom du PNJ.
 
-| Clé    |             Valeurs             | Défaut |
-|--------|:-------------------------------:|:------:|
-| `role` | [Chaîne de caractères](#string) | aucun  |
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
+| `role` | [String](#string) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-role: "&c<Maître de l'arène>"
+role: "&c<Arena Master>"
 ```
-
 <div align="center">
 
 ![create_arena_npc_role.jpg](../../../img/wiki/create_arena_npc_role.jpg)
@@ -662,24 +626,23 @@ role: "&c<Maître de l'arène>"
 
 Définit la profession MineCraft du PNJ.
 
-| Clé          |                                              Valeurs                                              | Défaut |
-|--------------|:-------------------------------------------------------------------------------------------------:|:------:|
+| Clé       |      Valeurs      | Défaut |
+|-----------|:-----------------:|:-------:|
 | `profession` | [Profession](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-profession: FORGERON
+profession: ARMORER
 ```
 
 <div align="center">
 
-
-*Sera remplacé si un `diguise` est utilisé.*
+*Sera remplacé si un `disguise` est utilisé.*
 
 ![create_arena_npc_profession.jpg](../../../img/wiki/create_arena_npc_profession.jpg)
 
@@ -695,18 +658,18 @@ profession: FORGERON
 
 Définit l'emplacement d'apparition du PNJ.
 
-| Clé             |               Valeurs               | Défaut |
-|-----------------|:-----------------------------------:|:------:|
-| `spawnLocation` | [Emplacement](#serialized_location) | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+| `spawnLocation` | [Location](#serialized_location) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-spawnLocation: mon_monde,1.5,50,1.5,-108,0
+spawnLocation: my_world,1.5,50,1.5,-108,0
 ```
 
 </div>
@@ -717,13 +680,13 @@ spawnLocation: mon_monde,1.5,50,1.5,-108,0
 
 ### greetings
 
-Définit le dialogue de salutation du PNJ.
+Définit le dialogue de salutation pour le PNJ.
 
-| Clé         |                    Valeurs                     | Défaut |
-|-------------|:----------------------------------------------:|:------:|
-| `greetings` | [Liste de chaînes de caractères](#string_list) | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+| `greetings` | [String List](#string_list) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -731,8 +694,8 @@ Définit le dialogue de salutation du PNJ.
 
 ```yml
 greetings:
-- Bienvenue dans l'arène !
-- L'arène vous souhaite la bienvenue !
+- Welcome to the Arena!
+- The Arena welcomes you!
 ```
 
 <div align="center">
@@ -751,11 +714,11 @@ greetings:
 
 Définit le dialogue lorsque les joueurs interagissent avec le PNJ.
 
-| Clé      |                    Valeurs                     | Défaut |
-|----------|:----------------------------------------------:|:------:|
-| `dialog` | [Liste de chaînes de caractères](#string_list) | aucun  |
+| Clé       |      Valeurs       | Défaut |
+|-----------|:------------------:|:-------:|
+| `dialog` | [String List](#string_list) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -763,8 +726,8 @@ Définit le dialogue lorsque les joueurs interagissent avec le PNJ.
 
 ```yml
 dialog:
-- Prêt pour un défi ?
-- Affronter l'arène ?
+- Ready for a challenge?
+- Face the Arena?
 ```
 
 <div align="center">
@@ -781,13 +744,13 @@ dialog:
 
 ### farewell
 
-Définit le dialogue d'adieu du PNJ.
+Définit le dialogue d'adieu pour le PNJ.
 
-| Clé        |                    Valeurs                     | Défaut |
-|------------|:----------------------------------------------:|:------:|
-| `farewell` | [Liste de chaînes de caractères](#string_list) | aucun  |
+| Clé       |           Valeurs            | Défaut |
+|-----------|:----------------------------:|:-------:|
+| `farewell` | [String List](#string_list) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -795,8 +758,8 @@ Définit le dialogue d'adieu du PNJ.
 
 ```yml
 farewell:
-- Au revoir.
-- Revenez avec votre bouclier, ou dessus !
+- Bye.
+- Return with your shield, or on it!
 ```
 
 <div align="center">
@@ -811,10 +774,9 @@ farewell:
 
 ```yml
 farewell:
-- Au revoir.
-- Revenez avec votre\nbouclier, ou dessus !
+- Bye.
+- Return with your\nshield, or on it!
 ```
-
 </div>
 
 ![create_arena_npc_lines.jpg](../../../img/wiki/create_arena_npc_lines.jpg)
@@ -831,13 +793,13 @@ farewell:
 
 ### canTalk
 
-Définit le dialogue d'adieu du PNJ.
+Définit si le PNJ peut parler.
 
-| Clé       |       Valeurs       | Défaut |
-|-----------|:-------------------:|:------:|
-| `canTalk` | [Booléen](#boolean) | `true` |
+| Clé       |           Valeurs            | Défaut |
+|-----------|:----------------------------:|:-------:|
+| `canTalk` | [Boolean](#boolean) | `true` |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -857,11 +819,11 @@ canTalk: true
 
 Définit le rayon à partir duquel le PNJ doit commencer à parler.
 
-| Clé                |      Valeurs      | Défaut |
-|--------------------|:-----------------:|:------:|
+| Clé       |           Valeurs            | Défaut |
+|-----------|:----------------------------:|:-------:|
 | `activationRadius` | [Double](#double) | `3.0`  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -881,11 +843,11 @@ activationRadius: 3.0
 
 Définit le type d'interaction que le PNJ effectuera.
 
-| Clé               |   Valeurs   |     Défaut     |
-|-------------------|:-----------:|:--------------:|
+| Clé       |           Valeurs            | Défaut |
+|-----------|:----------------------------:|:-------:|
 | `interactionType` | Spécial [4] | `ARENA_MASTER` |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -905,11 +867,11 @@ interactionType: ARENA_MASTER
 
 Définit le déguisement personnalisé du PNJ.
 
-| Clé        |                       Valeurs                        | Défaut |
-|------------|:----------------------------------------------------:|:------:|
-| `disguise` | [Déguisement]($language$/elitemobs/libsdisguises.md) | aucun  |
+| Clé       |           Valeurs            | Défaut |
+|-----------|:----------------------------:|:-------:|
+| `disguise` | [Disguise](fr/elitemobs/libsdisguises.md) | aucun  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -935,107 +897,18 @@ disguise: ZOMBIE
 
 Définit vers quelle arène les joueurs seront téléportés.
 
-| Clé     |           Valeurs           | Défaut |
-|---------|:---------------------------:|:------:|
-| `arena` | [Nom de fichier](#filename) | aucun  |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-arena: mon_arene.yml
-```
-
-</div>
-
-</details>
-
-***
-
-### teleportLocation
-
-Définit l'endroit où les joueurs doivent être téléportés après avoir interagi avec le PNJ. Ce paramètre est généralement
-utilisé pour téléporter les joueurs vers une zone de type lobby dédiée de l'arène où ils peuvent commencer le défi de l'
-arène ou attendre que d'autres joueurs terminent l'arène.
-
-| Clé                |         Valeurs          | Défaut |
-|--------------------|:------------------------:|:------:|
-| `teleportLocation` | [Emplacement](#location) | aucun  |
-
-<details> 
-
-<summary><b>Exemple</b></summary>
-
-<div align="left">
-
-```yml
-teleportLocation: mon_monde_arene,10,50,10,0,0
-```
-
-</div>
-
-</details>
-
-</div>
-
-***
+| Clé       |           Valeurs            | Défaut |
+|-----------|:----------------------------:|:-------:|
+| `arena` | [Filename](#filename) | aucun  |
 
 <details>
 
-<summary align="center"><b>Exemple de configuration d'arène</b></summary>
+<summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-isEnabled: true
-name: PNJ d'exemple
-role: <Maître de l'arène>
-profession: FORGERON
-spawnLocation: mon_monde_minecraft,233,44,245,0,0
-greetings:
-  - Bienvenue dans l'arène !
-dialog:
+arena: my_arena.yml
 ```
 
-- Prêt à entrer dans l'arène ?
-farewell:
-    - Au revoir!
-canTalk: true
-activationRadius: 3.0
-interactionType: ARENA_MASTER
-disguise: ZOMBIE
-      arena: example_arena.yml
-```
-Cet exemple montre un PNJ d'arène de base qui apparaîtra dans mon_monde_minecraft avec un déguisement de zombie. Les joueurs peuvent interagir avec ce PNJ pour défier l'arène d'exemple.
-
-</div>
-
-</details>
-
-## Spécial [4]
-Voici la liste des types d'interaction PNJ valides :
-
-| Type | Description |
-| --- | :-: |
-| `GUILD_GREETER` | Ouvre le menu de la guilde des aventuriers |
-| `CHAT` | Un clic droit fait défiler le `dialog` |
-| `CUSTOM_SHOP` | Ouvre le menu de la boutique personnalisée |
-| `PROCEDURALLY_GENERATED_SHOP` | Ouvre la boutique générée de manière procédurale |
-| `BAR` | Ouvre le menu du bar |
-| `ARENA` | Ouvre le menu de l'arène |
-| `QUEST_GIVER` | Ouvre le menu des quêtes générées de manière procédurale |
-| `CUSTOM_QUEST_GIVER` | Ouvre le menu des quêtes pour un ensemble de quêtes spécifique défini dans `questFilenames` |
-| `NONE` | Aucune interaction |
-| `SELL` | Ouvre le menu de vente |
-| `TELEPORT_BACK` | Téléporte les joueurs vers le dernier emplacement du monde non elitemobs où ils se trouvaient |
-| `SCRAPPER` | Ouvre le menu de mise au rebut |
-| `SMELTER` | Ouvre le menu de fusion |
-| `REPAIRMAN` | Ouvre le menu de réparation |
-| `ENHANCER` | Ouvre le menu d'amélioration d'objets |
-| `REFINER` | Ouvre le menu de raffinage |
-| `UNBINDER` | Ouvre le menu de déliage |
-| `ARENA_MASTER` | Ouvre le menu de l'arène pour l'arène définie dans `arenaFilename` |
-| `COMMAND` | Exécute la commande définie dans `command` |
+</div>Please specify the language you would like the text translated into.

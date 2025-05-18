@@ -1,10 +1,10 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# クエストの例
+# クエスト例
 
-EliteMobsには、あらかじめ`test_quest.yml`が同梱されており、これを簡単なクエスト形式として分析します。
+EliteMobsには`test_quest.yml`がプリパッケージされており、ここでは簡単なクエスト形式として分析します。
 
-_カスタムクエストは`~plugins/EliteMobs/customquests`フォルダーにあります！_
+_カスタムクエストは`~plugins/EliteMobs/customquests`フォルダにあります！_
 
 `test_quest.yml`
 
@@ -17,9 +17,9 @@ customObjectives:
     objectiveType: KILL_CUSTOM
 customRewards:
 - filename=magmaguys_toothpick.yml:amount=1:chance=1
-name: "&aテストボスを倒せ"
-questLore: 
-- "&cテストボスの恐怖政治を終わらせろ！"
+name: "&aテストボスを倒す"
+questLore:
+- "&cテストボスの恐怖の支配を終わらせろ！"
 ```
 
 <div align="center">
@@ -28,10 +28,9 @@ questLore:
 
 </div>
 
-*クエストUIがこのようにならない場合は、`/em alt`を使用して一致するように変更できます。*
+*クエストUIがこのように見えない場合は、`/em alt`を使用して一致するように変更できます。*
 
-このクエストの例では、プレイヤーは1体のtest_boss.ymlを倒すタスクを与えられます。（クエストトラッカーに表示されるボスの実際の名前は、test_boss.ymlで設定された`name:`
-になります。）また、クエストを完了すると、報酬としてMagmaguyのToothpickが1つ与えられます。
+このクエスト例では、プレイヤーに1体のtest_boss.ymlを倒すタスクを与えます。（クエストトラッカーに表示されるボスの実際の名前は、test_boss.ymlで設定された`name:`になります。）そして、クエストを完了した報酬として、Magmaguy's Toothpickが1つ与えられます。
 
 ## カスタムクエストの作成
 
@@ -41,13 +40,13 @@ questLore:
 
 クエストの目標を設定します。
 
-| キー                 |   値    | デフォルト |
-|--------------------|:------:|:-----:|
-| `customObjectives` | 特殊 [1] |  なし   |
+| キー               |   値    | デフォルト |
+|--------------------|:-------:|:--------:|
+| `customObjectives` | 特殊 [1] |   なし   |
 
-*注：マルチフェーズボスを目標として使用している場合、目標は最初のフェーズをターゲットとして使用する必要があります。*
+*注：目標としてマルチフェーズボスを使用している場合、目標は最初のフェーズをターゲットとして使用する必要があります。*
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -69,11 +68,11 @@ customObjectives:
 customObjectives:
   Objective1:
     dialog:
-    - "&a[会話NPC] &fよくここに来るんですか？"
-    - "&7&oもっとリンゴを食べるべきだ。"
+    - "&a[Dialog NPC] &fよくここに来るの？"
+    - "&7&oもっとリンゴを食べなきゃ。"
     filename: dialog_npc.yml
-    npcName: 会話NPC
-    location: 会話場所で.
+    npcName: Dialog NPC
+    location: at dialog location.
     objectiveType: DIALOG
 ```
 
@@ -83,7 +82,7 @@ customObjectives:
 customObjectives:
   Objective1:
     amount: '99'
-    itemName: 赤いリンゴ
+    itemName: Red Apples
     filename: my_quest_item_red_apples.yml
     objectiveType: FETCH_ITEM
 ```
@@ -108,15 +107,15 @@ customObjectives:
 
 カスタム目標は、以下の値を使用して構築されます。
 
-| キー                                      | 説明                                                                                                                                            |
-|-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | この目標が表すタイプを設定するために使用されます。`KILL_CUSTOM`は、クエストが特定のカスタムボスのキルを伴うことを示し、`FETCH_ITEM`は、クエストが特定のカスタムアイテムの入手を伴うことを示し、`DIALOG`は、クエストがNPCとの会話を伴うことを示します。 |
-| `filename`                              | プレイヤーがキル/入手する必要のあるカスタムボス、カスタムアイテム、または会話する必要のあるNPCのファイル名を設定するために使用されます。                                                                        |
-| `amount`                                | キルする必要のあるカスタムボスの数、または入手する必要のあるアイテムの数を設定するために使用されます。                                                                                           |
-| `dialog`                                | プレイヤーが会話するNPCの会話を設定するために使用されます。                                                                                                               |
-| `name`                                  | クエスト目標の名前を設定するために使用します。NPCまたはカスタムアイテムの場合があります。視覚的な目的のみに使用されます。                                                                                |
+| キー                                     | 説明 |
+|-----------------------------------------|-------------|
+| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | これが表す目標のタイプを設定するために使用されます。`KILL_CUSTOM`は特定のカスタムボスを倒すクエストであることを示し、`FETCH_ITEM`は特定のカスタムアイテムを入手するクエストであることを示し、`DIALOG`はNPCと話すクエストであることを示します。            |
+| `filename`                                    | プレイヤーが倒す/入手する必要があるカスタムボス、カスタムアイテム、または話す必要のあるNPCのファイル名を設定するために使用されます。            |
+| `amount`                                      | 倒す必要があるカスタムボスの数、または入手する必要があるアイテムの数を設定するために使用されます。            |
+| `dialog`                                      | プレイヤーが話すNPCのダイアログを設定するために使用されます。            |
+| `name`                                        | NPCであろうとカスタムアイテムであろうと、クエスト目標の名前を設定するために使用されます。視覚的な目的のみです。            |
 
-_すべてのカスタム目標フィールドは、`:`で区切られていることに注意してください！_
+_すべてのカスタム目標フィールドは`:`で区切られていることに注意してください！_
 
 </div>
 
@@ -128,11 +127,11 @@ _すべてのカスタム目標フィールドは、`:`で区切られている�
 
 クエストの報酬を設定します。
 
-| キー              |                                   値                                   | デフォルト |
-|-----------------|:---------------------------------------------------------------------:|:-----:|
-| `customRewards` | [Universal EliteMobs loot format]($language$elitemobs/loot_tables.md) |  なし   |
+| キー               |                                値                                 | デフォルト |
+|--------------------|:---------------------------------------------------------------------:|:--------:|
+| `customRewards` | [ユニバーサル EliteMobs ルート形式]($language$elitemobs/loot_tables.md) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -140,9 +139,9 @@ _すべてのカスタム目標フィールドは、`:`で区切られている�
 
 ```yml
 customRewards:
-  - currencyAmount=50:amount=1:chance=0.05
-  - material=COOKED_COD:amount=3:chance=1.0
-  - filename=magmaguys_toothpick.yml:amount=1:chance=1.0
+- currencyAmount=50:amount=1:chance=0.05
+- material=COOKED_COD:amount=3:chance=1.0
+- filename=magmaguys_toothpick.yml:amount=1:chance=1.0
 ```
 
 <div align="center">
@@ -159,13 +158,13 @@ customRewards:
 
 ### questAcceptPermission
 
-プレイヤーがクエストを受けるために必要な権限を設定します。
+プレイヤーがクエストを受諾するために必要な権限を設定します。
 
-| キー                      |       値        | デフォルト |
-|-------------------------|:--------------:|:-----:|
-| `questAcceptPermission` | [文字列](#string) |  なし   |
+| キー                      |      値       | デフォルト |
+|---------------------------|:-------------:|:--------:|
+| `questAcceptPermission` | [文字列](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -183,13 +182,13 @@ questAcceptPermission: elitequest.my_permission
 
 ### questAcceptPermissions
 
-プレイヤーがクエストを受けるために必要な権限を設定します。
+プレイヤーがクエストを受諾するために必要な権限を設定します。
 
-| キー                       |           値            | デフォルト |
-|--------------------------|:----------------------:|:-----:|
-| `questAcceptPermissions` | [文字列リスト](#string_list) |  なし   |
+| キー                       |      値       | デフォルト |
+|----------------------------|:-------------:|:--------:|
+| `questAcceptPermissions` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -197,8 +196,8 @@ questAcceptPermission: elitequest.my_permission
 
 ```yml
 questAcceptPermissions:
-  - elitequest.my_previous_quest_one.yml
-  - elitequest.my_previous_quest_two.yml
+- elitequest.my_previous_quest_one.yml
+- elitequest.my_previous_quest_two.yml
 ```
 
 </div>
@@ -209,13 +208,13 @@ questAcceptPermissions:
 
 ### questLockoutPermission
 
-クエストを完了するとプレイヤーが得る権限を設定します。これにより、プレイヤーは再びクエストを実行できなくなります（通常、編集しているクエストの[ファイル名](#fielname)）。
+クエスト完了時にプレイヤーが付与される権限を設定します。これにより、同じクエストを再度行うことができなくなります（通常、編集しているクエストの[ファイル名](#fielname)を使用します）。
 
-| キー                       |       値        | デフォルト |
-|--------------------------|:--------------:|:-----:|
-| `questLockoutPermission` | [文字列](#string) |  なし   |
+| キー                         |      値       | デフォルト |
+|------------------------------|:-------------:|:--------:|
+| `questLockoutPermission` | [文字列](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -233,13 +232,13 @@ questLockoutPermission: elitequest.my_quest.yml
 
 ### questLockoutMinutes
 
-プレイヤーがクエストを再度実行できるようになるまでに待機する必要がある時間（分単位）を設定します（クエストロックアウト権限を削除することで機能します）。
+プレイヤーがクエストを再度行うことができるようになるまで待つ必要がある時間（分単位）を設定します（クエストロックアウト権限を削除することで機能します）。
 
-| キー                    |       値        |    デフォルト     |
-|-----------------------|:--------------:|:------------:|
-| `questLockoutMinutes` | [整数](#integer) | `-1`(繰り返し不可) |
+| キー                        |      値       | デフォルト         |
+|-----------------------------|:-------------:|:----------------:|
+| `questLockoutMinutes` | [整数](#integer) |  `-1`(繰り返さない)   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -259,18 +258,18 @@ questLockoutMinutes: 60
 
 クエスト名を設定します。[カラーコード](#color_codes)を受け入れます。
 
-| キー     |       値        | デフォルト |
-|--------|:--------------:|:-----:|
-| `name` | [文字列](#string) |  なし   |
+| キー   |      値       | デフォルト |
+|--------|:-------------:|:--------:|
+| `name` | [文字列](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
 <div align="left">
 
 ```yml
-name: "&a私の偉大なクエスト名"
+name: "&a私の素晴らしいクエスト名"
 ```
 
 </div>
@@ -281,13 +280,13 @@ name: "&a私の偉大なクエスト名"
 
 ### questLore
 
-ゲーム内クエストメニューに表示されるクエストの伝承を設定します。
+ゲーム内のクエストメニューに表示されるクエストのロア（説明文）を設定します。
 
-| キー          |           値            | デフォルト |
-|-------------|:----------------------:|:-----:|
-| `questLore` | [文字列リスト](#string_list) |  なし   |
+| キー        |      値       | デフォルト |
+|-------------|:-------------:|:--------:|
+| `questLore` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -295,8 +294,8 @@ name: "&a私の偉大なクエスト名"
 
 ```yml
 questLore:
-  - "興味深い伝承文。"
-  - "さらに別の興味深い伝承文。"
+- "興味深いロアの文章。"
+- "さらに別の興味深いロアの文章。"
 ```
 
 <div align="center">
@@ -313,16 +312,15 @@ questLore:
 
 ### temporaryPermissions
 
-クエストを完了するまでプレイヤーに割り当てられる権限を設定します。
+プレイヤーがクエストを提出するまで付与される権限を設定します。
 
-この設定を使用して、プレイヤーが特定のクエストをアクティブにしている場合にのみアイテムがドロップするようにする場合は、アイテムの構成ファイルで[同じ権限]($language$/elitemobs/creating_items.md&section=permission)
-も構成する必要があります。
+この設定を使用して、特定のクエストがアクティブな場合にのみアイテムがドロップするようにする場合は、アイテムの設定ファイルで[同じ権限]($language$/elitemobs/creating_items.md&section=permission)も設定する必要があります。
 
-| キー                     |           値            | デフォルト |
-|------------------------|:----------------------:|:-----:|
-| `temporaryPermissions` | [文字列リスト](#string_list) |  なし   |
+| キー                 |      値       | デフォルト |
+|----------------------|:-------------:|:--------:|
+| `temporaryPermissions` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -330,7 +328,7 @@ questLore:
 
 ```yml
 temporaryPermissions:
-  - elitequest.item_that_should_drop_only_during_quest.yml
+- elitequest.item_that_should_drop_only_during_quest.yml
 ```
 
 </div>
@@ -341,13 +339,13 @@ temporaryPermissions:
 
 ### questAcceptDialog
 
-クエストを受けたときにチャットに表示されるダイアログを設定します。
+クエスト受諾時にチャットに表示されるダイアログを設定します。
 
-| キー                  |           値            | デフォルト |
-|---------------------|:----------------------:|:-----:|
-| `questAcceptDialog` | [文字列リスト](#string_list) |  なし   |
+| キー                 |      値       | デフォルト |
+|----------------------|:-------------:|:--------:|
+| `questAcceptDialog` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -355,8 +353,8 @@ temporaryPermissions:
 
 ```yml
 questAcceptDialog:
-  - "私のヒーロー！あなたはとても親切です！"
-  - "幸運を祈ります！"
+- "私のヒーロー！あなたはとても親切です！"
+- "幸運を祈っています！"
 ```
 
 <div align="center">
@@ -375,11 +373,11 @@ questAcceptDialog:
 
 クエスト完了時にチャットに表示されるダイアログを設定します。
 
-| キー                     |           値            | デフォルト |
-|------------------------|:----------------------:|:-----:|
-| `questCompleteMessage` | [文字列リスト](#string_list) |  なし   |
+| キー                   |      値       | デフォルト |
+|------------------------|:-------------:|:--------:|
+| `questCompleteMessage` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -387,8 +385,8 @@ questAcceptDialog:
 
 ```yml
 questCompleteMessage:
-  - "私のヒーロー！あなたは私の難しいクエストを完了しました！"
-  - "報酬として、このパンをあげましょう！"
+- "私のヒーロー！私の難しいクエストを完了しましたね！"
+- "報酬として、このパンをどうぞ！"
 ```
 
 <div align="center">
@@ -407,11 +405,11 @@ questCompleteMessage:
 
 クエスト完了時に実行されるコマンドを設定します。
 
-| キー                      |           値            | デフォルト |
-|-------------------------|:----------------------:|:-----:|
-| `questCompleteCommands` | [文字列リスト](#string_list) |  なし   |
+| キー                    |      値       | デフォルト |
+|-------------------------|:-------------:|:--------:|
+| `questCompleteCommands` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -436,14 +434,13 @@ questCompleteCommands:
 
 ### turnInNPC
 
-クエストを完了するために、プレイヤーが会話/対話する必要のあるNPCのファイル名を設定します。これは、クエストを渡したNPCと同じである必要は
-**ありません**。
+プレイヤーがクエストを完了するために話す/インタラクトする必要があるNPCのファイル名を設定します。これは、クエストを配布したNPCと同じである必要は**ありません**。
 
-| キー          |         値          | デフォルト |
-|-------------|:------------------:|:-----:|
-| `turnInNPC` | [ファイル名](#filename) |  なし   |
+| キー        |      値       | デフォルト |
+|-------------|:-------------:|:--------:|
+| `turnInNPC` | [ファイル名](#filename) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -463,11 +460,11 @@ turnInNPC: my_cool_quest_npc.yml
 
 クエストがクエストトラッカーを使用するかどうかを設定します。
 
-| キー          |        値        | デフォルト  |
-|-------------|:---------------:|:------:|
-| `trackable` | [真偽値](#boolean) | `true` |
+| キー        |      値       | デフォルト |
+|-------------|:-------------:|:--------:|
+| `trackable` | [ブール値](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -485,14 +482,13 @@ trackable: true
 
 ### questLevel
 
-クエストのレベルを設定します。これは視覚的なガイドに過ぎないため、プレイヤーはクエストがどれほど難しいかを知ることができます。これは、ボス、アイテム、またはその他のレベルを修正するものでは
-**ありません**。
+クエストのレベルを設定します。これはプレイヤーがクエストの難易度を判断するための視覚的なガイドにすぎません。ボス、アイテム、その他のレベルを**一切**変更しません。
 
-| キー           |       値        | デフォルト |
-|--------------|:--------------:|:-----:|
-| `questLevel` | [整数](#integer) |  `0`  |
+| キー         |      値       | デフォルト |
+|--------------|:-------------:|:--------:|
+| `questLevel` | [整数](#integer) | `0`  |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -516,13 +512,13 @@ questLevel: 10
 
 ### questAcceptSound
 
-クエストを受けたときに再生されるサウンドを設定します。Minecraftのサウンドを再生することも、リソースパックからサウンドを再生することも可能です。
+クエスト受諾時に再生されるサウンドを設定します。Minecraftのサウンドとリソースパックからのサウンドの両方を再生できます。
 
-| キー                 |       値        | デフォルト |
-|--------------------|:--------------:|:-----:|
-| `questAcceptSound` | [文字列](#string) |  なし   |
+| キー                 |      値       | デフォルト |
+|----------------------|:-------------:|:--------:|
+| `questAcceptSound` | [文字列](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -546,13 +542,13 @@ questAcceptSound: entity.experience_orb.pickup
 
 ### questCompleteSound
 
-クエストが完了したとき（引き渡されたとき）に再生されるサウンドを設定します。Minecraftのサウンドを再生することも、リソースパックからサウンドを再生することも可能です。
+クエスト完了時（提出時）に再生されるサウンドを設定します。Minecraftのサウンドとリソースパックからのサウンドの両方を再生できます。
 
-| キー                   |       値        | デフォルト |
-|----------------------|:--------------:|:-----:|
-| `questCompleteSound` | [文字列](#string) |  なし   |
+| キー                   |      値       | デフォルト |
+|------------------------|:-------------:|:--------:|
+| `questCompleteSound` | [文字列](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -574,47 +570,38 @@ questCompleteSound: entity.player.levelup
 
 ### 権限
 
-上記の表で述べたように、権限は通常、[文字列](#string)または[文字列リスト](#string_list)
-です。ただし、これらの権限を使用してクエストをロックおよびロック解除する方法について詳しく説明しましょう。
+上記の表で述べたように、権限は通常[文字列](#string)または[文字列リスト](#string_list)です。しかし、これらをどのように使用してクエストをロック/アンロックするかについて、さらに詳しく見ていきましょう。
 
-たとえば、計画している一連のクエストのクエスト3を作成しており、プレイヤーがクエスト2を完了する前にクエスト3を受け取ることができないようにしたいとします。クエストファイルを次のように構成します。
+計画している一連のクエストでクエスト3を作成しており、プレイヤーがクエスト2を完了する前にクエスト3を受け取れないようにしたいとします。クエストファイルを次のように設定します。
 
 ```yml
 questAcceptPermission: elitequest.quest_2.yml
 questLockoutPermission: elitequest.quest_3.yml
 ```
+`questAcceptPermissions`を`elitequest.quest_2.yml`に設定することで、プレイヤーがquest_2.ymlを完了する前にquest_3.ymlを受け取れないようにしました。</br> `questLockoutPermission`を`elitequest.quest_3.yml`に設定することで、プレイヤーがそのクエストをトラッカーに持っているか、すでに完了している限り、そのクエストを受け取れないようにしました。これにより、プレイヤーがクエストを繰り返すことができなくなります。
 
-`questAcceptPermissions`を`elitequest.quest_2.yml`
-に設定することで、プレイヤーがquest_2.ymlを完了する前にquest_3.ymlを受け取ることを防ぎました。</br> `questLockoutPermission`
-を`elitequest.quest_3.yml`
-に設定することで、プレイヤーがすでにトラッカーにそのクエストを持っている場合、またはすでにそのクエストを完了している場合、プレイヤーがそのクエストを受け取ることができないようにしました。これにより、プレイヤーがクエストを繰り返すことができなくなります。
-
-プレイヤーが一連のクエストを完了した後にのみ利用可能になるクエストを作成する場合は、クエストファイルを次のように構成します。
+プレイヤーが一連のクエストを完了した後にのみ利用可能になるクエストを作成したい場合は、クエストファイルを次のように設定します。
 
 ```yml
-questAcceptPermissions: 
+questAcceptPermissions:
 - elitequest.quest_2.yml
 - elitequest.quest_3.yml
 - elitequest.quest_4.yml
 ```
 
-プレイヤーが正しいクエストをアクティブにしている場合にのみ特定のアイテムを略奪できるようにする場合は、`temporaryPermissions`
-を使用してそれを行うことができます。`temporaryPermissions`を使用してクエストファイルに権限を作成し、次に`permission`
-を使用してアイテムファイルに一致する[権限]($language$/elitemobs/creating_items.md&section=permission)を作成します。
+プレイヤーが正しいクエストがアクティブな場合にのみ特定のアイテムをルートできるようにしたい場合は、`temporaryPermissions`を使用することでそれが可能です。クエストファイルで`temporaryPermissions`を使用して権限を作成し、アイテムファイルで[権限]($language$/elitemobs/creating_items.md&section=permission)を使用して一致する権限を作成します。
 
-たとえば、クエストファイルを開き、以下を追加します。
+例えば、クエストファイルを開いて以下を追加します。
 
 ```yml
-temporaryPermissions: 
+temporaryPermissions:
 - elitequest.my_cool_item.yml
 ```
-
-次に、アイテムファイル（この場合は*my_cool_item.yml*）を開き、以下を追加します。
+次に、アイテムファイル（この場合は*my_cool_item.yml*）を開いて以下を追加します。
 
 ```yml
 permission: elitequest.my_cool_item.yml
 ```
-
-両方のファイルに一致する権限があり、これでプレイヤーが正しいクエストをアクティブにしている場合にのみアイテムがドロップされるようになります。
+これで両方のファイルに一致する権限が設定され、プレイヤーが正しいクエストをアクティブにしている場合にのみアイテムがドロップするようになります。
 
 </div>

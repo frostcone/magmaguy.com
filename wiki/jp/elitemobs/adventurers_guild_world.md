@@ -1,66 +1,52 @@
+日本語に翻訳します。マークダウンの書式は保持します。
+
 # 冒険者ギルドワールド
 
 ### 冒険者ギルドワールドとは？
 
-冒険者ギルドワールドは、Realm of LotheridonがEliteMobsのために作成した、あらかじめ構築されたワールドの名前です。
+冒険者ギルドワールドは、Realm of LotheridonによってEliteMobs向けに作成されたプリメイドワールドの名前です。
 
 ![ag_pic_1.jpg](../../../img/wiki/ag_pic_1.jpg)
 
-### 冒険者ギルドワールドの目的は？
+### 冒険者ギルドワールドの目的は何ですか？
 
-冒険者ギルドワールドは、EliteMobsのハブとして機能します。このハブを設置することで、プレイヤーはEliteMobsの機能を利用するために、もはや（/em以外の）コマンドを覚える必要がなくなります。
+冒険者ギルドワールドはEliteMobsのハブとして機能します。このハブを設置することで、プレイヤーはEliteMobsの機能とやり取りするために、( /em 以外の) コマンドを覚える必要がなくなります。
 
-ワールド内には、以下のNPCがあらかじめ配置されています。
+ワールドには、以下のNPCが事前に配置されています：
 
-- トランスポーター（以前の場所に戻るため）
-- ガイド（すべてのNPCに会うための導入クエスト）
--
-ギルドアテンダント（[ギルドランク]($language$/elitemobs/understanding_the_basics_of_elitemobs.md&section=step-2:-discovering-the-economy)
-をアップグレードするため）
-- ダンジョンテレポーター（インストールされた[ダンジョン]($language$/elitemobs/dungeons.md)にプレイヤーをテレポートさせる特別なNPC）
-- バーテンダー（現在未実装）
-- クエストギバー（ランダムに生成されるクエストを閲覧・受注するため）
-- 鍛冶屋（手続き型で生成されたアイテムを購入したり、エリートモブからのドロップを販売したりするため）
-- 特殊鍛冶屋（カスタムアイテムを購入したり、エリートモブからのドロップを販売したりするため）
-- 戦闘インストラクター（EliteMobsの戦闘に関するヒントを提供するため）
-- ワームホール（プレイヤーを[ダンジョン]($language$elitemobs/dungeons.md)やその他のインストールされたコンテンツにテレポートさせるポータル）
--
-アリーナマスター（プレイヤーが[ウッドリーグアリーナ]($language$elitemobs/understanding_the_basics_of_elitemobs.md&section=arenas)
-に参加できるようにするNPC）
-- ストーリーモードクエスト（プレイヤーが[ストーリーモードダンジョン](www.magmaguy.com)のクエストを受けられるようにする）
--
-アンバインダー（プレイヤーがEliteMobsの戦利品を、料金を払って[アンバインド]($language$/elitemobs/item_upgrade_system.md&section=unbinding-items)
-できるようにする）
--
-スクラッパー（プレイヤーが不要な戦利品を[スクラップ]($language$/elitemobs/item_upgrade_system.md&section=scrapping-items)
-に変換できるようにする）
--
-修理屋（プレイヤーがスクラップを使用してアイテムを[修理]($language$/elitemobs/item_upgrade_system.md&section=repairing-elite-items)
-できるようにする）
--
-エンチャンター（プレイヤーがアイテムを[エンチャント]($language$/elitemobs/item_upgrade_system.md&section=enchanting-elite-items)
-できるようにする）
+- 転送屋 (以前の場所に戻るため)
+- ガイド (すべてのNPCに会うための入門クエスト)
+- ギルド受付 ( [ギルドランク]($language$/elitemobs/understanding_the_basics_of_elitemobs.md&section=step-2:-discovering-the-economy) をアップグレードするため)
+- ダンジョン転送屋 (インストールされている [ダンジョン]($language$/elitemobs/dungeons.md) にプレイヤーをテレポートさせる特別なNPC)
+- バーテンダー (現在未実装)
+- クエスト提供者 (ランダムに生成されたクエストを閲覧・受注するため)
+- 鍛冶屋 (プロシージャル生成されたアイテムを購入したり、エリートモブからのドロップ品を売却したりするため)
+- 特殊鍛冶屋 (カスタムアイテムを購入したり、エリートモブからのドロップ品を売却したりするため)
+- 戦闘教官 (EliteMobsの戦闘に関するヒントを与えるため)
+- ワームホール (プレイヤーを [ダンジョン]($language$elitemobs/dungeons.md) やその他のインストールされたコンテンツにテレポートさせるポータル)
+- アリーナマスター (このNPCはプレイヤーが [ウッドリーグアリーナ]($language$elitemobs/understanding_the_basics_of_elitemobs.md&section=arenas) に参加できるようにします)
+- ストーリーモードクエスト (プレイヤーが [ストーリーモードダンジョン](www.magmaguy.com) のクエストを受けられるようにします)
+- アンバインダー (プレイヤーがEliteMobsの戦利品を費用を払って [アンバインド]($language$/elitemobs/item_upgrade_system.md&section=unbinding-items) できるようにします)
+- スクラッパー (プレイヤーが不要な戦利品を [スクラップ]($language$/elitemobs/item_upgrade_system.md&section=scrapping-items) に変換できるようにします)
+- 修理屋 (プレイヤーはこのNPCとやり取りして、スクラップを使ってアイテムを [修理]($language$/elitemobs/item_upgrade_system.md&section=repairing-elite-items) できます)
+- エンチャンター (プレイヤーがアイテムを [エンチャント]($language$/elitemobs/item_upgrade_system.md&section=enchanting-elite-items) できるようにします)
 
-さらに、NPC用の冒険者ギルドの建物と、EliteMobsアリーナ（現在未実装、近日公開予定！）も備えています。
+さらに、NPCのための冒険者ギルドの建物や、EliteMobsアリーナ (現在未実装、近日公開！) も備えています。
 
 ### 冒険者ギルドワールドのセットアップ方法
 
-冒険者ギルドワールドをインストールするには、以下を行ってください。
+冒険者ギルドワールドをインストールするには、以下の手順を実行してください：
 
-1. ファイルをダウンロードします。`/em setup`の赤いガラスをクリックすると、ダウンロードへのリンクが表示されます。
+1. ファイルをダウンロードします。ダウンロードリンクを取得するには、`/em setup` で赤いガラスをクリックしてください。
 
-2. ファイルをサーバーの`/plugins/EliteMobs/imports`フォルダーにアップロード/移動します。**ZIP**
-   ファイルを、何も変更せずに`imports`フォルダーの中に置いてください。EliteMobsが自動的にファイルを展開し、正しい場所に移動します。
+2. ファイルをサーバーの `/plugins/EliteMobs/imports` フォルダにアップロード/移動します。**ZIP化された**ファイルを一切変更せずに `imports` フォルダ内に配置してください。EliteMobsが自動的にファイルを解凍し、正しい場所に移動します。
 
-3. 再起動するか、`/em reload`を実行します。数秒後、`/em setup`を実行すると、ダウンロードした機能のインジケーターが黄色になります。
+3. サーバーを再起動するか、`/em reload` を実行します。数秒後、`/em setup` を実行すると、ダウンロードした機能のインジケーターが黄色になっているはずです。
 
-4. `/em setup`
-   メニューの黄色いガラスをクリックして、インポートした機能をインストールします。すべてが正しくインストールされたら、冒険者ギルドのハブワールドにいるはずです。`/ag`
-   を実行すると、いつでも冒険者ギルドにテレポートできます。
+4. `/em setup` メニューで黄色のガラスをクリックして、インポートされた機能をインストールします。すべてが正しくインストールされていれば、冒険者ギルドのハブワールドにいるはずです。`/ag` を実行することで、いつでも冒険者ギルドにテレポートできます。
 
 #### ワームホールの設定
 
-冒険者ギルドのハブワールドをインストールすると、プレイヤーがテレポートインする場所にワームホールがあることに気づくでしょう。このワームホールは、あなた自身が設定して、通常のワールドスポーンや、サーバーの中央となる場所に繋がるようにする必要があります。
+冒険者ギルドのハブワールドをインストールした後、プレイヤーがテレポートしてくる場所にワームホールがあることに気づくでしょう。このワームホールは、あなたの通常のワールドのスポーン地点や、サーバーの他の中心的な場所に戻るように、あなたが設定する必要があります。
 
-ワームホールを設定するには、*~plugins\EliteMobs\wormholes*ディレクトリに移動して、*adventurers_guild_wormhole.yml*
-を開いてください。`location2`の値を見つけて、`your_world_here`をあなたのワールド名に置き換え、その後に、プレイヤーがテレポートされるべき正しい座標を続けます。
+ワームホールを設定するには、ディレクトリ *~plugins\EliteMobs\wormholes* に移動し、*adventurers_guild_wormhole.yml* を開きます。`location2` の値を見つけ、`your_world_here` をあなたのワールド名に置き換え、その後にプレイヤーがテレポートされるべき正しい座標を記述します。

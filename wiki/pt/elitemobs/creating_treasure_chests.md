@@ -1,7 +1,6 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-Baús de Tesouro são uma funcionalidade que permite aos administradores criar baús que podem largar itens ou gerar um
-boss mimic (hostil).
+Baús de Tesouro são uma funcionalidade que permite aos administradores criar baús que podem largar saque (loot) ou gerar um boss mímico (hostil).
 
 <div align="center">
 
@@ -13,11 +12,11 @@ boss mimic (hostil).
 
 ### isEnabled
 
-Define se um baú de tesouro está ativado.
+Define se um baú de tesouro está ativo (enabled).
 
 | Chave       |       Valores        | Padrão |
-|-----------|:-------------------:|:-------:|
-| `isEnabled` | [Booleano](#booleano) | `true`  |
+|-----------|:--------------------:|:-------:|
+| `isEnabled` | [Booleano](#boolean) | `true`  |
 
 <details> 
 
@@ -40,7 +39,7 @@ isEnabled: true
 Define o tipo de material do baú.
 
 | Chave       |        Valores         | Padrão |
-|-----------|:---------------------:|:-------:|
+|-----------|:----------------------:|:-------:|
 | `chestType` | [Material](#material) | `CHEST` |
 
 <details> 
@@ -52,8 +51,7 @@ Define o tipo de material do baú.
 ```yml
 chestType: CHEST
 ```
-
-*Isto precisa de ser um material de baú válido, como `CHEST` ou `BARREL`.*
+*Este precisa de ser um material de baú válido, como \`CHEST\` ou \`BARREL\`*.
 
 <div align="center">
 
@@ -69,10 +67,10 @@ chestType: CHEST
 
 ### facing
 
-Define a direção para a qual o baú está virado.
+Define a direção para onde o baú está virado.
 
 | Chave       |   Valores    | Padrão |
-|-----------|:-----------:|:-------:|
+|-----------|:------------:|:-------:|
 | `facing` | Especial [1] | `CHEST` |
 
 <details> 
@@ -84,8 +82,7 @@ Define a direção para a qual o baú está virado.
 ```yml
 facing: CHEST
 ```
-
-*Isto precisa de ser um material de baú válido, como `CHEST` ou `BARREL`.*
+*Este precisa de ser um material de baú válido, como \`CHEST\` ou \`BARREL\`*.
 
 </div>
 
@@ -97,7 +94,7 @@ facing: CHEST
 
 <summary><b>Expandir Tabela</b></summary>
 
-| Direção  |
+| Direção |
 |---------|
 | `NORTH` |
 | `SOUTH` |
@@ -111,13 +108,12 @@ facing: CHEST
 
 ### dropStyle
 
-Define se o baú deve ser largado para um jogador ou para vários jogadores.
+Define se o baú se destina a ser aberto por um jogador ou múltiplos jogadores.
 
-Baús `SINGLE` desaparecem depois de serem abertos e reaparecem quando são reabastecidos. Baús `GROUP` permanecem no
-local e indicam aos jogadores individuais que estão em tempo de espera.
+Baús \`SINGLE\` desaparecem depois de serem abertos e reaparecem quando reabastecidos. Baús \`GROUP\` permanecem e informam os jogadores individualmente que estão em tempo de espera (cooldown).
 
 | Chave       |       Valores       | Padrão |
-|-----------|:------------------:|:-------:|
+|-----------|:-------------------:|:-------:|
 | `dropStyle` | `SINGLE` / `GROUP` | `SINGLE` |
 
 <details> 
@@ -138,11 +134,11 @@ dropStyle: SINGLE
 
 ### lootList
 
-Lista os itens que o baú de tesouro deve largar quando aberto.
+Lista o saque (loot) que o baú de tesouro deve largar quando aberto.
 
-| Chave      |                          Valores                          | Padrão |
-|------------|:---------------------------------------------------------:|:------:|
-| `lootList` | [Tabela de Itens EM]($language$/elitemobs/loot_tables.md) | nenhum |
+| Chave       |                        Valores                        | Padrão  |
+|-----------|:-----------------------------------------------------:|:-------:|
+| `lootList` | [Tabela de Saque (Loot) EM]($language$/elitemobs/loot_tables.md) | nenhum   |
 
 <details> 
 
@@ -164,11 +160,11 @@ lootList:
 
 ### mimicChance
 
-Define a probabilidade de gerar um boss hostil em vez de largar itens.
+Define a probabilidade de gerar um boss hostil em vez de largar saque (loot).
 
-| Chave         |       Valores       | Padrão |
-|---------------|:-------------------:|:------:|
-| `mimicChance` | [Decimal](#decimal) |  `0`   |
+| Chave       |      Valores       | Padrão |
+|-----------|:------------------:|:-------:|
+| `mimicChance` | [Duplo](#double) |   `0`   |
 
 <details> 
 
@@ -188,15 +184,13 @@ mimicChance: 0.5
 
 ### mimicCustomBossesList
 
-Especifica a lista de bosses hostis disponíveis para gerar. Um único boss será selecionado aleatoriamente desta lista
-para ser gerado.
+Especifica a lista de bosses hostis disponíveis para geração. Um único boss será selecionado aleatoriamente desta lista para ser gerado.
 
-A lista também suporta um sistema de peso que pode implementar para garantir que alguns bosses sejam escolhidos com mais
-frequência do que outros.
+A lista também suporta um sistema de peso que pode implementar para garantir que alguns bosses sejam escolhidos com mais frequência do que outros.
 
-| Chave                   |                Valores                | Padrão |
-|-------------------------|:-------------------------------------:|:------:|
-| `mimicCustomBossesList` | [Lista de Strings](#lista_de_strings) | nenhum |
+| Chave       |      Valores       | Padrão  |
+|-----------|:------------------:|:-------:|
+| `mimicCustomBossesList` | [Lista de Strings](#string_list) | nenhum   |
 
 <details> 
 
@@ -209,8 +203,7 @@ mimicCustomBossesList:
 - my_cool_mimic_boss.yml
 - weak_mimic_boss.yml
 ```
-
-*Se quiser atribuir pesos aos bosses, a lista deve ser formatada da seguinte forma:*
+*Se desejar atribuir pesos aos bosses, a lista deve ser formatada da seguinte forma:*
 
 ```yml
 mimicCustomBossesList:
@@ -218,8 +211,7 @@ mimicCustomBossesList:
 - weak_mimic_boss.yml:40
 ```
 
-*Nesta configuração, é mais provável que `my_cool_mimic_boss.yml` seja escolhido para gerar do
-que `weak_mimic_boss.yml`.*
+*Nesta configuração, \`my_cool_mimic_boss.yml\` tem maior probabilidade de ser escolhido para geração do que \`weak_mimic_boss.yml\`.*
 
 </div>
 
@@ -229,11 +221,11 @@ que `weak_mimic_boss.yml`.*
 
 ### restockTimer
 
-Define o tempo, em minutos, antes de o baú ser reabastecido com itens.
+Define o tempo, em minutos, antes que o baú seja reabastecido com saque (loot).
 
-| Chave          |       Valores       | Padrão |
-|----------------|:-------------------:|:------:|
-| `restockTimer` | [Inteiro](#inteiro) |  `0`   |
+| Chave       |      Valores       | Padrão |
+|-----------|:------------------:|:-------:|
+| `restockTimer` | [Inteiro](#integer) |   `0`   |
 
 <details> 
 
@@ -253,11 +245,11 @@ restockTimer: 30
 
 ### effects
 
-Define os efeitos de partículas que o baú irá emitir.
+Define os efeitos de partículas que o baú irá produzir.
 
-| Chave       |      Valores       | Padrão |
-|-----------|:-----------------:|:-------:|
-| `effects` | [Partícula](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) |  nenhum   |
+| Chave       |      Valores       | Padrão  |
+|-----------|:------------------:|:-------:|
+| `effects` | [Partícula](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) | nenhum   |
 
 <details> 
 
@@ -285,13 +277,13 @@ effects:
 
 ### locations
 
-Define os locais onde o baú de tesouro irá gerar.
+Define as localizações onde o baú de tesouro será gerado.
 
-Os locais podem ser definidos mais facilmente através de `/em addTreasureChest <nome_ficheiro_baú_tesouro.yml>
+As localizações podem ser definidas mais facilmente através de \`/em addTreasureChest <nome_ficheiro_bau_tesouro.yml>\`.
 
-| Chave       |                Valores                | Padrão |
-|-------------|:-------------------------------------:|:------:|
-| `locations` | [Lista de Strings](#lista_de_strings) | nenhum |
+| Chave       |           Valores            | Padrão  |
+|-----------|:----------------------------:|:-------:|
+| `locations` | [Lista de Strings](#string_list) | nenhum   |
 
 <details> 
 
@@ -313,11 +305,11 @@ locations:
 
 ### chestTier
 
-Define o nível mínimo da guild necessário para abrir o baú.
+Define o nível mínimo de guilda necessário para abrir o baú.
 
-| Chave       |       Valores       | Padrão |
-|-------------|:-------------------:|:------:|
-| `chestTier` | [Inteiro](#inteiro) | nenhum |
+| Chave       |           Valores            | Padrão  |
+|-----------|:----------------------------:|:-------:|
+| `chestTier` | [Inteiro](#integer) | nenhum   |
 
 <details> 
 
@@ -338,14 +330,14 @@ chestTier: 3
 
 ### instanced
 
-Define se o baú deve ser instanciado (para uso em dungeons instanciadas).
-Todos os tempos de espera são desativados quando os baús são colocados em dungeons.
+Define se o baú deve ser instanciado (para uso em masmorras instanciadas).
+Todos os temporizadores de reabastecimento são desativados quando os baús são colocados em masmorras.
 
 **NÃO DEFINA ESTE VALOR MANUALMENTE**.
 
-| Chave       |     Valores     | Padrão |
-|-----------|:--------------:|:-------:|
-| `instanced` | [Booleano](#booleano) |  `false`   |
+| Chave       |     Valores     | Padrão  |
+|-----------|:---------------:|:-------:|
+| `instanced` | [Booleano](#boolean) |  `false`   |
 
 <details> 
 
@@ -367,13 +359,13 @@ instanced: true
 
 ### restockTime
 
-Depois de um baú ter sido saqueado, o plugin escreverá esta chave para controlar o tempo de reabastecimento.
+Depois de um baú ter sido saqueado (looted), o plugin irá escrever esta chave para registar o tempo de reabastecimento.
 
 **NÃO DEFINA ESTE VALOR MANUALMENTE**.
 
-| Chave       |     Valores     | Padrão |
-|-----------|:--------------:|:-------:|
-| `restockTime` | Timestamp Unix |  nenhum   |
+| Chave       |     Valores     | Padrão  |
+|-----------|:---------------:|:-------:|
+| `restockTime` | Timestamp Unix | nenhum   |
 
 <details> 
 

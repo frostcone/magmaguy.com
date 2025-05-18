@@ -1,27 +1,28 @@
-# Zonas de Script de Elite
+Okay, here is the translation of the text to Portuguese (Portugal), retaining the markdown formatting.
 
-Zonas são locais definidos por uma forma que podem ser usados como alvos por scripters para executar qualquer tipo de
-ação.
+# Zonas de Script Elite
+
+Zonas são localizações definidas por uma forma que podem ser usadas como alvos por scripters para executar qualquer tipo de ação.
 
 Apenas uma zona pode ser definida por script.
 
-Para ter como alvo zonas, o tipo de alvo `ZONE_FULL` ou `ZONE_BORDER` pode ser usado.
+Para alvejar zonas, o tipo de alvo `ZONE_FULL` ou `ZONE_BORDER` pode ser usado.
 
-As próprias zonas também usam [Alvos de Script]($language$/elitemobs/elitescript_targets.md) para definir onde a zona irá aparecer.
+As próprias zonas também usam [Alvos de Script]($language$/elitemobs/elitescript_targets.md) para definir onde a zona aparecerá.
 
-## forma
+## shape
 
 Define a forma da zona. Formas válidas:
 
-| Tipo de Forma                                                                          |                                 Detalhes                                 | Animável | Borda |
-|----------------------------------------------------------------------------------------|:------------------------------------------------------------------------:|:--------:|:-----:|
-| [`CILINDRO`]($language$/elitemobs/elitescript_zones.md&section=cilindro)               |                             Forma cilíndrica                             |    ❌     |   ✅   |
-| [`ESFERA`]($language$/elitemobs/elitescript_zones.md&section=esfera)                   |                              Forma esférica                              |    ❌     |   ✅   |
-| [`CÚPULA`]($language$/elitemobs/elitescript_zones.md&section=cúpula)                   |                      Forma de cúpula (meia esfera)                       |    ❌     |   ✅   |
-| [`CUBOIDE`]($language$/elitemobs/elitescript_zones.md&section=cuboide)                 |                        Forma cuboide (tipo cubo)                         |    ❌     |   ✅   |
-| [`RAIO_ESTÁTICO`]($language$/elitemobs/elitescript_zones.md&section=raio_estático)     |                     Uma linha fixa entre dois pontos                     |    ❌     |   ❌   |
-| [`RAIO_ROTATIVO`]($language$/elitemobs/elitescript_zones.md&section=raio_rotativo)     |                   Uma linha rotativa entre dois pontos                   |    ✅     |   ❌   |
-| [`RAIO_TRANSLAÇÃO`]($language$/elitemobs/elitescript_zones.md&section=raio_translação) | Uma linha que se move entre dois pontos iniciais para dois pontos finais |    ✅     |   ❌   |
+| Tipo de Forma                                                               | Detalhes | Animável | Contorno |
+|--------------------------------------------------------------------------| :-: | :-: | :-: |
+| [`CYLINDER`]($language$/elitemobs/elitescript_zones.md&section=cylinder)         | Forma cilíndrica | ❌ | ✅ |
+| [`SPHERE`]($language$/elitemobs/elitescript_zones.md&section=sphere)             | Forma esférica | ❌ | ✅ |
+| [`DOME`]($language$/elitemobs/elitescript_zones.md&section=dome)                 | Forma de cúpula (meia esfera) | ❌ | ✅ |
+| [`CUBOID`]($language$/elitemobs/elitescript_zones.md&section=cuboid)             | Forma cuboide (tipo cubo) | ❌ | ✅ |
+| [`STATIC_RAY`]($language$/elitemobs/elitescript_zones.md&section=static_ray)     | Uma linha fixa entre dois pontos | ❌ | ❌ |
+| [`ROTATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=rotating_ray) | Uma linha rotativa entre dois pontos | ✅ | ❌ |
+| [`TRANSLATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=translating_ray) | Uma linha que se move entre dois pontos iniciais para dois pontos finais | ✅ | ❌ |
 
 ---
 
@@ -29,30 +30,21 @@ Define a forma da zona. Formas válidas:
 
 Zonas com animações iniciam a animação da zona quando o script é chamado pela primeira vez.
 
-Isto significa que, se uma ação tiver um tempo de espera, quando a ação começar, a zona já estará a mover-se enquanto a
-ação estava à espera.
+Isto significa que se uma ação tiver um tempo de espera, quando a ação começar, a zona já se moveu enquanto a ação esperava.
 
-As zonas são sempre animadas em cada tick. Isto significa que, se usar a ação `SPAWN_PARTICLES`, pode defini-la para ser
-executada em cada tick, pois a zona estará a mover-se em cada tick. Se executar a cada segundo, verá as partículas a
-saltar, pois a zona continuou a mover-se mesmo em ticks em que as partículas não foram geradas.
+As zonas são sempre animadas a cada tick. Isto significa que se usar a ação `SPAWN_PARTICLES`, pode defini-la para correr a cada tick, pois a zona estará a mover-se a cada tick. Se correr a cada segundo, verá as partículas a saltar, pois a zona continuou a mover-se mesmo nos ticks em que as partículas não foram geradas.
 
-Se quiser fazer uma ação de zona rotativa, mas quiser esperar uma certa quantidade de ticks antes de iniciar a ação,
-faça disso um script diferente e chame esse script através de `RUN_SCRIPT`. Certifique-se de que o `RUN_SCRIPT` tem o
-tempo de espera que pretende.
+Se quiser fazer uma ação de zona rotativa, mas quiser esperar por uma quantidade definida de ticks antes de iniciar a ação, faça isso num script diferente e chame esse script através de `RUN_SCRIPT`. Certifique-se de que o `RUN_SCRIPT` tem o tempo de espera que deseja.
 
-As zonas permanecerão na localização final assim que terminarem de animar.
+As zonas permanecerão na localização final assim que terminarem a animação.
 
-Todas as zonas animáveis são definidas para não rastrear nos alvos de script, pois o movimento extra tornaria as coisas
-muito difíceis de entender para scripters e jogadores. Isto significa que estas zonas não seguirão bosses ou jogadores e
-mover-se-ão sempre relativamente aos seus pontos de spawn iniciais.
+Todas as zonas animáveis são definidas para não rastrear os alvos do script, pois o movimento extra tornaria as coisas demasiado difíceis de entender para scripters e jogadores. Isto significa que estas zonas não seguirão bosses ou jogadores e mover-se-ão sempre relativamente aos seus pontos de spawn iniciais.
 
 ---
 
-#### Borda
+#### Contorno
 
-Certos tipos de zonas podem ter bordas. Bordas significam que `ZONE_BORDER` pode ser usado como alvo da zona. As bordas
-são definidas através da criação de uma segunda forma, mais pequena, dentro da primeira forma, maior. A área entre a
-zona menor e a zona maior é a borda.
+Certas zonas podem ter contornos. Contornos significam que `ZONE_BORDER` pode ser usado como alvo da zona. Os contornos são definidos criando uma segunda forma, menor, dentro da primeira forma, maior. A área entre a zona menor e a zona maior é o contorno.
 
 <div align="center">
 
@@ -64,24 +56,24 @@ zona menor e a zona maior é a borda.
 
 ```yaml
 eliteScript:
-  Exemplo:
-    Eventos:
+  Example:
+    Events:
       - EliteMobDamagedByPlayerEvent
-    Zona:
-      forma: CILINDRO
-      raio: 4
-      raioDaBorda: 3
-      altura: 8
-      Alvo:
-        tipoDeAlvo: SELF
-    Ações:
-      - ação: SPAWN_PARTICLE
-        partículas:
-          - partícula: SMOKE_LARGE
-        Alvo:
-          tipoDeAlvo: ZONE_BORDER
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      borderRadius: 3
+      height: 8
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: SMOKE_LARGE
+        Target:
+          targetType: ZONE_BORDER
         repeatEvery: 5
-        vezes: 20
+        times: 20
 ```
 
 <div align="center">
@@ -90,11 +82,9 @@ eliteScript:
 
 </div>
 
-Este script cria partículas de fumo que **apenas** aparecem na borda da zona durante 5 segundos (repetir a cada 5 x
-vezes 20 = 100 ticks).
+Este script cria partículas de fumo que **apenas** aparecem no contorno da zona durante 5 segundos (repetir a cada 5 x vezes 20 = 100 ticks).
 
-Se não tivesse usado a opção `ZONE_BORDER`, mas sim a opção `ZONE_FULL`, então toda a zona estaria coberta de partículas
-de fumo, como esta:
+Se não usasse a opção `ZONE_BORDER`, mas sim a opção `ZONE_FULL`, então a zona inteira seria coberta por partículas de fumo assim:
 
 <div align="center">
 
@@ -110,15 +100,15 @@ de fumo, como esta:
 
 ---
 
-### ESFERA
+### SPHERE
 
-| Chave                                                                |                   Detalhes                   | Obrigatório |
-|----------------------------------------------------------------------|:--------------------------------------------:|:-----------:|
-| `forma`                                                              |  Define a forma da zona. Deve ser `ESFERA`   |      ✅      |
-| [`alvo`]($language$/elitemobs/elitescript_targets.md)                | Define a localização para o centro da esfera |      ✅      |
-| [`filtro`]($language$/elitemobs/elitescript_zones.md&section=filtro) |    Define que tipos de entidades são alvo    |      ❌      |
-| `raio`                                                               |                Raio da esfera                |      ✅      |
-| `raioDaBorda`                                                        |           Raio da esfera interior            |      ❌      |
+| Chave                                                       | Detalhes | Obrigatório |
+|-------------------------------------------------------------| :-: | :-: |
+| `shape`                                                     | Define a forma da zona. Deve ser `SPHERE` | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | Define a localização para o centro da esfera | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Define que tipos de entidades são alvejados | ❌ |
+| `radius`                                                    | Raio da esfera | ✅ |
+| `borderRadius`                                              | Raio da esfera interior | ❌ |
 
 <div align="center">
 
@@ -130,23 +120,23 @@ de fumo, como esta:
 
 ```yaml
 eliteScript:
-  Exemplo:
-    Eventos:
+  Example:
+    Events:
       - EliteMobDamagedByPlayerEvent
-    Zona:
-      forma: ESFERA
-      raio: 4
-      raioDaBorda: 3
-      Alvo:
-        tipoDeAlvo: SELF
-    Ações:
-      - ação: SPAWN_PARTICLE
-        partículas:
-          - partícula: CLOUD
-        Alvo:
-          tipoDeAlvo: ZONE_FULL
+    Zone:
+      shape: SPHERE
+      radius: 4
+      borderRadius: 3
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
         repeatEvery: 5
-        vezes: 20
+        times: 20
 ```
 
 <div align="center">
@@ -165,15 +155,15 @@ Este script demonstra a forma de uma esfera usando partículas de nuvem.
 
 ---
 
-### CÚPULA
+### DOME
 
-| Chave                                                                |                   Detalhes                   | Obrigatório |
-|----------------------------------------------------------------------|:--------------------------------------------:|:-----------:|
-| `forma`                                                              |  Define a forma da zona. Deve ser `CÚPULA`   |      ✅      |
-| [`alvo`]($language$/elitemobs/elitescript_targets.md)                | Define a localização para o centro da cúpula |      ✅      |
-| [`filtro`]($language$/elitemobs/elitescript_zones.md&section=filtro) |    Define que tipos de entidades são alvo    |      ❌      |
-| `raio`                                                               |                Raio da cúpula                |      ✅      |
-| `raioDaBorda`                                                        |           Raio da cúpula interior            |      ❌      |
+| Chave                                                       | Detalhes | Obrigatório |
+|-------------------------------------------------------------| :-: | :-: |
+| `shape`                                                     | Define a forma da zona. Deve ser `DOME` | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | Define a localização para o centro da cúpula | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Define que tipos de entidades são alvejados | ❌ |
+| `radius`                                                    | Raio da cúpula | ✅ |
+| `borderRadius`                                              | Raio da cúpula interior | ❌ |
 
 <div align="center">
 
@@ -185,23 +175,23 @@ Este script demonstra a forma de uma esfera usando partículas de nuvem.
 
 ```yaml
 eliteScript:
-  Exemplo:
-    Eventos:
+  Example:
+    Events:
       - EliteMobDamagedByPlayerEvent
-    Zona:
-      forma: CÚPULA
-      raio: 4
-      raioDaBorda: 3
-      Alvo:
-        tipoDeAlvo: SELF
-    Ações:
-      - ação: SPAWN_PARTICLE
-        partículas:
-          - partícula: CLOUD
-        Alvo:
-          tipoDeAlvo: ZONE_FULL
+    Zone:
+      shape: DOME
+      radius: 4
+      borderRadius: 3
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
         repeatEvery: 5
-        vezes: 20
+        times: 20
 ```
 
 <div align="center">
@@ -220,16 +210,16 @@ Este script demonstra a forma de uma cúpula usando partículas de nuvem.
 
 ---
 
-### CILINDRO
+### CYLINDER
 
-| Chave                                                                |                    Detalhes                    | Obrigatório |
-|----------------------------------------------------------------------|:----------------------------------------------:|:-----------:|
-| `forma`                                                              |  Define a forma da zona. Deve ser `CILINDRO`   |      ✅      |
-| [`alvo`]($language$/elitemobs/elitescript_targets.md)                | Define a localização para o centro do cilindro |      ✅      |
-| [`filtro`]($language$/elitemobs/elitescript_zones.md&section=filtro) |     Define que tipos de entidades são alvo     |      ❌      |
-| `raio`                                                               |                Raio do cilindro                |      ✅      |
-| `raioDaBorda`                                                        |           Raio do cilindro interior            |      ❌      |
-| `altura`                                                             |               Altura do cilindro               |      ❌      |
+| Chave                                                       | Detalhes | Obrigatório |
+|-------------------------------------------------------------| :-: | :-: |
+| `shape`                                                     | Define a forma da zona. Deve ser `CYLINDER` | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | Define a localização para o centro do cilindro | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Define que tipos de entidades são alvejados | ❌ |
+| `radius`                                                    | Raio do cilindro | ✅ |
+| `borderRadius`                                              | Raio do cilindro interior | ❌ |
+| `height`                                                    | Altura do cilindro | ❌ |
 
 <div align="center">
 
@@ -241,24 +231,24 @@ Este script demonstra a forma de uma cúpula usando partículas de nuvem.
 
 ```yaml
 eliteScript:
-  Exemplo:
-    Eventos:
+  Example:
+    Events:
       - EliteMobDamagedByPlayerEvent
-    Zona:
-      forma: CILINDRO
-      raio: 4
-      raioDaBorda: 3
-      altura: 8
-      Alvo:
-        tipoDeAlvo: SELF
-    Ações:
-      - ação: SPAWN_PARTICLE
-        partículas:
-          - partícula: CLOUD
-        Alvo:
-          tipoDeAlvo: ZONE_FULL
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      borderRadius: 3
+      height: 8
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
         repeatEvery: 5
-        vezes: 20
+        times: 20
 ```
 
 <div align="center">
@@ -277,19 +267,19 @@ Este script demonstra a forma de um cilindro usando partículas de nuvem.
 
 ---
 
-### CUBOIDE
+### CUBOID
 
-| Chave                                                                |                         Detalhes                         | Obrigatório |
-|----------------------------------------------------------------------|:--------------------------------------------------------:|:-----------:|
-| `forma`                                                              |        Define a forma da zona. Deve ser `CUBOIDE`        |      ✅      |
-| [`alvo`]($language$/elitemobs/elitescript_targets.md)                |      Define a localização para o centro do cuboide       |      ✅      |
-| [`filtro`]($language$/elitemobs/elitescript_zones.md&section=filtro) |          Define que tipos de entidades são alvo          |      ❌      |
-| `x`                                                                  |             Define o comprimento do cuboide              |      ✅      |
-| `y`                                                                  |                Define a altura do cuboide                |      ✅      |
-| `z`                                                                  |     Define a largura do cuboide, por omissão, é `x`      |      ❌      |
-| `xBorda`                                                             |         Define o comprimento do cuboide interior         |      ❌      |
-| `yBorda`                                                             |           Define a altura do cuboide interior            |      ❌      |
-| `zBorda`                                                             | Define a largura do cuboide interior, por omissão, é `x` |      ❌      |
+| Chave                                                       | Detalhes | Obrigatório |
+|-------------------------------------------------------------| :-: | :-: |
+| `shape`                                                     | Define a forma da zona. Deve ser `CUBOID` | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | Define a localização para o centro do cuboide | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Define que tipos de entidades são alvejados | ❌ |
+| `x`                                                         | Define o comprimento do cuboide | ✅ |
+| `y`                                                         | Define a altura do cuboide | ✅ |
+| `z`                                                         | Define a largura do cuboide, padrão é `x` | ❌ |
+| `xBorder`                                                   | Define o comprimento do cuboide interior | ❌ |
+| `yBorder`                                                   | Define a altura do cuboide interior | ❌ |
+| `zBorder`                                                   | Define a largura do cuboide interior, padrão é `x` | ❌ |
 
 <div align="center">
 
@@ -301,27 +291,27 @@ Este script demonstra a forma de um cilindro usando partículas de nuvem.
 
 ```yaml
 eliteScript:
-  Exemplo:
-    Eventos:
+  Example:
+    Events:
       - EliteMobDamagedByPlayerEvent
-    Zona:
-      forma: CUBOIDE
+    Zone:
+      shape: CUBOID
       x: 4
       y: 4
       z: 4
-      xBorda: 3
-      yBorda: 3
-      zBorda: 3
-      Alvo:
-        tipoDeAlvo: SELF
-    Ações:
-      - ação: SPAWN_PARTICLE
-        partículas:
-          - partícula: CLOUD
-        Alvo:
-          tipoDeAlvo: ZONE_FULL
+      xBorder: 3
+      yBorder: 3
+      zBorder: 3
+      Target:
+        targetType: SELF
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
         repeatEvery: 5
-        vezes: 20
+        times: 20
 ```
 
 <div align="center">
@@ -340,16 +330,16 @@ Este script demonstra a forma de um cuboide usando partículas de nuvem.
 
 ---
 
-### RAIO_ESTÁTICO
+### STATIC_RAY
 
-| Chave                                                                |                       Detalhes                        | Obrigatório |
-|----------------------------------------------------------------------|:-----------------------------------------------------:|:-----------:|
-| `forma`                                                              |   Define a forma da zona. Deve ser `RAIO_ESTÁTICO`    |      ✅      |
-| [`alvo`]($language$/elitemobs/elitescript_targets.md)                |  Define a localização para o primeiro ponto da linha  |      ✅      |
-| [`alvo2`]($language$/elitemobs/elitescript_targets.md)               |   Define a localização para o último ponto da linha   |      ✅      |
-| [`filtro`]($language$/elitemobs/elitescript_zones.md&section=filtro) |        Define que tipos de entidades são alvo         |      ❌      |
-| `ignoraBlocosSólidos`                                                |      Define se o raio atravessará blocos sólidos      |      ❌      |
-| `raioDoPonto`                                                        | Define a espessura do raio. Por omissão é 0.5 blocos. |      ❌      |
+| Chave                                                       | Detalhes | Obrigatório |
+|-------------------------------------------------------------| :-: | :-: |
+| `shape`                                                     | Define a forma da zona. Deve ser `STATIC_RAY` | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | Define a localização para o primeiro ponto da linha | ✅ |
+| [`target2`]($language$/elitemobs/elitescript_targets.md)    | Define a localização para o último ponto da linha | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Define que tipos de entidades são alvejados | ❌ |
+| `ignoresSolidBlocks`                                        | Define se o raio passará por blocos sólidos | ❌ |
+| `pointRadius`                                               | Define a espessura do raio. O padrão é 0.5 blocos. | ❌ |
 
 <div align="center">
 
@@ -361,25 +351,25 @@ Este script demonstra a forma de um cuboide usando partículas de nuvem.
 
 ```yaml
 eliteScript:
-  Exemplo:
-    Eventos:
+  Example:
+    Events:
       - EliteMobDamagedByPlayerEvent
-    Zona:
-      forma: RAIO_ESTÁTICO
-      Alvo2:
-        tipoDeAlvo: DIRECT_TARGET
-        desvio: 0,1,0
-      Alvo:
-        tipoDeAlvo: SELF
-        desvio: 0,1,0
-    Ações:
-      - ação: SPAWN_PARTICLE
-        partículas:
-          - partícula: CLOUD
-        Alvo:
-          tipoDeAlvo: ZONE_FULL
+    Zone:
+      shape: STATIC_RAY
+      Target2:
+        targetType: DIRECT_TARGET
+        offset: 0,1,0
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
         repeatEvery: 5
-        vezes: 20
+        times: 20
 ```
 
 <div align="center">
@@ -390,8 +380,7 @@ eliteScript:
 
 Este script demonstra a forma de um raio estático usando partículas de nuvem.
 
-Ajustamos a altura da zona usando a opção `desvio` em ambas as extremidades da zona para fazer com que o raio apareça a
-partir do meio do jogador e do boss, caso contrário, o raio apareceria aos seus pés.
+Ajustámos a altura da zona usando a opção `offset` em ambas as extremidades da zona para fazer o raio aparecer do meio do jogador e do boss, caso contrário o raio apareceria nos seus pés.
 
 </div>
 
@@ -401,21 +390,21 @@ partir do meio do jogador e do boss, caso contrário, o raio apareceria aos seus
 
 ---
 
-### RAIO_ROTATIVO
+### ROTATING_RAY
 
-| Chave                                                                |                         Detalhes                          | Obrigatório |
-|----------------------------------------------------------------------|:---------------------------------------------------------:|:-----------:|
-| `forma`                                                              |     Define a forma da zona. Deve ser `RAIO_ROTATIVO`      |      ✅      |
-| [`filtro`]($language$/elitemobs/elitescript_zones.md&section=filtro) |          Define que tipos de entidades são alvo           |      ❌      |
-| [`alvo`]($language$/elitemobs/elitescript_targets.md)                |    Define a localização para o primeiro ponto da linha    |      ✅      |
-| [`alvo2`]($language$/elitemobs/elitescript_targets.md)               |     Define a localização para o último ponto da linha     |      ✅      |
-| `duraçãoDaAnimação`                                                  |  Define, em ticks, a quantidade de tempo para a rotação   |      ✅      |
-| `inclinaçãoPréRotação`                                               | Aplica uma rotação inicial à inclinação antes da animação |      ❌      |
-| `guinadaPréRotação`                                                  |  Aplica uma rotação inicial à guinada antes da animação   |      ❌      |
-| `inclinaçãoRotação`                                                  |      Define a rotação da inclinação para a animação       |      ❌      |
-| `guinadaRotação`                                                     |        Define a rotação da guinada para a animação        |      ❌      |
-| `ignoraBlocosSólidos`                                                |        Define se o raio atravessará blocos sólidos        |      ❌      |
-| `raioDoPonto`                                                        |   Define a espessura do raio. Por omissão é 0.5 blocos.   |      ❌      |
+| Chave                                                       | Detalhes | Obrigatório |
+|-------------------------------------------------------------| :-: | :-: |
+| `shape`                                                     | Define a forma da zona. Deve ser `ROTATING_RAY` | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Define que tipos de entidades são alvejados | ❌ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | Define a localização para o primeiro ponto da linha | ✅ |
+| [`target2`]($language$/elitemobs/elitescript_targets.md)    | Define a localização para o último ponto da linha | ✅ |
+| `animationDuration`                                         | Define, em ticks, a quantidade de tempo para a rotação | ✅ |
+| `pitchPreRotation`                                          | Aplica uma rotação inicial à inclinação antes da animação | ❌ |
+| `yawPreRotation`                                            | Aplica uma rotação inicial à guinada antes da animação | ❌ |
+| `pitchRotation`                                             | Define a rotação de inclinação para a animação | ❌ |
+| `yawRotation`                                               | Define a rotação de guinada para a animação | ❌ |
+| `ignoresSolidBlocks`                                        | Define se o raio passará por blocos sólidos | ❌ |
+| `pointRadius`                                               | Define a espessura do raio. O padrão é 0.5 blocos. | ❌ |
 
 <div align="center">
 
@@ -427,31 +416,31 @@ partir do meio do jogador e do boss, caso contrário, o raio apareceria aos seus
 
 ```yaml
 eliteScript:
-  Exemplo:
-    Eventos:
+  Example:
+    Events:
       - EliteMobDamagedByPlayerEvent
-    Zona:
-      forma: RAIO_ROTATIVO
-      duraçãoDaAnimação: 100
-      inclinaçãoPréRotação: 0
-      guinadaPréRotação: 0
-      inclinaçãoRotação: 0
-      guinadaRotação: 360
-      ignoraBlocosSólidos: true
-      Alvo:
-        tipoDeAlvo: SELF
-        desvio: 0,1,0
-      Alvo2:
-        tipoDeAlvo: DIRECT_TARGET
-        desvio: 0,1,0
-    Ações:
-      - ação: SPAWN_PARTICLE
-        partículas:
-          - partícula: CLOUD
-        Alvo:
-          tipoDeAlvo: ZONE_FULL
+    Zone:
+      shape: ROTATING_RAY
+      animationDuration: 100
+      pitchPrerotation: 0
+      yawPrerotation: 0
+      pitchRotation: 0
+      yawRotation: 360
+      ignoresSolidBlocks: true
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+      Target2:
+        targetType: DIRECT_TARGET
+        offset: 0,1,0
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
         repeatEvery: 1
-        vezes: 100
+        times: 100
 ```
 
 <div align="center">
@@ -460,13 +449,11 @@ eliteScript:
 
 </div>
 
-Este script mostra como um raio rotativo se parece usando partículas de nuvem.
+Este script mostra como é um raio rotativo usando partículas de nuvem.
 
-Primeiro, ele cria um raio do boss para o jogador que o magoou, usando partículas de nuvem. Em seguida, ajusta as
-posições ligeiramente para cima por um bloco usando `desvio`.
+Primeiro, cria um raio do boss para o jogador que o feriu, usando partículas de nuvem. Depois, ajusta as posições ligeiramente para cima em um bloco usando `offset`.
 
-Em seguida, ele gira o raio em um círculo completo em torno do jogador que foi alvo. Esta rotação dura 5 segundos (100
-ticks) para ser concluída, com o jogador alvo como o centro.
+De seguida, faz o raio girar num círculo completo à volta do jogador que foi alvejado. Esta rotação dura 5 segundos (100 ticks) para completar, tendo o jogador alvejado como centro.
 
 </div>
 
@@ -476,19 +463,19 @@ ticks) para ser concluída, com o jogador alvo como o centro.
 
 ---
 
-### RAIO_TRANSLAÇÃO
+### TRANSLATING_RAY
 
-| Chave                                                                |                            Detalhes                            | Obrigatório |
-|----------------------------------------------------------------------|:--------------------------------------------------------------:|:-----------:|
-| `forma`                                                              |       Define a forma da zona. Deve ser `RAIO_TRANSLAÇÃO`       |      ✅      |
-| [`filtro`]($language$/elitemobs/elitescript_zones.md&section=filtro) |             Define que tipos de entidades são alvo             |      ❌      |
-| `duraçãoDaAnimação`                                                  |   Define, em ticks, a quantidade de tempo para a translação    |      ✅      |
-| [`alvo`]($language$/elitemobs/elitescript_targets.md)                |      Define a localização para o primeiro ponto da linha       |      ✅      |
-| [`alvoFinal`]($language$/elitemobs/elitescript_targets.md)           | Define a localização do destino para o primeiro ponto da linha |      ✅      |
-| [`alvo2`]($language$/elitemobs/elitescript_targets.md)               |       Define a localização para o segundo ponto da linha       |      ✅      |
-| [`alvoFinal2`]($language$/elitemobs/elitescript_targets.md)          | Define a localização do destino para o segundo ponto da linha  |      ✅      |
-| `ignoraBlocosSólidos`                                                |          Define se o raio atravessará blocos sólidos           |      ❌      |
-| `raioDoPonto`                                                        |     Define a espessura do raio. Por omissão é 0.5 blocos.      |      ❌      |
+| Chave                                                          | Detalhes | Obrigatório |
+|--------------------------------------------------------------| :-: | :-: |
+| `shape`                                                      | Define a forma da zona. Deve ser `TRANSLATING_RAY` | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter)  | Define que tipos de entidades são alvejados | ❌ |
+| `animationDuration`                                          | Define, em ticks, a quantidade de tempo para a translação | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)      | Define a localização para o primeiro ponto da linha | ✅ |
+| [`finalTarget`]($language$/elitemobs/elitescript_targets.md) | Define a localização do destino para o primeiro ponto da linha | ✅ |
+| [`target2`]($language$/elitemobs/elitescript_targets.md)     | Define a localização para o segundo ponto da linha | ✅ |
+| [`finalTarget2`]($language$/elitemobs/elitescript_targets.md) | Define a localização do destino para o segundo ponto da linha | ✅ |
+| `ignoresSolidBlocks`                                         | Define se o raio passará por blocos sólidos | ❌ |
+| `pointRadius`                                                | Define a espessura do raio. O padrão é 0.5 blocos. | ❌ |
 
 <div align="center">
 
@@ -500,31 +487,31 @@ ticks) para ser concluída, com o jogador alvo como o centro.
 
 ```yaml
 eliteScript:
-  Exemplo:
-    Eventos:
+  Example:
+    Events:
       - EliteMobDamagedByPlayerEvent
-    Zona:
-      forma: RAIO_TRANSLAÇÃO
-      Alvo:
-        tipoDeAlvo: SELF
-      AlvoFinal:
-        tipoDeAlvo: SELF
-        desvio: 0,10,0
-      Alvo2:
-        tipoDeAlvo: DIRECT_TARGET
-      AlvoFinal2:
-        tipoDeAlvo: DIRECT_TARGET
-        desvio: 0,10,0
-      duraçãoDaAnimação: 100
-      ignoraBlocosSólidos: true
-    Ações:
-      - ação: SPAWN_PARTICLE
-        partículas:
-          - partícula: CLOUD
-        Alvo:
-          tipoDeAlvo: ZONE_FULL
+    Zone:
+      shape: TRANSLATING_RAY
+      Target:
+        targetType: SELF
+      FinalTarget:
+        targetType: SELF
+        offset: 0,10,0
+      Target2:
+        targetType: DIRECT_TARGET
+      FinalTarget2:
+        targetType: DIRECT_TARGET
+        offset: 0,10,0
+      animationDuration: 100
+      ignoresSolidBlocks: true
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+          - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
         repeatEvery: 1
-        vezes: 100
+        times: 100
 ```
 
 <div align="center">
@@ -533,16 +520,15 @@ eliteScript:
 
 </div>
 
-Este script mostra como um raio de translação se parece usando partículas de nuvem.
+Este script mostra como é um raio translacional usando partículas de nuvem.
 
-Primeiro, ele cria um raio do boss para o jogador que o magoou, usando partículas de nuvem.
+Primeiro, cria um raio do boss para o jogador que o feriu, usando partículas de nuvem.
 
-Em seguida, ele anima o raio para subir 10 blocos a partir de ambos os alvos usando o `desvio` em `AlvoFinal1`
-e `AlvoFinal2`.
+Depois, anima o raio para ir para cima 10 blocos de ambos os alvos usando o `offset` em `FinalTarget1` e `FinalTarget2`.
 
-A animação demora 5 segundos (100 ticks) para ser concluída.
+A animação demora 5 segundos (100 ticks) a completar.
 
-Podemos facilmente fazer o raio mover-se lateralmente ajustando o `desvio` Z para algo como `desvio: 0,0,10`:
+Podemos facilmente fazer o raio mover-se para o lado ajustando o `offset` Z para algo como `offset: 0,0,10`:
 
 <div align="center">
 
@@ -550,9 +536,8 @@ Podemos facilmente fazer o raio mover-se lateralmente ajustando o `desvio` Z par
 
 </div>
 
-Este comportamento pode mudar dependendo de onde está a olhar no jogo.
-<br>Se modificarmos o `desvio` X no script mostrado na imagem GIF, o raio pareceria afastar-se de nós numa linha reta da
-nossa perspetiva.
+Este comportamento pode mudar dependendo para onde está a olhar no jogo.
+<br>Se modificarmos o `offset` X no script mostrado na imagem GIF, o raio pareceria mover-se para longe de nós numa linha reta da nossa perspetiva.
 
 </div>
 
@@ -560,16 +545,15 @@ nossa perspetiva.
 
 ---
 
-## filtro
+## filter
 
-A propriedade filtro pode ser usada para apenas ter como alvo entidades específicas dentro da zona. Estas entidades
-podem ser:
+A propriedade filtro pode ser usada para alvejar apenas entidades específicas dentro da zona. Estas entidades podem ser:
 
-| Valor      |                       Detalhes                       |
-|------------|:----------------------------------------------------:|
-| `JOGADOR`  | Apenas tem como alvo jogadores na zona (por omissão) |
-| `ELITE`    |         Apenas tem como alvo elites na zona          |
-| `SER_VIVO` |    Tem como alvo todas as entidades vivas na zona    |
+| Valor | Detalhes |
+| --- | :-: |
+| `PLAYER` | Alveja apenas jogadores na zona (padrão) |
+| `ELITE` | Alveja apenas elites na zona |
+| `LIVING` | Alveja todas as entidades vivas na zona |
 
 <div align="center">
 
@@ -581,19 +565,19 @@ podem ser:
 
 ```yaml
 eliteScript:
-  ExemploDeFiltro:
-    Eventos:
+  FilterExample:
+    Events:
     - PlayerDamagedByEliteMobEvent
-    Zona:
-      forma: ESFERA
-      raio: 12
-      raioDaBorda: 11
-      filtro: ELITE
-      Alvo:
-        tipoDeAlvo: SELF
-        rastrear: false
+    Zone:
+      shape: SPHERE
+      radius: 12
+      borderRadius: 11
+      filter: ELITE
+      Target:
+        targetType: SELF
+        track: false
 ```
 
-Este script de exemplo mostra como usar o filtro para fazer com que a zona tenha como alvo apenas elites.
+Este script de exemplo mostra como usar o filtro para fazer a zona alvejar apenas elites.
 
 </div>

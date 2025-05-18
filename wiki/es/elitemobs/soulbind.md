@@ -1,32 +1,27 @@
-El encantamiento Vínculo de Alma vincula todo el botín de EliteMobs a los jugadores para los que cae el botín. Esto
-significa que cada jugador obtiene su propia recompensa por matar a un Elite Mob, lo que hace que compartir el botín no
-sea un problema.
+Aquí tienes la traducción al español, conservando el formato markdown:
 
-Los jugadores no pueden recoger del suelo el botín que no está vinculado a ellos. Pueden recogerlo de los cofres, pero
-no pueden equiparlo en combate, lo que significa que solo pueden llevarlo consigo.
+El encantamiento de Vínculo de Alma vincula todo el botín de EliteMobs a los jugadores para los que cae el botín. Esto significa que cada jugador obtiene su propia recompensa al matar un Mob Élite, haciendo que compartir el botín no sea un problema.
 
-Esto es para que los jugadores no atasquen accidentalmente los cofres de los demás con objetos inamovibles. Además, los
-jugadores solo pueden vender los objetos que estén vinculados a ellos.
+Los jugadores no pueden recoger del suelo el botín que no esté vinculado a su alma. Pueden recogerlo de los cofres, pero no pueden equiparlo en combate, lo que significa que solo pueden llevarlo consigo.
 
-Este encantamiento está pensado para ser usado junto con el limitador de botín de nivel de gremio.
+Esto es para que los jugadores no llenen accidentalmente los cofres de los demás con objetos inamovibles. Además, los jugadores solo pueden vender los objetos vinculados a su alma.
+
+Este encantamiento está pensado para ser usado junto con el limitador de botín por nivel de gremio.
 
 ***
 
-Como todos los encantamientos, se puede desactivar en la carpeta de encantamientos (soulbind.yml, establece `isEnabled`
-en `false`), aunque esto no es muy recomendable.
+Como todos los encantamientos, se puede desactivar en la carpeta de encantamientos (soulbind.yml, establecer `isEnabled` a `false`), aunque esto no es muy recomendable.
 
-***Problemas causados al eliminar Vínculo de Alma:***
+***
 
-- Los Elites ya no dejarán caer monedas
-- Los jugadores pueden regalar equipo de diamante o netherita gratis a todos con una cantidad mínima de farmeo
-- La economía se romperá instantáneamente, permitiendo a los jugadores veteranos potenciar a los jugadores
-  instantáneamente a través de docenas de rangos
-- El limitador de botín dejará de funcionar, lo que significa que los jugadores podrán usar la armadura y las armas de
-  los jugadores de nivel más alto.
+***Problemas causados por eliminar Vínculo de Alma:***
+- Los Élite ya no soltarán monedas
+- Los jugadores pueden regalar equipo de diamante o netherita a todo el mundo con una cantidad mínima de grindeo
+- La economía se romperá instantáneamente, permitiendo a los jugadores veteranos potenciar a otros jugadores instantáneamente a través de docenas de rangos
+- El limitador de botín ya no funcionará, lo que significa que los jugadores podrán simplemente usar la armadura y las armas de los jugadores de mayor nivel
 
 ***
 
 Los administradores pueden eliminar Vínculo de Alma de los objetos usando `/em unbind`.
 
-Los jugadores pueden eliminar el vínculo de alma de un objeto utilizando un pergamino de Desvinculación. Por defecto, lo
-suelta el Vinculador de Mundos, pero puedes configurar otros jefes para que lo suelten si lo deseas.
+Los jugadores pueden eliminar el vínculo de alma de un objeto usando un Pergamino de Desvincular. Por defecto, este es soltado por el Enlazador de Mundos, pero puedes configurar a otros jefes para que lo suelten si quieres.

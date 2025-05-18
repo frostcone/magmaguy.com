@@ -1,27 +1,15 @@
-A partir da versão 7.1.0, por pedido popular, agora podes ativar o Vault para unificar a economia do EliteMobs com a
-economia do teu servidor.
+A partir da 7.1.0, a pedido popular, agora é possível ativar o Vault para unificar a economia do EliteMobs com a economia do seu servidor.
 
 ***Agora, eis porque isso é uma má ideia:***
 
-O EliteMobs não tem um sistema de níveis.
-O [sistema de progressão]($language$/elitemobs/understanding_the_basics_of_elitemobs.md) está ligado à obtenção de itens
-melhores através de matar Elite Mobs e comprar níveis de guilda mais altos para aceder a saque de nível mais alto, mobs
-de nível mais alto, missões de nível mais alto e, desafios e masmorras de arena de nível mais alto.
+EliteMobs não tem um sistema de níveis. O [sistema de progressão]($language$/elitemobs/understanding_the_basics_of_elitemobs.md) está ligado à obtenção de melhores itens ao matar Elite Mobs e comprar ranks de guilda mais altos para aceder a loot de nível superior, mobs de nível superior, quests de nível superior e, desafios de arena e dungeons de nível superior.
 
-Além disso, o EliteMobs tem um equilíbrio muito delicado quando se trata de comprar amuletos e revender saque obtido de
-Elite Mobs.
+Adicionalmente, EliteMobs tem um equilíbrio muito delicado no que diz respeito à compra de charms e revenda de loot obtido de Elite Mobs.
 
-***Portanto, se combinares a economia do teu servidor com a economia do EliteMobs, os jogadores poderão facilmente
-comprar o seu caminho até ao topo, potencialmente ignorando a curva de aprendizagem.***
+***Portanto, se combinar a economia do seu servidor com a economia do EliteMobs, os jogadores poderão facilmente comprar o seu caminho até ao topo, potencialmente contornando a curva de aprendizagem.***
 
-Agora, o [sistema de progressão]($language$/elitemobs/understanding_the_basics_of_elitemobs.md) não funcionará
-corretamente, o que leva a problemas ainda piores. Os Elite Mobs de alto nível têm vários poderes, e os jogadores devem
-aprender lentamente esses poderes ao lutar contra eles durante dezenas de horas, aprendendo a identificar os poderes que
-os Elite Mobs têm e como contrariar esses poderes, bem como aprender a preparar-se para entrar em combate contra Elite
-Mobs.
+Agora o [sistema de progressão]($language$/elitemobs/understanding_the_basics_of_elitemobs.md) não funcionará corretamente, o que leva a problemas ainda piores. Elite Mobs de alto nível têm vários poderes, e os jogadores devem aprender lentamente esses poderes lutando contra eles durante dezenas de horas, aprendendo a identificar os poderes que os Elite Mobs têm e como contrariar esses poderes, bem como aprendendo a preparar-se para entrar em combate contra Elite Mobs.
 
-Se os jogadores saltarem diretamente para o endgame, sentirão que a dificuldade do combate é quase impossível e
-extremamente injusta, pois não terão tido tempo para desenvolver o conhecimento necessário para matar os EliteMobs de
-forma eficiente através de longas horas de jogo.
+Se os jogadores saltarem diretamente para o endgame, sentirão que a dificuldade do combate é quase impossível e extremamente injusta, pois não terão tido tempo para desenvolver o conhecimento necessário para matar os EliteMobs eficientemente através de longas horas de jogo.
 
-Podes ativar a compatibilidade com o Vault no ficheiro de configuração `EconomySettings.yml`.
+Pode ativar a compatibilidade com o Vault no ficheiro de configuração `EconomySettings.yml`.

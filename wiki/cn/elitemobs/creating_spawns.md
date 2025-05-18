@@ -1,16 +1,16 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# 什么是自定义生成？
+# 什么是自定义生成点？
 
-自定义生成被事件和全局增援用来设置事件应该如何、在哪里以及何时生成该事件的 Boss。
+自定义生成点用于事件和全局增援，以设置事件应如何、在何处以及何时生成该事件的首领。
 
-事件和全局增援通过写下文件名来设置它们正在使用的生成点。
+事件和全局增援通过写下其文件名来设置它们正在使用的生成点。
 
-# 创建自定义生成
+# 创建自定义生成点
 
-自定义生成位于 `customspawns` 文件夹中。一个自定义生成可以被多个事件同时使用，因此您不必为每个事件创建一个。
+自定义生成点位于 `customspawns` 文件夹中。一个自定义生成点可以同时被多个事件使用，因此您不必为每个事件创建一个。
 
-这是一个自定义生成的示例：
+这是一个自定义生成点的示例：
 
 ```yaml
 isEnabled: true
@@ -21,18 +21,16 @@ bypassWorldGuard: false
 isSurfaceSpawn: true
 ```
 
-## 创建任意地点生成
-
-要创建一个可以**在任何地方**发生的生成，您的配置应如下所示：
+## 创建一个任意位置生成点
+要创建一个可以发生在**任意位置**的生成点，您的配置应类似于以下内容：
 
 ```yml
 isEnabled: true
 canSpawnInLight: true
 ```
+此配置允许生物在任何位置、任何世界、任何时间以及任何月相期间生成。
 
-此配置允许怪物在任何地点、任何世界、任何时间和任何月相期间生成。
-
-如果您有兴趣创建更自定义的生成，请继续阅读下文。
+如果您有兴趣创建更自定义的生成点，请继续阅读下方内容。
 
 ## 值
 
@@ -42,13 +40,13 @@ canSpawnInLight: true
 
 ### isEnabled
 
-设置是否启用生成。
+设置生成点是否启用。
 
-| 键           |        值        |  默认值   |
-|-------------|:---------------:|:------:|
-| `isEnabled` | [布尔值](#boolean) | `true` |
+| 键        |       值        | 默认值 |
+|-----------|:-------------------:|:-------:|
+| `isEnabled` | [布尔值](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -66,13 +64,13 @@ isEnabled: true
 
 ### lowestYLevel
 
-设置使用的最低 Y 轴高度（地图高度）。
+设置使用的最低 Y 坐标（地图高度）。
 
-| 键              |       值        | 默认值 |
-|----------------|:--------------:|:---:|
-| `lowestYLevel` | [整数](#integer) | `0` |
+| 键         |       值        | 默认值 |
+|------------|:-------------------:|:-------:|
+| `lowestYLevel` | [整数](#integer) |   `0`   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -90,13 +88,13 @@ lowestYLevel: 0
 
 ### highestYLevel
 
-设置使用的最低 Y 轴高度（地图高度）。
+设置使用的最高 Y 坐标（地图高度）。
 
-| 键               |       值        |  默认值  |
-|-----------------|:--------------:|:-----:|
-| `highestYLevel` | [整数](#integer) | `320` |
+| 键          |       值        | 默认值 |
+|-------------|:-------------------:|:-------:|
+| `highestYLevel` | [整数](#integer) |  `320`  |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -114,13 +112,13 @@ highestYLevel: 320
 
 ### validWorlds
 
-设置自定义生成可以发生的有效世界列表。可以省略此设置以允许**所有**世界有效。
+设置自定义生成点可以发生的**世界**列表。可以省略此设置以允许您的**所有**世界都有效。
 
-| 键             |           值           | 默认值 |
-|---------------|:---------------------:|:---:|
-| `validWorlds` | [字符串列表](#string_list) |  无  |
+| 键         |           值            | 默认值 |
+|------------|:---------------------------:|:-------:|
+| `validWorlds` | [字符串列表](#string_list) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -132,7 +130,7 @@ validWorlds:
 - FUN_LAND
 ```
 
-*如果您希望所有世界都有效，则可以不使用此设置，或者将其格式化为如下所示：*
+*如果您希望所有世界都有效，您可以不使用此设置或按如下方式格式化：*
 
 ```yml
 validWorlds: []
@@ -146,13 +144,13 @@ validWorlds: []
 
 ### validWorldEnvironments
 
-设置自定义生成可以发生的有效世界环境列表。可以省略此设置以允许**所有**环境有效。
+设置自定义生成点可以发生的有效**世界环境**列表。可以省略此设置以允许您的**所有**环境都有效。
 
-| 键                        |                                     值                                      | 默认值 |
-|--------------------------|:--------------------------------------------------------------------------:|:---:|
-| `validWorldEnvironments` | [环境列表](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html) |  无  |
+| 键                   |           值            | 默认值 |
+|----------------------|:---------------------------:|:-------:|
+| `validWorldEnvironments` | [环境列表](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/WorldType.html) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -164,7 +162,7 @@ validWorldEnvironments:
 - LARGE_BIOMES
 ```
 
-*如果您希望所有环境都有效，则可以不使用此设置，或者将其格式化为如下所示：*
+*如果您希望所有环境都有效，您可以不使用此设置或按如下方式格式化：*
 
 ```yml
 validWorldEnvironments: []
@@ -178,13 +176,13 @@ validWorldEnvironments: []
 
 ### validBiomes
 
-设置自定义生成可以发生的有效生物群系列表。可以省略此设置以允许**所有**生物群系有效。
+设置自定义生成点可以发生的有效**生物群系**列表。可以省略此设置以允许您的**所有**生物群系都有效。
 
-| 键             |                                       值                                        | 默认值 |
-|---------------|:------------------------------------------------------------------------------:|:---:|
-| `validBiomes` | [生物群系列表](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) |  无  |
+| 键         |           值            | 默认值 |
+|------------|:---------------------------:|:-------:|
+| `validBiomes` | [生物群系列表](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html) |  无   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -196,7 +194,7 @@ validBiomes:
 - MUSHROOM_FIELDS
 ```
 
-*如果您希望所有环境都有效，则可以不使用此设置，或者将其格式化为如下所示：*
+*如果您希望所有生物群系都有效，您可以不使用此设置或按如下方式格式化：*
 
 ```yml
 validBiomes: []
@@ -210,13 +208,13 @@ validBiomes: []
 
 ### earliestTime
 
-设置自定义生成可以发生的最早游戏内时间。
+设置自定义生成点可以发生的最早游戏内时间。
 
-| 键              |       值        | 默认值 |
-|----------------|:--------------:|:---:|
-| `earliestTime` | [整数](#integer) | `0` |
+| 键           |           值            | 默认值 |
+|--------------|:---------------------------:|:-------:|
+| `earliestTime` | [整数](#integer) |   `0`   |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -234,13 +232,13 @@ earliestTime: 0
 
 ### latestTime
 
-设置自定义生成可以发生的最晚游戏内时间。
+设置自定义生成点可以发生的最晚游戏内时间。
 
-| 键            |       值        |   默认值   |
-|--------------|:--------------:|:-------:|
+| 键          |           值            | 默认值 |
+|-------------|:---------------------------:|:-------:|
 | `latestTime` | [整数](#integer) | `24000` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -258,13 +256,13 @@ latestTime: 24000
 
 ### moonPhase
 
-设置自定义生成可以发生的最早游戏内时间。
+设置自定义生成点可以发生的月相。
 
-| 键           |   值    |   默认值   |
-|-------------|:------:|:-------:|
+| 键        |   值    | 默认值 |
+|-----------|:-----------:|:-------:|
 | `moonPhase` | 特殊 [1] | `24000` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -280,19 +278,19 @@ moonPhase: 24000
 
 **特殊 [1]**
 
-<details> 
+<details>
 
 <summary><b>展开表格</b></summary>
 
-| 月相                | 预览 |
-|-------------------|:--:|
-| `NEW_MOON`        | 🌑 |
-| `WAXING_CRESCENT` | 🌒 |
-| `FIRST_QUARTER`   | 🌓 |
-| `WAXING_GIBBOUS`  | 🌔 |
-| `FULL_MOON`       | 🌕 |
-| `WANING_GIBBOUS`  | 🌖 |
-| `WANING_CRESCENT` | 🌘 |
+| 月相        | 预览  |
+|-------------------|:--------:|
+| `NEW_MOON`        |    🌑    |
+| `WAXING_CRESCENT` |    🌒    |
+| `FIRST_QUARTER`   |    🌓    |
+| `WAXING_GIBBOUS`  |    🌔    |
+| `FULL_MOON`       |    🌕    |
+| `WANING_GIBBOUS`  |    🌖    |
+| `WANING_CRESCENT` |    🌘    |
 
 </details>
 
@@ -300,13 +298,13 @@ moonPhase: 24000
 
 ### bypassWorldGuard
 
-设置自定义生成是否会绕过诸如 WorldGuard 等保护系统。
+设置自定义生成点是否会绕过 WorldGuard 等保护系统。
 
-| 键                  |        值        |   默认值   |
-|--------------------|:---------------:|:-------:|
+| 键             |           值            | 默认值 |
+|----------------|:---------------------------:|:-------:|
 | `bypassWorldGuard` | [布尔值](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -324,13 +322,13 @@ bypassWorldGuard: false
 
 ### canSpawnInLight
 
-指定自定义生成是否可以在被光源照亮的方块上发生。
+指定自定义生成点是否可以在光源照亮的方块上发生。
 
-| 键                 |        值        |   默认值   |
-|-------------------|:---------------:|:-------:|
+| 键              |           值            | 默认值 |
+|-----------------|:---------------------------:|:-------:|
 | `canSpawnInLight` | [布尔值](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -348,13 +346,13 @@ canSpawnInLight: false
 
 ### isSurfaceSpawn
 
-设置自定义生成是否只能发生在世界的表面。
+设置自定义生成点是否只能在世界的地表发生。
 
-| 键                |        值        |   默认值   |
-|------------------|:---------------:|:-------:|
+| 键             |           值            | 默认值 |
+|----------------|:---------------------------:|:-------:|
 | `isSurfaceSpawn` | [布尔值](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 
@@ -372,13 +370,13 @@ isSurfaceSpawn: false
 
 ### isUndergroundSpawn
 
-设置自定义生成是否只能发生在地下。
+设置自定义生成点是否只能在地下发生。
 
-| 键                    |        值        |   默认值   |
-|----------------------|:---------------:|:-------:|
+| 键               |           值            | 默认值 |
+|------------------|:---------------------------:|:-------:|
 | `isUndergroundSpawn` | [布尔值](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary><b>示例</b></summary>
 

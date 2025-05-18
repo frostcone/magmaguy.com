@@ -1,124 +1,102 @@
+Aqui está a tradução para português (Portugal), mantendo a formatação markdown:
+
 # O que é o LibsDisguises?
 
-LibsDisguises é um plugin que permite aos servidores disfarçar qualquer entidade como qualquer outro tipo de entidade.
-Por exemplo, podes disfarçar jogadores como ovelhas ou disfarçar ovelhas como jogadores.
+LibsDisguises é um plugin que permite aos servidores disfarçar qualquer entidade como qualquer outro tipo de entidade. Por exemplo, pode disfarçar jogadores como ovelhas, ou disfarçar ovelhas como jogadores.
 
-Existe uma versão [gratuita](https://www.spigotmc.org/resources/libs-disguises-free.81/) e uma
-versão [premium](https://www.spigotmc.org/resources/libs-disguises.32453/) do LibsDisguises. O LibsDisguises foi criado
-e é mantido por outros desenvolvedores, por isso, por favor, não peças suporte para ele nas secções de suporte do
-EliteMobs.
+Existe uma versão [gratuita](https://www.spigotmc.org/resources/libs-disguises-free.81/) e uma versão [premium](https://www.spigotmc.org/resources/libs-disguises.32453/) do LibsDisguises. O LibsDisguises foi criado e é mantido por outros desenvolvedores, por isso, por favor, não peça suporte para ele nas secções de suporte do EliteMobs.
 
 # Como posso disfarçar uma entidade como um jogador?
 
-Para disfarçar um boss personalizado (ou um boss regional, ou mesmo um NPC!) como um jogador, tudo o que precisas fazer
-é adicionar a seguinte linha ao ficheiro de configuração do boss:
+Para disfarçar um boss personalizado (ou um boss regional, ou até mesmo um NPC!) como um jogador, tudo o que precisa fazer é adicionar a seguinte linha ao ficheiro de configuração do boss:
 
 ```yml
 disguise: player:nome
 ```
 
-Por exemplo, se quiseres disfarçar um boss com a skin do meu jogador, a linha de configuração seria algo como:
+Por exemplo, se quiser disfarçar um boss com a skin do meu jogador, a linha de configuração seria assim:
 
 ```yml
 disguise: player:magmaguy
 ```
 
-# Como posso disfarçar uma entidade com a skin de um jogador, mas não necessariamente como um jogador?
+# Como posso disfarçar uma entidade como uma skin de jogador, mas não necessariamente um jogador?
 
-Esta é a forma mais flexível de disfarçar uma entidade como um jogador, pois permite que os administradores usem skins
-online ou até criem as suas próprias para disfarçar um boss. Também é um pouco mais complexo de fazer.
+Esta é a forma mais flexível de disfarçar uma entidade como um jogador, pois permite aos administradores usar skins online ou até mesmo criar as suas próprias para disfarçar um boss. Também é um pouco mais complexo de fazer.
 
-Por uma questão de simplicidade, os exemplos aqui listados assumem que vais usar uma skin disponível online. O
-Libsdisguises oferece diferentes formas de deserializar skins, incluindo uma onde colocas a tua própria skin
-personalizada na sua pasta. Consulta a documentação deles se não quiseres usar uma skin já disponível online.
+Para simplificar, os exemplos listados aqui assumem que vai usar uma skin disponível online. O Libsdisguises oferece diferentes formas de desserializar skins, incluindo uma onde coloca a sua própria skin personalizada na pasta deles. Verifique a documentação deles se não quiser usar uma skin já disponível online.
 
-### 1. Configurar o disfarce
+### 1. Definir o disfarce
 
-Para o disfarce, vais querer fazer algo como isto:
+Para o disfarce, vai querer fazer algo assim:
 
 ```yaml
-disguise: custom:o_teu_nome_de_skin_único
+disguise: custom:seu_nome_de_skin_único
 ```
 
 ### 2. Gerar os dados do disfarce
 
-Esta é a parte complicada. Começas por criar a seguinte entrada de configuração:
+Esta é a parte complicada. Começa por criar a seguinte entrada de configuração:
 
 ```yaml
-customDisguiseData: player o_teu_nome_de_skin_único setskin 
+customDisguiseData: player seu_nome_de_skin_único setskin
 ```
 
-*É crucial que o nome que definiste em disguise para o teu_nome_de_skin_único corresponda ao que está em
-customDisguiseData!*
+*É crucial que o nome que define em disguise para o seu_nome_de_skin_único corresponda ao que está em customDisguiseData!*
 
-Em seguida, vais precisar de deserializar uma skin de jogador. A forma mais fácil de fazer isso para uma skin disponível
-publicamente online é usando o comando grabskin do LibsDisguises.
+Depois, precisará de desserializar uma skin de jogador. A maneira mais fácil de fazer isto para uma skin publicamente disponível online é usando o comando `grabskin` do LibsDisguises.
 
-Digamos que queres obter [esta skin](https://www.minecraftskins.com/skin/18512841/buff-villager/).
+Digamos que quer obter [esta skin](https://www.minecraftskins.com/skin/18512841/buff-villager/).
 
-Para fazeres isso, precisas executar o
-comando `/grabskin https://www.minecraftskins.com/uploads/skins/2021/07/28/buff-villager-18512841.png?v437`
+Para fazer isto, precisa executar o comando `/grabskin https://www.minecraftskins.com/uploads/skins/2021/07/28/buff-villager-18512841.png?v437`
 
-**Nota: precisas fornecer um link direto para o ficheiro de skin, e não para a página que contém a skin. Verifica para
-onde o link aponta. No [skindex](https://www.minecraftskins.com/), podes obter o link direto pressionando o botão "Image
-Link" que está presente na parte inferior direita de cada skin.**
+**Nota: precisa fornecer um link direto para o ficheiro da skin, e não para a página que contém a skin. Note para onde o link aponta. No [skindex](https://www.minecraftskins.com/), pode obter o link direto pressionando o botão "Image Link" que está presente no canto inferior direito de cada skin.**
 
-Depois de fazeres isso com sucesso, o LibsDisguises irá fornecer-te cerca de 3-6 números que dizem "Clica para copiar".
-Se clicares neles, uma longa lista de números e letras irá aparecer. Precisas ter a certeza de que começas em 1 e fazes
-todos os números por ordem. Para copiá-los, pressiona ctrl-a e depois ctrl-c, e cola-os no ficheiro com ctrl-v. Depois
-de concluído, deverá ser semelhante a isto:
+Depois de fazer isto com sucesso, o LibsDisguises fornecerá cerca de 3-6 números que dizem "Click to copy". Se clicar neles, aparecerá uma longa lista de números e letras. Quer garantir que começa no 1 e faz todos os números por ordem. Para copiá-los, pressione ctrl-a e depois ctrl-c, depois cole-os no ficheiro com ctrl-v. Uma vez feito, deve parecer-se com isto:
 
 ```yaml
-customDisguiseData: player o_teu_nome_de_skin_único setskin {"id":"d1fbb77f-b184-4718-b0a2-c7ae866798d3","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYyNzU0ODkwMjQ0OSwKICAicHJvZmlsZUlkIiA6ICIxOTI1MjFiNGVmZGI0MjVjODkzMWYwMmE4NDk2ZTExYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJTZXJpYWxpemFibGUiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzlmYTZkMWFlODA2YTY2OGI0OTgzYmZhY2ZkMGUzMzQ5MGE5MGU4YTZmMWE2MmEwZGQ5YzQ1YjdkYjBiNjU1MyIKICAgIH0KICB9Cn0=","signature":"P/XSvxX45MUZGc5uuDKuVgmMUk2V1HADPI84Os5J4NnmURhLeS4jL4FSeShmz0cH7sBWmMg80g9ADP33R9PcOmzbHK4hJBFt2VYLJNgSYHK6VGp6qLGXDfdAa3vRNXN7jKtsrqVEANax7Gzv3xcWARLbq1FuQ6yYdXDY8Coc02Y/POMRG/i6iACtro5DQGhr2JgbL++95UhSBFxmU82Zef3UMHLfgt7lC4vWN4c4xrOAKllzF2mwohuMmEkoKzu/6s/eu5q4J4bBH08M8UN02/yJuEH5sTy/iVJfaoPs90ZfcVdRpUZvVDZh5eXapQN1/Q9/79Pc8YOXF/20iygZ/hpvTPKP8wbMP2b1cJSyAaEIUtG9I7mG3bAXbH7mcswM1CNFF3+GEFnZI5dPxzuOelJR/t2mtVl82a4zEm9KG9Fq7iGfuK9aiWR8Yot1KeuIddPbBL8JnxHy2wW9OySjzAbs8tUI/i5KKmZmQrPH0RmHrFIuVK4C849QtRt57sQaUr1+W6Vto3r7J5jhpZ30wIIfS9hvW/ReB9rbwUQWERWie5Lchfcp7YkKbzuuaddnIjPew2IQDESlXzVW84kXtYKCs8hFgYVn27wU8jqtBCVkr0iHW7YLQTl4SFUzTFCSgAx5KSFHGm/4kqXqpHNdjS687o13MWpxrxLkV1svIp4="}],"legacy":false}
+customDisguiseData: player seu_nome_de_skin_único setskin {"id":"d1fbb77f-b184-4718-b0a2-c7ae866798d3","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYyNzU0ODkwMjQ0OSwKICAicHJvZmlsZUlkIiA6ICIxOTI1MjFiNGVmZGI0MjVjODkzMWYwMmE4NDk2ZTExYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJTZXJpYWxpemFibGUiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzlmYTZkMWFlODA2YTY2OGI0OTgzYmZhY2ZkMGUzMzQ5MGE5MGU4YTZmMWE2MmEwZGQ5YzQ1YjdkYjBiNjU1MyIKICAgIH0KICB9Cn0=","signature":"P/XSvxX45MUZGc5uuDKuVgmMUk2V1HADPI84Os5J4NnmURhLeS4jL4FSeShmz0cH7sBWxMg80g9ADP33R9PcOmzbHK4hJBFt2VYLJNgSYHK6VGp6qLGXDfdAa3vRNXN7jKtsrqVEANaxGzv3xcWARLbq1FuQ6yYdXDY8Coc02Y/POMRG/i6iACtro5DQGhr2JgbL++95UhSBFxmU82Zef3UMHLfgt7lC4vWN4c4xrOAKllzF2mwohuMmEkoKzu/6s/eu5q4J4bBH08M8UN02/yJuEH5sTy/iVJfaoPs90ZfcVdRpUZvVDZh5eXapQN1/Q9/79Pc8YOXF/20iygZ/hpvTPKP8wbMP2b1cJSyAaEIUtG9I7mG3bAXbH7mcswM1CNFF3+GEFnZI5dPxzuOelJR/t2mtVl82a4zEm9KG9Fq7iGfuK9aiWR8Yot1KeuIddPbBL8JnxHy2wW9OySjzAbs8tUI/i5KKmZmQrPH0RmHrFIuVK4C849QtRt57sQaUr1+W6Vto3r7J5jhpZ30wIIfS9hvW/ReB9rbwUQWERWie5Lchfcp7YkKbzuuaddnIjPew2IQDESlXzVW84kXtYKCs8hFgYVn27wU8jqtBCVkr0iHW7YLQTl4SFUzTFCSgAx5KSFHGm/4kqXqpHNdjS687o13MWpxrxLkV1svIp4="}],"legacy":false}
 ```
 
-E é isso! `customDisguiseData` irá funcionar com qualquer código de skin deserializado, portanto, se encontrares outras
-formas de gerar o mesmo código no LibsDisguises, podes usá-lo aqui.
+E é isso! `customDisguiseData` funcionará com qualquer código de skin desserializado, por isso, se encontrar outras formas de gerar o mesmo código no LibsDisguises, pode usá-lo aqui.
 
-A vantagem do customDisguiseData é que é autocontido, o que significa que não tens de depender de jogadores online,
-jogadores com skins específicas ou qualquer outra coisa. O EliteMobs usa-o para aplicar skin a todos os bosses
-disfarçados nos pacotes de masmorra!
+A vantagem do customDisguiseData é que é autónomo, o que significa que não precisa depender de jogadores online, jogadores com skins específicas ou qualquer outra coisa. O EliteMobs usa-o para dar skins a todos os bosses disfarçados nos pacotes de masmorras!
 
 # Como posso disfarçar um boss personalizado como outro tipo de entidade?
 
-Para disfarçar um boss personalizado (ou um boss regional) como outro tipo de entidade, tudo o que precisas fazer é
-adicionar a seguinte linha ao ficheiro de configuração do boss:
+Para disfarçar um boss personalizado (ou um boss regional) como outro tipo de entidade, tudo o que precisa fazer é adicionar a seguinte linha ao ficheiro de configuração do boss:
 
 ```yml
 disguise: TIPO_DE_ENTIDADE
 ```
 
-Por exemplo, se quiseres que o teu boss personalizado seja disfarçado como uma ovelha, farias:
+Por exemplo, se quiser que o seu boss personalizado seja disfarçado como uma ovelha, faria:
 
 ```yml
 disguise: SHEEP
 ```
 ## Como posso disfarçar um boss personalizado como uma entidade bebé?
 
-Para disfarçar um boss personalizado (ou um boss regional) como uma entidade bebé, tudo o que precisas fazer é adicionar
-a seguinte linha ao ficheiro de configuração do boss:
+Para disfarçar um boss personalizado (ou um boss regional) como uma entidade bebé, tudo o que precisa fazer é adicionar a seguinte linha ao ficheiro de configuração do boss:
 
 ```yml
 disguise: HOGLIN:baby
 ```
-
-Como podes ver neste exemplo, o nosso boss estaria disfarçado como um Hoglin bebé.
+Como pode ver neste exemplo, o nosso boss seria disfarçado como um Hoglin Bebé.
 
 # Como posso disfarçar uma entidade com um disfarce personalizado?
 
-Para disfarçar um boss personalizado (ou um boss regional) como uma entidade personalizada do LibsDisguises, precisas
-primeiro de criar o disfarce do LibsDisguises.
+Para disfarçar um boss personalizado (ou um boss regional) como uma entidade personalizada do LibsDisguises, precisa primeiro criar o disfarce no LibsDisguises.
 
-Depois de feito, a sintaxe correta é:
+Uma vez feito isso, a sintaxe correta é:
 
 ```yml
-disguise: custom:o_teu_nome_de_disfarce_personalizado
+disguise: custom:seu_nome_de_disfarce_personalizado
 ```
 
 # Disfarces válidos
 
-Não existe uma lista oficial de tipos de entidades válidos, mas aqui está uma lista não oficial que deve funcionar no
-momento em que isto foi escrito (3 de agosto de 2020)
+Não existe uma lista oficial de tipos de entidade válidos, mas aqui está uma lista não oficial que deve funcionar no momento em que isto foi escrito (3 de agosto de 2020)
 
 <details>
 

@@ -4,46 +4,40 @@
 
 ## O que são Itens Personalizados?
 
-Itens Personalizados são itens definidos pelo EliteMobs através de ficheiros de configuração. Podes personalizar vários
-aspetos destes itens, como o nível do item, os encantamentos, nome, lore, textura e muito mais!
+Itens Personalizados são itens definidos pelo EliteMobs através de ficheiros de configuração. Pode personalizar vários aspetos destes itens, como o nível do item, os encantamentos, nome, descrição (lore), textura e muito mais!
 
-## Aplicação Web
+## Webapp
 
-Podes criar facilmente e rapidamente Loot Personalizado [aqui](https://magmaguy.com/webapp/webapp.html)!
+Pode criar Saque Personalizado de forma fácil e rápida [aqui](https://magmaguy.com/webapp/webapp.html)!
 
-## Antes de Começares
+## Antes de começar
 
-### Onde é que os Itens Personalizados são colocados?
+### Onde ficam os Itens Personalizados?
 
-Os ficheiros de itens personalizados são colocados na pasta de configuração `~/plugins/EliteMobs/customitems`
+Os ficheiros de itens personalizados vão para a pasta de configuração `~/plugins/EliteMobs/customitems`
 
-É possível criar subpastas, como `~/plugins/EliteMobs/customitems/myitems`. Isto é recomendado para manter as coisas
-organizadas.
+É possível criar subpastas, como `~/plugins/EliteMobs/customitems/myitems`. Isto é recomendado para manter as coisas organizadas.
 
-Os ficheiros são armazenados no formato de ficheiro `.yml` e o [Notepad++](https://notepad-plus-plus.org/) é o software
-de edição de ficheiros recomendado para trabalhos de configuração. Um ficheiro define um boss, embora seja possível
-gerar o mesmo boss várias vezes e até definir vários locais de spawn para o mesmo ficheiro de boss.
+Os ficheiros são armazenados no formato `.yml` e o [Notepad++](https://notepad-plus-plus.org/) é o software de edição de ficheiros recomendado para trabalho de configuração. Um ficheiro define um boss, embora seja possível gerar o mesmo boss várias vezes e até definir vários locais de geração para o mesmo ficheiro de boss.
 
-É possível usar a [aplicação web](https://magmaguy.com/webapp/webapp.html) para criar de forma rápida e fácil bosses
-personalizados e muito mais.
+É possível usar a [webapp](https://magmaguy.com/webapp/webapp.html) para criar bosses personalizados e mais, de forma rápida e fácil.
 
 <div align="center">
 
 ### Configuração mínima possível
 
-**Por favor, tem em atenção que a configuração mínima possível para um Item Personalizado é:**
+**Por favor, note que o ficheiro de configuração mínimo possível para um Item Personalizado é:**
 
 ```yml
 ```
 
-Repara como este é apenas um ficheiro vazio. Isto irá usar por defeito uma espada de madeira chamada "Nome padrão". *
-*Tudo nesta página é opcional!**
+Note como isto é apenas um ficheiro vazio. Isto irá por defeito usar uma espada de madeira chamada "Default name". **Tudo nesta página é opcional!**
 
 ### Exemplo de item
 
-Vamos dar uma vista de olhos a um exemplo de como é um ficheiro de item.
+Vamos ver um exemplo de como é um ficheiro de item.
 
-<details> 
+<details>
 <summary><b>Exemplo</b></summary>
 
 <div align="left">
@@ -51,10 +45,10 @@ Vamos dar uma vista de olhos a um exemplo de como é um ficheiro de item.
 ```yml
 isEnabled: true
 material: WOODEN_AXE
-name: '&4Item de teste'
+name: '&4Test item'
 lore:
-- Este é um item fixe
-- Tem um lore fixe
+- This is a cool item
+- It has cool lore
 enchantments:
 - DAMAGE_ALL,4
 - FLAMETHROWER,1
@@ -73,9 +67,9 @@ itemType: custom
 
 </div>
 
-## Definições de Itens Personalizados
+## Definições de Item Personalizado
 
-A seguinte é uma lista de todas as coisas que podes configurar para itens personalizados:
+A seguir está uma lista de todas as coisas que pode configurar para itens personalizados:
 
 <div align="center">
 
@@ -89,7 +83,7 @@ Define se o item está ativado. Não afeta itens que já foram gerados.
 |-|:-:|-|
 | `isEnabled` | `true` / `false` | `true` |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -111,9 +105,9 @@ Define o material do item.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `material` | [Escolhe desta lista!](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | `WOODEN_SWORD` |
+| `material` | [Escolha desta lista!](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | `WOODEN_SWORD` |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -133,17 +127,15 @@ material: DIAMOND_SWORD
 
 Define o nível do item.
 
-| Chave   |              Valores              | Padrão |
-|---------|:---------------------------------:|--------|
-| `level` | [Número inteiro](#numero-inteiro) | `0`    |
+| Chave | Valores | Padrão |
+|-|:-:|-|
+| `level` | [Inteiro](#integer) | `0` |
 
-Nota que esta definição não é relevante se definires a [`scalability`](#scalability) do item como `scalable`. Se a
-definires como `limited`, este será o nível máximo possível do item.
+Note que esta definição não é relevante se definir a [`scalability`](#scalability) do item como `scalable`. Se a definir como `limited`, este será o nível mais alto possível do item.
 
-Além disso, os materiais têm um nível mínimo. Materiais de ferro são nível 6, materiais de diamante são nível 7. Não
-podes forçar itens a serem de nível inferior ao nível do material.
+Além disso, os materiais têm um nível mínimo. Materiais de ferro são nível 6, materiais de diamante são nível 7. Não pode forçar itens a ter um nível inferior ao nível do material.
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -163,18 +155,18 @@ level: 100
 
 Define o nome de exibição do item.
 
-| Chave      |                         Valores                         | Padrão        |
-|------------|:-------------------------------------------------------:|---------------|
-| `material` | [String](#string) com [códigos de cor](#códigos-de-cor) | "Nome padrão" |
+| Chave | Valores | Padrão |
+|-|:-:|-|
+| `material` | [String](#string) com [códigos de cor](#color-codes) | "Default name" |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
 <div align="left">
 
 ```yml
-name: "&2Item fixe"
+name: "&2Cool item"
 ```
 
 <div align="center">
@@ -191,13 +183,13 @@ name: "&2Item fixe"
 
 ### lore
 
-Define o lore do item.
+Define a descrição (lore) do item.
 
-| Chave  |                        Valores                        | Padrão |
-|--------|:-----------------------------------------------------:|--------|
-| `lore` | [Lista](#lista) com [códigos de cor](#códigos-de-cor) | nenhum |
+| Chave | Valores | Padrão |
+|-|:-:|-|
+| `lore` | [Lista](#list) com [códigos de cor](#color-codes) | nenhum |
 
-<details> 
+<details>
 
 <summary><b>Exemplo</b></summary>
 
@@ -205,8 +197,8 @@ Define o lore do item.
 
 ```yml
 lore:
-- "&2Esta é a espada mais fixe"
-- "&2de todos os tempos!"
+- "&2This is the coolest sword"
+- "&2of all time!"
 ```
 
 <div align="center">
@@ -225,11 +217,11 @@ lore:
 
 Define os encantamentos no item.
 
-| Chave          |                                                                                                               Valores                                                                                                                | Padrão |
-|----------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|--------|
-| `enchantments` | [Lista](#lista) com [encantamentos do Minecraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) ou [Encantamentos Personalizados do EliteMobs]($language$/elitemobs/custom_enchantments_list.md) | nenhum |
+| Chave | Valores | Padrão |
+|-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
+| `enchantments` | [Lista](#list) com [encantamentos do Minecraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) ou [Encantamentos Personalizados EliteMobs]($language$/elitemobs/custom_enchantments_list.md) | nenhum |
 
-Nota que estas entradas seguem o formato `nomeDoEncantamento:nívelDoEncantamento`. Verifica o exemplo abaixo!
+Note que estas entradas seguem o formato `nomeDoEncantamento:nívelDoEncantamento`. Veja o exemplo abaixo!
 
 <details>
 
@@ -238,7 +230,7 @@ Nota que estas entradas seguem o formato `nomeDoEncantamento:nívelDoEncantament
 <div align="left">
 
 ```yml
-enchantments: 
+enchantments:
 - "DAMAGE_UNDEAD,8"
 - "DURABILITY,4"
 - "DAMAGE_ALL,7"
@@ -255,8 +247,7 @@ enchantments:
 
 </details>
 
-Nota também que encantamentos como sharpness tornam-se elite sharpness por defeito se o nível começar a ultrapassar os
-limites do Minecraft vanilla.
+Note também que encantamentos como sharpness tornam-se elite sharpness por defeito se o nível começar a exceder os limites do Minecraft vanilla.
 
 ***
 
@@ -264,25 +255,30 @@ limites do Minecraft vanilla.
 
 Define os efeitos de poção que o item terá. Estes podem ser aplicados ao jogador ou a uma entidade danificada pelo jogador.
 
-| Chave           |                                                                Valores                                                                | Padrão |
-|-----------------|:-------------------------------------------------------------------------------------------------------------------------------------:|--------|
-| `potionEffects` | [Lista](#lista) com [efeitos de poção do Minecraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html) | nenhum |
+| Chave | Valores | Padrão |
+|-|:-:|-|
+| `potionEffects` | [Lista](#list) com [efeitos de poção do Minecraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html)| nenhum |
 
 Além disso, os efeitos de poção usam um formato específico que permite aos administradores selecionar quem é afetado e quando:
 
-| Definição                |                                   Descrição                                    |                      Valores                      | Padrão |
-|--------------------------|:------------------------------------------------------------------------------:|:-------------------------------------------------:|--------|
-| Nível do efeito de poção | Define o nível do efeito de poção. **Os efeitos de poção começam no nível 0**! |         [Número inteiro](#numero-inteiro)         | nenhum |
-| Entidade afetada         |                  Define quem é afetado pelo efeito de poção.                   | `self` (o jogador) / `target` (entidade atingida) | nenhum |
-| Método de aplicação      |                  Define quando o efeito de poção é aplicado.                   | `onHit` / `continuous` (reaplica constantemente)  | nenhum |
+| Definição | Descrição | Valores | Padrão |
+|-|:-:|:-:|-|
+| Nível do efeito de poção | Define o nível do efeito de poção. **Os efeitos de poção começam no nível 0**! | [Inteiro](#integer) | nenhum |
+| Entidade afetada | Define quem é afetado pelo efeito de poção. | `self` (o jogador) / `target` (entidade que é atingida) | nenhum |
+| Método de aplicação | Define quando o efeito de poção é aplicado. | `onHit` / `continuous` (reaplica constantemente) | nenhum |
 
-O formato para efeitos de poção é `nomeDoEfeitoDePoção,nívelDoEfeitoDePoção,entidadeAfetada,métodoDeAplicação`. Verifica o exemplo abaixo!
+O formato para efeitos de poção é `nomeDoEfeitoDePoção,nívelDoEfeitoDePoção,entidadeAfetada,métodoDeAplicação`. Veja o exemplo abaixo!
 
-O EliteMobs também apresenta itens personalizados que funcionam como amuletos. Estes itens não fazem mais nada além de
-fornecer efeitos de poção ao jogador quando o item está a ser segurado ou está equipado numa slot.
+Ao examinar um item com **efeitos de poção**, verá ícones que indicam como o efeito é aplicado:
 
-AVISO: Usar o efeito de poção INSTANT_DAMAGE irá curar mobs undead ao impacto, pois esta é uma mecânica padrão no
-Minecraft vanilla.
+- **☠️ Crânio** – Afeta **inimigos**.
+- **🛡️ Escudo** – Afeta **o utilizador/jogador**.
+- **⚔️ Espadas** – Ativa **ao atingir**.
+- **🔄 Círculo Repetitivo** – Aplica **continuamente** enquanto o item é usado ou segurado.
+
+O EliteMobs também possui itens personalizados que funcionam como amuletos. Estes itens não fazem mais nada senão fornecer efeitos de poção ao jogador quando o item está a ser segurado ou está equipado num slot.
+
+AVISO: Usar o efeito de poção INSTANT_DAMAGE irá curar mobs mortos-vivos ao impacto, pois esta é uma mecânica padrão no Minecraft vanilla.
 
 <details>
 
@@ -291,7 +287,7 @@ Minecraft vanilla.
 <div align="left">
 
 ```yml
-potionEffects: 
+potionEffects:
 - "POISON,0,target,onHit"
 - "HEAL,1,self,onHit"
 - "NIGHT_VISION,0,self,continuous"
@@ -307,7 +303,7 @@ potionEffects:
 
 Com este conjunto de efeitos de poção, as seguintes coisas acontecerão:
 
-Ao atingir, o efeito de poção de veneno (nível 1) será aplicado à entidade que foi atingida pelo jogador. Além disso, o jogador será afetado por um efeito de poção de cura instantânea de nível 2.
+Ao atingir, o efeito de poção de veneno (nível 1) será aplicado à entidade que foi atingida pelo jogador. Adicionalmente, o jogador será afetado por um efeito de poção de cura instantânea de nível 2.
 
 Continuamente, o jogador receberá visão noturna. Isto significa que o jogador terá visão noturna enquanto estiver a usar ou a segurar o item.
 
@@ -317,21 +313,21 @@ Continuamente, o jogador receberá visão noturna. Isto significa que o jogador 
 
 ### scalability
 
-Define como o nível do item cresce com o nível do boss que o dropa.
+Define como o nível do item aumenta com o nível do boss que o dropa.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `scalability` | `fixed`, `limited` ou `scalable`. Verifica abaixo! | scalable |
+| `scalability` | `fixed`, `limited` ou `scalable`. Veja abaixo! | scalable |
 
-Verifica esta lista para entender o que as diferentes opções fazem!
+Veja esta lista para entender o que as diferentes opções fazem!
 
-| Definição  |                                                          Descrição                                                          |
-|------------|:---------------------------------------------------------------------------------------------------------------------------:|
-| `fixed`    |                          O nível do item será sempre o nível definido no ficheiro de configuração.                          |
-| `limited`  | O nível máximo do item será limitado pelo definido no ficheiro de configuração ou pelo nível do boss, o que for mais baixo. |
-| `scalable` |                            O nível do item será totalmente baseado no nível do boss que o dropa.                            |
+| Definição | Descrição |
+|-|:-:|
+| `fixed` | O nível do item será sempre o nível definido no ficheiro de configuração. |
+| `limited` | O nível máximo do item será limitado pelo definido no ficheiro de configuração ou pelo nível do boss, o que for mais baixo. |
+| `scalable` | O nível do item será inteiramente baseado no nível do boss que o dropa. |
 
-Nota que itens com um dropWeight terão sempre uma escalabilidade `fixed`.
+Note que itens com um dropWeight terão sempre uma scalability `fixed`.
 
 <details>
 
@@ -351,18 +347,18 @@ scalability: "scalable"
 
 ### itemType
 
-Define de onde podes obter o item.
+Define onde pode obter o item.
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
-| `itemType` | `custom` ou `unique`. Verifica abaixo! | `custom` |
+| `itemType` | `custom` ou `unique`. Veja abaixo! | `custom` |
 
 Existem dois tipos de item:
 
-| Definição |                                                                                         Descrição                                                                                         |
-|-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `custom`  |                                       O item poderá ser dropado por qualquer mob do EliteMobs capaz de dropar loot e estará na loja personalizada.                                        |
-| `unique`  | O item não será dropado por nenhum boss e não estará na loja personalizada. A única forma de o obter é configurando um Boss Personalizado para o dropar através da sua `uniqueLootTable`! |
+| Definição | Descrição |
+|-|:-:|
+| `custom` | O item poderá dropar de qualquer mob do EliteMobs capaz de dropar saque, e estará na loja personalizada. |
+| `unique` | O item não será dropado por nenhum boss e não estará na loja personalizada. A única forma de o obter é configurando um Boss Personalizado para o dropar através da sua `uniqueLootTable`! |
 
 <details>
 
@@ -382,40 +378,33 @@ itemType: "unique"
 
 ### dropWeight
 
-Define a loot table onde o item se encaixará.
+Define a tabela de saque em que o item se encaixará.
 
-| Chave |                  Valores                  | Padrão |
+| Chave | Valores | Padrão |
 |-|:----------------------------------------:|-|
 | `dropWeight` | `dynamic` ou um valor [Double](#double). | `dynamic` |
 
-O EliteMobs tem 5 loot tables diferentes para itens personalizados, excluindo aqueles configurados diretamente como
-a `uniqueLootList` em Bosses Personalizados.
+O EliteMobs tem 5 tabelas de saque diferentes para itens personalizados, excluindo as configuradas diretamente como a `uniqueLootList` em Bosses Personalizados.
 
 Estas são as seguintes:
 
-| Loot table                    |                                        Descrição                                        | Peso padrão |
-|-------------------------------|:---------------------------------------------------------------------------------------:|:-----------:|
-| Itens gerados processualmente | Itens que são gerados aleatoriamente com base nos ficheiros de configuração do servidor |   `90.0`    |
-| Itens ponderados              |                      Itens que têm um peso diferente de `dynamic`                       |    `1.0`    |
-| Itens fixos                   |                          Itens que têm uma escalabilidade fixa                          |   `10.0`    |
-| Itens limitados               |                          Itens que têm escalabilidade limitada                          |    `3.0`    |
-| Itens escaláveis              |                                Itens que são escaláveis                                 |    `6.0`    |
+| Tabela de saque | Descrição | Peso padrão |
+|-|:-:|:-:|
+| Itens gerados proceduralmente | Itens que são gerados aleatoriamente com base nos ficheiros de configuração do servidor | `90.0` |
+| Itens ponderados | Itens que têm um peso diferente de `dynamic` | `1.0` |
+| Itens fixos | Itens que têm uma scalability fixa | `10.0` |
+| Itens limitados | Itens que têm scalability limitada | `3.0` |
+| Itens escaláveis | Itens que são escaláveis | `6.0` |
 
-Quando um boss morre, um item destas tabelas é selecionado com base no ficheiro de configuração ItemSettings.yml. Os
-valores padrão para os pesos estão listados acima em `Peso padrão`. Quanto maior o peso, maior a probabilidade de um
-item ser dropado.
+Quando um boss morre, um item destas tabelas é selecionado com base no ficheiro de configuração ItemSettings.yml. Os valores padrão para os pesos estão listados acima em `Peso padrão`. Quanto maior o peso, maior a probabilidade de um item dropar.
 
-`Itens ponderados` têm um `Peso padrão` pequeno, o que significa que não serão dropados com muita frequência. Itens com
-um `dropWeight` que não seja `dynamic` destinam-se a ser raros e são apenas usados nos padrões para os amuletos que os
-bosses dropam - itens não usados diretamente para combate, mas sim para buffar jogadores com efeitos de poção.
+Itens ponderados (`Weighed items`) têm um `Peso padrão` pequeno, o que significa que não droparão com muita frequência. Itens com um `dropWeight` que não é `dynamic` são destinados a ser raros e são apenas usados nos padrões para os amuletos que os bosses dropam - itens não usados diretamente para combate, mas sim para buffar jogadores com efeitos de poção.
 
-O `dropWeight` que defines aqui define a hipótese de um `Item ponderado` específico ser dropado da lista
-de `Itens ponderados`. Não aumenta a hipótese de `Itens ponderados` serem dropados.
+O `dropWeight` que define aqui define a chance de um `Weighed item` específico dropar da lista de `Weighed items`. Não aumenta a chance de `Weighed item`s droparem.
 
-**Se estás confuso e queres apenas criar armas e armaduras, ignora esta definição, pois ela usa o valor padrão
-correto, `dynamic`.**
+**Se estiver confuso e apenas quiser fazer armas e armaduras, ignore esta definição, pois o padrão correto é `dynamic`.**
 
-`Itens ponderados` normalmente têm um peso de 1.0.
+Itens ponderados (`Weighed item`s) geralmente têm um peso de 1.0.
 
 <details>
 
@@ -435,11 +424,11 @@ dropWeight: "dynamic"
 
 ### customModelID
 
-Define a textura do item. Requer o uso de uma textura válida do resource pack!
+Define a textura do item. Requer o uso de uma textura válida do pacote de recursos!
 
-| Chave           |              Valores              | Padrão |
-|-----------------|:---------------------------------:|--------|
-| `customModelID` | [Número inteiro](#numero-inteiro) | nenhum |
+| Chave | Valores | Padrão |
+|-|:-:|-|
+| `customModelID` | [Inteiro](#integer) | nenhum |
 
 <details>
 
@@ -454,9 +443,7 @@ customModelID: 1
 
 </div>
 
-Isto usará a textura personalizada 1 de espadas de diamante do resource pack que o jogador está a usar. É recomendado
-que configures o teu servidor para dar resource packs aos jogadores ao iniciar sessão se quiseres usar esta
-funcionalidade corretamente.
+Isto usará a textura personalizada 1 de espadas de diamante do pacote de recursos que o jogador está a usar. É recomendado configurar o seu servidor para dar pacotes de recursos aos jogadores ao fazer login se quiser usar esta funcionalidade corretamente.
 
 </details>
 
@@ -464,9 +451,8 @@ funcionalidade corretamente.
 
 ### customModelV2
 
-A começar com a versão 1.21.4 do Minecraft (EM 9.1.13), esta é a nova definição necessária para configurar IDs de modelo
-de item personalizado.
-Define a textura do item. Requer o uso de uma textura válida do resource pack!
+A partir da versão 1.21.4 do Minecraft (EM 9.1.13), esta é a nova definição necessária para configurar IDs de modelo de item personalizados.
+Define a textura do item. Requer o uso de uma textura válida do pacote de recursos!
 
 | Chave | Valores | Padrão |
 |-|:-:|-|
@@ -482,20 +468,18 @@ Define a textura do item. Requer o uso de uma textura válida do resource pack!
 customModelV2: elitemobs:equipment/magmaguys_toothpick
 ```
 
-Esta definição atribui uma textura específica a um item. Eis como funciona:
+</div>
 
-- `elitemobs:` é o diretório principal na pasta `assets` do resource pack.
-- `equipment` é um subdiretório dentro de `assets/elitemobs/models`.
-- `magmaguys_toothpick` é o ficheiro de modelo localizado em `assets/elitemobs/models/equipment` no resource pack.
+Esta definição atribui uma textura específica a um item. Veja como funciona:
+
+- `elitemobs:` é o diretório principal na pasta `assets` do pacote de recursos.
+- `equipment` é uma subpasta dentro de `assets/elitemobs/models`.
+- `magmaguys_toothpick` é o ficheiro de modelo localizado em `assets/elitemobs/models/equipment` no pacote de recursos.
 
 O caminho completo para o ficheiro de modelo neste exemplo seria:
 `\.minecraft\resourcepacks\elitemobs_resource_pack\assets\elitemobs\models\equipment\magmaguys_toothpick.json`
 
-</div>
-
-Isto usará a textura personalizada `magmaguys_toothpick` do resource pack EliteMobs que o jogador está a usar. É
-recomendado que configures o teu servidor para dar resource packs aos jogadores ao iniciar sessão se quiseres usar esta
-funcionalidade corretamente.
+Isto usará a textura personalizada `magmaguys_toothpick` do pacote de recursos do EliteMobs que o jogador está a usar. É recomendado configurar o seu servidor para dar pacotes de recursos aos jogadores ao fazer login se quiser usar esta funcionalidade corretamente.
 
 </details>
 
@@ -509,7 +493,7 @@ Define a permissão necessária para obter o item.
 |-|:-:|-|
 | `permission` | [String](#string) | nenhum |
 
-Precisarás de um plugin de gestão de permissões para dar permissões aos jogadores. Isto só funcionará corretamente se não tiveres desativado o encantamento soulbind.
+Precisará de um plugin de gestão de permissões para dar permissões aos jogadores. Isto só funcionará corretamente se não tiver desativado o encantamento soulbind.
 
 <details>
 
@@ -523,7 +507,7 @@ permission: "elitemobs.cool.permission"
 
 </div>
 
-Com esta configuração, apenas os jogadores com a permissão `elitemobs.cool.permission` poderão obter este item.
+Com esta configuração, apenas jogadores com a permissão `elitemobs.cool.permission` poderão obter este item.
 
 </details>
 
@@ -531,11 +515,11 @@ Com esta configuração, apenas os jogadores com a permissão `elitemobs.cool.pe
 
 ### soulbound
 
-Define se o item deve ser soulbound ao ser dropado.
+Define se o item deve ser soulbound ao dropar.
 
-| Chave       |        Valores        | Padrão |
-|-------------|:---------------------:|--------|
-| `soulbound` | [Booleano](#booleano) | `true` |
+| Chave | Valores | Padrão |
+|-|:-------------------:|---------|
+| `soulbound` | [Booleano](#boolean) | `true` |
 
 <details>
 
@@ -550,6 +534,5 @@ soulbound: true
 </div>
 
 </details>
-
 
 </div>

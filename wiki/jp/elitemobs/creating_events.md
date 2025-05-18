@@ -1,18 +1,19 @@
+```markdown
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-このガイドは、EliteMobs 7.3.4 以降のバージョンを対象としています。
+このガイドはEliteMobs 7.3.4以降を対象としています
 
 # カスタムイベントとは？
 
-ここで言うカスタムイベントとは、プレイヤーの行動や時間経過によってトリガーされる、ゲーム内でランダムに発生するイベントのことです。このプラグインには、バルログイベント、クラーケンイベント、トレジャーゴブリンイベントなど、多くのカスタムイベントがプリロードされています。
+ここでいうカスタムイベントとは、プレイヤーのアクションに基づいて発生するもの、または時間によってトリガーされるものなど、ゲーム内でランダムに発生するイベントを指します。このプラグインには、バルログイベント、クラーケンイベント、トレジャーゴブリンイベントなど、いくつかのカスタムイベントがプリロードされています。
 
-このシステムが**カスタム**イベントと呼ばれるのは、イベントをカスタマイズできるだけでなく、ゼロから作成することもできるからです。以下は、独自のイベントを作成およびカスタマイズする方法に関するガイドです。
+このシステムが**カスタム**イベントと呼ばれるのは、イベントをカスタマイズできるだけでなく、ゼロから作成することもできるからです。以下に、独自のイベントを作成およびカスタマイズする方法に関するガイドを示します。
 
-# 一般的な設定項目
+# 共通設定
 
 <div align="center">
 
-以下の設定は、アクションイベントと時間経過イベントの両方に使用できます/使用する必要があります。
+以下に示す設定は、アクションイベントと時間指定イベントの両方で使用できます/使用する必要があります。
 
 ***
 
@@ -20,9 +21,9 @@
 
 イベントが有効かどうかを設定します。
 
-| キー          |          値          | デフォルト  |
-|-------------|:-------------------:|:------:|
-| `isEnabled` | [Boolean](#boolean) | `true` |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `isEnabled` | [Boolean](#boolean) | `true`  |
 
 <details>
 
@@ -44,12 +45,11 @@ isEnabled: true
 
 イベントのタイプを設定します。
 
-| キー          |                       値                        | デフォルト |
-|-------------|:----------------------------------------------:|:-----:|
-| `eventType` | `BREAK_BLOCK` / `FISH` / `TILL_SOIL` / `TIMED` |  なし   |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `eventType` | `BREAK_BLOCK` / `FISH` / `TILL_SOIL` / `TIMED` | none  |
 
-*`BREAK_BLOCK`、`FISH`、`TILL_SOIL`は[アクションイベント](#action-events)で、`TIMED`は[時間経過イベント](#timed-events)
-です。*
+*`BREAK_BLOCK`、`FISH`、`TILL_SOIL`は[アクションイベント](#action-events)であり、`TIMED`は[時間指定イベント](#timed-events)であることに注意してください*
 
 <details>
 
@@ -69,11 +69,11 @@ eventType: BREAK_BLOCK
 
 ### bossFilenames
 
-スポーンさせるボスのリストを設定します。**必須！**
+スポーンされるボスのリストを設定します。**必須！**
 
-| キー              |              値              | デフォルト |
-|-----------------|:---------------------------:|:-----:|
-| `bossFilenames` | [String List](#string_list) |  なし   |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `bossFilenames` | [String List](#string_list) | none  |
 
 <details>
 
@@ -97,9 +97,9 @@ bossFilenames:
 
 [アナウンスの優先度]($language$/elitemobs/creating_bosses.md&section=announcementpriority)を設定します。
 
-| キー                     |          値          | デフォルト |
-|------------------------|:-------------------:|:-----:|
-| `announcementPriority` | [Integer](#integer) |  なし   |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `announcementPriority` | [Integer](#integer) |  none   |
 
 <details>
 
@@ -121,9 +121,9 @@ announcementPriority: 1
 
 イベント開始時に送信されるメッセージを設定します。
 
-| キー             |         値         | デフォルト |
-|----------------|:-----------------:|:-----:|
-| `startMessage` | [String](#string) |  なし   |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `startMessage` | [String](#string) |  none   |
 
 <details>
 
@@ -132,7 +132,7 @@ announcementPriority: 1
 <div align="left">
 
 ```yml
-startMessage: イベントが開始されました！
+startMessage: An event has started!
 ```
 
 <div align="center">
@@ -151,9 +151,9 @@ startMessage: イベントが開始されました！
 
 イベント終了時に送信されるメッセージを設定します。
 
-| キー           |         値         | デフォルト |
-|--------------|:-----------------:|:-----:|
-| `endMessage` | [String](#string) |  なし   |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `endMessage` | [String](#string) |  none   |
 
 <details>
 
@@ -162,7 +162,7 @@ startMessage: イベントが開始されました！
 <div align="left">
 
 ```yml
-endMessage: イベントが終了しました！
+endMessage: An event has ended!
 ```
 
 <div align="center">
@@ -181,9 +181,9 @@ endMessage: イベントが終了しました！
 
 イベント開始時に実行されるコマンドを設定します。
 
-| キー                   |              値              | デフォルト |
-|----------------------|:---------------------------:|:-----:|
-| `eventStartCommands` | [String List](#string_list) |  なし   |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `eventStartCommands` | [String List](#string_list) |  none   |
 
 <details>
 
@@ -193,8 +193,8 @@ endMessage: イベントが終了しました！
 
 ```yml
 eventStartCommands:
-- say イベントが開始されました!!
-- "$chance=0.5$ say なんてスポーンだ！"
+- say The event now starts!!
+- "$chance=0.5$ say What a spawn!"
 ```
 
 <div align="center">
@@ -213,9 +213,9 @@ eventStartCommands:
 
 イベント終了時に実行されるコマンドを設定します。
 
-| キー                 |              値              | デフォルト |
-|--------------------|:---------------------------:|:-----:|
-| `eventEndCommands` | [String List](#string_list) |  なし   |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `eventEndCommands` | [String List](#string_list) |  none   |
 
 <details>
 
@@ -225,8 +225,8 @@ eventStartCommands:
 
 ```yml
 eventEndCommands:
-- say イベントが終了、残念。
-- "$chance=0.5$ say 遅すぎたな、坊や！"
+- say The event ends, so sad.
+- "$chance=0.5$ say Too slow bud!"
 ```
 
 <div align="center">
@@ -252,20 +252,21 @@ eventEndCommands:
 ```yml
 isEnabled: true
 bossFilenames:
-  - "cool_boss.yml"
-  - "other_cool_boss.yml"
+- "cool_boss.yml"
+- "other_cool_boss.yml"
 announcementPriority: 3
-startMessage: "クールなイベントが開始されます！"
-endMessage: "クールなイベントが終了します！"
+startMessage: "Cool event is starting!"
+endMessage: "Cool event is ending!"
 eventStartCommands:
-  - say イベントが開始されました！
+- say The event started!
 eventEndCommands:
-  - say イベントが終了しました！
+- say The event ended!
 ```
 
 </div>
 
 </details>
+
 
 </div>
 
@@ -273,15 +274,15 @@ eventEndCommands:
 
 <div align="center">
 
-ブロックを破壊したり、釣りをしたりするなどの特定のアクションが発生した場合に、実行される可能性のあるイベントです。
+ブロックを破壊したり釣りをしたりといった特定のアクションが発生したときに実行される可能性があるイベントです。
 
 ### chance
 
-アクションが発生した場合にイベントが発生する確率を設定します。
+アクションが発生したときにイベントが発生する確率を設定します。
 
-| キー       |       値       | デフォルト |
-|----------|:-------------:|:-----:|
-| `chance` | `0.0`～`1.0`の値 |  `0`  |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `chance` | `0.0`から`1.0`の間の値 |  `0`   |
 
 <details>
 
@@ -301,11 +302,11 @@ chance: 0.001
 
 ### breakableMaterials
 
-アクションが`BREAK_BLOCK`に設定されている場合にチェックする、素材のリストを設定します。
+アクションが`BREAK_BLOCK`に設定されている場合にチェックするマテリアルのリストを設定します。
 
-| キー                   |                                      値                                       | デフォルト |
-|----------------------|:----------------------------------------------------------------------------:|:-----:|
-| `breakableMaterials` | [素材](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) のリスト |  なし   |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `breakableMaterials` | [マテリアル](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)のリスト |  none   |
 
 <details>
 
@@ -341,25 +342,25 @@ breakableMaterials:
 
 </div>
 
-イベントタイプが`BREAK_BLOCK`の場合、石炭鉱石のブロックが破壊されたときにイベントが実行される確率が0.1%に設定されます。
+イベントタイプが`BREAK_BLOCK`であると仮定して、石炭鉱石ブロックが破壊されたときにイベントが実行される確率を0.1%に設定します。
 
 </details>
 
 </div>
 
-## 時間経過イベント
+## 時間指定イベント
 
 <div align="center">
 
-時間経過イベントは、設定可能な時間間隔で発生するイベントです。時間経過イベントのクールダウンが終了すると、イベントの重みに基づいて、時間経過イベントのリストからランダムに時間経過イベントが選択されます。
+時間指定イベントは、設定可能な時間間隔で発生するイベントです。時間指定イベントのクールダウンが終了すると、イベントの重みに基づいて、時間指定イベントのリストからランダムな時間指定イベントが選択されます。
 
 ### spawnType
 
-イベントで使用される[カスタムスポーン]($language$/elitemobs/creating_spawns.md)を設定します。これにより、ボスがスポーンできる場所が定義されます。
+イベントで使用される[カスタムスポーン]($language$/elitemobs/creating_spawns.md)を設定します。これはボスがスポーンできる場所を定義します。
 
-| キー          |           値           | デフォルト |
-|-------------|:---------------------:|:-----:|
-| `spawnType` | [Filename](#filename) |  なし   |
+| キー       |        値         | デフォルト |
+|-----------|:---------------------:|:-------:|
+| `spawnType` | [ファイル名](#filename) |  none   |
 
 <details>
 
@@ -379,11 +380,11 @@ spawnType: nether_spawn.yml
 
 ### localCooldown
 
-このイベントが再び選択されるまでの時間（分単位）を設定します。
+このイベントが再度選択されるまでの時間（分）を設定します。
 
-| キー              |          値          | デフォルト |
-|-----------------|:-------------------:|:-----:|
-| `localCooldown` | [Integer](#integer) |  `0`  |
+| キー       |        値         | デフォルト |
+|-----------|:---------------------:|:-------:|
+| `localCooldown` | [Integer](#integer) |  `0`   |
 
 <details>
 
@@ -403,11 +404,11 @@ localCooldown: 120
 
 ### globalCooldown
 
-次のイベントが選択されるまでの時間（分単位）を設定します。
+次のイベントが選択されるまでの時間（分）を設定します。
 
-| キー               |          値          | デフォルト |
-|------------------|:-------------------:|:-----:|
-| `globalCooldown` | [Integer](#integer) |  `0`  |
+| キー       |        値         | デフォルト |
+|-----------|:---------------------:|:-------:|
+| `globalCooldown` | [Integer](#integer) |  `0`   |
 
 <details>
 
@@ -427,11 +428,11 @@ globalCooldown: 60
 
 ### weight
 
-イベントの重みを設定します。これにより、他のイベントよりも選択される確率に影響します。**推奨: 100**。
+イベントの重みを設定します。これは他のイベントよりも選択される確率に影響します。**推奨: 100**。
 
-| キー       |         値         | デフォルト |
-|----------|:-----------------:|:-----:|
-| `weight` | [Double](#double) |  `0`  |
+| キー       |        値         | デフォルト |
+|-----------|:---------------------:|:-------:|
+| `weight` | [Double](#double) |  `0`   |
 
 <details>
 
@@ -451,11 +452,11 @@ weight: 60.5
 
 ### eventDuration
 
-イベントの最大時間（分単位）を設定します。
+イベントの最大持続時間（分）を設定します。
 
-| キー              |          値          | デフォルト |
-|-----------------|:-------------------:|:-----:|
-| `eventDuration` | [Integer](#integer) |  `0`  |
+| キー       |        値         | デフォルト |
+|-----------|:---------------------:|:-------:|
+| `eventDuration` | [Integer](#integer) |  `0`   |
 
 <details>
 
@@ -475,11 +476,11 @@ eventDuration: 30
 
 ### eventEndsWithBossDeath
 
-イベントがボスの死亡で終了するかどうかを設定します。
+ボスの死亡によってイベントが終了するかどうかを設定します。
 
-| キー                       |          値          | デフォルト  |
-|--------------------------|:-------------------:|:------:|
-| `eventEndsWithBossDeath` | [Boolean](#boolean) | `true` |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `eventEndsWithBossDeath` | [Boolean](#boolean) | `true`  |
 
 <details>
 
@@ -501,9 +502,9 @@ eventEndsWithBossDeath: true
 
 イベントが終了するゲーム内時間を設定します。
 
-| キー             |          値          | デフォルト  |
-|----------------|:-------------------:|:------:|
-| `eventEndTime` | [Boolean](#boolean) | `true` |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `eventEndTime` | [Boolean](#boolean) | `true`  |
 
 <details>
 
@@ -523,11 +524,11 @@ eventEndTime: true
 
 ### minimumPlayerCount
 
-イベントが開始される前に必要なオンラインプレイヤーの最小数を設定します。
+イベントが開始する前に必要な最小オンラインプレイヤー数を設定します。
 
-| キー                   |          値          | デフォルト |
-|----------------------|:-------------------:|:-----:|
-| `minimumPlayerCount` | [Integer](#integer) |  `1`  |
+| キー       |       値        | デフォルト |
+|-----------|:-------------------:|:-------:|
+| `minimumPlayerCount` | [Integer](#integer) |   `1`   |
 
 <details>
 
@@ -547,7 +548,7 @@ minimumPlayerCount: true
 
 ***
 
-*イベントはキューに入れられるため、`customSpawn`で定義された条件が満たされた場合にのみ開始されることに注意してください。*
+*イベントはキューに入れられることに注意してください。つまり、`customSpawn`で定義された条件が満たされた場合にのみ開始されます。*
 
 <details>
 
@@ -561,12 +562,12 @@ bossFilenames:
 - "cool_boss.yml"
 - "other_cool_boss.yml"
 announcementPriority: 3
-startMessage: "クールなイベントが開始されます！"
-endMessage: "クールなイベントが終了します！"
+startMessage: "Cool event is starting!"
+endMessage: "Cool event is ending!"
 eventStartCommands:
-- say イベントが開始されました！
+- say The event started!
 eventEndCommands:
-- say イベントが終了しました！
+- say The event ended!
 customSpawn: "myCoolSpawn.yml"
 localCooldown: 30
 globalCooldown: 15
@@ -582,3 +583,4 @@ minimumPlayerCount: 5
 </details>
 
 </div>
+```

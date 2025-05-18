@@ -1,97 +1,72 @@
-# Modificar Minidungeons Existentes
+Aqui está o texto traduzido para português (Portugal), mantendo a formatação markdown:
 
-Com base em pedidos populares, esta página aborda os aspetos básicos da modificação de Minidungeons existentes. Este não
-é um guia passo-a-passo, mas sim uma visão mais ampla de como os sistemas precisam ser modificados. Terá de ler as
-páginas da wiki sobre [Chefes Personalizados]($language$/elitemobs/creating_bosses.md)
-e [Itens Personalizados]($language$/elitemobs/creating_items.md) para modificar esses valores.
+# Modificar minidungeons existentes
+
+Com base em pedidos populares, esta página aborda os princípios básicos da modificação de Minidungeons existentes. Este não é um guia passo a passo, mas uma visão mais ampla de como os sistemas precisam ser modificados. Terá de ler as páginas da wiki sobre [Bosses Personalizados]($language$/elitemobs/creating_bosses.md) e [Itens Personalizados]($language$/elitemobs/creating_items.md) para modificar esses valores.
 
 ### Modificar a dificuldade da dungeon
 
-Existem três razões pelas quais pode querer modificar a dificuldade das dungeons, e são as seguintes:
+Existem três razões pelas quais poderá querer modificar a dificuldade das dungeons, e são as seguintes:
 
-### Modificar os multiplicadores de dano/vida dos chefes
+### Modificar os multiplicadores de dano/vida dos bosses
 
-Esta é a modificação mais fácil de fazer. Se acha que os chefes causam pouco ou muito dano, ou que têm pouca ou muita
-vida, pode modificar os valores associados a estes modificadores nos ficheiros dos chefes contidos na
-pasta `custombosses`.
+Esta é a modificação mais fácil de fazer. Se achar que os bosses causam demasiado pouco ou demasiado dano, ou que têm demasiado pouca ou demasiada vida, pode modificar os valores associados a estes modificadores nos ficheiros dos bosses contidos na pasta `custombosses`.
 
-Exemplo de valores que você gostaria de modificar:
+Exemplo de valores que poderá querer modificar:
 ```yml
 healthMultiplier: 0.5
 damageMultiplier: 0.5
 ```
+Mais sobre as estatísticas dos bosses [aqui]($language$/elitemobs/creating_bosses.md&section=healthmultiplier).
 
-Mais sobre estatísticas de chefes [aqui]($language$/elitemobs/creating_bosses.md&section=healthmultiplier).
+Por favor, tenha em mente que para muitos poderes o multiplicador de dano não modifica o dano aplicado pelo poder. Consulte a próxima secção sobre como modificar poderes.
 
-Por favor, tenha em mente que para muitos poderes, o multiplicador de dano não modifica o dano aplicado pelo poder.
-Consulte a próxima seção sobre como modificar poderes.
+### Modificar os poderes dos bosses
 
-### Modificar os poderes dos chefes
+A principal dificuldade do EliteMobs é lidar com os vários poderes que os bosses podem ter. Bosses de nível superior tendem a ter mais poderes e mais difíceis, e bosses de nível inferior tendem a ter menos poderes e mais fáceis. Certos poderes usados em conjunto no mesmo boss tornam os combates mais fáceis, e outros poderes combinados podem tornar o combate significativamente mais difícil.
 
-A principal dificuldade do EliteMobs é lidar com os vários poderes que os chefes podem ter. Chefes de nível mais alto
-tendem a ter mais e poderes mais difíceis, e chefes de nível mais baixo tendem a ter menos e poderes mais fáceis. Certos
-poderes usados ​​em conjunto no mesmo chefe tornam as lutas mais fáceis, e outros poderes juntos podem tornar a luta
-significativamente mais difícil.
-
-Exemplo de valores que você gostaria de modificar:
+Exemplo de valores que poderá querer modificar:
 ```yml
 powers:
 - invulnerability_fire.yml
 - invulnerability_arrow.yml
 ```
+Mais sobre os poderes dos bosses [aqui]($language$/elitemobs/creating_bosses.md&section=powers).
 
-Mais sobre poderes de chefes [aqui]($language$/elitemobs/creating_bosses.md&section=powers).
+Como existem demasiadas combinações de poderes para listar aqui, terá de aprender como os poderes funcionam e testar os seus encontros para encontrar o ponto ideal para o que considera ser um encontro que não é nem demasiado difícil nem demasiado fácil.
 
-Como existem muitas combinações de poderes para listar aqui, terá de aprender como os poderes funcionam e testar os seus
-encontros para encontrar o ponto ideal para o que considera um encontro que não seja muito difícil nem muito fácil.
+### Modificar o nível dos bosses
 
-### Modificar o nível dos chefes
+Esta é a pergunta mais frequente, e embora seja possível fazê-lo, requer alguns passos para garantir que está a escalar adequadamente os seus bosses para cima ou para baixo.
 
-Esta é a pergunta mais frequente e, embora seja possível fazê-lo, requer alguns passos para garantir que está a escalar
-os seus chefes adequadamente para cima ou para baixo.
-
-Exemplo de valores que você gostaria de modificar:
+Exemplo de valores que poderá querer modificar:
 ```yml
 level: 21
 ```
+Mais sobre os níveis dos bosses [aqui]($language$/elitemobs/creating_bosses.md&section=level).
 
-Mais sobre níveis de chefes [aqui]($language$/elitemobs/creating_bosses.md&section=level).
+Isto requer uma combinação do que é dito sobre os multiplicadores de dano / vida, pois bosses em níveis inferiores / superiores podem precisar de multiplicadores de vida e dano ligeiramente diferentes para que o combate pareça correto.
 
-Isto requer uma combinação do que foi dito sobre os multiplicadores de dano/vida, pois chefes em níveis mais
-baixos/altos podem precisar de multiplicadores de vida e dano ligeiramente diferentes para que a luta pareça correta.
+No entanto, o aspeto mais importante a considerar aqui são os poderes do boss. Bosses de nível inferior e superior tendem a ter conjuntos de poderes bastante diferentes, dependendo de quão difícil o combate se destina a ser. Ter o mesmo conjunto de poderes para um boss de nível 10 e um boss de nível 200 geralmente resulta em combates cuja dificuldade parece drasticamente diferente. Novamente, a única forma de realmente encontrar o ponto ideal é aprender como os poderes do plugin funcionam e testá-los.
 
-No entanto, o aspeto mais importante a considerar aqui são os poderes do chefe. Chefes de níveis mais baixos e mais
-altos tendem a ter conjuntos de poderes bastante diferentes, dependendo de quão difícil a luta deve ser. Ter o mesmo
-conjunto de poderes para um chefe de nível 10 e um chefe de nível 200 geralmente resulta em lutas cuja dificuldade
-parece drasticamente diferente. Novamente, a única maneira de realmente encontrar o ponto ideal é aprender como os
-poderes do plugin funcionam e testá-los.
+E por último, **mas não menos importante!** Provavelmente quererá ajustar o loot personalizado. A maioria dos bosses no EliteMobs tem loot personalizado, e se estiver a mudar o nível do boss, é provável que queira mudar a natureza do loot que ele dropa.
 
-E por último, **mas não menos importante!** Provavelmente vai querer ajustar o saque personalizado. A maioria dos chefes
-em EliteMobs tem saques personalizados e, se estiver a mudar o nível do chefe, é provável que queira mudar a natureza do
-saque que ele dropa.
-
-Exemplo de valores que você gostaria de modificar:
+Exemplo de valores que poderá querer modificar:
 ```yml
 uniqueLootList:
   - filename: mob_drop_boots.yml
     chance: 0.05
 ```
+Mais sobre drops de loot [aqui]($language$/elitemobs/loot_tables.md).
 
-Mais sobre drops de saque [aqui]($language$/elitemobs/loot_tables.md).
+### Creditar / publicar conteúdo modificado
 
-### Creditar/publicar conteúdo modificado
+Sob o EliteMobs, é livre de publicar as dungeons que cria nos canais apropriados para o fazer (Discord). No entanto, se a sua criação for apenas uma modificação de uma dungeon existente, a sua submissão poderá ser removida, especialmente se for apenas um pequeno ajuste ou se contiver ou for derivada de conteúdo premium (por razões óbvias).
 
-Sob EliteMobs, é livre de publicar as dungeons que cria nos canais apropriados para o fazer (Discord). No entanto, se a
-sua criação for apenas uma modificação de uma dungeon existente, o seu envio poderá ser removido, especialmente se for
-apenas um pequeno ajuste ou se contiver ou for derivado de conteúdo premium (por razões óbvias).
+É livre e bem-vindo a modificar qualquer conteúdo que tenha comprado ou descarregado para o ajustar às necessidades do seu servidor para uso dentro da sua própria rede, no entanto, por razões óbvias, isto não lhe confere direitos de redistribuição.
 
-É livre e bem-vindo a modificar qualquer conteúdo que tenha comprado ou descarregado para o ajustar às necessidades do
-seu servidor para uso dentro da sua própria rede, no entanto, por razões óbvias, isto não lhe concede direitos de
-redistribuição.
-
-Reservamo-nos o direito de remover envios da comunidade por qualquer motivo e a qualquer momento, embora odiássemos ter
-que realmente fazer isso.
+Reservamo-nos o direito de remover submissões da comunidade por qualquer motivo e a qualquer momento, embora odiássemos ter de o fazer.
 
 ### Mais informações
 
-Se acredita que esta página deve ser mais expandida, deixe uma sugestão no Discord dizendo o que deve ser adicionado. Mais informações sobre os vários sistemas mencionados aqui estão presentes nas outras páginas da wiki.
+Se acredita que esta página deve ser expandida, deixe uma sugestão no Discord dizendo o que deve ser adicionado. Mais informações sobre os vários sistemas mencionados aqui estão presentes nas outras páginas da wiki.

@@ -1,7 +1,7 @@
+```markdown
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-Los Cofres del Tesoro son una función que permite a los administradores crear cofres que pueden soltar botín o generar
-un jefe (hostil) tipo imitación.
+Los Cofres del Tesoro son una característica que permite a los administradores crear cofres que pueden soltar botín o generar un jefe mímico (hostil).
 
 <div align="center">
 
@@ -16,8 +16,8 @@ un jefe (hostil) tipo imitación.
 Establece si un cofre del tesoro está habilitado.
 
 | Clave       |       Valores        | Predeterminado |
-|-------------|:--------------------:|:--------------:|
-| `isEnabled` | [Booleano](#boolean) |     `true`     |
+|-----------|:-------------------:|:-------:|
+| `isEnabled` | [Booleano](#boolean) | `true`  |
 
 <details> 
 
@@ -52,8 +52,7 @@ Establece el tipo de material del cofre.
 ```yml
 chestType: CHEST
 ```
-
-*Esto debe ser un material de cofre válido, como `CHEST` o `BARREL`*.
+*Esto debe ser un material de cofre válido como `CHEST` o `BARREL`*.
 
 <div align="center">
 
@@ -69,7 +68,7 @@ chestType: CHEST
 
 ### facing
 
-Establece la dirección a la que mira el cofre.
+Establece la dirección en la que mira el cofre.
 
 | Clave       |   Valores    | Predeterminado |
 |-----------|:-----------:|:-------:|
@@ -84,8 +83,7 @@ Establece la dirección a la que mira el cofre.
 ```yml
 facing: CHEST
 ```
-
-*Esto debe ser un material de cofre válido, como `CHEST` o `BARREL`*.
+*Esto debe ser un material de cofre válido como `CHEST` o `BARREL`*.
 
 </div>
 
@@ -97,12 +95,12 @@ facing: CHEST
 
 <summary><b>Expandir Tabla</b></summary>
 
-| Dirección |
-|-----------|
-| `NORTH`   |
-| `SOUTH`   |
-| `WEST`    |
-| `EAST`    |
+| Orientación |
+|---------|
+| `NORTH` |
+| `SOUTH` |
+| `WEST`  |
+| `EAST`  |
 
 
 </details>
@@ -113,8 +111,7 @@ facing: CHEST
 
 Establece si el cofre está destinado a ser soltado para un jugador o para varios jugadores.
 
-Los cofres `SINGLE` desaparecen después de ser abiertos y reaparecen cuando se reabastecen. Los cofres `GROUP`
-permanecen y les hacen saber a los jugadores individuales que están en tiempo de reutilización.
+Los cofres `SINGLE` desaparecen después de ser abiertos y reaparecen cuando se reabastecen. Los cofres `GROUP` permanecen y permiten a los jugadores individuales saber que están en tiempo de espera.
 
 | Clave       |       Valores       | Predeterminado |
 |-----------|:------------------:|:-------:|
@@ -138,11 +135,11 @@ dropStyle: SINGLE
 
 ### lootList
 
-Enumera el botín que el cofre del tesoro debería soltar al abrirse.
+Enumera el botín que el cofre del tesoro debe soltar al ser abierto.
 
-| Clave      |                         Valores                          | Predeterminado |
-|------------|:--------------------------------------------------------:|:--------------:|
-| `lootList` | [Tabla de Botín EM]($language$/elitemobs/loot_tables.md) |    ninguno     |
+| Clave       |                        Valores                        | Predeterminado |
+|-----------|:----------------------------------------------------:|:-------:|
+| `lootList` | [Tabla de Botín de EM]($language$/elitemobs/loot_tables.md) |  ninguno   |
 
 <details> 
 
@@ -188,15 +185,13 @@ mimicChance: 0.5
 
 ### mimicCustomBossesList
 
-Especifica la lista de jefes hostiles disponibles para generar. Se seleccionará aleatoriamente un solo jefe de esta
-lista para generar.
+Especifica la lista de jefes hostiles disponibles para ser generados. Se seleccionará aleatoriamente un solo jefe de esta lista para su generación.
 
-La lista también admite un sistema de pesos que puede implementar para asegurarse de que algunos jefes se elijan con más
-frecuencia que otros.
+La lista también admite un sistema de peso que puedes implementar para asegurar que algunos jefes sean elegidos con más frecuencia que otros.
 
-| Clave                   |             Valores              | Predeterminado |
-|-------------------------|:--------------------------------:|:--------------:|
-| `mimicCustomBossesList` | [Lista de Cadenas](#string_list) |    ninguno     |
+| Clave       |      Valores       | Predeterminado |
+|-----------|:-----------------:|:-------:|
+| `mimicCustomBossesList` | [Lista de Cadenas](#string_list) |  ninguno   |
 
 <details> 
 
@@ -209,7 +204,7 @@ mimicCustomBossesList:
 - my_cool_mimic_boss.yml
 - weak_mimic_boss.yml
 ```
-*Si desea asignar pesos a los jefes, la lista debe tener el siguiente formato:*
+*Si deseas asignar pesos a los jefes, la lista debe tener el siguiente formato:*
 
 ```yml
 mimicCustomBossesList:
@@ -217,7 +212,7 @@ mimicCustomBossesList:
 - weak_mimic_boss.yml:40
 ```
 
-*En esta configuración, es más probable que se elija `my_cool_mimic_boss.yml` para generar que `weak_mimic_boss.yml`.*
+*En esta configuración, es más probable que se elija `my_cool_mimic_boss.yml` para ser generado que `weak_mimic_boss.yml`.*
 
 </div>
 
@@ -227,7 +222,7 @@ mimicCustomBossesList:
 
 ### restockTimer
 
-Establece el tiempo, en minutos, antes de que el cofre se vuelva a llenar con botín.
+Establece el tiempo, en minutos, antes de que el cofre se rellene con botín.
 
 | Clave       |      Valores       | Predeterminado |
 |-----------|:-----------------:|:-------:|
@@ -285,12 +280,11 @@ effects:
 
 Establece las ubicaciones donde aparecerá el cofre del tesoro.
 
-Las ubicaciones se pueden establecer más fácilmente a través de `/em addTreasureChest <
-nombre_archivo_cofre_del_tesoro.yml>
+Las ubicaciones se pueden establecer más fácilmente a través de `/em addTreasureChest <nombrearchivocofredeltesoro.yml>`.
 
-| Clave       |             Valores              | Predeterminado |
-|-------------|:--------------------------------:|:--------------:|
-| `locations` | [Lista de Cadenas](#string_list) |    ninguno     |
+| Clave       |           Valores            | Predeterminado |
+|-----------|:---------------------------:|:-------:|
+| `locations` | [Lista de Cadenas](#string_list) |  ninguno   |
 
 <details> 
 
@@ -312,7 +306,7 @@ locations:
 
 ### chestTier
 
-Establece el rango mínimo del gremio requerido para abrir el cofre.
+Establece el rango mínimo de gremio requerido para abrir el cofre.
 
 | Clave       |           Valores            | Predeterminado |
 |-----------|:---------------------------:|:-------:|
@@ -332,18 +326,19 @@ chestTier: 3
 
 </details>
 
+
 ***
 
 ### instanced
 
 Establece si el cofre debe ser instanciado (para usar en mazmorras instanciadas).
-Todos los temporizadores de reabastecimiento se deshabilitan cuando se colocan cofres en mazmorras.
+Todos los temporizadores de reabastecimiento se desactivan cuando los cofres se colocan en mazmorras.
 
-**NO ESTABLEZCA ESTE VALOR MANUALMENTE**.
+**NO ESTABLEZCAS ESTE VALOR MANUALMENTE**.
 
-| Clave       |       Valores        | Predeterminado |
-|-------------|:--------------------:|:--------------:|
-| `instanced` | [Booleano](#boolean) |    `false`     |
+| Clave       |     Valores     | Predeterminado |
+|-----------|:--------------:|:-------:|
+| `instanced` | [Booleano](#boolean) |  `false`   |
 
 <details> 
 
@@ -365,14 +360,13 @@ instanced: true
 
 ### restockTime
 
-Después de que un cofre ha sido saqueado, el complemento escribirá esta clave para rastrear el tiempo de
-reabastecimiento.
+Después de que un cofre ha sido saqueado, el plugin escribirá esta clave para rastrear el tiempo de reabastecimiento.
 
-**NO ESTABLEZCA ESTE VALOR MANUALMENTE**.
+**NO ESTABLEZCAS ESTE VALOR MANUALMENTE**.
 
-| Clave         |       Valores        | Predeterminado |
-|---------------|:--------------------:|:--------------:|
-| `restockTime` | Marca de Tiempo Unix |    ninguno     |
+| Clave       |     Valores     | Predeterminado |
+|-----------|:--------------:|:-------:|
+| `restockTime` | Marca de Tiempo Unix |  ninguno   |
 
 <details> 
 
@@ -394,7 +388,7 @@ restockTime: 1707394380
 
 <details> 
 
-<summary align="center"><b>Ejemplo de Configuración del Cofre del Tesoro</b></summary>
+<summary align="center"><b>Ejemplo de Configuración de Cofre del Tesoro</b></summary>
 
 <div align="left">
 
@@ -425,3 +419,4 @@ locations:
 </div>
 
 </details>
+```

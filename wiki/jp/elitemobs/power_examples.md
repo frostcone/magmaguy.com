@@ -1,17 +1,18 @@
+日本語に翻訳します。Markdownの書式は維持します。
+
 # はじめに
 
-このページでは、EliteScriptと[WebApp](https://magmaguy.com/webapp/webapp.html)
-を使って作成された、カスタムボスパワーの様々な例を紹介します。これらの簡単な例は、複数のアクションやその他の機能を活用して、ユニークなボスパワーを作成する方法を説明するものです。
+このページでは、EliteScriptと[WebApp](https://magmaguy.com/webapp/webapp.html)を使用して作成されたカスタムボスパワーの様々な例を紹介します。これらの分かりやすい例は、複数のアクションやその他の機能を活用してユニークなボスパワーを作成する方法を示しています。
 
-さらに、各例には視覚的なデモンストレーションが付属しているため、ゲーム内でスクリプトがどのように動作するかを理解しやすくなっています。
+さらに、各例には視覚的なデモンストレーションが付いているため、ゲーム内でスクリプトがどのように動作するかをより簡単に理解できます。
 
-例は自由にコピーして、自分のダンジョンやワールドで使用してください。
+自由に例をコピーして、自分のダンジョンやワールドで使用してください。
 
 ## パワーの例
 
 ### スラムダウン
 
-このスクリプトは、ボスにダメージを与えたプレイヤーの8ブロック上にボスをテレポートさせ、その後、地面に叩きつけます。その後、ボスの3ブロック以内にいるすべてのプレイヤーにスローのポーション効果を適用し、画面に「気絶した」というメッセージを3秒間表示します。
+このスクリプトは、ボスにダメージを与えたプレイヤーの8ブロック上空にボスをテレポートさせ、地面に叩きつけます。その後、ボスの3ブロック以内にいるプレイヤーに鈍化のポーション効果を適用し、画面に「Stunned」というメッセージを3秒間表示します。
 
 <div align="center">
 
@@ -47,7 +48,7 @@ eliteScript:
         range: 3
       wait: 20
     - action: TITLE_MESSAGE
-      subtitle: "気絶した!"
+      subtitle: "Stunned!"
       duration: 40
       fadeIn: 10
       fadeOut: 10
@@ -64,7 +65,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_slamdown.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -77,9 +78,9 @@ eliteScript:
 
 ***
 
-### 押し出し
+### プッシュアウェイ
 
-このスクリプトは、ボスの周囲に4ブロックのドームを生成します。その後、ゾーンの境界で1秒間続くパーティクルエフェクトを開始し、次に別の行動でゾーン内のプレイヤーを押し出します。プッシュのオフセット設定により、プレイヤーはわずかに上向きに推進されます。最後に、スクリプトはゾーン内のプレイヤーにメッセージを送信します。
+このスクリプトは、ボスの周囲に4ブロックのドームを生成します。その後、ゾーンの境界で1秒間続くパーティクルエフェクトを開始し、次に別の行動でゾーン内のプレイヤーを押し離します。プッシュのオフセット設定により、プレイヤーはわずかに上方に押し上げられます。最後に、スクリプトはゾーン内のプレイヤーにメッセージを送信します。
 
 <div align="center">
 
@@ -125,7 +126,7 @@ eliteScript:
       repeatEvery: 1
       times: 20
     - action: MESSAGE
-      sValue: "&cすごいボス!: &f消えろ！"
+      sValue: "&cCool boss!: &fBE GONE!"
       Target:
         targetType: ZONE_FULL
       repeatEvery: 10
@@ -139,7 +140,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_pushaway.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -152,9 +153,9 @@ eliteScript:
 
 ***
 
-### 矢の雨
+### アローレイン
 
-モブにダメージを与えたプレイヤーの周囲の地面に円を描くスクリプトを作成します。また、プレイヤーに円から出るように伝えるメッセージを画面に表示します。その後、2秒後に、同じ場所の10ブロック上から矢を下に発射します。
+このスクリプトは、モブにダメージを与えたプレイヤーの周囲の地面に円を描き、プレイヤーに円から出るように促すメッセージを画面に表示します。その後、2秒後にその同じ場所のちょうど10ブロック上空から下向きに矢を発射します。
 
 <div align="center">
 
@@ -193,7 +194,7 @@ eliteScript:
       fadeOut: 10
       duration: 20
       fadeIn: 10
-      subtitle: ゾーンから出ろ！
+      subtitle: Move out of the zone!
     - action: RUN_SCRIPT
       scripts:
       - "ArrowRain"
@@ -226,7 +227,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_arrowrain.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -241,11 +242,9 @@ eliteScript:
 
 ### ファイアオーラ
 
-これは、円柱ゾーンを使用してボスの周囲にパーティクルをスポーンするスクリプトを作成します。これは6秒間続きます。ボスには、6秒間 `FireOn`
-タグも付与されます。
+これは、シリンダーゾーンを使用してボスの周囲にパーティクルをスポーンさせるスクリプトを作成します。これは6秒間続きます。ボスには6秒間 `FireOn` タグも付与されます。
 
-プレイヤーがタグが有効な間にボスを攻撃すると、プレイヤーは1秒間炎上します。これは条件を使用して行われ、`SetOnFire`
-スクリプトは、ボスに一致するタグ `FireOn` がある場合にのみ実行できます。
+プレイヤーがタグがアクティブな間にボスを攻撃した場合、プレイヤーは1秒間炎上します。これは条件を使用して行われ、`SetOnFire` スクリプトはボスが一致するタグ `FireOn` を持っている場合にのみ実行できます。
 
 <div align="center">
 
@@ -306,7 +305,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_fireaura.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -321,9 +320,9 @@ eliteScript:
 
 ### ポイズンライン
 
-このスクリプトは、ボスを中心とした2つの直方体ゾーンを作成します。ボスのAIは2秒間オフに設定されています。直方体ゾーンは、地面にプラス記号を形成するように構成されています。
+このスクリプトは、ボスを中心とした2つの直方体ゾーンを作成します。ボスのAIは2秒間オフに設定されます。直方体ゾーンは、地面にプラス記号を形成するように構成されています。
 
-その後、スクリプトはゾーン内で2秒間クラウドパーティクルを作成し、次に煙パーティクルを作成して、ゾーンに3秒間毒ポーション効果を適用します。
+その後、スクリプトはゾーン内に2秒間雲のパーティクルを生成し、次に煙のパーティクルを生成してゾーンに3秒間毒のポーション効果を適用します。
 
 <div align="center">
 
@@ -425,7 +424,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_poisonlines.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -440,9 +439,9 @@ eliteScript:
 
 ### バウンス
 
-このスクリプトは、ボスを中心とした10ブロックの円柱ゾーンを作成し、10秒間ゾーンにパーティクルエフェクトとプッシュを適用します。
+このスクリプトは、ボスを中心とした10ブロックのシリンダーゾーンを作成し、そのゾーンに10秒間パーティクルエフェクトとプッシュを適用します。
 
-プッシュアクションは、プレイヤーがゾーンにいる間、プレイヤーが跳ね回っているような錯覚を生み出すために、すべてのティックでプレイヤーをわずかに上向きに押します。
+プッシュアクションは、毎ティックプレイヤーをわずかに上方に押し上げ、プレイヤーがゾーン内にいる間跳ね回っているような錯覚を生み出します。
 
 <div align="center">
 
@@ -489,7 +488,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_bounce.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -504,10 +503,9 @@ eliteScript:
 
 ### サモン
 
-このスクリプトは、ボスにダメージを与えたプレイヤーを中心とした円柱ゾーンを作成します（適用されたオフセットにより、プレイヤーの6ブロック上に配置されます）。さらに、そのプレイヤーに画面にメッセージが表示されます。
+このスクリプトは、ボスにダメージを与えたプレイヤーを中心とした（適用されたオフセットによりプレイヤーの6ブロック上に配置された）シリンダーゾーンを作成します。さらに、そのプレイヤーの画面にメッセージを表示します。
 
-2秒の遅延後、援軍が指定されたゾーンにスポーンします。ただし、`coverage`
-を使用したため、ゾーンの一部のみが援軍によって占有されます。プレイヤーがすべての援軍を排除できなかった場合、20秒後（400ティック）に自動的にデスポーンします。
+2秒の遅延の後、指定されたゾーンに援軍がスポーンします。ただし、`coverage` を使用したため、ゾーンの一部のみが援軍によって占められます。プレイヤーがすべての援軍を排除できなかった場合、20秒（400ティック）後に自動的にデスポーンします。
 
 <div align="center">
 
@@ -538,7 +536,7 @@ eliteScript:
         coverage: 0.2
       wait: 40
     - action: TITLE_MESSAGE
-      subtitle: "仲間！助けて!!!"
+      subtitle: "Friends! Help!!!"
       duration: 30
       fadeIn: 10
       fadeOut: 10
@@ -553,7 +551,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_summon.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -568,14 +566,11 @@ eliteScript:
 
 ### ポーションゾーン
 
-このスクリプトは、プレイヤーがボスにダメージを与えるとアクティブになります。次に、`PotionZoneBad`
-スクリプトまたは `PotionZoneGood` スクリプトのいずれかを実行します。
+このスクリプトは、プレイヤーがボスにダメージを与えたときにアクティブになります。その後、`PotionZoneBad` または `PotionZoneGood` スクリプトのいずれかを実行します。
 
-`PotionZoneBad`
-スクリプトでは、ボスから20ブロック以内にいる近くのプレイヤーの周囲に円柱ゾーンが生成されます。これは、指定されたカバレッジを持つ雲と大きな煙のパーティクル効果を生み出し、ウィザーのポーション効果を及ぼし、近くのプレイヤーにメッセージを配信します。
+`PotionZoneBad` スクリプトでは、ボスの20ブロック以内にいる近くのプレイヤーの周囲にシリンダーゾーンが生成されます。指定されたカバレッジで雲と大きな煙のパーティクルエフェクトを生成し、ウィザーのポーション効果を与え、近くのプレイヤーにメッセージを送信します。
 
-`PotionZoneGood`
-スクリプトでは、ボスから20ブロック以内にいるプレイヤーの周囲に円柱ゾーンが生成されます。このスクリプトのパーティクルエフェクトは反転されています。このスクリプトは、ウィザーの代わりに治癒ポーション効果を適用し、近くのプレイヤーにメッセージを送信します。
+`PotionZoneGood` スクリプトでは、ボスの20ブロック以内にいるプレイヤーの周囲にシリンダーゾーンが生成されます。このスクリプトのパーティクルエフェクトは反転しています。このスクリプトはウィザーではなく回復のポーション効果を適用し、近くのプレイヤーにメッセージを送信します。
 
 <div align="center">
 
@@ -639,7 +634,7 @@ eliteScript:
       repeatEvery: 10
       times: 6
     - action: MESSAGE
-      sValue: "&cすごいボス!: &f燃えろ！"
+      sValue: "&cCool boss!: &fFeel the burn!"
       Target:
         targetType: NEARBY_PLAYERS
         range: 20
@@ -683,7 +678,7 @@ eliteScript:
       repeatEvery: 10
       times: 6
     - action: MESSAGE
-      sValue: "&cすごいボス!: &f感じて... 待って、これは違うやつだ。"
+      sValue: "&cCool boss!: &fFeel the... Wait, this is the wrong one."
       Target:
         targetType: NEARBY_PLAYERS
         range: 20
@@ -693,7 +688,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_potionzones.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -708,16 +703,15 @@ eliteScript:
 
 ### ブラインドウェーブ
 
-このスクリプトは、ボスから発信される正と負のX方向に投影された2つの地面の光線波を開始します。
+このスクリプトは、ボスから発生する正および負のX方向の両方に投影される2つの地面レイウェーブを開始します。
 
-Z値を定義することにより、`offset`
-パラメータを使用して、光線の長さとサイズを決定します。さらに、X値を設定することにより、波の伝播方向を指定します。（これは、この特定のスクリプトがこれらの値をどのように使用するかについての説明にすぎず、まったく同じように作成する必要はありません）
+レイの長さとサイズを決定するために `offset` パラメータ、特にZ値を定義して利用します。さらに、X値を設定することでウェーブの伝播方向を指定します。（これはこの特定のスクリプトがこれらの値をどのように使用するかについての説明であり、必ずしもこれと全く同じにする必要はありません）
 
-Y値を調整して光線波の高さを増やすことは可能ですが、プレイヤーが光線を飛び越えるオプションを許可するために、0のままにします。
+Y値を調整してレイウェーブの高さを増やすことも可能ですが、プレイヤーがレイを飛び越えるオプションを可能にするために0のままにしています。
 
-パラメータ`animationDuration`は、光線波がターゲットから最終ターゲットまで移動するのにかかる時間を決定します。この値を小さくすると、光線が速くなり、回避が困難になります。
+`animationDuration` パラメータは、レイウェーブがターゲットから最終ターゲットまで移動するのにかかる時間を決定します。この値を減らすと、レイはより速くなり、回避がより困難になります。
 
-その後、パーティクルとポーション効果が適用されます。光線波を回避または飛び越えることができなかったプレイヤーは、5秒間（100ティック）盲目にされます。
+その後、パーティクルとポーション効果が適用されます。レイウェーブを回避または飛び越えられなかったプレイヤーは、5秒間（100ティック）盲目になります。
 
 <div align="center">
 
@@ -748,7 +742,7 @@ eliteScript:
         track: false
       FinalTarget2:
         targetType: SELF
-        offset: 10,0,-5
+        offset: -10,0,-5
         track: false
       animationDuration: 100
       ignoresSolidBlocks: true
@@ -823,7 +817,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_blindwaves.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -838,13 +832,11 @@ eliteScript:
 
 ### フリーズウォール
 
-このスクリプトは、ボスを中心とした3つの回転する光線を作成します。光線の高さを定義できないため、複数のスクリプトと `offset`
-を使用して光線を高さに積み重ねて、1つの回転する*壁*のように見えるようにします。
+このスクリプトは、ボスを中心とした3つの回転するレイを作成します。レイの高さを定義できないため、3つの異なる回転するレイが必要です。そのため、複数のスクリプトと `offset` を使用してレイを高さ方向に積み重ね、1つの回転する*壁*のように見えるようにします。
 
-3つのスクリプトはすべて、`offset`が異なることを除いて、同じゾーンを持っています。これらは、ボスから始まる長さ6ブロックに設定され、10秒（200ティック）で360度のヨー回転を行うように設定されています。
+3つのスクリプトはすべて、`offset` が異なる点を除いてゾーンは同じです。ボスから始まる長さ6ブロックに設定されており、10秒間（200ティック）で360度のヨー回転を行うように設定されています。
 
-すべてのスクリプトには、パーティクルエフェクトが設定されており、光線壁に*ヒット*
-したプレイヤーに5秒間（100ティック）`VISUAL_FREEZE`アクションが適用されます。
+すべてのスクリプトにはパーティクルエフェクトが設定されており、レイウォールに*当たった*プレイヤーに5秒間（100ティック）`VISUAL_FREEZE` アクションを適用します。
 
 <div align="center">
 
@@ -858,7 +850,8 @@ eliteScript:
 eliteScript:
   Trigger:
     Events:
-    - EliteMobDamagedByPlayerEvent
+``````yaml
+- EliteMobDamagedByPlayerEvent
     Actions:
     - action: RUN_SCRIPT
       scripts:
@@ -898,23 +891,6 @@ eliteScript:
         track: false
       repeatEvery: 1
       times: 200
-```
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/power_example_freezewall.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
-</video>
-
-</div>
-
-</div>
-
-</details>
-
-</div>
-```yml
   FreezeWall2:
     Zone:
       shape: ROTATING_RAY
@@ -983,7 +959,7 @@ eliteScript:
 
 <video autoplay loop muted>
   <source src="../../../img/wiki/power_example_freezewall.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
+  Your browser does not support the video tag.
 </video>
 
 </div>
@@ -993,84 +969,3 @@ eliteScript:
 </details>
 
 </div>
-```
-```
-  FreezeWall2:
-    Zone:
-      shape: ROTATING_RAY
-      Target:
-        targetType: SELF
-        track: false
-        offset: 0,1,0
-      Target2:
-        targetType: SELF
-        track: false
-        offset: 6,1,0
-      yawRotation: 360
-      animationDuration: 200
-      ignoresSolidBlocks: true
-    Actions:
-    - action: SPAWN_PARTICLE
-      particles:
-      - particle: SNOWFLAKE
-      repeatEvery: 10
-      times: 20
-      Target:
-        targetType: ZONE_FULL
-        track: false
-        coverage: 1.0
-    - action: VISUAL_FREEZE
-      duration: 100
-      Target:
-        targetType: ZONE_FULL
-        track: false
-      repeatEvery: 1
-      times: 200
-  FreezeWall3:
-    Zone:
-      shape: ROTATING_RAY
-      Target:
-        targetType: SELF
-        track: false
-        offset: 0,2,0
-      Target2:
-        targetType: SELF
-        track: false
-        offset: 6,2,0
-      yawRotation: 360
-      animationDuration: 200
-      ignoresSolidBlocks: true
-    Actions:
-    - action: SPAWN_PARTICLE
-      particles:
-      - particle: SNOWFLAKE
-      repeatEvery: 10
-      times: 20
-      Target:
-        targetType: ZONE_FULL
-        track: false
-        coverage: 1.0
-    - action: VISUAL_FREEZE
-      duration: 100
-      Target:
-        targetType: ZONE_FULL
-        track: false
-      repeatEvery: 1
-      times: 200
-```
-
-<div align="center">
-
-<video autoplay loop muted>
-  <source src="../../../img/wiki/power_example_freezewall.webm" type="video/webm">
-  お使いのブラウザはビデオタグをサポートしていません。
-</video>
-
-</div>
-
-</div>
-
-</details>
-
-</div>
-```

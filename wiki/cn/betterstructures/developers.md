@@ -1,3 +1,5 @@
+好的，这是翻译成简体中文的版本，保留了 Markdown 格式：
+
 # 公共仓库
 
 ## Maven
@@ -13,7 +15,7 @@
 <dependency>
   <groupId>com.magmaguy</groupId>
   <artifactId>BetterStructures</artifactId>
-  <version>检查最新的版本！</version>
+  <version>Check what the latest version is!</version>
   <scope>provided</scope>
 </dependency>
 ```
@@ -28,40 +30,38 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.magmaguy:BetterStructures:检查最新的版本!'
+    implementation 'com.magmaguy:BetterStructures:Check what the latest version is!'
 }
 ```
 
-注意：将 `versionNumber` 替换为插件的当前版本。
+注意：请将 `versionNumber` 替换为插件的当前版本。
 
 # 事件
 
-**注意：事件位于 com.magmaguy.betterstructures.api 中**
+**注意：事件位于 com.magmaguy.betterstructures.api 包中**
 
 ## BuildPlaceEvent
 
-当一个建筑即将被放置时调用。通过 FitAnything 对象，可以获取关于哪个建筑将被放置以及放置位置的数据。
+在即将放置构建时触发。通过 FitAnything 对象暴露了关于将要放置哪个构建以及放置在哪里等数据。
 
-**不要尝试修改正在放置的建筑！** 你可以修改一些小地方，但更改整个建筑可能会导致放置的建筑不合适。
+**不要尝试修改正在放置的构建！** 你可以修改一些小细节，但改变整个构建可能会导致放置效果不佳。
 
-这是可以取消的。
+此事件可取消。
 
 ## ChestFillEvent
 
-当一个箱子被填充时调用。使用容器快照 inventory 安全地存储要应用的数据。
+在填充箱子时触发。使用容器快照库存安全地存储要应用的数据。
 
-对战利品的修改应该通过添加或删除物品的 Spigot 方法对快照 inventory 进行。
+对战利品的修改应通过 Spigot 的添加或移除物品方法对快照库存进行。
 
-这是可以取消的。
+此事件可取消。
 
-# 主要类
+# 关键类
 
 ## FitAnything
 
-FitAnything 类是在粘贴建筑时实例化的类，处理粘贴的每个方面，包括填充箱子和生成生物。
+FitAnything 类是当构建被粘贴时实例化的类，负责处理粘贴的各个方面，包括填充箱子和生成生物。
 
 ## WorldGuard
 
-WorldGuard 类处理 WorldGuard
-区域保护。实用方法 `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)`
-可供开发人员轻松地在 BetterStructures 之上钩入自定义区域保护方案。
+WorldGuard 类处理 WorldGuard 区域保护。提供了实用方法 `public static ProtectedRegion generateProtectedRegion(FitAnything fitAnything, String regionName)`，方便开发者在 BetterStructures 之上轻松接入自定义区域保护方案。

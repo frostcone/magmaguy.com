@@ -1,20 +1,19 @@
+```markdown
 # Tabela de Saque Personalizada
 
 Formato de saque universal. Usado pelo EliteMobs em vários locais diferentes.
 
-Por favor, note que este é o formato mais recente e o recomendado para usar, mas existem alguns formatos antigos
-alternativos.
+Por favor, note que este é o formato mais recente e o recomendado para usar, mas existem alguns formatos alternativos mais antigos.
 
-Certifique-se de começar as suas tabelas de saque com `uniqueLootList:` antes de adicionar quaisquer definições, caso
-contrário, a configuração .yml irá apresentar um erro.
+Certifique-se de começar as suas tabelas de saque com `uniqueLootList:` antes de adicionar quaisquer configurações, caso contrário, a configuração .yml dará erro.
 
-### Soltar itens de elite:
+### Saque de itens de elite:
 
-| Chave      |                           Detalhes                           | Valores                       | Padrão |
-|------------|:------------------------------------------------------------:|-------------------------------|--------|
-| `filename` | Define o nome do ficheiro do Item Personalizado a ser usado. | [Nome do Ficheiro](#filename) | nenhum |
+| Chave | Detalhes | Valores                | Padrão  |
+| --- | :-: |-----------------------| --- |
+| `filename` | Define o nome do ficheiro do Item Personalizado a usar. | [Nome do Ficheiro](#filename) | nenhum |
 
-<details> 
+<details>
 
 <summary align="center"><b>Exemplo</b></summary>
 
@@ -25,21 +24,21 @@ uniqueLootList:
   - filename: magmaguys_toothpick.yml
 ```
 
-Isto fará com que o mob deixe cair 1 *Palito de Dentes do MagmaGuy* com uma chance de drop de 100%.
+Isto fará com que o mob largue 1 de *MagmaGuy's Toothpick* com 100% de probabilidade de saque.
 
 </div>
 
 </details>
 
-### Definições gerais:
+### Configurações gerais:
 
-| Chave               |                            Detalhes                            | Valores             | Padrão  |
-|---------------------|:--------------------------------------------------------------:|---------------------|---------|
-| `chance`            |           Define a chance do saque ser deixado cair.           | [Double](#double)   | `1.0`   |
-| `amount`            | Define a quantidade desta entrada de saque a ser deixada cair. | [Integer](#integer) | `1`     |
-| `ignorePlayerLevel` |  Faz com que o saque ignore o limitador de saque do jogador.   | [Boolean](#boolean) | `false` |
+| Chave | Detalhes | Valores              | Padrão |
+| --- | :-: |---------------------| --- |
+| `chance` | Define a probabilidade de o saque ser largado. | [Duplo](#double)   | `1.0` |
+| `amount` | Define a quantidade desta entrada de saque a largar | [Inteiro](#integer) | `1` |
+| `ignorePlayerLevel` | Faz com que o saque ignore o limitador de saque do jogador | [Booleano](#boolean) | `false` |
 
-<details> 
+<details>
 
 <summary align="center"><b>Exemplo</b></summary>
 
@@ -53,20 +52,19 @@ uniqueLootList:
     ignorePlayerLevel: true
 ```
 
-Isto fará com que o mob deixe cair 10 *Palitos de Dentes do MagmaGuy* com uma chance de drop de 50%, ignorando o nível
-do jogador.
+Isto fará com que o mob largue 10 de *MagmaGuy's Toothpick* com 50% de probabilidade de saque, ignorando o nível do jogador.
 
 </div>
 
 </details>
 
-### Soltar moedas de elite:
+### Saque de moedas de elite:
 
-| Chave            |                        Detalhes                        | Valores             | Padrão |
-|------------------|:------------------------------------------------------:|---------------------|--------|
-| `currencyAmount` | Define a quantidade de moedas que serão deixadas cair. | [Integer](#integer) | nenhum |
+| Chave | Detalhes | Valores              | Padrão  |
+| --- | :-: |---------------------| --- |
+| `currencyAmount` | Define a quantidade de moedas que serão largadas. | [Inteiro](#integer) | nenhum |
 
-<details> 
+<details>
 
 <summary align="center"><b>Exemplo</b></summary>
 
@@ -77,20 +75,19 @@ uniqueLootList:
   - currencyAmount: 344
     chance: 0.5
 ```
-
-Isto fará com que o mob deixe cair 344 *Moedas de Elite* com uma chance de drop de 50%.
+Isto fará com que o mob largue 344 *Moedas de Elite* com 50% de probabilidade de saque.
 
 </div>
 
 </details>
 
-### Soltar itens vanilla:
+### Saque de itens vanilla:
 
-| Chave      |                Detalhes                 | Valores               | Padrão |
-|------------|:---------------------------------------:|-----------------------|--------|
-| `material` | Define o material do item deixado cair. | [Material](#material) | nenhum |
+| Chave | Detalhes | Valores                | Padrão  |
+| --- | :-: |-----------------------| --- |
+| `material` | Define o material do item largado. | [Material](#material) | nenhum |
 
-<details> 
+<details>
 
 <summary align="center"><b>Exemplo</b></summary>
 
@@ -102,24 +99,21 @@ uniqueLootList:
     chance: 0.3
     amount: 5
 ```
-
-Isto fará com que o mob deixe cair 5 *Maçãs* com uma chance de drop de 30%.
+Isto fará com que o mob largue 5 *Maçãs* com 30% de probabilidade de saque.
 
 </div>
 
 </details>
 
-### Arenas: EM DESENVOLVIMENTO (Não funciona atualmente)
+### Arenas: EM PROGRESSO (Não está a funcionar atualmente)
+Ao criar tabelas de saque de arena, por favor, certifique-se de começar a sua tabela de saque com `rawArenaReward:` em vez de `uniqueLootList:`.
 
-Ao criar tabelas de saque de arena, certifique-se de começar a sua tabela de saque com `rawArenaReward:` em vez
-de `uniqueLootList:`.
+| Chave | Detalhes | Valores              | Padrão  |
+| --- | :-: |---------------------| --- |
+| `wave` | Define a vaga em que esta entrada de saque será largada. Apenas para uso em arenas. | [Inteiro](#integer) | nenhum |
+| `level` | Define o nível do saque. Apenas para uso em arenas. | [Inteiro](#integer) | nenhum |
 
-| Chave   |                                         Detalhes                                         | Valores             | Padrão |
-|---------|:----------------------------------------------------------------------------------------:|---------------------|--------|
-| `wave`  | Define a onda em que esta entrada de saque será deixada cair. Apenas para uso em arenas. | [Integer](#integer) | nenhum |
-| `level` |             Define o nível do saque deixado cair. Apenas para uso em arenas.             | [Integer](#integer) | nenhum |
-
-<details> 
+<details>
 
 <summary align="center"><b>Exemplo</b></summary>
 
@@ -135,9 +129,7 @@ rawArenaReward:
     wave: 1
     level: 2
 ```
-
-Quando os jogadores vencerem a primeira onda, isto fará com que a arena deixe cair 10 *Pães* com uma chance de drop de
-50% e 1 *Palito de Dentes do MagmaGuy* que seja de nível 2 com uma chance de drop de 100%.
+Quando os jogadores vencerem a primeira vaga, isto fará com que a arena largue 10 *Pão* com 50% de probabilidade de saque e 1 *MagmaGuy's Toothpick* de nível 2 com 100% de probabilidade de saque.
 
 </div>
 
@@ -145,11 +137,11 @@ Quando os jogadores vencerem a primeira onda, isto fará com que a arena deixe c
 
 ### Masmorras Instanciadas:
 
-| Chave          |                                                                    Detalhes                                                                     | Valores           | Padrão |
-|----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------:|-------------------|--------|
-| `difficultyID` | Define a lista de dificuldades de masmorras instanciadas para as quais este saque será deixado cair. Apenas para uso em masmorras instanciadas. | [String](#string) | nenhum |
+| Chave | Detalhes | Valores            | Padrão  |
+| --- | :-: |-------------------| --- |
+| `difficultyID` | Define a lista de dificuldades de masmorra instanciada para as quais este saque será largado. Apenas para uso em masmorras instanciadas. | [String](#string) | nenhum |
 
-<details> 
+<details>
 
 <summary align="center"><b>Exemplo</b></summary>
 
@@ -163,10 +155,9 @@ uniqueLootList:
     - 1
     - 2
 ```
-
-Isto fará com que o mob deixe cair 1 *Palito de Dentes do MagmaGuy* com uma chance de drop de 50% se os jogadores
-derrotarem o boss na dificuldade 1 ou 2.
+Isto fará com que o mob largue 1 *MagmaGuy's Toothpick* com 50% de probabilidade de saque se os jogadores derrotarem o boss na dificuldade 1 ou 2.
 
 </div>
 
 </details>
+```

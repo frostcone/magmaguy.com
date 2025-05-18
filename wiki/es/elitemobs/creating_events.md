@@ -1,21 +1,18 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-Esta guía es para EliteMobs 7.3.4 y posterior
+Esta guía es para EliteMobs 7.3.4 y posteriores
 
 # ¿Qué son los Eventos Personalizados?
 
-Los Eventos Personalizados aquí se refieren a eventos que ocurren aleatoriamente en el juego, ya sea basados en acciones
-del jugador o teniendo un activador temporizado. El plugin viene precargado con varios Eventos Personalizados, como el
-evento Balrog, el evento Kraken y los eventos del Goblin del Tesoro, por nombrar algunos.
+Los Eventos Personalizados aquí se refieren a eventos que ocurren aleatoriamente en el juego, ya sea basados en acciones del jugador o con un disparador temporizado. El plugin viene precargado con varios Eventos Personalizados, como el evento Balrog, el evento Kraken y los eventos Treasure Goblin, por nombrar algunos.
 
-Este sistema se llama Eventos **Personalizados** porque los eventos no solo se pueden personalizar, sino que también se
-pueden crear desde cero. Lo que sigue es una guía sobre cómo crear y personalizar tus propios eventos.
+Este sistema se llama Eventos **Personalizados** porque los eventos no solo pueden ser personalizados sino también creados desde cero. A continuación, se presenta una guía sobre cómo crear y personalizar tus propios eventos.
 
-# Ajustes de configuración comunes
+# Configuraciones comunes
 
 <div align="center">
 
-Los siguientes ajustes se pueden/deben usar tanto para eventos de acción como para eventos temporizados.
+Las siguientes configuraciones pueden/deben usarse tanto para eventos de acción como para eventos temporizados.
 
 ***
 
@@ -25,9 +22,9 @@ Establece si el evento está habilitado.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `isEnabled` | [Booleano](#booleano) | `true`  |
+| `isEnabled` | [Booleano](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -51,10 +48,9 @@ Establece el tipo de evento.
 |-----------|:-------------------:|:-------:|
 | `eventType` | `BREAK_BLOCK` / `FISH` / `TILL_SOIL` / `TIMED` | ninguno  |
 
-*Ten en cuenta que `BREAK_BLOCK`, `FISH` y `TILL_SOIL` son [Eventos de Acción](#eventos-de-accion) y `TIMED`
-son [Eventos Temporizados](#eventos-temporizados)*
+*Tenga en cuenta que `BREAK_BLOCK`, `FISH` y `TILL_SOIL` son [Eventos de Acción](#action-events) y `TIMED` es [Eventos Temporizados](#timed-events)*
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -72,13 +68,13 @@ eventType: BREAK_BLOCK
 
 ### bossFilenames
 
-Establece la lista de jefes que se generarán. **¡Obligatorio!**
+Establece la lista de jefes que serán generados. **¡Obligatorio!**
 
-| Clave           |                Valores                | Predeterminado |
-|-----------------|:-------------------------------------:|:--------------:|
-| `bossFilenames` | [Lista de Cadenas](#lista_de_cadenas) |    ninguno     |
+| Clave       |       Valores        | Predeterminado |
+|-----------|:-------------------:|:-------:|
+| `bossFilenames` | [Lista de Cadenas](#string_list) | ninguno  |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -98,13 +94,13 @@ bossFilenames:
 
 ### announcementPriority
 
-Establece la [prioridad del anuncio]($language$/elitemobs/creating_bosses.md&section=announcementpriority).
+Establece la [prioridad de anuncio]($language$/elitemobs/creating_bosses.md&section=announcementpriority).
 
-| Clave                  |      Valores      | Predeterminado |
-|------------------------|:-----------------:|:--------------:|
-| `announcementPriority` | [Entero](#entero) |    ninguno     |
+| Clave       |       Valores        | Predeterminado |
+|-----------|:-------------------:|:-------:|
+| `announcementPriority` | [Entero](#integer) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -124,18 +120,18 @@ announcementPriority: 1
 
 Establece el mensaje enviado al inicio del evento.
 
-| Clave          |      Valores      | Predeterminado |
-|----------------|:-----------------:|:--------------:|
-| `startMessage` | [Cadena](#cadena) |    ninguno     |
+| Clave       |       Valores        | Predeterminado |
+|-----------|:-------------------:|:-------:|
+| `startMessage` | [Cadena](#string) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
-startMessage: ¡Un evento ha comenzado!
+startMessage: An event has started!
 ```
 
 <div align="center">
@@ -154,18 +150,18 @@ startMessage: ¡Un evento ha comenzado!
 
 Establece el mensaje enviado al final del evento.
 
-| Clave        |      Valores      | Predeterminado |
-|--------------|:-----------------:|:--------------:|
-| `endMessage` | [Cadena](#cadena) |    ninguno     |
+| Clave       |       Valores        | Predeterminado |
+|-----------|:-------------------:|:-------:|
+| `endMessage` | [Cadena](#string) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
-endMessage: ¡Un evento ha terminado!
+endMessage: An event has ended!
 ```
 
 <div align="center">
@@ -184,11 +180,11 @@ endMessage: ¡Un evento ha terminado!
 
 Establece los comandos que se ejecutan al inicio del evento.
 
-| Clave                |                Valores                | Predeterminado |
-|----------------------|:-------------------------------------:|:--------------:|
-| `eventStartCommands` | [Lista de Cadenas](#lista_de_cadenas) |    ninguno     |
+| Clave       |       Valores        | Predeterminado |
+|-----------|:-------------------:|:-------:|
+| `eventStartCommands` | [Lista de Cadenas](#string_list) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -196,8 +192,8 @@ Establece los comandos que se ejecutan al inicio del evento.
 
 ```yml
 eventStartCommands:
-- say ¡¡El evento comienza ahora!!
-- "$chance=0.5$ say ¡Qué aparición!"
+- say The event now starts!!
+- "$chance=0.5$ say What a spawn!"
 ```
 
 <div align="center">
@@ -216,11 +212,11 @@ eventStartCommands:
 
 Establece los comandos que se ejecutan al final del evento.
 
-| Clave              |                Valores                | Predeterminado |
-|--------------------|:-------------------------------------:|:--------------:|
-| `eventEndCommands` | [Lista de Cadenas](#lista_de_cadenas) |    ninguno     |
+| Clave       |       Valores        | Predeterminado |
+|-----------|:-------------------:|:-------:|
+| `eventEndCommands` | [Lista de Cadenas](#string_list) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -228,8 +224,8 @@ Establece los comandos que se ejecutan al final del evento.
 
 ```yml
 eventEndCommands:
-- say El evento termina, qué triste.
-- "$chance=0.5$ say ¡Demasiado lento, amigo!"
+- say The event ends, so sad.
+- "$chance=0.5$ say Too slow bud!"
 ```
 
 <div align="center">
@@ -246,7 +242,7 @@ eventEndCommands:
 
 ***
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo de Configuración de Evento</b></summary>
 
@@ -258,12 +254,12 @@ bossFilenames:
 - "cool_boss.yml"
 - "other_cool_boss.yml"
 announcementPriority: 3
-startMessage: "¡El evento genial está comenzando!"
-endMessage: "¡El evento genial está terminando!"
+startMessage: "Cool event is starting!"
+endMessage: "Cool event is ending!"
 eventStartCommands:
-- say ¡El evento ha comenzado!
+- say The event started!
 eventEndCommands:
-- say ¡El evento ha terminado!
+- say The event ended!
 ```
 
 </div>
@@ -281,13 +277,13 @@ Eventos que tienen una probabilidad de ejecutarse cuando ocurre una acción espe
 
 ### chance
 
-Establece la probabilidad de que el evento suceda cuando ocurre la acción.
+Establece la probabilidad de que el evento ocurra cuando la acción sucede.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
 | `chance` | Valor entre `0.0` y `1.0` |  `0`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -305,13 +301,13 @@ chance: 0.001
 
 ### breakableMaterials
 
-Establece la lista de materiales para verificar si la acción está establecida en `BREAK_BLOCK`.
+Establece la lista de materiales a verificar si la acción está configurada como `BREAK_BLOCK`.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
 | `breakableMaterials` | Lista de [materiales](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -331,7 +327,7 @@ breakableMaterials:
 
 ***
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo de Configuración</b></summary>
 
@@ -345,8 +341,7 @@ breakableMaterials:
 
 </div>
 
-Establece una probabilidad del 0.1% de ejecutar el evento cuando se rompe un bloque de mineral de carbón, asumiendo que
-el tipo de evento es `BREAK_BLOCK`.
+Establece una probabilidad del 0.1% de ejecutar el evento cuando se rompe un bloque de mineral de carbón, asumiendo que el tipo de evento es `BREAK_BLOCK`.
 
 </details>
 
@@ -356,20 +351,17 @@ el tipo de evento es `BREAK_BLOCK`.
 
 <div align="center">
 
-Los Eventos Temporizados son eventos que suceden a intervalos de tiempo configurables. Una vez que el tiempo de
-reutilización de un evento temporizado ha terminado, se elige un evento temporizado aleatorio de la lista de eventos
-temporizados según el peso del evento.
+Los Eventos Temporizados son eventos que ocurren a intervalos de tiempo configurables. Una vez que el tiempo de espera para un evento temporizado ha terminado, se selecciona un evento temporizado aleatorio de la lista de eventos temporizados basándose en el peso del evento.
 
 ### spawnType
 
-Establece el [Generación Personalizada]($language$/elitemobs/creating_spawns.md) utilizada por el evento, que define
-dónde puede generarse el jefe.
+Establece el [Spawn Personalizado]($language$/elitemobs/creating_spawns.md) utilizado por el evento, que define dónde puede aparecer el jefe.
 
-| Clave       |                 Valores                 | Predeterminado |
-|-------------|:---------------------------------------:|:--------------:|
-| `spawnType` | [Nombre de Archivo](#nombre_de_archivo) |    ninguno     |
+| Clave       |        Valores         | Predeterminado |
+|-----------|:---------------------:|:-------:|
+| `spawnType` | [Nombre de Archivo](#filename) |  ninguno   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -387,13 +379,13 @@ spawnType: nether_spawn.yml
 
 ### localCooldown
 
-Establece la cantidad de tiempo, en minutos, antes de que este evento pueda ser elegido nuevamente.
+Establece la cantidad de tiempo, en minutos, antes de que este evento pueda ser seleccionado de nuevo.
 
-| Clave           |      Valores      | Predeterminado |
-|-----------------|:-----------------:|:--------------:|
-| `localCooldown` | [Entero](#entero) |      `0`       |
+| Clave       |        Valores         | Predeterminado |
+|-----------|:---------------------:|:-------:|
+| `localCooldown` | [Entero](#integer) |  `0`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -411,13 +403,13 @@ localCooldown: 120
 
 ### globalCooldown
 
-Establece la cantidad de tiempo, en minutos, antes de que se elija el próximo evento.
+Establece la cantidad de tiempo, en minutos, antes de que se seleccione el próximo evento.
 
-| Clave            |      Valores      | Predeterminado |
-|------------------|:-----------------:|:--------------:|
-| `globalCooldown` | [Entero](#entero) |      `0`       |
+| Clave       |        Valores         | Predeterminado |
+|-----------|:---------------------:|:-------:|
+| `globalCooldown` | [Entero](#integer) |  `0`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -435,14 +427,13 @@ globalCooldown: 60
 
 ### weight
 
-Establece el peso del evento, afectando la probabilidad de que se elija por encima de otros eventos. **Recomendado: 100
-**.
+Establece el peso del evento, afectando la probabilidad de que sea seleccionado sobre otros eventos. **Recomendado: 100**.
 
-| Clave    |     Valores     | Predeterminado |
-|----------|:---------------:|:--------------:|
-| `weight` | [Doble](#doble) |      `0`       |
+| Clave       |        Valores         | Predeterminado |
+|-----------|:---------------------:|:-------:|
+| `weight` | [Doble](#double) |  `0`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -462,11 +453,11 @@ weight: 60.5
 
 Establece la duración máxima del evento, en minutos.
 
-| Clave           |      Valores      | Predeterminado |
-|-----------------|:-----------------:|:--------------:|
-| `eventDuration` | [Entero](#entero) |      `0`       |
+| Clave       |        Valores         | Predeterminado |
+|-----------|:---------------------:|:-------:|
+| `eventDuration` | [Entero](#integer) |  `0`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -488,9 +479,9 @@ Establece si el evento termina con la muerte del jefe.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `eventEndsWithBossDeath` | [Booleano](#booleano) | `true`  |
+| `eventEndsWithBossDeath` | [Booleano](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -512,9 +503,9 @@ Establece la hora del juego en la que terminará el evento.
 
 | Clave       |       Valores        | Predeterminado |
 |-----------|:-------------------:|:-------:|
-| `eventEndTime` | [Booleano](#booleano) | `true`  |
+| `eventEndTime` | [Booleano](#boolean) | `true`  |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -532,13 +523,13 @@ eventEndTime: true
 
 ### minimumPlayerCount
 
-Establece la cantidad mínima de jugadores en línea antes de que comience el evento.
+Establece la cantidad mínima de jugadores en línea antes de que el evento comience.
 
-| Clave                |      Valores      | Predeterminado |
-|----------------------|:-----------------:|:--------------:|
-| `minimumPlayerCount` | [Entero](#entero) |      `1`       |
+| Clave       |       Valores        | Predeterminado |
+|-----------|:-------------------:|:-------:|
+| `minimumPlayerCount` | [Entero](#integer) |   `1`   |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -556,10 +547,9 @@ minimumPlayerCount: true
 
 ***
 
-*Ten en cuenta que los eventos se ponen en cola, lo que significa que solo comenzarán una vez que se cumplan las
-condiciones definidas en el `customSpawn`.*
+*Tenga en cuenta que los eventos se ponen en cola, lo que significa que solo comenzarán una vez que se cumplan las condiciones definidas en el `customSpawn`.*
 
-<details> 
+<details>
 
 <summary align="center"><b>Ejemplo de Configuración de Eventos</b></summary>
 
@@ -571,12 +561,12 @@ bossFilenames:
 - "cool_boss.yml"
 - "other_cool_boss.yml"
 announcementPriority: 3
-startMessage: "¡El evento genial está comenzando!"
-endMessage: "¡El evento genial está terminando!"
+startMessage: "Cool event is starting!"
+endMessage: "Cool event is ending!"
 eventStartCommands:
-- say ¡El evento ha comenzado!
+- say The event started!
 eventEndCommands:
-- say ¡El evento ha terminado!
+- say The event ended!
 customSpawn: "myCoolSpawn.yml"
 localCooldown: 30
 globalCooldown: 15

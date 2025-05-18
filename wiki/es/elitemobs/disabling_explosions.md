@@ -1,16 +1,18 @@
-# Deshabilitar el daño por explosión
+Aquí tienes la traducción al español, manteniendo el formato markdown:
 
-## Deshabilitar el daño a bloques
+# Deshabilitar daño por explosión
+
+## Deshabilitar daño a bloques
 
 ### Usando gamerule
 
-Ejecuta el comando `/gamerule mobGriefing false`. Esto evita todo el daño a bloques causado por explosiones.
+Ejecuta el comando `/gamerule mobGriefing false`. Esto previene todo el daño a bloques causado por explosiones.
 
 ### Usando WorldGuard
 
-Establece el flag `ghast-fireball` a deny. Esto evita todo el daño causado por las bolas de fuego de Ghast.
+Establece la bandera `ghast-fireball` a deny. Esto previene todo el daño de las bolas de fuego de Ghast.
 
-## Deshabilitar las bolas de fuego de EliteMobs:
+## Deshabilitar bolas de fuego de EliteMobs:
 
 1. Ve a la carpeta *~plugins\EliteMobs\powers*.
 2. Ve a *attack_fireball.yml* y establece `isEnabled` a `false`.

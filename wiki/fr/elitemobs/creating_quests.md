@@ -1,11 +1,12 @@
+Voici la traduction en français, en conservant le formatage markdown :
+
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# Quête d'exemple
+# Exemple de Quête
 
-EliteMobs est livré pré-installé avec un fichier `test_quest.yml`, qui sera analysé ici comme un format de quête simple
-à suivre.
+EliteMobs est livré pré-empaqueté avec un fichier `test_quest.yml`, qui sera analysé ici comme un format de quête simple à suivre.
 
-_Les quêtes personnalisées se trouvent dans le dossier `~plugins/EliteMobs/customquests`!_
+_Les Quêtes Personnalisées se trouvent dans le dossier `~plugins/EliteMobs/customquests` !_
 
 `test_quest.yml`
 
@@ -18,9 +19,9 @@ customObjectives:
     objectiveType: KILL_CUSTOM
 customRewards:
 - filename=magmaguys_toothpick.yml:amount=1:chance=1
-name: "&aTuer le boss test"
-questLore: 
-- "&cMettez fin au règne de terreur du boss test !"
+name: "&aTuer le Boss Test"
+questLore:
+- "&cMettez fin au règne de terreur du boss test !"
 ```
 
 <div align="center">
@@ -29,34 +30,31 @@ questLore:
 
 </div>
 
-*Si votre interface utilisateur de quête n'est pas comme celle-ci, vous pouvez la modifier pour qu'elle corresponde en
-utilisant `/em alt`.*
+*Si votre interface utilisateur de quête ne ressemble pas à cela, vous pouvez la modifier pour qu'elle corresponde en utilisant `/em alt`.*
 
-Cette quête d'exemple donnera aux joueurs la tâche de tuer 1 test_boss.yml. (Le nom réel du boss affiché dans le suivi
-de quête sera le `nom :` défini dans test_boss.yml.) Et en récompense pour avoir terminé la quête, ils recevront 1
-cure-dent de Magmaguy.
+Cette quête d'exemple donnera aux joueurs la tâche de tuer 1 test_boss.yml. (Le nom réel du boss affiché dans le suivi de quête sera le `name:` défini dans test_boss.yml.) Et en récompense de l'accomplissement de la quête, ils recevront 1 Cure-dent de Magmaguy.
 
-## Création de quêtes personnalisées
+## Créer des Quêtes Personnalisées
 
 <div align="center">
 
 ### customObjectives
 
-Définit les objectifs de quête.
+Définit les objectifs de la quête.
 
-| Clé                |   Valeurs   | Par défaut |
-|--------------------|:-----------:|:----------:|
+| Clé              |   Valeurs    | Par Défaut |
+|------------------|:------------:|:----------:|
 | `customObjectives` | Spécial [1] |   aucun    |
 
-*Remarque: si vous utilisez un boss multiphases comme objectif, l'objectif doit utiliser la première phase comme cible.*
+*Note : Si vous utilisez un boss multiphase comme objectif, l'objectif doit utiliser la première phase comme cible.*
 
-<details> 
+<details>
 
 <summary><b>Exemples</b></summary>
 
 <div align="left">
 
-`KILL_CUSTOM`:
+`KILL_CUSTOM` :
 
 ```yml
 customObjectives:
@@ -66,27 +64,27 @@ customObjectives:
     objectiveType: KILL_CUSTOM
 ```
 
-`DIALOG`:
+`DIALOG` :
 
 ```yml
 customObjectives:
   Objective1:
     dialog:
-    - "&a[PNJ de dialogue] &fVous venez souvent ici ?"
+    - "&a[PNJ de Dialogue] &fVous venez souvent ici ?"
     - "&7&oJe devrais manger plus de pommes."
     filename: dialog_npc.yml
-    npcName: PNJ de dialogue
-    location: à l'endroit du dialogue.
+    npcName: PNJ de Dialogue
+    location: à l'emplacement du dialogue.
     objectiveType: DIALOG
 ```
 
-`FETCH_ITEM`:
+`FETCH_ITEM` :
 
 ```yml
 customObjectives:
   Objective1:
     amount: '99'
-    itemName: Pommes rouges
+    itemName: Pommes Rouges
     filename: my_quest_item_red_apples.yml
     objectiveType: FETCH_ITEM
 ```
@@ -105,21 +103,21 @@ customObjectives:
 
 <details>
 
-<summary><b>Développer le tableau</b></summary>
+<summary><b>Développer le Tableau</b></summary>
 
 <div align="center">
 
-Les objectifs personnalisés sont construits à l'aide des valeurs suivantes:
+Les Objectifs Personnalisés sont construits en utilisant les valeurs suivantes :
 
-| Clé                                     | Description                                                                                                                                                                                                                                                                                           |
-|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | Utilisé pour définir le type d'objectif que cela représente. `KILL_CUSTOM` indique que la quête implique de tuer un boss personnalisé spécifique, `FETCH_ITEM` indique que la quête implique d'obtenir un objet personnalisé spécifique et `DIALOG` indique que la quête implique de parler à un PNJ. |
-| `filename`                              | Utilisé pour définir le nom de fichier du boss personnalisé, de l'objet personnalisé que le joueur doit tuer/obtenir ou du PNJ auquel il doit parler.                                                                                                                                                 |
-| `amount`                                | Utilisé pour définir le nombre de boss personnalisés qui doivent être tués ou d'objets qui doivent être obtenus.                                                                                                                                                                                      |
-| `dialog`                                | Utilisé pour définir le dialogue du PNJ auquel le joueur parle.                                                                                                                                                                                                                                       |
-| `name`                                  | Utilisé pour définir le nom de l'objectif de la quête, que ce soit un PNJ ou un objet personnalisé. À des fins visuelles uniquement.                                                                                                                                                                  |
+| Clé                                     | Description |
+|-----------------------------------------|-------------|
+| `KILL_CUSTOM` / `FETCH_ITEM` / `DIALOG` | Utilisé pour définir le type d'objectif que cela représente. `KILL_CUSTOM` indique que la quête implique de tuer un Boss Personnalisé spécifique, `FETCH_ITEM` indique que la quête implique d'obtenir un Objet Personnalisé spécifique et `DIALOG` indique que la quête implique de parler à un PNJ. |
+| `filename`                                    | Utilisé pour définir le nom du fichier du Boss Personnalisé, de l'Objet Personnalisé que le joueur doit tuer / obtenir ou du PNJ auquel il doit parler. |
+| `amount`                                      | Utilisé pour définir la quantité de Boss Personnalisés qui doivent être tués ou d'objets qui doivent être obtenus. |
+| `dialog`                                      | Utilisé pour définir le dialogue du PNJ auquel le joueur parle. |
+| `name`                                        | Utilisé pour définir le nom de l'objectif de quête, qu'il s'agisse d'un PNJ ou d'un objet personnalisé. À des fins visuelles uniquement. |
 
-_Veuillez noter que chaque champ Objectif personnalisé est séparé par un `:`!_
+_Veuillez noter que chaque champ d'Objectif Personnalisé est séparé par un : !_
 
 </div>
 
@@ -131,11 +129,11 @@ _Veuillez noter que chaque champ Objectif personnalisé est séparé par un `:`!
 
 Définit les récompenses de la quête.
 
-| Clé             |                                  Valeurs                                  | Par défaut |
-|-----------------|:-------------------------------------------------------------------------:|:----------:|
+| Clé           |                                Valeurs                                 | Par Défaut |
+|---------------|:---------------------------------------------------------------------:|:----------:|
 | `customRewards` | [Format de butin universel EliteMobs]($language$elitemobs/loot_tables.md) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -162,13 +160,13 @@ customRewards:
 
 ### questAcceptPermission
 
-Définit l'autorisation que le joueur doit avoir pour accepter la quête.
+Définit la permission que le joueur doit avoir pour accepter la quête.
 
-| Clé                     |      Valeurs      | Par défaut |
-|-------------------------|:-----------------:|:----------:|
-| `questAcceptPermission` | [Chaîne](#string) |   aucun    |
+| Clé                   |      Valeurs       | Par Défaut |
+|-----------------------|:------------------:|:----------:|
+| `questAcceptPermission` | [Chaîne de caractères](#string) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -186,20 +184,20 @@ questAcceptPermission: elitequest.my_permission
 
 ### questAcceptPermissions
 
-Définit les autorisations que le joueur doit avoir pour accepter la quête.
+Définit les permissions que le joueur doit avoir pour accepter la quête.
 
-| Clé                      |             Valeurs              | Par défaut |
-|--------------------------|:--------------------------------:|:----------:|
-| `questAcceptPermissions` | [Liste de chaînes](#string_list) |   aucun    |
+| Clé                    |   Valeurs    | Par Défaut |
+|------------------------|:------------:|:----------:|
+| `questAcceptPermissions` | [Liste de chaînes de caractères](#string_list) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-questAcceptPermissions: 
+questAcceptPermissions:
 - elitequest.my_previous_quest_one.yml
 - elitequest.my_previous_quest_two.yml
 ```
@@ -212,14 +210,13 @@ questAcceptPermissions:
 
 ### questLockoutPermission
 
-Définit l'autorisation que le joueur recevra une fois la quête terminée et qui l'empêchera de refaire la quête (
-généralement le [Nom de fichier](#fielname) de la quête que vous modifiez).
+Définit la permission que le joueur obtiendra en terminant la quête, ce qui l'empêchera de refaire la quête (Généralement le [Nom du fichier](#filename) de la quête que vous modifiez).
 
-| Clé                      |      Valeurs      | Par défaut |
-|--------------------------|:-----------------:|:----------:|
-| `questLockoutPermission` | [Chaîne](#string) |   aucun    |
+| Clé                      |      Valeurs       | Par Défaut |
+|--------------------------|:------------------:|:----------:|
+| `questLockoutPermission` | [Chaîne de caractères](#string) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -237,14 +234,13 @@ questLockoutPermission: elitequest.my_quest.yml
 
 ### questLockoutMinutes
 
-Définit la durée, en minutes, pendant laquelle le joueur devra attendre avant de pouvoir refaire la quête (fonctionne en
-supprimant l'autorisation de verrouillage de quête).
+Définit le temps, en minutes, que le joueur devra attendre avant de pouvoir refaire la quête (fonctionne en supprimant la permission de verrouillage de quête).
 
-| Clé                   |      Valeurs       |          Par défaut          |
-|-----------------------|:------------------:|:----------------------------:|
-| `questLockoutMinutes` | [Entier](#integer) | `-1` (ne se répétera jamais) |
+| Clé                   |      Valeurs       |      Par Défaut      |
+|-----------------------|:------------------:|:--------------------:|
+| `questLockoutMinutes` | [Entier](#integer) | -1 (ne se répétera jamais) |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -262,20 +258,20 @@ questLockoutMinutes: 60
 
 ### name
 
-Définit le nom de la quête. Accepte les [Codes de couleurs](#color_codes).
+Définit le nom de la quête. Accepte les [Codes Couleur](#color_codes).
 
-| Clé    |      Valeurs      | Par défaut |
-|--------|:-----------------:|:----------:|
-| `name` | [Chaîne](#string) |   aucun    |
+| Clé    |      Valeurs       | Par Défaut |
+|--------|:------------------:|:----------:|
+| `name` | [Chaîne de caractères](#string) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
 <div align="left">
 
 ```yml
-name: "&aMon excellent nom de quête"
+name: "&aMon Super Nom de Quête"
 ```
 
 </div>
@@ -286,13 +282,13 @@ name: "&aMon excellent nom de quête"
 
 ### questLore
 
-Définit l'histoire de la quête qui apparaîtra dans le menu de quête en jeu.
+Définit le lore de la quête qui apparaîtra dans le menu de quête en jeu.
 
-| Clé         |             Valeurs              | Par défaut |
-|-------------|:--------------------------------:|:----------:|
-| `questLore` | [Liste de chaînes](#string_list) |   aucun    |
+| Clé       |      Valeurs       | Par Défaut |
+|-----------|:------------------:|:----------:|
+| `questLore` | [Liste de chaînes de caractères](#string_list) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -300,8 +296,8 @@ Définit l'histoire de la quête qui apparaîtra dans le menu de quête en jeu.
 
 ```yml
 questLore:
-- "Phrase d'histoire intéressante."
-- "Encore une autre phrase d'histoire intéressante."
+- "Phrase de lore intéressante."
+- "Encore une autre phrase de lore intéressante."
 ```
 
 <div align="center">
@@ -318,18 +314,15 @@ questLore:
 
 ### temporaryPermissions
 
-Définit les autorisations attribuées au joueur jusqu'à ce qu'il remette la quête.
+Définit les permissions attribuées au joueur jusqu'à ce qu'il rende la quête.
 
-Si vous utilisez ce paramètre pour vous assurer qu'un objet ne tombe que lorsque les joueurs ont une quête spécifique
-active, vous devrez également configurer
-la [Même autorisation]($language$/elitemobs/creating_items.md&section=permission) dans le fichier de configuration de
-l'objet.
+Si vous utilisez ce paramètre pour vous assurer qu'un objet ne tombe que lorsque les joueurs ont une quête spécifique active, vous devrez également configurer la [Même Permission]($language$/elitemobs/creating_items.md&section=permission) dans le fichier de configuration de l'objet.
 
-| Clé                    |             Valeurs              | Par défaut |
-|------------------------|:--------------------------------:|:----------:|
-| `temporaryPermissions` | [Liste de chaînes](#string_list) |   aucun    |
+| Clé                  |      Valeurs       | Par Défaut |
+|----------------------|:------------------:|:----------:|
+| `temporaryPermissions` | [Liste de chaînes de caractères](#string_list) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -350,11 +343,11 @@ temporaryPermissions:
 
 Définit le dialogue qui apparaît dans le chat lors de l'acceptation de la quête.
 
-| Clé                 |             Valeurs              | Par défaut |
-|---------------------|:--------------------------------:|:----------:|
-| `questAcceptDialog` | [Liste de chaînes](#string_list) |   aucun    |
+| Clé               |      Valeurs       | Par Défaut |
+|-------------------|:------------------:|:----------:|
+| `questAcceptDialog` | [Liste de chaînes de caractères](#string_list) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -362,8 +355,8 @@ Définit le dialogue qui apparaît dans le chat lors de l'acceptation de la quê
 
 ```yml
 questAcceptDialog:
-- "Mon héros ! Vous êtes si serviable !"
-- "Je vous souhaite bonne chance !"
+- "Mon héros ! Vous êtes si serviable !"
+- "Je vous souhaite la meilleure des chances !"
 ```
 
 <div align="center">
@@ -380,13 +373,13 @@ questAcceptDialog:
 
 ### questCompleteMessage
 
-Définit le dialogue qui apparaît dans le chat à la fin de la quête.
+Définit le dialogue qui apparaît dans le chat lors de l'accomplissement de la quête.
 
-| Clé                    |             Valeurs              | Par défaut |
-|------------------------|:--------------------------------:|:----------:|
-| `questCompleteMessage` | [Liste de chaînes](#string_list) |   aucun    |
+| Clé                  |      Valeurs       | Par Défaut |
+|----------------------|:------------------:|:----------:|
+| `questCompleteMessage` | [Liste de chaînes de caractères](#string_list) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -394,8 +387,8 @@ Définit le dialogue qui apparaît dans le chat à la fin de la quête.
 
 ```yml
 questCompleteMessage:
-- "Mon héros ! Vous avez terminé ma quête difficile !"
-- "En récompense, vous pouvez prendre ce pain !"
+- "Mon héros ! Vous avez accompli ma quête difficile !"
+- "En récompense, vous pouvez avoir ce pain !"
 ```
 
 <div align="center">
@@ -412,13 +405,13 @@ questCompleteMessage:
 
 ### questCompleteCommands
 
-Définit les commandes qui s'exécuteront à la fin de la quête.
+Définit les commandes qui seront exécutées lors de l'accomplissement de la quête.
 
-| Clé                     |             Valeurs              | Par défaut |
-|-------------------------|:--------------------------------:|:----------:|
-| `questCompleteCommands` | [Liste de chaînes](#string_list) |   aucun    |
+| Clé                   |      Valeurs       | Par Défaut |
+|-----------------------|:------------------:|:----------:|
+| `questCompleteCommands` | [Liste de chaînes de caractères](#string_list) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -426,7 +419,7 @@ Définit les commandes qui s'exécuteront à la fin de la quête.
 
 ```yml
 questCompleteCommands:
-- say $player a terminé une quête !
+- say $player a terminé une quête !
 ```
 
 <div align="center">
@@ -443,14 +436,13 @@ questCompleteCommands:
 
 ### turnInNPC
 
-Définit le nom de fichier du PNJ auquel les joueurs doivent parler/interagir pour terminer la quête. Il n'est **pas**
-nécessaire que ce soit le même PNJ qui a remis la quête.
+Définit le nom du fichier du PNJ auquel les joueurs doivent parler/interagir pour terminer la quête. Ce n'est **pas** nécessairement le même PNJ qui a donné la quête.
 
-| Clé         |           Valeurs           | Par défaut |
-|-------------|:---------------------------:|:----------:|
-| `turnInNPC` | [Nom de fichier](#filename) |   aucun    |
+| Clé       |      Valeurs       | Par Défaut |
+|-----------|:------------------:|:----------:|
+| `turnInNPC` | [Nom du fichier](#filename) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -470,11 +462,11 @@ turnInNPC: my_cool_quest_npc.yml
 
 Définit si la quête utilisera le suivi de quête.
 
-| Clé         |       Valeurs       | Par défaut |
-|-------------|:-------------------:|:----------:|
+| Clé       |      Valeurs       | Par Défaut |
+|-----------|:------------------:|:----------:|
 | `trackable` | [Booléen](#boolean) |   `true`   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -492,14 +484,13 @@ trackable: true
 
 ### questLevel
 
-Définit le niveau de la quête. Il s'agit uniquement d'un guide visuel pour que les joueurs puissent savoir à quel point
-la quête sera difficile. Cela ne modifie **en aucun cas** les niveaux des boss, des objets ou autres.
+Définit le niveau de la quête. Il s'agit uniquement d'un guide visuel pour que les joueurs puissent évaluer la difficulté de la quête. Cela ne modifie en **aucun** cas les niveaux des boss, des objets ou autres.
 
-| Clé          |      Valeurs       | Par défaut |
-|--------------|:------------------:|:----------:|
+| Clé        |      Valeurs       | Par Défaut |
+|------------|:------------------:|:----------:|
 | `questLevel` | [Entier](#integer) |    `0`     |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -523,14 +514,13 @@ questLevel: 10
 
 ### questAcceptSound
 
-Définit le son qui est joué lorsqu'une quête est acceptée. Il est possible à la fois de jouer des sons de Minecraft et
-de jouer des sons d'un pack de ressources.
+Définit le son joué lorsqu'une quête est acceptée. Il est possible de jouer à la fois des sons de Minecraft et des sons d'un pack de ressources.
 
-| Clé                |      Valeurs      | Par défaut |
-|--------------------|:-----------------:|:----------:|
-| `questAcceptSound` | [Chaîne](#string) |   aucun    |
+| Clé                |      Valeurs       | Par Défaut |
+|--------------------|:------------------:|:----------:|
+| `questAcceptSound` | [Chaîne de caractères](#string) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -554,14 +544,13 @@ questAcceptSound: entity.experience_orb.pickup
 
 ### questCompleteSound
 
-Définit le son qui est joué lorsqu'une quête est terminée (remise). Il est possible à la fois de jouer des sons de
-Minecraft et de jouer des sons d'un pack de ressources.
+Définit le son joué lorsqu'une quête est terminée (rendue). Il est possible de jouer à la fois des sons de Minecraft et des sons d'un pack de ressources.
 
-| Clé                  |      Valeurs      | Par défaut |
-|----------------------|:-----------------:|:----------:|
-| `questCompleteSound` | [Chaîne](#string) |   aucun    |
+| Clé                  |      Valeurs       | Par Défaut |
+|----------------------|:------------------:|:----------:|
+| `questCompleteSound` | [Chaîne de caractères](#string) |   aucun    |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -581,55 +570,40 @@ questCompleteSound: entity.player.levelup
 
 </details>
 
-### Autorisations
+### Permissions
 
-Comme mentionné dans les tableaux ci-dessus, les autorisations sont généralement des [Chaînes](#string) ou
-des [Listes de chaînes](#string_list). Mais examinons plus en détail comment vous les utiliserez pour verrouiller et
-déverrouiller des quêtes.
+Comme mentionné dans les tableaux ci-dessus, les permissions sont généralement des [Chaînes de caractères](#string) ou des [Listes de chaînes de caractères](#string_list). Mais examinons plus en détail comment vous les utiliserez pour verrouiller et déverrouiller des quêtes.
 
-Supposons que vous créez la quête_3 dans une série de quêtes que vous avez planifiées et que vous ne voulez pas que les
-joueurs puissent prendre la quête_3 avant d'avoir terminé la quête_2. Nous configurerions le fichier de quête comme
-ceci:
+Supposons que vous créez la quête_3 dans une série de quêtes que vous avez planifiées et que vous ne voulez pas que les joueurs puissent prendre la quête_3 avant d'avoir terminé la quête_2. Nous configurerions le fichier de quête comme ceci :
 
 ```yml
 questAcceptPermission: elitequest.quest_2.yml
 questLockoutPermission: elitequest.quest_3.yml
 ```
+En définissant `questAcceptPermissions` sur `elitequest.quest_2.yml`, nous avons maintenant empêché les joueurs de prendre quest_3.yml avant qu'ils n'aient terminé quest_2.yml. </br> En définissant `questLockoutPermission` sur `elitequest.quest_3.yml`, nous avons empêché les joueurs de pouvoir recevoir cette quête tant qu'ils l'ont déjà dans leur suivi ou s'ils l'ont déjà terminée. Cela empêche les joueurs de pouvoir répéter la quête.
 
-En définissant `questAcceptPermissions` sur `elitequest.quest_2.yml`, nous avons maintenant empêché les joueurs de
-prendre quest_3.yml avant d'avoir terminé quest_2.yml. </br> En définissant `questLockoutPermission`
-sur `elitequest.quest_3.yml`, nous avons empêché les joueurs de pouvoir recevoir cette quête tant qu'ils ont déjà cette
-quête dans leur suivi ou s'ils ont déjà terminé cette quête. Cela empêche les joueurs de pouvoir répéter la quête.
-
-Si vous souhaitez créer une quête qui n'est disponible qu'une fois que les joueurs ont terminé une série de quêtes, vous
-configurez le fichier de quête comme ceci:
+Si vous souhaitez créer une quête qui ne devient disponible qu'après que les joueurs ont terminé une série de quêtes, vous configureriez alors le fichier de quête comme ceci :
 
 ```yml
-questAcceptPermissions: 
+questAcceptPermissions:
 - elitequest.quest_2.yml
 - elitequest.quest_3.yml
 - elitequest.quest_4.yml
 ```
 
-Si vous souhaitez que les joueurs ne puissent piller certains objets que lorsqu'ils ont la bonne quête active, nous
-pouvons le faire en utilisant `temporaryPermissions`. Nous créerions une autorisation dans le fichier de quête en
-utilisant `temporaryPermissions`, puis nous créerions
-une [autorisation]($language$/elitemobs/creating_items.md&section=permission) correspondante dans le fichier d'objet en
-utilisant `permission`.
+Si vous voulez que les joueurs ne puissent piller certains objets que lorsqu'ils ont la bonne quête active, nous pouvons le faire en utilisant `temporaryPermissions`. Nous créerions une permission dans le fichier de quête en utilisant `temporaryPermissions`, puis nous créerions une [permission]($language$/elitemobs/creating_items.md&section=permission) correspondante dans le fichier d'objet en utilisant `permission`.
 
-Par exemple, nous ouvrons notre fichier de quête et nous ajoutons ce qui suit:
+Par exemple, nous ouvririons notre fichier de quête et ajouterions ce qui suit :
 
 ```yml
-temporaryPermissions: 
+temporaryPermissions:
 - elitequest.my_cool_item.yml
 ```
-
-Ensuite, nous ouvrons le fichier d'objet, dans notre cas *my_cool_item.yml*, puis nous ajoutons ce qui suit:
+Ensuite, nous ouvririons le fichier d'objet, dans notre cas *my_cool_item.yml*, puis nous ajouterions ce qui suit :
 
 ```yml
 permission: elitequest.my_cool_item.yml
 ```
+Les deux fichiers ont maintenant des permissions correspondantes, ce qui devrait maintenant faire en sorte que notre objet ne tombe que lorsque les joueurs ont la bonne quête active.
 
-Les deux fichiers ont maintenant des autorisations correspondantes, ce qui devrait maintenant faire en sorte que notre
-objet ne tombe que lorsque les joueurs ont la bonne quête active.
 </div>

@@ -1,10 +1,11 @@
+```markdown
 # Bem-vindo
 
-Bem-vindo à wiki Nightbreak/MagmaGuy!
+Bem-vindo à wiki do Nightbreak/MagmaGuy!
 
-Aqui, encontrarás documentação para todos os plugins de Minecraft que criei.
+Aqui encontrará documentação para todos os plugins de Minecraft que criei.
 
-A wiki é fornecida em inglês, espanhol, francês, português, russo, chinês e japonês através de tradução automática. Se
-houver algum problema com as traduções, reporta uma correção no Discord de suporte.
+A wiki é fornecida em Inglês, Espanhol, Francês, Português, Russo, Chinês e Japonês através de tradução automática. Se houver algum problema com as traduções, reporte uma correção no Discord de suporte.
 
-***Podes navegar nesta wiki selecionando uma secção da wiki à esquerda.***
+***Pode navegar nesta wiki selecionando uma secção da wiki à esquerda.***
+```

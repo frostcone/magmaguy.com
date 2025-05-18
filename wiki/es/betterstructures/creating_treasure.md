@@ -1,13 +1,11 @@
+```markdown
 # ¿Qué es un archivo de tesoro?
 
-Los archivos de tesoro son los que determinan las tablas de botín para los cofres de BetterStructures. Normalmente se
-asignan
-a [generadores]($language$/betterstructures/creating_generators.md&section=treasurefilename), pero también se pueden
-establecer a nivel de
-una [configuración de construcción individual]($language$/betterstructures/creating_structures.md&section=treasurefile).
+Los archivos de tesoro son los que determinan las tablas de botín para los cofres de BetterStructures. Normalmente se asignan
+a [generadores](es/betterstructures/creating_generators.md&section=treasurefilename) pero también se pueden establecer a nivel de una
+[configuración de construcción individual](es/betterstructures/creating_structures.md&section=treasurefile).
 
-Estas tablas de botín son bastante potentes, pero también requieren conocimiento de algunos conceptos básicos de
-estadística para entenderlas.
+Estas tablas de botín son bastante potentes, pero también requieren conocimientos de algunos conceptos básicos de estadística para entenderlas.
 
 <details>
 <summary>
@@ -16,67 +14,41 @@ estadística para entenderlas.
 
 ***Probabilidad ponderada***
 
-BetterStructures y EliteMobs utilizan con frecuencia el concepto de probabilidad ponderada. Esto es para resolver un
-problema simple: ¿cómo se puede establecer la probabilidad de elegir un elemento de una lista de elementos
-potencialmente infinita?
+BetterStructures y EliteMobs utilizan frecuentemente el concepto de probabilidad ponderada. Esto es para resolver un problema simple: ¿cómo puedes establecer la probabilidad de elegir un objeto de una lista de objetos potencialmente infinitos?
 
-La probabilidad ponderada resuelve este problema dando a cada elemento un peso. Si tienes 100 elementos y cada uno tiene
-un peso de 1, todos tienen la misma probabilidad - 1% - de ser elegidos. Si añades un elemento más, con lo que el total
-es de 101 elementos, y le das a ese último elemento una probabilidad de 1, todos los elementos siguen teniendo la misma
-probabilidad - ~0,99% - de ser elegidos. Si le das al último elemento un peso de 2, la probabilidad de que sea elegido
-aumenta: el nuevo peso total es de 102, el último elemento tiene un peso de 2 y 100/102 = ~0,98%, por lo que
-0,98%+0,98% = 1,96% de probabilidad de ser elegido. Si le das al último elemento un peso de 100, el nuevo peso es de
-200, y como la mitad de ese peso es tu nuevo elemento, tu nuevo elemento tiene un 50% de posibilidades de ser elegido.
+La probabilidad ponderada resuelve este problema asignando un peso a cada objeto. Si tienes 100 objetos y cada uno tiene un peso de 1, entonces todos tienen la misma probabilidad - 1% - de ser elegidos. Si añades un objeto más, elevando el total a 101 objetos, y le das a ese último objeto una probabilidad de 1, todos los objetos siguen teniendo la misma probabilidad - ~0.99% - de ser elegidos. Si le das al último objeto un peso de 2, la probabilidad de que sea elegido aumenta - el nuevo peso total es 102, el último elemento tiene un peso de 2 y 100/102 = ~0.98% por lo que 0.98%+0.98% = 1.96% de probabilidad de ser elegido. Si le das al último objeto un peso de 100, el nuevo peso es 200, y como la mitad de ese peso es tu nuevo objeto, tu nuevo objeto tiene un 50% de probabilidad de ser elegido.
 
 Como puedes ver, esto es bueno para usar cuando puedes tener listas de cientos de cosas para aleatorizar.
 
-***Distribución gaussiana***
+***Distribución Gaussiana***
 
 Una distribución gaussiana es una función matemática en forma de campana.
 
 <img src="http://sfonline.barnard.edu/wp-content/uploads/2015/12/gaussian-distribution.jpg">
 
-Quizás te preguntes cómo es esto relevante para el sistema de botín. Una de las cosas que BetterStructures tiene que
-decidir al establecer el botín en los cofres es cuánto botín aparece en esos cofres. La cantidad debería ser
-constantemente alrededor de un número específico, pero idealmente no tan predecible que abrir un cofre se vuelva menos
-emocionante.
+Quizás te preguntes cómo esto es relevante para el sistema de botín. Una cosa que BetterStructures tiene que decidir al establecer el botín en los cofres es cuánta cantidad de botín aparece en esos cofres. La cantidad debe ser consistentemente alrededor de un número específico, pero idealmente no tan predecible como para que abrir un cofre se vuelva menos emocionante.
 
-Para lograr este efecto semi-aleatorio, se utiliza la distribución gaussiana para aleatorizar *cuántos* elementos se
-eligen. Una vez que se elige esta cantidad, la *probabilidad ponderada* elige un elemento de la tabla de rareza al azar
-y teniendo en cuenta los pesos.
+Para lograr este efecto semi-aleatorio, se utiliza la distribución gaussiana para aleatorizar *cuántos* objetos se eligen. Una vez que se elige esta cantidad, la *probabilidad ponderada* elige un elemento de la tabla de rarity al azar y teniendo en cuenta los pesos.
 
 Entonces, ¿cómo funciona la distribución gaussiana?
 
-Afortunadamente, no tienes que preocuparte de cómo funciona la matemática detrás de ella, y en su lugar puedes centrarte
-en las dos configuraciones que la modifican: la media y la desviación estándar.
+Afortunadamente, no tienes que preocuparte por cómo funciona la matemática detrás de ella, y en su lugar puedes centrarte en las dos configuraciones que la modifican: media y desviación estándar.
 
 *Media*
 
-Para decirlo de forma sencilla, `mean` establece el centro de la curva gaussiana, lo que significa que establece la
-cantidad más probable de elementos que aparecerán en un cofre. Esencialmente, si quieres que tus cofres tengan
-normalmente 5 objetos, establece tu media en 5.
+En pocas palabras, `mean` establece el centro de la curva gaussiana, lo que significa que establece la cantidad más probable de objetos que aparecerán en un cofre. Esencialmente, si quieres que tus cofres suelan tener 5 objetos, establece tu mean en 5.
 
 *Desviación estándar*
 
-Imagina que el número medio de objetos en un cofre es 5. La `desviación estándar` ayuda a decidir cuánto puede cambiar
-este número de un cofre a otro.
+Imagina que el número promedio de objetos en un cofre es 5. La `standard deviation` ayuda a decidir cuánto puede cambiar este número de un cofre a otro.
 
-`Desviación estándar` pequeña (por ejemplo, 1): Esto significa que la mayoría de los cofres tendrán objetos muy cerca de
-la media, como 4, 5 o 6 objetos. Es una experiencia más predecible. Por ejemplo, si un cofre tiene una desviación
-estándar de 1, puedes esperar que casi todos los cofres tengan entre 4 y 6 objetos.
+`Standard Deviation` pequeña (por ejemplo, 1): Esto significa que la mayoría de los cofres tendrán objetos muy cercanos al promedio, como 4, 5 o 6 objetos. Es una experiencia más predecible. Por ejemplo, si un cofre tiene una desviación estándar de 1, puedes esperar que casi todos los cofres tengan entre 4 y 6 objetos.
 
-`Desviación estándar` media (por ejemplo, 2): Aquí hay más variedad. Los cofres podrían tener de 3 a 7 objetos. Aunque 5
-objetos siguen siendo comunes, no es raro encontrar cofres con un poco más o menos. Por lo tanto, con una desviación
-estándar de 2, es posible que ocasionalmente encuentres un cofre con sólo 3 objetos, o si tienes suerte, uno con 7
-objetos.
+`Standard Deviation` media (por ejemplo, 2): Aquí hay más variedad. Los cofres pueden tener de 3 a 7 objetos. Aunque 5 objetos siguen siendo comunes, no es inusual encontrar cofres con un poco más o menos. Así, con una desviación estándar de 2, podrías encontrar ocasionalmente un cofre con solo 3 objetos, o si tienes suerte, uno con 7 objetos.
 
-`Desviación estándar` grande (por ejemplo, 3 o más): ¡Ahora las cosas se vuelven realmente sorprendentes! Los cofres
-podrían tener tan pocos como 2 objetos o tantos como 8 o más. Esto significa que podrías encontrar un cofre con sólo un
-par de objetos, pero también existe la posibilidad de encontrar un cofre lleno de golosinas. Por ejemplo, con una
-desviación estándar de 3, un cofre podría tener entre 2 y 8 objetos, lo que hace que cada apertura de cofre sea una
-emocionante apuesta.
+`Standard Deviation` grande (por ejemplo, 3 o más): ¡Ahora las cosas se vuelven realmente sorprendentes! Los cofres podrían tener tan solo 2 objetos o tantos como 8 o más. Significa que podrías encontrar un cofre con solo un par de objetos, pero también existe la posibilidad de encontrar un cofre cargado de golosinas. Por ejemplo, con una desviación estándar de 3, un cofre podría tener entre 2 y 8 objetos, haciendo que cada apertura de cofre sea una apuesta emocionante.
 
-***La media predeterminada es 4 y la desviación estándar predeterminada es 3.***
+***La media por defecto es 4, y la desviación estándar por defecto es 3.***
 
 </details>
 
@@ -84,7 +56,7 @@ emocionante apuesta.
 
 # Formato especial
 
-Los archivos de tesoro tienen un formato especial que se parece a esto:
+Los archivos de tesoro tienen un formato especial que se ve así:
 
 ```yml
 isEnabled: true
@@ -133,43 +105,39 @@ procedurallyGeneratedItemSettings:
 
 ```
 
-*Nota: esta es una versión muy reducida del archivo, el archivo real tiene 2599 líneas, ya que cubre mucho más botín y
-cada encantamiento posible.*
+*Nota: esta es una versión muy reducida del archivo, el archivo real tiene 2599 líneas ya que cubre mucho más botín y todos los encantamientos posibles.*
 
 # isEnabled
 
-| Clave       |        Valores        | Por defecto |
-|-------------|:---------------------:|-------------|
-| `isEnabled` | [Booleano](#booleano) | `true`      |
+| Clave |       Valores        | Por defecto |
+|-|:-------------------:|-|
+| `isEnabled` | [Boolean](#boolean) | `true` |
 
 ***
 
 # mean
 
-| Clave  |     Valores     | Por defecto |
-|--------|:---------------:|-------------|
-| `mean` | [Doble](#doble) | `4`         |
+| Clave    |      Valores       | Por defecto |
+|--------|:-----------------:|---------|
+| `mean` | [Double](#double) | `4`     |
 
-Establece la `media`. Lee los detalles sobre
-eso [aquí](https://magmaguy.com/wiki.html#lang=es&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+Establece la `mean`. Lee los detalles al respecto [aquí](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # standardDeviation
 
-| Clave               |     Valores     | Por defecto |
-|---------------------|:---------------:|-------------|
-| `standardDeviation` | [Doble](#doble) | `3`         |
+| Clave                 |      Valores       | Por defecto |
+|---------------------|:-----------------:|---------|
+| `standardDeviation` | [Double](#double) | `3`     |
 
-Establece la `desviación estándar`. Lee los detalles sobre
-eso [aquí](https://magmaguy.com/wiki.html#lang=es&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+Establece la `standardDeviation`. Lee los detalles al respecto [aquí](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
 
 ***
 
 # items
 
-Aquí es donde se pone complicado, ya que muchas de las opciones pueden ser establecidas por los administradores.
-Analicemos el ejemplo de archivo de configuración anterior.
+Aquí es donde se pone un poco complicado, ya que muchas de las opciones pueden ser configuradas por los administradores. Ampliemos el ejemplo de archivo de configuración anterior.
 
 ```yml
 items:
@@ -195,43 +163,38 @@ items:
       weight: 6.0
 ```
 
-Aquí puedes ver que bajo la clave de configuración `items` tenemos un mapa con `common` y `rare`. Estas son `rarezas`!
+Aquí, puedes ver que bajo la clave de configuración `items` tenemos un mapa con `common` y `rare`. ¡Estas son `rarities`!
 ***
 
-## rarezas
+## rarities
 
-Las rarezas no tienen un nombre fijo. Puedes añadirlas o eliminarlas, y personalizarlas tanto como quieras, siempre y
-cuando utilices el mismo formato.
+Las rarities no tienen un nombre fijo. Puedes añadirlas o eliminarlas, y personalizarlas tanto como quieras, siempre y cuando uses el mismo formato.
 
-Ten en cuenta que lo que hace que estas tablas de rareza sean más o menos raras es el `peso` de la tabla de botín.
+¡Ten en cuenta que lo que hace que estas tablas de rarity sean más o menos raras es el `weight` de la tabla de botín!
 
 Por defecto:
-- `common` tiene un `peso` predeterminado de 60
-- `rare` tiene un `peso` predeterminado de 30
-- `epic` tiene un `peso` predeterminado de 10
+- `common` tiene un `weight` por defecto de 60
+- `rare` tiene un `weight` por defecto de 30
+- `epic` tiene un `weight` por defecto de 10
 
-Haciendo que los objetos comunes tengan 6 veces más probabilidades de aparecer que los objetos épicos. Puedes leer más
-sobre
-los `pesos` [aquí](https://magmaguy.com/wiki.html#lang=es&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)!
+Haciendo que los objetos common tengan 6 veces más probabilidades de caer que los objetos epic. ¡Puedes leer más sobre los `weight`s [aquí](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)!
 
-Además del peso, cada tabla de rareza tiene su propia lista de `items`.
+Aparte del weight, cada tabla de rarity tiene su propia lista de `items`.
 
 ***
 
-### objetos de rareza
+### rarity items
 
-Los objetos de rareza son
-una [lista de mapas](https://magmaguy.com/wiki.html#lang=es&article=global+configuration_file_guide.md&section=map-list)
-que enumera todos los objetos que tiene la tabla de rareza.
+Los rarity items son una [lista de mapas](https://magmaguy.com/wiki.html#lang=en&article=global+configuration_file_guide.md&section=map-list) que enumera todos los objetos que tiene la tabla de rarity.
 
-Estos objetos tienen las siguientes configuraciones:
+Estos items tienen las siguientes configuraciones:
 
-| Clave                              |          Valores          | Por defecto |
-|------------------------------------|:-------------------------:|-------------|
-| `amount`                           | min-max [Entero](#entero) | variable    |
-| `material`                         |   [Material](#material)   | variable    |
-| `procedurallyGenerateEnchantments` |   [Booleano](#booleano)   | variable    |
-| `weight`                           |      [Doble](#doble)      | variable    |
+| Clave                                |           Valores            | Por defecto |
+|------------------------------------|:---------------------------:|----------|
+| `amount`                           | min-max [Integer](#integer) | variable |
+| `material`                         |    [Material](#Material)    | variable |
+| `procedurallyGenerateEnchantments` |     [Boolean](#boolean)     | variable |
+| `weight`                           |      [Double](#double)      | variable |
 
 ***
 
@@ -239,38 +202,32 @@ Estos objetos tienen las siguientes configuraciones:
 
 ***
 
-Establece la cantidad que debe aparecer. Esto se expresa como un rango de la siguiente manera `amount: MIN-MAX`. Como
-ejemplo, para que aparezcan entre 1 y 5
+Establece la cantidad a soltar. Esto se expresa como un rango de la siguiente manera `amount: MIN-MAX`. Como ejemplo, para soltar entre 1 y 5
 objetos: `amount: 1-5`.
 
 #### material
 
-Establece el material usando
-los [nombres de la API de Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) del
-objeto que puede aparecer.
+Establece el material usando los [nombres de la API de Spigot](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) del
+objeto que potencialmente puede caer.
 
 ***
 
 ##### Caso especial - serialized
 
-Cuando se utiliza el comando lootify, en lugar de un material lootify proporcionará un ajuste `serialized`. Esto es
-generado automáticamente por el plugin y no debe ser generado manualmente. Está en un formato que no es legible por
-humanos.
+Al usar el comando lootify, en lugar de un material, lootify proporcionará una configuración `serialized`. Esto es generado automáticamente por el plugin y no debe ser generado manualmente. Está en un formato que no es legible por humanos.
 
 ***
 
 #### weight
 
-Establece el peso para la probabilidad ponderada. Más información sobre
-esto [aquí](https://magmaguy.com/wiki.html#lang=es&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?).
+Establece el weight para la probabilidad ponderada. Más sobre eso [aquí](https://magmaguy.com/wiki.html#lang=en&article=betterstructures+creating_treasure.md&section=what-is-a-treasure-file?)!
 
 ***
 
 #### procedurallyGenerateItems
 
-Establece si el objeto debe ser generado procedimentalmente en base a los ajustes de configuración
-si `procedurallyGeneratedItemSettings`. Ten en cuenta que, según los ajustes, esto podría resultar en que un objeto se
-genere sin encantamientos.
+Establece si el objeto debe ser generado proceduralmente basándose en la configuración de `procedurallyGeneratedItemSettings`. Ten en cuenta que, basándose en la configuración, esto podría resultar en que un objeto se genere sin encantamientos de todos modos.
+
 
 # procedurallyGeneratedItemSettings
 
@@ -289,36 +246,33 @@ procedurallyGeneratedItemSettings:
       chance: 0.2
 ```
 
-Como puedes ver, este archivo enumera los tipos de material, seguidos de los encantamientos y luego seguidos de los
-niveles mínimo y máximo y una probabilidad.
+Como puedes ver, este archivo lista tipos de material, seguidos por encantamientos y luego por niveles mínimo y máximo y una probabilidad.
 
-Ten en cuenta que no puedes añadir materiales personalizados de otros plugins en estos ajustes, y probablemente no
-podrás añadir encantamientos personalizados de otros plugins a menos que su autor diga explícitamente que ha hecho su
-sistema compatible.
+Ten en cuenta que no puedes añadir materiales personalizados de otros plugins en estas configuraciones, y probablemente no puedas añadir encantamientos personalizados de otros plugins a menos que su autor diga explícitamente que han hecho su sistema compatible.
 
-En cuanto a la configuración de los encantamientos:
+En cuanto a la configuración de encantamientos:
 
-| Clave      |            Valores            | Por defecto |
-|------------|:-----------------------------:|-------------|
-| `minLevel` |       [Entero](#entero)       | variable    |
-| `maxLevel` |       [Entero](#entero)       | variable    |
-| `chance`   | [Probabilidad](#probabilidad) | variable    |
+| Clave        |       Valores        | Por defecto |
+|------------|:-------------------:|----------|
+| `minLevel` | [Integer](#integer) | variable |
+| `maxLevel` | [Integer](#integer) | variable |
+| `chance`   |  [Chance](#chance)  | variable |
 
 ***
 
 ## minLevel
 
-Establece el nivel mínimo del encantamiento.
+Establece el nivel mínimo de encantamiento.
 
 ***
 
 ## maxLevel
 
-Establece el nivel máximo del encantamiento.
+Establece el nivel máximo de encantamiento.
 
 ***
 
 ## chance
 
-Establece la probabilidad de que el encantamiento se produzca. Esto no está utilizando la probabilidad ponderada, sólo
-una tirada de dados normal.
+Establece la probabilidad de que ocurra el encantamiento. Esto no utiliza probabilidad ponderada, solo una tirada de dado normal.
+```

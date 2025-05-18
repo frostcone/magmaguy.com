@@ -1,3 +1,5 @@
+はい、承知いたしました。入力されたテキストを日本語に翻訳し、Markdownの書式を維持します。
+
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
 # 設定
@@ -6,13 +8,13 @@
 
 ### isEnabled
 
-NPCが有効かどうかを設定します。
+NPCを有効にするかどうかを設定します。
 
-| キー          |          値          | デフォルト  |
-|-------------|:-------------------:|:------:|
-| `isEnabled` | [Boolean](#boolean) | `true` |
+| キー        |       値         | デフォルト |
+|------------|:----------------:|:--------:|
+| `isEnabled` | [Boolean](#boolean) |  `true`  |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -30,20 +32,20 @@ isEnabled: true
 
 ### name
 
-NPCの表示名を設定します。[カラーコード](#color_codes)に対応しています。
+NPCの表示名を設定します。[カラーコード](#color_codes)をサポートしています。
 
-| キー     |         値         | デフォルト |
-|--------|:-----------------:|:-----:|
-| `name` | [String](#string) |  なし   |
+| キー   |       値        | デフォルト |
+|-------|:---------------:|:--------:|
+| `name` | [String](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
 <div align="left">
 
 ```yml
-name: "&aエンピーシー"
+name: "&aEnn Peecee"
 ```
 
 <div align="center">
@@ -62,14 +64,13 @@ name: "&aエンピーシー"
 
 NPCのスケール（サイズ）を設定します。
 
-| キー      |             値             | デフォルト |
-|---------|:-------------------------:|:-----:|
-| `scale` | [Multiplier](#multiplier) | `1.0` |
+| キー    |        値         | デフォルト |
+|--------|:-----------------:|:--------:|
+| `scale` | [Multiplier](#multiplier) |  `1.0`   |
 
-スケーリング時、`1.0` はデフォルトサイズを表します。エンティティを大きくするには、値を増やし（例：`1.2`
-）、小さくするには値を減らします（例：`0.8`）。
+スケールを設定する際、`1.0`がデフォルトサイズを表します。エンティティを大きくするには値を増やし（例: `1.2`）、小さくするには値を減らします（例: `0.8`）。
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -87,20 +88,20 @@ scale: 1.2
 
 ### role
 
-NPCの名前の下に表示される役職を設定します。視覚的な表示のみです。[カラーコード](#color_codes)に対応しています。
+NPCの名前の下に表示される役割を設定します。見た目のみです。[カラーコード](#color_codes)をサポートしています。
 
-| キー     |         値         | デフォルト |
-|--------|:-----------------:|:-----:|
-| `role` | [String](#string) |  なし   |
+| キー   |       値        | デフォルト |
+|-------|:---------------:|:--------:|
+| `role` | [String](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
 <div align="left">
 
 ```yml
-role: "&c<赤い仲間>"
+role: "&c<Red Fellow>"
 ```
 
 <div align="center">
@@ -117,13 +118,13 @@ role: "&c<赤い仲間>"
 
 ### profession
 
-NPCの職業を設定します。変装を使用**しない**場合、スキンを設定します。
+NPCの職業を設定します。これは、ディスガイズを使用**しない**場合にスキンを設定します。
 
-| キー           |                                             値                                             |  デフォルト   |
-|--------------|:-----------------------------------------------------------------------------------------:|:--------:|
+| キー         |                         値                          | デフォルト |
+|-------------|:---------------------------------------------------:|:--------:|
 | `profession` | [職業](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/Villager.Profession.html) | `NITWIT` |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -149,11 +150,11 @@ profession: NITWIT
 
 プレイヤーが近づいたときにNPCが言う挨拶のリストを設定します。
 
-| キー          |           値            | デフォルト |
-|-------------|:----------------------:|:-----:|
-| `greetings` | [文字列リスト](#string_list) |  なし   |
+| キー       |         値          | デフォルト |
+|-----------|:-------------------:|:--------:|
+| `greetings` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -161,8 +162,8 @@ profession: NITWIT
 
 ```yml
 greetings:
-- こんにちは！
-- ごきげんよう。
+- Hi there!
+- Good day.
 ```
 
 <div align="center">
@@ -179,13 +180,13 @@ greetings:
 
 ### dialog
 
-プレイヤーが近くにいる間にNPCが言うセリフを設定します（`DIALOG` interactionType の場合、これがセリフになります）。
+プレイヤーが近くにいる間にNPCが言うダイアログを設定します（`DIALOG` interactionTypeの場合、これがダイアログになります）。
 
-| キー       |           値            | デフォルト |
-|----------|:----------------------:|:-----:|
-| `dialog` | [文字列リスト](#string_list) |  なし   |
+| キー    |         値          | デフォルト |
+|--------|:-------------------:|:--------:|
+| `dialog` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -193,8 +194,8 @@ greetings:
 
 ```yml
 dialog:
-- りんごが好き！
-- 今日は暑いね。
+- I like apples!
+- Sure is hot.
 ```
 
 <div align="center">
@@ -213,20 +214,20 @@ dialog:
 
 NPCの別れのメッセージを設定します。
 
-| キー         |           値            | デフォルト |
-|------------|:----------------------:|:-----:|
-| `farewell` | [文字列リスト](#string_list) |  なし   |
+| キー      |         値          | デフォルト |
+|----------|:-------------------:|:--------:|
+| `farewell` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
 <div align="left">
 
 ```yml
-farewell: 
-- またね！
-- バイバイ！
+farewell:
+- Until next time!
+- Bye!
 ```
 
 <div align="center">
@@ -243,13 +244,13 @@ farewell:
 
 ### canTalk
 
-NPCが話せるかどうかを設定します。
+NPCが話すことができるかどうかを設定します。
 
-| キー        |          値          | デフォルト  |
-|-----------|:-------------------:|:------:|
-| `canTalk` | [Boolean](#boolean) | `true` |
+| キー     |       値         | デフォルト |
+|---------|:----------------:|:--------:|
+| `canTalk` | [Boolean](#boolean) |  `true`  |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -267,13 +268,13 @@ canTalk: true
 
 ### activationRadius
 
-NPCがプレイヤーの接近を検知できる半径を設定します。
+NPCがプレイヤーの接近を検出できる半径を設定します。
 
-| キー                 |         値         | デフォルト |
-|--------------------|:-----------------:|:-----:|
-| `activationRadius` | [Double](#double) | `3.0` |
+| キー             |       値        | デフォルト |
+|-----------------|:---------------:|:--------:|
+| `activationRadius` | [Double](#double) |  `3.0`   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -291,13 +292,13 @@ activationRadius: 3.0
 
 ### interactionType
 
-NPCが行うインタラクションの種類を設定します。
+NPCが行うインタラクションのタイプを設定します。
 
-| キー                |    値    | デフォルト |
-|-------------------|:-------:|:-----:|
-| `interactionType` | 特別な [1] |  なし   |
+| キー             |      値       | デフォルト |
+|-----------------|:-------------:|:--------:|
+| `interactionType` |   特別 [1]    |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -315,21 +316,20 @@ interactionType: TELEPORT_BACK
 
 ### noPreviousLocationMessage
 
-テレポートNPCがプレイヤーをテレポートできる前の場所がない場合、このメッセージが表示されます。[カラーコード](#color_codes)
-を使用できます。
+テレポートNPCがプレイヤーをテレポートできる以前の場所がない場合、このメッセージが表示されます。[カラーコード](#color_codes)を受け付けます。
 
-| キー                          |         値         | デフォルト |
-|-----------------------------|:-----------------:|:-----:|
-| `noPreviousLocationMessage` | [String](#string) |  なし   |
+| キー                       |       値        | デフォルト |
+|---------------------------|:---------------:|:--------:|
+| `noPreviousLocationMessage` | [String](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
 <div align="left">
 
 ```yml
-noPreviousLocationMessage: '&8[EliteMobs] &c以前の場所に戻せませんでした - 以前の場所が見つかりませんでした！'
+noPreviousLocationMessage: '&8[EliteMobs] &cCouldn''t send you back to your previous location - no previous location found!'
 ```
 
 <div align="center">
@@ -346,13 +346,13 @@ noPreviousLocationMessage: '&8[EliteMobs] &c以前の場所に戻せませんで
 
 ### timeout
 
-NPCが完全に消滅するまでの時間（分単位）を設定します。
+NPCが完全に消滅するまでの時間（分）を設定します。
 
-| キー        |          値          |  デフォルト   |
-|-----------|:-------------------:|:--------:|
-| `timeout` | [Integer](#integer) | `0` (なし) |
+| キー     |       値        | デフォルト |
+|---------|:---------------:|:--------:|
+| `timeout` | [Integer](#integer) | 0 (なし) |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -372,11 +372,11 @@ timeout: 0
 
 NPCが与えるクエストを設定します。
 
-| キー              |           値            | デフォルト |
-|-----------------|:----------------------:|:-----:|
-| `questFileName` | [文字列リスト](#string_list) |  なし   |
+| キー           |         値          | デフォルト |
+|---------------|:-------------------:|:--------:|
+| `questFileName` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -396,13 +396,13 @@ questFileName:
 
 ### disguise
 
-NPCが持つLibsDisguisesの変装を設定します。
+NPCが持つLibsDisguisesのディスガイズを設定します。
 
-| キー         |                            値                             | デフォルト |
-|------------|:--------------------------------------------------------:|:-----:|
-| `disguise` | [LibsDisguises形式]($language$/elitemobs/libsdisguises.md) |  なし   |
+| キー      |             値              | デフォルト |
+|----------|:---------------------------:|:--------:|
+| `disguise` | [LibsDisguises形式]($language$/elitemobs/libsdisguises.md) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -426,13 +426,13 @@ disguise: SKELETON
 
 ### customDisguiseData
 
-カスタムLibsDisguises変装のデータを設定します。
+カスタムLibsDisguisesディスガイズのデータを設定します。
 
-| キー                   |                                                           値                                                           | デフォルト |
-|----------------------|:---------------------------------------------------------------------------------------------------------------------:|:-----:|
-| `customDisguiseData` | [LibsDisguises形式]($language$/elitemobs/libsdisguises.md&section=how-can-i-disguise-an-entity-with-a-custom-disguise?) |  なし   |
+| キー               |                     値                      | デフォルト |
+|-------------------|:-------------------------------------------:|:--------:|
+| `customDisguiseData` | [LibsDisguises形式]($language$/elitemobs/libsdisguises.md&section=how-can-i-disguise-an-entity-with-a-custom-disguise?) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -457,13 +457,13 @@ customDisguiseData: player my_cool_disguise_name setskin {"id":"364acb6d-9050-46
 
 ### customModel
 
-NPCが使用するModelEngineのカスタムモデルを設定します。
+NPCが使用するModelEngineカスタムモデルを設定します。
 
-| キー            |         値         | デフォルト |
-|---------------|:-----------------:|:-----:|
-| `customModel` | [String](#string) |  なし   |
+| キー         |       値        | デフォルト |
+|-------------|:---------------:|:--------:|
+| `customModel` | [String](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -481,13 +481,13 @@ customModel: MY_MODEL_ONE
 
 ### arena
 
-NPCがメニューを開くアリーナのファイル名を設定します（`ARENA_MASTER` interactionType が必要です）。
+NPCがメニューを開くアリーナのファイル名を設定します（`ARENA_MASTER` interactionTypeが必要です）。
 
-| キー      |         値          | デフォルト |
-|---------|:------------------:|:-----:|
-| `arena` | [ファイル名](#filename) |  なし   |
+| キー   |        値         | デフォルト |
+|-------|:-----------------:|:--------:|
+| `arena` | [ファイル名](#filename) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -505,20 +505,20 @@ arena: my_arena.yml
 
 ### command
 
-NPCが実行するコマンドを設定します（`COMMAND` interactionType が必要です）。
+NPCが実行するコマンドを設定します（`COMMAND` interactionTypeが必要です）。
 
-| キー        |         値         | デフォルト |
-|-----------|:-----------------:|:-----:|
-| `command` | [String](#string) |  なし   |
+| キー     |       値        | デフォルト |
+|---------|:---------------:|:--------:|
+| `command` | [String](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
 <div align="left">
 
 ```yml
-command: say コマンドを実行するのを見てください、なんてクール！
+command: say Look at me running a command, how cool!
 ```
 
 <div align="center">
@@ -535,13 +535,13 @@ command: say コマンドを実行するのを見てください、なんてク�
 
 ### spawnLocation
 
-NPCのスポーン位置を設定します。`/em spawnnpc <npcfilename.yml>` コマンドを使用して設定する必要があります。
+NPCのスポーン位置を設定します。これは`/em spawnnpc <npcfilename.yml>`コマンドで設定する必要があります。
 
-| キー              |         値         | デフォルト |
-|-----------------|:-----------------:|:-----:|
-| `spawnLocation` | [String](#string) |  なし   |
+| キー           |       値        | デフォルト |
+|---------------|:---------------:|:--------:|
+| `spawnLocation` | [String](#string) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -559,13 +559,13 @@ spawnLocation: my_world,10,50,10,0,0
 
 ### spawnLocations
 
-NPCのスポーン位置を設定します。`/em spawnnpc <npcfilename.yml>` コマンドを使用して設定する必要があります。
+NPCのスポーン位置を設定します。これは`/em spawnnpc <npcfilename.yml>`コマンドで設定する必要があります。
 
-| キー               |           値            | デフォルト |
-|------------------|:----------------------:|:-----:|
-| `spawnLocations` | [文字列リスト](#string_list) |  なし   |
+| キー            |         値          | デフォルト |
+|----------------|:-------------------:|:--------:|
+| `spawnLocations` | [文字列リスト](#string_list) |   なし   |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -573,8 +573,8 @@ NPCのスポーン位置を設定します。`/em spawnnpc <npcfilename.yml>` �
 
 ```yml
 spawnLocations:
-  - my_world,10,50,10,0,0
-  - my_world,-10,50,-10,0,0
+- my_world,10,50,10,0,0
+- my_world,-10,50,-10,0,0
 ```
 
 </div>
@@ -583,13 +583,13 @@ spawnLocations:
 
 ### instanced
 
-NPCをインスタンス化するかどうかを設定します（インスタンス化されたダンジョンで使用するため）。
+NPCをインスタンス化するかどうかを設定します（インスタンスダンジョンでの使用向け）。
 
-| キー          |          値          |  デフォルト  |
-|-------------|:-------------------:|:-------:|
-| `instanced` | [Boolean](#boolean) | `false` |
+| キー       |       値         | デフォルト |
+|-----------|:----------------:|:--------:|
+| `instanced` | [Boolean](#boolean) |  `false` |
 
-<details> 
+<details>
 
 <summary><b>例</b></summary>
 
@@ -607,38 +607,38 @@ instanced: false
 
 ***
 
-<details> 
+<details>
 
-<summary align="center"><b>NPC設定の例</b></summary>
+<summary align="center"><b>NPC設定例</b></summary>
 
 <div align="left">
 
 ```yml
 isEnabled: true
-name: "&c赤いルビン"
-role: "&a<一般的なNPC>"
+name: "&cRed Rubin"
+role: "&a<Generic NPC>"
 profession: NITWIT
 greetings:
-- やあ！
-- こんにちは！
+- Hiya!
+- Hello!
 dialog:
-- 素晴らしい会話だった！
-- お話できてよかったです！
+- Great conversation!
+- Pleasure talking with you!
 farewell:
-- さようなら！
-- またね！
+- Goodbye!
+- Laters!
 canTalk: true
 activationRadius: 4
 interactionType: CHAT
 timeout: 0
-questFileName: 
-- my_quest.yml #npc interactionType は CUSTOM_QUEST_GIVER に設定する必要があります
+questFileName:
+- my_quest.yml #npc interactionTypeはCUSTOM_QUEST_GIVERに設定する必要があります
 disguise: SKELETON
-customDisguiseData: #カスタム libsdisguise が設定されている場合に使用されます
+customDisguiseData: #カスタムLibsDisguiseを設定する場合に使用
 customModel: MODEL_ONE
-arena: my_arena.yml #npc interactionType は ARENA_MASTER に設定する必要があります
-command: /say Hello World! #npc interactionType は COMMAND に設定する必要があります
-spawnLocation: my_world,584,55,127,90,10 #NPCはピッチとヨーを使用して向きを設定することに注意してください。これは /em spawnnpc <npcfilename.yml> コマンドを実行すると自動的に設定されるため、コマンドを実行するときにNPCを向かせたい位置にポーズをとるようにしてください。
+arena: my_arena.yml #npc interactionTypeはARENA_MASTERに設定する必要があります
+command: /say Hello World! #npc interactionTypeはCOMMANDに設定する必要があります
+spawnLocation: my_world,584,55,127,90,10 #NPCはピッチとヨーを使用して向きを設定することを忘れないでください。これは/em spawnnpc <npcfilename.yml>コマンドを実行した際にも自動的に設定されるため、コマンド実行時にNPCを向かせたい方向を向いてください。
 ```
 
 <div align="center">
@@ -654,30 +654,27 @@ spawnLocation: my_world,584,55,127,90,10 #NPCはピッチとヨーを使用し�
 ***
 
 ## 特別 [1]
+以下は有効なNPCインタラクションタイプのリストです。
 
-以下は、有効なNPCインタラクションタイプのリストです。
+| タイプ                          |                                説明                                |
+|-------------------------------|:------------------------------------------------------------------:|
+| `GUILD_GREETER`               |                     冒険者ギルドメニューを開く                      |
+| `CHAT`                        |                右クリックで`dialog`を切り替える                 |
+| `CUSTOM_SHOP`                 |                        カスタムショップメニューを開く                         |
+| `PROCEDURALLY_GENERATED_SHOP` |                   自動生成ショップを開く                   |
+| `BAR`                         |                            バーメニューを開く                             |
+| `ARENA`                       |                           アリーナメニューを開く                            |
+| `QUEST_GIVER`                 |               自動生成クエストメニューを開く                |
+| `CUSTOM_QUEST_GIVER`          |     `questFileName`で設定された特定のクエストのクエストメニューを開く      |
+| `NONE`                        |                              インタラクションなし                              |
+| `SELL`                        |                            売却メニューを開く                            |
+| `TELEPORT_BACK`               | プレイヤーを最後にいたEliteMobs以外のワールド位置にテレポートさせる |
+| `SCRAPPER`                    |                           スクラップメニューを開く                            |
+| `REPAIRMAN`                   |                           修理メニューを開く                           |
+| `ENCHANTER`                   |                          エンチャントメニューを開く                           |
+| `REFINER`                     |                          精錬メニューを開く                           |
+| `UNBINDER`                    |                           アンバインドメニューを開く                           |
+| `ARENA_MASTER`                |         `arenaFilename`で設定されたアリーナのアリーナメニューを開く         |
+| `COMMAND`                     |                     `command`で設定されたコマンドを実行する                     |
 
-| タイプ                           |                      説明                      |
-|-------------------------------|:--------------------------------------------:|
-| `GUILD_GREETER`               |                冒険者ギルドのメニューを開く                |
-| `CHAT`                        |           右クリックで `dialog` を順に表示します           |
-| `CUSTOM_SHOP`                 |               カスタムショップのメニューを開く               |
-| `PROCEDURALLY_GENERATED_SHOP` |                手続き型生成ショップを開く                 |
-| `BAR`                         |                  バーメニューを開く                   |
-| `ARENA`                       |                 アリーナメニューを開く                  |
-| `QUEST_GIVER`                 |              手続き型生成クエストメニューを開く               |
-| `CUSTOM_QUEST_GIVER`          | `questFileName` で設定された特定のクエストセットのクエストメニューを開く |
-| `NONE`                        |                  インタラクションなし                  |
-| `SELL`                        |                  売却メニューを開く                   |
-| `TELEPORT_BACK`               |     プレイヤーを最後にいた非 elitemobs ワールドの場所に戻します      |
-| `SCRAPPER`                    |                 スクラップメニューを開く                 |
-| `REPAIRMAN`                   |                  修理メニューを開く                   |
-| `ENCHANTER`                   |                エンチャントメニューを開く                 |
-| `REFINER`                     |                リファイナーメニューを開く                 |
-| `UNBINDER`                    |                アンバインドメニューを開く                 |
-| `ARENA_MASTER`                |    `arenaFilename` で設定されたアリーナのアリーナメニューを開く    |
-| `COMMAND`                     |          `command` で設定されたコマンドを実行します          |
-
-*SCRAPPER
-および同様のインタラクションタイプが何をするかについての詳細は、[ここ]($language$/elitemobs/item_upgrade_system.md)
-をクリックしてください。*
+*SCRAPPERや類似のインタラクションタイプが何をするかの詳細については、[こちら]($language$/elitemobs/item_upgrade_system.md)をクリックしてください。*

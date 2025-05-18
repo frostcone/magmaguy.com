@@ -1,9 +1,11 @@
+```markdown
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# EliteScript
+# 精英脚本 (EliteScript)
 
-Elitescript 是 MagmaGuy 插件的脚本系统，为在 Minecraft 中创建 Boss 和其他实体的动态行为提供高级自定义选项。
+精英脚本是 MagmaGuy 插件的一个脚本系统，提供高级自定义选项，用于在 Minecraft 中为首领和其他实体创建动态行为。
 
-Elite 脚本可以作为能力文件或添加到自定义 Boss 文件中，从而提供灵活的实现方式。脚本编写涉及定义事件、条件、区域、动作和冷却时间。
+精英脚本可以作为能力文件或添加到自定义首领文件中，提供了实现的灵活性。脚本编写涉及定义事件、条件、区域、动作和冷却时间。
 
-[点击此处了解有关 EliteScript 的更多信息]($language$/elitemobs/creating_powers.md)
+[点击此处了解更多关于精英脚本的信息]($language$/elitemobs/creating_powers.md)
+```

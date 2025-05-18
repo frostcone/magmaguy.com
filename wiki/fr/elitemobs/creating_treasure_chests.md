@@ -1,7 +1,6 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-Les coffres au trésor sont une fonctionnalité qui permet aux administrateurs de créer des coffres qui peuvent soit
-laisser tomber du butin, soit faire apparaître un boss (hostile) imitateur.
+Les Coffres au Trésor sont une fonctionnalité qui permet aux administrateurs de créer des coffres qui peuvent soit laisser tomber du butin, soit faire apparaître un boss mimique (hostile).
 
 <div align="center">
 
@@ -15,11 +14,11 @@ laisser tomber du butin, soit faire apparaître un boss (hostile) imitateur.
 
 Définit si un coffre au trésor est activé.
 
-| Clé         |       Valeurs       | Défaut |
-|-------------|:-------------------:|:------:|
-| `isEnabled` | [Booléen](#boolean) | `true` |
+| Clé       |       Valeurs        | Par défaut |
+|-----------|:--------------------:|:----------:|
+| `isEnabled` | [Booléen](#boolean) |   `true`   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -39,11 +38,11 @@ isEnabled: true
 
 Définit le type de matériau du coffre.
 
-| Clé         |        Valeurs        | Défaut  |
-|-------------|:---------------------:|:-------:|
-| `chestType` | [Matériau](#material) | `CHEST` |
+| Clé       |        Valeurs         | Par défaut |
+|-----------|:----------------------:|:----------:|
+| `chestType` | [Matériau](#material) |  `CHEST`   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -52,8 +51,7 @@ Définit le type de matériau du coffre.
 ```yml
 chestType: CHEST
 ```
-
-*Ceci doit être un matériau de coffre valide tel que `CHEST` ou `BARREL`*.
+*Cela doit être un matériau de coffre valide tel que `CHEST` ou `BARREL`*.
 
 <div align="center">
 
@@ -69,13 +67,13 @@ chestType: CHEST
 
 ### facing
 
-Définit la direction du coffre.
+Définit la direction d'orientation du coffre.
 
-| Clé      |   Valeurs   | Défaut  |
-|----------|:-----------:|:-------:|
-| `facing` | Spécial [1] | `CHEST` |
+| Clé       |   Valeurs    | Par défaut |
+|-----------|:------------:|:----------:|
+| `facing` | Spécial [1] |  `CHEST`   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -84,8 +82,7 @@ Définit la direction du coffre.
 ```yml
 facing: CHEST
 ```
-
-*Ceci doit être un matériau de coffre valide tel que `CHEST` ou `BARREL`*.
+*Cela doit être un matériau de coffre valide tel que `CHEST` ou `BARREL`*.
 
 </div>
 
@@ -93,7 +90,7 @@ facing: CHEST
 
 **Spécial [1]**
 
-<details> 
+<details>
 
 <summary><b>Développer le tableau</b></summary>
 
@@ -104,23 +101,21 @@ facing: CHEST
 | `WEST`      |
 | `EAST`      |
 
-
 </details>
 
 ***
 
 ### dropStyle
 
-Définit si le coffre est destiné à être lâché pour un joueur ou plusieurs joueurs.
+Définit si le coffre est destiné à être pillé par un seul joueur ou plusieurs joueurs.
 
-Les coffres `SINGLE` disparaissent après avoir été ouverts et réapparaissent lorsqu'ils sont réapprovisionnés. Les
-coffres `GROUP` restent présents et indiquent aux joueurs individuels qu'ils sont en temps de recharge.
+Les coffres `SINGLE` disparaissent après avoir été ouverts et réapparaissent lorsqu'ils sont réapprovisionnés. Les coffres `GROUP` restent en place et informent les joueurs individuellement qu'ils sont en temps de recharge.
 
-| Clé         |      Valeurs       |  Défaut  |
-|-------------|:------------------:|:--------:|
-| `dropStyle` | `SINGLE` / `GROUP` | `SINGLE` |
+| Clé       |       Valeurs       | Par défaut |
+|-----------|:-------------------:|:----------:|
+| `dropStyle` | `SINGLE` / `GROUP` |  `SINGLE`  |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -138,13 +133,13 @@ dropStyle: SINGLE
 
 ### lootList
 
-Répertorie le butin que le coffre au trésor doit laisser tomber lorsqu'il est ouvert.
+Liste le butin que le coffre au trésor devrait laisser tomber lorsqu'il est ouvert.
 
-| Clé        |                          Valeurs                           | Défaut |
-|------------|:----------------------------------------------------------:|:------:|
-| `lootList` | [Tableau de butin EM]($language$/elitemobs/loot_tables.md) | aucun  |
+| Clé       |                        Valeurs                        | Par défaut |
+|-----------|:-----------------------------------------------------:|:----------:|
+| `lootList` | [Table de Butin EM]($language$/elitemobs/loot_tables.md) |    aucun   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -164,13 +159,13 @@ lootList:
 
 ### mimicChance
 
-Définit la probabilité de faire apparaître un boss hostile au lieu de laisser tomber du butin.
+Définit la chance de faire apparaître un boss hostile au lieu de laisser tomber du butin.
 
-| Clé           |      Valeurs      | Défaut |
-|---------------|:-----------------:|:------:|
-| `mimicChance` | [Double](#double) |  `0`   |
+| Clé         |      Valeurs       | Par défaut |
+|-------------|:------------------:|:----------:|
+| `mimicChance` | [Double](#double) |    `0`     |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -188,17 +183,15 @@ mimicChance: 0.5
 
 ### mimicCustomBossesList
 
-Spécifie la liste des boss hostiles disponibles pour l'apparition. Un seul boss sera sélectionné au hasard dans cette
-liste pour l'apparition.
+Spécifie la liste des boss hostiles disponibles pour l'apparition. Un seul boss sera sélectionné aléatoirement dans cette liste pour apparaître.
 
-La liste prend également en charge un système de poids que vous pouvez implémenter pour vous assurer que certains boss
-sont choisis plus souvent que d'autres.
+La liste prend également en charge un système de poids que vous pouvez implémenter pour garantir que certains boss sont choisis plus souvent que d'autres.
 
-| Clé       |      Valeurs        | Défaut |
-|-----------|:------------------:|:-------:|
-| `mimicCustomBossesList` | [Liste de chaînes](#string_list) |  aucun   |
+| Clé                   |      Valeurs       | Par défaut |
+|-----------------------|:------------------:|:----------:|
+| `mimicCustomBossesList` | [Liste de Chaînes](#string_list) |    aucun   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -209,8 +202,7 @@ mimicCustomBossesList:
 - my_cool_mimic_boss.yml
 - weak_mimic_boss.yml
 ```
-
-*Si vous souhaitez attribuer des poids aux boss, la liste doit être formatée comme suit:*
+*Si vous souhaitez attribuer des poids aux boss, la liste doit être formatée comme suit :*
 
 ```yml
 mimicCustomBossesList:
@@ -218,8 +210,7 @@ mimicCustomBossesList:
 - weak_mimic_boss.yml:40
 ```
 
-*Dans cette configuration, `my_cool_mimic_boss.yml` est plus susceptible d'être choisi pour l'apparition
-que `weak_mimic_boss.yml`.*
+*Dans cette configuration, `my_cool_mimic_boss.yml` est plus susceptible d'être choisi pour apparaître que `weak_mimic_boss.yml`.*
 
 </div>
 
@@ -229,13 +220,13 @@ que `weak_mimic_boss.yml`.*
 
 ### restockTimer
 
-Définit le temps, en minutes, avant que le coffre ne se remplisse de butin.
+Définit le temps, en minutes, avant que le coffre ne se remplisse à nouveau de butin.
 
-| Clé            |      Valeurs       | Défaut |
-|----------------|:------------------:|:------:|
-| `restockTimer` | [Entier](#integer) |  `0`   |
+| Clé          |      Valeurs       | Par défaut |
+|--------------|:------------------:|:----------:|
+| `restockTimer` | [Entier](#integer) |    `0`     |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -253,13 +244,13 @@ restockTimer: 30
 
 ### effects
 
-Définit les effets de particules que le coffre émettra.
+Définit les effets de particules que le coffre produira.
 
-| Clé       |                                    Valeurs                                     | Défaut |
-|-----------|:------------------------------------------------------------------------------:|:------:|
-| `effects` | [Particule](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) | aucun  |
+| Clé       |      Valeurs       | Par défaut |
+|-----------|:------------------:|:----------:|
+| `effects` | [Particule](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) |    aucun   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -285,15 +276,15 @@ effects:
 
 ### locations
 
-Définit les endroits où le coffre au trésor apparaîtra.
+Définit les emplacements où le coffre au trésor apparaîtra.
 
-Les emplacements peuvent être définis plus facilement via `/em addTreasureChest <treasurechestfilename.yml>
+Les emplacements peuvent être définis plus facilement via `/em addTreasureChest <nomdufichierducoffreautresor.yml>`
 
-| Clé         |             Valeurs              | Défaut |
-|-------------|:--------------------------------:|:------:|
-| `locations` | [Liste de chaînes](#string_list) | aucun  |
+| Clé         |           Valeurs            | Par défaut |
+|-------------|:----------------------------:|:----------:|
+| `locations` | [Liste de Chaînes](#string_list) |    aucun   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -315,11 +306,11 @@ locations:
 
 Définit le rang de guilde minimum requis pour ouvrir le coffre.
 
-| Clé         |      Valeurs       | Défaut |
-|-------------|:------------------:|:------:|
-| `chestTier` | [Entier](#integer) | aucun  |
+| Clé         |           Valeurs            | Par défaut |
+|-------------|:----------------------------:|:----------:|
+| `chestTier` | [Entier](#integer) |    aucun   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -338,15 +329,15 @@ chestTier: 3
 ### instanced
 
 Définit si le coffre doit être instancié (pour une utilisation dans les donjons instanciés).
-Tous les minuteurs de réapprovisionnement sont désactivés lorsque des coffres sont placés dans des donjons.
+Tous les minuteurs de réapprovisionnement sont désactivés lorsque les coffres sont placés dans des donjons.
 
-**NE DÉFINISSEZ PAS CETTE VALEUR MANUELLEMENT**.
+**NE PAS DÉFINIR CETTE VALEUR MANUELLEMENT**.
 
-| Clé         |       Valeurs       | Défaut  |
-|-------------|:-------------------:|:-------:|
-| `instanced` | [Booléen](#boolean) | `false` |
+| Clé         |     Valeurs     | Par défaut |
+|-------------|:---------------:|:----------:|
+| `instanced` | [Booléen](#boolean) |  `false`   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -366,15 +357,15 @@ instanced: true
 
 ### restockTime
 
-Une fois qu'un coffre a été pillé, le plugin écrira cette clé pour suivre le temps de réapprovisionnement.
+Après qu'un coffre a été pillé, le plugin écrira cette clé pour suivre le temps de réapprovisionnement.
 
-**NE DÉFINISSEZ PAS CETTE VALEUR MANUELLEMENT**.
+**NE PAS DÉFINIR CETTE VALEUR MANUELLEMENT**.
 
-| Clé           |     Valeurs     | Défaut |
-|---------------|:---------------:|:------:|
-| `restockTime` | Horodatage Unix | aucun  |
+| Clé          |     Valeurs     | Par défaut |
+|--------------|:---------------:|:----------:|
+| `restockTime` | Horodatage Unix |    aucun   |
 
-<details> 
+<details>
 
 <summary><b>Exemple</b></summary>
 
@@ -392,9 +383,9 @@ restockTime: 1707394380
 
 ***
 
-<details> 
+<details>
 
-<summary align="center"><b>Exemple de configuration de coffre au trésor</b></summary>
+<summary align="center"><b>Exemple de Configuration de Coffre au Trésor</b></summary>
 
 <div align="left">
 

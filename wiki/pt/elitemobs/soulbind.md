@@ -1,32 +1,23 @@
-O encantamento Vínculo de Alma liga todo o saque de EliteMobs aos jogadores para quem o saque cai. Isto significa que
-cada jogador recebe a sua própria recompensa ao matar um Elite Mob, fazendo com que a partilha de saque deixe de ser um
-problema.
+O encantamento Soulbind liga todo o loot dos EliteMobs aos jogadores para quem o loot cai. Isto significa que cada jogador recebe a sua própria recompensa por matar um Elite Mob, tornando a partilha de loot um não-problema.
 
-Os jogadores não conseguem apanhar saques que não estejam ligados à sua alma no chão. Conseguem apanhá-los de baús, mas
-não os conseguem equipar em combate, o que significa que só os conseguem transportar.
+Os jogadores não conseguem apanhar do chão loot que não esteja soulbound a eles. Conseguem apanhá-lo de baús, mas não o conseguem equipar em combate, o que significa que só podem realmente ser transportados.
 
-Isto serve para que os jogadores não entupam acidentalmente os baús uns dos outros com itens imóveis. Além disso, os
-jogadores só podem vender itens ligados à sua alma.
+Isto é para que os jogadores não entupam acidentalmente os baús uns dos outros com itens imóveis. Além disso, os jogadores só podem vender itens soulbound a eles.
 
-Este encantamento destina-se a ser utilizado em conjunto com o limitador de saque de nível de guilda.
+Este encantamento destina-se a ser usado em conjunto com o limitador de loot por tier de guilda.
 
 ***
 
-Como todos os encantamentos, pode ser desativado na pasta de encantamentos (soulbind.yml, defina `isEnabled`
-para `false`), embora isso seja fortemente desaconselhado.
+Como todos os encantamentos, pode ser desativado na pasta enchantments (soulbind.yml, definir `isEnabled` para `false`), embora isto seja fortemente desaconselhado.
 
-***Problemas causados pela remoção do Vínculo de Alma:***
-
-- Os Elites deixarão de dar moedas
+***Problemas causados pela remoção de Soulbind:***
+- Elites deixarão de dropar moedas
 - Os jogadores podem dar equipamento de diamante ou netherite gratuitamente a todos com uma quantidade mínima de grinding
-- A economia irá quebrar instantaneamente, permitindo que jogadores veteranos impulsionem jogadores instantaneamente
-  através de dezenas de ranks
-- O limitador de saque deixará de funcionar, o que significa que os jogadores poderão usar as armaduras e armas dos
-  jogadores de nível mais alto
+- A economia irá quebrar instantaneamente, permitindo que jogadores veteranos façam powerboost a jogadores instantaneamente através de dezenas de ranks
+- O limitador de loot deixará de funcionar, o que significa que os jogadores poderão simplesmente usar a armadura e as armas dos jogadores de tier mais alto
 
 ***
 
-Os admins podem remover o Vínculo de Alma dos itens usando `/em unbind`.
+Os administradores podem remover Soulbind de itens usando `/em unbind`.
 
-Os jogadores podem remover o vínculo de alma de um item usando um Pergaminho de Desvinculação. Por predefinição, este é
-dado pelo Ligador de Mundos, mas pode configurar outros bosses para o darem se quiser.
+Os jogadores podem remover soulbind de um item usando um Unbind Scroll. Por padrão, isto é dropado pelo Binder of Worlds, mas pode configurar outros bosses para o droparem se quiser.

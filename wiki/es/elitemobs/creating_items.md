@@ -1,32 +1,26 @@
 [![webapp_banner.jpg](../../../img/wiki/webapp_banner.jpg)](https://magmaguy.com/webapp/webapp.html)
 
-# Creación de Objetos Personalizados
+# Creando Objetos Personalizados
 
 ## ¿Qué son los Objetos Personalizados?
 
-Los Objetos Personalizados son objetos definidos por EliteMobs a través de archivos de configuración. Puedes
-personalizar varios aspectos de estos objetos, como el nivel del objeto, los encantamientos, el nombre, la descripción,
-la textura ¡y mucho más!
+Los Objetos Personalizados son objetos definidos por EliteMobs a través de archivos de configuración. ¡Puedes personalizar varios aspectos de estos objetos, como el nivel del objeto, los encantamientos, el nombre, la descripción (lore), la textura y más!
 
 ## Aplicación Web
 
-Puedes crear Botín Personalizado de forma fácil y rápida [aquí](https://magmaguy.com/webapp/webapp.html).
+¡Puedes crear Botín Personalizado de forma fácil y rápida [aquí](https://magmaguy.com/webapp/webapp.html)!
 
-## Antes de Empezar
+## Antes de empezar
 
 ### ¿Dónde van los Objetos Personalizados?
 
-Los archivos de objetos personalizados van dentro de la carpeta de configuración `~/plugins/EliteMobs/customitems`
+Los archivos de objetos personalizados van en la carpeta de configuración `~/plugins/EliteMobs/customitems`
 
-Es posible crear subcarpetas, como `~/plugins/EliteMobs/customitems/misobjetos`. Esto se recomienda para mantener las
-cosas organizadas.
+Es posible crear subcarpetas, como `~/plugins/EliteMobs/customitems/myitems`. Esto se recomienda para mantener las cosas organizadas.
 
-Los archivos se guardan en formato `.yml` y [Notepad++](https://notepad-plus-plus.org/) es el software recomendado para
-la edición de archivos de configuración. Un archivo define un objeto, aunque es posible generar el mismo objeto varias
-veces e incluso establecer varias ubicaciones de aparición para el mismo archivo de objeto.
+Los archivos se almacenan en formato `.yml` y [Notepad++](https://notepad-plus-plus.org/) es el software de edición de archivos recomendado para trabajos de configuración. Un archivo define un jefe, aunque es posible generar el mismo jefe varias veces e incluso establecer varias ubicaciones de aparición para el mismo archivo de jefe.
 
-Es posible usar la [aplicación web](https://magmaguy.com/webapp/webapp.html) para crear de forma rápida y sencilla
-objetos personalizados y mucho más.
+Es posible usar la [aplicación web](https://magmaguy.com/webapp/webapp.html) para crear jefes personalizados y más de forma rápida y sencilla.
 
 <div align="center">
 
@@ -37,14 +31,13 @@ objetos personalizados y mucho más.
 ```yml
 ```
 
-Observa cómo esto es solo un archivo vacío. Esto hará que se use por defecto una espada de madera llamada "Nombre
-predeterminado". **¡Todo en esta página es opcional!**
+Observa cómo es solo un archivo vacío. Esto por defecto usará una espada de madera llamada "Default name". **¡Todo en esta página es opcional!**
 
-### Objeto de ejemplo
+### Ejemplo de objeto
 
-Veamos un ejemplo de cómo se ve un archivo de objeto.
+Echemos un vistazo a un ejemplo de cómo se ve un archivo de objeto.
 
-<details> 
+<details>
 <summary><b>Ejemplo</b></summary>
 
 <div align="left">
@@ -52,10 +45,10 @@ Veamos un ejemplo de cómo se ve un archivo de objeto.
 ```yml
 isEnabled: true
 material: WOODEN_AXE
-name: '&4Objeto de prueba'
+name: '&4Test item'
 lore:
-- Este es un objeto genial
-- Tiene una descripción genial
+- This is a cool item
+- It has cool lore
 enchantments:
 - DAMAGE_ALL,4
 - FLAMETHROWER,1
@@ -74,9 +67,9 @@ itemType: custom
 
 </div>
 
-## Ajustes de Objeto Personalizado
+## Configuración de Objetos Personalizados
 
-La siguiente es una lista de todo lo que puedes configurar para los objetos personalizados:
+La siguiente es una lista de todas las cosas que puedes configurar para los objetos personalizados:
 
 <div align="center">
 
@@ -86,11 +79,11 @@ La siguiente es una lista de todo lo que puedes configurar para los objetos pers
 
 Establece si el objeto está habilitado. No afecta a los objetos que ya han sido generados.
 
-| Clave       |     Valores      | Predeterminado |
-|-------------|:----------------:|----------------|
-| `isEnabled` | `true` / `false` | `true`         |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `isEnabled` | `true` / `false` | `true` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -110,11 +103,11 @@ isEnabled: true
 
 Establece el material del objeto.
 
-| Clave      |                                          Valores                                           | Predeterminado |
-|------------|:------------------------------------------------------------------------------------------:|----------------|
+| Clave | Valores | Por defecto |
+|-|:-:|-|
 | `material` | [¡Elige de esta lista!](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) | `WOODEN_SWORD` |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -128,24 +121,21 @@ material: DIAMOND_SWORD
 
 </details>
 
-
 ***
 
 ### level
 
 Establece el nivel del objeto.
 
-| Clave   |      Valores      | Predeterminado |
-|---------|:-----------------:|----------------|
-| `level` | [Entero](#entero) | `0`            |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `level` | [Entero](#integer) | `0` |
 
-Ten en cuenta que esta configuración no es relevante si estableces la [`escalabilidad`](#scalability) del objeto
-en `scalable`. Si la estableces en `limited`, este será el nivel más alto posible del objeto.
+Ten en cuenta que esta configuración no es relevante si estableces la [`scalability`](#scalability) del objeto como `scalable`. Si la estableces como `limited`, este será el nivel más alto posible del objeto.
 
-Además, los materiales tienen un nivel mínimo. Los materiales de hierro son de nivel 6, los materiales de diamante son
-de nivel 7. No puedes forzar que los objetos tengan un nivel inferior al nivel del material.
+Además, los materiales tienen un nivel mínimo. Los materiales de hierro son de nivel 6, los materiales de diamante son de nivel 7. No puedes forzar a que los objetos tengan un nivel inferior al nivel del material.
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -159,25 +149,24 @@ level: 100
 
 </details>
 
-
 ***
 
 ### name
 
-Establece el nombre para mostrar del objeto.
+Establece el nombre de visualización del objeto.
 
-| Clave      |                           Valores                           | Predeterminado          |
-|------------|:-----------------------------------------------------------:|-------------------------|
-| `material` | [Cadena](#cadena) con [códigos de color](#codigos-de-color) | "Nombre predeterminado" |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `material` | [Cadena de texto](#string) con [códigos de color](#color-codes) | "Default name" |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
 <div align="left">
 
 ```yml
-name: "&2Objeto genial"
+name: "&2Cool item"
 ```
 
 <div align="center">
@@ -194,13 +183,13 @@ name: "&2Objeto genial"
 
 ### lore
 
-Establece la descripción del objeto.
+Establece la descripción (lore) del objeto.
 
-| Clave  |                          Valores                          | Predeterminado |
-|--------|:---------------------------------------------------------:|----------------|
-| `lore` | [Lista](#lista) con [códigos de color](#codigos-de-color) | ninguno        |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `lore` | [Lista](#list) con [códigos de color](#color-codes) | ninguno |
 
-<details> 
+<details>
 
 <summary><b>Ejemplo</b></summary>
 
@@ -208,8 +197,8 @@ Establece la descripción del objeto.
 
 ```yml
 lore:
-- "&2Esta es la espada más genial"
-- "&2¡de todos los tiempos!"
+- "&2This is the coolest sword"
+- "&2of all time!"
 ```
 
 <div align="center">
@@ -226,14 +215,13 @@ lore:
 
 ### enchantments
 
-Establece los encantamientos del objeto.
+Establece los encantamientos en el objeto.
 
-| Clave          |                                                                                                                Valores                                                                                                                | Predeterminado |
-|----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|----------------|
-| `enchantments` | [Lista](#lista) con [encantamientos de Minecraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) o [Encantamientos Personalizados de EliteMobs]($language$/elitemobs/custom_enchantments_list.md) | ninguno        |
+| Clave | Valores | Por defecto |
+|-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|-|
+| `enchantments` | [Lista](#list) con [encantamientos de Minecraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html) o [Encantamientos Personalizados de EliteMobs]($language$/elitemobs/custom_enchantments_list.md) | ninguno |
 
-Ten en cuenta que estas entradas siguen el formato `nombreDelEncantamiento:nivelDelEncantamiento`. ¡Consulta el ejemplo
-a continuación!
+Ten en cuenta que estas entradas siguen el formato `nombreEncantamiento:nivelEncantamiento`. ¡Consulta el ejemplo a continuación!
 
 <details>
 
@@ -242,7 +230,7 @@ a continuación!
 <div align="left">
 
 ```yml
-enchantments: 
+enchantments:
 - "DAMAGE_UNDEAD,8"
 - "DURABILITY,4"
 - "DAMAGE_ALL,7"
@@ -259,38 +247,38 @@ enchantments:
 
 </details>
 
-Ten en cuenta también que los encantamientos como el de afilado se convierten en afilado de élite por defecto si el
-nivel empieza a superar los límites de Minecraft vanilla.
+También ten en cuenta que los encantamientos como Sharpness se convierten en Elite Sharpness por defecto si el nivel supera los límites de Minecraft vanilla.
 
 ***
 
 ### potionEffects
 
-Establece los efectos de poción que tendrá el objeto. Estos pueden aplicarse al jugador o a una entidad dañada por el
-jugador.
+Establece los efectos de poción que tendrá el objeto. Estos pueden aplicarse al jugador o a una entidad dañada por el jugador.
 
-| Clave           |                                                                Valores                                                                 | Predeterminado |
-|-----------------|:--------------------------------------------------------------------------------------------------------------------------------------:|----------------|
-| `potionEffects` | [Lista](#lista) con [efectos de poción de Minecraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html) | ninguno        |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `potionEffects` | [Lista](#list) con [efectos de poción de Minecraft](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html)| ninguno |
 
-Además, los efectos de poción utilizan un formato específico que permite a los administradores seleccionar a quién
-afecta y cuándo:
+Además, los efectos de poción usan un formato específico que permite a los administradores seleccionar quién se ve afectado y cuándo:
 
-| Ajuste                     |                                         Descripción                                         |                           Valores                           | Predeterminado |
-|----------------------------|:-------------------------------------------------------------------------------------------:|:-----------------------------------------------------------:|----------------|
-| Nivel del efecto de poción | Establece el nivel del efecto de poción. **¡Los efectos de poción empiezan en el nivel 0**! |                      [Entero](#entero)                      | ninguno        |
-| Entidad afectada           |                        Establece a quién afecta el efecto de poción.                        |      `self` (el jugador) / `target` (entidad golpeada)      | ninguno        |
-| Método de aplicación       |                       Establece cuándo se aplica el efecto de poción.                       | `onHit` / `continuous` (se vuelve a aplicar constantemente) | ninguno        |
+| Configuración | Descripción | Valores | Por defecto |
+|-|:-:|:-:|-|
+| Nivel del efecto de poción | Establece el nivel del efecto de poción. **¡Los efectos de poción comienzan en el nivel 0**! | [Entero](#integer) | ninguno |
+| Entidad afectada | Establece quién se ve afectado por el efecto de poción. | `self` (el jugador) / `target` (entidad que es golpeada) | ninguno |
+| Método de aplicación | Establece cuándo se aplica el efecto de poción. | `onHit` (al golpear) / `continuous` (se reaplica constantemente) | ninguno |
 
-El formato para los efectos de poción
-es `nombreDelEfectoDePoción,nivelDelEfectoDePoción,entidadAfectada,métodoDeAplicación`. ¡Consulta el ejemplo a
-continuación!
+El formato para los efectos de poción es `nombreEfectoPocion,nivelEfectoPocion,entidadAfectada,metodoAplicacion`. ¡Consulta el ejemplo a continuación!
 
-EliteMobs también incluye objetos personalizados que funcionan como amuletos. Estos objetos no hacen nada más que
-proporcionar efectos de poción al jugador cuando se sostiene el objeto o se equipa en una ranura.
+Al examinar un objeto con **efectos de poción**, verás iconos que indican cómo se aplica el efecto:
 
-ADVERTENCIA: Usar el efecto de poción INSTANT_DAMAGE curará a las criaturas no muertas al impactar, ya que es una
-mecánica predeterminada en Minecraft vanilla.
+- **☠️ Calavera** – Apunta a **enemigos**.
+- **🛡️ Escudo** – Apunta al **usuario/jugador**.
+- **⚔️ Espadas** – Se activa **al golpear**.
+- **🔄 Círculo Repetido** – Se aplica **continuamente** mientras el objeto se lleva puesto o se sostiene.
+
+EliteMobs también cuenta con objetos personalizados que funcionan como amuletos. Estos objetos no hacen nada más que proporcionar efectos de poción al jugador cuando el objeto se sostiene o está equipado en una ranura.
+
+ADVERTENCIA: Usar el efecto de poción INSTANT_DAMAGE curará a los mobs no muertos al impactar, ya que este es un mecanismo por defecto en Minecraft vanilla.
 
 <details>
 
@@ -299,7 +287,7 @@ mecánica predeterminada en Minecraft vanilla.
 <div align="left">
 
 ```yml
-potionEffects: 
+potionEffects:
 - "POISON,0,target,onHit"
 - "HEAL,1,self,onHit"
 - "NIGHT_VISION,0,self,continuous"
@@ -311,15 +299,11 @@ potionEffects:
 
 </div>
 
-</div>
-
 Con este conjunto de efectos de poción, sucederán las siguientes cosas:
 
-Al golpear, el efecto de poción de veneno (nivel 1) se aplicará a la entidad que haya sido golpeada por el jugador.
-Además, el jugador se verá afectado por un efecto de poción de curación instantánea de nivel 2.
+Al golpear, el efecto de poción de veneno (nivel 1) se aplicará a la entidad que fue golpeada por el jugador. Además, el jugador se verá afectado por un efecto de poción de curación instantánea de nivel 2.
 
-De forma continua, el jugador recibirá visión nocturna. Esto significa que el jugador tendrá visión nocturna mientras
-lleve puesto o sostenga el objeto.
+Continuamente, al jugador se le dará visión nocturna. Esto significa que el jugador tendrá visión nocturna mientras lleve puesto o sostenga el objeto.
 
 </details>
 
@@ -329,19 +313,19 @@ lleve puesto o sostenga el objeto.
 
 Establece cómo crece el nivel del objeto con el nivel del jefe que lo suelta.
 
-| Clave         |                          Valores                           | Predeterminado |
-|---------------|:----------------------------------------------------------:|----------------|
-| `scalability` | `fixed`, `limited` o `scalable`. ¡Consulta a continuación! | scalable       |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `scalability` | `fixed`, `limited` o `scalable`. ¡Consulta a continuación! | scalable |
 
 ¡Consulta esta lista para entender qué hacen las diferentes opciones!
 
-| Ajuste     |                                                               Descripción                                                               |
-|------------|:---------------------------------------------------------------------------------------------------------------------------------------:|
-| `fixed`    |                          El nivel del objeto siempre será el nivel establecido en el archivo de configuración.                          |
-| `limited`  | El nivel máximo del objeto estará limitado por el establecido en el archivo de configuración o por el nivel del jefe, el que sea menor. |
-| `scalable` |                              El nivel del objeto se basará totalmente en el nivel del jefe que lo suelta.                               |
+| Configuración | Descripción |
+|-|:-:|
+| `fixed` | El nivel del objeto siempre será el nivel establecido en el archivo de configuración. |
+| `limited` | El nivel máximo del objeto estará limitado por el establecido en el archivo de configuración o el nivel del jefe, lo que sea menor. |
+| `scalable` | El nivel del objeto se basará completamente en el nivel del jefe que lo suelta. |
 
-Ten en cuenta que los objetos con un dropWeight siempre tendrán una escalabilidad `fixed`.
+Ten en cuenta que los objetos con un `dropWeight` siempre tendrán una escalabilidad `fixed`.
 
 <details>
 
@@ -363,15 +347,15 @@ scalability: "scalable"
 
 Establece de dónde puedes obtener el objeto.
 
-| Clave      |                    Valores                     | Predeterminado |
-|------------|:----------------------------------------------:|----------------|
-| `itemType` | `custom` o `unique`. ¡Consulta a continuación! | `custom`       |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `itemType` | `custom` o `unique`. ¡Consulta a continuación! | `custom` |
 
 Hay dos tipos de objetos:
 
-| Ajuste   |                                                                                                Descripción                                                                                                |
-|----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `custom` |                                       El objeto podrá soltarse desde cualquier criatura de EliteMobs capaz de soltar botín, y estará en la tienda personalizada. `                                        
+| Configuración | Descripción |
+|-|:-:|
+| `custom` | El objeto podrá caer de cualquier mob de EliteMobs capaz de soltar botín, y estará en la tienda personalizada. |
 | `unique` | El objeto no será soltado por ningún jefe y no estará en la tienda personalizada. ¡La única forma de obtenerlo es configurando un Jefe Personalizado para que lo suelte a través de su `uniqueLootTable`! |
 
 <details>
@@ -394,39 +378,31 @@ itemType: "unique"
 
 Establece la tabla de botín en la que encajará el objeto.
 
-| Clave        |                Valores                | Predeterminado |
-|--------------|:-------------------------------------:|----------------|
-| `dropWeight` | `dynamic` o un valor [Doble](#doble). | `dynamic`      |
+| Clave | Valores | Por defecto |
+|-|:----------------------------------------:|-|
+| `dropWeight` | `dynamic` o un valor [Doble](#double). | `dynamic` |
 
-EliteMobs tiene 5 tablas de botín diferentes para objetos personalizados, excluyendo las configuradas directamente como
-la `uniqueLootList` en los Jefes Personalizados.
+EliteMobs tiene 5 tablas de botín diferentes para objetos personalizados, excluyendo las configuradas directamente como la `uniqueLootList` en los Jefes Personalizados.
 
 Estas son las siguientes:
 
-| Tabla de botín                       |                                          Descripción                                          | Peso predeterminado |
-|--------------------------------------|:---------------------------------------------------------------------------------------------:|:-------------------:|
-| Objetos generados procedimentalmente | Objetos que se generan aleatoriamente basándose en los archivos de configuración del servidor |       `90.0`        |
-| Objetos ponderados                   |                       Objetos que tienen un peso diferente a `dynamic`                        |        `1.0`        |
-| Objetos fijos                        |                           Objetos que tienen una escalabilidad fija                           |       `10.0`        |
-| Objetos limitados                    |                         Objetos que tienen una escalabilidad limitada                         |        `3.0`        |
-| Objetos escalables                   |                                  Objetos que son escalables                                   |        `6.0`        |
+| Tabla de botín | Descripción | Peso por defecto |
+|-|:-:|:-:|
+| Objetos generados proceduralmente | Objetos que se generan aleatoriamente basándose en los archivos de configuración del servidor | `90.0` |
+| Objetos con peso | Objetos que tienen un peso diferente a `dynamic` | `1.0` |
+| Objetos fijos | Objetos que tienen una escalabilidad fija | `10.0` |
+| Objetos limitados | Objetos que tienen escalabilidad limitada | `3.0` |
+| Objetos escalables | Objetos que son escalables | `6.0` |
 
-Cuando un jefe muere, se selecciona un objeto de estas tablas basándose en el archivo de configuración ItemSettings.yml.
-Los valores predeterminados para los pesos se enumeran arriba en `Peso predeterminado`. Cuanto mayor sea el peso, más
-probable será que caiga un objeto.
+Cuando un jefe muere, se selecciona un objeto de estas tablas basándose en el archivo de configuración ItemSettings.yml. Los valores por defecto para los pesos se listan arriba en `Peso por defecto`. Cuanto mayor sea el peso, más probable será que caiga un objeto.
 
-Los `Objetos ponderados` tienen un `Peso predeterminado` pequeño, lo que significa que no caerán muy a menudo. Los
-objetos con un `dropWeight` que no sea `dynamic` están pensados para ser raros y solo se utilizan en los valores
-predeterminados para los amuletos que sueltan los jefes, objetos que no se utilizan directamente para el combate, sino
-para mejorar a los jugadores con efectos de poción.
+Los `Objetos con peso` tienen un `Peso por defecto` pequeño, lo que significa que no caerán muy a menudo. Los objetos con un `dropWeight` que no es `dynamic` están destinados a ser raros y solo se usan en los valores por defecto para los amuletos que sueltan los jefes - objetos no usados directamente para el combate, sino para dar mejoras a los jugadores con efectos de poción.
 
-El `dropWeight` que establezcas aquí establece la probabilidad de que un `Objeto ponderado` específico caiga de la lista
-de `Objetos ponderados`. No aumenta la probabilidad de que caigan los `Objetos ponderados`.
+El `dropWeight` que estableces aquí define la probabilidad de que un `Objeto con peso` específico caiga de la lista de `Objetos con peso`. No aumenta la probabilidad de que caigan `Objetos con peso`.
 
-**Si estás confundido y solo quieres hacer armas y armaduras, omite este ajuste, ya que por defecto está configurado
-correctamente como `dynamic`.**
+**Si estás confundido y solo quieres crear armas y armaduras, omite esta configuración ya que por defecto es correctamente `dynamic`.**
 
-Los `Objetos ponderados` suelen tener un peso de 1.0.
+Los `Objetos con peso` suelen tener un peso de 1.0.
 
 <details>
 
@@ -442,16 +418,15 @@ dropWeight: "dynamic"
 
 </details>
 
-
 ***
 
 ### customModelID
 
 Establece la textura del objeto. ¡Requiere usar una textura válida del paquete de recursos!
 
-| Clave           |      Valores      | Predeterminado |
-|-----------------|:-----------------:|----------------|
-| `customModelID` | [Entero](#entero) | ninguno        |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `customModelID` | [Entero](#integer) | ninguno |
 
 <details>
 
@@ -466,9 +441,7 @@ customModelID: 1
 
 </div>
 
-Esto utilizará la textura personalizada 1 de las espadas de diamante del paquete de recursos que esté utilizando el
-jugador. Se recomienda configurar el servidor para que proporcione paquetes de recursos a los jugadores al iniciar
-sesión si se quiere utilizar esta función correctamente.
+Esto usará la textura personalizada 1 de las espadas de diamante del paquete de recursos que el jugador esté usando. Se recomienda configurar tu servidor para que dé a los jugadores paquetes de recursos al iniciar sesión si quieres usar esta característica correctamente.
 
 </details>
 
@@ -476,13 +449,12 @@ sesión si se quiere utilizar esta función correctamente.
 
 ### customModelV2
 
-A partir de la versión 1.21.4 de Minecraft (EM 9.1.13), esta es la nueva configuración obligatoria para configurar los
-ID de modelo de objetos personalizados.
+A partir de la versión 1.21.4 de Minecraft (EM 9.1.13), esta es la nueva configuración requerida para configurar los IDs de modelo de objetos personalizados.
 Establece la textura del objeto. ¡Requiere usar una textura válida del paquete de recursos!
 
-| Clave           |      Valores      | Predeterminado |
-|-----------------|:-----------------:|----------------|
-| `customModelV2` | [Cadena](#cadena) | ninguno        |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `customModelV2` | [Cadena de texto](#string) | ninguno |
 
 <details>
 
@@ -498,17 +470,14 @@ Esta configuración asigna una textura específica a un objeto. Así es como fun
 
 - `elitemobs:` es el directorio principal en la carpeta `assets` del paquete de recursos.
 - `equipment` es un subdirectorio dentro de `assets/elitemobs/models`.
-- `magmaguys_toothpick` es el archivo de modelo que se encuentra en `assets/elitemobs/models/equipment` en el paquete de
-  recursos.
+- `magmaguys_toothpick` es el archivo de modelo ubicado en `assets/elitemobs/models/equipment` en el paquete de recursos.
 
 La ruta completa al archivo de modelo en este ejemplo sería:
 `\.minecraft\resourcepacks\elitemobs_resource_pack\assets\elitemobs\models\equipment\magmaguys_toothpick.json`
 
 </div>
 
-Esto utilizará la textura personalizada `magmaguys_toothpick` del paquete de recursos de EliteMobs que esté utilizando
-el jugador. Se recomienda configurar el servidor para que proporcione paquetes de recursos a los jugadores al iniciar
-sesión si se quiere utilizar esta función correctamente.
+Esto usará la textura personalizada `magmaguys_toothpick` del paquete de recursos de EliteMobs que el jugador esté usando. Se recomienda configurar tu servidor para que dé a los jugadores paquetes de recursos al iniciar sesión si quieres usar esta característica correctamente.
 
 </details>
 
@@ -516,14 +485,13 @@ sesión si se quiere utilizar esta función correctamente.
 
 ### permission
 
-Establece el permiso necesario para poder obtener el objeto.
+Establece el permiso requerido para poder obtener el objeto.
 
-| Clave        |      Valores      | Predeterminado |
-|--------------|:-----------------:|----------------|
-| `permission` | [Cadena](#cadena) | ninguno        |
+| Clave | Valores | Por defecto |
+|-|:-:|-|
+| `permission` | [Cadena de texto](#string) | ninguno |
 
-Necesitarás un plugin de gestión de permisos para dar permisos a los jugadores. Esto solo funcionará correctamente si no
-has desactivado el encantamiento de atadura de alma.
+Necesitarás un plugin de gestión de permisos para dar permisos a los jugadores. Esto solo funcionará correctamente si no has deshabilitado el encantamiento soulbind.
 
 <details>
 
@@ -545,11 +513,11 @@ Con esta configuración, solo los jugadores con el permiso `elitemobs.cool.permi
 
 ### soulbound
 
-Establece si el objeto debe estar atado al alma al soltarlo.
+Establece si el objeto debe estar ligado al alma (soulbound) al caer.
 
-| Clave       |        Valores        | Predeterminado |
-|-------------|:---------------------:|----------------|
-| `soulbound` | [Booleano](#booleano) | `true`         |
+| Clave | Valores | Por defecto |
+|-|:-------------------:|---------|
+| `soulbound` | [Booleano](#boolean) | `true` |
 
 <details>
 
@@ -564,6 +532,5 @@ soulbound: true
 </div>
 
 </details>
-
 
 </div>

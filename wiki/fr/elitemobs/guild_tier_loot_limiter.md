@@ -1,47 +1,38 @@
-# Limiteur de Tier de Guilde
+Voici la traduction en français, en conservant le formatage markdown :
 
-Le limiteur de butin de tier de guilde limite le meilleur butin qu'un joueur peut obtenir en fonction de son tier de
-guilde.
+# Limiteur de Palier de Guilde
 
-Les joueurs peuvent débloquer des tiers supérieurs en se rendant au hub de la Guilde des Aventuriers et en parlant à
-Gillian, le PNJ Préposé à la Guilde, ou en exécutant la commande */em rank*. Les rangs sont débloqués en les achetant
-avec des Pièces d'Élite.
+Le limiteur de butin par palier de guilde limite le meilleur butin qu'un joueur peut obtenir en fonction de son palier de guilde.
 
-Par défaut, les joueurs sont limités de la manière suivante (en supposant que vous utilisez les paramètres par défaut) :
+Les joueurs peuvent débloquer des paliers supérieurs en se rendant au centre de la Guilde des Aventuriers et en parlant au PNJ Gillian l'Employé de Guilde, ou en exécutant la commande */em rank*. Les rangs sont débloqués en les achetant avec des Pièces d'Élite.
 
-- Tier de guilde 1 (défaut de départ): objets jusqu'au tier 10, mobs de niveau 10
-- Tier de guilde 2: objets jusqu'au tier 20, mobs de niveau 20
-- Tier de guilde 3: objets jusqu'au tier 30, mobs de niveau 30
-- Tier de guilde 4: objets jusqu'au tier 40, mobs de niveau 40
-- Tier de guilde 5: objets jusqu'au tier 50, mobs de niveau 50
-- Tier de guilde 6: objets jusqu'au tier 60, mobs de niveau 60
-- Tier de guilde 7: objets jusqu'au tier 70, mobs de niveau 70
-- Tier de guilde 8: objets jusqu'au tier 80, mobs de niveau 80
-- Tier de guilde 9: objets jusqu'au tier 90, mobs de niveau 90
-- Tier de guilde 10: objets jusqu'au tier 100, mobs de niveau 100
+Par défaut, les joueurs sont limités de la manière suivante (en supposant que vous utilisez les paramètres par défaut) :
 
-À partir de là, des niveaux de prestige sont requis afin de débloquer les tiers de guilde.
+- Palier de guilde 1 (par défaut au début) : jusqu'à des objets de palier 10, des monstres de niveau 10
+- Palier de guilde 2 : jusqu'à des objets de palier 20, des monstres de niveau 20
+- Palier de guilde 3 : jusqu'à des objets de palier 30, des monstres de niveau 30
+- Palier de guilde 4 : jusqu'à des objets de palier 40, des monstres de niveau 40
+- Palier de guilde 5 : jusqu'à des objets de palier 50, des monstres de niveau 50
+- Palier de guilde 6 : jusqu'à des objets de palier 60, des monstres de niveau 60
+- Palier de guilde 7 : jusqu'à des objets de palier 70, des monstres de niveau 70
+- Palier de guilde 8 : jusqu'à des objets de palier 80, des monstres de niveau 80
+- Palier de guilde 9 : jusqu'à des objets de palier 90, des monstres de niveau 90
+- Palier de guilde 10 : jusqu'à des objets de palier 100, des monstres de niveau 100
 
-- Prestige 1 Tier de guilde 11: objets jusqu'au tier 110, mobs de niveau 110
-- Prestige 2 Tier de guilde 12: objets jusqu'au tier 120, mobs de niveau 120
-- Prestige 3 Tier de guilde 13: objets jusqu'au tier 130, mobs de niveau 130
-- Prestige 4 Tier de guilde 14: objets jusqu'au tier 140, mobs de niveau 140
-- Prestige 5 Tier de guilde 15: objets jusqu'au tier 150, mobs de niveau 150
-- Prestige 6 Tier de guilde 16: objets jusqu'au tier 160, mobs de niveau 160
-- Prestige 7 Tier de guilde 17: objets jusqu'au tier 170, mobs de niveau 170
-- Prestige 8 Tier de guilde 18: objets jusqu'au tier 180, mobs de niveau 180
-- Prestige 9 Tier de guilde 19: objets jusqu'au tier 190, mobs de niveau 190
-- Prestige 10 Tier de guilde 20: objets jusqu'au tier 200, mobs de niveau 200
+À partir de ce point, des niveaux de prestige sont requis pour débloquer les paliers de guilde.
 
-## Comment cela fonctionne et cas limites
+- Prestige 1 Palier de guilde 11 : jusqu'à des objets de palier 110, des monstres de niveau 110
+- Prestige 2 Palier de guilde 12 : jusqu'à des objets de palier 120, des monstres de niveau 120
+- Prestige 3 Palier de guilde 13 : jusqu'à des objets de palier 130, des monstres de niveau 130
+- Prestige 4 Palier de guilde 14 : jusqu'à des objets de palier 140, des monstres de niveau 140
+- Prestige 5 Palier de guilde 15 : jusqu'à des objets de palier 150, des monstres de niveau 150
+- Prestige 6 Palier de guilde 16 : jusqu'à des objets de palier 160, des monstres de niveau 160
+- Prestige 7 Palier de guilde 17 : jusqu'à des objets de palier 170, des monstres de niveau 170
+- Prestige 8 Palier de guilde 18 : jusqu'à des objets de palier 180, des monstres de niveau 180
+- Prestige 9 Palier de guilde 19 : jusqu'à des objets de palier 180, des monstres de niveau 190
+- Prestige 10 Palier de guilde 20 : jusqu'à des objets de palier 200, des monstres de niveau 200
 
-Étant donné que le tier de guilde limite le tier de l'objet que les joueurs peuvent tuer, cela signifie que les joueurs
-ne peuvent faire apparaître des mobs que jusqu'à un certain niveau, car le niveau du mob est basé sur l'équipement que
-le joueur porte. Si les joueurs vont chasser des mobs avec des amis de niveau supérieur, le butin qu'ils obtiendront
-sera d'un niveau inférieur à celui de leurs amis.
+## Comment cela fonctionne et cas particuliers
+Étant donné que le palier de guilde limite le palier de l'objet que les joueurs peuvent tuer, cela signifie que les joueurs ne peuvent faire apparaître des monstres que jusqu'à un certain niveau, car le niveau du monstre est basé sur l'équipement que le joueur porte. Si les joueurs vont chasser des monstres avec des amis de niveau supérieur, le butin qu'ils obtiendront sera d'un niveau inférieur à celui de leurs amis.
 
-Combiné à l'enchantement [soulbind]($language/elitemobs/soulbind.md$), cela réduit considérablement le problème de
-l'amélioration rapide et permet aux administrateurs de ne pas avoir à s'inquiéter que les visiteurs atteignent le tier
-maximum quelques minutes après avoir rejoint le serveur, ou que les nouveaux joueurs obtiennent instantanément des tas
-d'objets de tier diamant. De plus, cela donne aux joueurs un lien plus profond avec leur butin, car il lui appartient et
-à lui seul.
+Combiné à l'enchantement [soulbind](fr/elitemobs/soulbind.md), cela freine considérablement le problème du powerleveling et permet aux administrateurs de ne pas avoir à s'inquiéter que les visiteurs atteignent le palier maximum en quelques minutes après avoir rejoint le serveur / que les nouveaux joueurs obtiennent instantanément des tonnes d'objets de palier diamant. De plus, cela donne aux joueurs une connexion plus profonde avec leur butin, car cela le rend leur appartenant, et à eux seuls.
