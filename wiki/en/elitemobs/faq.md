@@ -344,3 +344,26 @@ If you want to permanently disable protection for a specific dungeon, follow the
 2. Find the *dungeon_config.yml* file for the dungeon you want to modify.
 3. Open the config file and locate the `protect:` setting.
 4. Change the value to `false` to disable protection.
+
+
+### What are Elite Scrolls and how can I use them
+
+**Elite Scrolls** are special upgrade items that allow players to convert regular (non-elite) gear into elite-tier gear, integrating seamlessly with EliteMobs' leveling and loot systems.
+
+- **Plugin Compatibility:** Ideal for servers using other item plugins like **ItemAdder**, allowing those items to gain elite levels.
+- **Upgrade Method:** Can be applied at the **Adventurers Guild** by speaking to **Scotty**, the Scroll Applier NPC (located next to the Enchanter). *This feature is disabled by default.*
+- **Balanced Progression:** Scrolls drop from **Elite Mobs** of the same level, ensuring fair and level-appropriate upgrades.
+- **Custom Item Support:** Allows custom or plugin-based items to function within EliteMobs' progression system.
+
+> **Note:** Elite damage effects are only active within the EliteMobs system. Scroll-enhanced items will not be overpowered in general gameplay outside of EliteMobs content.
+
+#### How to Enable Elite Scrolls
+
+By default, Elite Scrolls are **disabled**. To enable them:
+
+1. Open the configuration file:  
+   `plugins/EliteMobs/ItemSettings.yml`
+2. Set the following option to `true`:  
+   `useEliteItemScrolls`
+3. Then run the following command:
+   `/em reload`

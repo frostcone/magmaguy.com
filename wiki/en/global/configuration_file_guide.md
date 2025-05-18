@@ -83,6 +83,12 @@ For those not good with fractions, multiplying by `0.5` is the same as dividing 
 value: 10
 ```
 
+You can randomize these values for scripts by using `~`. Example:
+
+```yml
+value: 1~10
+```
+
 The main thing about `Integer` values they must be whole numbers. This means that `10.1` is not valid.
 
 </div>
@@ -95,6 +101,32 @@ The main thing about `Integer` values they must be whole numbers. This means tha
 
 ```yml
 value: 10.01
+```
+
+You can randomize these values for scripts by using `~`. Example:
+
+```yml
+value: 1.0~10.01
+```
+
+`Double`s can also happen to be whole numbers like integers, like `10.0` or even represented as `10`.
+
+</div>
+
+<div id="config_string_list">
+
+# `Floats`
+
+`Floats`s are numbers with decimal points and can store many decimal places. Example:
+
+```yml
+value: 10.42452
+```
+
+You can randomize these values for scripts by using `~`. Example:
+
+```yml
+value: 1.0~10.42452
 ```
 
 `Double`s can also happen to be whole numbers like integers, like `10.0` or even represented as `10`.

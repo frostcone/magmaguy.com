@@ -89,12 +89,12 @@ It is recommended you install these to run all of these commands through NPCs in
 | `/em money add <username> <amount>`     |     Adds a set amount of money to a player.     |
 | `/em money addall <amount>`     |     Adds a set amount of money to all online players.     |
 | `/em money remove <username> <amount>`     |     Removes a set amount of money from a player.     |
-| `/em money set <username> <amount>`     |     Sets the total currency amount of a player.     |
+| `/em money set <username> <amount>`     |     Sets the total money amount a player has.     |
 | `/em rank <player> <prestigeLevel> <guildLevel>`     |     Sets the guild rank of a player.     |
 | `/em discord`     |     Gets the link for the support Discord server.     |
 | `/em discord <message>`     |     Posts a debug message on Discord if DiscordSRV is configured correctly.     |
 | `/em unbind force`     |     Unbinds a held soulbound item.     |
-| `/em money check <player>`     |     Checks the currency of a specific player.     |
+| `/em money check <player>`     |     Checks the money a specific player has.     |
 | `/em fireball`     |     Spawns a fireball to test elite explosion regeneration.     |
 | `/em transitiveBlocks register <filename> <ON_SPAWN/ON_REMOVE>`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
 | `/em transitiveBlocks edit <filename> <ON_SPAWN/ON_REMOVE>`     |     See [Transitive Blocks]($language$/elitemobs/creating_world_bosses.md&section=transitive-blocks).     |
@@ -121,7 +121,7 @@ permissions:
       elitemobs.stats: true
       elitemobs.checktier.others: true
       elitemobs.versionnotification: true
-      elitemobs.currency.check.others: true
+      elitemobs.money.check.others: true
     default: op
   elitemobs.stats:
     description: Allows players to run /elitemobs stats
@@ -141,13 +141,13 @@ permissions:
   elitemobs.customshop.command:
     description: Allows players to open the dynamic shop menu through commands
     default: true
-  elitemobs.currency.pay:
+  elitemobs.money.pay:
     description: Allows players to run /elitemobs pay [username] [amount]
     default: true
-  elitemobs.currency.check:
+  elitemobs.money.check:
     description: Allows players to run /elitemobs wallet
     default: true
-  elitemobs.currency.check.others:
+  elitemobs.money.check.others:
     description: Allows players to run /elitemobs check [username]
     default: op
   elitemobs.events:

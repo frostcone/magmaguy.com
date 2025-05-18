@@ -10,7 +10,7 @@ There are no restrictions with what you can build for BetterStructures, although
 
 ### Special blocks
 
-BetterStructures has two special blocks: barriers and bedrock. Any other block that WorldEdit / FAWE can paste will be pasted normally, but barriers and bedrock blocks are the exception. Instead of pasting, these blocks get replaced with the following custom behaviors:
+BetterStructures has two special blocks: barriers and bedrock. Any other block that WorldEdit can paste will be pasted normally, but barriers and bedrock blocks are the exception. Instead of pasting, these blocks get replaced with the following custom behaviors:
 
 ***
 
@@ -66,19 +66,6 @@ As a reminder, by default the combat arenas will be protected until players kill
 <p>test_boss_with</p>
 <p>_a_long_name</p>
 <p>.yml</p>
-</div>
-
-***
-
-##### Spawning Mythic Mobs
-
-BetterStructures also has simple MythicMobs integration, which allows it to spawn a mob from MythicMobs into the build. On the first line of a normal sign write `[mythicmobs]`, then on the second line use the mob identified. You can use a number on the third line to set the level of the mob.
-
-<div class="minecraft-sign"> 
-<p>[mythicmobs]</p>
-<p>my_mythic_boss</p>
-<p>1</p>
-<p></p>
 </div>
 
 ***
