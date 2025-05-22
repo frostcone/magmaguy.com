@@ -174,9 +174,10 @@ validWorldEnvironments: []
 
 ***
 
-### validBiomes
+### validBiomesV2
 
 Sets the list of valid biomes where the custom spawn can happen. This setting can be left out to allow **all** biomes to be valid.
+*This setting used to be called `validBiomes` in older versions of EM.*
 
 | Key       |           Values            | Default |
 |-----------|:---------------------------:|:-------:|

@@ -219,6 +219,34 @@ delayBetweenWaves: 5
 
 ***
 
+### rawIntermissionWaves
+
+Doubles the delay between waves for the specified waves in the list.
+Useful if you want to give players a short breather between specific waves.
+
+| Key       |      Values       | Default |
+|-----------|:-----------------:|:-------:|
+| `rawIntermissionWaves` | [Integer List](#integer_list) | none  |
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yml
+rawIntermissionWaves:
+- '5'
+- '10'
+- '15'
+```
+
+</div>
+
+</details>
+
+***
+
 ### spawnPoints
 
 Sets the spawn locations for the arena bosses.
