@@ -79,6 +79,7 @@ It is recommended you install these to run all of these commands through NPCs in
 | `/em loot give <player> <filename>`     |     Give specific custom loot to a player.     |
 | `/em loot simulate <level>`     |     Simulates drops from an Elite Mob from the set tier.     |
 | `/em loot simulate <level> <times>`     |     Simulates drops from an Elite Mob from the set tier a set amount of times.     |
+| `/em scrollGet <level> <amount>`     |     Give yourself the specified amount of Elite Scrolls.     |
 | `/em version`     |     Gets the version of the plugin.     |
 | `/em reload`     |     Reloads the plugin. Works almost every time.     |
 | `/em kill `     |     Kills all aggressive Elite Mobs.     |
@@ -230,6 +231,9 @@ permissions:
     default: true
   elitemobs.soulbind.bypass:
     description: Allows users to bypass the soulbind restrictions. Only recommended for admins!
+    default: false
+  elitemobs.scroll.get:
+    description: Allows users to use the scrollGet command to give themselves Elite Scrolls!
     default: false
   elitequest.*:
     description: Used for quest-related permissions
