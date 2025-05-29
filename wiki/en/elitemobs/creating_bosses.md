@@ -113,6 +113,39 @@ Sets the entity type of the boss.
 
 <details> 
 
+<summary><b>Magma Cubes and Slimes</b></summary>
+
+<div align="left">
+
+Since these entity types do not attack players directly, but instead pull them in and deal damage rapidly, they can cause large bursts of damage in a short time. Because of this, we generally do not recommend using them as Elite mobs frequently. However, if you still wish to use them, we suggest setting `damageMultiplier` to around `0.1`.
+
+We also recommend using the following EliteScript to prevent Magma Cubes or Slimes from stun-locking players:
+
+```yml
+eliteScript:
+  NerfDamage:
+    Events:
+    - ZoneEnterEvent
+    - ZoneLeaveEvent
+    Zone:
+      shape: SPHERE
+      radius: 1
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SET_MOB_AI
+      Target:
+        targetType: SELF
+      bValue: false
+      duration: 10
+```
+
+</div>
+
+</details>
+
+<details> 
+
 <summary><b>Example</b></summary>
 
 <div align="left">
