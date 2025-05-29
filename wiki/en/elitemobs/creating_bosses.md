@@ -117,7 +117,7 @@ Sets the entity type of the boss.
 
 <div align="left">
 
-Since these entity types do not attack players directly, but instead pull them in and deal damage rapidly, they can cause large bursts of damage in a short time. Because of this, we generally do not recommend using them as Elite mobs frequently. However, if you still wish to use them, we suggest setting `damageMultiplier` to around `0.1`.
+Since these entity types do not attack players directly, but instead deal damage through contact, this can result in large bursts of damage in a short time. Because of this, we generally do not recommend using them as Elite mobs frequently. However, if you still wish to use them, we suggest setting `damageMultiplier` to around `0.1`.
 
 We also recommend using the following EliteScript to prevent Magma Cubes or Slimes from stun-locking players:
 
