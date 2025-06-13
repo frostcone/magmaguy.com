@@ -1,7 +1,7 @@
 # Current EliteMobs premade content
 
 <details>
-<summary>[Levels 0-20] [Adventure] <a href="https://magmaguy.itch.io/primis">Primis Adventure</a> / <a href="https://www.patreon.com/posts/adventure-primis-71274573">patreon.com/magmaguy</a></summary>
+<summary>[Levels 0-20] [Adventure] <a href="https://nightbreak.io/plugin/elitemobs/#primis-adventure">Primis Adventure</a></summary>
 
 This expansive adventure map is packed with quests, loot, and a variety of challenging mobs, designed to immerse players in the world of EliteMobs. Through engaging gameplay, players will learn the mechanics and features of EliteMobs in an exciting and interactive way. Fans of MMORPGs will find the experience familiar and captivating, with elements reminiscent of their favorite MMOs.
   
@@ -42,7 +42,7 @@ EliteMobs Version: 8.0.3+ Credits: 69OzCanOfBepis, MagmaGuy, Realm of Lotheridon
 </details>
 
 <details>
-<summary>[Levels 10] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-catacombs">The Catacombs</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Levels 10] [Minidungeon] <a href="https://nightbreak.io/plugin/elitemobs/#the-catacombs">The Catacombs</a></summary>
 
 As of EliteMobs 9.0.0 this dungeon has been converted to a world dungeon!
   
@@ -63,7 +63,7 @@ Credits: Realm of Lotheridon & MagmaGuy
 </details>
 
 <details>
-<summary>[Levels 10] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-theclimb">The Climb</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Levels 10] [Instanced Dungeon] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The Climb</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Undead have emerged from the mountain mines and launched a ruthless assault on a peaceful village!
   
@@ -75,7 +75,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Levels 15] [Instanced Lair] <a href="https://magmaguy.itch.io/elitemobs-thecave">The Cave</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Levels 15] [Instanced Lair] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The Cave</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. A formidable creation of magma and flame bars the entrance to the mountain mines!
   
@@ -87,7 +87,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Levels 10-20] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-pirate-ship">The Pirate Ship</a> / <a href="https://www.patreon.com/posts/minidungeon-ship-62464429">patreon.com/magmaguy</a></summary>
+<summary>[Levels 10-20] [Minidungeon] <a href="https://nightbreak.io/plugin/elitemobs/#the-pirate-ship">The Pirate Ship</a></summary>
 
 As of EliteMobs 9.0.0 this dungeon has been converted to a world dungeon!
   
@@ -107,7 +107,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Level 20] [Free] [Lair] <a href="https://magmaguy.itch.io/em-free-content">The Fireworks</a></summary>
+<summary>[Level 20] [Free] [Lair] <a href="https://nightbreak.io/plugin/elitemobs/#fireworks">The Fireworks</a></summary>
 <pre>
 EliteMobs Info:
 Recommended Level[s]: 20 - Group content 
@@ -123,7 +123,7 @@ Credits: MagmaGuy
 </details>
 
 <details>
-<summary>[Levels 20] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-themines">The Mines</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Levels 20] [Instanced Dungeon] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The Mines</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Descend into the mountain mines to uncover the source of the undead horde and the mysterious force driving them.
   
@@ -135,7 +135,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Levels 20-55] [Adventure] <a href="https://magmaguy.itch.io/elitemobs-oasis">The Oasis</a> / <a href="https://www.patreon.com/posts/adventure-oasis-62464668">patreon.com/magmaguy</a></summary>
+<summary>[Levels 20-55] [Adventure] <a href="https://nightbreak.io/plugin/elitemobs/#the-oasis-adventure">The Oasis</a></summary>
 
 For players who have completed the Primis Adventure map, The Oasis is the perfect next step in their journey. It offers even more challenging mobs, a plethora of quests, and an abundance of awesome loot to discover!
   
@@ -156,7 +156,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Levels 20-35] [Free] [Minidungeon] <a href="https://magmaguy.itch.io/em-free-content">The Sewers</a></summary>
+<summary>[Levels 20-35] [Free] [Minidungeon] <a href="https://nightbreak.io/plugin/elitemobs/#the-sewers">The Sewers</a></summary>
 <pre>
 EliteMobs Info:
 Recommended Level[s]: 20 - 35 - Solo / duo content
@@ -174,7 +174,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Levels 25] [Instanced Lair] <a href="https://magmaguy.itch.io/elitemobs-thebridge">The Bridge</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Levels 25] [Instanced Lair] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The Bridge</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Beyond the mountain mines lies an ancient dwarven underground city. However, before reaching it, a formidable construct—a guardian that has protected a bridge for centuries—stands in the way.
   
@@ -186,7 +186,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Level 30] [Free] [Lair] <a href="https://magmaguy.itch.io/em-free-content">The Hallosseum</a></summary>
+<summary>[Level 30] [Free] [Lair] <a href="https://nightbreak.io/plugin/elitemobs/#hallosseum">The Hallosseum</a></summary>
 <pre>
 EliteMobs Info:
 Recommended Level[s]: 30 - Group content
@@ -203,7 +203,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Levels 30] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thebridge">The City</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Levels 30] [Instanced Dungeon] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The City</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Deep underground lies an ancient dwarven city, its once-dwarven inhabitants now shambling through the streets, driven mad by an unknown force. They have been granted eternal life, yet they are not undead. What lies behind this unsettling phenomenon?
   
@@ -215,7 +215,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Levels 35-45] [Free & Premium] [Minidungeon] <a href="https://magmaguy.itch.io/the-invasion">The Invasion</a> / <a href="https://www.patreon.com/posts/minidungeon-62491284">patreon.com/magmaguy</a></summary>
+<summary>[Levels 35-45] [Free & Premium] [Minidungeon] <a href="https://nightbreak.io/plugin/elitemobs/#the-invasion">The Invasion</a></summary>
 
 As of EliteMobs 9.0.0 this dungeon has been converted to a world dungeon!
   
@@ -234,7 +234,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Levels 35] [Instanced Lair] <a href="https://magmaguy.itch.io/elitemobs-thepalace">The Palace</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Levels 35] [Instanced Lair] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The Palace</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Deep within the dwarven city, within the palace, resides its mad monarch. Dark and unnatural power emanates from the monarch, accompanied by faint, eerie chimes echoing through the halls.
   
@@ -246,7 +246,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Level 40] [Free] [Lair] <a href="https://magmaguy.itch.io/em-free-content">Dark Cathedral</a></summary>
+<summary>[Level 40] [Free] [Lair] <a href="https://nightbreak.io/plugin/elitemobs/#the-dark-cathedral">Dark Cathedral</a></summary>
 
 As of EliteMobs 9.0.0 this dungeon has been converted to a world dungeon!
   
@@ -265,7 +265,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Level 40] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thequarry">The Quarry</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Level 40] [Instanced Dungeon] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The Quarry</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Amidst abundant ores and countless gems, the dwarves have delved deep into the earth in search of riches. Ride the lift down to explore how far this quarry extends and where it leads. Beware of the mad dwarven diggers, miners, and royal spellcasters who still wander these depths.
   
@@ -277,7 +277,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Levels 45-55] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-airship">The Airship</a> / <a href="https://www.patreon.com/posts/minidungeon-62491142">patreon.com/magmaguy</a></summary>
+<summary>[Levels 45-55] [Minidungeon] <a href="https://nightbreak.io/plugin/elitemobs/#the-airship">The Airship</a></summary>
 
 As of EliteMobs 9.0.0 this dungeon has been converted to a world dungeon!
   
@@ -297,7 +297,7 @@ Credits: Realm of Lotheridon, 69OzCanOfBepis
 </details>
 
 <details>
-<summary>[Level 45] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thedeepmines">The Deep Mines</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Level 45] [Instanced Dungeon] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The Deep Mines</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. The quarry lift reaches its limit, but beyond lies the deep mines where the dwarves' greed has led them. These mines stretch into the Nether itself, where a powerful entity from the Nether realm prowls in the shadows.
   
@@ -309,7 +309,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Level 50] [Instanced Sanctum] <a href="https://magmaguy.itch.io/frost-palace-sanctum">The Frost Palace</a> / <a href="https://www.patreon.com/posts/72982655">patreon.com/magmaguy</a></summary>
+<summary>[Level 50] [Instanced Sanctum] <a href="https://nightbreak.io/plugin/elitemobs/#the-frost-palace">The Frost Palace</a></summary>
 
 A perfect challenge for a group of players eager to test their skills, wit, and any EliteMobs knowledge they have acquired.
 A boss fight that will not be easy to forget!
@@ -331,7 +331,7 @@ Credits: Dalio - Map, Agnet75 - Music, MagmaGuy
 </details>
 
 <details>
-<summary>[Level 50] [Instanced Dungeon] <a href="https://magmaguy.itch.io/elitemobs-thenetherwastes">The Nether Wastes</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Level 50] [Instanced Dungeon] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The Nether Wastes</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. In the Nether Wastes, an unfamiliar realm to all, unknown nether creatures roam its desolate paths. From its heart, a haunting resonance echoes, punctuated by the eerie chime of a bell—an unnatural sound that unsettles all who hear it.
   
@@ -343,7 +343,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Levels 50-100] [Arena] <a href="https://magmaguy.itch.io/arena-iron-league-arena">The Iron League Arena</a> / <a href="https://www.patreon.com/posts/arena-iron-arena-76940965">patreon.com/magmaguy</a></summary>
+<summary>[Levels 50-100] [Arena] <a href="https://nightbreak.io/plugin/elitemobs/#iron-league-arena">The Iron League Arena</a></summary>
 <pre>
 EliteMobs Info:
 Recommended Level[s]: 50 - 100- Group recommended
@@ -359,7 +359,7 @@ Credits: Frostcone, MagmaGuy, Delio
 </details>
 
 <details>
-<summary>[Level 55] [Instanced Sanctum] <a href="https://magmaguy.itch.io/elitemobs-thenetherbell">The Nether Bell</a> / <a href="https://www.patreon.com/magmaguy">patreon.com/magmaguy</a></summary>
+<summary>[Level 55] [Instanced Sanctum] <a href="https://nightbreak.io/plugin/elitemobs/#story-mode-dungeons">The Nether Bell</a></summary>
 
 This dungeon is part of the Story Mode Dungeon series. Players can embark on quests that weave a continuous narrative through the dungeons, offering a cohesive and immersive storyline. Deep in the Nether, where no one should tread, lies a haunting scene of death and decay. Creatures from the void, unimaginable even in nightmares, prowl these forsaken lands. At the heart of this desolation stands a grotesque creation—born from the collapsing energies of the Nether over centuries—an abomination known as the Void Bell. Its incessant ringing and chimes weave a sinister promise into the minds of those who hear it, tempting them with unimaginable riches and powers. Its resonation echoes deep within, a haunting presence that refuses to be shaken.
   
@@ -380,7 +380,7 @@ Credits: Frostcone, MagmaGuy, Dali_
 </details>
 
 <details>
-<summary>[Level 55-60] [Free] [Minidungeon] <a href="https://magmaguy.itch.io/em-free-content">The North Pole</a></summary>
+<summary>[Level 55-60] [Free] [Minidungeon] <a href="https://nightbreak.io/plugin/elitemobs/#north-pole">The North Pole</a></summary>
 
 A perfect dungeon to add to your server for the holiday season, capturing the winter spirit and getting everyone in the festive mood.
   
@@ -400,7 +400,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Level 70] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-colosseum">The Colosseum</a> / <a href="https://www.patreon.com/posts/lair-colosseum-62465500">patreon.com/magmaguy</a></summary>
+<summary>[Level 70] [Minidungeon] <a href="https://nightbreak.io/plugin/elitemobs/#the-colosseum-remake-soon">The Colosseum</a></summary>
 
 As of EliteMobs 9.0.0 this dungeon has been converted to a world dungeon!
   
@@ -419,7 +419,7 @@ Credits: Maldini & MagmaGuy
 </details>
 
 <details>
-<summary>[Level 85] [Dungeon] <a href="https://magmaguy.itch.io/dungeon-bone-monastery">The Bone Monastery</a> / <a href="https://www.patreon.com/posts/dungeon-bone-76941562">patreon.com/magmaguy</a></summary>
+<summary>[Level 85] [Dungeon] <a href="https://nightbreak.io/plugin/elitemobs/#bone-monastery">The Bone Monastery</a></summary>
 
 Something terrible is happening at the monastery. The monks have been driven away, and there are rumors of ruthless undead and skeletons roaming the grounds!
   
@@ -438,7 +438,7 @@ Credits: Matevagyok, 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Level 95] [Lair] <a href="#">The Knight's Castle</a></summary>
+<summary>[Level 95] [Lair] <a href="https://nightbreak.io/plugin/elitemobs/#the-knights-castle">The Knight's Castle</a></summary>
 
 Do you dare challenge the knights and their ancient leader, Charlemagne?
   
@@ -458,7 +458,7 @@ Credits: MagmaGuy, FrostCone, Matevagyok
 </details>
 
 <details>
-<summary>[Levels 100-120] [Minidungeon] <a href="https://magmaguy.itch.io/elitemobs-the-dark-spire">The Dark Spire</a> / <a href="https://www.patreon.com/posts/minidungeon-dark-62465765">patreon.com/magmaguy</a></summary>
+<summary>[Levels 100-120] [Minidungeon] <a href="https://nightbreak.io/plugin/elitemobs/#the-dark-spire">The Dark Spire</a></summary>
 
 The Dark Spire awaits deep within the Nether. These fiends are no ordinary Nether mobs—be cautious!
   
@@ -479,7 +479,7 @@ Credits: 69OzCanOfBepis
 </details>
 
 <details>
-<summary>[Levels 100-150] [Arena] <a href="https://magmaguy.itch.io/elitemobs-diamondarena">The Diamond League Arena</a> / <a href="https://www.patreon.com/posts/lair-catacombs-62463772">patreon.com/magmaguy</a></summary>
+<summary>[Levels 100-150] [Arena] <a href="https://nightbreak.io/plugin/elitemobs/#arena-diamond-league-arena">The Diamond League Arena</a></summary>
 <pre>
 EliteMobs Info:
 Recommended Level[s]: 100-150 - Group content
@@ -488,7 +488,7 @@ More info coming soon.
 </details>
 
 <details>
-<summary>[Levels 120-140] [Minidungeon] <a href="https://magmaguy.itch.io/the-vampire-manor">The Vampire Manor</a> / <a href="https://www.patreon.com/posts/minidungeon-62465872">patreon.com/magmaguy</a></summary>
+<summary>[Levels 120-140] [Minidungeon] <a href="https://nightbreak.io/plugin/elitemobs/#the-vampire-manor">The Vampire Manor</a></summary>
 
 As of EliteMobs 9.0.0 this dungeon has been converted to a world dungeon!
   
@@ -508,7 +508,7 @@ Credits: 69OzCanOfBepis, MagmaGuy
 </details>
 
 <details>
-<summary>[Level 130] [Lair] <a href="https://magmaguy.itch.io/beasts-sanctuary">Beasts Sanctuary</a> / <a href="https://www.patreon.com/posts/lair-beasts-74854707">patreon.com/magmaguy</a></summary>
+<summary>[Level 130] [Lair] <a href="https://nightbreak.io/plugin/elitemobs/#the-beasts-sanctuary">Beasts Sanctuary</a></summary>
 
 A monstrous beast has taken refuge in a nearby town, transforming its residents into mindless husks. Are you brave enough to confront the creature in battle and drive it away?
   
@@ -526,7 +526,7 @@ Credits: Frostcone
 </details>
 
 <details>
-<summary>[Level 140] [Lair] <a href="https://magmaguy.itch.io/em-free-content">The Steamworks</a></summary>
+<summary>[Level 140] [Lair] <a href="https://nightbreak.io/plugin/elitemobs/#the-steamworks">The Steamworks</a></summary>
 
 What are these creatures and what have they wrought? They have created a being of gears and metal, with a mind that can think but never feel. It perches atop the clockwork spire, awaiting the moment life will awaken its cold steel eyes.
   
@@ -546,7 +546,7 @@ Credits: MagmaGuy, FrostCone
 </details>
 
 <details>
-<summary>[Levels 150] [Lair] <a href="https://magmaguy.itch.io/the-ruins">The Ruins</a> / <a href="https://www.patreon.com/posts/lair-ruins-62465993">patreon.com/magmaguy</a></summary>
+<summary>[Levels 150] [Lair] <a href="https://nightbreak.io/plugin/elitemobs/#the-ruins">The Ruins</a></summary>
 
 As of EliteMobs 9.0.0 this dungeon has been converted to a world dungeon!
   
@@ -565,7 +565,7 @@ EliteMobs Version: 7.3.6+
 </details>
 
 <details>
-<summary>[Levels 170] [Lair] <a href="https://magmaguy.itch.io/under-grove">The Under Grove</a> / <a href="https://www.patreon.com/posts/lair-under-grove-74854772">patreon.com/magmaguy</a></summary>
+<summary>[Levels 170] [Lair] <a href="https://nightbreak.io/plugin/elitemobs/#the-under-grove">The Under Grove</a></summary>
 
 Something has gone terribly wrong in this once-friendly grove. A powerful being has taken residence, nursing a grudge that seems beyond any hope of healing.
   
@@ -583,7 +583,7 @@ Credits: Frostcone
 </details>
 
 <details>
-<summary>[Level 200] [Free] [Lair] <a href="https://magmaguy.itch.io/em-free-content">The Binder of Worlds</a></summary>
+<summary>[Level 200] [Free] [Lair] <a href="https://nightbreak.io/plugin/elitemobs/#binder-of-worlds">The Binder of Worlds</a></summary>
 
 The ultimate test, the ultimate lair: a boss unlike any seen before, untouched by weapons, impervious to armor. Its wings command the wind, its breath darkens the abyss, and its claws cleave mountains. Can the players summon the courage to confront this ancient, fearsome dark dragon in battle? After conquering all else in EliteMobs, the final challenge awaits!
   
