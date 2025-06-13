@@ -51,6 +51,49 @@ Conditions use the [Targets]($language$/elitemobs/elitescript_targets.md) system
 
 ---
 
+## runIfConditionIs
+
+| Key | Details | Values |
+| --- | :-: | :-: |
+| `runIfConditionIs` | Sets if condition should allow the action to be run when condition is true or false. | `true` / `false` |
+
+You can reverse a condition by using the `runIf` prefix and the `Is` suffix around the condition name.
+
+For example, take the `isAlive` condition. Normally, writing:
+`isAlive: true`
+means the action will only run if the boss is alive.
+
+But if you also write:
+`runIfIsAliveIs: false`
+in the same condition, then the condition is reversed — the action will now run only if the boss is dead.
+
+This structure allows you to control whether the condition should pass or fail before running the action.
+
+Example:
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
+      Target:
+        targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        runIfIsAliveIs: false
+        Target:
+          targetType: SELF
+```
+
+This script will now only set the weather to thunder if the boss is dead.
+
+---
+
 ## Condition Type
 
 | Key | Details | Values |
@@ -516,3 +559,52 @@ This script will look for any nearby mobs with the tag `TurnOff` and if they hav
 </details>
 
 </div>
+
+### targetCountLowerThan and targetCountGreaterThan
+
+Creates a condition that allows the action to run only if the specified target number is lower or greater than the defined value.
+
+| Key | Details | Values |
+| --- | :-: | :-: |
+| `targetCountLowerThan` | Only run the action if the target count is lower than the number specified. | Number between 0 and 999 |
+
+| Key | Details | Values |
+| --- | :-: | :-: |
+| `targetCountGreaterThan` | Only run the action if the target count is greater than the number specified. | Number between 0 and 999 |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
+      Target:
+        targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        targetCountGreaterThan: 2
+        Target: #required
+          targetType: NEARBY_MOBS #required
+          range: 15
+```
+
+The script will only run if there are more than 2 mobs within a 15-block radius.
+
+</div>
+
+</details>
+
+</div>
+
+Note that this condition DOES require a target.
