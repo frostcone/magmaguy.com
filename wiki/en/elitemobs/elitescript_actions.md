@@ -203,14 +203,6 @@ When the boss is hit then it will heal all mobs within 15 blocks for 20 points (
 
 </div>
 
-#### multiplier
-
-Sets the damage multiplier of the boss for the effect.
-
-**Important**: in order to make powers scale easily and automatically, damage is applied by having the boss hit the player once and multiplying the base damage of the boss with the multiplier.
-
-This means that a multiplier of 1.0 is the same as a normal hit from the boss. 2.0 is a hit 2x the normal strength, and 0.5 is 50% as hard.
-
 ---
 
 ### MAKE_INVULNERABLE

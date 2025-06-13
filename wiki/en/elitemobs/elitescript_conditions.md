@@ -51,49 +51,6 @@ Conditions use the [Targets]($language$/elitemobs/elitescript_targets.md) system
 
 ---
 
-## runIfConditionIs
-
-| Key | Details | Values |
-| --- | :-: | :-: |
-| `runIfConditionIs` | Sets if condition should allow the action to be run when condition is true or false. | `true` / `false` |
-
-You can reverse a condition by using the `runIf` prefix and the `Is` suffix around the condition name.
-
-For example, take the `isAlive` condition. Normally, writing:
-`isAlive: true`
-means the action will only run if the boss is alive.
-
-But if you also write:
-`runIfIsAliveIs: false`
-in the same condition, then the condition is reversed — the action will now run only if the boss is dead.
-
-This structure allows you to control whether the condition should pass or fail before running the action.
-
-Example:
-
-```yaml
-eliteScript:
-  Example:
-    Events:
-    - EliteMobDamagedByPlayerEvent
-    Actions:
-    - action: SET_WEATHER
-      Target:
-        targetType: SELF
-      weather: THUNDER
-      duration: 120
-      Conditions:
-        conditionType: BLOCKING
-        isAlive: true
-        runIfIsAliveIs: false
-        Target:
-          targetType: SELF
-```
-
-This script will now only set the weather to thunder if the boss is dead.
-
----
-
 ## Condition Type
 
 | Key | Details | Values |
@@ -204,6 +161,49 @@ If the block located two spaces above where the boss is standing is air, then al
 </details>
 
 </div>
+
+---
+
+## runIfConditionIs
+
+| Key | Details | Values |
+| --- | :-: | :-: |
+| `runIfConditionIs` | Sets if condition should allow the action to be run when condition is true or false. | `true` / `false` |
+
+You can reverse a condition by using the `runIf` prefix and the `Is` suffix around the condition name.
+
+For example, take the `isAlive` condition. Normally, writing:
+`isAlive: true`
+means the action will only run if the boss is alive.
+
+But if you also write:
+`runIfIsAliveIs: false`
+in the same condition, then the condition is reversed — the action will now run only if the boss is dead.
+
+This structure allows you to control whether the condition should pass or fail before running the action.
+
+Example:
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SET_WEATHER
+      Target:
+        targetType: SELF
+      weather: THUNDER
+      duration: 120
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        runIfIsAliveIs: false
+        Target:
+          targetType: SELF
+```
+
+This script will now only set the weather to thunder if the boss is dead.
 
 ---
 
