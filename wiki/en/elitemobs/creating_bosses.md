@@ -1185,7 +1185,7 @@ announcementPriority: 3
 
 ### followDistance
 
-Set the distance at which bosses aggro and enter combat.
+Set the distance at which bosses aggro and enter combat. Measured from the mob itself.
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1669,7 +1669,7 @@ These are used for all of the dungeon content. To learn more about regional boss
 | `isRegionalBoss` | Sets if the boss is regional. Should be true if you want a regional boss.  | `true` /  `false` | `false` |
 | `spawnLocation` | Sets the spawn locations of the boss.  | Add these through the `/em addSpawnLocation [filename.yml]` command! | none |
 | `spawnCooldown` | Sets the respawn cooldown of the boss, in <b>minutes</b>. | [Integer](#integer) | `0` |
-| `leashRadius` | Sets the distance the boss can go from its spawn point before getting pulled back. | [Double](#double) | none |
+| `leashRadius` | Sets the distance the boss can go from its spawn point before getting pulled back. Measured from spawn. | [Double](#double) | none |
 | `onSpawnBlockStates` | Sets the blocks the boss will modify when it spawns. | Check commands below | none |
 | `onRemoveBlockStates` | Sets the blocks the boss will modify when it despawns. | Check commands below | none |
 
