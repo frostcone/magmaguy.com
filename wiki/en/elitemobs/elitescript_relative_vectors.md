@@ -149,3 +149,112 @@ Creates a animated flame sphere that shrinks to the spawn location.
 The order of operations when applying the properties goes as follows:
 
 Vector calculation -> `normalize` -> `multiplier` -> `offset`
+
+# Elite Script Relative Offset
+
+## What Are They For?
+
+Relative offsets function similarly to relative vectors, but with the goal being of adding flexibility to offsets. They allow you to adjust positions dynamically when scripting, making it easier to fine-tune target positions or effects based on context.
+
+## How Do Relative Offsets Work?
+
+Relative offsets are **additive**, meaning whatever the offset resolves to will be **added** to the base value (such as a location or vector).
+
+Let’s break down an example:
+
+You have a `ray zone`:
+- `Target 1` is `SELF` (the boss).
+- `Target 2` is `NEARBY_PLAYERS` with a range of 10.
+
+If a player is found 8 blocks away, the ray will be 8 blocks long, ending at the player.
+
+Now let’s apply a relative offset:
+
+### Case 1: `normalize = false`, `multiplier = 1`
+- The original distance is 8.
+- Offset value becomes `8 × 1 = 8`.
+- Final ray length: `8 + 8 = 16`.
+
+The ray will pass through the player and continue for 8 additional blocks.
+
+### Case 2: `normalize = false`, `multiplier = 2`
+- Offset value becomes `8 × 2 = 16`.
+- Final ray length: `8 + 16 = 24`.
+
+### Case 3: `normalize = true`, `multiplier = 1`
+- The distance is normalized to 1.
+- Offset value becomes `1 × 1 = 1`.
+- Final ray length: `8 + 1 = 9`.
+
+### Case 4: `normalize = true`, `multiplier = 2`
+- Offset value becomes `1 × 2 = 2`.
+- Final ray length: `8 + 2 = 10`.
+
+### Summary
+
+- `normalize = false` uses the actual distance between the targets.
+- `normalize = true` always starts from a base of 1, regardless of actual distance.
+- The offset is always **added** to the original value.
+- When `multiplier` is set to `0` with `normalize = true`, the offset becomes `0` (since `1 × 0 = 0`), and with `normalize = false`, the offset also becomes `0` (since any number multiplied by `0` is `0`), effectively disabling the relative offset in both cases.
+
+This system allows you to easily extend or shrink distances dynamically when building more complex skill logic in EliteMobs scripting.
+
+## Properties
+
+| Value |                                                 Details                                                  | Mandatory? | Default value |
+| --- |:--------------------------------------------------------------------------------------------------------:| :-: | :-: |
+| `SourceTarget` | [Target]($language$/elitemobs/elitescript_targets.md) at the point from which the vector will start from | ✅ | `none` |
+| `DestinationTarget` |          [Target]($language$/elitemobs/elitescript_targets.md) at the end point for the vector           | ✅ | `none` |
+| `normalize` |                                 Sets if the vector should be normalized                                  | ❌ | `false` |
+| `multiplier` |                                      Multiplies the vector's length. You can randomize this value by using `~`. Example: `1.0~2.5`.                                      | ❌ | `1.0` |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  MakeStaticRay:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: STATIC_RAY
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+      Target2:
+        targetType: NEARBY_PLAYERS
+        range: 10
+        offset: 0,1,0
+        relativeOffset:
+          sourceTarget:
+            targetType: SELF
+          destinationTarget:
+            targetType: NEARBY_PLAYERS
+            range: 10
+          multiplier: 5
+          normalize: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_FULL
+      particles:
+      - particle: ELECTRIC_SPARK
+      amount: 1
+      repeatEvery: 1
+      times: 400
+```
+
+This will create a static ray between the boss and the player, with a relative offset that extends the ray 5 blocks beyond the player. Note that regular offsets are also applied to `Target` and `Target2` to ensure the ray is drawn from the center of the boss to the center of the player, rather than from their feet.
+
+**Note:** Even though this example uses relative offset on a zone, keep in mind that relative offsets are not limited to zones, they can be applied to other targets as well.
+
+</div>
+
+</details>
+
+</div>

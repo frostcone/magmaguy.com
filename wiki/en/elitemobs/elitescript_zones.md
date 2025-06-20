@@ -208,6 +208,63 @@ This script demonstrates the shape of a dome using cloud particles.
 
 ---
 
+### CONE
+
+| Key                                                         | Details | Mandatory |
+|-------------------------------------------------------------| :-: | :-: |
+| `shape`                                                     | Sets the shape of the zone. Should be `CONE` | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | Sets the location for the first point of the cone | ✅ |
+| [`target2`]($language$/elitemobs/elitescript_targets.md)    | Sets the location for the last point of the center of the cone | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Sets which types of entities get targeted | ❌ |
+| `radius`                                                    | Radius of the second target of the cone | ✅ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CONE
+      radius: 10
+      Target:
+        targetType: SELF
+        offset: 0,0,0
+      Target2:
+        targetType: SELF
+        offset: 0,10,0
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+        - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
+          coverage: 0.8
+        repeatEvery: 5
+        times: 20
+```
+
+<div align="center">
+
+</div>
+
+This script demonstrates the shape of a cylinder using cloud particles. Keep in mind that this zone is a **CONE** shape, meaning it is a 3D volume, important to consider if you're aiming to create sweep effects.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
 ### CYLINDER
 
 | Key                                                         | Details | Mandatory |
