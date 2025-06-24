@@ -66,6 +66,31 @@ If wormholes / arenas / NPCs don't seem to be working correctly immediately afte
 
 </details>
 
+### How do regional or dungeon bosses respawn?
+
+<details>
+<summary>
+Info
+</summary>
+
+All regional and dungeon bosses in EliteMobs use respawn timers. These timers are defined individually in each boss’s `.yml` file.
+For example, if you have a custom dungeon called **Example Dungeon**, and the main boss has a default respawn cooldown of **360 minutes**, you can adjust this by:
+
+1. Open up the boss file located at:
+   ```
+   plugins/EliteMobs/custombosses/example_dungeon/example_dungeon_boss.yml
+   ```
+2. Find the `spawnCooldown:` setting and changing the value to your preferred cooldown duration (in minutes).
+3. Save the file.
+
+After making changes:
+- Run `/em reload` to apply your changes.
+- If you want to immediately respawn bosses that are on cooldown, run `/em respawn all`.
+
+*Note: This method only applies to regional bosses that have a set spawn location.*
+
+</details>
+
 ### Dungeon Bosses are not reappearing after killing them
 
 <details>
