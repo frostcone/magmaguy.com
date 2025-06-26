@@ -21,7 +21,7 @@ Sets the shape of the zone. Valid shapes:
 | [`STATIC_RAY`]($language$/elitemobs/elitescript_zones.md&section=static_ray)     | A fixed line between two points | ❌ | ❌ |
 | [`ROTATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=rotating_ray) | A rotating line between two points | ✅ | ❌ |
 | [`TRANSLATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=translating_ray) | A line that moves between two initial points to two final points | ✅ | ❌ |
-
+| [`CONE`]($language$/elitemobs/elitescript_zones.md&section=CONE)         | Cone shape | ❌ | ❌ |
 ---
 
 #### Animatable
