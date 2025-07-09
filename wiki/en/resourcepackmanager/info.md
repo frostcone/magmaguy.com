@@ -1,52 +1,118 @@
-# Resource Pack Manager (RSPM)  
+# Resource Pack Manager (RSPM)
 
-**Resource Pack Manager (RSPM)** is a plugin designed to streamline the management of resource packs on Minecraft servers. It automates merging, hosting, and distributing resource packs, saving server administrators time and effort while ensuring a seamless experience for players.  
+**Resource Pack Manager (RSPM)** is a plugin designed to simplify how Minecraft servers handle resource packs. It automatically merges, hosts, and distributes resource packs, ensuring players always have the correct pack with minimal setup.
 
-## Key Features  
+---
 
-RSPM handles all aspects of resource pack management automatically. It merges resource packs from compatible plugins or manually added files, hosts the resulting pack remotely, and distributes it to players when they log into the server. This process eliminates the need for manual intervention or technical expertise, allowing administrators to focus on running their servers.  
+## What Does It Do?
 
-The plugin supports both automatic merging and manual integration. Non-compatible resource packs can be added to a designated folder (`mixer`), where RSPM will incorporate them into the merged pack. Hosting is handled automatically by default, with the option to disable auto-hosting for manual hosting setups.  
+RSPM detects resource packs from supported plugins like EliteMobs, FreeMinecraftModels, ModelEngine, and others, then merges them together into a single resource pack. This merged pack is automatically hosted and delivered to players when they join your server.
 
-RSPM works with minimal configuration out of the box. However, administrators can customize the settings through configuration files, including managing priority lists for plugins to resolve conflicts when merging.  
+You can also manually add your own resource packs by placing them in the `plugins/ResourcePackManager/mixer/` folder. The plugin merges these based on the order you define in the `priorityOrder` section of the config.
 
-## Compatibility  
+This means you no longer need to mess with manually merging zip files or uploading packs to third-party sites. Just configure your priorities and RSPM handles the rest.
 
-RSPM supports a wide range of plugins that rely on resource packs, including FreeMinecraftModels, EliteMobs, ModelEngine, and ItemsAdder. The plugin can also handle resource packs from plugins that require extra steps, like ValhallaMMO and Oraxen. For servers using unsupported plugins, administrators can request compatibility through the developer's active Discord support.  
+---
 
-## How It Works  
+## Setup Guide
 
-RSPM automatically detects resource packs from supported plugins and merges them based on a priority list defined in its configuration. This ensures that the most critical resource packs take precedence in cases of conflict.  
+1. Download and drop `ResourcePackManager.jar` into your server’s `plugins` folder.
+2. Restart your server.
+3. (Optional) Add any custom resource packs to the `mixer` folder.
+4. (Optional) Edit `config.yml` to adjust priority or disable auto-hosting.
+5. Run `/rspm reload` if you make changes.
 
-Once merged, the resource pack is either hosted remotely (via RSPM’s auto-hosting feature) or saved for manual hosting, depending on the server’s setup. Players receive the correct resource pack automatically when they log in, ensuring they always have the required assets without additional downloads or troubleshooting.  
+---
 
-## Setup  
+## Configuration Example
 
-Using RSPM is simple:  
+```yaml
+priorityOrder:
+  - ResourcePackManager
+  - EliteMobs
+  - FreeMinecraftModels
+  - ModelEngine
+  - Nova
+  - ItemsAdder
+  - Oraxen
+  - BetterHUD
+  - ValhallaMMO
+  - MMOInventory
+  - vane-core
+  - RealisticSurvival
 
-1. Drop the `ResourcePackManager.jar` file into your server's `plugins` folder.  
-2. Restart your server.  
-3. (Optional) Adjust the configuration files to customize the plugin’s behavior.  
+autoHost: true
+forceResourcePack: false
+resourcePackPrompt: Use recommended resource pack?
+resourcePackRerouting: ''
+```
 
-The plugin is designed to work immediately with default settings, making it easy for new users to get started.  
+- **priorityOrder**: Controls which pack wins when there’s a conflict.
+- **autoHost**: Uploads the merged pack to Magma’s hosting service.
+- **forceResourcePack**: Forces clients to accept the pack.
+- **resourcePackPrompt**: Sets the message shown when prompting players.
+- **resourcePackRerouting**: Advanced use only – ignore if unsure.
 
-## Limitations  
+---
 
-While RSPM excels at merging resource packs, it cannot resolve fundamental conflicts, such as:  
-- Overlapping Unicode characters in GUIs.  
-- Conflicting model IDs between plugins.  
+## Supported Plugins
 
-In such cases, the plugin uses the resource pack with the highest priority as specified in the configuration.  
+RSPM is compatible with most major plugins that generate their own resource packs:
 
-## Auto-Hosting  
+- EliteMobs
+- FreeMinecraftModels
+- ModelEngine
+- ItemsAdder (encryption must be disabled)
+- Nova
+- Oraxen
+- MMOInventory
+- BetterHUD
+- ValhallaMMO
 
-To simplify distribution, RSPM offers a free auto-hosting service. This feature uploads merged resource packs to remote servers and automatically distributes them to players when they log in. Auto-hosting is enabled by default but can be disabled in the configuration for administrators who prefer to manage hosting themselves.  
+If your plugin isn't listed, you can still add its pack manually by placing the zip in the `mixer` folder and referencing its filename (including `.zip`) in the `priorityOrder`.
 
-The auto-hosting service is supported by the developer’s Patreon community, ensuring that it remains free and accessible for all users.  
+---
 
-## Commands  
+## Auto-Hosting
 
-RSPM provides a few essential commands for server administrators:  
+By default, RSPM uses a free auto-hosting service maintained by the plugin developer. This removes the need to configure your own hosting solution. If you prefer to host it yourself, simply disable `autoHost` in the config.
 
-- `/resourcepackmanager reload`: Reloads the plugin and applies configuration changes.  
-- `/resourcepackmanager data_compliance_request`: Downloads hosted resource pack data for inspection (not required for regular operation).
+> Note: The auto-hosting is supported through community contributions and may not be available forever.
+
+---
+
+## Resolving Resource Pack Conflicts
+
+While Resource Pack Manager (RSPM) streamlines the merging and distribution of resource packs, it is **not designed to resolve all possible conflicts** between them.
+
+RSPM merges packs based on the `priorityOrder` defined in the configuration. If two packs contain the same file (e.g., the same model ID or GUI element), the one listed higher in the priority list will take precedence. However, this does **not** eliminate all compatibility issues. Common examples of unresolved conflicts include:
+
+- Overlapping custom model data (CMD) IDs
+- Conflicting texture paths
+- Duplicate or clashing Unicode characters (used in custom GUIs)
+- Incompatible overrides or model selectors
+
+To manage these conflicts effectively:
+- Adjust the `priorityOrder` so that your most important plugin appears at the top.
+- Manually resolve overlaps by editing the packs directly, if necessary.
+- Double-check that all packs are correctly generated and placed in their appropriate plugin directories or the `mixer` folder.
+
+> Note: Many issues reported with RSPM are not bugs in the plugin, but rather the result of conflicting files between resource packs. RSPM cannot automatically fix these — it simply merges and serves them based on your configuration.
+
+If you’re still encountering problems after adjusting priorities and checking for conflicts, you may need to manually intervene or reach out to the developers of the conflicting plugins for guidance.
+
+
+---
+
+## Commands
+
+- `/rspm reload` — Reloads the plugin and re-merges all packs.
+- `/rspm data_compliance_request` — Optional. Downloads hosted resource pack data.
+
+---
+
+## Summary
+
+RSPM helps server owners streamline resource pack management. It automates the merging process, handles hosting, and distributes the final pack to players — all with minimal setup. However, it's still your responsibility to manage plugin conflicts through the config or by editing the packs if needed.
+
+If you need help or run into issues, the official Discord is a good place to ask questions and get support.
