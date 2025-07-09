@@ -84,3 +84,43 @@ To resolve this, consider updating your server to 1.21.4 or higher, as this will
 
 </details>
 
+### Can I add my own resource packs to be merged?
+
+<details>
+<summary>
+Info
+</summary>
+
+You can add your own custom resource packs by placing them in the `mixer` folder located inside the `ResourcePackManager` plugin directory.
+
+Simply drop your `.zip` file into that folder. To ensure it’s merged correctly, update the `priorityOrder` section in the `config.yml` with the exact filename, including the `.zip` extension. For example:
+
+```yaml
+priorityOrder:
+  - ResourcePackManager
+  - EliteMobs
+  - MyCustomPack.zip
+```
+
+This allows you to seamlessly merge EliteMobs, FreeMinecraftModels, and any custom textures into a single pack.
+
+</details>
+
+
+### How do I add a custom resource pack to the `priorityOrder` list?
+
+<details>  
+<summary>  
+Info  
+</summary>  
+
+To add a custom resource pack to the `priorityOrder` in `ResourcePackManager`, simply include the **exact filename** of the `.zip` file you placed in the `mixer` folder.
+
+For example, if you added a resource pack called `MyWeirdTextures.zip`, your config should look like this:
+
+```yaml
+priorityOrder:
+  - ResourcePackManager
+  - EliteMobs
+  - MyWeirdTextures.zip
+
