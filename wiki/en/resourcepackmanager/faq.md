@@ -132,7 +132,7 @@ priorityOrder:
 ## Troubleshooting
 
 ### Client side issue: Failed to Load (404 Error)
-![webapp_banner.jpg](../../../img/wiki/rspm_failed_to_reach_server.jpg)
+![rspm_failed_to_reach_server.jpg](../../../img/wiki/rspm_failed_to_reach_server.jpg)
 
 <details>  
 <summary>  
@@ -159,6 +159,7 @@ This hosting service is internal to RSPM and not configurable by server admins. 
 </details>
 
 ### Client side issue: Failed to Load (Invalid Resource Pack)
+![rspm.jpg](../../../img/wiki/MISSING_IMAGEg)
 
 <details>  
 <summary>  
@@ -182,7 +183,7 @@ Minecraft successfully downloaded the resource pack, but rejected it because the
 </details>
 
 ### Server side issue: Purple and Black Textures or Purple and Black Cube Models
-![webapp_banner.jpg](../../../img/wiki/rspm_purple_and_black_squares.jpg)
+![rspm_purple_and_black_squares.jpg](../../../img/wiki/rspm_purple_and_black_squares.jpg)
 
 <details>  
 <summary>  
@@ -206,7 +207,7 @@ The purple-and-black checkerboard pattern in Minecraft indicates the game cannot
 </details>
 
 ### Server side issue: GUI Textures for Menus are Offset
-![webapp_banner.jpg](../../../img/wiki/rspm_offset_textures.jpg)
+![rspm_offset_textures.jpg](../../../img/wiki/rspm_offset_textures.jpg)
 
 <details>  
 <summary>  
@@ -230,6 +231,7 @@ When GUI textures appear misaligned—such as icons shifted or bars out of place
 </details>
 
 ### Server side issue: Loaded but Some Elements Don’t Work
+![rspm.jpg](../../../img/wiki/rspm_missing_elements.jpg)
 
 <details>  
 <summary>  
@@ -252,6 +254,7 @@ Some items, textures, or models either load incorrectly or do not appear at all 
 </details>
 
 ### Server side issue: Loaded but Assets from One Plugin Override Another
+![rspm.jpg](../../../img/wiki/rspm_assets_override.jpg)
 
 <details>  
 <summary>  
@@ -272,7 +275,7 @@ On Minecraft versions before 1.21.4, some conflicts cannot be perfectly resolved
 </details>
 
 ### Server side issue: Slow Resource Pack Download
-![webapp_banner.jpg](../../../img/wiki/rspm_slow_rp_download.jpg)
+![rspm_slow_rp_download.jpg](../../../img/wiki/rspm_slow_rp_download.jpg)
 
 <details>  
 <summary>  
