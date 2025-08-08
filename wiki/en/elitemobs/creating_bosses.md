@@ -113,6 +113,39 @@ Sets the entity type of the boss.
 
 <details> 
 
+<summary><b>Magma Cubes and Slimes</b></summary>
+
+<div align="left">
+
+Since these entity types do not attack players directly, but instead deal damage through contact, this can result in large bursts of damage in a short time. Because of this, we generally do not recommend using them as Elite mobs frequently. However, if you still wish to use them, we suggest setting `damageMultiplier` to around `0.1`.
+
+We also recommend using the following EliteScript to prevent Magma Cubes or Slimes from stun-locking players:
+
+```yml
+eliteScript:
+  NerfDamage:
+    Events:
+    - ZoneEnterEvent
+    - ZoneLeaveEvent
+    Zone:
+      shape: SPHERE
+      radius: 1
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SET_MOB_AI
+      Target:
+        targetType: SELF
+      bValue: false
+      duration: 10
+```
+
+</div>
+
+</details>
+
+<details> 
+
 <summary><b>Example</b></summary>
 
 <div align="left">
@@ -1152,7 +1185,7 @@ announcementPriority: 3
 
 ### followDistance
 
-Set the distance at which bosses aggro and enter combat.
+Set the distance at which bosses aggro and enter combat. Measured from the mob itself.
 
 | Key | Values | Default |
 |-|:-:|-|
@@ -1636,7 +1669,7 @@ These are used for all of the dungeon content. To learn more about regional boss
 | `isRegionalBoss` | Sets if the boss is regional. Should be true if you want a regional boss.  | `true` /  `false` | `false` |
 | `spawnLocation` | Sets the spawn locations of the boss.  | Add these through the `/em addSpawnLocation [filename.yml]` command! | none |
 | `spawnCooldown` | Sets the respawn cooldown of the boss, in <b>minutes</b>. | [Integer](#integer) | `0` |
-| `leashRadius` | Sets the distance the boss can go from its spawn point before getting pulled back. | [Double](#double) | none |
+| `leashRadius` | Sets the distance the boss can go from its spawn point before getting pulled back. Measured from spawn. | [Double](#double) | none |
 | `onSpawnBlockStates` | Sets the blocks the boss will modify when it spawns. | Check commands below | none |
 | `onRemoveBlockStates` | Sets the blocks the boss will modify when it despawns. | Check commands below | none |
 

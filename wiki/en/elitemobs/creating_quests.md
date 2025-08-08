@@ -114,6 +114,7 @@ Custom Objectives are constructed using the following values:
 | `amount`                                      | Used to set the amount of Custom Bosses that must be killed or items that must be obtained.            |
 | `dialog`                                      | Used to set the dialog of the NPC the player talks to.            |
 | `name`                                        | Used to set the name of the quest objective, be it an NPC or a custom item. For visual purposes only.            |
+| `itemName`                                        | **Used only with `FETCH_ITEM`** – This setting changes how the item's name appears in the quest tracker. It allows you to display a custom name that’s different from the actual item’s in-game name.            |
 
 _Please note that every Custom Objective field is separated with a `:` !_
 

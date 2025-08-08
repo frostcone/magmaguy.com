@@ -21,7 +21,7 @@ Sets the shape of the zone. Valid shapes:
 | [`STATIC_RAY`]($language$/elitemobs/elitescript_zones.md&section=static_ray)     | A fixed line between two points | ❌ | ❌ |
 | [`ROTATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=rotating_ray) | A rotating line between two points | ✅ | ❌ |
 | [`TRANSLATING_RAY`]($language$/elitemobs/elitescript_zones.md&section=translating_ray) | A line that moves between two initial points to two final points | ✅ | ❌ |
-
+| [`CONE`]($language$/elitemobs/elitescript_zones.md&section=CONE)         | Cone shape | ❌ | ❌ |
 ---
 
 #### Animatable
@@ -199,6 +199,63 @@ eliteScript:
 </div>
 
 This script demonstrates the shape of a dome using cloud particles.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
+### CONE
+
+| Key                                                         | Details | Mandatory |
+|-------------------------------------------------------------| :-: | :-: |
+| `shape`                                                     | Sets the shape of the zone. Should be `CONE` | ✅ |
+| [`target`]($language$/elitemobs/elitescript_targets.md)     | Sets the location for the first point of the cone | ✅ |
+| [`target2`]($language$/elitemobs/elitescript_targets.md)    | Sets the location for the last point of the center of the cone | ✅ |
+| [`filter`]($language$/elitemobs/elitescript_zones.md&section=filter) | Sets which types of entities get targeted | ❌ |
+| `radius`                                                    | Radius of the second target of the cone | ✅ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CONE
+      radius: 10
+      Target:
+        targetType: SELF
+        offset: 0,0,0
+      Target2:
+        targetType: SELF
+        offset: 0,10,0
+    Actions:
+      - action: SPAWN_PARTICLE
+        particles:
+        - particle: CLOUD
+        Target:
+          targetType: ZONE_FULL
+          coverage: 0.8
+        repeatEvery: 5
+        times: 20
+```
+
+<div align="center">
+
+</div>
+
+This script demonstrates the shape of a cylinder using cloud particles. Keep in mind that this zone is a **CONE** shape, meaning it is a 3D volume, important to consider if you're aiming to create sweep effects.
 
 </div>
 
