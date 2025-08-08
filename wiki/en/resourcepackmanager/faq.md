@@ -159,7 +159,7 @@ This hosting service is internal to RSPM and not configurable by server admins. 
 </details>
 
 ### Client side issue: Failed to Load (Invalid Resource Pack)
-![rspm.jpg](../../../img/wiki/MISSING_IMAGEg)
+![rspm.jpg](../../../img/wiki/rspm_rp_failed.jpg)
 
 <details>  
 <summary>  
@@ -301,3 +301,6 @@ Unfortunately, due to the nature of remote hosting, some players will experience
 
 
 </details>
+
+
+
