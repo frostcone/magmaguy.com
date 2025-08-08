@@ -132,6 +132,7 @@ priorityOrder:
 ## Troubleshooting
 
 ### Client side issue: Failed to Load (404 Error)
+![webapp_banner.jpg](../../../img/wiki/rspm_failed_to_reach_server.jpg)
 
 <details>  
 <summary>  
@@ -181,6 +182,7 @@ Minecraft successfully downloaded the resource pack, but rejected it because the
 </details>
 
 ### Server side issue: Purple and Black Textures or Purple and Black Cube Models
+![webapp_banner.jpg](../../../img/wiki/rspm_purple_and_black_squares.jpg)
 
 <details>  
 <summary>  
@@ -204,6 +206,7 @@ The purple-and-black checkerboard pattern in Minecraft indicates the game cannot
 </details>
 
 ### Server side issue: GUI Textures for Menus are Offset
+![webapp_banner.jpg](../../../img/wiki/rspm_offset_textures.jpg)
 
 <details>  
 <summary>  
@@ -269,6 +272,7 @@ On Minecraft versions before 1.21.4, some conflicts cannot be perfectly resolved
 </details>
 
 ### Server side issue: Slow Resource Pack Download
+![webapp_banner.jpg](../../../img/wiki/rspm_slow_rp_download.jpg)
 
 <details>  
 <summary>  
