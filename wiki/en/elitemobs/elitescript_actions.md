@@ -1534,9 +1534,18 @@ eliteScript:
     Events:
       - EliteMobEnterCombatEvent
     Actions:
-      - action: SUMMON_ENTITY
-        Target:
-          targetType: DIRECT_TARGET
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 8.0
 ```
 
 Sets the boss to .
