@@ -3,6 +3,11 @@ Listed here are the WorldGuard flags EliteMobs has and their function.
 
 ***
 
+# elitemob-events (allow/deny)
+Sets whether Elite Mobs Events can trigger in the region. The default behavior is that Elite Mobs Events are allowed to trigger everywhere, and therefore the primary use of this flag is to disable them for a specific region. If you want to disable Elite Mob Events for an entire world, I recommend editing the ValidWorlds.yml file instead.
+
+***
+
 # elitemob-spawning (allow/deny)
 Sets whether Elite Mobs can spawn in the region. The default behavior is that Elite Mobs are allowed to spawn everywhere, and therefore the primary use of this flag is to disable them for a specific region. If you want to disable Elite Mob spawning for an entire world, I recommend editing the ValidWorlds.yml file instead.
 
