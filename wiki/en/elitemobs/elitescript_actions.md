@@ -628,6 +628,64 @@ Vectors are defined by `vValue: x,y,z`. As an example, if you want the target to
 
 ---
 
+### REMOVE_ELITE
+
+This action will remove any targeted Elites. Can be combined with Conditions and Tags to only remove certain Elites.
+
+| Values |                             Details                             | Mandatory |
+| --- |:---------------------------------------------------------------:| :-: |
+| `Target` |  [More info here]($language$/elitemobs/elitescript_targets.md)  | ✅ |
+
+<div align="center">
+
+<details> 
+
+<summary><b>Example</b></summary>
+
+<div align="left">
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: REMOVE_ELITE
+      Target:
+        targetType: NEARBY_ELITES
+        range: 10
+```
+
+This will remove any nearby elites within a 10 block radius.
+
+```yaml
+eliteScript:
+  Example:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: REMOVE_ELITE
+      Target:
+        targetType: NEARBY_ELITES
+        range: 3
+      Conditions:
+        conditionType: FILTERING
+        hasTags:
+        - remove_me
+        Target:
+          targetType: ACTION_TARGET
+```
+
+This will remove any nearby elites within a 3 block radius, but only if they have the tag `remove_me`.
+
+</div>
+
+</details>
+
+</div>
+
+---
+
 ### RUN_COMMAND_AS_CONSOLE
 
 Runs a command as console.
